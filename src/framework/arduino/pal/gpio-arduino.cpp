@@ -10,7 +10,6 @@
 #include "gpio-arduino.hpp"
 
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
-
 #include <Arduino.h>
 
 /**

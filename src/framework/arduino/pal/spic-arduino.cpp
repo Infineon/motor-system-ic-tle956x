@@ -31,11 +31,9 @@ SPICIno::SPICIno() : lsb(LSBFIRST), mode(SPI_MODE1), clock(SPI_CLOCK_DIV16)
  * @param mode   SPI mode
  * @param clock  SPI clock divider
  */
-SPICIno::SPICIno(uint8_t lsb, uint8_t mode, uint8_t clock) : lsb(LSBFIRST), mode(SPI_MODE1), clock(SPI_CLOCK_DIV16)
+SPICIno::SPICIno(uint8_t lsb, uint8_t mode, uint8_t clock) : lsb(lsb), mode(mode), clock(clock)
+//SPICIno::SPICIno(uint8_t lsb, uint8_t mode, uint8_t clock)
 {
-	this->lsb = lsb;
-	this->mode = mode;
-	this->clock = clock;
 	spi = &SPI;
 }
 
@@ -59,9 +57,6 @@ SPICIno::SPICIno(SPIClass &port, uint8_t csPin, uint8_t misoPin, uint8_t mosiPin
 	this->sckPin = sckPin;
 	spi = &port;
 }
-
-// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ also entweder Spi mode setzten oder Pins?
-
 
 /**
  * @brief Initialize the SPIC

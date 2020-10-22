@@ -19,6 +19,8 @@
 #include <Arduino.h>
 #include "SPI.h"
 
+#include "timer-arduino.hpp"
+#include "../../../corelib/TLE9563.hpp"
 /**
  * @addtogroup arduinoPal
  * @{

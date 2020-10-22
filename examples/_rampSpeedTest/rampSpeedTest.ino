@@ -2,7 +2,7 @@
  * \name        rampSpeedTest
  * \author      Infineon Technologies AG
  * \copyright   2019 Infineon Technologies AG
- * \version     2.0.0
+ * \version     0.0.1
  * \brief       This example measure the rampspeed of an attached motor with the TLE9563 shield
  * \details
  * By attaching a motor to the TLE9563 and running a testcase scenario, we can measure the

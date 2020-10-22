@@ -7,7 +7,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-
 #ifndef GPIO_ARDUINO_HPP_
 #define GPIO_ARDUINO_HPP_
 
@@ -16,6 +15,7 @@
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
 
 #include "../../../corelib/TLE9563.hpp"
+
 
 /**
  * @addtogroup arduinoPal

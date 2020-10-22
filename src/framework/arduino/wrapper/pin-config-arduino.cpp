@@ -1,6 +1,6 @@
 /** 
  * @file        pin-config-arduino.cpp
- * @brief       Configurations for the different Platfroms
+ * @brief       Pin assignment for Arduino UNO
  * @date        Sept 2020
  * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
  * 

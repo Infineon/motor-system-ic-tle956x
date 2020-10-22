@@ -1,6 +1,7 @@
 //Origin
 
 #include <SPI.h>
+#include <Arduino.h>
 
 //Define Inputs & Outputs
 #define PWM_U 3
@@ -16,9 +17,15 @@
 #define MotorPoles 6
 #define HallPoleShift 0
 
+// Control Registers
+#define HBMODE    0b00010101    // Half-Bridge MODE
+#define GENCTRL   0b00010000    // General Bridge Control
+#define LS_VDS    0b00010010    // Drain-Source monitoring threshold
+#define HS_VDS    0b00010011    // Drain-Source monitoring threshold
+#define HS_CTRL   0b00001000    // High-Side switch control
 
-
-//PrintInfo
+// Status Registers
+#define SUP_STAT 0b01000000     // Supply voltage fail status
 
 
 //StartUp - Commutation-Counts to switch over to closed-loop
@@ -30,8 +37,8 @@ uint8_t Commutation = 0;
 uint8_t ClosedLoop = 0;
 uint8_t DutyCycle = 100;
 uint8_t Dir = 0;
-void setup() {
 
+void setup() {
   Serial.begin(115200);
   setPwmFrequency(PWM_U, 1);
   setPwmFrequency(PWM_V, 1);
@@ -62,37 +69,45 @@ void setup() {
   analogWrite(PWM_W,0);
   SBC_CRC_Disable();
   //genctrl
-  SBC_SPI(0b00010000,0b1000111000110000);
+  SBC_SPI(GENCTRL,0b1000111000110000);
   //ls_vds mon
-  SBC_SPI(0b00010010,0b0000000110110110);
+  SBC_SPI(LS_VDS,0b0000000110110110);
   //hs_vds min
-  SBC_SPI(0b00010011,0b0000000110110110);
+  SBC_SPI(HS_VDS,0b0000000110110110);
   //hbmode
-  SBC_SPI(0b00010101,0b0000101110111011);
+  SBC_SPI(HBMODE,0b0000101110111011);
 
+  //SBC_SPI(HS_CTRL,0b0000000000000001);    // Switch on LEDs
   //clear stat regs
-  SBC_SPI(0b01000000,0);
+  SBC_SPI(SUP_STAT,0);
   
 
-
 }
 
-void loop() {
-
-uint16_t i = 5000;
-uint8_t CommStartup = 0;
-while (i>1200) {
-  delayMicroseconds(i);
-  Commutation = CommStartup;
-  UpdateHardware (CommStartup,0);
-  CommStartup++;
-  if (CommStartup==6) CommStartup=0;
-  i=i-200;
-  
-}
-while(1) {
-  DoCommutation();
-}
+void loop()
+{
+  uint16_t i = 5000;
+  uint8_t CommStartup = 0;
+  while (i>1200)
+  {
+    delayMicroseconds(i);
+    Commutation = CommStartup;
+    UpdateHardware (CommStartup,0);
+    CommStartup++;
+    if (CommStartup==6) CommStartup=0;
+    i=i-200;
+  }
+  while(1)
+  {
+    if (Serial.available() > 0)
+    {
+      uint8_t in = Serial.read();
+      if(in == '+') DutyCycle += 10;          // Adapt the speed with keyboard input in the serial monitor
+      if(in == '-') DutyCycle -= 10;
+      Serial.println(DutyCycle);
+    }
+    DoCommutation();
+  }
 }
 
 
@@ -151,42 +166,42 @@ void UpdateHardware(uint8_t CommutationStep, uint8_t Dir) {
     switch (CommutationStep) {
       case 0:
         
-        SBC_SPI(0b00010101,0b0000110001001011);
+        SBC_SPI(HBMODE,0b0000 1100 0100 1011);
         analogWrite(PWM_U, DutyCycle);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, 0);
         break;
 
       case 1:
-        SBC_SPI(0b00010101,0b0000010011001011);
+        SBC_SPI(HBMODE,0b0000 0100 1100 1011);
         analogWrite(PWM_U, DutyCycle);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, 0);
         break;
 
       case 2:
-        SBC_SPI(0b00010101,0b0000010010111100);
+        SBC_SPI(HBMODE,0b0000010010111100);
         analogWrite(PWM_U, 0);
         analogWrite(PWM_V, DutyCycle);
         analogWrite(PWM_W, 0);
         break;
 
       case 3:
-      SBC_SPI(0b00010101,0b0000110010110100);
+      SBC_SPI(HBMODE,0b0000110010110100);
         analogWrite(PWM_U, 0);
         analogWrite(PWM_V, DutyCycle);
         analogWrite(PWM_W, 0);
         break;
 
       case 4:
-        SBC_SPI(0b00010101,0b0000101111000100);
+        SBC_SPI(HBMODE,0b0000101111000100);
         analogWrite(PWM_U, 0);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, DutyCycle);
         break;
 
       case 5:
-       SBC_SPI(0b00010101,0b0000101101001100);
+       SBC_SPI(HBMODE,0b0000101101001100);
         analogWrite(PWM_U, 0);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, DutyCycle);

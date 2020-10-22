@@ -1,6 +1,6 @@
 /** 
  * @file        pin-config-arduino.hpp
- * @brief       Configurations for the different platfroms
+ * @brief       Pin assignment for Arduino UNO
  * @date        Sept 2020
  * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
  * 
@@ -10,7 +10,11 @@
 #ifndef PINCONFIGARDUINO_HPP_
 #define PINCONFIGARDUINO_HPP_
 
+#include "../../../config/tle9563-conf.hpp"
 #include <stdint.h>
+
+#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+
 
 /**
  * @addtogroup arduinoWrapper
@@ -49,4 +53,5 @@ struct hardwareconfig_t
 extern hardwareconfig_t ARDUINO_UNO;
 /** @} */
 
+#endif /** TLE9563_FRAMEWORK **/
 #endif /** PINCONFIGARDUINO_HPP_ **/
