@@ -1,20 +1,15 @@
 /*!
  * \file        TLE9563-ino.cpp
- * \name        TLE9563.ino.cpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9563
+ * \name        TLE9563.ino.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
  * \copyright   2020 Infineon Technologies AG
  * \version     0.0.1
  * \ref         tle9563ino
- * \brief       This file has to be included in projects that use Infineon's DC Motor Control Shield with TLE9563
+ * \brief       This file has to be included in projects that use Infineon's BLDC Motor Control Shield with TLE9563
  * \details
- * The Infineon TLE9563EL DC motor controller shield is able to handle 6 motors with a max. current of 0.9 A
- * independently and additional 5 motors cascaded. The twelve half-bridges can be arranged also together,
- * so that 3 motors with 1.8 A current or one motor with 3.6 A can be used. Each half bridge can
- * provide a high-Voltage (nominal 5.5-18 V) tristate output and max. input voltage of 40V. It is also
- * capable of PWM with 3 different frequencies for controlling the speed of each motor.
- * Have a look at the datasheet for more information.
- * - This library include the basic functions to access the half-bridges.
- * - Have a look at the datasheet for more information.
+ * 
+ * This file defines the functions for the Arduino-Inheritance of TLE9563 class. It assigns the Arduino pins to the virtual Pin definitions
+ * and inits the Hardware like GPIO, timer and SPI. Moreover, the SPI send functions are defined here as well.
  */
 
 

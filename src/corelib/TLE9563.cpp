@@ -74,9 +74,17 @@ void Tle9563::config(void)
 
 void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 {
-	uint16_t ToSend = (hb1.HBmode<<2)|(hb1.Freewheeling<<1)|(hb1.PWMenable<<0) ;
+	uint16_t ToSend = (hb1.HBmode<<2)|(hb1.Freewheeling<<1)|(hb1.PWMenable<<0);
 	ToSend = ToSend | (hb2.HBmode<<6)|(hb2.Freewheeling<<5)|(hb2.PWMenable<<4);
 	ToSend = ToSend | (hb3.HBmode<<10)|(hb3.Freewheeling<<9)|(hb3.PWMenable<<8);
 
 	SBC_SPI(REG_ADDR_HBMODE, ToSend);
+}
+
+void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
+{
+	SBC_SPI(REG_ADDR_PWM_CTRL, 0x0|((hss1<<3)&0x3FF0) );    	// set PWM for HSS 1
+	SBC_SPI(REG_ADDR_PWM_CTRL, 0x1|((hss2<<3)&0x3FF0) );    	// set PWM for HSS 2
+	SBC_SPI(REG_ADDR_PWM_CTRL, 0x2|((hss3<<3)&0x3FF0) );    	// set PWM for HSS 3
+  	SBC_SPI(REG_ADDR_HS_CTRL, 0x0654);    						// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
 }

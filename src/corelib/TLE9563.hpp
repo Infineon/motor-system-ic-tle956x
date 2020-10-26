@@ -70,6 +70,7 @@ class Tle9563
 
 		void config(void);
 		void setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
+		void setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
 
 		virtual void begin() = 0;
 		virtual void end() = 0;
@@ -92,6 +93,8 @@ class Tle9563
 		GPIO					*hallA;			//<! \brief Hall input A
 		GPIO					*hallB;			//<! \brief Hall input B
 		GPIO					*hallC;			//<! \brief Hall input C
+
+		GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
 	
 		Timer    				*timer;     	//<! \brief timer for delay settings
 
@@ -101,7 +104,7 @@ class Tle9563
 		virtual void SBC_SPI(uint8_t addr, uint16_t data) = 0;	// Declared in TLE9563-pal-ino.cpp
 
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
-		GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
+		//GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
 
 };
 /** @} */

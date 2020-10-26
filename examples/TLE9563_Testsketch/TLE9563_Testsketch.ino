@@ -1,4 +1,15 @@
-//Origin
+/*!
+ * \name        TLE9563_Testsketch.ino
+ * \author      Infineon Technologies AG
+ * \copyright   2020 Infineon Technologies AG
+ * \version     0.0.1
+ * \brief       This example runs a senorless brushlessmotor in BEMF mode using a TLE9563 BLDC control shield.
+ *
+ * This example may only be available for development, as it's stand alone for test purposes. It does not use the library in any way.
+ * 
+ * SPDX-License-Identifier: MIT
+ */
+
 
 #include <SPI.h>
 #include <Arduino.h>
@@ -23,6 +34,7 @@
 #define LS_VDS    0b00010010    // Drain-Source monitoring threshold
 #define HS_VDS    0b00010011    // Drain-Source monitoring threshold
 #define HS_CTRL   0b00001000    // High-Side switch control
+#define PWM_CTRL  0b00001010    
 
 // Status Registers
 #define SUP_STAT 0b01000000     // Supply voltage fail status
@@ -77,15 +89,19 @@ void setup() {
   //hbmode
   SBC_SPI(HBMODE,0b0000101110111011);
 
-  //SBC_SPI(HS_CTRL,0b0000000000000001);    // Switch on LEDs
+
+  
+  SBC_SPI(PWM_CTRL, 0b0000000000000000);    // Switch on LEDs
+  SBC_SPI(HS_CTRL, 0b0000000000000100);    // Switch on LEDs  / x / x  / Green
   //clear stat regs
   SBC_SPI(SUP_STAT,0);
-  
 
 }
 
 void loop()
 {
+  setHSS(500,0,0);
+
   uint16_t i = 5000;
   uint8_t CommStartup = 0;
   while (i>1200)
@@ -97,6 +113,8 @@ void loop()
     if (CommStartup==6) CommStartup=0;
     i=i-200;
   }
+
+  setHSS(0,0,500);
   while(1)
   {
     if (Serial.available() > 0)
@@ -110,7 +128,13 @@ void loop()
   }
 }
 
-
+void setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
+{
+	SBC_SPI(PWM_CTRL, 0x0|((hss1<<3)&0x3FF0) );    	// set PWM for HSS 1
+	SBC_SPI(PWM_CTRL, 0x1|((hss2<<3)&0x3FF0) );    	// set PWM for HSS 2
+	SBC_SPI(PWM_CTRL, 0x2|((hss3<<3)&0x3FF0) );    	// set PWM for HSS 3
+  SBC_SPI(HS_CTRL, 0x0654);    						// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
+}
 
 void DoCommutation() {
 
@@ -166,14 +190,14 @@ void UpdateHardware(uint8_t CommutationStep, uint8_t Dir) {
     switch (CommutationStep) {
       case 0:
         
-        SBC_SPI(HBMODE,0b0000 1100 0100 1011);
+        SBC_SPI(HBMODE,0b0000110001001011);
         analogWrite(PWM_U, DutyCycle);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, 0);
         break;
 
       case 1:
-        SBC_SPI(HBMODE,0b0000 0100 1100 1011);
+        SBC_SPI(HBMODE,0b0000010011001011);
         analogWrite(PWM_U, DutyCycle);
         analogWrite(PWM_V, 0);
         analogWrite(PWM_W, 0);

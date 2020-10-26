@@ -2,7 +2,7 @@
  * \file        BLDCM_control-ino.hpp
  * \name        BLDCM_control-ino.hpp - basic motor control functions for Arduino
  * \author      Infineon Technologies AG
- * \copyright   2019-2020 Infineon Technologies AG
+ * \copyright   2020 Infineon Technologies AG
  * \version     0.0.1
  * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
  * \ref         tle9563corelib
