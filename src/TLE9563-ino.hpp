@@ -18,6 +18,10 @@
 #include "config/tle9563-conf.hpp"
 #include "corelib/TLE9563.hpp"
 
+#include "framework/arduino/pal/adc-arduino.hpp"
+#include "framework/arduino/pal/gpio-arduino.hpp"
+#include "framework/arduino/pal/spic-arduino.hpp"
+#include "framework/arduino/pal/timer-arduino.hpp"
 
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
 
@@ -51,8 +55,17 @@ class TLE9563Ino: virtual public Tle9563
 
 	protected:
 
-		void SBC_CRC_Disable();
-		void SBC_SPI(uint8_t addr, uint16_t data);
+		void 		SBC_CRC_Disable();
+
+		/**
+		 * @brief write a 16 bit register on TLE9563
+		 * constant pattern for CRC will be added automatically in this function
+		 * @param addr adress of the register you want access
+		 * @param data the data you want to write (16-bit)
+		 */
+		void 		writeReg(uint8_t addr, uint16_t data);
+		
+		uint16_t 	readReg(uint8_t addr);
 };
 /* @} */
 

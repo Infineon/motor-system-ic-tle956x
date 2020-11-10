@@ -1,10 +1,10 @@
 /*!
  * \file        TLE9563.hpp
- * \name        TLE9563.hpp - basic register API
+ * \name        TLE9563.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
  * \copyright   2019-2020 Infineon Technologies AG
  * \version     0.0.1
- * \brief       This library includes the basic common functions to controll the TLE9563 registers
+ * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
@@ -22,34 +22,9 @@
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
 
-//======= Very important ========
-#define DEBUG_OUTPUT         //Uncomment, if you wish debug output or tune the motor (Disables automatic V_neutralOffset)
-//===============================
-
-#ifdef DEBUG_OUTPUT
-    #define DEBUG_PRINT_LN(str)  Serial.println(str)
-    #define DEBUG_PRINT(str)  Serial.print(str)
-    #define TRIGGER_PIN  digitalWrite(12, _debugPin); _debugPin = !_debugPin;
-#else
-	#define DEBUG_PRINT_LN(str)
-    #define DEBUG_PRINT(str)
-    #define TRIGGER_PIN
-#endif
-
 /**
  * @addtogroup tle9563api
  * @{
- */
-
-/**
- * @brief represents a basic TLE9563
- *
- * This class provides a simple API for connecting and controlling motors.
- * Each motor is assigned to a Tle9563 which acts as output driver. Calls to
- * Tle9563Motor instances are mapped to calls to Tle9563. Therefore, this
- * class does not bring new features, it does only provide further abstraction.
- *
- * @see Tle9563
  */
 	typedef struct
 	{
@@ -58,6 +33,14 @@
 		uint8_t PWMenable;
 	} HBconfig_t;
 
+/**
+ * @brief represents a basic TLE9563
+ *
+ * This class provides all features, a TLE956x BLDC controller SBC is capable of.
+ * This includes the triple gatedriver, mainly used for the MOSFETS of the three BLDCM phases.
+ * Further three high side switches (hss) for various applications, but in this Lib they are intended
+ * to drive an RGB LED like on the BLDC control board, using the TLE onboard PWM timer slices.
+ */
 class Tle9563
 {
 	public:
@@ -68,43 +51,83 @@ class Tle9563
 		//! \brief standard destructor switches shield off
 		~Tle9563();
 
-		void config(void);
-		void setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
-		void setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
+		/**
+		 * @brief set up the registers and initialize the TLE9563
+		 */
+		void 			config(void);
 
-		virtual void begin() = 0;
-		virtual void end() = 0;
+		/**
+		 * @brief Set the Halfbridge object
+		 * This function is necessary to control the MOSFETS of a BLDC shield.
+		 * Each halfbridge can be PASSIVE_OFF, LOWSIDE_ON, HIGHSIDE_ON or ACTIVE_OFF.
+		 * Moreover it can be configured, if active freewheeling for each halfbridge should be turned on or off,
+		 * as well as if an external PWM should be guided through.
+		 * 
+		 * @param hb1 struct element with parameters described above for halfbridge 1
+		 * @param hb2 struct element with parameters described above for halfbridge 2
+		 * @param hb3 struct element with parameters described above for halfbridge 3
+		 */
+		void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
 
-		HBconfig_t ActiveGround; 
-		HBconfig_t ActivePWM; 
-		HBconfig_t Floating; 
+		/**
+		 * @brief control the high side switches
+		 * The function assigns each highsideswitch a separate PWM slice of TLE9563.
+		 * 
+		 * @param hss1 dutycycle for highsideswitch 1 (10-bit)
+		 * @param hss2 dutycycle for highsideswitch 1 (10-bit)
+		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
+		 */
+		void 			setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
+		
+		/**
+		 * @brief function only for debug purpose
+		 * 
+		 * @param array stores the status register values in this array
+		 */
+		void 			updateStatus(uint16_t *array);
+
+		virtual void 	begin() = 0;
+		virtual void 	end() = 0;
+
+		HBconfig_t 		ActiveGround; 
+		HBconfig_t 		ActivePWM; 
+		HBconfig_t 		Floating; 
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
-
-		AnalogDigitalConverter	*pwmU;			//<! \brief PWM output for phase U
-		AnalogDigitalConverter	*pwmV;			//<! \brief PWM output for phase V
-		AnalogDigitalConverter	*pwmW;			//<! \brief PWM output for phase W
-
-		GPIO					*bemfU;			//<! \brief BEMF U input from analog comparator
-		GPIO					*bemfV;			//<! \brief BEMF V input from analog comparator
-		GPIO					*bemfW;			//<! \brief BEMF W input from analog comparator
-
-		GPIO					*hallA;			//<! \brief Hall input A
-		GPIO					*hallB;			//<! \brief Hall input B
-		GPIO					*hallC;			//<! \brief Hall input C
-
-		GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
-	
-		Timer    				*timer;     	//<! \brief timer for delay settings
-
+		
 	protected:
 
-		virtual void SBC_CRC_Disable() = 0;						// Declared in TLE9563-pal-ino.cpp
-		virtual void SBC_SPI(uint8_t addr, uint16_t data) = 0;	// Declared in TLE9563-pal-ino.cpp
+		/**
+		 * @brief disable the cyclic redundancy check of TLE9563
+		 *  Declared in TLE9563-ino.cpp
+		 */
+		virtual void 		SBC_CRC_Disable() = 0;
+
+		/**
+		 * @brief send SPI comands to the TLE9563
+		 * Declared in TLE9563-ino.cpp
+		 * If CRC is disabled, static pattern will be added automatically.
+		 * 
+		 * @param addr addres of the register you want access (use the enum in TLE9563-reg.cpp)
+		 * @param data data you want to transmitt (16-bit)
+		 */
+		virtual void 		writeReg(uint8_t addr, uint16_t data) = 0;
+
+		/**
+		 * @brief read SPI commands from TLE9563
+		 * Declared in TLE9563-ino.cpp
+		 * 
+		 * @param addr 		addres of the register you want to read from (use the enum in TLE9563-reg.cpp)
+		 * @return uint16_t returned value of TLE9563 (16-bit)
+		 */
+		virtual uint16_t 	readReg(uint8_t addr) = 0;
+
 
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
-		//GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
+		GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
+		Timer    				*timer;     	//<! \brief timer for delay settings
+
 
 };
 /** @} */

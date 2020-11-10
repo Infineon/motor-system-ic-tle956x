@@ -1,6 +1,6 @@
 /*!
  * \file        BLDCM-control.hpp
- * \name        BLDCM-control.hpp - basic motor control functions
+ * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
  * \copyright   2020 Infineon Technologies AG
  * \version     0.0.1
@@ -15,7 +15,11 @@
 #define BLDCMCONTROL_HPP_
 
 #include "TLE9563.hpp"
-#include "Arduino.h"
+
+#include "../pal/timer.hpp"
+#include "../pal/gpio.hpp"
+#include "../pal/spic.hpp"
+#include "../pal/adc.hpp"
 
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
 #include "../TLE9563-ino.hpp"
@@ -29,9 +33,6 @@ class BLDCMcontrol
 		BLDCMcontrol(void);
 		~BLDCMcontrol(void);
 
-		void		begin(void);
-		void		end(void);
-
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
 		 * 
@@ -44,15 +45,56 @@ class BLDCMcontrol
 		void 		setLED(uint16_t red, uint16_t green, uint16_t blue);
 
 		/**
-		 * @brief set speed of a sensorless BLDC motor in BEMF mode using block commutation
+		 * @brief set speed by handing over the dutycycle to the global _DutyCycle variable
 		 * 
 		 * @param dutycycle speed of the BLDCM (8-bit)
 		 */
 		void		setBLDCspeed(uint8_t dutycycle);
 
+		/**
+		 * @brief do a blind commutation to start up the BLDC in BEMF mode
+		 * 
+		 */
+		void		startBLDCM(void);
+
+		/**
+		 * @brief depending on the actual commutation state, wait for the next BEMF flag to commutate
+		 * 
+		 * @return uint8_t returns success or failure of startup / commutation
+		 */
+		uint8_t		DoBEMFCommutation(void);
+
+
+		virtual void begin() = 0;
+		virtual void end() = 0;
+
+		TLE9563Ino 	controller = TLE9563Ino();		// ! TODO: Move to BLDCM-control-ino.cpp file in order to keep platform abstraction ! (But how?)
+		
 	protected:
-		TLE9563Ino 	controller = TLE9563Ino();
-		void		DoBEMFCommutation(void);
+
+		
+
+		AnalogDigitalConverter	*pwmU;			//<! \brief PWM output for phase U
+		AnalogDigitalConverter	*pwmV;			//<! \brief PWM output for phase V
+		AnalogDigitalConverter	*pwmW;			//<! \brief PWM output for phase W
+
+		GPIO					*bemfU;			//<! \brief BEMF U input from analog comparator
+		GPIO					*bemfV;			//<! \brief BEMF V input from analog comparator
+		GPIO					*bemfW;			//<! \brief BEMF W input from analog comparator
+
+		GPIO					*hallA;			//<! \brief Hall input A
+		GPIO					*hallB;			//<! \brief Hall input B
+		GPIO					*hallC;			//<! \brief Hall input C
+
+		Timer    				*timer;     	//<! \brief timer for delay settings
+
+		/**
+		 * @brief contains the six steps of the six-step-blockcommutation
+		 * in each step the gatedrivers of the TLE9563 are updated to either PWM, Ground or Floating.
+		 * At the same time the PWM is assigned to the right output pin.
+		 * 
+		 * @param CommutationStep the actual commutation state, values 0 to 5 are allowed
+		 */
 		void		UpdateHardware(uint8_t CommutationStep);
 
 		uint8_t		_DutyCycle;

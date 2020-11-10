@@ -1,6 +1,6 @@
 /*!
- * \file        BLDCM_control-ino.hpp
- * \name        BLDCM_control-ino.hpp - basic motor control functions for Arduino
+ * \file        BLDCM-control-ino.hpp
+ * \name        BLDCM-control-ino.hpp - basic motor control functions for Arduino
  * \author      Infineon Technologies AG
  * \copyright   2020 Infineon Technologies AG
  * \version     0.0.1
@@ -17,15 +17,36 @@
 #include "config/tle9563-conf.hpp"
 #include "corelib/BLDCM-control.hpp"
 
+#include "framework/arduino/pal/adc-arduino.hpp"
+#include "framework/arduino/pal/gpio-arduino.hpp"
+#include "framework/arduino/pal/spic-arduino.hpp"
+#include "framework/arduino/pal/timer-arduino.hpp"
+
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
 
 /**
  * @addtogroup inoApi
  * @{
  */
+#include "framework/arduino/wrapper/pin-config-arduino.hpp"
+
+/**
+ * @class BLDCMcontrolIno
+ *
+ * @brief represents the BLDCMcontrol base class
+ *
+ */
 class BLDCMcontrolIno: public  BLDCMcontrol
 {
+	public:
+		//! \brief standard constructor with default pin assignment
+		BLDCMcontrolIno(void);
 
+		//! \brief enables and initializes hardware pins to control a BLDC
+		void begin(void);
+
+		//! \brief deactivates all outputs
+		void end(void);
 };
 
 /** @} */

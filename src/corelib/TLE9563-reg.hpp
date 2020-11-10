@@ -48,23 +48,23 @@
 			REG_ADDR_TDOFF_HB_CTRL 		= (0x1C),		/**< PWM inputs TOFF configuration*/
 			REG_ADDR_BRAKE	 			= (0x1D),		/**< Brake control*/
 			/*SPI contorl registers, selective wake registers*/
-			REG_ADDR_SWK_CTRL 			= (0x20),		/**< CAN Selective Wake Control*/
-			REG_ADDR_SWK_BTL1_CTRL 		= (0x21),		/**< SWK Bit Timing Control*/
-			REG_ADDR_SWK_ID1_CTRL 		= (0x22),		/**< SWK WUF Identifier bits 28...13*/
-			REG_ADDR_SWK_ID0_CTRL 		= (0x23),		/**< SWK WUF Identifier bits 12...0*/
-			REG_ADDR_SWK_MASK_ID1_CTRL	= (0x24),		/**< SWK WUF Identifier Mask bits 28...13*/ 
-			REG_ADDR_SWK_MASK_ID0_CTRL 	= (0x25),		/**< SWK WUF Identifier Mask bits 12...0*/
-			REG_ADDR_SWK_DLC_CTRL 		= (0x26),		/**< SWK Frame Data Length Code Control*/
-			REG_ADDR_SWK_DATA3_CTRL 	= (0x27),		/**< SWK Data7-Data6 Register*/
-			REG_ADDR_SWK_DATA2_CTRL 	= (0x28),		/**< SWK Data5-Data4 Register*/
-			REG_ADDR_SWK_DATA1_CTRL 	= (0x29),		/**< SWK Data3-Data2 Register*/
-			REG_ADDR_SWK_DATA0_CTRL 	= (0x2A),		/**< SWK Data1-Data0 Register*/
-			REG_ADDR_SWK_CAN_FD_CTRL	= (0x2B),		/**< CAN FD Configuration Control Register*/
+			REG_ADDR_SWK_CTRL 			= (0x30),		/**< CAN Selective Wake Control*/
+			REG_ADDR_SWK_BTL1_CTRL 		= (0x31),		/**< SWK Bit Timing Control*/
+			REG_ADDR_SWK_ID1_CTRL 		= (0x32),		/**< SWK WUF Identifier bits 28...13*/
+			REG_ADDR_SWK_ID0_CTRL 		= (0x33),		/**< SWK WUF Identifier bits 12...0*/
+			REG_ADDR_SWK_MASK_ID1_CTRL	= (0x34),		/**< SWK WUF Identifier Mask bits 28...13*/ 
+			REG_ADDR_SWK_MASK_ID0_CTRL 	= (0x35),		/**< SWK WUF Identifier Mask bits 12...0*/
+			REG_ADDR_SWK_DLC_CTRL 		= (0x36),		/**< SWK Frame Data Length Code Control*/
+			REG_ADDR_SWK_DATA3_CTRL 	= (0x37),		/**< SWK Data7-Data6 Register*/
+			REG_ADDR_SWK_DATA2_CTRL 	= (0x38),		/**< SWK Data5-Data4 Register*/
+			REG_ADDR_SWK_DATA1_CTRL 	= (0x39),		/**< SWK Data3-Data2 Register*/
+			REG_ADDR_SWK_DATA0_CTRL 	= (0x3A),		/**< SWK Data1-Data0 Register*/
+			REG_ADDR_SWK_CAN_FD_CTRL	= (0x3B),		/**< CAN FD Configuration Control Register*/
 			/*SPI control registers, Selective Wake trim and configuration Registers*/
-			REG_ADDR_SWK_OSC_TRIM_CTRL 	= (0x2C),		/**< SWK Oscillator Trimming and option Register*/
-			REG_ADDR_SWK_OSC_CAL_STAT 	= (0x2D),		/**< SWK Oscillator Calibration Register*/
-			REG_ADDR_SWK_CDR_CTRL 		= (0x2E),		/**< Clock Data Recovery Control Register*/
-			REG_ADDR_SWK_CDR_LIMIT 		= (0x2F)		/**< SWK Clock Data Recovery Limit Control*/
+			REG_ADDR_SWK_OSC_TRIM_CTRL 	= (0x3C),		/**< SWK Oscillator Trimming and option Register*/
+			REG_ADDR_SWK_OSC_CAL_STAT 	= (0x3D),		/**< SWK Oscillator Calibration Register*/
+			REG_ADDR_SWK_CDR_CTRL 		= (0x3E),		/**< Clock Data Recovery Control Register*/
+			REG_ADDR_SWK_CDR_LIMIT 		= (0x3F)		/**< SWK Clock Data Recovery Limit Control*/
 		};
 
 		//! \brief enum for the control registers in a TLE9563
