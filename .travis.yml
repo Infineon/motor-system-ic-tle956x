@@ -16,8 +16,7 @@ branches:
 # Builds Test
 
 env: 
-    - PLATFORMIO_CI_SRC=examples/high-side-switch
-    - PLATFORMIO_CI_SRC=examples/high-side-switch
+    - PLATFORMIO_CI_SRC=examples/sensorless_BLDCM
 
 install: 
   - pip install -U platformio==4.1.0
