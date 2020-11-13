@@ -1,0 +1,33 @@
+#######################################
+# Syntax Coloring Map For TLE9563
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+GPIO    KEYWORD1
+Timer   KEYWORD1
+SPIC    KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+end	KEYWORD2
+setLED	KEYWORD2
+setBLDCspeed	KEYWORD2
+DoBEMFCommutation	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+Tle9563	KEYWORD2
+BLDCMcontrol	KEYWORD2
+Tle9563Ino	KEYWORD2
+BLDCMcontrolIno	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
