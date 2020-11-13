@@ -65,7 +65,7 @@ void Tle9563::config(void)
 	 *  0 Frequency modulation of charge pump		no modulation
 	 */
 	//							 FEDCBA9876543210
-	writeReg(REG_ADDR_GENCTRL, 0b1000111000110000);	//0x8E30
+	writeReg(REG_ADDR_GENCTRL, 0b1000111000110000);
 
 	/**
 	 * 13:12 Filter time 							500ns
@@ -107,6 +107,7 @@ void Tle9563::config(void)
 	 * 2:1 Gain of CSA								10VV
 	 * 0 Overcurrent shutdown						Disabled
 	 */
+	//						 FEDCBA9876543210
 	writeReg(REG_ADDR_CSA, 0b0000000100100000);
 
 	/**
@@ -122,6 +123,63 @@ void Tle9563::config(void)
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
 }
 
+void Tle9563::begin(void)
+{
+	intn->init();
+	cso->init();
+	
+	csn->init();
+	csn->enable();
+	sBus->init();
+
+	timer->init();
+}
+
+void Tle9563::end(void)
+{
+	intn->deinit();
+	cso->deinit();
+
+	csn->deinit();
+	sBus->deinit();
+	
+	timer->stop();
+}
+
+void Tle9563::SBC_CRC_Disable()
+{
+	uint8_t byte0;
+	csn->disable();
+	sBus->transfer(0xe7, byte0);	// 0b 1110 0111
+	sBus->transfer(0x55, byte0);	// 0b 0101 0101
+	sBus->transfer(0x55, byte0);	// 0b 0101 0101
+	sBus->transfer(0xc3, byte0);	// 0b 1100 0011
+	csn->enable();
+}
+
+void Tle9563::writeReg(uint8_t addr, uint16_t data)
+{
+	uint8_t byte0, byte1, byte2, byte3;
+	csn->disable();
+	sBus->transfer((addr|TLE9563_CMD_WRITE), byte0);	// MSB: Read/write cmd, bit 6:0 register address
+	sBus->transfer((data&0xFF), byte1);					// lower 8 bit of data
+	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
+	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
+	csn->enable();
+}
+
+uint16_t Tle9563::readReg(uint8_t addr)
+{
+	uint8_t byte0, byte1, byte2, byte3;
+	csn->disable();
+	sBus->transfer((addr|TLE9563_CMD_READ), byte0);		// MSB: Read/write cmd, bit 6:0 register address
+	sBus->transfer(0xFF, byte1);						// lower 8 bit of data
+	sBus->transfer(0xFF, byte2);						// upper 8 bit of data
+	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
+	csn->enable();
+	return ((byte2<<8)|byte1);
+}
+
 void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 {
 	uint16_t ToSend = (hb1.HBmode<<2)|(hb1.Freewheeling<<1)|(hb1.PWMenable<<0);
@@ -133,10 +191,11 @@ void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 
 void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 {
-	writeReg(REG_ADDR_PWM_CTRL, 0x0|((hss1<<4)&0x3FF0) );    	// set dutycycle for HSS 1
-	writeReg(REG_ADDR_PWM_CTRL, 0x1|((hss2<<4)&0x3FF0) );    	// set dutycycle for HSS 2
-	writeReg(REG_ADDR_PWM_CTRL, 0x2|((hss3<<4)&0x3FF0) );    	// set dutycycle for HSS 3
-  	writeReg(REG_ADDR_HS_CTRL, 0x0654);    						// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
+	writeReg(REG_ADDR_HS_CTRL, 0);    													// disable all high side switches
+	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_1|((hss1<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 1
+	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_2|((hss2<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 2
+	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_3|((hss3<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 3
+  	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
 }
 
 void Tle9563::updateStatus(uint16_t *array)

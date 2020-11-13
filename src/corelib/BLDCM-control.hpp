@@ -25,6 +25,12 @@
 #include "../TLE9563-ino.hpp"
 #endif
 
+/**
+ * @brief contains functions to control various types of BLDC motors using a TL9563 SBC
+ * 
+ * With this class you are able to run a BLDC motor in BEMF mode or hallsensor mode using block commutation.
+ * 
+ */
 class BLDCMcontrol
 {
 
@@ -64,9 +70,17 @@ class BLDCMcontrol
 		 */
 		uint8_t		DoBEMFCommutation(void);
 
+		/**
+		 * @brief initalize GPIOs and PWM pins
+		 * 
+		 */
+		void 		begin();
 
-		virtual void begin() = 0;
-		virtual void end() = 0;
+		/**
+		 * @brief Deinitialize GPIOs and PWM pins
+		 * 
+		 */
+		void 		end();
 
 		TLE9563Ino 	controller = TLE9563Ino();		// ! TODO: Move to BLDCM-control-ino.cpp file in order to keep platform abstraction ! (But how?)
 		

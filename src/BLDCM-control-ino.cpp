@@ -34,42 +34,7 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::timer = new TimerIno();
 }
 
-void BLDCMcontrolIno::begin(void)
-{
-	BLDCMcontrol::pwmU->init();
-	BLDCMcontrol::pwmV->init();
-	BLDCMcontrol::pwmW->init();
-	BLDCMcontrol::pwmU->setWriteFrequency(1);
-	BLDCMcontrol::pwmV->setWriteFrequency(1);
-	BLDCMcontrol::pwmW->setWriteFrequency(1);
 
-	BLDCMcontrol::bemfU->init();
-	BLDCMcontrol::bemfV->init();
-	BLDCMcontrol::bemfW->init();
-
-	BLDCMcontrol::hallA->init();
-	BLDCMcontrol::hallB->init();
-	BLDCMcontrol::hallC->init();
-
-	BLDCMcontrol::timer->init();
-}
-
-void BLDCMcontrolIno::end(void)
-{
-	BLDCMcontrol::pwmU->deinit();
-	BLDCMcontrol::pwmV->deinit();
-	BLDCMcontrol::pwmW->deinit();
-
-	BLDCMcontrol::bemfU->deinit();
-	BLDCMcontrol::bemfV->deinit();
-	BLDCMcontrol::bemfW->deinit();
-
-	BLDCMcontrol::hallA->deinit();
-	BLDCMcontrol::hallB->deinit();
-	BLDCMcontrol::hallC->deinit();
-
-	BLDCMcontrol::timer->stop();
-}
 
 /** @} */
 #endif	/** TLE9563_FRAMEWORK **/

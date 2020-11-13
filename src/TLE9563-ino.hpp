@@ -36,36 +36,18 @@
  *
  * @brief represents the TLE9563 base class
  *
- * This class provides a simple API for connecting the TLE9563 shield via SPI.
- * The 12 halfbridges, the PWM units and the registers are set and controlled
- * from the library.
+ * This class provides a simple API for connecting the TLE9563 shield via SPI to an Arduino.
+ * The three PWM pins, BEMF input Pins and hallsensor input pins are created and assigned to Arduino Hardware in here.
  *
  */
 class TLE9563Ino: virtual public Tle9563
 {
 	public:
-		//! \brief standard constructor with default pin assignment
-		TLE9563Ino(void);
-
-		//! \brief enables and initializes the TLE9563
-		void begin(void);
-
-		//! \brief deactivates all outputs and disables the TLE9563
-		void end(void);
-
-	protected:
-
-		void 		SBC_CRC_Disable();
-
 		/**
-		 * @brief write a 16 bit register on TLE9563
-		 * constant pattern for CRC will be added automatically in this function
-		 * @param addr adress of the register you want access
-		 * @param data the data you want to write (16-bit)
+		 * @brief create and assign Arduino GPIOs and PWM pins
+		 * 
 		 */
-		void 		writeReg(uint8_t addr, uint16_t data);
-		
-		uint16_t 	readReg(uint8_t addr);
+		TLE9563Ino(void);
 };
 /* @} */
 

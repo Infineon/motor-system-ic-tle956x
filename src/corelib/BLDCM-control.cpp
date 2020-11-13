@@ -47,7 +47,39 @@ BLDCMcontrol::~BLDCMcontrol(void)
 
 void BLDCMcontrol::begin(void)
 {
-  
+	pwmU->init();
+	pwmV->init();
+	pwmW->init();
+	pwmU->setWriteFrequency(1);
+	pwmV->setWriteFrequency(1);
+	pwmW->setWriteFrequency(1);
+
+	bemfU->init();
+	bemfV->init();
+	bemfW->init();
+
+	hallA->init();
+	hallB->init();
+	hallC->init();
+
+	timer->init();
+}
+
+void BLDCMcontrol::end(void)
+{
+	pwmU->deinit();
+	pwmV->deinit();
+	pwmW->deinit();
+
+	bemfU->deinit();
+	bemfV->deinit();
+	bemfW->deinit();
+
+	hallA->deinit();
+	hallB->deinit();
+	hallC->deinit();
+
+	timer->stop();
 }
 
 void BLDCMcontrol::setLED(uint16_t red, uint16_t green, uint16_t blue)

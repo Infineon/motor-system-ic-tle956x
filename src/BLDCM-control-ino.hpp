@@ -39,14 +39,11 @@
 class BLDCMcontrolIno: public  BLDCMcontrol
 {
 	public:
-		//! \brief standard constructor with default pin assignment
+		/**
+		 * @brief create and assign Arduino GPIOs and PWM pins
+		 * 
+		 */
 		BLDCMcontrolIno(void);
-
-		//! \brief enables and initializes hardware pins to control a BLDC
-		void begin(void);
-
-		//! \brief deactivates all outputs
-		void end(void);
 };
 
 /** @} */

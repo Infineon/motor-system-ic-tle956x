@@ -22,6 +22,16 @@
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
 
+/*! \brief SPI address commands */
+#define TLE9563_CMD_WRITE          	0x80
+#define TLE9563_CMD_READ          	0x00
+#define TLE9563_CMD_CLEAR          	0x80
+
+#define PWM_CTRL_DC_MASK			0x3FF0
+#define PWM_BNK_MODULE_1			0x0
+#define PWM_BNK_MODULE_2			0x1
+#define PWM_BNK_MODULE_3			0x2
+
 /**
  * @addtogroup tle9563api
  * @{
@@ -54,7 +64,7 @@ class Tle9563
 		/**
 		 * @brief set up the registers and initialize the TLE9563
 		 */
-		void 			config(void);
+		void 					config(void);
 
 		/**
 		 * @brief Set the Halfbridge object
@@ -67,7 +77,7 @@ class Tle9563
 		 * @param hb2 struct element with parameters described above for halfbridge 2
 		 * @param hb3 struct element with parameters described above for halfbridge 3
 		 */
-		void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
+		void 					setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
 
 		/**
 		 * @brief control the high side switches
@@ -77,21 +87,30 @@ class Tle9563
 		 * @param hss2 dutycycle for highsideswitch 1 (10-bit)
 		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
 		 */
-		void 			setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
+		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
 		
 		/**
 		 * @brief function only for debug purpose
 		 * 
 		 * @param array stores the status register values in this array
 		 */
-		void 			updateStatus(uint16_t *array);
+		void 					updateStatus(uint16_t *array);
 
-		virtual void 	begin() = 0;
-		virtual void 	end() = 0;
+		/**
+		 * @brief initalize GPIOs and PWM pins
+		 * 
+		 */
+		void 					begin();
 
-		HBconfig_t 		ActiveGround; 
-		HBconfig_t 		ActivePWM; 
-		HBconfig_t 		Floating; 
+		/**
+		 * @brief Deinitalize GPIOs and PWM pins
+		 * 
+		 */
+		void 					end();
+
+		HBconfig_t 				ActiveGround; 
+		HBconfig_t 				ActivePWM; 
+		HBconfig_t 				Floating; 
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
@@ -100,28 +119,26 @@ class Tle9563
 
 		/**
 		 * @brief disable the cyclic redundancy check of TLE9563
-		 *  Declared in TLE9563-ino.cpp
 		 */
-		virtual void 		SBC_CRC_Disable() = 0;
+		void 					SBC_CRC_Disable();
 
 		/**
 		 * @brief send SPI comands to the TLE9563
-		 * Declared in TLE9563-ino.cpp
 		 * If CRC is disabled, static pattern will be added automatically.
+		 * TODO: insert another layer below writeReg, so this function can be used for SPI as well as for CAN and Lin
 		 * 
 		 * @param addr addres of the register you want access (use the enum in TLE9563-reg.cpp)
 		 * @param data data you want to transmitt (16-bit)
 		 */
-		virtual void 		writeReg(uint8_t addr, uint16_t data) = 0;
+		void 					writeReg(uint8_t addr, uint16_t data);
 
 		/**
 		 * @brief read SPI commands from TLE9563
-		 * Declared in TLE9563-ino.cpp
 		 * 
 		 * @param addr 		addres of the register you want to read from (use the enum in TLE9563-reg.cpp)
 		 * @return uint16_t returned value of TLE9563 (16-bit)
 		 */
-		virtual uint16_t 	readReg(uint8_t addr) = 0;
+		uint16_t 				readReg(uint8_t addr);
 
 
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
