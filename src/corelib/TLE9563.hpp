@@ -54,6 +54,17 @@
 class Tle9563
 {
 	public:
+		//! \brief enum for the flags ( ! Values not yet correct ! )
+		enum DiagFlag
+		{
+			TLE_SPI_ERROR = 0x80,
+			TLE_LOAD_ERROR = 0x40,
+			TLE_UNDER_VOLTAGE = 0x20,
+			TLE_OVER_VOLTAGE = 0x10,
+			TLE_POWER_ON_RESET = 0x08,
+			TLE_TEMP_SHUTDOWN = 0x04,
+			TLE_TEMP_WARNING = 0x02
+		};
 
 		//! \brief standard constructor with default pin assignment
 		Tle9563();

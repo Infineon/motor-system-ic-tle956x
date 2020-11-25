@@ -44,6 +44,7 @@ class BLDCMcontrolIno: public  BLDCMcontrol
 		 * 
 		 */
 		BLDCMcontrolIno(void);
+
 };
 
 /** @} */

@@ -28,10 +28,12 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::bemfW = new GPIOIno(ARDUINO_UNO.BEMF_W_IO, INPUT, GPIOIno::POSITIVE );
 
 	BLDCMcontrol::hallA = new GPIOIno(ARDUINO_UNO.HALL_A, INPUT, GPIOIno::POSITIVE );
-	BLDCMcontrol::hallB = new GPIOIno(ARDUINO_UNO.HALL_A, INPUT, GPIOIno::POSITIVE );
-	BLDCMcontrol::hallC = new GPIOIno(ARDUINO_UNO.HALL_A, INPUT, GPIOIno::POSITIVE );
+	BLDCMcontrol::hallB = new GPIOIno(ARDUINO_UNO.HALL_B, INPUT, GPIOIno::POSITIVE );
+	BLDCMcontrol::hallC = new GPIOIno(ARDUINO_UNO.HALL_C, INPUT, GPIOIno::POSITIVE );
 
 	BLDCMcontrol::timer = new TimerIno();
+	
+	BLDCMcontrol::controller = new TLE9563Ino();
 }
 
 

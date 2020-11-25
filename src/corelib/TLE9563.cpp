@@ -10,8 +10,6 @@
  * SPDX-License-Identifier: MIT
  *
  */
-
-
 #include "TLE9563.hpp"
 
 Tle9563::Tle9563(void)
