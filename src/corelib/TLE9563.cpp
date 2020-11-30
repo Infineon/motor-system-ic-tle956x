@@ -93,7 +93,7 @@ void Tle9563::config(void)
 	 * 0 Supply status interrupt generation			enabled
 	 */
 	//							  FEDCBA9876543210
-	writeReg(REG_ADDR_INT_MASK, 0b0000000010010011);
+	writeReg(REG_ADDR_INT_MASK, 0b0000000010000000);
 
 	/**
 	 * 10 Selection of 3 or 6 PWM inputs			3 PWM

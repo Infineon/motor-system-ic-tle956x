@@ -260,7 +260,7 @@ uint8_t BLDCMcontrol::CommutateHallBLDC(uint8_t dutycycle, bool hallsensor)
    _Commutation++ ;
   if (_Commutation==6) _Commutation=0;
   UpdateHardware(_Commutation);
-  timer->delayMilli(100);
+  timer->delayMilli(200);
   if(hallsensor) return ReadHallSensor();
   else return 0;
 }

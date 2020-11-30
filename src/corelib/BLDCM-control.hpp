@@ -213,12 +213,12 @@ class BLDCMcontrol
          */
         uint8_t HallPattern[2][2][7] = {
             {
-                {9, 4,0,5,2,3,1},               /* Normal foreward */
-                {9, 1,3,2,5,0,4}                /* Normal backward */
+                {9, 2,0,1,4,3,5},               /* Normal foreward */
+                {9, 5,3,4,1,0,2}                /* Normal backward */
             },
             {
-                {9, 5,1,0,3,4,2},               /* Fast foreward */
-                {9, 0,2,1,4,5,3}                /* Fast backward */
+                {9, 3,1,2,5,4,0},               /* Fast foreward */
+                {9, 4,2,3,0,5,1}                /* Fast backward */
             }
         };
 

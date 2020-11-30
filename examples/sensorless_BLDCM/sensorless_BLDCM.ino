@@ -28,6 +28,7 @@ void setup()
 
   MyMotor.begin();
   MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
+  MyMotor.setBLDCspeed(DutyCycle, DIRECTION);
   MyMotor.MotorParam.mode = BLDCMcontrolIno::TLE_BEMF;
 }
 

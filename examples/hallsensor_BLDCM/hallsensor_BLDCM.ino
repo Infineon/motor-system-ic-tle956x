@@ -29,6 +29,7 @@ void setup()
 
   MyMotor.begin();
   MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
+  MyMotor.setBLDCspeed(DutyCycle, direction);
 
   // Set feedback mode to hall sensor
   MyMotor.MotorParam.mode = BLDCMcontrolIno::TLE_HALL;

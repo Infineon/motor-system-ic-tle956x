@@ -64,13 +64,13 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
         Serial.print(Counter);						// Print Step
         if(Counter < 10) Serial.print(" ");         //Align values
         Serial.print("          ");
-        Serial.print(_Commutation);			// Print Commutation
+        Serial.print(_Commutation);					// Print Commutation
         Serial.print("          ");	
         if(hallsensor == 1)
         {
-            Serial.print(Hallpattern);
+            Serial.print(Hallpattern);				// Print hall pattern decimal
             Serial.print("          ");
-			PrintBinary(3, Hallpattern);
+			PrintBinary(3, Hallpattern);			// Print hall pattern binary
 			Serial.println("");
         }
         else Serial.println(" / ");
