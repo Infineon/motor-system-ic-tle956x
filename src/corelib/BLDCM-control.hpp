@@ -14,6 +14,7 @@
 #ifndef BLDCMCONTROL_HPP_
 #define BLDCMCONTROL_HPP_
 
+#include <Arduino.h>
 #include "TLE9563.hpp"
 
 #include "../pal/timer.hpp"
@@ -25,11 +26,14 @@
 #include "../TLE9563-ino.hpp"
 #endif
 
-#define TIMEOUT		100		/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+// ================================== Defines ==================================================================================================
+#define TIMEOUT				100			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define PI_UPDATE_INTERVAL	100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low.
 
 /* Braking modes */
-#define PASSIVE		0
-#define ACTIVE		1
+#define PASSIVE				0
+#define ACTIVE				1
+// =============================================================================================================================================
 
 /**
  * @brief contains functions to control various types of BLDC motors using a TL9563 SBC
@@ -44,15 +48,27 @@ class BLDCMcontrol
 		/**
 		 * @brief enum for BLDC motor control modes
 		 */
-		enum MotorModes{
+		enum _MotorModes{
 			TLE_BEMF = 1,		/*Back Electromotive Force*/
 			TLE_HALL = 2,		/*Hall sensor position feedback*/
 			TLE_FOC  = 3		/*Field oriented control*/
 		};
+		enum _SetSpeedModes{
+			TLE_PERCENTAGE = 1,	/*Percentage*/
+			TLE_RPM = 2,		/*Rounds per Minute*/
+			TLE_POSITION  = 3	/*Position angle (future)*/
+		};
+		enum _ErrorMessages{
+			PARAMETER_MISSING = 1,
+			PARAMETER_OUT_OF_RANGE = 2
+		};
 
 		typedef struct{
-			MotorModes mode;
-
+			_MotorModes feedbackmode;
+			_SetSpeedModes speedmode;
+			uint8_t MotorPolepairs;
+			float PI_Reg_P = 0.01;
+			float PI_Reg_I = 0.01;
 		}BLDCParameter;
 
 		BLDCParameter MotorParam;
@@ -73,7 +89,7 @@ class BLDCMcontrol
 		 * @param MyParameters struct element with all necessary motor parameters.
 		 * @return uint8_t Error return code / status report
 		 */
-		uint8_t 				configBLDCshield(BLDCParameter MyParameters);
+		uint8_t 				configBLDCshield();
 
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
@@ -91,7 +107,21 @@ class BLDCMcontrol
 		 * 
 		 * @param dutycycle speed of the BLDCM (8-bit)
 		 */
-		void					setBLDCspeed(uint8_t dutycycle, bool direction, uint8_t fieldweakening = 0);
+		void					setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldweakening = 0);
+
+		/**
+		 * @brief do a blind commutation to start up the BLDC in BEMF mode
+		 * 
+		 */
+		void					StartBLDCM(void);
+
+		/**
+		 * @brief Stop a BLDC motor be either switching off all halfbridges or let the float (TODO)
+		 * 
+		 * @param brakemode PASSIVE or ACTIVE
+		 * @return uint8_t returns success or failure of stopping
+		 */
+		uint8_t					StopBLDCM(uint8_t brakemode);
 
 		/**
 		 * @brief initalize GPIOs and PWM pins
@@ -119,7 +149,13 @@ class BLDCMcontrol
 		 * @param hallsensor if hallsensor is available, set to one, else to zero
 		 */
 		void 					FindPolepairs(uint16_t delay, bool hallsensor);
-		
+
+		/**
+		 * @brief Print a debug message
+		 * 
+		 * @param msg hand over the error code
+		 */
+		void					PrintErrorMessage(_ErrorMessages msg);
 
 
 
@@ -138,21 +174,9 @@ class BLDCMcontrol
 		GPIO					*hallB;			//<! \brief Hall input B
 		GPIO					*hallC;			//<! \brief Hall input C
 
-		Timer    				*timer;     	//<! \brief timer for delay settings
+		Timer    				*timer;     	//<! \brief local timer for delay settings
+		Timer					*rpmtimer;		//<! \brief global timer that needs to run while other functions are executed
 
-		/**
-		 * @brief do a blind commutation to start up the BLDC in BEMF mode
-		 * 
-		 */
-		void					StartBLDCM(void);
-
-		/**
-		 * @brief Stop a BLDC motor be either switching off all halfbridges or let the float (TODO)
-		 * 
-		 * @param brakemode PASSIVE or ACTIVE
-		 * @return uint8_t returns success or failure of stopping
-		 */
-		uint8_t					StopBLDCM(uint8_t brakemode);
 
 		/**
 		 * @brief depending on the actual commutation state, wait for the next BEMF flag to commutate
@@ -178,6 +202,13 @@ class BLDCMcontrol
 		bool 					WaitForCommutation(void);
 
 		/**
+		 * @brief implement a PI regulator that sets the dutycycle in order to keep a desired RPM
+		 * 
+		 * @param desired_rpmSpeed 
+		 */
+		void    				PI_Regulator_DoWork(void);
+
+		/**
 		 * @brief Read the status of the three hallsensor pins and merge to a binary pattern
 		 * Bit 2 is hallA
 		 * Bit 1 is hallB
@@ -185,6 +216,8 @@ class BLDCMcontrol
 		 * @return uint8_t the merged pattern
 		 */
 		uint8_t 				ReadHallSensor(void);
+
+		uint8_t					ReadBEMFSensor(void);
 
 		/**
 		 * @brief only for FindPolepairs frontend function
@@ -223,12 +256,18 @@ class BLDCMcontrol
         };
 
 		uint8_t					_DutyCycle = 0;
+		uint16_t				_RefRPM = 0;
+		uint8_t					_MotorStartEnable = 0;
 		uint8_t					_Direction = 0;
 		uint8_t					_FieldWeakening = 0;
 		uint8_t					_LastBLDCspeed = 0;
 		uint8_t					_Commutation = 0;
 		uint8_t					_oldHall = 0;
 		uint8_t					_latestHall = 0;
+		uint16_t 				_StepCounter = 0;
+		unsigned long			_PI_Update_Timeout = 999999999;
+		float 					_PI_Integral = 0.0; 
+		float 					_NumberofSteps = 0;
 		//MotorModes				BLDCMotorMode = 0;
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================

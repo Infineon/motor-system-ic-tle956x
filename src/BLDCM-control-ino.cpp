@@ -32,6 +32,7 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::hallC = new GPIOIno(ARDUINO_UNO.HALL_C, INPUT, GPIOIno::POSITIVE );
 
 	BLDCMcontrol::timer = new TimerIno();
+	BLDCMcontrol::rpmtimer = new TimerIno();
 	
 	BLDCMcontrol::controller = new TLE9563Ino();
 }

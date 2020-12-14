@@ -27,6 +27,7 @@ BLDCMcontrol::BLDCMcontrol(void)
 	hallB = NULL;
 	hallC = NULL;
   timer = NULL;
+  rpmtimer = NULL;
 }
 
 BLDCMcontrol::~BLDCMcontrol(void)
@@ -41,6 +42,7 @@ BLDCMcontrol::~BLDCMcontrol(void)
 	hallB = NULL;
 	hallC = NULL;
   timer = NULL;
+  rpmtimer = NULL;
 }
 
 void BLDCMcontrol::begin(void)
@@ -64,6 +66,7 @@ void BLDCMcontrol::begin(void)
 	hallC->init();
 
 	timer->init();
+  rpmtimer->init();
 }
 
 void BLDCMcontrol::end(void)
@@ -81,30 +84,39 @@ void BLDCMcontrol::end(void)
 	hallC->deinit();
 
 	timer->stop();
+  rpmtimer->stop();
 }
 
 uint8_t BLDCMcontrol::serveBLDCshield(void)
 {
-  switch(MotorParam.mode)
+  if(_MotorStartEnable == 1)
   {
-    case TLE_BEMF:
-      DoBEMFCommutation();
-      return 1;
-    case TLE_HALL:
-      DoHALLCommutation();
-      return 1;
-    case TLE_FOC:
-      // Error: TLE_FOC not yet implemented
-      return 0;
-    default:
-      // Error: MotorMode not yet defined
-      return 0;
+    if(MotorParam.speedmode == TLE_RPM) PI_Regulator_DoWork();              // Set the Dutycycle within this function
+
+    switch(MotorParam.feedbackmode)
+    {
+      case TLE_BEMF:
+        DoBEMFCommutation();
+        return 1;
+      case TLE_HALL:
+        DoHALLCommutation();
+        return 1;
+      case TLE_FOC:
+        // Error: TLE_FOC not yet implemented
+        return 0;
+      default:
+        PrintErrorMessage(PARAMETER_MISSING); // Error: MotorMode not yet defined
+        return 0;
+    }
   }
 }
 
-uint8_t BLDCMcontrol::configBLDCshield(BLDCParameter MyParameters)
+uint8_t BLDCMcontrol::configBLDCshield()
 {
-  //BLDCMotorMode = MyParameters.mode;
+  // TODO: Do the whole TLE setting here
+
+  // Amount of steps for one full Revolution
+  _NumberofSteps = (float) MotorParam.MotorPolepairs * 6.0;
 }
 
 void BLDCMcontrol::setLED(uint16_t red, uint16_t green, uint16_t blue)
@@ -112,29 +124,65 @@ void BLDCMcontrol::setLED(uint16_t red, uint16_t green, uint16_t blue)
   controller->setHSS(green, red, blue);
 }
 
-void BLDCMcontrol::setBLDCspeed(uint8_t dutycycle, bool direction, uint8_t fieldweakening = 0)
+void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldweakening = 0)
 {
-  _DutyCycle = dutycycle;
+  switch(MotorParam.speedmode)
+  {
+    case TLE_PERCENTAGE:
+      speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+      if(speed > 255) _DutyCycle = 255;
+      else _DutyCycle = speed;
+
+      break;
+    case TLE_RPM:
+      _RefRPM = speed;
+      break;
+    case TLE_POSITION:
+      // something for FOC
+      break;
+    default:
+      PrintErrorMessage(PARAMETER_MISSING);
+      break;
+  }
   _Direction = direction;
   _FieldWeakening = fieldweakening;
 }
 
 void BLDCMcontrol::StartBLDCM(void)
 {
-  uint8_t dt_prev = _DutyCycle;
-  _DutyCycle = 80;
-  uint16_t i = 5000;
-  uint8_t CommStartup = 0;
-  while (i>1200)
+  if(MotorParam.feedbackmode == TLE_BEMF)
   {
-    timer->delayMicro(i);
-    _Commutation = CommStartup;
-    UpdateHardware(CommStartup);
-    CommStartup++;
-    if (CommStartup==6) CommStartup=0;
-    i=i-200;
+    uint8_t dt_prev = _DutyCycle;
+    _DutyCycle = 80;
+    uint16_t i = 5000;
+    uint8_t CommStartup = 0;
+    while (i>1200)
+    {
+      timer->delayMicro(i);
+      _Commutation = CommStartup;
+      UpdateHardware(CommStartup);
+      CommStartup++;
+      if (CommStartup==6) CommStartup=0;
+      i=i-200;
+    }
+    _DutyCycle = dt_prev;
   }
-   _DutyCycle = dt_prev;
+
+  else if(MotorParam.feedbackmode == TLE_HALL)
+  {
+    if(MotorParam.speedmode == TLE_RPM) _DutyCycle = 80; 
+    _oldHall = ReadHallSensor();
+    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
+  }
+
+  if(MotorParam.speedmode == TLE_RPM)
+  {
+    if(MotorParam.MotorPolepairs == 0) PrintErrorMessage(PARAMETER_MISSING);
+    rpmtimer->start();
+  }
+
+  _LastBLDCspeed = 1;
+  _MotorStartEnable = 1;            // Enable the use of serveBLDCshield()
 }
 
 uint8_t BLDCMcontrol::StopBLDCM(uint8_t brakemode)
@@ -147,14 +195,15 @@ uint8_t BLDCMcontrol::StopBLDCM(uint8_t brakemode)
   {
     controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround);
   }
+  _LastBLDCspeed = 0;
+  _MotorStartEnable = 0;        // Prohibit the use of serveBLDCshield()
 }
 
 uint8_t BLDCMcontrol::DoBEMFCommutation(void)
 {
-  if(_LastBLDCspeed == 0)
+  if(_LastBLDCspeed == 0)         // Fallback, if StartBLDC() was not called in main user code.
   {
     StartBLDCM();
-    _LastBLDCspeed = 1;
     return 1;
   }
 
@@ -204,29 +253,17 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
 
 uint8_t BLDCMcontrol::DoHALLCommutation(void)
 {
-  if(_DutyCycle > 10)
-    {
-      if(_LastBLDCspeed == 0)   //If motor is stopped, start it
-      {
-        _oldHall = ReadHallSensor();
-        UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
-        _LastBLDCspeed = 1;
-      }
-
-      else                      //If motor is running, wait for the next flag from hall sensor
-      {
-        if(WaitForCommutation())
-        {
-          _oldHall = _latestHall;
-          UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
-        }
-      }
-    }
-  else
+  if(_LastBLDCspeed == 0)         // Fallback, if StartBLDC() was not called in main user code.
   {
-    StopBLDCM(PASSIVE);
-    _LastBLDCspeed = 0;
-  } 
+    StartBLDCM();
+    return 1;
+  }                           
+                                //If motor is running, wait for the next flag from hall sensor
+  if(WaitForCommutation() )
+  {
+    _oldHall = _latestHall;
+    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
+  }
 }
 
 bool BLDCMcontrol::WaitForCommutation(void)
@@ -240,16 +277,50 @@ bool BLDCMcontrol::WaitForCommutation(void)
     else if( Elapsed > TIMEOUT)
     {
       StopBLDCM(PASSIVE);
-      _LastBLDCspeed = 0;
       return 0;
     }
   }
+}
+
+void BLDCMcontrol::PI_Regulator_DoWork()
+{
+  uint32_t Elapsed = 0;
+  rpmtimer->elapsed(Elapsed);
+  if (Elapsed > PI_UPDATE_INTERVAL)
+  {
+    float RPM = 0.0;
+    float steps = (float) _StepCounter;
+    // Formula for 100ms intervall: RPM = (Hallcounts / (6 * MotorPolepairs)) * 10 * 60
+    
+    //RPM = (steps/ _NumberofSteps) * 600.0;                 // Alternate function accurancy +-25 RPM
+    RPM = (steps/ _NumberofSteps) * (60000.0 / Elapsed);     // Very precise but needs more calc power
+
+    float Error = _RefRPM - RPM;
+    if(_DutyCycle < 240) _PI_Integral = _PI_Integral + Error;
+    float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
+    //Limit PWM
+    if (pwm > 240) pwm = 240;
+    if (pwm < 30) pwm = 30;
+    _DutyCycle = (uint8_t) pwm;    
+    _StepCounter = 0;
+
+    rpmtimer->start();
+  }
+   _StepCounter ++;
 }
 
 uint8_t BLDCMcontrol::ReadHallSensor(void)
 {
    uint8_t hallpattern = 0;
    hallpattern = ( ((hallA->read())<<2) | ((hallB->read())<<1) | (hallC->read()) );
+   _latestHall = hallpattern;
+   return hallpattern;
+}
+
+uint8_t BLDCMcontrol::ReadBEMFSensor(void)
+{
+   uint8_t hallpattern = 0;
+   hallpattern = ( ((bemfU->read())<<2) | ((bemfV->read())<<1) | (bemfW->read()) );
    _latestHall = hallpattern;
    return hallpattern;
 }

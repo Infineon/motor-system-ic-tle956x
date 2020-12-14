@@ -13,7 +13,7 @@
 #include <BLDCM-control-ino.hpp>
 #include <SPI.h>
 
-uint8_t DutyCycle = 80;
+uint16_t speed = 400;
 uint8_t direction = 0;
 uint8_t weakening = 0;
 
@@ -29,12 +29,17 @@ void setup()
 
   MyMotor.begin();
   MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
-  MyMotor.setBLDCspeed(DutyCycle, direction);
 
-  // Set feedback mode to hall sensor
-  MyMotor.MotorParam.mode = BLDCMcontrolIno::TLE_HALL;
+  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::TLE_HALL;             // Set feedback mode to hall sensor
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::TLE_PERCENTAGE;   // Set speed mode to Dutycycle
+  MyMotor.MotorParam.MotorPolepairs = 4;
+
+  MyMotor.configBLDCshield();
   
   Serial.println("Init ready");
+
+   MyMotor.setBLDCspeed(speed, direction);
+   MyMotor.StartBLDCM();
 }
 
 void loop()
@@ -42,14 +47,14 @@ void loop()
   if (Serial.available() > 0)
   {
     uint8_t in = Serial.read();
-    if(in == '+') DutyCycle += 5;          // Adapt the speed with keyboard input in the serial monitor
-    if(in == '-') DutyCycle -= 5;
+    if(in == '+') speed += 100;          // Adapt the speed with keyboard input in the serial monitor
+    if(in == '-') speed -= 100;
     if(in == 'd') direction = 0;          // Adapt the speed with keyboard input in the serial monitor
     if(in == 'e') direction = 1;
     if(in == 's') weakening = 0;          // Adapt the speed with keyboard input in the serial monitor
     if(in == 'w') weakening = 1;
-    Serial.println(DutyCycle);
-    MyMotor.setBLDCspeed(DutyCycle, direction, weakening);
+    Serial.println(speed);
+    MyMotor.setBLDCspeed(speed, direction, weakening);
   }
 
   MyMotor.serveBLDCshield();

@@ -105,3 +105,18 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
 	timer->delayMilli(3000);
     Counter = 0;
 }
+
+void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
+{
+    switch(msg)
+    {
+        case PARAMETER_MISSING:
+            Serial.println("====> Error: For this operation mode one or more motor parameter(s) is missing! <====");
+            break;
+        case PARAMETER_OUT_OF_RANGE:
+            break;
+        default:
+            break;
+    }
+    setLED(50,0,0);      // Set onboard RGB-LED to red
+}

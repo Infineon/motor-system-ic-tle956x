@@ -7,7 +7,7 @@
       "url":"https://github.com/Infineon/bldc-motor-control-tle956x",
       "branch":"master"
    },
-   "version":"0.0.0-alpha",
+   "version":"0.0.1",
    "license":"MIT",
    "frameworks":"arduino",
    "platforms":[  
