@@ -209,45 +209,34 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
 
   switch (_Commutation) {
     case 0:
-      if (bemfW->read()==1) {
-        _Commutation = 1;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfW->read()==0);
+      _Commutation = 1;
       break;
     case 1:
-      if (bemfV->read()==0) { 
-        _Commutation=2;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfV->read()==1);
+      _Commutation=2;
       break;
     case 2:
-      if (bemfU->read()==1) { 
-        _Commutation=3;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfU->read()==0);
+      _Commutation=3;
       break;
     case 3:
-      if (bemfW->read()==0) { 
-        _Commutation=4;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfW->read()==1);
+      _Commutation=4;
       break;
     case 4:
-      if (bemfV->read()==1) { 
-        _Commutation=5;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfV->read()==0);
+      _Commutation=5;
       break;
     case 5:
-      if (bemfU->read()==0) { 
-        _Commutation=0;
-        UpdateHardware(_Commutation);
-      }
+      while(bemfU->read()==1);
+      _Commutation=0;
       break;
     default:
     break;
   }
 
+  UpdateHardware(_Commutation);
   return 2;
 }
 
@@ -299,8 +288,8 @@ void BLDCMcontrol::PI_Regulator_DoWork()
     if(_DutyCycle < 240) _PI_Integral = _PI_Integral + Error;
     float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
     //Limit PWM
-    if (pwm > 240) pwm = 240;
-    if (pwm < 30) pwm = 30;
+    if (pwm > 255) pwm = 255;
+    if (pwm < 10) pwm = 10;
     _DutyCycle = (uint8_t) pwm;    
     _StepCounter = 0;
 

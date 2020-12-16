@@ -18,11 +18,17 @@ This evaluation board comes with one BLDC Motor Control IC of TLE9563-3QX. The p
 * Onboard Back-EMF detection circuit and connector for HALL-sensor
 
 ## Supported Microcontroller Boards
-|               | BLDC BEMF | BLDC Hall |
-|       ---|---|---|
-|**Arduino UNO**| /     | /   |
-|**XMC4700**    | /     | /   |
+|               | BLDC BEMF | BLDC Hall | BLDC FOC |
+|       ---|---|---|---|
+|**Arduino UNO**	| Yes   | Yes   | No	|
+|**Arduino Mega**	| /		| /		| /		|
+|**XMC4700**    	| /     | /   	| /		|
 
+## Library Structure (for Wiki)
+The Lib contains 3 parts:
+* BLDC motor control functions (almost done, BEMF pattern missing)
+* TLE956x basis lib for register configuration (Bitfield configuration missing)
+* User frontend for debug output and error messages (PAL layer missing, error codes need to be defined)
 
 ## Usage
 Please follow the example sketches in the /examples directory in this library to learn more about the usage of the library.

@@ -82,20 +82,6 @@ void Tle9563::config(void)
 	writeReg(REG_ADDR_HS_VDS, 0b0000000110110110);
 
 	/**
-	 * 8 Periodical INTN generation					disabled
-	 * 7 Disable Watchdog in SW Dev mode			disabled
-	 * 6 Watchdog failure in SW Dev mode			disabled
-	 * 5 SPI and CRC interrupt generation			disabled
-	 * 4 Bridge Driver Interrupt generation			enabled
-	 * 3 High side interrupt generation				enabled
-	 * 2 BUS interrupt generation					enabled
-	 * 1 Temperature Interrupt generation			enabled
-	 * 0 Supply status interrupt generation			enabled
-	 */
-	//							  FEDCBA9876543210
-	writeReg(REG_ADDR_INT_MASK, 0b0000000010000000);
-
-	/**
 	 * 10 Selection of 3 or 6 PWM inputs			3 PWM
 	 * 9 Capacitance connected to CSA out			400pF
 	 * 8 Direction of CSA							Bi
@@ -194,6 +180,16 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_2|((hss2<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 2
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_3|((hss3<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 3
   	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
+}
+
+void Tle9563::configInterruptMask(void)
+{
+	uint16_t tosend = 	WD_SDM_DISABLE + 
+						BD_STAT + 
+						TEMP_STAT + 
+						SUPPLY_STAT;
+						
+	writeReg(REG_ADDR_INT_MASK, tosend);
 }
 
 void Tle9563::updateStatus(uint16_t *array)

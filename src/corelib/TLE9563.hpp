@@ -73,7 +73,7 @@ class Tle9563
 		~Tle9563();
 
 		/**
-		 * @brief set up the registers and initialize the TLE9563
+		 * @brief set up all necessary registers and initialize the TLE9563
 		 */
 		void 					config(void);
 
@@ -99,7 +99,13 @@ class Tle9563
 		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
 		 */
 		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
-		
+
+		/**
+		 * @brief set the Interrupt Mask to select which events should cause a hardware pin interrupt generation
+		 * 
+		 */
+		void 					configInterruptMask(void);
+
 		/**
 		 * @brief function only for debug purpose
 		 * 

@@ -35,5 +35,5 @@ void setup()
 
 void loop()
 {
-	MyMotor.FindPolepairs(500, 1);
+	MyMotor.FindPolepairs(300, 1);
 }

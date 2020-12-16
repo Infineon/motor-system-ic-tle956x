@@ -16,7 +16,7 @@
 // TODO: implement logger-PAL for Platform abstraction
 #include <Arduino.h>
 
-#define SINGLE_STEP_DC 50
+#define SINGLE_STEP_DC 30
 
 void BLDCMcontrol::PrintBinary(uint8_t digits, uint16_t number)
 {
@@ -46,7 +46,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     while(Serial.available() == 0);
     in = Serial.read();
     Hallpattern = CommutateHallBLDC(SINGLE_STEP_DC, hallsensor);     //go in initial position
-    timer->delayMilli(1000);
+    timer->delayMilli(800);
     StopBLDCM(PASSIVE);
 
     Serial.println(" ");

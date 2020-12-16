@@ -18,6 +18,19 @@
 #include "TLE9563.hpp"
 
 //! \brief enum for the SPI control registers in a TLE9563, page 173 in datasheet
+
+/*
+		uint16_t CtrlRegisters[41][2]=
+		{
+			{0x01, 0x00},
+			{0x02, 0x00},
+			{0x03, 0x00},
+			{0x04, 0x00},
+			{0x05, 0x00},
+			{0x06, 0x00} ....
+		};
+		*/
+
 		enum CtrlRegisters
 		{
 			/* SPI control registers, device control registers*/
@@ -95,6 +108,25 @@
 			/* SPI status information registers, Family and product information register */
 			REG_ADDR_FAM_PROD_STAT		= (0x70)        /**< Family and Product Identification Register */
 		};
+
+/*============================================================================================================================================*/
+/*====================================== Bit field enums =====================================================================================*/
+/*============================================================================================================================================*/
+		enum Int_Mask
+		{
+				SUPPLY_STAT				= (0x01),		/**< Supply status interrupt generation */
+				TEMP_STAT				= (0x02),		/**< Temperature Interrupt generation */
+				BUS_STAT				= (0x04),		/**< BUS interrupt generation */
+				HS_STAT					= (0x08),		/**< High side interrupt generation */
+				BD_STAT					= (0x10),		/**< Bridge Driver Interrupt generation */
+				SPI_CRC_FAIL			= (0x20),		/**< SPI and CRC interrupt generation */
+				WD_SDM					= (0x40),		/**< Watchdog failure in SW Dev mode */
+				WD_SDM_DISABLE			= (0x80),		/**< Disable Watchdog in SW Dev mode */
+				INTN_CYC_EN				= (0x100)		/**< Periodical INTN generation */
+		};
+
+
+
 /** @} */
 
 #endif /** TLE9563_REG_HPP_ **/

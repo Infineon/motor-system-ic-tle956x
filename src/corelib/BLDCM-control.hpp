@@ -66,7 +66,7 @@ class BLDCMcontrol
 		typedef struct{
 			_MotorModes feedbackmode;
 			_SetSpeedModes speedmode;
-			uint8_t MotorPolepairs;
+			uint8_t MotorPolepairs = 0;
 			float PI_Reg_P = 0.01;
 			float PI_Reg_I = 0.01;
 		}BLDCParameter;

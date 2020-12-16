@@ -31,15 +31,15 @@ void setup()
   MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
 
   MyMotor.MotorParam.feedbackmode = BLDCMcontrol::TLE_HALL;             // Set feedback mode to hall sensor
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::TLE_PERCENTAGE;   // Set speed mode to Dutycycle
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::TLE_PERCENTAGE;          // Set speed mode to Dutycycle
   MyMotor.MotorParam.MotorPolepairs = 4;
 
   MyMotor.configBLDCshield();
   
   Serial.println("Init ready");
 
-   MyMotor.setBLDCspeed(speed, direction);
-   MyMotor.StartBLDCM();
+  MyMotor.setBLDCspeed(speed, direction);
+  MyMotor.StartBLDCM();
 }
 
 void loop()
@@ -49,9 +49,9 @@ void loop()
     uint8_t in = Serial.read();
     if(in == '+') speed += 100;          // Adapt the speed with keyboard input in the serial monitor
     if(in == '-') speed -= 100;
-    if(in == 'd') direction = 0;          // Adapt the speed with keyboard input in the serial monitor
+    if(in == 'd') direction = 0;
     if(in == 'e') direction = 1;
-    if(in == 's') weakening = 0;          // Adapt the speed with keyboard input in the serial monitor
+    if(in == 's') weakening = 0;
     if(in == 'w') weakening = 1;
     Serial.println(speed);
     MyMotor.setBLDCspeed(speed, direction, weakening);
