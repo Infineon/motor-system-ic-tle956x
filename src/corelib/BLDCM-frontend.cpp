@@ -12,11 +12,13 @@
  */
 
 #include "BLDCM-control.hpp"
+#include "TLE9563.hpp"
 
 // TODO: implement logger-PAL for Platform abstraction
 #include <Arduino.h>
 
-#define SINGLE_STEP_DC 30
+#define SINGLE_STEP_DC          30
+#define DETAILED_ERROR_REPORT 	1
 
 void BLDCMcontrol::PrintBinary(uint8_t digits, uint16_t number)
 {
@@ -118,5 +120,53 @@ void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
         default:
             break;
     }
+    setLED(50,0,0);      // Set onboard RGB-LED to red
+}
+
+void BLDCMcontrol::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent)
+{
+    if(msg & controller->TLE_SPI_ERROR)
+    {
+        Serial.println("===> Error: CRC / SPI-Failure <===");
+    }
+    else if(msg & controller->TLE_LOAD_ERROR)
+    {
+        Serial.println("===> Error: Open-Load detected <===");
+    }
+    else if(msg & controller->TLE_UNDER_VOLTAGE)
+    {
+        Serial.println("===> Error: Undervoltage detected! Check your voltage supply <===");
+    }
+    else if(msg & controller->TLE_OVER_VOLTAGE)
+    {
+        Serial.println("===> Error: Overvoltage detected! Check your voltage supply <====");
+    }
+    else if(msg & controller->TLE_POWER_ON_RESET)
+    {
+        Serial.println("===> Power on reset detected! <===");
+    }
+    else if(msg & controller->TLE_TEMP_SHUTDOWN)
+    {
+        Serial.println("===> Error: Temperature shutdown <===");
+    }
+    else if(msg & controller->TLE_OVERCURRENT)
+    {
+        Serial.println("===> Error: Overcurrent detected! <===");
+    }
+    else if(msg & controller->TLE_SHORT_CIRCUIT)
+    {
+        Serial.println("===> Error: Short circuit detected! <===");
+    }
+
+    if(DETAILED_ERROR_REPORT)
+    {
+        Serial.print("Reg: 0x");
+        //PrintBinary(16, (address>>16) & 0xFFFF);
+        Serial.print(RegAddress, HEX);
+        Serial.print("  Content: ");
+        PrintBinary(16, RegContent);
+        Serial.println("");
+    }
+
     setLED(50,0,0);      // Set onboard RGB-LED to red
 }

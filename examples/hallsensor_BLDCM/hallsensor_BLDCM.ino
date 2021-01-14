@@ -27,11 +27,14 @@ void setup()
   Serial.print(" Mode: ");
   Serial.println("hall sensor");
 
-  MyMotor.begin();
-  MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
+  // Enable GPIO interrupt for pin 2
+  attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);                   // Set up a GPIO interrupt routine for error handling
 
-  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::TLE_HALL;             // Set feedback mode to hall sensor
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::TLE_PERCENTAGE;          // Set speed mode to Dutycycle
+  MyMotor.begin();
+  MyMotor.setLED(0,20,0);                                                // Set onboard RGB-LED to low-bright green.
+
+  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;             // Set feedback mode to hall sensor
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;          // Set speed mode to Dutycycle
   MyMotor.MotorParam.MotorPolepairs = 4;
 
   MyMotor.configBLDCshield();
@@ -58,5 +61,11 @@ void loop()
   }
 
   MyMotor.serveBLDCshield();
+  MyMotor.checkBLDCshield();           // Check, if interrupt flag was set and read Status register of TLE
 
+}
+
+void TLEinterrupt()
+{
+  MyMotor.interrupt_status_changed = 1;
 }

@@ -184,12 +184,68 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 
 void Tle9563::configInterruptMask(void)
 {
-	uint16_t tosend = 	WD_SDM_DISABLE + 
-						BD_STAT + 
-						TEMP_STAT + 
-						SUPPLY_STAT;
+	uint16_t tosend = 	WD_SDM_DISABLE | BD_STAT | HS_STAT | TEMP_STAT | SUPPLY_STAT;
 						
 	writeReg(REG_ADDR_INT_MASK, tosend);
+}
+
+uint8_t Tle9563::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_SUP_STAT);
+	writeReg(REG_ADDR_SUP_STAT, 0);
+	RegAddress = REG_ADDR_SUP_STAT;
+	RegContent = input;
+	if((input & 0x1000) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection (chargepump)
+	else if((input & 0x0D55) > 0) ErrorCode |= TLE_UNDER_VOLTAGE;		// undervoltage detection
+	else if((input & 0x02A2) > 0) ErrorCode |= TLE_OVER_VOLTAGE;		// overvoltage detection
+	else if((input & 0x0008) > 0) ErrorCode |= TLE_SHORT_CIRCUIT;		// short circuit detection
+	else if((input & 0x8000) > 0) ErrorCode |= TLE_POWER_ON_RESET;		// Power-On reset detection
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_THERM_STAT);
+	writeReg(REG_ADDR_THERM_STAT, 0);
+	RegAddress = REG_ADDR_THERM_STAT;
+	RegContent = input;
+	if((input & 0x000E) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection
+	else if((input & 0x0001) > 0) ErrorCode |= TLE_TEMP_SHUTDOWN;		// temperature warning
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_HS_OL_OC_OT_STAT);
+	writeReg(REG_ADDR_HS_OL_OC_OT_STAT, 0);
+	RegAddress = REG_ADDR_HS_OL_OC_OT_STAT;
+	RegContent = input;
+	if((input & 0x1C00) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 		// overtemperature detection
+	else if((input & 0x00E0) > 0) ErrorCode |= TLE_LOAD_ERROR;		// open load detection
+	else if((input & 0x0007) > 0) ErrorCode |= TLE_OVERCURRENT;		// overcurrent detection
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_DEV_STAT);
+	writeReg(REG_ADDR_DEV_STAT, 0);
+	RegAddress = REG_ADDR_DEV_STAT;
+	RegContent = input;
+	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
+
+	return ErrorCode;
 }
 
 void Tle9563::updateStatus(uint16_t *array)
@@ -197,6 +253,5 @@ void Tle9563::updateStatus(uint16_t *array)
 	array[0] = readReg(REG_ADDR_SUP_STAT);
 	writeReg(REG_ADDR_SUP_STAT, 0);
 	array[1] = readReg(REG_ADDR_THERM_STAT);
-	writeReg(REG_ADDR_THERM_STAT, 0);
 	
 }

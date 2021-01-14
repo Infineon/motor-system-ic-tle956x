@@ -27,12 +27,13 @@
 #endif
 
 // ================================== Defines ==================================================================================================
-#define TIMEOUT				100			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
-#define PI_UPDATE_INTERVAL	100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low.
+#define TIMEOUT					100			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define PI_UPDATE_INTERVAL		100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low.
+
 
 /* Braking modes */
-#define PASSIVE				0
-#define ACTIVE				1
+#define PASSIVE					0
+#define ACTIVE					1
 // =============================================================================================================================================
 
 /**
@@ -49,14 +50,14 @@ class BLDCMcontrol
 		 * @brief enum for BLDC motor control modes
 		 */
 		enum _MotorModes{
-			TLE_BEMF = 1,		/*Back Electromotive Force*/
-			TLE_HALL = 2,		/*Hall sensor position feedback*/
-			TLE_FOC  = 3		/*Field oriented control*/
+			BLDC_BEMF = 1,		/*Back Electromotive Force*/
+			BLDC_HALL = 2,		/*Hall sensor position feedback*/
+			BLDC_FOC  = 3		/*Field oriented control*/
 		};
 		enum _SetSpeedModes{
-			TLE_PERCENTAGE = 1,	/*Percentage*/
-			TLE_RPM = 2,		/*Rounds per Minute*/
-			TLE_POSITION  = 3	/*Position angle (future)*/
+			BLDC_PERCENTAGE = 1,	/*Percentage*/
+			BLDC_RPM = 2,		/*Rounds per Minute*/
+			BLDC_POSITION  = 3	/*Position angle (future)*/
 		};
 		enum _ErrorMessages{
 			PARAMETER_MISSING = 1,
@@ -72,6 +73,7 @@ class BLDCMcontrol
 		}BLDCParameter;
 
 		BLDCParameter MotorParam;
+		volatile uint8_t interrupt_status_changed = 0;
 
 		BLDCMcontrol(void);
 		~BLDCMcontrol(void);
@@ -82,6 +84,14 @@ class BLDCMcontrol
 		 * @return uint8_t Error return code / status report
 		 */
 		uint8_t					serveBLDCshield(void);
+
+		/**
+		 * @brief check is status information is available
+		 * If information is available, it will be printed automatically by the frontend.
+		 * @param request select the registers/information that you want to observe
+		 * @return uint8_t uint8_t Error return code / status report
+		 */
+		uint8_t					checkBLDCshield();
 
 		/**
 		 * @brief hand over the configuration parameters like motor Mode, etc
@@ -156,6 +166,8 @@ class BLDCMcontrol
 		 * @param msg hand over the error code
 		 */
 		void					PrintErrorMessage(_ErrorMessages msg);
+
+		void					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 
 
 

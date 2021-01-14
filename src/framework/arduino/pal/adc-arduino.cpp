@@ -155,9 +155,14 @@ ADCIno::Error_t ADCIno::setWriteResolution(uint8_t resolution)
    PWM frequency divisors. His post can be viewed at:
      https://forum.arduino.cc/index.php?topic=16612#msg121031
  */
-ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t divisor)
+ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t frequency)
 {
-    byte mode;
+  uint8_t mode, divisor;
+  divisor = frequency;    // abuse the frequency parameter to make the handling easier at the moment
+/*
+  if(30000 < frequency) divisor = 1;
+  else if (15000 < frequency <= 30000) divisor = 2;
+*/
     if (pin == 5 || pin == 6 || pin == 9 || pin == 10) {
         switch (divisor) {
         case 1: mode = 0x01; break;
@@ -208,7 +213,7 @@ uint16_t ADCIno::ADCRead()
  * 
  * This functions writes the given value to the analog pin
  * 
- * @param[in] value Value to write 
+ * @param[in] value PWM dutycycle to write
  * @return ADCIno::Error_t 
  */
 ADCIno::Error_t ADCIno::ADCWrite(uint8_t value)

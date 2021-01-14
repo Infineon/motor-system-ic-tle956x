@@ -91,23 +91,42 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
 {
   if(_MotorStartEnable == 1)
   {
-    if(MotorParam.speedmode == TLE_RPM) PI_Regulator_DoWork();              // Set the Dutycycle within this function
+    if(MotorParam.speedmode == BLDC_RPM) PI_Regulator_DoWork();              // Set the Dutycycle within this function
 
     switch(MotorParam.feedbackmode)
     {
-      case TLE_BEMF:
+      case BLDC_BEMF:
         DoBEMFCommutation();
         return 1;
-      case TLE_HALL:
+      case BLDC_HALL:
         DoHALLCommutation();
         return 1;
-      case TLE_FOC:
-        // Error: TLE_FOC not yet implemented
+      case BLDC_FOC:
+        // Error: BLDC_FOC not yet implemented
         return 0;
       default:
         PrintErrorMessage(PARAMETER_MISSING); // Error: MotorMode not yet defined
         return 0;
     }
+  }
+}
+
+uint8_t BLDCMcontrol::checkBLDCshield()
+{
+  if(interrupt_status_changed)
+  {
+    uint8_t ErrorCode = 0;
+    uint16_t RegAddress = 0;
+    uint16_t RegContent = 0;
+    ErrorCode = controller->checkStatSUP(RegAddress, RegContent);
+    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    ErrorCode = controller->checkStatTHERM(RegAddress, RegContent);
+    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    ErrorCode = controller->checkStatHSS(RegAddress, RegContent);
+    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    ErrorCode = controller->checkStatDEV(RegAddress, RegContent);
+    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    interrupt_status_changed = 0;
   }
 }
 
@@ -117,6 +136,7 @@ uint8_t BLDCMcontrol::configBLDCshield()
 
   // Amount of steps for one full Revolution
   _NumberofSteps = (float) MotorParam.MotorPolepairs * 6.0;
+  controller->configInterruptMask();
 }
 
 void BLDCMcontrol::setLED(uint16_t red, uint16_t green, uint16_t blue)
@@ -128,16 +148,16 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
 {
   switch(MotorParam.speedmode)
   {
-    case TLE_PERCENTAGE:
+    case BLDC_PERCENTAGE:
       speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
       if(speed > 255) _DutyCycle = 255;
       else _DutyCycle = speed;
 
       break;
-    case TLE_RPM:
+    case BLDC_RPM:
       _RefRPM = speed;
       break;
-    case TLE_POSITION:
+    case BLDC_POSITION:
       // something for FOC
       break;
     default:
@@ -150,7 +170,7 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
 
 void BLDCMcontrol::StartBLDCM(void)
 {
-  if(MotorParam.feedbackmode == TLE_BEMF)
+  if(MotorParam.feedbackmode == BLDC_BEMF)
   {
     uint8_t dt_prev = _DutyCycle;
     _DutyCycle = 80;
@@ -168,14 +188,14 @@ void BLDCMcontrol::StartBLDCM(void)
     _DutyCycle = dt_prev;
   }
 
-  else if(MotorParam.feedbackmode == TLE_HALL)
+  else if(MotorParam.feedbackmode == BLDC_HALL)
   {
-    if(MotorParam.speedmode == TLE_RPM) _DutyCycle = 80; 
+    if(MotorParam.speedmode == BLDC_RPM) _DutyCycle = 80; 
     _oldHall = ReadHallSensor();
     UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
   }
 
-  if(MotorParam.speedmode == TLE_RPM)
+  if(MotorParam.speedmode == BLDC_RPM)
   {
     if(MotorParam.MotorPolepairs == 0) PrintErrorMessage(PARAMETER_MISSING);
     rpmtimer->start();
