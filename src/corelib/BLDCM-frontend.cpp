@@ -16,6 +16,7 @@
 
 // TODO: implement logger-PAL for Platform abstraction
 #include <Arduino.h>
+#include "BLDCM-logger.hpp"
 
 #define SINGLE_STEP_DC          30
 #define DETAILED_ERROR_REPORT 	1
@@ -86,6 +87,8 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     if((Counter % 2) == 1)
     {
         Serial.println("Please try again, it must be a even number, when you stop the motor");
+        // BLDCM_APP_LOG("Please try again, it must be a even number, when you stop the motor\n");
+        // tle9563_log.print("asdfasdf %u", value );
     }
     else if((Counter % 6) > 0)
     {
@@ -96,6 +99,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
         Magnetpolepairs = Counter/6;
         Magnetpoles = Magnetpolepairs * 2;
         Serial.print("Your motor has ");
+        // TLE9563_LOG_MSG_VAL("Your motor has  %u", Magnetpolepairs);
         Serial.print(Magnetpolepairs);
         Serial.print(" polepairs (equal to ");
         Serial.print(Magnetpoles);
