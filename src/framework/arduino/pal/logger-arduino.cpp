@@ -15,6 +15,7 @@
 #if (TLE9563_LOGGER_ENABLED == 1)
 
 #include <Arduino.h>
+#include "../../../corelib/BLDCM-logger.hpp"
 
 /**
  * @brief Logger Arduino PAL constructor
@@ -39,9 +40,9 @@ LoggerIno::~LoggerIno()
  * @return      Logger PAL error code
  * @retval      OK always
  */
-Error_t  LoggerIno::init()
+LoggerPAL::Error_t  LoggerIno::init()
 {
-  return OK;
+  return LoggerPAL::Error_t::OK;
 }
 
 /**
@@ -49,9 +50,9 @@ Error_t  LoggerIno::init()
  * @return      Logger PAL error code
  * @retval      OK always
  */
-Error_t   LoggerIno::deinit()
+LoggerPAL::Error_t   LoggerIno::deinit()
 {
-  return OK;
+  return LoggerPAL::Error_t::OK;
 } 
 
 /**
@@ -61,14 +62,14 @@ Error_t   LoggerIno::deinit()
  * @return      Logger PAL error code
  * @retval      OK always
  */
-Error_t   LoggerIno::write(const uint8_t * log_data, uint32_t length)
+LoggerPAL::Error_t   LoggerIno::write(const uint8_t * log_data, uint32_t length)
 {
   String str = (char*)log_data;
 
   for(uint32_t i=0; i< length; i++) {
     Serial.print(str.charAt(i));
   }
-  return OK;
+  return LoggerPAL::Error_t::OK;
 }
 
 /**

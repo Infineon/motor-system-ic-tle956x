@@ -10,7 +10,7 @@
 #ifndef TLE9563_PAL_LOGGER_HPP_
 #define TLE9563_PAL_LOGGER_HPP_
 
-#include "tle9563-conf.hpp"
+#include "../config/tle9563-conf.hpp"
 
 #if (TLE9563_LOGGER_ENABLED == 1)
 

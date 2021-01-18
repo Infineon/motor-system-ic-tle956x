@@ -10,11 +10,11 @@
 #ifndef TLE9563_PAL_LOGGER_INO_H_
 #define TLE9563_PAL_LOGGER_INO_H_
 
-#include "tle9563-conf.hpp"
+#include "../../../config/tle9563-conf.hpp"
 
 #if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
 
-#include "logger.hpp"
+#include "../../../pal/logger.hpp"
 
 #if (TLE9563_LOGGER_ENABLED == 1)
 

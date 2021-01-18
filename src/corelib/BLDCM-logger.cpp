@@ -9,21 +9,14 @@
 
 #include "BLDCM-logger.hpp"
 
-#if (PAS_CO2_LOGGER_ENABLED == 1)
+#if (TLE9563_LOGGER_ENABLED == 1)
 
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
 
-using namespace pasco2;
-
 #define LOGGER_NEW_LINE_CHAR          0x0D, 0x0A
 #define LOGGER_MAX_WRITE_BUFF         400
-
-Logger::Logger()
-{
-    logpal  = NULL;
-}
 
 Logger::~Logger()
 {
@@ -90,7 +83,7 @@ void Logger::printfModule(const char * format,
             color, 
             module, 
             temp_buffer, 
-            PAS_CO2_LOGGER_COLOR_DEFAULT);
+            TLE9563_LOGGER_COLOR_DEFAULT);
     logpal->write((const uint8_t *)color_buffer, strlen(color_buffer));
     logpal->write(new_line_characters, 2);
 
@@ -119,4 +112,4 @@ void Logger::printModuleHex(const uint8_t  * vector,
     printfModule(temp_buffer, module, color);
 }
 
-#endif /* PAS_CO2_LOGGER_ENABLED */
+#endif /* TLE9563_LOGGER_ENABLED */
