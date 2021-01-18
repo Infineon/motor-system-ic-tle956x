@@ -21,6 +21,26 @@
 #define TLE9563_FRAMEWORK    TLE9563_FRMWK_ARDUINO
 #endif
 
+/**
+ * @brief Logger enable
+ */
+
+#ifndef TLE9563_LOGGER_ENABLED
+#define TLE9563_LOGGER_ENABLED      1           /**< (1) Enabled, (0) Disabled */
+#endif
+
+/**
+ * @brief Enable for each module logger
+ */
+
+#if     (TLE9563_LOGGER_ENABLED == 1)
+
+#define TLE9563_REG_LOGGER_ENABLED  1           /**< Register module */
+#define TLE9563_APP_LOGGER_ENABLED  1           /**< Application level module */
+
+#endif 
+
+
 #include "tle9563-conf-dfl.hpp"
 /** @} */
 

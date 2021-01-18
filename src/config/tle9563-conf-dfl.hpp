@@ -18,6 +18,12 @@
 #ifndef TLE9563_FRAMEWORK
 #error  'TLE9563 error framework undefined'    /**< TLE9563 framework must be defined in conf. or at compilation */
 #endif
+
+#ifndef TLE9563_LOGGER_ENABLED
+#define TLE9563_LOGGER_ENABLED      0               
+
+#endif
+
 /** @} */
 
 #endif /** TLE9563_CONF_DFL_HPP_ **/
