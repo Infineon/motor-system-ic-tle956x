@@ -161,7 +161,6 @@ void BLDCMcontrol::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint1
     if(DETAILED_ERROR_REPORT)
     {
         Serial.print("Reg: 0x");
-        //PrintBinary(16, (address>>16) & 0xFFFF);
         Serial.print(RegAddress, HEX);
         Serial.print("  Content: ");
         PrintBinary(16, RegContent);

@@ -26,9 +26,9 @@ This evaluation board comes with one BLDC Motor Control IC of TLE9563-3QX. The p
 
 ## Library Structure (for Wiki)
 The Lib contains 3 parts:
-* BLDC motor control functions (almost done, BEMF pattern missing)
+* BLDC motor control functions (almost done)
 * TLE956x basis lib for register configuration (Bitfield configuration missing)
-* User frontend for debug output and error messages (PAL layer missing, error codes need to be defined)
+* User frontend for debug output and error messages (PAL layer missing)
 
 ## Usage
 Please follow the example sketches in the /examples directory in this library to learn more about the usage of the library.

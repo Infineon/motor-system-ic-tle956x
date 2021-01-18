@@ -170,35 +170,36 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
 
 void BLDCMcontrol::StartBLDCM(void)
 {
-  if(MotorParam.feedbackmode == BLDC_BEMF)
+  //if(MotorParam.feedbackmode == BLDC_BEMF)
+  uint8_t dt_prev = _DutyCycle;
+  _DutyCycle = OPEN_LOOP_DUTYCYCLE;
+  uint16_t i = 5000;
+  uint8_t CommStartup = 0;
+  while (i>1200)
   {
-    uint8_t dt_prev = _DutyCycle;
-    _DutyCycle = 80;
-    uint16_t i = 5000;
-    uint8_t CommStartup = 0;
-    while (i>1200)
-    {
-      timer->delayMicro(i);
-      _Commutation = CommStartup;
-      UpdateHardware(CommStartup);
-      CommStartup++;
-      if (CommStartup==6) CommStartup=0;
-      i=i-200;
-    }
-    _DutyCycle = dt_prev;
+    timer->delayMicro(i);
+    _Commutation = CommStartup;
+    UpdateHardware(CommStartup);
+    CommStartup++;
+    if (CommStartup==6) CommStartup=0;
+    i=i-200;
   }
+  _DutyCycle = dt_prev;
+  timer->start();
 
-  else if(MotorParam.feedbackmode == BLDC_HALL)
+  if(MotorParam.feedbackmode == BLDC_HALL)
   {
-    if(MotorParam.speedmode == BLDC_RPM) _DutyCycle = 80; 
-    _oldHall = ReadHallSensor();
-    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
+    _oldPattern = ReadHallSensor();
+    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldPattern] );
+    timer->start();
   }
 
   if(MotorParam.speedmode == BLDC_RPM)
   {
+    _DutyCycle = RPM_DUTYCYCLE_AT_START; 
     if(MotorParam.MotorPolepairs == 0) PrintErrorMessage(PARAMETER_MISSING);
     rpmtimer->start();
+    //_DutyCycle = 100;
   }
 
   _LastBLDCspeed = 1;
@@ -226,38 +227,24 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
     StartBLDCM();
     return 1;
   }
+  uint32_t Elapsed = 0;
+  timer->elapsed(Elapsed);
+  _latestPattern = ReadBEMFSensor();
 
-  switch (_Commutation) {
-    case 0:
-      while(bemfW->read()==0);
-      _Commutation = 1;
-      break;
-    case 1:
-      while(bemfV->read()==1);
-      _Commutation=2;
-      break;
-    case 2:
-      while(bemfU->read()==0);
-      _Commutation=3;
-      break;
-    case 3:
-      while(bemfW->read()==1);
-      _Commutation=4;
-      break;
-    case 4:
-      while(bemfV->read()==0);
-      _Commutation=5;
-      break;
-    case 5:
-      while(bemfU->read()==1);
-      _Commutation=0;
-      break;
-    default:
-    break;
+  if(_latestPattern != _oldPattern)
+  {
+    _oldPattern = _latestPattern;
+    UpdateHardware( BEMFPattern[ 0 ][_Direction][_latestPattern] );   // No field weakening range possible in BEMF mode
+    if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
+    timer->start();
+    return 2;
+  }
+  else if( Elapsed > TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
+  {
+    StopBLDCM(PASSIVE);
+    return 0;
   }
 
-  UpdateHardware(_Commutation);
-  return 2;
 }
 
 uint8_t BLDCMcontrol::DoHALLCommutation(void)
@@ -267,27 +254,22 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
     StartBLDCM();
     return 1;
   }                           
-                                //If motor is running, wait for the next flag from hall sensor
-  if(WaitForCommutation() )
-  {
-    _oldHall = _latestHall;
-    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldHall] );
-  }
-}
-
-bool BLDCMcontrol::WaitForCommutation(void)
-{
   uint32_t Elapsed = 0;
-  timer->start();
-  while(1)
+  timer->elapsed(Elapsed);
+  _latestPattern = ReadHallSensor();
+
+  if(_latestPattern != _oldPattern)
   {
-    timer->elapsed(Elapsed);
-    if(_oldHall != ReadHallSensor() ) return 1;
-    else if( Elapsed > TIMEOUT)
-    {
-      StopBLDCM(PASSIVE);
-      return 0;
-    }
+    _oldPattern = _latestPattern;
+    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldPattern] );
+    if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
+    timer->start();
+    return 2;
+  }
+  else if( Elapsed > TIMEOUT)
+  {
+    StopBLDCM(PASSIVE);
+    return 0;
   }
 }
 
@@ -305,24 +287,23 @@ void BLDCMcontrol::PI_Regulator_DoWork()
     RPM = (steps/ _NumberofSteps) * (60000.0 / Elapsed);     // Very precise but needs more calc power
 
     float Error = _RefRPM - RPM;
-    if(_DutyCycle < 240) _PI_Integral = _PI_Integral + Error;
+    if(_DutyCycle < 250) _PI_Integral = _PI_Integral + Error;
     float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
     //Limit PWM
-    if (pwm > 255) pwm = 255;
-    if (pwm < 10) pwm = 10;
+    if (pwm > DUTYCYCLE_TOP_LIMIT) pwm = DUTYCYCLE_TOP_LIMIT;
+    if (pwm < DUTYCYCLE_BOTTOM_LIMIT) pwm = DUTYCYCLE_BOTTOM_LIMIT;
     _DutyCycle = (uint8_t) pwm;    
     _StepCounter = 0;
 
     rpmtimer->start();
   }
-   _StepCounter ++;
 }
 
 uint8_t BLDCMcontrol::ReadHallSensor(void)
 {
    uint8_t hallpattern = 0;
    hallpattern = ( ((hallA->read())<<2) | ((hallB->read())<<1) | (hallC->read()) );
-   _latestHall = hallpattern;
+   _latestPattern = hallpattern;
    return hallpattern;
 }
 
@@ -330,7 +311,7 @@ uint8_t BLDCMcontrol::ReadBEMFSensor(void)
 {
    uint8_t hallpattern = 0;
    hallpattern = ( ((bemfU->read())<<2) | ((bemfV->read())<<1) | (bemfW->read()) );
-   _latestHall = hallpattern;
+   _latestPattern = hallpattern;
    return hallpattern;
 }
 

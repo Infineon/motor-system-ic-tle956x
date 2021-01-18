@@ -24,8 +24,6 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println(" Infineon TLE9563 BLDC shield Testsketch");
-  Serial.print(" Mode: ");
-  Serial.println("hall sensor");
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);                   // Set up a GPIO interrupt routine for error handling

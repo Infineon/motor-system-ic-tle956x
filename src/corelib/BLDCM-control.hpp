@@ -27,13 +27,17 @@
 #endif
 
 // ================================== Defines ==================================================================================================
-#define TIMEOUT					100			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
-#define PI_UPDATE_INTERVAL		100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low.
+#define TIMEOUT						5000			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
+#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
+#define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
+#define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
+#define DUTYCYCLE_BOTTOM_LIMIT		30				/* minimum dutycycle, below the motor won't turn anymore */
 
 
 /* Braking modes */
-#define PASSIVE					0
-#define ACTIVE					1
+#define PASSIVE						0
+#define ACTIVE						1
 // =============================================================================================================================================
 
 /**
@@ -72,8 +76,9 @@ class BLDCMcontrol
 			float PI_Reg_I = 0.01;
 		}BLDCParameter;
 
-		BLDCParameter MotorParam;
-		volatile uint8_t interrupt_status_changed = 0;
+		BLDCParameter 			MotorParam;
+		volatile uint8_t 		interrupt_status_changed = 0;
+		uint8_t					debug_switch_enable = 0;
 
 		BLDCMcontrol(void);
 		~BLDCMcontrol(void);
@@ -205,15 +210,6 @@ class BLDCMcontrol
 		uint8_t					DoHALLCommutation(void);
 
 		/**
-		 * @brief wait until the hallpattern changes
-		 * This function is executed until either the hall sensor pattern changes or a timer is out of time.
-		 * The timer is a kind of watchdog that makes sure, that the program gets not stuck, if the dutycycle was too low.
-		 * @return true commutation successfull
-		 * @return false watchdog timeout
-		 */
-		bool 					WaitForCommutation(void);
-
-		/**
 		 * @brief implement a PI regulator that sets the dutycycle in order to keep a desired RPM
 		 * 
 		 * @param desired_rpmSpeed 
@@ -267,6 +263,25 @@ class BLDCMcontrol
             }
         };
 
+		/**
+		 * @brief contains a mapping to know what is the next commutation step when a certain BEMF pattern is available
+         * The first index switches between normal mode and fast mode (field weakening range)
+         * The second index switches the direction between forward and backward
+         * The third index for the pattern is the Hallsensor input as a decimal value (e.g 0b00000101 (BIN) is 5 (DEC))
+         * The value at the index position delivers the commutation state for the next step.
+         */
+        uint8_t BEMFPattern[2][2][7] = {
+            {
+                {9, 2,0,1,4,3,5},               /* Normal foreward */
+                {9, 1,5,0,3,2,4}                /* Normal backward */
+            },
+            {
+                {9, 3,1,2,5,4,0},               /* Fast foreward */
+                {9, 0,5,3,0,1,1}                /* Fast backward incomp */ 
+            }
+        };
+
+
 		uint8_t					_DutyCycle = 0;
 		uint16_t				_RefRPM = 0;
 		uint8_t					_MotorStartEnable = 0;
@@ -274,12 +289,13 @@ class BLDCMcontrol
 		uint8_t					_FieldWeakening = 0;
 		uint8_t					_LastBLDCspeed = 0;
 		uint8_t					_Commutation = 0;
-		uint8_t					_oldHall = 0;
-		uint8_t					_latestHall = 0;
+		uint8_t					_oldPattern = 0;
+		uint8_t					_latestPattern = 0;
 		uint16_t 				_StepCounter = 0;
 		unsigned long			_PI_Update_Timeout = 999999999;
-		float 					_PI_Integral = 0.0; 
+		float 					_PI_Integral = 5000.0; 
 		float 					_NumberofSteps = 0;
+		uint8_t					_debug_counter = 0;
 		//MotorModes				BLDCMotorMode = 0;
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
