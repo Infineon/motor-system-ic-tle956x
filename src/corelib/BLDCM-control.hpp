@@ -14,7 +14,6 @@
 #ifndef BLDCMCONTROL_HPP_
 #define BLDCMCONTROL_HPP_
 
-#include <Arduino.h>
 #include "TLE9563.hpp"
 
 #include "../pal/timer.hpp"
@@ -27,17 +26,20 @@
 #endif
 
 // ================================== Defines ==================================================================================================
-#define TIMEOUT						5000			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
 #define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
 #define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
 #define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
 #define DUTYCYCLE_BOTTOM_LIMIT		30				/* minimum dutycycle, below the motor won't turn anymore */
 
+#define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
+#define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
+
 
 /* Braking modes */
-#define PASSIVE						0
-#define ACTIVE						1
+#define BRAKEMODE_PASSIVE						0
+#define BRAKEMODE_ACTIVE						1
 // =============================================================================================================================================
 
 /**
@@ -133,7 +135,7 @@ class BLDCMcontrol
 		/**
 		 * @brief Stop a BLDC motor be either switching off all halfbridges or let the float (TODO)
 		 * 
-		 * @param brakemode PASSIVE or ACTIVE
+		 * @param brakemode BRAKEMODE_PASSIVE or BRAKEMODE_ACTIVE
 		 * @return uint8_t returns success or failure of stopping
 		 */
 		uint8_t					StopBLDCM(uint8_t brakemode);

@@ -1,10 +1,10 @@
 /*!
- * \name        BLDC_BEMF_test.ino
+ * \name        find_polepairs_BLDCM.ino
  * \author      Infineon Technologies AG
- * \copyright   2020 Infineon Technologies AG
+ * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
  * \version     0.0.1
- * \brief       This example runs a senorless brushlessmotor in BEMF mode using a TLE9563 BLDC control shield.
- * This file is only for debug purpose.
+ * \brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
+ * Thus it calculates, how many magnetic polepairs your motor has. A serial monitor is necessary.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -13,7 +13,8 @@
 #include "BLDCM-control-ino.hpp"
 #include <SPI.h>
 
-#define DIRECTION	0
+#define HALLSENSOR                  1     /* 1 = Hallsensor used, 0 = no hallsensor used */
+#define DELAY_BETWEEN_COMMUTATIONS  300   /* milliseconds */
 
 uint8_t DutyCycle = 80;
 
@@ -24,16 +25,15 @@ void setup()
 {
   Serial.begin(115200);
   Serial.println(" Infineon TLE9563 BLDC shield Testsketch");
-  Serial.print(" Mode: ");
-  Serial.println("find polepairs");
+  Serial.println(" Mode: find polepairs");
 
   MyMotor.begin();
-  MyMotor.setLED(0,20,0);      // Set onboard RGB-LED to low-bright green.
+  MyMotor.setLED(0,0,50);      // Set onboard RGB-LED to low-bright blue.
   
   Serial.println("Init ready");
 }
 
 void loop()
 {
-	MyMotor.FindPolepairs(300, 1);
+	MyMotor.FindPolepairs(DELAY_BETWEEN_COMMUTATIONS, HALLSENSOR);
 }

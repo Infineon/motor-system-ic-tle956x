@@ -7,4 +7,3 @@ cmake_install.cmake
 CTestTestfile.cmake
 InfineonDoxyGenerator/
 docs/doxygen/doxyfile_auto
-examples/BLDC_BEMF_test/

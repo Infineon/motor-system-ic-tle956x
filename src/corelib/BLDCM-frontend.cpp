@@ -18,9 +18,6 @@
 #include <Arduino.h>
 #include "BLDCM-logger.hpp"
 
-#define SINGLE_STEP_DC          30
-#define DETAILED_ERROR_REPORT 	1
-
 void BLDCMcontrol::PrintBinary(uint8_t digits, uint16_t number)
 {
   for(uint8_t i=digits-1; i>0; i--)
@@ -48,9 +45,9 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     Serial.println("Press enter to bring motor in start position");
     while(Serial.available() == 0);
     in = Serial.read();
-    Hallpattern = CommutateHallBLDC(SINGLE_STEP_DC, hallsensor);     //go in initial position
+    Hallpattern = CommutateHallBLDC(DUTYCYCLE_SINGLE_STEP, hallsensor);     //go in initial position
     timer->delayMilli(800);
-    StopBLDCM(PASSIVE);
+    StopBLDCM(BRAKEMODE_PASSIVE);
 
     Serial.println(" ");
     Serial.println("Press enter to start the measurement.");
@@ -63,7 +60,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     while(Serial.available() == 0)
     {
         Counter ++;
-        Hallpattern = CommutateHallBLDC(SINGLE_STEP_DC, hallsensor);
+        Hallpattern = CommutateHallBLDC(DUTYCYCLE_SINGLE_STEP, hallsensor);
         Serial.print(Counter);						// Print Step
         if(Counter < 10) Serial.print(" ");         //Align values
         Serial.print("          ");
@@ -81,7 +78,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     }
     in = Serial.read();			// empty serial buffer
 
-	StopBLDCM(PASSIVE);
+	StopBLDCM(BRAKEMODE_PASSIVE);
 
 	// Evaluation
     if((Counter % 2) == 1)

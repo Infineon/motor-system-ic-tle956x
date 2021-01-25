@@ -16,7 +16,6 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-#include <Arduino.h>
 
 #include "tle9563-reg.hpp"
 #include "../pal/timer.hpp"

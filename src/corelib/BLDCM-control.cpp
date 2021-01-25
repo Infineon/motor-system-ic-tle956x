@@ -208,11 +208,11 @@ void BLDCMcontrol::StartBLDCM(void)
 
 uint8_t BLDCMcontrol::StopBLDCM(uint8_t brakemode)
 {
-  if(brakemode == PASSIVE)
+  if(brakemode == BRAKEMODE_PASSIVE)
   {
     controller->setHalfbridge(controller->Floating, controller->Floating, controller->Floating);
   }
-  else if(brakemode == ACTIVE)
+  else if(brakemode == BRAKEMODE_ACTIVE)
   {
     controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround);
   }
@@ -241,7 +241,7 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
   }
   else if( Elapsed > TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
   {
-    StopBLDCM(PASSIVE);
+    StopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
   }
 
@@ -268,7 +268,7 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
   }
   else if( Elapsed > TIMEOUT)
   {
-    StopBLDCM(PASSIVE);
+    StopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
   }
 }
