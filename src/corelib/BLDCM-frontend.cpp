@@ -2,8 +2,8 @@
  * \file        BLDCM-frontend.cpp
  * \name        BLDCM-frontend.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes functions to prepare and return debug and status information about the TLE9563 BLDC shield
  * \ref         tle9563corelib
  *
@@ -16,7 +16,7 @@
 
 // TODO: implement logger-PAL for Platform abstraction
 #include <Arduino.h>
-#include "BLDCM-logger.hpp"
+#include "../util/BLDCM-logger.hpp"
 
 void BLDCMcontrol::PrintBinary(uint8_t digits, uint16_t number)
 {
@@ -114,9 +114,10 @@ void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
     switch(msg)
     {
         case PARAMETER_MISSING:
-            Serial.println("====> Error: For this operation mode one or more motor parameter(s) is missing! <====");
+            Serial.println("=> Error: For this operation mode one or more motor parameter(s) are missing! <=");
             break;
         case PARAMETER_OUT_OF_RANGE:
+            Serial.println("=> Warning: A parameter is out of range! <=");
             break;
         default:
             break;
@@ -132,7 +133,7 @@ void BLDCMcontrol::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint1
     }
     else if(msg & controller->TLE_LOAD_ERROR)
     {
-        Serial.println("===> Error: Open-Load detected <===");
+        Serial.println("===> Error: Open-Load detected! <===");
     }
     else if(msg & controller->TLE_UNDER_VOLTAGE)
     {

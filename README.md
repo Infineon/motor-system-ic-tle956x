@@ -25,9 +25,9 @@ This evaluation board comes with one BLDC Motor Control IC of TLE9563-3QX. The p
 |                  | BLDC BEMF | BLDC Hall |
 |------------------|-----------|-----------|
 | Arduino UNO      | Yes       | Yes       |
-| Arduino Mega     | Yes       | Yes       |
+| Arduino MEGA 2560| Yes       | Yes       |
 
 ## Usage
 
-Please follow the example sketches in the _/examples_ directory to learn more about the usage of the library.
-For more detailed information, refer to the [articles in the wiki](https://github.com/Infineon/tle956x-bldc-motor-control/wiki).
+Please follow the example sketches in the _/examples/_ directory to learn more about the usage of the library.
+For more detailed information, refer to the [articles in the wiki](https://github.com/Infineon/tle956x-bldc-motor-control/wiki/Usage).

@@ -2,8 +2,8 @@
  * \file        TLE9563.cpp
  * \name        TLE9563.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2019-2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2012 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
@@ -45,6 +45,11 @@ Tle9563::~Tle9563()
 
 void Tle9563::config(void)
 {
+	/**
+	 * TODO: split up in separate functions for better control from outside the library
+	 * 
+	 */
+
 	SBC_CRC_Disable();
 
 	/**
@@ -246,12 +251,4 @@ uint8_t Tle9563::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
 
 	return ErrorCode;
-}
-
-void Tle9563::updateStatus(uint16_t *array)
-{
-	array[0] = readReg(REG_ADDR_SUP_STAT);
-	writeReg(REG_ADDR_SUP_STAT, 0);
-	array[1] = readReg(REG_ADDR_THERM_STAT);
-	
 }

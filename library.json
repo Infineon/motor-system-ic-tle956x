@@ -1,5 +1,5 @@
 {  
-   "name":"TLE9563",
+   "name":"TLE956x",
    "keywords":"infineon arduino motor arduino-ide arduino-library bldc-motor-control",
    "description":"This shield provides 3 half-bridges and an SPI-gatedriver which can control a BLDC motor using an analog comparator for BEMF measurment.",
    "repository":{  
@@ -7,7 +7,7 @@
       "url":"https://github.com/Infineon/bldc-motor-control-tle956x",
       "branch":"master"
    },
-   "version":"0.0.1",
+   "version":"1.0.0",
    "license":"MIT",
    "frameworks":"arduino",
    "platforms":[  

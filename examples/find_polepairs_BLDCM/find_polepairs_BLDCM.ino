@@ -2,7 +2,7 @@
  * \name        find_polepairs_BLDCM.ino
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
- * \version     0.0.1
+ * \version     1.0.0
  * \brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
  * Thus it calculates, how many magnetic polepairs your motor has. A serial monitor is necessary.
  *
@@ -15,8 +15,6 @@
 
 #define HALLSENSOR                  1     /* 1 = Hallsensor used, 0 = no hallsensor used */
 #define DELAY_BETWEEN_COMMUTATIONS  300   /* milliseconds */
-
-uint8_t DutyCycle = 80;
 
 // Create an instance of BLDCMcontrol called 'MyMotor'. 
 BLDCMcontrolIno MyMotor = BLDCMcontrolIno();

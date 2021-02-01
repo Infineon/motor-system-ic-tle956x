@@ -2,9 +2,9 @@
  * \file        TLE9563-ino.hpp
  * \name        TLE9563-ino.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2020 Infineon Technologies AG
+ * \copyright   2020-2021 Infineon Technologies AG
  * \ref         tle9563ino
- * \version     0.0.1
+ * \version     1.0.0
  * \brief       This is a Arduino platform file use Infineon's BLDC Motor Control Shield with TLE9563 with
  *              Arduino/Genuino, Infineon XMC microcontroller or compatible boards.
  *

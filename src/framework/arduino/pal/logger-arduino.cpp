@@ -15,7 +15,7 @@
 #if (TLE9563_LOGGER_ENABLED == 1)
 
 #include <Arduino.h>
-#include "../../../corelib/BLDCM-logger.hpp"
+#include "../../../util/BLDCM-logger.hpp"
 
 /**
  * @brief Logger Arduino PAL constructor

@@ -2,8 +2,8 @@
  * \file        TLE9563-reg.hpp
  * \name        TLE9563-reg.hpp - Register enum for TLE9563
  * \author      Infineon Technologies AG
- * \copyright   2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This file lists all available control- and status-registers for a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *

@@ -2,8 +2,8 @@
  * \file        BLDCM-control.hpp
  * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
  * \ref         tle9563corelib
  *
@@ -168,12 +168,19 @@ class BLDCMcontrol
 		void 					FindPolepairs(uint16_t delay, bool hallsensor);
 
 		/**
-		 * @brief Print a debug message
+		 * @brief Print a debug message, e.g. if configuration Parameter are missing
 		 * 
 		 * @param msg hand over the error code
 		 */
 		void					PrintErrorMessage(_ErrorMessages msg);
 
+		/**
+		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
+		 * 
+		 * @param msg hand over error code
+		 * @param RegAddress address of the register, the error bit was set in
+		 * @param RegContent full content of the register, ther error bit was set in
+		 */
 		void					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 
 
@@ -198,14 +205,16 @@ class BLDCMcontrol
 
 
 		/**
-		 * @brief depending on the actual commutation state, wait for the next BEMF flag to commutate
+		 * @brief check, if the BEMF state changed since the last time and commutate if necessary
+		 * (non blocking function)
 		 * 
 		 * @return uint8_t returns success or failure of startup / commutation
 		 */
 		uint8_t					DoBEMFCommutation(void);
 
 		/**
-		 * @brief depending on the actual commutation state, wait for the next BEMF flag to commutate
+		 * @brief check, if the HALL state changed since the last time and commutate if necessary
+		 * (non blocking function)
 		 * 
 		 * @return uint8_t returns success or failure of startup / commutation
 		 */
@@ -227,6 +236,13 @@ class BLDCMcontrol
 		 */
 		uint8_t 				ReadHallSensor(void);
 
+		/**
+		 * @brief Read the status of the three BEMF analog comparator outputs and merge to a binary pattern
+		 * Bit 2 is bemfU
+		 * Bit 1 is bemfV
+		 * Bit 0 is bemfW
+		 * @return uint8_t the merged pattern
+		 */
 		uint8_t					ReadBEMFSensor(void);
 
 		/**
@@ -267,9 +283,9 @@ class BLDCMcontrol
 
 		/**
 		 * @brief contains a mapping to know what is the next commutation step when a certain BEMF pattern is available
-         * The first index switches between normal mode and fast mode (field weakening range)
+         * The first index switches between normal mode and fast mode (field weakening range) (NOT WORKING IN BEMF MODE)
          * The second index switches the direction between forward and backward
-         * The third index for the pattern is the Hallsensor input as a decimal value (e.g 0b00000101 (BIN) is 5 (DEC))
+         * The third index for the pattern is the BEMF input as a decimal value (e.g 0b00000101 (BIN) is 5 (DEC))
          * The value at the index position delivers the commutation state for the next step.
          */
         uint8_t BEMFPattern[2][2][7] = {

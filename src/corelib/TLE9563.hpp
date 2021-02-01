@@ -2,8 +2,8 @@
  * \file        TLE9563.hpp
  * \name        TLE9563.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2019-2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
@@ -107,13 +107,6 @@ class Tle9563
 		 * 
 		 */
 		void 					configInterruptMask(void);
-
-		/**
-		 * @brief function only for debug purpose
-		 * 
-		 * @param array stores the status register values in this array
-		 */
-		void 					updateStatus(uint16_t *array);
 
 		/**
 		 * @brief initalize GPIOs and PWM pins

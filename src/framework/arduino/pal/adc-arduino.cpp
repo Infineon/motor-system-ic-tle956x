@@ -235,8 +235,12 @@ ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t frequency)
     }
     return OK;
 
-#endif
 
+#elif ((XMC1100_Boot_Kit)  || (XMC4700_Relax_Kit))                /** For XMC boards*/ 
+
+    setAnalogWriteFrequency(pin, 30000);       // Arduino: 31250 Hz, XMC: 30000 Hz
+
+#endif
 }
 
 /**
