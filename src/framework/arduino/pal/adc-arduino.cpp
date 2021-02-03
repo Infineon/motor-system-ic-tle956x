@@ -155,9 +155,16 @@ ADCIno::Error_t ADCIno::setWriteResolution(uint8_t resolution)
    PWM frequency divisors. His post can be viewed at:
      https://forum.arduino.cc/index.php?topic=16612#msg121031
  */
-ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t divisor)
+ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t frequency)
 {
-    byte mode;
+  uint8_t mode, divisor;
+  divisor = frequency;    // abuse the frequency parameter to make the handling easier at the moment
+/*
+  if(30000 < frequency) divisor = 1;
+  else if (15000 < frequency <= 30000) divisor = 2;
+*/
+
+#ifdef ARDUINO_AVR_UNO                                                  /** For Arduino UNO */
     if (pin == 5 || pin == 6 || pin == 9 || pin == 10) {
         switch (divisor) {
         case 1: mode = 0x01; break;
@@ -185,8 +192,55 @@ ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t divisor)
         }
         TCCR2B = TCCR2B & 0b11111000 | mode;
     }
-    
     return OK;
+
+#elif ARDUINO_AVR_MEGA2560                                                 /** For Arduino MEga 2560 */
+    if (pin < 9 || pin > 10) {
+      switch (divisor) {
+      case 1: mode = 0x01; break;     // 31372,55 Hz  (62500,00 Hz on pin D4 & D13)
+      case 8: mode = 0x02; break;     // 3921,16 Hz   (7812,50 Hz on pin D4 & D13)
+      case 64: mode = 0x03; break;    // 490,20 Hz    (976,56 Hz on pin D4 & D13)
+      case 256: mode = 0x04; break;   // 122,55 Hz    (244,14 Hz on pin D4 & D13)
+      case 1024: mode = 0x05; break;  // 30,64 Hz     (61,04 Hz on pin D4 & D13)
+      default: return;
+      }
+      if (pin == 4 || pin == 13) {
+        TCCR0B = TCCR0B & 0b11111000 | mode;
+      }
+      else if (pin == 11 || pin == 12){
+        TCCR1B = TCCR1B & 0b11111000 | mode;
+      }
+      else if (pin == 2 || pin == 3 || pin == 5){
+        TCCR3B = TCCR3B & 0b11111000 | mode;
+      }
+      else if (pin == 6 || pin == 7 || pin == 8){
+        TCCR4B = TCCR4B & 0b11111000 | mode;
+      }
+      else{
+         TCCR5B = TCCR5B & 0b11111000 | mode;
+      }
+    }
+    else if (pin == 9 || pin == 10) {
+        switch (divisor) {
+        case 1: mode = 0x01; break;     // 31372,55 Hz
+        case 8: mode = 0x02; break;     // 3921,16 Hz
+        case 32: mode = 0x03; break;    // 980,39 Hz
+        case 64: mode = 0x04; break;    // 490,20 Hz
+        case 128: mode = 0x05; break;   // 245,10 Hz
+        case 256: mode = 0x06; break;   // 122,55 Hz
+        case 1024: mode = 0x07; break;  // 30,64 Hz
+        default: return;
+        }
+        TCCR2B = TCCR2B & 0b11111000 | mode;
+    }
+    return OK;
+
+
+#elif ((XMC1100_Boot_Kit)  || (XMC4700_Relax_Kit))                /** For XMC boards*/ 
+
+    setAnalogWriteFrequency(pin, 30000);       // Arduino: 31250 Hz, XMC: 30000 Hz
+
+#endif
 }
 
 /**
@@ -208,7 +262,7 @@ uint16_t ADCIno::ADCRead()
  * 
  * This functions writes the given value to the analog pin
  * 
- * @param[in] value Value to write 
+ * @param[in] value PWM dutycycle to write
  * @return ADCIno::Error_t 
  */
 ADCIno::Error_t ADCIno::ADCWrite(uint8_t value)

@@ -2,7 +2,7 @@
  * @file        adc.hpp
  * @brief       PAL of the ADC 
  * @date        May 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   Copyright (c) 2020-2021 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */
@@ -37,7 +37,7 @@ class AnalogDigitalConverter
         virtual Error_t     disable() = 0;
         virtual Error_t     setReadResolution(uint8_t resolution) = 0;
         virtual Error_t     setWriteResolution(uint8_t resolution) = 0;
-        virtual Error_t     setWriteFrequency(uint32_t divisor) = 0;
+        virtual Error_t     setWriteFrequency(uint32_t frequency) = 0;
         virtual uint16_t    ADCRead() = 0;
         virtual Error_t     ADCWrite(uint8_t value) = 0;
         Error_t             checkErrorStatus();

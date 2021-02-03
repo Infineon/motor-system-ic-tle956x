@@ -2,8 +2,8 @@
  * \file        TLE9563.hpp
  * \name        TLE9563.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2019-2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
@@ -16,6 +16,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+
 #include "tle9563-reg.hpp"
 #include "../pal/timer.hpp"
 #include "../pal/gpio.hpp"
@@ -54,6 +55,18 @@
 class Tle9563
 {
 	public:
+		//! \brief enum for the flags
+		enum DiagFlag
+		{
+			TLE_SPI_ERROR = 0x80,
+			TLE_LOAD_ERROR = 0x40,
+			TLE_UNDER_VOLTAGE = 0x20,
+			TLE_OVER_VOLTAGE = 0x10,
+			TLE_POWER_ON_RESET = 0x08,
+			TLE_TEMP_SHUTDOWN = 0x04,
+			TLE_OVERCURRENT = 0x02,
+			TLE_SHORT_CIRCUIT = 0x01
+		};
 
 		//! \brief standard constructor with default pin assignment
 		Tle9563();
@@ -62,7 +75,7 @@ class Tle9563
 		~Tle9563();
 
 		/**
-		 * @brief set up the registers and initialize the TLE9563
+		 * @brief set up all necessary registers and initialize the TLE9563
 		 */
 		void 					config(void);
 
@@ -88,13 +101,12 @@ class Tle9563
 		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
 		 */
 		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
-		
+
 		/**
-		 * @brief function only for debug purpose
+		 * @brief set the Interrupt Mask to select which events should cause a hardware pin interrupt generation
 		 * 
-		 * @param array stores the status register values in this array
 		 */
-		void 					updateStatus(uint16_t *array);
+		void 					configInterruptMask(void);
 
 		/**
 		 * @brief initalize GPIOs and PWM pins
@@ -107,6 +119,38 @@ class Tle9563
 		 * 
 		 */
 		void 					end();
+
+		/**
+		 * @brief read the Supply Voltage Fail Status register of the TLE and generate an ErrorCode depending of the fault-category
+		 * 
+		 * @param address returns the composed register address and content for detailed debugging
+		 * @return DiagFlag return the generated Error code
+		 */
+		uint8_t					checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent);
+
+		/**
+		 * @brief read the Thermal Protection status register of the TLE and generate an ErrorCode depending of the fault-category
+		 * 
+		 * @param address returns the composed register address and content for detailed debugging
+		 * @return DiagFlag return the generated Error code
+		 */
+		uint8_t					checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent);
+
+		/**
+		 * @brief read the High-Side Switch status register of the TLE and generate an ErrorCode depending of the fault-category
+		 * 
+		 * @param address returns the composed register address and content for detailed debugging
+		 * @return DiagFlag return the generated Error code
+		 */
+		uint8_t					checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent);
+
+		/**
+		 * @brief read the Device Information status register of the TLE and generate an ErrorCode depending of the fault-category
+		 * 
+		 * @param address returns the composed register address and content for detailed debugging
+		 * @return DiagFlag return the generated Error code
+		 */
+		uint8_t					checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 

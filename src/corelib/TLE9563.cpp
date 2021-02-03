@@ -2,16 +2,14 @@
  * \file        TLE9563.cpp
  * \name        TLE9563.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2019-2020 Infineon Technologies AG
- * \version     0.0.1
+ * \copyright   2020-2021 Infineon Technologies AG
+ * \version     1.0.0
  * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
  */
-
-
 #include "TLE9563.hpp"
 
 Tle9563::Tle9563(void)
@@ -47,6 +45,11 @@ Tle9563::~Tle9563()
 
 void Tle9563::config(void)
 {
+	/**
+	 * TODO: split up in separate functions for better control from outside the library
+	 * 
+	 */
+
 	SBC_CRC_Disable();
 
 	/**
@@ -82,20 +85,6 @@ void Tle9563::config(void)
 	 * 2:0 HS1 drain source overvoltage threshold	800mV
 	 */
 	writeReg(REG_ADDR_HS_VDS, 0b0000000110110110);
-
-	/**
-	 * 8 Periodical INTN generation					disabled
-	 * 7 Disable Watchdog in SW Dev mode			disabled
-	 * 6 Watchdog failure in SW Dev mode			disabled
-	 * 5 SPI and CRC interrupt generation			disabled
-	 * 4 Bridge Driver Interrupt generation			enabled
-	 * 3 High side interrupt generation				enabled
-	 * 2 BUS interrupt generation					enabled
-	 * 1 Temperature Interrupt generation			enabled
-	 * 0 Supply status interrupt generation			enabled
-	 */
-	//							  FEDCBA9876543210
-	writeReg(REG_ADDR_INT_MASK, 0b0000000010010011);
 
 	/**
 	 * 10 Selection of 3 or 6 PWM inputs			3 PWM
@@ -198,11 +187,68 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
   	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
 }
 
-void Tle9563::updateStatus(uint16_t *array)
+void Tle9563::configInterruptMask(void)
 {
-	array[0] = readReg(REG_ADDR_SUP_STAT);
+	uint16_t tosend = 	WD_SDM_DISABLE | BD_STAT | HS_STAT | TEMP_STAT | SUPPLY_STAT;
+						
+	writeReg(REG_ADDR_INT_MASK, tosend);
+}
+
+uint8_t Tle9563::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_SUP_STAT);
 	writeReg(REG_ADDR_SUP_STAT, 0);
-	array[1] = readReg(REG_ADDR_THERM_STAT);
+	RegAddress = REG_ADDR_SUP_STAT;
+	RegContent = input;
+	if((input & 0x1000) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection (chargepump)
+	else if((input & 0x0D55) > 0) ErrorCode |= TLE_UNDER_VOLTAGE;		// undervoltage detection
+	else if((input & 0x02A2) > 0) ErrorCode |= TLE_OVER_VOLTAGE;		// overvoltage detection
+	else if((input & 0x0008) > 0) ErrorCode |= TLE_SHORT_CIRCUIT;		// short circuit detection
+	else if((input & 0x8000) > 0) ErrorCode |= TLE_POWER_ON_RESET;		// Power-On reset detection
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_THERM_STAT);
 	writeReg(REG_ADDR_THERM_STAT, 0);
-	
+	RegAddress = REG_ADDR_THERM_STAT;
+	RegContent = input;
+	if((input & 0x000E) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection
+	else if((input & 0x0001) > 0) ErrorCode |= TLE_TEMP_SHUTDOWN;		// temperature warning
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_HS_OL_OC_OT_STAT);
+	writeReg(REG_ADDR_HS_OL_OC_OT_STAT, 0);
+	RegAddress = REG_ADDR_HS_OL_OC_OT_STAT;
+	RegContent = input;
+	if((input & 0x1C00) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 		// overtemperature detection
+	else if((input & 0x00E0) > 0) ErrorCode |= TLE_LOAD_ERROR;		// open load detection
+	else if((input & 0x0007) > 0) ErrorCode |= TLE_OVERCURRENT;		// overcurrent detection
+
+	return ErrorCode;
+}
+
+uint8_t Tle9563::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_DEV_STAT);
+	writeReg(REG_ADDR_DEV_STAT, 0);
+	RegAddress = REG_ADDR_DEV_STAT;
+	RegContent = input;
+	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
+
+	return ErrorCode;
 }
