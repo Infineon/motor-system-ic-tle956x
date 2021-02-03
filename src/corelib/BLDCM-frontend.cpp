@@ -47,7 +47,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     in = Serial.read();
     Hallpattern = CommutateHallBLDC(DUTYCYCLE_SINGLE_STEP, hallsensor);     //go in initial position
     timer->delayMilli(800);
-    StopBLDCM(BRAKEMODE_PASSIVE);
+    stopBLDCM(BRAKEMODE_PASSIVE);
 
     Serial.println(" ");
     Serial.println("Press enter to start the measurement.");
@@ -78,7 +78,7 @@ void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
     }
     in = Serial.read();			// empty serial buffer
 
-	StopBLDCM(BRAKEMODE_PASSIVE);
+	stopBLDCM(BRAKEMODE_PASSIVE);
 
 	// Evaluation
     if((Counter % 2) == 1)

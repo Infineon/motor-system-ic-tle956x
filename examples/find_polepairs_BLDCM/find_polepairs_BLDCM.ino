@@ -11,7 +11,6 @@
 
 #include <Arduino.h>
 #include "BLDCM-control-ino.hpp"
-#include <SPI.h>
 
 #define HALLSENSOR                  1     /* 1 = Hallsensor used, 0 = no hallsensor used */
 #define DELAY_BETWEEN_COMMUTATIONS  300   /* milliseconds */

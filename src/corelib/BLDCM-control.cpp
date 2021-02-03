@@ -168,7 +168,7 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
   _FieldWeakening = fieldweakening;
 }
 
-void BLDCMcontrol::StartBLDCM(void)
+void BLDCMcontrol::startBLDCM(void)
 {
   //if(MotorParam.feedbackmode == BLDC_BEMF)
   uint8_t dt_prev = _DutyCycle;
@@ -206,7 +206,7 @@ void BLDCMcontrol::StartBLDCM(void)
   _MotorStartEnable = 1;            // Enable the use of serveBLDCshield()
 }
 
-uint8_t BLDCMcontrol::StopBLDCM(uint8_t brakemode)
+uint8_t BLDCMcontrol::stopBLDCM(uint8_t brakemode)
 {
   if(brakemode == BRAKEMODE_PASSIVE)
   {
@@ -224,7 +224,7 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
 {
   if(_LastBLDCspeed == 0)         // Fallback, if StartBLDC() was not called in main user code.
   {
-    StartBLDCM();
+    startBLDCM();
     return 1;
   }
   uint32_t Elapsed = 0;
@@ -241,7 +241,7 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
   }
   else if( Elapsed > TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
   {
-    StopBLDCM(BRAKEMODE_PASSIVE);
+    stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
   }
 
@@ -251,7 +251,7 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
 {
   if(_LastBLDCspeed == 0)         // Fallback, if StartBLDC() was not called in main user code.
   {
-    StartBLDCM();
+    startBLDCM();
     return 1;
   }                           
   uint32_t Elapsed = 0;
@@ -268,7 +268,7 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
   }
   else if( Elapsed > TIMEOUT)
   {
-    StopBLDCM(BRAKEMODE_PASSIVE);
+    stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
   }
 }

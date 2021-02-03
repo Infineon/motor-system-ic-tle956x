@@ -1,6 +1,6 @@
 /*!
  * \file        BLDCM-control.hpp
- * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
+ * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with TLE9563
  * \author      Infineon Technologies AG
  * \copyright   2020-2021 Infineon Technologies AG
  * \version     1.0.0
@@ -130,7 +130,7 @@ class BLDCMcontrol
 		 * @brief do a blind commutation to start up the BLDC in BEMF mode
 		 * 
 		 */
-		void					StartBLDCM(void);
+		void					startBLDCM(void);
 
 		/**
 		 * @brief Stop a BLDC motor be either switching off all halfbridges or let the float (TODO)
@@ -138,7 +138,7 @@ class BLDCMcontrol
 		 * @param brakemode BRAKEMODE_PASSIVE or BRAKEMODE_ACTIVE
 		 * @return uint8_t returns success or failure of stopping
 		 */
-		uint8_t					StopBLDCM(uint8_t brakemode);
+		uint8_t					stopBLDCM(uint8_t brakemode);
 
 		/**
 		 * @brief initalize GPIOs and PWM pins

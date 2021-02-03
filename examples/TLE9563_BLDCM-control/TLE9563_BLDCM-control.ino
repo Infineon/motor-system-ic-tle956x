@@ -1,5 +1,5 @@
 /*!
- * \name        TLE956x_BLDCM-control.ino
+ * \name        TLE9563_BLDCM-control.ino
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
  * \version     1.0.0
@@ -11,7 +11,6 @@
 
 #include <Arduino.h>
 #include <BLDCM-control-ino.hpp>
-#include <SPI.h>
 
 uint16_t speed = 400;
 uint8_t direction = 0;
@@ -40,7 +39,7 @@ void setup()
   Serial.println("Init ready");
 
   MyMotor.setBLDCspeed(speed, direction);
-  MyMotor.StartBLDCM();
+  MyMotor.startBLDCM();
 }
 
 void loop()
@@ -67,10 +66,10 @@ void loop()
       weakening = 1;
       Serial.println("Field weakening enabled");}
     if(in == 'h'){
-      MyMotor.StopBLDCM(BRAKEMODE_PASSIVE);
+      MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
       Serial.println("Motor stopped");}
     if(in == 'g'){
-      MyMotor.StartBLDCM();
+      MyMotor.startBLDCM();
       Serial.println("Motor started");}
     MyMotor.setBLDCspeed(speed, direction, weakening);
   }
