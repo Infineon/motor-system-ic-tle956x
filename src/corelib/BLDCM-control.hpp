@@ -31,7 +31,7 @@
 #define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
 #define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
-#define DUTYCYCLE_BOTTOM_LIMIT		30				/* minimum dutycycle, below the motor won't turn anymore */
+#define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
 #define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
 #define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
