@@ -7,7 +7,7 @@
       "url":"https://github.com/Infineon/bldc-motor-control-tle9563",
       "branch":"master"
    },
-   "version":"1.0.0",
+   "version":"1.0.1",
    "license":"MIT",
    "frameworks":"arduino",
    "platforms":[  

@@ -17,7 +17,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include "tle9563-reg.hpp"
+#include "TLE9563-reg.hpp"
 #include "../pal/timer.hpp"
 #include "../pal/gpio.hpp"
 #include "../pal/spic.hpp"

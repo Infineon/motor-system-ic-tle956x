@@ -180,8 +180,16 @@ void BLDCMcontrol::startBLDCM(void)
     timer->delayMicro(i);
     _Commutation = CommStartup;
     UpdateHardware(CommStartup);
-    CommStartup++;
-    if (CommStartup==6) CommStartup=0;
+    if(_Direction == 0)
+    {
+      CommStartup++;
+      if (CommStartup==6) CommStartup=0;
+    }
+    if(_Direction == 1)
+    {
+      if (CommStartup==0) CommStartup=6;
+      CommStartup--;
+    }
     i=i-200;
   }
   _DutyCycle = dt_prev;
