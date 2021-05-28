@@ -4,7 +4,7 @@
  * \author      Infineon Technologies AG
  * \copyright   2020-2021 Infineon Technologies AG
  * \version     1.0.0
- * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
+ * \brief       This library includes the basic functions to control a BLDC motor using an instance of TLE9563
  * \ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
