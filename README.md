@@ -1,6 +1,6 @@
-# Motor system IC library
+# Motor System IC TLE956x Library
 
-C++ library of Infineon's motor system IC TLE956x family.
+C++ library for Infineon's motor system IC TLE956x family.
 
 ## Supported Products
 
@@ -23,7 +23,7 @@ C++ library of Infineon's motor system IC TLE956x family.
         <td><img src="https://github.com/infineon/multi-half-bridge/wiki/img/arduino-logo.png" width=200></td>
     </tr>
     <tr>
-        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Library-Details">Arduino API</a></td>
+        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Library-Details">Library Structure</a></td>
     </tr>
     <tr>
         <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Usage">Getting Started</a></td>
