@@ -15,6 +15,7 @@
 #define BLDCMCONTROL_HPP_
 
 #include "TLE9563.hpp"
+#include "TLE9xxx.hpp"
 
 #include "../pal/timer.hpp"
 #include "../pal/gpio.hpp"

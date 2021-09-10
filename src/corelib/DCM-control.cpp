@@ -51,7 +51,7 @@ void DCMcontrol::end(void)
 	timer->stop();
 }
 
-uint8_t DCMcontrol::configDCshield()
+uint8_t DCMcontrol::configDCshield(void)
 {
   // TODO: Do the whole TLE setting here
   controller->configInterruptMask();

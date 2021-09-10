@@ -53,6 +53,14 @@ class DCMcontrol
 		 */
 		void 					end();
 
+		/**
+		 * @brief config the TLE9562 chip with customized settings
+		 * needs to be called once before the motor will be started
+		 * 
+		 * @return uint8_t 
+		 */
+		uint8_t					configDCshield(void);
+
         /**
 		 * @brief set speed by handing over the dutycycle to the global _DutyCycle variable
 		 * 
@@ -83,7 +91,7 @@ class DCMcontrol
 		 * 
 		 */
 		Tle9563 				*controller;
-    private:
+    protected:
         AnalogDigitalConverter	*pwmA;			//<! \brief PWM output for motor A
 		AnalogDigitalConverter	*pwmB;			//<! \brief PWM output for motor B
 

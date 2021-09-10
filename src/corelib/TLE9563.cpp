@@ -2,8 +2,8 @@
  * \file        TLE9563.cpp
  * \name        TLE9563.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
  * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
+ * \copyright   2021 Infineon Technologies AG
+ * \version     2.0.0
  * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
  * \ref         tle9563corelib
  *
@@ -135,40 +135,6 @@ void Tle9563::end(void)
 	timer->stop();
 }
 
-void Tle9563::SBC_CRC_Disable()
-{
-	uint8_t byte0;
-	csn->disable();
-	sBus->transfer(0xe7, byte0);	// 0b 1110 0111
-	sBus->transfer(0x55, byte0);	// 0b 0101 0101
-	sBus->transfer(0x55, byte0);	// 0b 0101 0101
-	sBus->transfer(0xc3, byte0);	// 0b 1100 0011
-	csn->enable();
-}
-
-void Tle9563::writeReg(uint8_t addr, uint16_t data)
-{
-	uint8_t byte0, byte1, byte2, byte3;
-	csn->disable();
-	sBus->transfer((addr|TLE9563_CMD_WRITE), byte0);	// MSB: Read/write cmd, bit 6:0 register address
-	sBus->transfer((data&0xFF), byte1);					// lower 8 bit of data
-	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
-	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
-	csn->enable();
-}
-
-uint16_t Tle9563::readReg(uint8_t addr)
-{
-	uint8_t byte0, byte1, byte2, byte3;
-	csn->disable();
-	sBus->transfer((addr|TLE9563_CMD_READ), byte0);		// MSB: Read/write cmd, bit 6:0 register address
-	sBus->transfer(0xFF, byte1);						// lower 8 bit of data
-	sBus->transfer(0xFF, byte2);						// upper 8 bit of data
-	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
-	csn->enable();
-	return ((byte2<<8)|byte1);
-}
-
 void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 {
 	uint16_t ToSend = (hb1.HBmode<<2)|(hb1.Freewheeling<<1)|(hb1.PWMenable<<0);
@@ -185,70 +151,4 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_2|((hss2<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 2
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_3|((hss3<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 3
   	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
-}
-
-void Tle9563::configInterruptMask(void)
-{
-	uint16_t tosend = 	WD_SDM_DISABLE | BD_STAT | HS_STAT | TEMP_STAT | SUPPLY_STAT;
-						
-	writeReg(REG_ADDR_INT_MASK, tosend);
-}
-
-uint8_t Tle9563::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_SUP_STAT);
-	writeReg(REG_ADDR_SUP_STAT, 0);
-	RegAddress = REG_ADDR_SUP_STAT;
-	RegContent = input;
-	if((input & 0x1000) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection (chargepump)
-	else if((input & 0x0D55) > 0) ErrorCode |= TLE_UNDER_VOLTAGE;		// undervoltage detection
-	else if((input & 0x02A2) > 0) ErrorCode |= TLE_OVER_VOLTAGE;		// overvoltage detection
-	else if((input & 0x0008) > 0) ErrorCode |= TLE_SHORT_CIRCUIT;		// short circuit detection
-	else if((input & 0x8000) > 0) ErrorCode |= TLE_POWER_ON_RESET;		// Power-On reset detection
-
-	return ErrorCode;
-}
-
-uint8_t Tle9563::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_THERM_STAT);
-	writeReg(REG_ADDR_THERM_STAT, 0);
-	RegAddress = REG_ADDR_THERM_STAT;
-	RegContent = input;
-	if((input & 0x000E) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection
-	else if((input & 0x0001) > 0) ErrorCode |= TLE_TEMP_SHUTDOWN;		// temperature warning
-
-	return ErrorCode;
-}
-
-uint8_t Tle9563::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_HS_OL_OC_OT_STAT);
-	writeReg(REG_ADDR_HS_OL_OC_OT_STAT, 0);
-	RegAddress = REG_ADDR_HS_OL_OC_OT_STAT;
-	RegContent = input;
-	if((input & 0x1C00) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 		// overtemperature detection
-	else if((input & 0x00E0) > 0) ErrorCode |= TLE_LOAD_ERROR;		// open load detection
-	else if((input & 0x0007) > 0) ErrorCode |= TLE_OVERCURRENT;		// overcurrent detection
-
-	return ErrorCode;
-}
-
-uint8_t Tle9563::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_DEV_STAT);
-	writeReg(REG_ADDR_DEV_STAT, 0);
-	RegAddress = REG_ADDR_DEV_STAT;
-	RegContent = input;
-	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
-
-	return ErrorCode;
 }
