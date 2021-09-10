@@ -14,7 +14,7 @@
 
 #include "TLE9563-ino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 TLE9563Ino::TLE9563Ino(void)
 {
@@ -27,4 +27,4 @@ TLE9563Ino::TLE9563Ino(void)
 	Tle9xxx::timer = new TimerIno();
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/

@@ -9,7 +9,7 @@
 
 #include "BLDCM-logger.hpp"
 
-#if (TLE9563_LOGGER_ENABLED == 1)
+#if (TLE9XXX_LOGGER_ENABLED == 1)
 
 #include <stdio.h>
 #include <stdarg.h>
@@ -112,4 +112,4 @@ void Logger::printModuleHex(const uint8_t  * vector,
     printfModule(temp_buffer, module, color);
 }
 
-#endif /* TLE9563_LOGGER_ENABLED */
+#endif /* TLE9XXX_LOGGER_ENABLED */

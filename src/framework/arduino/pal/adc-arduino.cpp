@@ -10,7 +10,7 @@
 
 #include "adc-arduino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 #include <Arduino.h>
 /**
  * @brief Default constructor of the Arduino ADC class
@@ -272,4 +272,4 @@ ADCIno::Error_t ADCIno::ADCWrite(uint8_t value)
     return OK;
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/

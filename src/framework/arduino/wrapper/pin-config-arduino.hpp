@@ -10,10 +10,10 @@
 #ifndef PINCONFIGARDUINO_HPP_
 #define PINCONFIGARDUINO_HPP_
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 #include <stdint.h>
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 
 /**
@@ -53,5 +53,5 @@ struct hardwareconfig_t
 extern hardwareconfig_t ARDUINO_UNO;
 /** @} */
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** PINCONFIGARDUINO_HPP_ **/

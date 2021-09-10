@@ -15,7 +15,7 @@
 #ifndef TLE9563_INO_HPP_
 #define TLE9563_INO_HPP_
 
-#include "config/tle9563-conf.hpp"
+#include "config/tle9xxx-conf.hpp"
 #include "corelib/TLE9563.hpp"
 
 #include "framework/arduino/pal/adc-arduino.hpp"
@@ -23,7 +23,7 @@
 #include "framework/arduino/pal/spic-arduino.hpp"
 #include "framework/arduino/pal/timer-arduino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 /**
  * @addtogroup inoApi
@@ -51,5 +51,5 @@ class TLE9563Ino: virtual public Tle9563
 };
 /* @} */
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** TLE9563_INO_HPP_ **/

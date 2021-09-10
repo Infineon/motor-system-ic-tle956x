@@ -14,7 +14,7 @@
 
 #include "DCM-control-ino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 
 DCMcontrolIno::DCMcontrolIno(void)
@@ -30,4 +30,4 @@ DCMcontrolIno::DCMcontrolIno(void)
 
 
 /** @} */
-#endif	/** TLE9563_FRAMEWORK **/
+#endif	/** MOTOR_SYSTEM_IC_FRAMEWORK **/

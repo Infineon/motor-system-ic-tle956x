@@ -14,7 +14,7 @@
 
 #include "BLDCM-control-ino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 
 BLDCMcontrolIno::BLDCMcontrolIno(void)
@@ -40,4 +40,4 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 
 
 /** @} */
-#endif	/** TLE9563_FRAMEWORK **/
+#endif	/** MOTOR_SYSTEM_IC_FRAMEWORK **/
