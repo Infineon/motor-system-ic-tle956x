@@ -34,7 +34,17 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::timer = new TimerIno();
 	BLDCMcontrol::rpmtimer = new TimerIno();
 	
-	BLDCMcontrol::controller = new TLE9563Ino();
+	BLDCMcontrol::controller = new Tle9563();
+
+	
+	controller->intn = new GPIOIno(ARDUINO_UNO.INTN, INPUT, GPIOIno::POSITIVE );
+	controller->cso = new ADCIno(ARDUINO_UNO.CSO);
+
+	controller->csn = new GPIOIno(ARDUINO_UNO.CSN, OUTPUT, GPIOIno::POSITIVE );
+	controller->sBus = new SPICIno(LSBFIRST, SPI_MODE1, SPI_CLOCK_DIV2);
+
+	controller->timer = new TimerIno();
+	
 }
 
 

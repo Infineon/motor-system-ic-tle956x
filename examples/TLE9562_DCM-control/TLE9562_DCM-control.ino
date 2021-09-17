@@ -15,7 +15,7 @@
 uint16_t speed = 100;
 uint8_t direction = 0;
 
-// Create an instance of BLDCMcontrol called 'MyMotor'. 
+// Create an instance of DCMcontrol called 'MyMotor'. 
 DCMcontrolIno MyMotor = DCMcontrolIno();
 
 void setup()
@@ -29,12 +29,12 @@ void setup()
   MyMotor.begin();
   //MyMotor.setLED(0,20,0);                                                // Set onboard RGB-LED to low-bright green.
 
-  MyMotor.configBLDCshield();
+  MyMotor.configDCshield();
   
   Serial.println("Init ready");
 
   MyMotor.setDCspeed(speed, direction, 3);
-  MyMotor.startBLDCM();
+  MyMotor.startDCM();
 }
 
 void loop()

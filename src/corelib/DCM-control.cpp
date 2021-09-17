@@ -57,21 +57,82 @@ uint8_t DCMcontrol::configDCshield(void)
   controller->configInterruptMask();
 }
 
-void DCMcontrol::setDCspeed(uint32_t speed, bool direction, uint8_t motorNumber)
+void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 {
-    if(motorNumber == 0b01)    // motor A
-    {
-        pwmA->ADCWrite(speed);
-    }
+    speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    if(speed > 255) _DutyCycle = 255;
+    else _DutyCycle = speed;
 
-    else if(motorNumber == 0b10)    // motor B
+    if(_MotorStartEnable)
     {
-        pwmB->ADCWrite(speed);
-    }
+        if(motorNumber == 0b01)         // motor A
+        {
+            pwmA->ADCWrite(_DutyCycle);
+            if(direction)
+            {
+                _HBstatus[0] = controller->ActivePWM;
+                _HBstatus[1] = controller->ActiveGround;
+            }
+            else
+            {
+                _HBstatus[1] = controller->ActivePWM;
+                _HBstatus[0] = controller->ActiveGround;
+            }
+            
+        }
 
-    else if(motorNumber == 0b11)    // both motors
-    {
-        pwmA->ADCWrite(speed);
-        pwmB->ADCWrite(speed);
+        else if(motorNumber == 0b10)    // motor B
+        {
+            pwmB->ADCWrite(_DutyCycle);
+            if(direction)
+            {
+                _HBstatus[2] = controller->ActivePWM;
+                _HBstatus[3] = controller->ActiveGround;
+            }
+            else
+            {
+                _HBstatus[3] = controller->ActivePWM;
+                _HBstatus[2] = controller->ActiveGround;
+            }
+        }
+
+        else if(motorNumber == 0b11)    // both motors
+        {
+            pwmA->ADCWrite(_DutyCycle);
+            pwmB->ADCWrite(_DutyCycle);
+            if(direction)
+            {
+                _HBstatus[0] = controller->ActivePWM;
+                _HBstatus[1] = controller->ActiveGround;
+                _HBstatus[2] = controller->ActivePWM;
+                _HBstatus[3] = controller->ActiveGround;
+            }
+            else
+            {
+                _HBstatus[1] = controller->ActivePWM;
+                _HBstatus[0] = controller->ActiveGround;
+                _HBstatus[3] = controller->ActivePWM;
+                _HBstatus[2] = controller->ActiveGround;
+            }
+        }
+        controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
     }
+}
+
+void DCMcontrol::startDCM(void)
+{
+    _MotorStartEnable = 1;
+    controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
+}
+
+uint8_t DCMcontrol::stopDCM(uint8_t brakemode)
+{
+    _MotorStartEnable = 0;
+    _HBstatus[0] = controller->ActiveGround;
+    _HBstatus[1] = controller->ActiveGround;
+    _HBstatus[2] = controller->ActiveGround;
+    _HBstatus[3] = controller->ActiveGround;
+
+    controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
+    return 1;
 }

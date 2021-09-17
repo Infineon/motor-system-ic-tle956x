@@ -14,11 +14,7 @@
 
 Tle9563::Tle9563(void)
 {
-	intn = NULL;
 	cso = NULL;
-	sBus = NULL;
-	csn = NULL;
-	timer = NULL;
 
 	ActiveGround.HBmode = 0b01;
 	ActiveGround.Freewheeling = 0;
@@ -35,12 +31,7 @@ Tle9563::Tle9563(void)
 
 Tle9563::~Tle9563()
 {
-	intn = NULL;
 	cso = NULL;
-
-	sBus = NULL;
-	csn = NULL;
-	timer = NULL;
 }
 
 void Tle9563::config(void)

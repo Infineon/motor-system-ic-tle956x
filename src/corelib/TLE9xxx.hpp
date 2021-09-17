@@ -76,8 +76,9 @@ class Tle9xxx
 		virtual void 			begin();
 		virtual void 			end();
 		virtual void 			config();
-		virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
-		virtual void 			setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
+		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
+		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBconfig_t hb4);
+		//virtual void 			setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
 
 		/**
 		 * @brief set the Interrupt Mask to select which events should cause a hardware pin interrupt generation
@@ -116,19 +117,17 @@ class Tle9xxx
 		 * @return DiagFlag return the generated Error code
 		 */
 		uint8_t					checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent);
-		
-	protected:
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
-		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
 		GPIO     				*csn;        	//<! \brief shield enable GPIO to switch chipselect on/of
 		Timer    				*timer;     	//<! \brief timer for delay settings
 
+	protected:
 		/**
 		 * @brief disable the cyclic redundancy check of TLE9xxx
 		 */

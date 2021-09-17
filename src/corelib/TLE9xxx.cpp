@@ -15,7 +15,6 @@
 Tle9xxx::Tle9xxx(void)
 {
 	intn = NULL;
-	cso = NULL;
 	sBus = NULL;
 	csn = NULL;
 	timer = NULL;
@@ -36,7 +35,6 @@ Tle9xxx::Tle9xxx(void)
 Tle9xxx::~Tle9xxx()
 {
 	intn = NULL;
-	cso = NULL;
 
 	sBus = NULL;
 	csn = NULL;

@@ -22,9 +22,11 @@
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
 
+/*
 #if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 #include "../TLE9563-ino.hpp"
 #endif
+*/
 
 // ================================== Defines ==================================================================================================
 #define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
@@ -158,6 +160,7 @@ class BLDCMcontrol
 		 * 
 		 */
 		Tle9563 				*controller;
+		//Tle9563					*controller = new Tle9563();
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
 		/**

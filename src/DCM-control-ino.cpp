@@ -24,7 +24,14 @@ DCMcontrolIno::DCMcontrolIno(void)
 
 	DCMcontrol::timer = new TimerIno();
 	
-	DCMcontrol::controller = new TLE9563Ino();
+	DCMcontrol::controller = new Tle9562();
+
+	controller->intn = new GPIOIno(ARDUINO_UNO.INTN, INPUT, GPIOIno::POSITIVE );
+
+	controller->csn = new GPIOIno(ARDUINO_UNO.CSN, OUTPUT, GPIOIno::POSITIVE );
+	controller->sBus = new SPICIno(LSBFIRST, SPI_MODE1, SPI_CLOCK_DIV2);
+
+	controller->timer = new TimerIno();
 }
 
 

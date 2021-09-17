@@ -89,6 +89,8 @@ class Tle9563: public Tle9xxx
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
+
+		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
 		
 	protected:
 
