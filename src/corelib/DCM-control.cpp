@@ -59,7 +59,7 @@ uint8_t DCMcontrol::configDCshield(void)
 
 void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 {
-    speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    //speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
     if(speed > 255) _DutyCycle = 255;
     else _DutyCycle = speed;
 
@@ -70,13 +70,15 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
             pwmA->ADCWrite(_DutyCycle);
             if(direction)
             {
-                _HBstatus[0] = controller->ActivePWM;
-                _HBstatus[1] = controller->ActiveGround;
+                _HBstatus[HB1] = controller->ActivePWM;
+                _HBstatus[HB2] = controller->ActiveGround;
+                _Direction[OUT_A] = PWM1_TO_HB1;
             }
             else
             {
-                _HBstatus[1] = controller->ActivePWM;
-                _HBstatus[0] = controller->ActiveGround;
+                _HBstatus[HB2] = controller->ActivePWM;
+                _HBstatus[HB1] = controller->ActiveGround;
+                _Direction[OUT_A] = PWM1_TO_HB2;
             }
             
         }
@@ -86,13 +88,15 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
             pwmB->ADCWrite(_DutyCycle);
             if(direction)
             {
-                _HBstatus[2] = controller->ActivePWM;
-                _HBstatus[3] = controller->ActiveGround;
+                _HBstatus[HB3] = controller->ActivePWM;
+                _HBstatus[HB4] = controller->ActiveGround;
+                _Direction[OUT_B] = PWM3_TO_HB3;
             }
             else
             {
-                _HBstatus[3] = controller->ActivePWM;
-                _HBstatus[2] = controller->ActiveGround;
+                _HBstatus[HB4] = controller->ActivePWM;
+                _HBstatus[HB3] = controller->ActiveGround;
+                _Direction[OUT_B] = PWM3_TO_HB4;
             }
         }
 
@@ -102,26 +106,33 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
             pwmB->ADCWrite(_DutyCycle);
             if(direction)
             {
-                _HBstatus[0] = controller->ActivePWM;
-                _HBstatus[1] = controller->ActiveGround;
-                _HBstatus[2] = controller->ActivePWM;
-                _HBstatus[3] = controller->ActiveGround;
+                _HBstatus[HB1] = controller->ActivePWM;
+                _HBstatus[HB2] = controller->ActiveGround;
+                _HBstatus[HB3] = controller->ActivePWM;
+                _HBstatus[HB4] = controller->ActiveGround;
+                _Direction[OUT_A] = PWM1_TO_HB1;
+                _Direction[OUT_B] = PWM3_TO_HB3;
             }
             else
             {
-                _HBstatus[1] = controller->ActivePWM;
-                _HBstatus[0] = controller->ActiveGround;
-                _HBstatus[3] = controller->ActivePWM;
-                _HBstatus[2] = controller->ActiveGround;
+                _HBstatus[HB2] = controller->ActivePWM;
+                _HBstatus[HB1] = controller->ActiveGround;
+                _HBstatus[HB4] = controller->ActivePWM;
+                _HBstatus[HB3] = controller->ActiveGround;
+                _Direction[OUT_A] = PWM1_TO_HB2;
+                _Direction[OUT_B] = PWM3_TO_HB4;
             }
         }
-        controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
+        controller->setHalfbridge(_HBstatus[HB1], _HBstatus[HB2], _HBstatus[HB3], _HBstatus[HB4]);
+        controller->setGenControl(_Direction[OUT_A], _Direction[OUT_B]);
+        //controller->setHalfbridge(controller->ActiveGround, controller->ActivePWM, controller->ActiveGround, controller->ActiveGround);
     }
 }
 
 void DCMcontrol::startDCM(void)
 {
     _MotorStartEnable = 1;
+    controller->setGenControl(_Direction[OUT_A], _Direction[OUT_B]);
     controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
 }
 
@@ -135,4 +146,9 @@ uint8_t DCMcontrol::stopDCM(uint8_t brakemode)
 
     controller->setHalfbridge(_HBstatus[0], _HBstatus[1], _HBstatus[2], _HBstatus[3]);
     return 1;
+}
+
+void DCMcontrol::setLED(uint16_t led1, uint16_t led2)
+{
+    controller->setHSS(0, 0, led1, led2);
 }

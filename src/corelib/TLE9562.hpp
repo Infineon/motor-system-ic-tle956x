@@ -17,15 +17,42 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include <Arduino.h>		// DEBUGGING
+
 #include "TLE9xxx.hpp"
 
+// ================================== Defines ==================================================================================================
+/* General Bridge Control */
+#define BDFREQ						1		// Bridge driver synchronization frequency: 37Mhz
+											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
+#define CPUVTH						0		// Charge pump under voltage:	TH1
+#define FET_LVL						1		// External MOSFET logic level:	normal level MOSFET
+#define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
+#define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
+#define IPCHGADT					0		// 1Step
+#define AGC							0b00	// inactive
+#define CPEN						1		// charge pump: enabled
+#define POCHGDIS					0		// Postcharge phase during PWM: disabled
+#define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
+#define EN_GEN_CHECK				0		// detection of active / FW MOSFET: disabled
+#define IHOLD						0		// Gate driver hold current:	TH1
+#define FMODE						0		// Frequency modulation of charge pump: no modulation
+
+#define PWM3_TO_HB3					0
+#define PWM3_TO_HB4					1
+#define PWM1_TO_HB1					0
+#define PWM1_TO_HB2					1
+
+/* PWM HSS modules */
 #define PWM_CTRL_DC_MASK			0x3FF0
 #define PWM_BNK_MODULE_1			0x0
 #define PWM_BNK_MODULE_2			0x1
 #define PWM_BNK_MODULE_3			0x2
+#define PWM_BNK_MODULE_4			0x3
+// =============================================================================================================================================
 
 /**
- * @addtogroup tle9563api
+ * @addtogroup tle9562api
  * @{
  */
 
@@ -33,9 +60,9 @@
  * @brief represents a TLE9562
  *
  * This class inherits all basig functions a Tle9xxx SBC offers and adds features, a TLE9562 BLDC controller is capable of.
- * This includes the triple gatedriver, mainly used for the MOSFETS of the three BLDCM phases.
- * Further three high side switches (hss) for various applications, but in this Lib they are intended
- * to drive an RGB LED like on the BLDC control board, using the TLE onboard PWM timer slices.
+ * This includes the four gatedrivers, mainly used for the MOSFETS of the two DC-motor outputs.
+ * Further four high side switches (hss) for various applications. In this Lib two of them are used to drive the two onboard red LEDs,
+ * using the 10-bit TLE PWM timer slices.
  */
 class Tle9562: public Tle9xxx
 {
@@ -87,6 +114,15 @@ class Tle9562: public Tle9xxx
 		 * @param hss4 dutycycle for highsideswitch 4 (10-bit)
 		 */
 		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4);
+
+		/**
+		 * @brief Set the General Bridge Control data
+		 * Most Flags are taken from the defines in this header file, only PWM mapping is changeable.
+		 * 
+		 * @param MapPWM1 Map PWM channel 1 to a halfbridge. Use either the define 'PWM1_TO_HB1' or 'PWM1_TO_HB2'
+		 * @param MapPWM2 Map PWM channel 3 to a halfbridge. Use either the define 'PWM3_TO_HB3' or 'PWM3_TO_HB4'
+		 */
+		void					setGenControl(bool MapPWM1, bool MapPWM2);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 

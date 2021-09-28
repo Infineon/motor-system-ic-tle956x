@@ -43,6 +43,20 @@ class DCMcontrol
 {
 
 	public:
+
+		volatile uint8_t 		interrupt_status_changed = 0;
+
+		enum _Halfbridges{
+			HB1,
+			HB2,
+			HB3,
+			HB4
+		};
+		enum _Outputs{
+			OUT_A,
+			OUT_B
+		};
+
         DCMcontrol(void);
         ~DCMcontrol(void);
 
@@ -88,11 +102,15 @@ class DCMcontrol
 		 * @return uint8_t returns success or failure of stopping
 		 */
 		uint8_t					stopDCM(uint8_t brakemode);
-
+		
 		/**
-		 * @brief 
+		 * @brief set the intensity of the two onboard LEDS using two HSS og the TLE.
 		 * 
+		 * @param led1 brightness of LED D6 (10-bit)
+		 * @param led2 brightness of LED D7 (10-bit)
 		 */
+		void 					setLED(uint16_t led1, uint16_t led2);
+
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 
@@ -106,7 +124,7 @@ class DCMcontrol
 
 		uint8_t					_DutyCycle = 0;
 		uint8_t					_MotorStartEnable = 0;
-		uint8_t					_Direction = 0;
+		uint8_t					_Direction[2] = {0, 0};
 		HBconfig_t				_HBstatus[4] = 	{controller->ActiveGround, controller->ActiveGround, controller->ActiveGround, controller->ActiveGround};
 
 };

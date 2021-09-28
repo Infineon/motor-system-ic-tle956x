@@ -30,6 +30,7 @@ void setup()
   //MyMotor.setLED(0,20,0);                                                // Set onboard RGB-LED to low-bright green.
 
   MyMotor.configDCshield();
+  MyMotor.setLED(200,200);
   
   Serial.println("Init ready");
 
@@ -43,10 +44,10 @@ void loop()
   {
     uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor
     if(in == '+'){
-       speed += 100;
+       speed += 50;
        Serial.println(speed);}
     if(in == '-'){
-      speed -= 100;
+      speed -= 50;
       Serial.println(speed);}
     if(in == 'd'){
       direction = 0;
