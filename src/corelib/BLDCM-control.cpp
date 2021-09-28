@@ -113,21 +113,39 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
 
 uint8_t BLDCMcontrol::checkBLDCshield()
 {
+  uint8_t returnvalue = 0;
   if(interrupt_status_changed)
   {
     uint8_t ErrorCode = 0;
     uint16_t RegAddress = 0;
     uint16_t RegContent = 0;
     ErrorCode = controller->checkStatSUP(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
     ErrorCode = controller->checkStatTHERM(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
     ErrorCode = controller->checkStatHSS(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
     ErrorCode = controller->checkStatDEV(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
     interrupt_status_changed = 0;
   }
+  return returnvalue;
 }
 
 uint8_t BLDCMcontrol::configBLDCshield()
@@ -382,4 +400,98 @@ void BLDCMcontrol::UpdateHardware(uint8_t CommutationStep)
       default:
         break;
 	}
+}
+
+void BLDCMcontrol::FindPolepairs(uint16_t delay, bool hallsensor)
+{
+	uint8_t Hallpattern = 0;
+	uint8_t Counter = 0;
+	uint8_t Magnetpoles = 0;
+	uint8_t Magnetpolepairs = 0;
+	uint8_t in;
+
+	Serial.println("Mark a point at the rotation axis of your motor in order to determine its position.");
+    timer->delayMilli(1000);
+
+    Serial.println("Press enter to bring motor in start position");
+    while(Serial.available() == 0);
+    in = Serial.read();
+    Hallpattern = CommutateHallBLDC(DUTYCYCLE_SINGLE_STEP, hallsensor);     //go in initial position
+    timer->delayMilli(800);
+    stopBLDCM(BRAKEMODE_PASSIVE);
+
+    Serial.println(" ");
+    Serial.println("Press enter to start the measurement.");
+    Serial.println("Press enter again to stop the measurement, when the motor did one full revolution");
+    Serial.println(" ");
+    while(Serial.available() == 0);
+    in = Serial.read();
+
+	Serial.println("Step | Commutation | HallpatternDEC | HallpatternBIN");
+    while(Serial.available() == 0)
+    {
+        Counter ++;
+        Hallpattern = CommutateHallBLDC(DUTYCYCLE_SINGLE_STEP, hallsensor);
+        Serial.print(Counter);						// Print Step
+        if(Counter < 10) Serial.print(" ");         //Align values
+        Serial.print("          ");
+        Serial.print(_Commutation);					// Print Commutation
+        Serial.print("          ");	
+        if(hallsensor == 1)
+        {
+            Serial.print(Hallpattern);				// Print hall pattern decimal
+            Serial.print("          ");
+			PrintBinary(3, Hallpattern);			// Print hall pattern binary
+			Serial.println("");
+        }
+        else Serial.println(" / ");
+        timer->delayMilli(delay);
+    }
+    in = Serial.read();			// empty serial buffer
+
+	stopBLDCM(BRAKEMODE_PASSIVE);
+
+	// Evaluation
+    if((Counter % 2) == 1)
+    {
+        Serial.println("Please try again, it must be a even number, when you stop the motor");
+        // BLDCM_APP_LOG("Please try again, it must be a even number, when you stop the motor\n");
+        // tle9563_log.print("asdfasdf %u", value );
+    }
+    else if((Counter % 6) > 0)
+    {
+        Serial.println("Please try again, it must be a multiple of 6");
+    }
+    else
+    {
+        Magnetpolepairs = Counter/6;
+        Magnetpoles = Magnetpolepairs * 2;
+        Serial.print("Your motor has ");
+        // TLE9563_LOG_MSG_VAL("Your motor has  %u", Magnetpolepairs);
+        Serial.print(Magnetpolepairs);
+        Serial.print(" polepairs (equal to ");
+        Serial.print(Magnetpoles);
+        Serial.println(" poles)");
+    }
+    Serial.println("======================================================================");
+    Serial.println("");
+
+	timer->delayMilli(3000);
+    Counter = 0;
+}
+
+void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
+{
+    switch(msg)
+    {
+        case PARAMETER_MISSING:
+            Serial.println("=> Error: For this operation mode one or more motor parameter(s) are missing! <=");
+            break;
+        case PARAMETER_OUT_OF_RANGE:
+            Serial.println("=> Warning: A parameter is out of range! <=");
+            break;
+        default:
+            break;
+    }
+    setLED(50,0,0);      // Set onboard RGB-LED to red
 }

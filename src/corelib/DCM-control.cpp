@@ -57,6 +57,43 @@ uint8_t DCMcontrol::configDCshield(void)
   controller->configInterruptMask();
 }
 
+uint8_t DCMcontrol::checkBLDCshield()
+{
+  uint8_t returnvalue = 0;
+  if(interrupt_status_changed)
+  {
+    uint8_t ErrorCode = 0;
+    uint16_t RegAddress = 0;
+    uint16_t RegContent = 0;
+    ErrorCode = controller->checkStatSUP(RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
+    ErrorCode = controller->checkStatTHERM(RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
+    ErrorCode = controller->checkStatHSS(RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
+    ErrorCode = controller->checkStatDEV(RegAddress, RegContent);
+    if(ErrorCode > 0)
+    {
+      returnvalue = 1;
+      controller->PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+    }
+    interrupt_status_changed = 0;
+  }
+  return returnvalue;
+}
+
 void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 {
     //speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)

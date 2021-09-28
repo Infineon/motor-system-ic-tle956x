@@ -17,6 +17,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#include <Arduino.h>
+
 #include "TLE9xxx-reg.hpp"
 #include "../pal/timer.hpp"
 #include "../pal/gpio.hpp"
@@ -27,6 +29,9 @@
 #define TLE9xxx_CMD_WRITE          	0x80
 #define TLE9xxx_CMD_READ          	0x00
 #define TLE9xxx_CMD_CLEAR          	0x80
+
+#define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
+
 /**
  * @addtogroup tle9xxxapi
  * @{
@@ -86,6 +91,15 @@ class Tle9xxx
 		 */
 		void 					configInterruptMask(void);
 
+		/**
+		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
+		 * 
+		 * @param msg hand over error code
+		 * @param RegAddress address of the register, the error bit was set in
+		 * @param RegContent full content of the register, ther error bit was set in
+		 */
+		bool					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
+		void 					PrintBinary(uint8_t digits, uint16_t number);
 		/**
 		 * @brief read the Supply Voltage Fail Status register of the TLE and generate an ErrorCode depending of the fault-category
 		 * 

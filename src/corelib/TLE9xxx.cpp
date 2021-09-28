@@ -140,3 +140,62 @@ uint8_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 
 	return ErrorCode;
 }
+
+bool Tle9xxx::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent)
+{
+    if(msg & TLE_SPI_ERROR)
+    {
+        Serial.println("===> Error: CRC / SPI-Failure <===");
+    }
+    else if(msg & TLE_LOAD_ERROR)
+    {
+        Serial.println("===> Error: Open-Load detected! <===");
+    }
+    else if(msg & TLE_UNDER_VOLTAGE)
+    {
+        Serial.println("===> Error: Undervoltage detected! Check your voltage supply <===");
+    }
+    else if(msg & TLE_OVER_VOLTAGE)
+    {
+        Serial.println("===> Error: Overvoltage detected! Check your voltage supply <====");
+    }
+    else if(msg & TLE_POWER_ON_RESET)
+    {
+        Serial.println("===> Power on reset detected! <===");
+    }
+    else if(msg & TLE_TEMP_SHUTDOWN)
+    {
+        Serial.println("===> Error: Temperature shutdown <===");
+    }
+    else if(msg & TLE_OVERCURRENT)
+    {
+        Serial.println("===> Error: Overcurrent detected! <===");
+    }
+    else if(msg & TLE_SHORT_CIRCUIT)
+    {
+        Serial.println("===> Error: Short circuit detected! <===");
+    }
+
+    if(DETAILED_ERROR_REPORT)
+    {
+        Serial.print("Reg: 0x");
+        Serial.print(RegAddress, HEX);
+        Serial.print("  Content: 0x");
+		Serial.print(RegContent, HEX);
+        //PrintBinary(16, RegContent);
+        Serial.println("");
+    }
+}
+
+void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
+{
+  for(uint8_t i=digits-1; i>0; i--)
+  {
+    if(pow(2, i) <= number)
+    {
+      break;
+    }
+    Serial.print("0");
+  }
+  Serial.print(number,BIN);
+}

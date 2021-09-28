@@ -27,10 +27,8 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
-  //MyMotor.setLED(0,20,0);                                                // Set onboard RGB-LED to low-bright green.
-
   MyMotor.configDCshield();
-  MyMotor.setLED(200,200);
+  MyMotor.setLED(0,100);                                                 // Switch on LED 2
   
   Serial.println("Init ready");
 
@@ -63,6 +61,11 @@ void loop()
       MyMotor.startDCM();
       Serial.println("Motor started");}
     MyMotor.setDCspeed(speed, direction, 3);
+  }
+
+  if(MyMotor.checkBLDCshield() )            // Check, if interrupt flag was set and read status register of TLE
+  {
+    MyMotor.setLED(100,0);                  // Switch on LED 1
   }
 
 }

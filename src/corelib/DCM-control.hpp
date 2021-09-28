@@ -81,6 +81,14 @@ class DCMcontrol
 		uint8_t					configDCshield(void);
 
 		/**
+		 * @brief check if status information is available
+		 * If information is available, it will be printed automatically by the frontend.
+		 * @param request select the registers/information that you want to observe
+		 * @return uint8_t Error return code / status report
+		 */
+		uint8_t					checkBLDCshield();
+
+		/**
 		 * @brief set the speed and direction for either a single motor or both motors
 		 * 
 		 * @param speed sets the dutycycle of the related PWM channel. 8 bit value (0-255)

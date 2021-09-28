@@ -15,12 +15,14 @@
 #define BLDCMCONTROL_HPP_
 
 #include "TLE9563.hpp"
-#include "TLE9xxx.hpp"
 
 #include "../pal/timer.hpp"
 #include "../pal/gpio.hpp"
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
+#include "../util/BLDCM-logger.hpp"
+
+#include <Arduino.h>
 
 /*
 #if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
@@ -37,7 +39,6 @@
 #define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
 #define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
-#define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
 
 
 /* Braking modes */
@@ -177,15 +178,6 @@ class BLDCMcontrol
 		 * @param msg hand over the error code
 		 */
 		void					PrintErrorMessage(_ErrorMessages msg);
-
-		/**
-		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
-		 * 
-		 * @param msg hand over error code
-		 * @param RegAddress address of the register, the error bit was set in
-		 * @param RegContent full content of the register, ther error bit was set in
-		 */
-		void					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 
 
 
