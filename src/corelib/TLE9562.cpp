@@ -122,3 +122,21 @@ void Tle9562::setGenControl(bool MapPWM1, bool MapPWM3)
 	uint16_t ToSend = (BDFREQ<<15)|(MapPWM3<<14)|(MapPWM1<<13)|(CPUVTH<<12)|(FET_LVL<<11)|(CPSTGA<<10)|(BDOV_REC<<9)|(IPCHGADT<<8)|(AGC<<6)|(CPEN<<5)|(POCHGDIS<<4)|(AGCFILT<<3)|(EN_GEN_CHECK<<2)|(IHOLD<<1)|(FMODE<<0);
 	writeReg(REG_ADDR_GENCTRL, ToSend);
 }
+
+void Tle9562::checkStat_TRISE_FALL(uint8_t hb, float &Trise, float &Tfall)
+{
+	uint16_t input=0;
+	uint16_t reg=0;
+	switch(hb){
+		case 1: reg = REG_ADDR_TRISE_FALL1; break;
+		case 2: reg = REG_ADDR_TRISE_FALL2; break;
+		case 3: reg = REG_ADDR_TRISE_FALL3; break;
+		case 4: reg = REG_ADDR_TRISE_FALL4; break;
+	}
+
+	input = readReg(reg);
+	float t_rise = input & 0x3F;
+	float t_fall = (input>>8) & 0x3F;
+	Trise = 53.3 * t_rise;					// [ns]
+	Tfall = 53.3 * t_fall;					// [ns]
+}

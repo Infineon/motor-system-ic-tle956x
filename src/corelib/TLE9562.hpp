@@ -30,7 +30,7 @@
 #define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
 #define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
 #define IPCHGADT					0		// 1Step
-#define AGC							0b00	// inactive
+#define AGC							0b10	// Adaptive gate control: ACTIVE
 #define CPEN						1		// charge pump: enabled
 #define POCHGDIS					0		// Postcharge phase during PWM: disabled
 #define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
@@ -59,7 +59,7 @@
 /**
  * @brief represents a TLE9562
  *
- * This class inherits all basig functions a Tle9xxx SBC offers and adds features, a TLE9562 BLDC controller is capable of.
+ * This class inherits all basic functions a Tle9xxx SBC offers and adds features, a TLE9562 BLDC controller is capable of.
  * This includes the four gatedrivers, mainly used for the MOSFETS of the two DC-motor outputs.
  * Further four high side switches (hss) for various applications. In this Lib two of them are used to drive the two onboard red LEDs,
  * using the 10-bit TLE PWM timer slices.
@@ -123,6 +123,13 @@ class Tle9562: public Tle9xxx
 		 * @param MapPWM2 Map PWM channel 3 to a halfbridge. Use either the define 'PWM3_TO_HB3' or 'PWM3_TO_HB4'
 		 */
 		void					setGenControl(bool MapPWM1, bool MapPWM2);
+
+		/**
+		 * @brief Reads out the MOSFET rise/fall time of the given PWM half-bridge
+		 * 
+		 * @param hb which halfbridge should be read [1-4]
+		 */
+		void					checkStat_TRISE_FALL(uint8_t hb, float &Trise, float &Tfall);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 

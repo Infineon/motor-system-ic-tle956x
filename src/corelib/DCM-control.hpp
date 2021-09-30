@@ -119,6 +119,13 @@ class DCMcontrol
 		 */
 		void 					setLED(uint16_t led1, uint16_t led2);
 
+		/**
+		 * @brief Reads out the fall time and rise time of the selected MOSFETS and prints the value(s) in nanoseconds to the serial monitor
+		 * 
+		 * @param hb which halfbridges should be read (4-bit)
+		 */
+		void 					print_TFALL_TRISE(uint8_t hb);
+
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 

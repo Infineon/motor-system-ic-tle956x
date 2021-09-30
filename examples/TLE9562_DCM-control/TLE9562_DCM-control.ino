@@ -40,26 +40,42 @@ void loop()
 {
   if (Serial.available() > 0)
   {
-    uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor
-    if(in == '+'){
+    uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
+    if(in == 'i')                               // print TLE and MOSFET infos
+    {
+       MyMotor.print_TFALL_TRISE(0b1111);       // print t_Fall and t_Rise times of all halfbridges
+    }
+    if(in == '+')
+    {
        speed += 50;
-       Serial.println(speed);}
-    if(in == '-'){
+       Serial.println(speed);
+    }
+    if(in == '-')
+    {
       speed -= 50;
-      Serial.println(speed);}
-    if(in == 'd'){
+      Serial.println(speed);
+    }
+    if(in == 'd')
+    {
       direction = 0;
-      Serial.println("forward");}
-    if(in == 'e'){
+      Serial.println("forward");
+    }
+    if(in == 'e')
+    {
        direction = 1;
-       Serial.println("backward");}
-
-    if(in == 'h'){
+       Serial.println("backward");
+    }
+    if(in == 'h')
+    {
       MyMotor.stopDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");}
-    if(in == 'g'){
+      Serial.println("Motor stopped");
+    }
+    if(in == 'g')
+    {
       MyMotor.startDCM();
-      Serial.println("Motor started");}
+      Serial.println("Motor started");
+    }
+
     MyMotor.setDCspeed(speed, direction, 3);
   }
 

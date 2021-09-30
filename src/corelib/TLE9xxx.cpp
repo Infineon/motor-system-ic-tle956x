@@ -199,3 +199,28 @@ void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
   }
   Serial.print(number,BIN);
 }
+
+void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, uint8_t ICHG_BNK)
+{
+
+}
+
+void Tle9xxx::set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx)
+{
+
+}
+
+void Tle9xxx::set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK)
+{
+	
+}
+
+void Tle9xxx::set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK)
+{
+
+}
+
+void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK)
+{
+
+}

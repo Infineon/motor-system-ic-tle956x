@@ -97,9 +97,11 @@
             REG_ADDR_EFF_TDON_OFF1		= (0x53),       /**< Effective MOSFET turn-on/off delay - PWM half- bridge 1 */
             REG_ADDR_EFF_TDON_OFF2		= (0x54),       /**< Effective MOSFET turn-on/off delay - PWM half- bridge 2 */
 			REG_ADDR_EFF_TDON_OFF3		= (0x55),       /**< Effective MOSFET turn-on/off delay - PWM half- bridge 3 */
+			REG_ADDR_EFF_TDON_OFF4		= (0x56),       /**< Effective MOSFET turn-on/off delay - PWM half- bridge 4 */
 			REG_ADDR_TRISE_FALL1		= (0x57),       /**< MOSFET rise/fall time - PWM half-bridge 1 */
 			REG_ADDR_TRISE_FALL2		= (0x58),       /**< MOSFET rise/fall time - PWM half-bridge 2 */
 			REG_ADDR_TRISE_FALL3		= (0x59),       /**< MOSFET rise/fall time - PWM half-bridge 3 */
+			REG_ADDR_TRISE_FALL4		= (0x5A),       /**< MOSFET rise/fall time - PWM half-bridge 4 */
 			/* SPI status information registers, Selective wake status registers */
 			REG_ADDR_SWK_STAT			= (0x60),       /**< Selective Wake Status */
 			REG_ADDR_SWK_ECNT_STAT		= (0x61),       /**< Selective Wake ECNT Status */

@@ -132,6 +132,50 @@ class Tle9xxx
 		 */
 		uint8_t					checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent);
 
+		/**
+		 * @brief HB charge/discharge currents for PWM operation
+		 * REF p.221 in TLE9562 datasheet
+		 * @param IDCHG Charge current of HBx active MOSFET
+		 * @param ICHG Charge current of HBx active MOSFET or charge and discharge current of HBx FW MOSFET
+		 * @param ICHG_BNK Banking bits for charge and discharge currents 
+		 */
+		void					set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, uint8_t ICHG_BNK);
+
+		/**
+		 * @brief HM max. pre-charge/pre-discharge in PWM operation current and diagnostic pull-down
+		 * 
+		 * @param HBxIDIAG Control of HBx off-state current source and current sink
+		 * @param ICHGMAXx Maximum drive current of HBx during the pre-charge phase and pre-discharge phases
+		 */
+		void					set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx);
+
+		/**
+		 * @brief HBx per-charge/pre-discharge initialization configuration in PWM operation
+		 * 
+		 * @param PDCHGINIT Initial predischarge current of HBx
+		 * @param PCHGINIT  Initial precharge current of HBx
+		 * @param INIT_BNK Banking bits for Precharge and Predischarge Initial Current
+		 */
+		void					set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK);
+
+		/**
+		 * @brief HBx inouts TDON configuration
+		 * 
+		 * @param TDON Turn-on delay time of active MOSFET of HBx
+		 * @param HB_TDON_BNK Banking bits for turn-on delay time
+		 */
+		void					set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK);
+
+		/**
+		 * @brief HBx TDOFF configuration
+		 * 
+		 * @param TDOFF Tirn-off delay time of active MOSFET of HBx
+		 * @param HB_TDOFF_BNK Banking bits for turn-off delay time
+		 */
+		void					set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK);
+
+
+
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 

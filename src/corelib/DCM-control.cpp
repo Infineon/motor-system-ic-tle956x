@@ -189,3 +189,46 @@ void DCMcontrol::setLED(uint16_t led1, uint16_t led2)
 {
     controller->setHSS(0, 0, led1, led2);
 }
+
+void DCMcontrol::print_TFALL_TRISE(uint8_t hb)
+{
+    float trise = 0;
+    float tfall = 0;
+    if(hb & 0x1)
+    {
+        controller->checkStat_TRISE_FALL(1, trise, tfall);
+        Serial.print("t_RISE1: ");
+        Serial.print(trise);
+        Serial.print("ns, \t t_FALL1: ");
+        Serial.print(tfall);
+        Serial.println("ns");
+    }
+    if(hb & 0x2)
+    {
+        controller->checkStat_TRISE_FALL(2, trise, tfall);
+        Serial.print("t_RISE2: ");
+        Serial.print(trise);
+        Serial.print("ns, \t t_FALL2: ");
+        Serial.print(tfall);
+        Serial.println("ns");
+    }
+    if(hb & 0x4)
+    {
+        controller->checkStat_TRISE_FALL(3, trise, tfall);
+        Serial.print("t_RISE3: ");
+        Serial.print(trise);
+        Serial.print("ns, \t t_FALL3: ");
+        Serial.print(tfall);
+        Serial.println("ns");
+    }
+    if(hb & 0x8)
+    {
+        controller->checkStat_TRISE_FALL(4, trise, tfall);
+        Serial.print("t_RISE4: ");
+        Serial.print(trise);
+        Serial.print("ns, \t t_FALL4: ");
+        Serial.print(tfall);
+        Serial.println("ns");
+    }
+    
+}
