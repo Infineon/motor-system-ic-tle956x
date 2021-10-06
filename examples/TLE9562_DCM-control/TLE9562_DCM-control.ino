@@ -43,7 +43,7 @@ void loop()
     uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
     if(in == 'i')                               // print TLE and MOSFET infos
     {
-       MyMotor.print_TFALL_TRISE(0b1111);       // print t_Fall and t_Rise times of all halfbridges
+       //MyMotor.print_TFALL_TRISE(0b1111);       // print t_Fall and t_Rise times of all halfbridges
     }
     if(in == '+')
     {

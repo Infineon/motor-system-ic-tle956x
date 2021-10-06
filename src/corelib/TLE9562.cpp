@@ -33,8 +33,9 @@ Tle9562::~Tle9562()
 	
 }
 
-void Tle9562::config(void)
+void Tle9562::config(uint8_t agc = 0)
 {
+	_agc_status = agc;
 	/**
 	 * TODO: split up in separate functions for better control from outside the library
 	 * 
@@ -43,7 +44,6 @@ void Tle9562::config(void)
 	SBC_CRC_Disable();
 
 	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);
-
 	/**
 	 * 13:12 Filter time 							500ns
 	 * 11:9 LS4 drain source overvoltage threshold	800mV
@@ -102,9 +102,8 @@ void Tle9562::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBco
 	ToSend = ToSend | (hb2.HBmode<<6)|(hb2.Freewheeling<<5)|(hb2.PWMenable<<4);
 	ToSend = ToSend | (hb3.HBmode<<10)|(hb3.Freewheeling<<9)|(hb3.PWMenable<<8);
     ToSend = ToSend | (hb4.HBmode<<14)|(hb4.Freewheeling<<13)|(hb4.PWMenable<<12);
-	Serial.print("HBmode content: ");
-	Serial.println(ToSend, BIN);
-	writeReg(REG_ADDR_HBMODE, ToSend);
+	uint8_t sif = writeReg(REG_ADDR_HBMODE, ToSend);
+	checkStatusInformationField(sif);
 }
 
 void Tle9562::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4)
@@ -119,24 +118,6 @@ void Tle9562::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4)
 
 void Tle9562::setGenControl(bool MapPWM1, bool MapPWM3)
 {
-	uint16_t ToSend = (BDFREQ<<15)|(MapPWM3<<14)|(MapPWM1<<13)|(CPUVTH<<12)|(FET_LVL<<11)|(CPSTGA<<10)|(BDOV_REC<<9)|(IPCHGADT<<8)|(AGC<<6)|(CPEN<<5)|(POCHGDIS<<4)|(AGCFILT<<3)|(EN_GEN_CHECK<<2)|(IHOLD<<1)|(FMODE<<0);
+	uint16_t ToSend = (BDFREQ<<15)|(MapPWM3<<14)|(MapPWM1<<13)|(CPUVTH<<12)|(FET_LVL<<11)|(CPSTGA<<10)|(BDOV_REC<<9)|(IPCHGADT<<8)|(_agc_status<<6)|(CPEN<<5)|(POCHGDIS<<4)|(AGCFILT<<3)|(EN_GEN_CHECK<<2)|(IHOLD<<1)|(FMODE<<0);
 	writeReg(REG_ADDR_GENCTRL, ToSend);
-}
-
-void Tle9562::checkStat_TRISE_FALL(uint8_t hb, float &Trise, float &Tfall)
-{
-	uint16_t input=0;
-	uint16_t reg=0;
-	switch(hb){
-		case 1: reg = REG_ADDR_TRISE_FALL1; break;
-		case 2: reg = REG_ADDR_TRISE_FALL2; break;
-		case 3: reg = REG_ADDR_TRISE_FALL3; break;
-		case 4: reg = REG_ADDR_TRISE_FALL4; break;
-	}
-
-	input = readReg(reg);
-	float t_rise = input & 0x3F;
-	float t_fall = (input>>8) & 0x3F;
-	Trise = 53.3 * t_rise;					// [ns]
-	Tfall = 53.3 * t_fall;					// [ns]
 }

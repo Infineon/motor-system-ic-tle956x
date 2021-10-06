@@ -30,7 +30,7 @@
 #define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
 #define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
 #define IPCHGADT					0		// 1Step
-#define AGC							0b10	// Adaptive gate control: ACTIVE
+											// Adaptive gate control: configured in a global variable
 #define CPEN						1		// charge pump: enabled
 #define POCHGDIS					0		// Postcharge phase during PWM: disabled
 #define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
@@ -87,8 +87,10 @@ class Tle9562: public Tle9xxx
 		
 		/**
 		 * @brief set up all necessary registers and initialize the TLE9562
+		 * 
+		 * @param agc switch the adaptive gate control for pre-charge current [0;2]
 		 */
-		void 					config(void);
+		void 					config(uint8_t agc = 0);
 
 		/**
 		 * @brief Set the Halfbridge object
@@ -129,11 +131,13 @@ class Tle9562: public Tle9xxx
 		 * 
 		 * @param hb which halfbridge should be read [1-4]
 		 */
-		void					checkStat_TRISE_FALL(uint8_t hb, float &Trise, float &Tfall);
+		void					checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
+
+		uint8_t					_agc_status = 0;
 		
 	protected:
 

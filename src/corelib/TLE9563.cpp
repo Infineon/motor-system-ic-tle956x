@@ -132,7 +132,8 @@ void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 	ToSend = ToSend | (hb2.HBmode<<6)|(hb2.Freewheeling<<5)|(hb2.PWMenable<<4);
 	ToSend = ToSend | (hb3.HBmode<<10)|(hb3.Freewheeling<<9)|(hb3.PWMenable<<8);
 
-	writeReg(REG_ADDR_HBMODE, ToSend);
+	uint8_t sif = writeReg(REG_ADDR_HBMODE, ToSend);
+	checkStatusInformationField(sif);
 }
 
 void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)

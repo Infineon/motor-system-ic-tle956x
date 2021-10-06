@@ -112,7 +112,7 @@ class DCMcontrol
 		uint8_t					stopDCM(uint8_t brakemode);
 		
 		/**
-		 * @brief set the intensity of the two onboard LEDS using two HSS og the TLE.
+		 * @brief set the intensity of the two onboard LEDs using two HSS on the TLE.
 		 * 
 		 * @param led1 brightness of LED D6 (10-bit)
 		 * @param led2 brightness of LED D7 (10-bit)
@@ -124,7 +124,7 @@ class DCMcontrol
 		 * 
 		 * @param hb which halfbridges should be read (4-bit)
 		 */
-		void 					print_TFALL_TRISE(uint8_t hb);
+		//void 					print_TFALL_TRISE(uint8_t hb);
 
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board

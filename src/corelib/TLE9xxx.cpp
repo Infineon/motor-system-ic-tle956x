@@ -52,7 +52,7 @@ void Tle9xxx::SBC_CRC_Disable()
 	csn->enable();
 }
 
-void Tle9xxx::writeReg(uint8_t addr, uint16_t data)
+uint8_t Tle9xxx::writeReg(uint8_t addr, uint16_t data)
 {
 	uint8_t byte0, byte1, byte2, byte3;
 	csn->disable();
@@ -61,6 +61,7 @@ void Tle9xxx::writeReg(uint8_t addr, uint16_t data)
 	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
+	return byte0;
 }
 
 uint16_t Tle9xxx::readReg(uint8_t addr)
@@ -73,6 +74,25 @@ uint16_t Tle9xxx::readReg(uint8_t addr)
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
 	return ((byte2<<8)|byte1);
+}
+
+void Tle9xxx::checkStatusInformationField(uint8_t sif)
+{
+	uint8_t ErrorCode = 0;
+    uint16_t RegAddress = 0;
+    uint16_t RegContent = 0;
+	if(sif > 0){
+		Serial.print("Status Information Field: ");
+		Serial.println(sif, HEX);
+		if(sif & 0x01) {PrintTLEErrorMessage(checkStatSUP(RegAddress, RegContent), RegAddress, RegContent); }
+		if(sif & 0x02) {PrintTLEErrorMessage(checkStatTHERM(RegAddress, RegContent), RegAddress, RegContent); }
+		//if(sif & 0x04) {checkStatSUP(RegAddress, RegContent); }
+		//if(sif & 0x08) {checkStatSUP(RegAddress, RegContent); }
+		if(sif & 0x10) {PrintTLEErrorMessage(checkStatHSS(RegAddress, RegContent), RegAddress, RegContent); }
+		if(sif & 0x20) {PrintTLEErrorMessage(checkStatDEV(RegAddress, RegContent), RegAddress, RegContent); }
+		if(sif & 0x40) {PrintTLEErrorMessage(checkStatDSOV(RegAddress, RegContent), RegAddress, RegContent); }
+		//if(sif & 0x80) {checkStatSUP(RegAddress, RegContent); }
+	}
 }
 
 void Tle9xxx::configInterruptMask(void)
@@ -141,6 +161,19 @@ uint8_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 	return ErrorCode;
 }
 
+uint8_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
+{
+	uint16_t input=0;
+	uint8_t ErrorCode = 0;
+	input = readReg(REG_ADDR_DSOV);
+	writeReg(REG_ADDR_DSOV, 0);
+	RegAddress = REG_ADDR_DSOV;
+	RegContent = input;
+	if((input | 0x00FF) > 0) ErrorCode = TLE_SHORT_CIRCUIT; 			// CRC / SPI Error
+
+	return ErrorCode;
+}
+
 bool Tle9xxx::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent)
 {
     if(msg & TLE_SPI_ERROR)
@@ -178,7 +211,7 @@ bool Tle9xxx::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &
 
     if(DETAILED_ERROR_REPORT)
     {
-        Serial.print("Reg: 0x");
+        Serial.print("\tReg: 0x");
         Serial.print(RegAddress, HEX);
         Serial.print("  Content: 0x");
 		Serial.print(RegContent, HEX);
@@ -200,9 +233,10 @@ void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
   Serial.print(number,BIN);
 }
 
-void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, uint8_t ICHG_BNK)
+void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb)
 {
-
+	uint16_t ToSend  = ((IDCHG<<10) & 0xFC00) | ((ICHG<<4) & 0x03F0) | (((ACTorFW<<2)|hb)& 0x000F);
+	writeReg(REG_ADDR_HB_ICHG, ToSend);
 }
 
 void Tle9xxx::set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx)
@@ -223,4 +257,77 @@ void Tle9xxx::set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK)
 void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK)
 {
 
+}
+
+void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
+{
+	uint16_t input=0;
+	uint16_t reg=0;
+	switch(hb){
+		case 1: reg = REG_ADDR_TRISE_FALL1; break;
+		case 2: reg = REG_ADDR_TRISE_FALL2; break;
+		case 3: reg = REG_ADDR_TRISE_FALL3; break;
+		case 4: reg = REG_ADDR_TRISE_FALL4; break;
+	}
+
+	input = readReg(reg);
+    Trise = input & 0x3F;
+	Tfall = (input>>8) & 0x3F;
+	//Trise = 53.3 * t_rise;					// [ns]
+	//Tfall = 53.3 * t_fall;					// [ns]
+}
+
+void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
+{
+    // Initialize the algorithm variable
+    m_ichg = INIT_ICHG;
+    // Initialize the ICHG at the TLE9562
+	set_HB_ICHG(m_idchg, INIT_ICHG, 0, hb);
+
+    // The elements with an index lower than (INIT_ICHG - MIN_ICHG) are initialized
+    // with a 0, the rest of the elements with EOS
+    for (int i = 0; i < (INIT_ICHG - MIN_ICHG); i++) m_trise_ema[i] = 0;
+    for (int i = (INIT_ICHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_trise_ema[i] = EOS;
+}
+
+void Tle9xxx::emaCalculation(uint8_t hb)
+{
+    uint8_t tRISE, tFALL;
+    // Read the last tRISE measured by the TLE9562
+    //tRISE = readSpitRISE();
+	checkStat_TRISE_FALL(hb, tRISE, tFALL);
+
+    // If m_ichg still has the initialization value, tRISEx is directly m_trisex_ema
+    // without calculating the EMA
+    if (m_trise_ema[m_ichg - MIN_ICHG] == EOS || m_trise_ema[m_ichg - MIN_ICHG] == 0)
+        m_trise_ema[m_ichg - MIN_ICHG] = tRISE * SCALING_FACTOR_FPA;
+    else
+        // EMA calculated and stored in m_trise_ema for the current charge current
+        m_trise_ema[m_ichg - MIN_ICHG] = tRISE * ALPHA3_FPA_SCALED + (m_trise_ema[m_ichg - MIN_ICHG] / SCALING_FACTOR_FPA) * ONE_MINUS_ALPHA3_FPA_SCALED ;
+}
+
+void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb)
+{
+    // The charge current is decreased if all conditions are true:
+    // 1. The EMA calculated for the current ICHG3 is lower than tRISE_TG
+    // 2. The EMA that was calculated when the ICHG3 was set to the
+    // immediately lower value is also lower than tRISEx_TG
+    // 3. The minimum ICHGx has still not been reached.
+    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (tRISE_TG * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (tRISE_TG * SCALING_FACTOR_FPA))
+        && m_ichg > MIN_ICHG)
+        m_ichg --;
+
+    // The charge current is increased if these three conditions are met:
+    // 1. The EMA calculated for the current ICHGx is higher than tRISE_TG
+    // 2. The EMA that was calculated when the ICHGx was set to the
+    // immediately higher value of the current one is also higher than tRISE_TG
+    // 3. The maximum ICHGx has still not been reached.
+    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (tRISE_TG * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (tRISE_TG * SCALING_FACTOR_FPA))
+        && m_ichg < MAX_ICHG)
+        m_ichg ++;
+
+    // Set the ICHG at the TLE9562
+	set_HB_ICHG(m_idchg, m_ichg, 0, hb);
 }

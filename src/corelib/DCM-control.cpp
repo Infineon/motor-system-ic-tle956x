@@ -189,7 +189,7 @@ void DCMcontrol::setLED(uint16_t led1, uint16_t led2)
 {
     controller->setHSS(0, 0, led1, led2);
 }
-
+/*
 void DCMcontrol::print_TFALL_TRISE(uint8_t hb)
 {
     float trise = 0;
@@ -232,3 +232,4 @@ void DCMcontrol::print_TFALL_TRISE(uint8_t hb)
     }
     
 }
+*/
