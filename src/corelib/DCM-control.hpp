@@ -28,9 +28,24 @@
 */
 // ================================== Defines ==================================================================================================
 
+#define ADAPTIVE_GATE_CONTROL_PRECHARGE			2		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
+#define ADAPTIVE_GATE_CONTROL_CHARGE			0		// 0 = INACTIVE; 1 = ACTIVE	| External AGC, control loop can be find in the TLE9xxx.cpp
+
+
 /* Braking modes */
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
+
+enum _Halfbridges{
+			HB1,
+			HB2,
+			HB3,
+			HB4
+		};
+enum _Outputs{
+			OUT_A,
+			OUT_B
+		};
 // =============================================================================================================================================
 
 /**
@@ -46,16 +61,7 @@ class DCMcontrol
 
 		volatile uint8_t 		interrupt_status_changed = 0;
 
-		enum _Halfbridges{
-			HB1,
-			HB2,
-			HB3,
-			HB4
-		};
-		enum _Outputs{
-			OUT_A,
-			OUT_B
-		};
+		
 
         DCMcontrol(void);
         ~DCMcontrol(void);
@@ -125,6 +131,18 @@ class DCMcontrol
 		 * @param hb which halfbridges should be read (4-bit)
 		 */
 		//void 					print_TFALL_TRISE(uint8_t hb);
+
+		void					setupRiseFallTimeRegulation(uint8_t hb);
+		
+		/**
+		 * @brief reads out the actual MOSFET rise-time (fall-time) and compares it to the desired rise-(fall-)time.
+		 * The algorithm then adjusts the charge current ICHG for the active MOSFET of the selected halfbridge.
+		 * 
+		 * @param hb on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to.
+		 * @param risetime hands over the actual rise-time
+		 * @param falltime hands oder the actual fall-time
+		 */
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t &risetime, uint8_t &falltime);
 
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board

@@ -22,33 +22,7 @@
 #include "TLE9xxx.hpp"
 
 // ================================== Defines ==================================================================================================
-/* General Bridge Control */
-#define BDFREQ						1		// Bridge driver synchronization frequency: 37Mhz
-											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
-#define CPUVTH						0		// Charge pump under voltage:	TH1
-#define FET_LVL						1		// External MOSFET logic level:	normal level MOSFET
-#define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
-#define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
-#define IPCHGADT					0		// 1Step
-											// Adaptive gate control: configured in a global variable
-#define CPEN						1		// charge pump: enabled
-#define POCHGDIS					0		// Postcharge phase during PWM: disabled
-#define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
-#define EN_GEN_CHECK				0		// detection of active / FW MOSFET: disabled
-#define IHOLD						0		// Gate driver hold current:	TH1
-#define FMODE						0		// Frequency modulation of charge pump: no modulation
 
-#define PWM3_TO_HB3					0
-#define PWM3_TO_HB4					1
-#define PWM1_TO_HB1					0
-#define PWM1_TO_HB2					1
-
-/* PWM HSS modules */
-#define PWM_CTRL_DC_MASK			0x3FF0
-#define PWM_BNK_MODULE_1			0x0
-#define PWM_BNK_MODULE_2			0x1
-#define PWM_BNK_MODULE_3			0x2
-#define PWM_BNK_MODULE_4			0x3
 // =============================================================================================================================================
 
 /**
@@ -125,13 +99,6 @@ class Tle9562: public Tle9xxx
 		 * @param MapPWM2 Map PWM channel 3 to a halfbridge. Use either the define 'PWM3_TO_HB3' or 'PWM3_TO_HB4'
 		 */
 		void					setGenControl(bool MapPWM1, bool MapPWM2);
-
-		/**
-		 * @brief Reads out the MOSFET rise/fall time of the given PWM half-bridge
-		 * 
-		 * @param hb which halfbridge should be read [1-4]
-		 */
-		void					checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 

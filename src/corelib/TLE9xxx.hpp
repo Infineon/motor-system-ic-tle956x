@@ -25,14 +25,14 @@
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
 // ================================== Defines ==================================================================================================
-/*! \brief SPI address commands */
+/****************** SPI address commands *******************/
 #define TLE9xxx_CMD_WRITE          	0x80
 #define TLE9xxx_CMD_READ          	0x00
 #define TLE9xxx_CMD_CLEAR          	0x80
 
 #define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
 
-// ================================== Adaptive Gate control ======================================================================================
+/****************** Adaptive Gate control *******************/
 #define tRISE_TG                   11                 		// Target tRISE (tRISE_TG * 53.3 ns)
 
 /**
@@ -43,10 +43,40 @@
 #define SCALING_FACTOR_FPA          (0xFF)                  // Scaling factor for fixed-point arithmetic (FPA)
 #define ALPHA3_FPA_SCALED           (ALPHA3 * SCALING_FACTOR_FPA)               // ALPHA3, already scaled for FPA
 #define ONE_MINUS_ALPHA3_FPA_SCALED (SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)    // (1 - ALPHA3), already scaled for FPA
-#define MAX_ICHG                   63                      // Maximum charge current that will be set by the algorithm
-#define MIN_ICHG                   0                       // Minimum charge current that will be set by the algorithm
-#define INIT_ICHG                  11                      // Starting charge current that will be first used by the algorithm
+#define MAX_ICHG                   	63                      // Maximum charge current that will be set by the algorithm
+#define MIN_ICHG                   	0                       // Minimum charge current that will be set by the algorithm
+#define INIT_ICHG                  	11                      // Starting charge current that will be first used by the algorithm
 #define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
+
+/****************** General Bridge Control *******************/
+#define BDFREQ						1		// Bridge driver synchronization frequency: 37Mhz
+											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
+#define CPUVTH						0		// Charge pump under voltage:	TH1
+#define FET_LVL						1		// External MOSFET logic level:	normal level MOSFET
+#define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
+#define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
+#define IPCHGADT					0		// 1Step
+											// Adaptive gate control: configured in a global variable
+#define CPEN						1		// charge pump: enabled
+#define POCHGDIS					0		// Postcharge phase during PWM: disabled
+#define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
+#define EN_GEN_CHECK				0		// detection of active / FW MOSFET: disabled
+#define IHOLD						0		// Gate driver hold current:	TH1
+#define FMODE						0		// Frequency modulation of charge pump: no modulation
+
+#define PWM3_TO_HB3					0
+#define PWM3_TO_HB4					1
+#define PWM1_TO_HB1					0
+#define PWM1_TO_HB2					1
+
+/****************** PWM HSS modules *******************/
+#define PWM_CTRL_DC_MASK			0x3FF0
+#define PWM_BNK_MODULE_1			0x0
+#define PWM_BNK_MODULE_2			0x1
+#define PWM_BNK_MODULE_3			0x2
+#define PWM_BNK_MODULE_4			0x3
+
+/****************** PWM HSS modules *******************/
 
 // ===============================================================================================================================================
 /**
@@ -158,9 +188,27 @@ class Tle9xxx
 		 * 
 		 * @param RegAddress Adress of DSOV register
 		 * @param RegContent Content of DSOV register
-		 * @return uint8_t 
+		 * @return uint8_t DiagFlag return the generated Error code
 		 */
 		uint8_t 				checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent);
+
+		/**
+		 * @brief initialize variables for the adaptive gate control algorithm
+		 * 
+		 */
+		void 					init_AGC_Algorithm(uint8_t hb);
+
+		/**
+		 * @brief read out rise-time of TLE and store calculated value in a global variable
+		 * 
+		 */
+		void 					emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime);
+
+		/**
+		 * @brief increase or decrease the charge current, depending on some conditions
+		 * 
+		 */
+		void 					adaptiveHysteresisDecisionTree(uint8_t hb);
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
@@ -171,6 +219,15 @@ class Tle9xxx
 
 
 	protected:
+		/**
+		 * @brief set the charge discharge current for static activation (no PWM).
+		 * 
+		 * @param ICHGST1 static charge and discharge currents oh HB1
+		 * @param ICHGST2 static charge and discharge currents oh HB2
+		 * @param ICHGST3 static charge and discharge currents oh HB3
+		 * @param ICHGST4 static charge and discharge currents oh HB4
+		 */
+		void					set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4);
 
 		/**
 		 * @brief HB charge/discharge currents for PWM operation
@@ -184,8 +241,8 @@ class Tle9xxx
 		/**
 		 * @brief HM max. pre-charge/pre-discharge in PWM operation current and diagnostic pull-down
 		 * 
-		 * @param HBxIDIAG Control of HBx off-state current source and current sink
-		 * @param ICHGMAXx Maximum drive current of HBx during the pre-charge phase and pre-discharge phases
+		 * @param HBxIDIAG [0;1] Control of HBx off-state current source and current sink
+		 * @param ICHGMAXx [0;3] Maximum drive current of all HBs during the pre-charge phase and pre-discharge phases
 		 */
 		void					set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx);
 
@@ -220,7 +277,7 @@ class Tle9xxx
 		 * @param hb which halfbridge should be read [1-4]
 		 */
 		void					checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall);
-		
+
 		/**
 		 * @brief disable the cyclic redundancy check of TLE9xxx
 		 */
@@ -250,24 +307,6 @@ class Tle9xxx
 		 * @param sif status information field content (first byte of SPI SDO)
 		 */
 		void					checkStatusInformationField(uint8_t sif);
-
-		/**
-		 * @brief initialize variables for the adaptive gate control algorithm
-		 * 
-		 */
-		void 					init_AGC_Algorithm(uint8_t hb);
-
-		/**
-		 * @brief read out rise-time of TLE and store calculated value in a global variable
-		 * 
-		 */
-		void 					emaCalculation(uint8_t hb);
-
-		/**
-		 * @brief increase or decrease the charge current, depending on some conditions
-		 * 
-		 */
-		void 					adaptiveHysteresisDecisionTree(uint8_t hb);
 		
 		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     // Array of the calculated tRISEx EMAs for the different configured ICHGx
 		uint8_t         		m_ichg = INIT_ICHG;                       // Current ICHGx with which the MOSFET driver is configured

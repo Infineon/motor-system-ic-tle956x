@@ -33,7 +33,6 @@ DCMcontrol::~DCMcontrol(void)
 void DCMcontrol::begin(void)
 {
     controller->begin();
-    controller->config();
 
 	pwmA->init();
 	pwmB->init();
@@ -54,6 +53,7 @@ void DCMcontrol::end(void)
 uint8_t DCMcontrol::configDCshield(void)
 {
   // TODO: Do the whole TLE setting here
+  controller->config(ADAPTIVE_GATE_CONTROL_PRECHARGE);
   controller->configInterruptMask();
 }
 
@@ -100,69 +100,69 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
     if(speed > 255) _DutyCycle = 255;
     else _DutyCycle = speed;
 
+    if(motorNumber == 0b01)         // motor A
+    {
+        pwmA->ADCWrite(_DutyCycle);
+        if(direction)
+        {
+            _HBstatus[HB1] = controller->ActivePWM;
+            _HBstatus[HB2] = controller->ActiveGround;
+            _Direction[OUT_A] = PWM1_TO_HB1;
+        }
+        else
+        {
+            _HBstatus[HB2] = controller->ActivePWM;
+            _HBstatus[HB1] = controller->ActiveGround;
+            _Direction[OUT_A] = PWM1_TO_HB2;
+        }
+        
+    }
+
+    else if(motorNumber == 0b10)    // motor B
+    {
+        pwmB->ADCWrite(_DutyCycle);
+        if(direction)
+        {
+            _HBstatus[HB3] = controller->ActivePWM;
+            _HBstatus[HB4] = controller->ActiveGround;
+            _Direction[OUT_B] = PWM3_TO_HB3;
+        }
+        else
+        {
+            _HBstatus[HB4] = controller->ActivePWM;
+            _HBstatus[HB3] = controller->ActiveGround;
+            _Direction[OUT_B] = PWM3_TO_HB4;
+        }
+    }
+
+    else if(motorNumber == 0b11)    // both motors
+    {
+        pwmA->ADCWrite(_DutyCycle);
+        pwmB->ADCWrite(_DutyCycle);
+        if(direction)
+        {
+            _HBstatus[HB1] = controller->ActivePWM;
+            _HBstatus[HB2] = controller->ActiveGround;
+            _HBstatus[HB3] = controller->ActivePWM;
+            _HBstatus[HB4] = controller->ActiveGround;
+            _Direction[OUT_A] = PWM1_TO_HB1;
+            _Direction[OUT_B] = PWM3_TO_HB3;
+        }
+        else
+        {
+            _HBstatus[HB2] = controller->ActivePWM;
+            _HBstatus[HB1] = controller->ActiveGround;
+            _HBstatus[HB4] = controller->ActivePWM;
+            _HBstatus[HB3] = controller->ActiveGround;
+            _Direction[OUT_A] = PWM1_TO_HB2;
+            _Direction[OUT_B] = PWM3_TO_HB4;
+        }
+    }
+
     if(_MotorStartEnable)
     {
-        if(motorNumber == 0b01)         // motor A
-        {
-            pwmA->ADCWrite(_DutyCycle);
-            if(direction)
-            {
-                _HBstatus[HB1] = controller->ActivePWM;
-                _HBstatus[HB2] = controller->ActiveGround;
-                _Direction[OUT_A] = PWM1_TO_HB1;
-            }
-            else
-            {
-                _HBstatus[HB2] = controller->ActivePWM;
-                _HBstatus[HB1] = controller->ActiveGround;
-                _Direction[OUT_A] = PWM1_TO_HB2;
-            }
-            
-        }
-
-        else if(motorNumber == 0b10)    // motor B
-        {
-            pwmB->ADCWrite(_DutyCycle);
-            if(direction)
-            {
-                _HBstatus[HB3] = controller->ActivePWM;
-                _HBstatus[HB4] = controller->ActiveGround;
-                _Direction[OUT_B] = PWM3_TO_HB3;
-            }
-            else
-            {
-                _HBstatus[HB4] = controller->ActivePWM;
-                _HBstatus[HB3] = controller->ActiveGround;
-                _Direction[OUT_B] = PWM3_TO_HB4;
-            }
-        }
-
-        else if(motorNumber == 0b11)    // both motors
-        {
-            pwmA->ADCWrite(_DutyCycle);
-            pwmB->ADCWrite(_DutyCycle);
-            if(direction)
-            {
-                _HBstatus[HB1] = controller->ActivePWM;
-                _HBstatus[HB2] = controller->ActiveGround;
-                _HBstatus[HB3] = controller->ActivePWM;
-                _HBstatus[HB4] = controller->ActiveGround;
-                _Direction[OUT_A] = PWM1_TO_HB1;
-                _Direction[OUT_B] = PWM3_TO_HB3;
-            }
-            else
-            {
-                _HBstatus[HB2] = controller->ActivePWM;
-                _HBstatus[HB1] = controller->ActiveGround;
-                _HBstatus[HB4] = controller->ActivePWM;
-                _HBstatus[HB3] = controller->ActiveGround;
-                _Direction[OUT_A] = PWM1_TO_HB2;
-                _Direction[OUT_B] = PWM3_TO_HB4;
-            }
-        }
         controller->setHalfbridge(_HBstatus[HB1], _HBstatus[HB2], _HBstatus[HB3], _HBstatus[HB4]);
         controller->setGenControl(_Direction[OUT_A], _Direction[OUT_B]);
-        //controller->setHalfbridge(controller->ActiveGround, controller->ActivePWM, controller->ActiveGround, controller->ActiveGround);
     }
 }
 
@@ -189,6 +189,39 @@ void DCMcontrol::setLED(uint16_t led1, uint16_t led2)
 {
     controller->setHSS(0, 0, led1, led2);
 }
+
+void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
+{
+    //_MotorStartEnable = 0;
+    controller->init_AGC_Algorithm(hb);
+    /*
+    switch(hb){
+        case HB1:   
+            controller->setGenControl(PWM1_TO_HB1, 0);
+            controller->setHalfbridge(controller->ActivePWM, controller->ActiveGround, controller->ActiveGround, controller->ActiveGround);
+            break;
+        case HB2:  
+            controller->setGenControl(PWM1_TO_HB2, 0);
+            controller->setHalfbridge(controller->ActiveGround, controller->ActivePWM, controller->ActiveGround, controller->ActiveGround);
+            break;
+        case HB3:
+            controller->setGenControl(0, PWM3_TO_HB3);
+            controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActivePWM, controller->ActiveGround);
+            break;
+        case HB4:
+            controller->setGenControl(0, PWM3_TO_HB4);
+            controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround, controller->ActivePWM);
+            break;
+    }
+    */
+}
+
+void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
+{
+    controller->emaCalculation(hb, risetime, falltime);
+    controller->adaptiveHysteresisDecisionTree (hb);
+}
+
 /*
 void DCMcontrol::print_TFALL_TRISE(uint8_t hb)
 {

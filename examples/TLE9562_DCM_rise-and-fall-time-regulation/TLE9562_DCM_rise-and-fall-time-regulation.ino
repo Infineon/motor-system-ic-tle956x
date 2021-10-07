@@ -14,6 +14,9 @@
 
 uint16_t speed = 100;
 uint8_t direction = 0;
+uint8_t tRise, tFall = 0;
+uint32_t blinktimer = millis();
+bool ledstatus = 0;
 
 // Create an instance of DCMcontrol called 'MyMotor'. 
 DCMcontrolIno MyMotor = DCMcontrolIno();
@@ -29,16 +32,18 @@ void setup()
   MyMotor.begin();
   MyMotor.configDCshield();
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
+  MyMotor.setupRiseFallTimeRegulation(HB1);
   
   Serial.println("Init ready");
 
   MyMotor.setDCspeed(speed, direction, 3);
-  MyMotor.startDCM();
+
+  Serial.print("tRise: \t tFall:");
 }
 
 void loop()
 {
-  if (Serial.available() > 0)
+    if (Serial.available() > 0)
   {
     uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
     if(in == '+')
@@ -80,9 +85,27 @@ void loop()
     MyMotor.setLED(100,0);                  // Switch on LED 1
   }
 
+  MyMotor.riseFallTimeRegulation(HB1, tRise, tFall);
+  Serial.print(tRise);
+  Serial.print(" \t ");
+  Serial.println(tFall);
+
+  blinkLED();
+  delay(10);
+
 }
 
 void TLEinterrupt()
 {
   MyMotor.interrupt_status_changed = 1;
+}
+
+void blinkLED()
+{
+    if((millis() - blinktimer) > 1000)
+    {
+        ledstatus != ledstatus;
+        MyMotor.setLED(0,ledstatus * 1000);
+        blinktimer = millis();
+    }
 }

@@ -41,7 +41,9 @@ void Tle9562::config(uint8_t agc = 0)
 	 * 
 	 */
 
-	SBC_CRC_Disable();
+	SBC_CRC_Disable();						// Disable cyclic redundancy check
+
+	set_HB_ICHG_MAX(0, 3);					// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
 
 	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);
 	/**

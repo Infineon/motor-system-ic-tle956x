@@ -233,6 +233,12 @@ void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
   Serial.print(number,BIN);
 }
 
+void Tle9xxx::set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4)
+{
+	uint16_t ToSend  = ((ICHGST4<<12) & 0xF000) | ((ICHGST3<<8) & 0x0F00) | ((ICHGST2<<4) & 0x00F0) | (ICHGST1 & 0x000F);
+	writeReg(REG_ADDR_ST_ICHG, ToSend);
+}
+
 void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb)
 {
 	uint16_t ToSend  = ((IDCHG<<10) & 0xFC00) | ((ICHG<<4) & 0x03F0) | (((ACTorFW<<2)|hb)& 0x000F);
@@ -241,7 +247,13 @@ void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb)
 
 void Tle9xxx::set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx)
 {
+	uint16_t ToSend = 0;
+	for(uint8_t i=0; i < 4; i++)
+	{
+		ToSend = ToSend | ((HBxIDIAG<<(i+12)) |  (HBxIDIAG<<(i*2)));
+	}
 
+	writeReg(REG_ADDR_HB_ICHG_MAX, ToSend);
 }
 
 void Tle9xxx::set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK)
@@ -275,6 +287,8 @@ void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 	Tfall = (input>>8) & 0x3F;
 	//Trise = 53.3 * t_rise;					// [ns]
 	//Tfall = 53.3 * t_fall;					// [ns]
+	Serial.print("RISTEIME: ");
+	Serial.println(Trise);
 }
 
 void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
@@ -290,7 +304,7 @@ void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
     for (int i = (INIT_ICHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_trise_ema[i] = EOS;
 }
 
-void Tle9xxx::emaCalculation(uint8_t hb)
+void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
 {
     uint8_t tRISE, tFALL;
     // Read the last tRISE measured by the TLE9562
@@ -304,6 +318,8 @@ void Tle9xxx::emaCalculation(uint8_t hb)
     else
         // EMA calculated and stored in m_trise_ema for the current charge current
         m_trise_ema[m_ichg - MIN_ICHG] = tRISE * ALPHA3_FPA_SCALED + (m_trise_ema[m_ichg - MIN_ICHG] / SCALING_FACTOR_FPA) * ONE_MINUS_ALPHA3_FPA_SCALED ;
+	risetime = tRISE;
+	falltime = tFALL;
 }
 
 void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb)
