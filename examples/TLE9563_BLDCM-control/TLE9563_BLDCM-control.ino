@@ -76,7 +76,7 @@ void loop()
 
   MyMotor.serveBLDCshield();                // MUST BE CALLED HERE. This function does the BLDC commutation.
 
-  if(MyMotor.checkBLDCshield() )            // Check, if interrupt flag was set and read status register of TLE
+  if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
   {
     MyMotor.setLED(50,0,0);                 // Set onboard RGB-LED to red.
   }

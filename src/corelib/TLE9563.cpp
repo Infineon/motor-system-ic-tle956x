@@ -47,11 +47,11 @@ void Tle9563::config(void)
 	 * 15 Bridge driver synchronization frequency: 	37Mhz
 	 * 12 Charge pump under voltage:				TH1
 	 * 11 External MOSFET logic level:				normal level MOSFET
-	 * 10 CPSTGA:									ACTIVE
-	 *  9 BDOV_REC:									Recover activated
-	 *  8 IPCHGADT:									1STEP
+	 * 10 CONF_CPSTGA:									ACTIVE
+	 *  9 CONF_BDOV_REC:									Recover activated
+	 *  8 CONF_IPCHGADT:									1STEP
 	 *  7:6 Adaptive gate control					INACTIVE1
-	 * 	5 CPEN:										Charge pump enabled
+	 * 	5 CONF_CPEN:										Charge pump enabled
 	 *  4 Postcharge phase during PWM				disabled
 	 *  3 Filter for adaptive gate control			NO_FILT
 	 *  2 Detection of active / FW MOSFET			disabled
@@ -132,8 +132,7 @@ void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 	ToSend = ToSend | (hb2.HBmode<<6)|(hb2.Freewheeling<<5)|(hb2.PWMenable<<4);
 	ToSend = ToSend | (hb3.HBmode<<10)|(hb3.Freewheeling<<9)|(hb3.PWMenable<<8);
 
-	uint8_t sif = writeReg(REG_ADDR_HBMODE, ToSend);
-	checkStatusInformationField(sif);
+	writeReg(REG_ADDR_HBMODE, ToSend);
 }
 
 void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)

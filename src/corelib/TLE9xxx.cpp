@@ -76,25 +76,6 @@ uint16_t Tle9xxx::readReg(uint8_t addr)
 	return ((byte2<<8)|byte1);
 }
 
-void Tle9xxx::checkStatusInformationField(uint8_t sif)
-{
-	uint8_t ErrorCode = 0;
-    uint16_t RegAddress = 0;
-    uint16_t RegContent = 0;
-	if(sif > 0){
-		Serial.print("Status Information Field: ");
-		Serial.println(sif, HEX);
-		if(sif & 0x01) {PrintTLEErrorMessage(checkStatSUP(RegAddress, RegContent), RegAddress, RegContent); }
-		if(sif & 0x02) {PrintTLEErrorMessage(checkStatTHERM(RegAddress, RegContent), RegAddress, RegContent); }
-		//if(sif & 0x04) {checkStatSUP(RegAddress, RegContent); }
-		//if(sif & 0x08) {checkStatSUP(RegAddress, RegContent); }
-		if(sif & 0x10) {PrintTLEErrorMessage(checkStatHSS(RegAddress, RegContent), RegAddress, RegContent); }
-		if(sif & 0x20) {PrintTLEErrorMessage(checkStatDEV(RegAddress, RegContent), RegAddress, RegContent); }
-		if(sif & 0x40) {PrintTLEErrorMessage(checkStatDSOV(RegAddress, RegContent), RegAddress, RegContent); }
-		//if(sif & 0x80) {checkStatSUP(RegAddress, RegContent); }
-	}
-}
-
 void Tle9xxx::configInterruptMask(void)
 {
 	uint16_t tosend = 	WD_SDM_DISABLE | BD_STAT | HS_STAT | TEMP_STAT | SUPPLY_STAT;
@@ -102,12 +83,31 @@ void Tle9xxx::configInterruptMask(void)
 	writeReg(REG_ADDR_INT_MASK, tosend);
 }
 
+uint8_t Tle9xxx::checkStatusInformationField(void)
+{
+	uint8_t ErrorCode = 0;
+    uint16_t RegAddress = 0;
+    uint16_t RegContent = 0;
+    ErrorCode = checkStatSUP(RegAddress, RegContent);		// Read the first register at the beginning in order to read the actual SIF values.
+	if(_statusInformationField & SIF_SUPPLY_STAT) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
+	if(_statusInformationField & SIF_TEMP_STAT) PrintTLEErrorMessage(checkStatTHERM(RegAddress, RegContent), RegAddress, RegContent);
+	if(_statusInformationField & SIF_BUS_STAT) ;
+	if(_statusInformationField & SIF_WAKE_UP) ;
+	if(_statusInformationField & SIF_HS_STAT) PrintTLEErrorMessage(checkStatHSS(RegAddress, RegContent), RegAddress, RegContent);
+	if(_statusInformationField & SIF_DEV_STAT) PrintTLEErrorMessage(checkStatDEV(RegAddress, RegContent), RegAddress, RegContent);
+	if(_statusInformationField & SIF_BD_STAT) PrintTLEErrorMessage(checkStatDSOV(RegAddress, RegContent), RegAddress, RegContent);
+	if(_statusInformationField & SIF_SPI_CRC_FAIL) ;
+
+    return _statusInformationField;
+}
+
+
 uint8_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
 	input = readReg(REG_ADDR_SUP_STAT);
-	writeReg(REG_ADDR_SUP_STAT, 0);
+	_statusInformationField = writeReg(REG_ADDR_SUP_STAT, 0);
 	RegAddress = REG_ADDR_SUP_STAT;
 	RegContent = input;
 	if((input & 0x1000) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection (chargepump)
@@ -169,7 +169,10 @@ uint8_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
 	writeReg(REG_ADDR_DSOV, 0);
 	RegAddress = REG_ADDR_DSOV;
 	RegContent = input;
-	if((input | 0x00FF) > 0) ErrorCode = TLE_SHORT_CIRCUIT; 			// CRC / SPI Error
+	if((input | 0x00FF) > 0){
+		Serial.println("==> HS or VS overvoltage error! <==");
+		ErrorCode = TLE_SHORT_CIRCUIT;
+	}
 
 	return ErrorCode;
 }
@@ -271,6 +274,18 @@ void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK)
 
 }
 
+void Tle9xxx::set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS)
+{
+	uint16_t ToSend = ((TFVDS<<12) & 0x3000) | ((VDSTH<<9) & 0xE00) | ((VDSTH<<6) & 0x1C0) | ((VDSTH<<3) & 0x38) | (VDSTH & 0x7);
+	writeReg(REG_ADDR_LS_VDS, ToSend);
+
+	ToSend = 0;
+	ToSend = ((DEEP_ADAP<<12) & 0x1000) | ((VDSTH<<9) & 0xE00) | ((VDSTH<<6) & 0x1C0) | ((VDSTH<<3) & 0x38) | (VDSTH & 0x7);
+
+	writeReg(REG_ADDR_HS_VDS, ToSend);
+}
+
+
 void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 {
 	uint16_t input=0;
@@ -287,21 +302,21 @@ void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 	Tfall = (input>>8) & 0x3F;
 	//Trise = 53.3 * t_rise;					// [ns]
 	//Tfall = 53.3 * t_fall;					// [ns]
-	Serial.print("RISTEIME: ");
-	Serial.println(Trise);
+	//Serial.print("RISTEIME: ");
+	//Serial.println(Trise);
 }
 
 void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
 {
     // Initialize the algorithm variable
-    m_ichg = INIT_ICHG;
+    m_ichg = CONF_INIT_ICHG;
     // Initialize the ICHG at the TLE9562
-	set_HB_ICHG(m_idchg, INIT_ICHG, 0, hb);
+	set_HB_ICHG(m_idchg, CONF_INIT_ICHG, 0, hb);
 
-    // The elements with an index lower than (INIT_ICHG - MIN_ICHG) are initialized
+    // The elements with an index lower than (CONF_INIT_ICHG - MIN_ICHG) are initialized
     // with a 0, the rest of the elements with EOS
-    for (int i = 0; i < (INIT_ICHG - MIN_ICHG); i++) m_trise_ema[i] = 0;
-    for (int i = (INIT_ICHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_trise_ema[i] = EOS;
+    for (int i = 0; i < (CONF_INIT_ICHG - MIN_ICHG); i++) m_trise_ema[i] = 0;
+    for (int i = (CONF_INIT_ICHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_trise_ema[i] = EOS;
 }
 
 void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
@@ -325,22 +340,22 @@ void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
 void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb)
 {
     // The charge current is decreased if all conditions are true:
-    // 1. The EMA calculated for the current ICHG3 is lower than tRISE_TG
+    // 1. The EMA calculated for the current ICHG3 is lower than CONF_TRISE_TG
     // 2. The EMA that was calculated when the ICHG3 was set to the
     // immediately lower value is also lower than tRISEx_TG
     // 3. The minimum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (tRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (tRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (CONF_TRISE_TG * SCALING_FACTOR_FPA))
         && m_ichg > MIN_ICHG)
         m_ichg --;
 
     // The charge current is increased if these three conditions are met:
-    // 1. The EMA calculated for the current ICHGx is higher than tRISE_TG
+    // 1. The EMA calculated for the current ICHGx is higher than CONF_TRISE_TG
     // 2. The EMA that was calculated when the ICHGx was set to the
-    // immediately higher value of the current one is also higher than tRISE_TG
+    // immediately higher value of the current one is also higher than CONF_TRISE_TG
     // 3. The maximum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (tRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (tRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (CONF_TRISE_TG * SCALING_FACTOR_FPA))
         && m_ichg < MAX_ICHG)
         m_ichg ++;
 

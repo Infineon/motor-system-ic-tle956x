@@ -75,7 +75,7 @@ void loop()
     MyMotor.setDCspeed(speed, direction, 3);
   }
 
-  if(MyMotor.checkBLDCshield() )            // Check, if interrupt flag was set and read status register of TLE
+  if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
   {
     MyMotor.setLED(100,0);                  // Switch on LED 1
   }

@@ -36,42 +36,15 @@ Tle9562::~Tle9562()
 void Tle9562::config(uint8_t agc = 0)
 {
 	_agc_status = agc;
-	/**
-	 * TODO: split up in separate functions for better control from outside the library
-	 * 
-	 */
 
 	SBC_CRC_Disable();						// Disable cyclic redundancy check
 
 	set_HB_ICHG_MAX(0, 3);					// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
 
-	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);
-	/**
-	 * 13:12 Filter time 							500ns
-	 * 11:9 LS4 drain source overvoltage threshold	800mV
-	 * 8:6 LS3 drain source overvoltage threshold	800mV
-	 * 5:3 LS2 drain source overvoltage threshold	800mV
-	 * 2:0 LS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_LS_VDS, 0b0000110110110110);
+	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);// Configure General bridge control reg with start configuration. 
 
-	/**
-	 * 12 Deep adaption enabled						NO_DEEP_ADAP
-	 * 11:9 HS4 drain source overvoltage threshold	800mV
-	 * 8:6 HS3 drain source overvoltage threshold	800mV
-	 * 5:3 HS2 drain source overvoltage threshold	800mV
-	 * 2:0 HS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_HS_VDS, 0b0000110110110110);
+	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 
-	/**
-	 * 
-	 * 
-	 */
-	//							  	 FEDCBA9876543210
-	writeReg(REG_ADDR_HB_ICHG_MAX, 0b0000000001010101);
-
-	//writeReg(REG_ADDR_WD_CTRL, 0b0000000000000011);
 	writeReg(REG_ADDR_SWK_CTRL, 0);
 
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
@@ -104,8 +77,7 @@ void Tle9562::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBco
 	ToSend = ToSend | (hb2.HBmode<<6)|(hb2.Freewheeling<<5)|(hb2.PWMenable<<4);
 	ToSend = ToSend | (hb3.HBmode<<10)|(hb3.Freewheeling<<9)|(hb3.PWMenable<<8);
     ToSend = ToSend | (hb4.HBmode<<14)|(hb4.Freewheeling<<13)|(hb4.PWMenable<<12);
-	uint8_t sif = writeReg(REG_ADDR_HBMODE, ToSend);
-	checkStatusInformationField(sif);
+	writeReg(REG_ADDR_HBMODE, ToSend);
 }
 
 void Tle9562::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4)
@@ -120,6 +92,6 @@ void Tle9562::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4)
 
 void Tle9562::setGenControl(bool MapPWM1, bool MapPWM3)
 {
-	uint16_t ToSend = (BDFREQ<<15)|(MapPWM3<<14)|(MapPWM1<<13)|(CPUVTH<<12)|(FET_LVL<<11)|(CPSTGA<<10)|(BDOV_REC<<9)|(IPCHGADT<<8)|(_agc_status<<6)|(CPEN<<5)|(POCHGDIS<<4)|(AGCFILT<<3)|(EN_GEN_CHECK<<2)|(IHOLD<<1)|(FMODE<<0);
+	uint16_t ToSend = (CONF_BDFREQ<<15)|(MapPWM3<<14)|(MapPWM1<<13)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
 	writeReg(REG_ADDR_GENCTRL, ToSend);
 }

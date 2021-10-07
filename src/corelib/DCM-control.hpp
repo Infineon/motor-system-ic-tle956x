@@ -92,7 +92,7 @@ class DCMcontrol
 		 * @param request select the registers/information that you want to observe
 		 * @return uint8_t Error return code / status report
 		 */
-		uint8_t					checkBLDCshield();
+		uint8_t					checkTLEshield();
 
 		/**
 		 * @brief set the speed and direction for either a single motor or both motors

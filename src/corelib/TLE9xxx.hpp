@@ -24,7 +24,14 @@
 #include "../pal/gpio.hpp"
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
+
+
 // ================================== Defines ==================================================================================================
+/**
+ * @brief Main place to configure the TLE. All defines beginning with "CONF_" are intended to be changed by the user. 
+ * All other defines should remain as they are.
+ */
+
 /****************** SPI address commands *******************/
 #define TLE9xxx_CMD_WRITE          	0x80
 #define TLE9xxx_CMD_READ          	0x00
@@ -33,7 +40,7 @@
 #define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
 
 /****************** Adaptive Gate control *******************/
-#define tRISE_TG                   11                 		// Target tRISE (tRISE_TG * 53.3 ns)
+#define CONF_TRISE_TG				11                 		// Target tRISE (CONF_TRISE_TG * 53.3 ns)
 
 /**
  * A value > 0.5 gives more importance to the last tRISE sampled
@@ -45,24 +52,24 @@
 #define ONE_MINUS_ALPHA3_FPA_SCALED (SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)    // (1 - ALPHA3), already scaled for FPA
 #define MAX_ICHG                   	63                      // Maximum charge current that will be set by the algorithm
 #define MIN_ICHG                   	0                       // Minimum charge current that will be set by the algorithm
-#define INIT_ICHG                  	11                      // Starting charge current that will be first used by the algorithm
+#define CONF_INIT_ICHG              11                      // Starting charge current that will be first used by the algorithm
 #define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
 
 /****************** General Bridge Control *******************/
-#define BDFREQ						1		// Bridge driver synchronization frequency: 37Mhz
+#define CONF_BDFREQ					1		// Bridge driver synchronization frequency: 37Mhz
 											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
-#define CPUVTH						0		// Charge pump under voltage:	TH1
-#define FET_LVL						1		// External MOSFET logic level:	normal level MOSFET
-#define CPSTGA						1		// Automatic switchover between dual and single charge pump stage: Normal
-#define BDOV_REC					1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
-#define IPCHGADT					0		// 1Step
+#define CONF_CPUVTH					0		// Charge pump under voltage:	TH1
+#define CONF_FET_LVL				1		// External MOSFET logic level:	normal level MOSFET
+#define CONF_CPSTGA					1		// Automatic switchover between dual and single charge pump stage: Normal
+#define CONF_BDOV_REC				1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
+#define CONF_IPCHGADT				0		// 1Step
 											// Adaptive gate control: configured in a global variable
-#define CPEN						1		// charge pump: enabled
-#define POCHGDIS					0		// Postcharge phase during PWM: disabled
-#define AGCFILT						0		// Filter for adaptive gate control:	NO_FILT
-#define EN_GEN_CHECK				0		// detection of active / FW MOSFET: disabled
-#define IHOLD						0		// Gate driver hold current:	TH1
-#define FMODE						0		// Frequency modulation of charge pump: no modulation
+#define CONF_CPEN					1		// charge pump: enabled
+#define CONF_POCHGDIS				0		// Postcharge phase during PWM: disabled
+#define CONF_AGCFILT				0		// Filter for adaptive gate control:	NO_FILT
+#define CONF_EN_GEN_CHECK			0		// detection of active / FW MOSFET: disabled
+#define CONF_IHOLD					0		// Gate driver hold current:	TH1
+#define CONF_FMODE					0		// Frequency modulation of charge pump: no modulation
 
 #define PWM3_TO_HB3					0
 #define PWM3_TO_HB4					1
@@ -76,9 +83,15 @@
 #define PWM_BNK_MODULE_3			0x2
 #define PWM_BNK_MODULE_4			0x3
 
-/****************** PWM HSS modules *******************/
+/****************** HS and LS Drain-Source monitoring threshold *******************/
+#define CONF_LS_AND_HS_X_VDSTH		6		// Set overvoltage threshold to 800mA
+#define CONF_DEEP_ADAP				0		// disable deep adaption
+#define CONF_TFVDS					0		// set filter time to 500ns
+
 
 // ===============================================================================================================================================
+
+
 /**
  * @addtogroup tle9xxxapi
  * @{
@@ -105,14 +118,25 @@ class Tle9xxx
 		//! \brief enum for the flags
 		enum DiagFlag
 		{
-			TLE_SPI_ERROR = 0x80,
-			TLE_LOAD_ERROR = 0x40,
-			TLE_UNDER_VOLTAGE = 0x20,
-			TLE_OVER_VOLTAGE = 0x10,
-			TLE_POWER_ON_RESET = 0x08,
-			TLE_TEMP_SHUTDOWN = 0x04,
-			TLE_OVERCURRENT = 0x02,
-			TLE_SHORT_CIRCUIT = 0x01
+			TLE_SPI_ERROR 		= 0x80,
+			TLE_LOAD_ERROR 		= 0x40,
+			TLE_UNDER_VOLTAGE 	= 0x20,
+			TLE_OVER_VOLTAGE 	= 0x10,
+			TLE_POWER_ON_RESET 	= 0x08,
+			TLE_TEMP_SHUTDOWN 	= 0x04,
+			TLE_OVERCURRENT 	= 0x02,
+			TLE_SHORT_CIRCUIT 	= 0x01
+		};
+		enum SIF
+		{
+			SIF_SPI_CRC_FAIL = 	0x80,
+			SIF_BD_STAT = 		0x40,
+			SIF_DEV_STAT = 		0x20,
+			SIF_HS_STAT = 		0x10,
+			SIF_WAKE_UP = 		0x08,
+			SIF_BUS_STAT = 		0x04,
+			SIF_TEMP_STAT = 	0x02,
+			SIF_SUPPLY_STAT = 	0x01
 		};
 
 		HBconfig_t 				ActiveGround; 
@@ -141,6 +165,14 @@ class Tle9xxx
 		 * 
 		 */
 		void 					configInterruptMask(void);
+
+		/**
+		 * @brief this function will be called if an an interrupt occured. It will first gather information about the error out of the
+		 * Status information field. Depending on which bits are set there, the specific register values will be read for more information.
+		 * 
+		 * @return uint8_t status information field content
+		 */
+		uint8_t					checkStatusInformationField(void);
 
 		/**
 		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
@@ -272,6 +304,15 @@ class Tle9xxx
 		void					set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK);
 
 		/**
+		 * @brief Set the LS and HS VDS monitoring threshold
+		 * 
+		 * @param VDSTH [0;7]drain-source overvoltage threshold for all HS and LS
+		 * @param DEEP_ADAP [0;1] Deep Adaption
+		 * @param TFVDS [0;3] Filter time of drain-source voltage moitoring
+		 */
+		void					set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS);
+
+		/**
 		 * @brief Reads out the MOSFET rise/fall time of the given PWM half-bridge
 		 * 
 		 * @param hb which halfbridge should be read [1-4]
@@ -300,17 +341,11 @@ class Tle9xxx
 		 * @return uint16_t returned value of TLE9xxx (16-bit)
 		 */
 		uint16_t 				readReg(uint8_t addr);
-
-		/**
-		 * @brief evaluate content if the status  information field and read out corresponding registers if necessary
-		 * 
-		 * @param sif status information field content (first byte of SPI SDO)
-		 */
-		void					checkStatusInformationField(uint8_t sif);
 		
 		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     // Array of the calculated tRISEx EMAs for the different configured ICHGx
-		uint8_t         		m_ichg = INIT_ICHG;                       // Current ICHGx with which the MOSFET driver is configured
-		uint8_t         		m_idchg = INIT_ICHG;                      // Current IDCHGx with which the MOSFET driver is configured
+		uint8_t         		m_ichg = CONF_INIT_ICHG;                       // Current ICHGx with which the MOSFET driver is configured
+		uint8_t         		m_idchg = CONF_INIT_ICHG;                      // Current IDCHGx with which the MOSFET driver is configured
+		uint8_t					_statusInformationField = 0;				// Stores the "Status information field" which is the first byte of every SDO package.
 
 };
 /** @} */

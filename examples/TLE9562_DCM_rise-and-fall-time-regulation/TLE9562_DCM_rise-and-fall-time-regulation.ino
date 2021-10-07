@@ -17,6 +17,7 @@ uint8_t direction = 0;
 uint8_t tRise, tFall = 0;
 uint32_t blinktimer = millis();
 bool ledstatus = 0;
+bool riseFallTimeReg_enable = 0;
 
 // Create an instance of DCMcontrol called 'MyMotor'. 
 DCMcontrolIno MyMotor = DCMcontrolIno();
@@ -37,8 +38,6 @@ void setup()
   Serial.println("Init ready");
 
   MyMotor.setDCspeed(speed, direction, 3);
-
-  Serial.print("tRise: \t tFall:");
 }
 
 void loop()
@@ -76,19 +75,33 @@ void loop()
       MyMotor.startDCM();
       Serial.println("Motor started");
     }
+    if(in == 'w')
+    {
+      riseFallTimeReg_enable = 1;
+      Serial.println("Rise- Fall-time Regulation enabled");
+      Serial.println("tRise: \t tFall:");
+    }
+    if(in == 's')
+    {
+      riseFallTimeReg_enable = 0;
+      Serial.println("Rise- Fall-time Regulation disabled");
+    }
 
     MyMotor.setDCspeed(speed, direction, 3);
   }
 
-  if(MyMotor.checkBLDCshield() )            // Check, if interrupt flag was set and read status register of TLE
+  if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
   {
     MyMotor.setLED(100,0);                  // Switch on LED 1
   }
 
-  MyMotor.riseFallTimeRegulation(HB1, tRise, tFall);
-  Serial.print(tRise);
-  Serial.print(" \t ");
-  Serial.println(tFall);
+  if(riseFallTimeReg_enable)
+  {
+    MyMotor.riseFallTimeRegulation(HB1, tRise, tFall);
+    Serial.print(tRise);
+    Serial.print(" \t ");
+    Serial.println(tFall);
+  }
 
   blinkLED();
   delay(10);

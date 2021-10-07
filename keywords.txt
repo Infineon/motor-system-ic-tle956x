@@ -15,7 +15,7 @@ begin	KEYWORD2
 end	KEYWORD2
 setLED	KEYWORD2
 serveBLDCshield	KEYWORD2
-checkBLDCshield	KEYWORD2
+checkTLEshield	KEYWORD2
 configBLDCshield	KEYWORD2
 setBLDCspeed	KEYWORD2
 StartBLDCM	KEYWORD2

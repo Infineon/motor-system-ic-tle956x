@@ -102,7 +102,7 @@ class BLDCMcontrol
 		 * @param request select the registers/information that you want to observe
 		 * @return uint8_t uint8_t Error return code / status report
 		 */
-		uint8_t					checkBLDCshield();
+		uint8_t					checkTLEshield();
 
 		/**
 		 * @brief hand over the configuration parameters like motor Mode, etc
