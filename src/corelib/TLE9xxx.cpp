@@ -285,16 +285,22 @@ void Tle9xxx::set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS)
 	writeReg(REG_ADDR_HS_VDS, ToSend);
 }
 
+void Tle9xxx::set_CCP_BLK(uint8_t TBLANK, uint8_t TCCP, uint8_t CCP_BNK)
+{
+	uint16_t ToSend = ((TBLANK<<12)&0xF000) | ((TCCP<<8)&0xF00) | (CCP_BNK & 0x7);
+	writeReg(REG_ADDR_CCP_BLK, ToSend);
+}
+
 
 void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 {
 	uint16_t input=0;
 	uint16_t reg=0;
 	switch(hb){
-		case 1: reg = REG_ADDR_TRISE_FALL1; break;
-		case 2: reg = REG_ADDR_TRISE_FALL2; break;
-		case 3: reg = REG_ADDR_TRISE_FALL3; break;
-		case 4: reg = REG_ADDR_TRISE_FALL4; break;
+		case HB1: reg = REG_ADDR_TRISE_FALL1; break;
+		case HB2: reg = REG_ADDR_TRISE_FALL2; break;
+		case HB3: reg = REG_ADDR_TRISE_FALL3; break;
+		case HB4: reg = REG_ADDR_TRISE_FALL4; break;
 	}
 
 	input = readReg(reg);
@@ -302,8 +308,6 @@ void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 	Tfall = (input>>8) & 0x3F;
 	//Trise = 53.3 * t_rise;					// [ns]
 	//Tfall = 53.3 * t_fall;					// [ns]
-	//Serial.print("RISTEIME: ");
-	//Serial.println(Trise);
 }
 
 void Tle9xxx::init_AGC_Algorithm(uint8_t hb)

@@ -166,9 +166,9 @@ void DCMcontrol::setLED(uint16_t led1, uint16_t led2)
 
 void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
 {
-    //_MotorStartEnable = 0;
+    _MotorStartEnable = 0;
     controller->init_AGC_Algorithm(hb);
-    /*
+    
     switch(hb){
         case HB1:   
             controller->setGenControl(PWM1_TO_HB1, 0);
@@ -187,7 +187,7 @@ void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
             controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround, controller->ActivePWM);
             break;
     }
-    */
+    
 }
 
 void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)

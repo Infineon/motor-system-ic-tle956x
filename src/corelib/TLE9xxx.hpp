@@ -84,10 +84,13 @@
 #define PWM_BNK_MODULE_4			0x3
 
 /****************** HS and LS Drain-Source monitoring threshold *******************/
-#define CONF_LS_AND_HS_X_VDSTH		6		// Set overvoltage threshold to 800mA
-#define CONF_DEEP_ADAP				0		// disable deep adaption
+#define CONF_LS_AND_HS_X_VDSTH		7		// [0;7] Set overvoltage threshold
+#define CONF_DEEP_ADAP				1		// [0;1] disable deep adaption
 #define CONF_TFVDS					0		// set filter time to 500ns
 
+/****************** Cross current protection *******************/
+#define CONF_TBLANK					10		// [0;15] Set the blank time for free wheeling and active MOSFETS. default is 7
+#define CONF_TCCP					10		// [0;15] Set the current protection time for free wheeling and active MOSFETS. default is 7
 
 // ===============================================================================================================================================
 
@@ -137,6 +140,12 @@ class Tle9xxx
 			SIF_BUS_STAT = 		0x04,
 			SIF_TEMP_STAT = 	0x02,
 			SIF_SUPPLY_STAT = 	0x01
+		};
+		enum _Halfbridges{
+			HB1,
+			HB2,
+			HB3,
+			HB4
 		};
 
 		HBconfig_t 				ActiveGround; 
@@ -311,6 +320,15 @@ class Tle9xxx
 		 * @param TFVDS [0;3] Filter time of drain-source voltage moitoring
 		 */
 		void					set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS);
+
+		/**
+		 * @brief Set the current protection times
+		 * 
+		 * @param TBLANK set blank time
+		 * @param TCCP set Cross-current protection time
+		 * @param CCP_BNK Select the halfbridge you want to change
+		 */
+		void					set_CCP_BLK(uint8_t TBLANK, uint8_t TCCP, uint8_t CCP_BNK);
 
 		/**
 		 * @brief Reads out the MOSFET rise/fall time of the given PWM half-bridge

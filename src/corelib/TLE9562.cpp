@@ -45,6 +45,11 @@ void Tle9562::config(uint8_t agc = 0)
 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 
+	for(uint8_t i=0; i<8; i++)
+	{
+		set_CCP_BLK(CONF_TBLANK, CONF_TCCP, i);
+	}
+
 	writeReg(REG_ADDR_SWK_CTRL, 0);
 
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs

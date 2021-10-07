@@ -25,7 +25,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(" Infineon TLE9562 DC motor shield Testsketch");
+  Serial.println(" Infineon TLE956x Gate Driver Configuration tool");
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
@@ -65,16 +65,6 @@ void loop()
        direction = 1;
        Serial.println("backward");
     }
-    if(in == 'h')
-    {
-      MyMotor.stopDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");
-    }
-    if(in == 'g')
-    {
-      MyMotor.startDCM();
-      Serial.println("Motor started");
-    }
     if(in == 'w')
     {
       riseFallTimeReg_enable = 1;
@@ -90,9 +80,9 @@ void loop()
     MyMotor.setDCspeed(speed, direction, 3);
   }
 
-  if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
+  if(MyMotor.checkTLEshield() > 0 )            // Check, if interrupt flag was set and read status register of TLE
   {
-    MyMotor.setLED(100,0);                  // Switch on LED 1
+    MyMotor.setLED(100,0);                 // Switch on LED 1
   }
 
   if(riseFallTimeReg_enable)
