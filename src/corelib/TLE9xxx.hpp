@@ -32,28 +32,31 @@
  * All other defines should remain as they are.
  */
 
-/****************** SPI address commands *******************/
-#define TLE9xxx_CMD_WRITE          	0x80
-#define TLE9xxx_CMD_READ          	0x00
-#define TLE9xxx_CMD_CLEAR          	0x80
-
 #define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
 
-/****************** Adaptive Gate control *******************/
+/****************** Adaptive Gate control charge current *******************/
 #define CONF_TRISE_TG				11                 		// Target tRISE (CONF_TRISE_TG * 53.3 ns)
-
-/**
- * A value > 0.5 gives more importance to the last tRISE sampled
- * A value < 0.5 gives more importance to the history of sampled tRISE
- */
+#define CONF_INIT_ICHG              11                      // Starting charge current that will be first used by the algorithm
+#define CONF_TFALL_TG				11                 		// Target tFALL (CONF_TFALL_TG * 53.3 ns)
+#define CONF_INIT_IDCHG				11                      // Starting discharge current that will be first used by the algorithm
+		/**
+		 * A value > 0.5 gives more importance to the last tRISE sampled
+		 * A value < 0.5 gives more importance to the history of sampled tRISE
+		 */
 #define ALPHA3                      0.5                     // ALPHA3, constant for the EMA calculation, 0 <= ALPHA3 <= 1
 #define SCALING_FACTOR_FPA          (0xFF)                  // Scaling factor for fixed-point arithmetic (FPA)
 #define ALPHA3_FPA_SCALED           (ALPHA3 * SCALING_FACTOR_FPA)               // ALPHA3, already scaled for FPA
 #define ONE_MINUS_ALPHA3_FPA_SCALED (SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)    // (1 - ALPHA3), already scaled for FPA
 #define MAX_ICHG                   	63                      // Maximum charge current that will be set by the algorithm
 #define MIN_ICHG                   	0                       // Minimum charge current that will be set by the algorithm
-#define CONF_INIT_ICHG              11                      // Starting charge current that will be first used by the algorithm
 #define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
+
+/****************** Adaptive Gate control PRE-charge current *******************/
+// register setting not yet enabled. Go to void Tle9562::config(uint8_t agc = 0)
+#define CONF_PDCHG_INIT				0xF		// [0;63] Initial predischarge current, default 0xF
+#define CONF_PCHG_INIT				0xD		// [0;63] Initial precharge current, default 0xD
+#define CONF_TDOFF					0xC		// [0;63] Turn-on delay time, default 0xC
+#define CONF_TDON					0xC		// [0;63] Turn-off delay time, default 0xC
 
 /****************** General Bridge Control *******************/
 #define CONF_BDFREQ					1		// Bridge driver synchronization frequency: 37Mhz
@@ -85,13 +88,21 @@
 
 /****************** HS and LS Drain-Source monitoring threshold *******************/
 #define CONF_LS_AND_HS_X_VDSTH		7		// [0;7] Set overvoltage threshold
-#define CONF_DEEP_ADAP				1		// [0;1] disable deep adaption
-#define CONF_TFVDS					0		// set filter time to 500ns
+#define CONF_DEEP_ADAP				1		// [0;1] deep adaption
+#define CONF_TFVDS					0		// [0;3] set filter time 0 = 500ns (default)
+
+/****************** Maximum Pre-(Dis)charge in PWM operation *******************/
+#define CONF_HBXIDIAG				0		// [0;1] disable pulldown for off-state diagnostic
+#define CONF_ICHGMAXX				3		// [0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA
 
 /****************** Cross current protection *******************/
 #define CONF_TBLANK					10		// [0;15] Set the blank time for free wheeling and active MOSFETS. default is 7
 #define CONF_TCCP					10		// [0;15] Set the current protection time for free wheeling and active MOSFETS. default is 7
 
+/****************** SPI address commands *******************/
+#define TLE9xxx_CMD_WRITE          	0x80
+#define TLE9xxx_CMD_READ          	0x00
+#define TLE9xxx_CMD_CLEAR          	0x80
 // ===============================================================================================================================================
 
 
@@ -121,14 +132,15 @@ class Tle9xxx
 		//! \brief enum for the flags
 		enum DiagFlag
 		{
-			TLE_SPI_ERROR 		= 0x80,
-			TLE_LOAD_ERROR 		= 0x40,
-			TLE_UNDER_VOLTAGE 	= 0x20,
-			TLE_OVER_VOLTAGE 	= 0x10,
-			TLE_POWER_ON_RESET 	= 0x08,
-			TLE_TEMP_SHUTDOWN 	= 0x04,
-			TLE_OVERCURRENT 	= 0x02,
-			TLE_SHORT_CIRCUIT 	= 0x01
+			TLE_HS_LS_OVERVOLTAGE 	= 0x100,
+			TLE_SPI_ERROR 			= 0x80,
+			TLE_LOAD_ERROR 			= 0x40,
+			TLE_UNDER_VOLTAGE 		= 0x20,
+			TLE_OVER_VOLTAGE 		= 0x10,
+			TLE_POWER_ON_RESET 		= 0x08,
+			TLE_TEMP_SHUTDOWN 		= 0x04,
+			TLE_OVERCURRENT 		= 0x02,
+			TLE_SHORT_CIRCUIT 		= 0x01
 		};
 		enum SIF
 		{
@@ -190,7 +202,7 @@ class Tle9xxx
 		 * @param RegAddress address of the register, the error bit was set in
 		 * @param RegContent full content of the register, ther error bit was set in
 		 */
-		bool					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
+		bool					PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 		void 					PrintBinary(uint8_t digits, uint16_t number);
 		/**
 		 * @brief read the Supply Voltage Fail Status register of the TLE and generate an ErrorCode depending of the fault-category
@@ -249,7 +261,7 @@ class Tle9xxx
 		 * @brief increase or decrease the charge current, depending on some conditions
 		 * 
 		 */
-		void 					adaptiveHysteresisDecisionTree(uint8_t hb);
+		void 					adaptiveHysteresisDecisionTree(uint8_t hb, uint8_t &ichg, uint8_t &idchg);
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
@@ -273,9 +285,10 @@ class Tle9xxx
 		/**
 		 * @brief HB charge/discharge currents for PWM operation
 		 * REF p.221 in TLE9562 datasheet
-		 * @param IDCHG Charge current of HBx active MOSFET
+		 * @param IDCHG Discharge current of HBx active MOSFET
 		 * @param ICHG Charge current of HBx active MOSFET or charge and discharge current of HBx FW MOSFET
-		 * @param ICHG_BNK Banking bits for charge and discharge currents 
+		 * @param ACTorFW 0 = active MOSFET, 1 = FW MOSFET
+		 * @param hb [0;3] which halfbridge should be changed
 		 */
 		void					set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb);
 

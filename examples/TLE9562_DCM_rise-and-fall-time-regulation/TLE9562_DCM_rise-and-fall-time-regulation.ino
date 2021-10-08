@@ -1,9 +1,11 @@
 /*!
- * \name        TLE9562_DCM-control.ino
+ * \name        TLE9562_DCM_rise-and-fall-time-regulation.ino
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2021 Infineon Technologies AG
  * \version     1.0.0
- * \brief       This example runs up to two DC motors using the TLE9562 DC motor shield.
+ * \brief       This example lets you configure the Rise- and Fall-time of a TLE9562. Therefor a closed-loop Algorithm is implemented,
+ * that prints the actual Rise- /Falltime and the gate charge- /dischargecurrent. Start the Regulation by pressing 'w' in the serial monitor.
+ * As soon as the values converge, stop the regulation by pressing 's'. Note down the final charge- / dischargecurrent and edit the define-page in the library.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -12,9 +14,11 @@
 #include <Arduino.h>
 #include <DCM-control-ino.hpp>
 
+#define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
+
 uint16_t speed = 100;
 uint8_t direction = 0;
-uint8_t tRise, tFall = 0;
+uint8_t tRise, tFall, iCharge, iDischarge = 0;
 uint32_t blinktimer = millis();
 bool ledstatus = 0;
 bool riseFallTimeReg_enable = 0;
@@ -34,9 +38,6 @@ void setup()
   MyMotor.configDCshield();
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HB1);
-  
-  Serial.println("Init ready");
-
   MyMotor.setDCspeed(speed, direction, 3);
 }
 
@@ -69,7 +70,7 @@ void loop()
     {
       riseFallTimeReg_enable = 1;
       Serial.println("Rise- Fall-time Regulation enabled");
-      Serial.println("tRise: \t tFall:");
+      Serial.println("iChg:\t iDchg:\t tRise:\t tFall:");
     }
     if(in == 's')
     {
@@ -82,19 +83,23 @@ void loop()
 
   if(MyMotor.checkTLEshield() > 0 )            // Check, if interrupt flag was set and read status register of TLE
   {
-    MyMotor.setLED(100,0);                 // Switch on LED 1
+    MyMotor.setLED(100,0);                     // Switch on LED 1
   }
 
   if(riseFallTimeReg_enable)
   {
-    MyMotor.riseFallTimeRegulation(HB1, tRise, tFall);
+    MyMotor.riseFallTimeRegulation(HB1, iCharge, iDischarge, tRise, tFall);
+    Serial.print(iCharge);
+    Serial.print("\t ");
+    Serial.print(iDischarge);
+    Serial.print("\t ");
     Serial.print(tRise);
-    Serial.print(" \t ");
+    Serial.print("\t ");
     Serial.println(tFall);
   }
 
   blinkLED();
-  delay(10);
+  delay(50);
 
 }
 
@@ -105,9 +110,9 @@ void TLEinterrupt()
 
 void blinkLED()
 {
-    if((millis() - blinktimer) > 1000)
+    if((millis() - blinktimer) > 500)
     {
-        ledstatus != ledstatus;
+        ledstatus = !ledstatus;
         MyMotor.setLED(0,ledstatus * 1000);
         blinktimer = millis();
     }

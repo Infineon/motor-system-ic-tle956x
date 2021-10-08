@@ -169,48 +169,49 @@ uint8_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
 	writeReg(REG_ADDR_DSOV, 0);
 	RegAddress = REG_ADDR_DSOV;
 	RegContent = input;
-	if((input | 0x00FF) > 0){
-		Serial.println("==> HS or VS overvoltage error! <==");
-		ErrorCode = TLE_SHORT_CIRCUIT;
-	}
+	if((input & 0x00FF) > 0) ErrorCode = TLE_HS_LS_OVERVOLTAGE;
 
 	return ErrorCode;
 }
 
-bool Tle9xxx::PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent)
+bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t &RegContent)
 {
     if(msg & TLE_SPI_ERROR)
     {
         Serial.println("===> Error: CRC / SPI-Failure <===");
     }
-    else if(msg & TLE_LOAD_ERROR)
+    if(msg & TLE_LOAD_ERROR)
     {
         Serial.println("===> Error: Open-Load detected! <===");
     }
-    else if(msg & TLE_UNDER_VOLTAGE)
+    if(msg & TLE_UNDER_VOLTAGE)
     {
         Serial.println("===> Error: Undervoltage detected! Check your voltage supply <===");
     }
-    else if(msg & TLE_OVER_VOLTAGE)
+    if(msg & TLE_OVER_VOLTAGE)
     {
         Serial.println("===> Error: Overvoltage detected! Check your voltage supply <====");
     }
-    else if(msg & TLE_POWER_ON_RESET)
+    if(msg & TLE_POWER_ON_RESET)
     {
         Serial.println("===> Power on reset detected! <===");
     }
-    else if(msg & TLE_TEMP_SHUTDOWN)
+    if(msg & TLE_TEMP_SHUTDOWN)
     {
         Serial.println("===> Error: Temperature shutdown <===");
     }
-    else if(msg & TLE_OVERCURRENT)
+    if(msg & TLE_OVERCURRENT)
     {
         Serial.println("===> Error: Overcurrent detected! <===");
     }
-    else if(msg & TLE_SHORT_CIRCUIT)
+    if(msg & TLE_SHORT_CIRCUIT)
     {
         Serial.println("===> Error: Short circuit detected! <===");
     }
+	if(msg & TLE_HS_LS_OVERVOLTAGE)
+    {
+		Serial.println("===> Error: HS / LS Overvoltage <===");
+	}
 
     if(DETAILED_ERROR_REPORT)
     {
@@ -261,17 +262,20 @@ void Tle9xxx::set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx)
 
 void Tle9xxx::set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK)
 {
-	
+	uint16_t ToSend  = ((PDCHGINIT<<10) & 0xFC00) | ((PCHGINIT<<4) & 0x03F0) | (INIT_BNK& 0x7);
+	writeReg(REG_ADDR_HB_PCHG_INIT, ToSend);
 }
 
 void Tle9xxx::set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK)
 {
-
+	uint16_t ToSend  = ((TDON<<8) & 0x3F00) | (HB_TDON_BNK & 0x7);
+	writeReg(REG_ADDR_TDON_HB_CTRL, ToSend);
 }
 
 void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK)
 {
-
+	uint16_t ToSend  = ((TDOFF<<8) & 0x3F00) | (HB_TDOFF_BNK & 0x7);
+	writeReg(REG_ADDR_TDOFF_HB_CTRL, ToSend);
 }
 
 void Tle9xxx::set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS)
@@ -341,7 +345,7 @@ void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
 	falltime = tFALL;
 }
 
-void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb)
+void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t &idchg)
 {
     // The charge current is decreased if all conditions are true:
     // 1. The EMA calculated for the current ICHG3 is lower than CONF_TRISE_TG
@@ -365,4 +369,7 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb)
 
     // Set the ICHG at the TLE9562
 	set_HB_ICHG(m_idchg, m_ichg, 0, hb);
+
+	ichg = m_ichg;
+	idchg = m_idchg;
 }

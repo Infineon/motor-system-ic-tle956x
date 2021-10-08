@@ -39,7 +39,7 @@ void Tle9562::config(uint8_t agc = 0)
 
 	SBC_CRC_Disable();						// Disable cyclic redundancy check
 
-	set_HB_ICHG_MAX(0, 3);					// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);		// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
 
 	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);// Configure General bridge control reg with start configuration. 
 
@@ -50,8 +50,15 @@ void Tle9562::config(uint8_t agc = 0)
 		set_CCP_BLK(CONF_TBLANK, CONF_TCCP, i);
 	}
 
-	writeReg(REG_ADDR_SWK_CTRL, 0);
+	/**
+	 * @brief In order to configure the built-in AGC for Pre-charge regulation, you might want to change
+	 * one of the following registers. 
+	 */
+	// set_PCHG_INIT(CONF_PDCHG_INIT, CONF_PCHG_INIT, hb);
+	// set_TDON_HB_CTRL(CONF_TDOFF, hb);
+	// set_TDOFF_HB_CTRL(CONF_TDON, hb);
 
+	writeReg(REG_ADDR_SWK_CTRL, 0);
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
 }
 

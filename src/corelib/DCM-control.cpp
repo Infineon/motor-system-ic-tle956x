@@ -52,7 +52,6 @@ void DCMcontrol::end(void)
 
 uint8_t DCMcontrol::configDCshield(void)
 {
-  // TODO: Do the whole TLE setting here
   controller->config(ADAPTIVE_GATE_CONTROL_PRECHARGE);
   controller->configInterruptMask();
 }
@@ -190,10 +189,10 @@ void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
     
 }
 
-void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
+void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime)
 {
     controller->emaCalculation(hb, risetime, falltime);
-    controller->adaptiveHysteresisDecisionTree (hb);
+    controller->adaptiveHysteresisDecisionTree (hb, iCharge, iDischarge);
 }
 
 /*

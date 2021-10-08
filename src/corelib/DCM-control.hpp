@@ -33,8 +33,13 @@
  * with ADAPTIVE_GATE_CONTROL_CHARGE you can switch on the external control loop of the gate-charge current, implemented in this library
  * 
  */
+#ifndef ADAPTIVE_GATE_CONTROL_PRECHARGE
 #define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
+#endif
+
+#ifndef ADAPTIVE_GATE_CONTROL_CHARGE
 #define ADAPTIVE_GATE_CONTROL_CHARGE			0		// 0 = INACTIVE; 1 = ACTIVE	| External AGC, control loop can be find in the TLE9xxx.cpp
+#endif
 
 
 /* Braking modes */
@@ -147,7 +152,7 @@ class DCMcontrol
 		 * @param risetime hands over the actual rise-time
 		 * @param falltime hands oder the actual fall-time
 		 */
-		void					riseFallTimeRegulation(uint8_t hb, uint8_t &risetime, uint8_t &falltime);
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime);
 
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board

@@ -29,9 +29,6 @@ void setup()
   MyMotor.begin();
   MyMotor.configDCshield();
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
-  
-  Serial.println("Init ready");
-
   MyMotor.setDCspeed(speed, direction, 3);
   MyMotor.startDCM();
 }

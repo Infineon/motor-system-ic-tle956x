@@ -35,9 +35,6 @@ void setup()
   MyMotor.MotorParam.MotorPolepairs = 4;                                 // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield();
-  
-  Serial.println("Init ready");
-
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
 }
