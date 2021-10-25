@@ -104,8 +104,6 @@ class Tle9562: public Tle9xxx
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
-
-		uint8_t					_agc_status = 0;
 		
 	protected:
 

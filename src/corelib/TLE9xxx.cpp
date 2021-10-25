@@ -83,9 +83,9 @@ void Tle9xxx::configInterruptMask(void)
 	writeReg(REG_ADDR_INT_MASK, tosend);
 }
 
-uint8_t Tle9xxx::checkStatusInformationField(void)
+uint16_t Tle9xxx::checkStatusInformationField(void)
 {
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
     uint16_t RegAddress = 0;
     uint16_t RegContent = 0;
     ErrorCode = checkStatSUP(RegAddress, RegContent);		// Read the first register at the beginning in order to read the actual SIF values.
@@ -102,7 +102,7 @@ uint8_t Tle9xxx::checkStatusInformationField(void)
 }
 
 
-uint8_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
+uint16_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
@@ -119,7 +119,7 @@ uint8_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
 	return ErrorCode;
 }
 
-uint8_t Tle9xxx::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
+uint16_t Tle9xxx::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
@@ -133,7 +133,7 @@ uint8_t Tle9xxx::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
 	return ErrorCode;
 }
 
-uint8_t Tle9xxx::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
+uint16_t Tle9xxx::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
@@ -148,7 +148,7 @@ uint8_t Tle9xxx::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
 	return ErrorCode;
 }
 
-uint8_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
+uint16_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
@@ -161,7 +161,7 @@ uint8_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 	return ErrorCode;
 }
 
-uint8_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
+uint16_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
 	uint8_t ErrorCode = 0;
@@ -301,13 +301,15 @@ void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 	uint16_t input=0;
 	uint16_t reg=0;
 	switch(hb){
-		case HB1: reg = REG_ADDR_TRISE_FALL1; break;
-		case HB2: reg = REG_ADDR_TRISE_FALL2; break;
-		case HB3: reg = REG_ADDR_TRISE_FALL3; break;
-		case HB4: reg = REG_ADDR_TRISE_FALL4; break;
+		case PHASE1: reg = REG_ADDR_TRISE_FALL1; break;
+		case PHASE2: reg = REG_ADDR_TRISE_FALL2; break;
+		case PHASE3: reg = REG_ADDR_TRISE_FALL3; break;
+		case PHASE4: reg = REG_ADDR_TRISE_FALL4; break;
 	}
 
 	input = readReg(reg);
+	Serial.print("Value: 0x");
+	Serial.println(input, HEX);
     Trise = input & 0x3F;
 	Tfall = (input>>8) & 0x3F;
 	//Trise = 53.3 * t_rise;					// [ns]
@@ -368,7 +370,7 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t
         m_ichg ++;
 
     // Set the ICHG at the TLE9562
-	set_HB_ICHG(m_idchg, m_ichg, 0, hb);
+	set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, hb);
 
 	ichg = m_ichg;
 	idchg = m_idchg;

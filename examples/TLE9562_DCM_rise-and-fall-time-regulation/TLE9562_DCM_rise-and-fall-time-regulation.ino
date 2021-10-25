@@ -14,14 +14,17 @@
 #include <Arduino.h>
 #include <DCM-control-ino.hpp>
 
-#define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
+#define HALFBRIDGE              PHASE1      // [PHASE1;Phase4] Select the phase on which you want to regulate Rise/Fall time
+#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+#define CONTROL_LOOP_DELAY      100         // [ms] time between regulation executions
 
-uint16_t speed = 100;
-uint8_t direction = 0;
+uint16_t speed = 100;                       // start speed
+uint8_t direction = 0;                      // direction can not be changed in this application, the value has no effect
 uint8_t tRise, tFall, iCharge, iDischarge = 0;
 uint32_t blinktimer = millis();
 bool ledstatus = 0;
 bool riseFallTimeReg_enable = 0;
+bool turnOnOffDelayReg_enable = 0;
 
 // Create an instance of DCMcontrol called 'MyMotor'. 
 DCMcontrolIno MyMotor = DCMcontrolIno();
@@ -37,7 +40,7 @@ void setup()
   MyMotor.begin();
   MyMotor.configDCshield();
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
-  MyMotor.setupRiseFallTimeRegulation(HB1);
+  MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
   MyMotor.setDCspeed(speed, direction, 3);
 }
 
@@ -48,37 +51,45 @@ void loop()
     uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
     if(in == '+')
     {
-       speed += 50;
+       speed += SPEED_INCREASE_STEP;
+       Serial.print("Dutycycle: ");
        Serial.println(speed);
     }
     if(in == '-')
     {
-      speed -= 50;
+      speed -= SPEED_INCREASE_STEP;
+      Serial.print("Dutycycle: ");
       Serial.println(speed);
     }
-    if(in == 'd')
-    {
-      direction = 0;
-      Serial.println("forward");
-    }
-    if(in == 'e')
-    {
-       direction = 1;
-       Serial.println("backward");
-    }
+    MyMotor.setDCspeed(speed, direction, 3);
+
+    //==================== Adaptive Gate Charge control ======================
     if(in == 'w')
     {
       riseFallTimeReg_enable = 1;
-      Serial.println("Rise- Fall-time Regulation enabled");
+      Serial.println("Rise- Fall-time regulation enabled");
       Serial.println("iChg:\t iDchg:\t tRise:\t tFall:");
     }
     if(in == 's')
     {
       riseFallTimeReg_enable = 0;
-      Serial.println("Rise- Fall-time Regulation disabled");
+      Serial.println("Rise- Fall-time regulation disabled");
     }
 
-    MyMotor.setDCspeed(speed, direction, 3);
+    //==================== Adaptive Gate Pre-charge control ======================
+    if(in == 'q')
+    {
+      turnOnOffDelayReg_enable = 1;
+      MyMotor.configDCshield(turnOnOffDelayReg_enable);
+      Serial.println("Turn-on / -off delay regulation enabled");
+      Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
+    }
+    if(in == 'a')
+    {
+      turnOnOffDelayReg_enable = 0;
+      MyMotor.configDCshield(turnOnOffDelayReg_enable);
+      Serial.println("Turn-on / -off delay regulation disabled");
+    }
   }
 
   if(MyMotor.checkTLEshield() > 0 )            // Check, if interrupt flag was set and read status register of TLE
@@ -88,7 +99,7 @@ void loop()
 
   if(riseFallTimeReg_enable)
   {
-    MyMotor.riseFallTimeRegulation(HB1, iCharge, iDischarge, tRise, tFall);
+    MyMotor.riseFallTimeRegulation(HALFBRIDGE, iCharge, iDischarge, tRise, tFall);
     Serial.print(iCharge);
     Serial.print("\t ");
     Serial.print(iDischarge);
@@ -99,7 +110,7 @@ void loop()
   }
 
   blinkLED();
-  delay(50);
+  delay(CONTROL_LOOP_DELAY);
 
 }
 

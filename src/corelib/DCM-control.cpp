@@ -50,9 +50,9 @@ void DCMcontrol::end(void)
 	timer->stop();
 }
 
-uint8_t DCMcontrol::configDCshield(void)
+uint8_t DCMcontrol::configDCshield(uint8_t agc = 0)
 {
-  controller->config(ADAPTIVE_GATE_CONTROL_PRECHARGE);
+  controller->config(agc);
   controller->configInterruptMask();
 }
 
@@ -78,14 +78,14 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
         pwmA->ADCWrite(_DutyCycle);
         if(direction)
         {
-            _HBstatus[HB1] = controller->ActivePWM;
-            _HBstatus[HB2] = controller->ActiveGround;
+            _HBstatus[PHASE1] = controller->ActivePWM;
+            _HBstatus[PHASE2] = controller->ActiveGround;
             _Direction[OUT_A] = PWM1_TO_HB1;
         }
         else
         {
-            _HBstatus[HB2] = controller->ActivePWM;
-            _HBstatus[HB1] = controller->ActiveGround;
+            _HBstatus[PHASE2] = controller->ActivePWM;
+            _HBstatus[PHASE1] = controller->ActiveGround;
             _Direction[OUT_A] = PWM1_TO_HB2;
         }
         
@@ -96,14 +96,14 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
         pwmB->ADCWrite(_DutyCycle);
         if(direction)
         {
-            _HBstatus[HB3] = controller->ActivePWM;
-            _HBstatus[HB4] = controller->ActiveGround;
+            _HBstatus[PHASE3] = controller->ActivePWM;
+            _HBstatus[PHASE4] = controller->ActiveGround;
             _Direction[OUT_B] = PWM3_TO_HB3;
         }
         else
         {
-            _HBstatus[HB4] = controller->ActivePWM;
-            _HBstatus[HB3] = controller->ActiveGround;
+            _HBstatus[PHASE4] = controller->ActivePWM;
+            _HBstatus[PHASE3] = controller->ActiveGround;
             _Direction[OUT_B] = PWM3_TO_HB4;
         }
     }
@@ -114,19 +114,19 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
         pwmB->ADCWrite(_DutyCycle);
         if(direction)
         {
-            _HBstatus[HB1] = controller->ActivePWM;
-            _HBstatus[HB2] = controller->ActiveGround;
-            _HBstatus[HB3] = controller->ActivePWM;
-            _HBstatus[HB4] = controller->ActiveGround;
+            _HBstatus[PHASE1] = controller->ActivePWM;
+            _HBstatus[PHASE2] = controller->ActiveGround;
+            _HBstatus[PHASE3] = controller->ActivePWM;
+            _HBstatus[PHASE4] = controller->ActiveGround;
             _Direction[OUT_A] = PWM1_TO_HB1;
             _Direction[OUT_B] = PWM3_TO_HB3;
         }
         else
         {
-            _HBstatus[HB2] = controller->ActivePWM;
-            _HBstatus[HB1] = controller->ActiveGround;
-            _HBstatus[HB4] = controller->ActivePWM;
-            _HBstatus[HB3] = controller->ActiveGround;
+            _HBstatus[PHASE2] = controller->ActivePWM;
+            _HBstatus[PHASE1] = controller->ActiveGround;
+            _HBstatus[PHASE4] = controller->ActivePWM;
+            _HBstatus[PHASE3] = controller->ActiveGround;
             _Direction[OUT_A] = PWM1_TO_HB2;
             _Direction[OUT_B] = PWM3_TO_HB4;
         }
@@ -134,7 +134,7 @@ void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 
     if(_MotorStartEnable)
     {
-        controller->setHalfbridge(_HBstatus[HB1], _HBstatus[HB2], _HBstatus[HB3], _HBstatus[HB4]);
+        controller->setHalfbridge(_HBstatus[PHASE1], _HBstatus[PHASE2], _HBstatus[PHASE3], _HBstatus[PHASE4]);
         controller->setGenControl(_Direction[OUT_A], _Direction[OUT_B]);
     }
 }
@@ -169,19 +169,19 @@ void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
     controller->init_AGC_Algorithm(hb);
     
     switch(hb){
-        case HB1:   
+        case PHASE1:   
             controller->setGenControl(PWM1_TO_HB1, 0);
             controller->setHalfbridge(controller->ActivePWM, controller->ActiveGround, controller->ActiveGround, controller->ActiveGround);
             break;
-        case HB2:  
+        case PHASE2:  
             controller->setGenControl(PWM1_TO_HB2, 0);
             controller->setHalfbridge(controller->ActiveGround, controller->ActivePWM, controller->ActiveGround, controller->ActiveGround);
             break;
-        case HB3:
+        case PHASE3:
             controller->setGenControl(0, PWM3_TO_HB3);
             controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActivePWM, controller->ActiveGround);
             break;
-        case HB4:
+        case PHASE4:
             controller->setGenControl(0, PWM3_TO_HB4);
             controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround, controller->ActivePWM);
             break;

@@ -35,28 +35,28 @@ Tle9562::~Tle9562()
 
 void Tle9562::config(uint8_t agc = 0)
 {
-	_agc_status = agc;
+	_agc_status = agc;													// set the global variable, if agc is used, as this is used very often in the GENctrl register
 
-	SBC_CRC_Disable();						// Disable cyclic redundancy check
+	SBC_CRC_Disable();													// Disable cyclic redundancy check
 
-	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);		// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	for(uint8_t i = PHASE1; i <= PHASE4; i++)
+	{
+		set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, i);					// set static charge and discharge current
+		set_HB_ICHG(m_idchg, m_ichg, FW_MOSFET, i);						// set static charge and discharge current
 
-	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);// Configure General bridge control reg with start configuration. 
+		set_PCHG_INIT(CONF_PDCHG_INIT, CONF_PCHG_INIT, i);				// set initial precharge and pre-discharge current for internal AGC
+		set_TDON_HB_CTRL(CONF_TDOFF, i);								// set desired turn-off delay
+		set_TDOFF_HB_CTRL(CONF_TDON, i);								// set desired turn-on delay
+	}
 
+	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);							// Configure General bridge control reg with start configuration. 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 
 	for(uint8_t i=0; i<8; i++)
 	{
 		set_CCP_BLK(CONF_TBLANK, CONF_TCCP, i);
 	}
-
-	/**
-	 * @brief In order to configure the built-in AGC for Pre-charge regulation, you might want to change
-	 * one of the following registers. 
-	 */
-	// set_PCHG_INIT(CONF_PDCHG_INIT, CONF_PCHG_INIT, hb);
-	// set_TDON_HB_CTRL(CONF_TDOFF, hb);
-	// set_TDOFF_HB_CTRL(CONF_TDON, hb);
 
 	writeReg(REG_ADDR_SWK_CTRL, 0);
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs

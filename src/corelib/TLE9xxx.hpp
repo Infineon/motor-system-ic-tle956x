@@ -32,13 +32,27 @@
  * All other defines should remain as they are.
  */
 
+/**
+ * @brief Main swithces here, use with care. 
+ * with ADAPTIVE_GATE_CONTROL_PRECHARGE you can switch on the internal regulation of the gate-precharge current
+ * with ADAPTIVE_GATE_CONTROL_CHARGE you can switch on the external control loop of the gate-charge current, implemented in this library
+ * 
+ */
+#ifndef ADAPTIVE_GATE_CONTROL_PRECHARGE
+#define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
+#endif
+
+#ifndef ADAPTIVE_GATE_CONTROL_CHARGE
+#define ADAPTIVE_GATE_CONTROL_CHARGE			0		// 0 = INACTIVE; 1 = ACTIVE	| External AGC, control loop can be find in the TLE9xxx.cpp
+#endif
+
 #define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
 
 /****************** Adaptive Gate control charge current *******************/
 #define CONF_TRISE_TG				11                 		// Target tRISE (CONF_TRISE_TG * 53.3 ns)
 #define CONF_INIT_ICHG              11                      // Starting charge current that will be first used by the algorithm
 #define CONF_TFALL_TG				11                 		// Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				11                      // Starting discharge current that will be first used by the algorithm
+#define CONF_INIT_IDCHG				2                      	// Starting discharge current that will be first used by the algorithm
 		/**
 		 * A value > 0.5 gives more importance to the last tRISE sampled
 		 * A value < 0.5 gives more importance to the history of sampled tRISE
@@ -53,10 +67,10 @@
 
 /****************** Adaptive Gate control PRE-charge current *******************/
 // register setting not yet enabled. Go to void Tle9562::config(uint8_t agc = 0)
-#define CONF_PDCHG_INIT				0xF		// [0;63] Initial predischarge current, default 0xF
-#define CONF_PCHG_INIT				0xD		// [0;63] Initial precharge current, default 0xD
-#define CONF_TDOFF					0xC		// [0;63] Turn-on delay time, default 0xC
-#define CONF_TDON					0xC		// [0;63] Turn-off delay time, default 0xC
+#define CONF_PDCHG_INIT				15		// [0;63] Initial predischarge current, default 0xF
+#define CONF_PCHG_INIT				13		// [0;63] Initial precharge current, default 0xD
+#define CONF_TDOFF					12		// [0;63] Turn-on delay time, default 0xC
+#define CONF_TDON					12		// [0;63] Turn-off delay time, default 0xC
 
 /****************** General Bridge Control *******************/
 #define CONF_BDFREQ					1		// Bridge driver synchronization frequency: 37Mhz
@@ -103,8 +117,11 @@
 #define TLE9xxx_CMD_WRITE          	0x80
 #define TLE9xxx_CMD_READ          	0x00
 #define TLE9xxx_CMD_CLEAR          	0x80
-// ===============================================================================================================================================
 
+#define ACTIVE_MOSFET				0
+#define FW_MOSFET					1
+
+// ===============================================================================================================================================
 
 /**
  * @addtogroup tle9xxxapi
@@ -154,10 +171,10 @@ class Tle9xxx
 			SIF_SUPPLY_STAT = 	0x01
 		};
 		enum _Halfbridges{
-			HB1,
-			HB2,
-			HB3,
-			HB4
+			PHASE1,
+			PHASE2,
+			PHASE3,
+			PHASE4
 		};
 
 		HBconfig_t 				ActiveGround; 
@@ -193,7 +210,7 @@ class Tle9xxx
 		 * 
 		 * @return uint8_t status information field content
 		 */
-		uint8_t					checkStatusInformationField(void);
+		uint16_t					checkStatusInformationField(void);
 
 		/**
 		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
@@ -210,7 +227,7 @@ class Tle9xxx
 		 * @param address returns the composed register address and content for detailed debugging
 		 * @return DiagFlag return the generated Error code
 		 */
-		uint8_t					checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent);
+		uint16_t				checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent);
 
 		/**
 		 * @brief read the Thermal Protection status register of the TLE and generate an ErrorCode depending of the fault-category
@@ -218,7 +235,7 @@ class Tle9xxx
 		 * @param address returns the composed register address and content for detailed debugging
 		 * @return DiagFlag return the generated Error code
 		 */
-		uint8_t					checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent);
+		uint16_t				checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent);
 
 		/**
 		 * @brief read the High-Side Switch status register of the TLE and generate an ErrorCode depending of the fault-category
@@ -226,7 +243,7 @@ class Tle9xxx
 		 * @param address returns the composed register address and content for detailed debugging
 		 * @return DiagFlag return the generated Error code
 		 */
-		uint8_t					checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent);
+		uint16_t				checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent);
 
 		/**
 		 * @brief read the Device Information status register of the TLE and generate an ErrorCode depending of the fault-category
@@ -234,7 +251,7 @@ class Tle9xxx
 		 * @param address returns the composed register address and content for detailed debugging
 		 * @return DiagFlag return the generated Error code
 		 */
-		uint8_t					checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent);
+		uint16_t				checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent);
 
 		/**
 		 * @brief read the Drain-source overvoltage status register and generate an ErrorCode depending of the fault-category
@@ -243,7 +260,7 @@ class Tle9xxx
 		 * @param RegContent Content of DSOV register
 		 * @return uint8_t DiagFlag return the generated Error code
 		 */
-		uint8_t 				checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent);
+		uint16_t 				checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent);
 
 		/**
 		 * @brief initialize variables for the adaptive gate control algorithm
@@ -275,10 +292,10 @@ class Tle9xxx
 		/**
 		 * @brief set the charge discharge current for static activation (no PWM).
 		 * 
-		 * @param ICHGST1 static charge and discharge currents oh HB1
-		 * @param ICHGST2 static charge and discharge currents oh HB2
-		 * @param ICHGST3 static charge and discharge currents oh HB3
-		 * @param ICHGST4 static charge and discharge currents oh HB4
+		 * @param ICHGST1 static charge and discharge currents oh PHASE1
+		 * @param ICHGST2 static charge and discharge currents oh PHASE2
+		 * @param ICHGST3 static charge and discharge currents oh PHASE3
+		 * @param ICHGST4 static charge and discharge currents oh PHASE4
 		 */
 		void					set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4);
 
@@ -373,10 +390,11 @@ class Tle9xxx
 		 */
 		uint16_t 				readReg(uint8_t addr);
 		
-		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     // Array of the calculated tRISEx EMAs for the different configured ICHGx
-		uint8_t         		m_ichg = CONF_INIT_ICHG;                       // Current ICHGx with which the MOSFET driver is configured
-		uint8_t         		m_idchg = CONF_INIT_ICHG;                      // Current IDCHGx with which the MOSFET driver is configured
+		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     	// Array of the calculated tRISEx EMAs for the different configured ICHGx
+		uint8_t         		m_ichg = CONF_INIT_ICHG;                  	// Current ICHGx with which the MOSFET driver is configured
+		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	// Current IDCHGx with which the MOSFET driver is configured
 		uint8_t					_statusInformationField = 0;				// Stores the "Status information field" which is the first byte of every SDO package.
+		uint8_t					_agc_status = 0;							// Stores the value to be written
 
 };
 /** @} */

@@ -27,30 +27,16 @@
 #endif
 */
 // ================================== Defines ==================================================================================================
-/**
- * @brief Main swithces here, use with care. 
- * with ADAPTIVE_GATE_CONTROL_PRECHARGE you can switch on the internal regulation of the gate-precharge current
- * with ADAPTIVE_GATE_CONTROL_CHARGE you can switch on the external control loop of the gate-charge current, implemented in this library
- * 
- */
-#ifndef ADAPTIVE_GATE_CONTROL_PRECHARGE
-#define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
-#endif
-
-#ifndef ADAPTIVE_GATE_CONTROL_CHARGE
-#define ADAPTIVE_GATE_CONTROL_CHARGE			0		// 0 = INACTIVE; 1 = ACTIVE	| External AGC, control loop can be find in the TLE9xxx.cpp
-#endif
-
 
 /* Braking modes */
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
 
 enum _Halfbridges{
-			HB1,
-			HB2,
-			HB3,
-			HB4
+			PHASE1,
+			PHASE2,
+			PHASE3,
+			PHASE4
 		};
 enum _Outputs{
 			OUT_A,
@@ -92,9 +78,10 @@ class DCMcontrol
 		 * @brief config the TLE9562 chip with customized settings
 		 * needs to be called once before the motor will be started
 		 * 
+		 * @param agc Adaptive Gate Precharge controlloop: 0 = off, 1 = on
 		 * @return uint8_t 
 		 */
-		uint8_t					configDCshield(void);
+		uint8_t					configDCshield(uint8_t agc = 0);
 
 		/**
 		 * @brief check if status information is available
