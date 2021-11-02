@@ -248,54 +248,54 @@ void Tle9xxx::set_TPRECHG(uint8_t t_pchgx, uint8_t t_pdchgx)
 }
 
 
-void Tle9xxx::set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4)
+void Tle9xxx::set_ST_ICHG(uint8_t ichgst1, uint8_t ichgst2, uint8_t ichgst3, uint8_t ichgst4)
 {
-	uint16_t ToSend  = ((ICHGST4<<12) & 0xF000) | ((ICHGST3<<8) & 0x0F00) | ((ICHGST2<<4) & 0x00F0) | (ICHGST1 & 0x000F);
+	uint16_t ToSend  = ((ichgst4<<12) & 0xF000) | ((ichgst3<<8) & 0x0F00) | ((ichgst2<<4) & 0x00F0) | (ichgst1 & 0x000F);
 	writeReg(REG_ADDR_ST_ICHG, ToSend);
 }
 
-void Tle9xxx::set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb)
+void Tle9xxx::set_HB_ICHG(uint8_t idchg, uint8_t ichg, bool ACTorFW, uint8_t hb)
 {
-	uint16_t ToSend  = ((IDCHG<<10) & 0xFC00) | ((ICHG<<4) & 0x03F0) | (((ACTorFW<<2)|hb)& 0x000F);
+	uint16_t ToSend  = ((idchg<<10) & 0xFC00) | ((ichg<<4) & 0x03F0) | (((ACTorFW<<2)|hb)& 0x000F);
 	writeReg(REG_ADDR_HB_ICHG, ToSend);
 }
 
-void Tle9xxx::set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx)
+void Tle9xxx::set_HB_ICHG_MAX(uint8_t hbxidiag, uint8_t ichgMaxx)
 {
 	uint16_t ToSend = 0;
-	for(uint8_t i=0; i < 4; i++)
+	for(uint8_t i=PHASE1; i < PHASE4; i++)
 	{
-		ToSend = ToSend | ((HBxIDIAG<<(i+12)) |  (HBxIDIAG<<(i*2)));
+		ToSend = ToSend | ((hbxidiag<<(i+12)) |  (ichgMaxx<<(i*2)));
 	}
 
 	writeReg(REG_ADDR_HB_ICHG_MAX, ToSend);
 }
 
-void Tle9xxx::set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK)
+void Tle9xxx::set_PCHG_INIT(uint8_t pdchg_init, uint8_t pchg_init, uint8_t init_bnk)
 {
-	uint16_t ToSend  = ((PDCHGINIT<<10) & 0xFC00) | ((PCHGINIT<<4) & 0x03F0) | (INIT_BNK& 0x7);
+	uint16_t ToSend  = ((pdchg_init<<10) & 0xFC00) | ((pchg_init<<4) & 0x03F0) | (init_bnk& 0x7);
 	writeReg(REG_ADDR_HB_PCHG_INIT, ToSend);
 }
 
-void Tle9xxx::set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK)
+void Tle9xxx::set_TDON_HB_CTRL(uint8_t t_don, uint8_t hb_tdon_bnk)
 {
-	uint16_t ToSend  = ((TDON<<8) & 0x3F00) | (HB_TDON_BNK & 0x7);
+	uint16_t ToSend  = ((t_don<<8) & 0x3F00) | (hb_tdon_bnk & 0x7);
 	writeReg(REG_ADDR_TDON_HB_CTRL, ToSend);
 }
 
-void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK)
+void Tle9xxx::set_TDOFF_HB_CTRL(uint8_t t_doff, uint8_t hb_tdoff_bnk)
 {
-	uint16_t ToSend  = ((TDOFF<<8) & 0x3F00) | (HB_TDOFF_BNK & 0x7);
+	uint16_t ToSend  = ((t_doff<<8) & 0x3F00) | (hb_tdoff_bnk & 0x7);
 	writeReg(REG_ADDR_TDOFF_HB_CTRL, ToSend);
 }
 
-void Tle9xxx::set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS)
+void Tle9xxx::set_LS_and_HS_VDS(uint8_t vdsth, bool deep_adap, uint8_t tfvds)
 {
-	uint16_t ToSend = ((TFVDS<<12) & 0x3000) | ((VDSTH<<9) & 0xE00) | ((VDSTH<<6) & 0x1C0) | ((VDSTH<<3) & 0x38) | (VDSTH & 0x7);
+	uint16_t ToSend = ((tfvds<<12) & 0x3000) | ((vdsth<<9) & 0xE00) | ((vdsth<<6) & 0x1C0) | ((vdsth<<3) & 0x38) | (vdsth & 0x7);
 	writeReg(REG_ADDR_LS_VDS, ToSend);
 
 	ToSend = 0;
-	ToSend = ((DEEP_ADAP<<12) & 0x1000) | ((VDSTH<<9) & 0xE00) | ((VDSTH<<6) & 0x1C0) | ((VDSTH<<3) & 0x38) | (VDSTH & 0x7);
+	ToSend = ((deep_adap<<12) & 0x1000) | ((vdsth<<9) & 0xE00) | ((vdsth<<6) & 0x1C0) | ((vdsth<<3) & 0x38) | (vdsth & 0x7);
 
 	writeReg(REG_ADDR_HS_VDS, ToSend);
 }
@@ -319,8 +319,6 @@ void Tle9xxx::checkStat_TRISE_FALL(uint8_t hb, uint8_t &Trise, uint8_t &Tfall)
 	}
 
 	input = readReg(reg);
-	Serial.print("Value: 0x");
-	Serial.println(input, HEX);
     Trise = input & 0x3F;
 	Tfall = (input>>8) & 0x3F;
 	//Trise = 53.3 * t_rise;					// [ns]

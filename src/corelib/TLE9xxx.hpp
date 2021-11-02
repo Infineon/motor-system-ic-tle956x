@@ -32,14 +32,15 @@
  * All other defines should remain as they are.
  */
 
-#define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
+#define DETAILED_ERROR_REPORT 		1						// 1 = print register values as well if a TLE error occurs, 0 = only print error message
 
 /****************** Adaptive Gate control charge current *******************/
-#define CONF_TRISE_TG				11                 		// Target tRISE (CONF_TRISE_TG * 53.3 ns)
-#define CONF_INIT_ICHG              9                      	// Starting charge current that will be first used by the algorithm
-#define CONF_TFALL_TG				11                 		// Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				2                      	// Starting discharge current that will be first used by the algorithm
-#define CONF_ICHG_FW				43						// Freewheeling charge and discharge current
+#define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
+#define CONF_INIT_ICHG              11						// [0;63] Starting charge current that will be first used by the algorithm
+#define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
+#define CONF_INIT_IDCHG				9						// [0;63] Starting discharge current that will be first used by the algorithm
+#define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
+
 		/**
 		 * A value > 0.5 gives more importance to the last tRISE sampled
 		 * A value < 0.5 gives more importance to the history of sampled tRISE
@@ -61,20 +62,20 @@
 #define CONF_TPDCHGX				3		// [0;7]  Predischarge time, default 0
 
 /****************** General Bridge Control *******************/
-#define CONF_BDFREQ					1		// Bridge driver synchronization frequency: 37Mhz
+#define CONF_BDFREQ					1		// [0;1] Bridge driver synchronization frequency: 37Mhz
 											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
-#define CONF_CPUVTH					0		// Charge pump under voltage:	TH1
-#define CONF_FET_LVL				1		// External MOSFET logic level:	normal level MOSFET
-#define CONF_CPSTGA					1		// Automatic switchover between dual and single charge pump stage: Normal
-#define CONF_BDOV_REC				1		// Bridge driver recover from VSINT Overvoltage: ACTIVE
-#define CONF_IPCHGADT				0		// 1Step
+#define CONF_CPUVTH					0		// [0;1] Charge pump under voltage:	TH1
+#define CONF_FET_LVL				1		// [0;1] External MOSFET logic level:	normal level MOSFET
+#define CONF_CPSTGA					1		// [0;1] Automatic switchover between dual and single charge pump stage: Normal
+#define CONF_BDOV_REC				1		// [0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE
+#define CONF_IPCHGADT				0		// [0;1] 1Step
 											// Adaptive gate control: configured in a global variable
-#define CONF_CPEN					1		// charge pump: enabled
-#define CONF_POCHGDIS				0		// Postcharge phase during PWM: disabled
-#define CONF_AGCFILT				0		// Filter for adaptive gate control:	NO_FILT
-#define CONF_EN_GEN_CHECK			0		// detection of active / FW MOSFET: disabled
-#define CONF_IHOLD					0		// Gate driver hold current:	TH1
-#define CONF_FMODE					0		// Frequency modulation of charge pump: no modulation
+#define CONF_CPEN					1		// [0;1] charge pump: enabled
+#define CONF_POCHGDIS				0		// [0;1] Postcharge phase during PWM: disabled
+#define CONF_AGCFILT				0		// [0;1] Filter for adaptive gate control:	NO_FILT
+#define CONF_EN_GEN_CHECK			0		// [0;1] detection of active / FW MOSFET: disabled
+#define CONF_IHOLD					0		// [0;1] Gate driver hold current:	TH1
+#define CONF_FMODE					0		// [0;1] Frequency modulation of charge pump: no modulation
 
 #define PWM3_TO_HB3					0
 #define PWM3_TO_HB4					1
@@ -291,64 +292,64 @@ class Tle9xxx
 		/**
 		 * @brief set the charge discharge current for static activation (no PWM).
 		 * 
-		 * @param ICHGST1 static charge and discharge currents oh PHASE1
-		 * @param ICHGST2 static charge and discharge currents oh PHASE2
-		 * @param ICHGST3 static charge and discharge currents oh PHASE3
-		 * @param ICHGST4 static charge and discharge currents oh PHASE4
+		 * @param ichgst1 static charge and discharge currents on PHASE1
+		 * @param ichgst2 static charge and discharge currents on PHASE2
+		 * @param ichgst3 static charge and discharge currents on PHASE3
+		 * @param ichgst4 static charge and discharge currents on PHASE4
 		 */
-		void					set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4);
+		void					set_ST_ICHG(uint8_t ichgst1, uint8_t ichgst2, uint8_t ichgst3, uint8_t ichgst4);
 
 		/**
 		 * @brief HB charge/discharge currents for PWM operation
 		 * REF p.221 in TLE9562 datasheet
-		 * @param IDCHG Discharge current of HBx active MOSFET
-		 * @param ICHG Charge current of HBx active MOSFET or charge and discharge current of HBx FW MOSFET
+		 * @param idchg Discharge current of HBx active MOSFET
+		 * @param ichg Charge current of HBx active MOSFET or charge and discharge current of HBx FW MOSFET
 		 * @param ACTorFW 0 = active MOSFET, 1 = FW MOSFET
 		 * @param hb [0;3] which halfbridge should be changed
 		 */
-		void					set_HB_ICHG(uint8_t IDCHG, uint8_t ICHG, bool ACTorFW, uint8_t hb);
+		void					set_HB_ICHG(uint8_t idchg, uint8_t ichg, bool ACTorFW, uint8_t hb);
 
 		/**
 		 * @brief HM max. pre-charge/pre-discharge in PWM operation current and diagnostic pull-down
 		 * 
-		 * @param HBxIDIAG [0;1] Control of HBx off-state current source and current sink
-		 * @param ICHGMAXx [0;3] Maximum drive current of all HBs during the pre-charge phase and pre-discharge phases
+		 * @param hbxidiag [0;1] Control of HBx off-state current source and current sink
+		 * @param ichgMaxx [0;3] Maximum drive current of all HBs during the pre-charge phase and pre-discharge phases
 		 */
-		void					set_HB_ICHG_MAX(uint8_t HBxIDIAG, uint8_t ICHGMAXx);
+		void					set_HB_ICHG_MAX(uint8_t hbxidiag, uint8_t ichgMaxx);
 
 		/**
 		 * @brief HBx per-charge/pre-discharge initialization configuration in PWM operation
 		 * 
-		 * @param PDCHGINIT Initial predischarge current of HBx
-		 * @param PCHGINIT  Initial precharge current of HBx
-		 * @param INIT_BNK Banking bits for Precharge and Predischarge Initial Current
+		 * @param pdchg_init Initial predischarge current of HBx
+		 * @param pchg_init  Initial precharge current of HBx
+		 * @param init_bnk Banking bits for Precharge and Predischarge Initial Current
 		 */
-		void					set_PCHG_INIT(uint8_t PDCHGINIT, uint8_t PCHGINIT, uint8_t INIT_BNK);
+		void					set_PCHG_INIT(uint8_t pdchg_init, uint8_t pchg_init, uint8_t init_bnk);
 
 		/**
 		 * @brief HBx inouts TDON configuration
 		 * 
-		 * @param TDON Turn-on delay time of active MOSFET of HBx
-		 * @param HB_TDON_BNK Banking bits for turn-on delay time
+		 * @param t_don Turn-on delay time of active MOSFET of HBx
+		 * @param hb_tdon_bnk Banking bits for turn-on delay time
 		 */
-		void					set_TDON_HB_CTRL(uint8_t TDON, uint8_t HB_TDON_BNK);
+		void					set_TDON_HB_CTRL(uint8_t t_don, uint8_t hb_tdon_bnk);
 
 		/**
 		 * @brief HBx TDOFF configuration
 		 * 
-		 * @param TDOFF Tirn-off delay time of active MOSFET of HBx
-		 * @param HB_TDOFF_BNK Banking bits for turn-off delay time
+		 * @param t_doff Tirn-off delay time of active MOSFET of HBx
+		 * @param hb_tdoff_bnk Banking bits for turn-off delay time
 		 */
-		void					set_TDOFF_HB_CTRL(uint8_t TDOFF, uint8_t HB_TDOFF_BNK);
+		void					set_TDOFF_HB_CTRL(uint8_t t_doff, uint8_t hb_tdoff_bnk);
 
 		/**
 		 * @brief Set the LS and HS VDS monitoring threshold
 		 * 
-		 * @param VDSTH [0;7]drain-source overvoltage threshold for all HS and LS
-		 * @param DEEP_ADAP [0;1] Deep Adaption
-		 * @param TFVDS [0;3] Filter time of drain-source voltage moitoring
+		 * @param vdsth [0;7]drain-source overvoltage threshold for all HS and LS
+		 * @param deep_adap [0;1] Deep Adaption
+		 * @param tfvds [0;3] Filter time of drain-source voltage moitoring
 		 */
-		void					set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS);
+		void					set_LS_and_HS_VDS(uint8_t vdsth, bool deep_adap, uint8_t tfvds);
 
 		/**
 		 * @brief Set the current protection times

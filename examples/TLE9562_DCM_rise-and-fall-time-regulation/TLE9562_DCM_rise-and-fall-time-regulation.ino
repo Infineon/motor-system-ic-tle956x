@@ -38,7 +38,7 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
-  MyMotor.configDCshield();
+  MyMotor.configDCshield(AGC_ACTIVE);
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
   MyMotor.setDCspeed(speed, direction, 3);
@@ -80,14 +80,14 @@ void loop()
     if(in == 'q')
     {
       turnOnOffDelayReg_enable = 1;
-      MyMotor.configDCshield(turnOnOffDelayReg_enable);
+      MyMotor.configDCshield(AGC_ACTIVE);
       Serial.println("Turn-on / -off delay regulation enabled");
       Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
     }
     if(in == 'a')
     {
       turnOnOffDelayReg_enable = 0;
-      MyMotor.configDCshield(turnOnOffDelayReg_enable);
+      MyMotor.configDCshield(AGC_INACTIVE1);
       Serial.println("Turn-on / -off delay regulation disabled");
     }
   }
