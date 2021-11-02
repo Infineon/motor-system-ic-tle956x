@@ -32,27 +32,14 @@
  * All other defines should remain as they are.
  */
 
-/**
- * @brief Main swithces here, use with care. 
- * with ADAPTIVE_GATE_CONTROL_PRECHARGE you can switch on the internal regulation of the gate-precharge current
- * with ADAPTIVE_GATE_CONTROL_CHARGE you can switch on the external control loop of the gate-charge current, implemented in this library
- * 
- */
-#ifndef ADAPTIVE_GATE_CONTROL_PRECHARGE
-#define ADAPTIVE_GATE_CONTROL_PRECHARGE			0		// 0 = INACTIVE1; 1 = INACTIVE2; 2 = ACTIVE | Built in AGC
-#endif
-
-#ifndef ADAPTIVE_GATE_CONTROL_CHARGE
-#define ADAPTIVE_GATE_CONTROL_CHARGE			0		// 0 = INACTIVE; 1 = ACTIVE	| External AGC, control loop can be find in the TLE9xxx.cpp
-#endif
-
 #define DETAILED_ERROR_REPORT 		1						// print register values as well if a TLE error occurs
 
 /****************** Adaptive Gate control charge current *******************/
 #define CONF_TRISE_TG				11                 		// Target tRISE (CONF_TRISE_TG * 53.3 ns)
-#define CONF_INIT_ICHG              11                      // Starting charge current that will be first used by the algorithm
+#define CONF_INIT_ICHG              9                      	// Starting charge current that will be first used by the algorithm
 #define CONF_TFALL_TG				11                 		// Target tFALL (CONF_TFALL_TG * 53.3 ns)
 #define CONF_INIT_IDCHG				2                      	// Starting discharge current that will be first used by the algorithm
+#define CONF_ICHG_FW				43						// Freewheeling charge and discharge current
 		/**
 		 * A value > 0.5 gives more importance to the last tRISE sampled
 		 * A value < 0.5 gives more importance to the history of sampled tRISE
@@ -66,11 +53,12 @@
 #define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
 
 /****************** Adaptive Gate control PRE-charge current *******************/
-// register setting not yet enabled. Go to void Tle9562::config(uint8_t agc = 0)
-#define CONF_PDCHG_INIT				15		// [0;63] Initial predischarge current, default 0xF
-#define CONF_PCHG_INIT				13		// [0;63] Initial precharge current, default 0xD
-#define CONF_TDOFF					12		// [0;63] Turn-on delay time, default 0xC
-#define CONF_TDON					12		// [0;63] Turn-off delay time, default 0xC
+#define CONF_PDCHG_INIT				44		// [0;63] Initial predischarge current, default 0xF
+#define CONF_PCHG_INIT				23		// [0;63] Initial precharge current, default 0xD
+#define CONF_TDOFF					18		// [0;63] Turn-on delay time, default 0xC
+#define CONF_TDON					20		// [0;63] Turn-off delay time, default 0xC
+#define CONF_TPCHGX					1		// [0;7]  Precharge time, default 0
+#define CONF_TPDCHGX				3		// [0;7]  Predischarge time, default 0
 
 /****************** General Bridge Control *******************/
 #define CONF_BDFREQ					1		// Bridge driver synchronization frequency: 37Mhz
@@ -93,13 +81,6 @@
 #define PWM1_TO_HB1					0
 #define PWM1_TO_HB2					1
 
-/****************** PWM HSS modules *******************/
-#define PWM_CTRL_DC_MASK			0x3FF0
-#define PWM_BNK_MODULE_1			0x0
-#define PWM_BNK_MODULE_2			0x1
-#define PWM_BNK_MODULE_3			0x2
-#define PWM_BNK_MODULE_4			0x3
-
 /****************** HS and LS Drain-Source monitoring threshold *******************/
 #define CONF_LS_AND_HS_X_VDSTH		7		// [0;7] Set overvoltage threshold
 #define CONF_DEEP_ADAP				1		// [0;1] deep adaption
@@ -110,13 +91,22 @@
 #define CONF_ICHGMAXX				3		// [0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA
 
 /****************** Cross current protection *******************/
-#define CONF_TBLANK					10		// [0;15] Set the blank time for free wheeling and active MOSFETS. default is 7
-#define CONF_TCCP					10		// [0;15] Set the current protection time for free wheeling and active MOSFETS. default is 7
+#define CONF_TBLANK_ACT				11		// [0;15] Set the blank time for active MOSFETS. default is 7
+#define CONF_TCCP_ACT				10		// [0;15] Set the current protection time for active MOSFETS. default is 7
+#define CONF_TBLANK_FW				1		// [0;15] Set the blank time for free wheeling MOSFETS. default is 7
+#define CONF_TCCP_FW				1		// [0;15] Set the current protection time for free wheeling MOSFETS. default is 7
 
 /****************** SPI address commands *******************/
 #define TLE9xxx_CMD_WRITE          	0x80
 #define TLE9xxx_CMD_READ          	0x00
 #define TLE9xxx_CMD_CLEAR          	0x80
+
+/****************** PWM HSS modules *******************/
+#define PWM_CTRL_DC_MASK			0x3FF0
+#define PWM_BNK_MODULE_1			0x0
+#define PWM_BNK_MODULE_2			0x1
+#define PWM_BNK_MODULE_3			0x2
+#define PWM_BNK_MODULE_4			0x3
 
 #define ACTIVE_MOSFET				0
 #define FW_MOSFET					1
@@ -289,6 +279,15 @@ class Tle9xxx
 
 
 	protected:
+
+		/**
+		 * @brief set the precharge and pre-discharge time for all MOSFETs.
+		 * This function sends two SPI commands.
+		 * @param t_pchgx Precharge time
+		 * @param t_pdchgx Pre-discharge time
+		 */
+		void 					set_TPRECHG(uint8_t t_pchgx, uint8_t t_pdchgx);
+
 		/**
 		 * @brief set the charge discharge current for static activation (no PWM).
 		 * 
@@ -354,11 +353,12 @@ class Tle9xxx
 		/**
 		 * @brief Set the current protection times
 		 * 
-		 * @param TBLANK set blank time
-		 * @param TCCP set Cross-current protection time
-		 * @param CCP_BNK Select the halfbridge you want to change
+		 * @param t_blank set blank time
+		 * @param t_ccp set cross current protection time
+		 * @param ACTorFW 0 = active MOSFET, 1 = FW MOSFET
+		 * @param hb [0;3] which halfbridge should be changed
 		 */
-		void					set_CCP_BLK(uint8_t TBLANK, uint8_t TCCP, uint8_t CCP_BNK);
+		void					set_CCP_BLK(uint8_t t_blank, uint8_t t_ccp, bool ACTorFW, uint8_t hb);
 
 		/**
 		 * @brief Reads out the MOSFET rise/fall time of the given PWM half-bridge

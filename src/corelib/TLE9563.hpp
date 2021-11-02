@@ -60,8 +60,10 @@ class Tle9563: public Tle9xxx
 		
 		/**
 		 * @brief set up all necessary registers and initialize the TLE9563
+		 * 
+		 * @param agc switch the adaptive gate control for pre-charge current [0;2]
 		 */
-		void 					config(void);
+		void 					config(uint8_t agc = 0);
 
 		/**
 		 * @brief Set the Halfbridge object
@@ -85,6 +87,12 @@ class Tle9563: public Tle9xxx
 		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
 		 */
 		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
+
+		/**
+		 * @brief Set the General Bridge Control data
+		 * Most Flags are taken from the defines in this header file.
+		 */
+		void					setGenControl(void);
 
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 

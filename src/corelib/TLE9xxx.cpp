@@ -237,6 +237,17 @@ void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
   Serial.print(number,BIN);
 }
 
+void Tle9xxx::set_TPRECHG(uint8_t t_pchgx, uint8_t t_pdchgx)
+{
+	uint16_t ToSend = 0;
+	ToSend = ((t_pchgx << 13) & 0xE000) | ((t_pchgx << 10) & 0x1C00)| ((t_pchgx << 7) & 0x380)| ((t_pchgx << 4) & 0x70);
+	writeReg(REG_ADDR_TPRECHG, ToSend);				// Set Precharge time
+
+	ToSend = ((t_pdchgx << 13) & 0xE000) | ((t_pdchgx << 10) & 0x1C00)| ((t_pdchgx << 7) & 0x380)| ((t_pdchgx << 4) & 0x70) | (0x001);
+	writeReg(REG_ADDR_TPRECHG, ToSend);				// Set Pre-Discharge time
+}
+
+
 void Tle9xxx::set_ST_ICHG(uint8_t ICHGST1, uint8_t ICHGST2, uint8_t ICHGST3, uint8_t ICHGST4)
 {
 	uint16_t ToSend  = ((ICHGST4<<12) & 0xF000) | ((ICHGST3<<8) & 0x0F00) | ((ICHGST2<<4) & 0x00F0) | (ICHGST1 & 0x000F);
@@ -289,9 +300,9 @@ void Tle9xxx::set_LS_and_HS_VDS(uint8_t VDSTH, bool DEEP_ADAP, uint8_t TFVDS)
 	writeReg(REG_ADDR_HS_VDS, ToSend);
 }
 
-void Tle9xxx::set_CCP_BLK(uint8_t TBLANK, uint8_t TCCP, uint8_t CCP_BNK)
+void Tle9xxx::set_CCP_BLK(uint8_t t_blank, uint8_t t_ccp, bool ACTorFW, uint8_t hb)
 {
-	uint16_t ToSend = ((TBLANK<<12)&0xF000) | ((TCCP<<8)&0xF00) | (CCP_BNK & 0x7);
+	uint16_t ToSend = ((t_blank<<12)&0xF000) | ((t_ccp<<8)&0xF00) | (((ACTorFW<<2)|hb)& 0x000F);
 	writeReg(REG_ADDR_CCP_BLK, ToSend);
 }
 

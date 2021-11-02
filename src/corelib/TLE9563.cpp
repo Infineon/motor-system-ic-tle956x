@@ -34,72 +34,31 @@ Tle9563::~Tle9563()
 	cso = NULL;
 }
 
-void Tle9563::config(void)
+void Tle9563::config(uint8_t agc = 0)
 {
-	/**
-	 * TODO: split up in separate functions for better control from outside the library
-	 * 
-	 */
+	_agc_status = agc;													// set the global variable, if agc is used, as this is used very often in the GENctrl register
 
-	SBC_CRC_Disable();
+	SBC_CRC_Disable();													// Disable cyclic redundancy check
 
-	/**
-	 * 15 Bridge driver synchronization frequency: 	37Mhz
-	 * 12 Charge pump under voltage:				TH1
-	 * 11 External MOSFET logic level:				normal level MOSFET
-	 * 10 CONF_CPSTGA:									ACTIVE
-	 *  9 CONF_BDOV_REC:									Recover activated
-	 *  8 CONF_IPCHGADT:									1STEP
-	 *  7:6 Adaptive gate control					INACTIVE1
-	 * 	5 CONF_CPEN:										Charge pump enabled
-	 *  4 Postcharge phase during PWM				disabled
-	 *  3 Filter for adaptive gate control			NO_FILT
-	 *  2 Detection of active / FW MOSFET			disabled
-	 *  1 Gate driver hold current					TH1
-	 *  0 Frequency modulation of charge pump		no modulation
-	 */
-	//							 FEDCBA9876543210
-	writeReg(REG_ADDR_GENCTRL, 0b1000111000110000);
+	for(uint8_t i = PHASE1; i <= PHASE3; i++)
+	{
+		set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, i);					// set static charge and discharge current for active MOSFETs
+		set_HB_ICHG(0, CONF_ICHG_FW, FW_MOSFET, i);						// set static charge and discharge currents for freewheeling MOSFETs
 
-	/**
-	 * 13:12 Filter time 							500ns
-	 * 8:6 LS3 drain source overvoltage threshold	800mV
-	 * 5:3 LS2 drain source overvoltage threshold	800mV
-	 * 2:0 LS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_LS_VDS, 0b0000000110110110);
+		set_CCP_BLK(CONF_TBLANK_ACT, CONF_TCCP_ACT, ACTIVE_MOSFET, i);	// set the blank time and cross current protection time for active MOSFETS
+		set_CCP_BLK(CONF_TBLANK_FW, CONF_TCCP_FW, FW_MOSFET, i);		// set the blank time and cross current protection time for free wheeling MOSFETS
 
-	/**
-	 * 12 Deep adaption enabled						NO_DEEP_ADAP
-	 * 8:6 HS3 drain source overvoltage threshold	800mV
-	 * 5:3 HS2 drain source overvoltage threshold	800mV
-	 * 2:0 HS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_HS_VDS, 0b0000000110110110);
+		set_PCHG_INIT(CONF_PDCHG_INIT, CONF_PCHG_INIT, i);				// set initial precharge and pre-discharge current for internal AGC
+		set_TDON_HB_CTRL(CONF_TDOFF, i);								// set desired turn-off delay
+		set_TDOFF_HB_CTRL(CONF_TDON, i);								// set desired turn-on delay
+	}
 
-	/**
-	 * 10 Selection of 3 or 6 PWM inputs			3 PWM
-	 * 9 Capacitance connected to CSA out			400pF
-	 * 8 Direction of CSA							Bi
-	 * 7:6 Overcurrent filter time of cso			6us
-	 * 5 CSA OFF									CSA disabled
-	 * 4:3 Overcurent detection threshold			TH1
-	 * 2:1 Gain of CSA								10VV
-	 * 0 Overcurrent shutdown						Disabled
-	 */
-	//						 FEDCBA9876543210
-	writeReg(REG_ADDR_CSA, 0b0000000100100000);
+	set_TPRECHG(CONF_TPCHGX, CONF_TPDCHGX);								// set precharge and predischarge time
+	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	setGenControl();													// Configure General bridge control reg with start configuration. 
+	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 
-	/**
-	 * 
-	 * 
-	 */
-	//							  	 FEDCBA9876543210
-	writeReg(REG_ADDR_HB_ICHG_MAX, 0b0000000000010101);
-
-	//writeReg(REG_ADDR_WD_CTRL, 0b0000000000000011);
 	writeReg(REG_ADDR_SWK_CTRL, 0);
-
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
 }
 
@@ -142,4 +101,10 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_2|((hss2<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 2
 	writeReg(REG_ADDR_PWM_CTRL, PWM_BNK_MODULE_3|((hss3<<4)&PWM_CTRL_DC_MASK) );    	// set dutycycle for HSS 3
   	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
+}
+
+void Tle9563::setGenControl(void)
+{
+	uint16_t ToSend = (CONF_BDFREQ<<15)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
+	writeReg(REG_ADDR_GENCTRL, ToSend);
 }
