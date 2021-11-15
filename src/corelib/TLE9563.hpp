@@ -60,10 +60,10 @@ class Tle9563: public Tle9xxx
 		
 		/**
 		 * @brief set up all necessary registers and initialize the TLE9563
-		 * 
+		 * Set Adaptive gate control default to ACTIVE.
 		 * @param agc switch the adaptive gate control for pre-charge current [0;2]
 		 */
-		void 					config(uint8_t agc = 0);
+		void 					config(uint8_t agc = AGC_ACTIVE);
 
 		/**
 		 * @brief Set the Halfbridge object

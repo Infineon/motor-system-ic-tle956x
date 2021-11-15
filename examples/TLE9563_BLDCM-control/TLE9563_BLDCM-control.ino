@@ -37,6 +37,12 @@ void setup()
   MyMotor.MotorParam.MotorPolepairs = 4;                                 // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield();
+
+   /**
+   * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
 }

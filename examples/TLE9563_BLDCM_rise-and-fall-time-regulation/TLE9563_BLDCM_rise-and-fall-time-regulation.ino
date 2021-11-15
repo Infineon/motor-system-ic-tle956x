@@ -3,8 +3,11 @@
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2021 Infineon Technologies AG
  * \version     1.0.0
- * \brief       This example lets you adapt the rise and falltime on a TLE9563 BLDC shield running a brushlessmotor with hall sensor position feedback. Feedback mode can be changed to sensorless if needed.
- *
+ * \brief       This example lets you configure the rise- and falltime of a TLE9563 in a brushless motor application. Therefore a closed-loop algorithm is implemented,
+ * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
+ * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page 'TLE9xxx.hpp' in the library.
+ * See the Github wiki for more detailed information.
+ * 
  * SPDX-License-Identifier: MIT
  */
 
@@ -45,6 +48,11 @@ void setup()
 
   MyMotor.configBLDCshield(AGC_ACTIVE);
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+  /**
+   * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
 }

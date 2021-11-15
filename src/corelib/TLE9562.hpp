@@ -65,7 +65,7 @@ class Tle9562: public Tle9xxx
 		 * 
 		 * @param agc switch the adaptive gate control for pre-charge current [0;2]
 		 */
-		void 					config(uint8_t agc = 0);
+		void 					config(uint8_t agc = AGC_ACTIVE);
 
 		/**
 		 * @brief Set the Halfbridge object

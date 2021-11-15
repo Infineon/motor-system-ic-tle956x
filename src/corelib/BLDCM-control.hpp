@@ -33,7 +33,7 @@
 // ================================== Defines ==================================================================================================
 #define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
 #define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
-#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
+#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle when motor starts to turn before RPM algorithm will be switched on */
 #define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
 #define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
@@ -49,12 +49,6 @@ enum _Halfbridges{
 			PHASE1,
 			PHASE2,
 			PHASE3
-		};
-
-enum _Config_AGC{
-			AGC_INACTIVE1 = 0b00,
-			AGC_INACTIVE2 = 0b01,
-			AGC_ACTIVE = 0b10
 		};
 // =============================================================================================================================================
 

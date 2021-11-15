@@ -3,9 +3,10 @@
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2021 Infineon Technologies AG
  * \version     1.0.0
- * \brief       This example lets you configure the Rise- and Fall-time of a TLE9562. Therefor a closed-loop Algorithm is implemented,
- * that prints the actual Rise- /Falltime and the gate charge- /dischargecurrent. Start the Regulation by pressing 'w' in the serial monitor.
- * As soon as the values converge, stop the regulation by pressing 's'. Note down the final charge- / dischargecurrent and edit the define-page in the library.
+ * \brief       This example lets you configure the rise- and falltime of a TLE9562. Therefore a closed-loop algorithm is implemented,
+ * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
+ * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page in the library.
+ * See the Github wiki for more detailed information.
  *
  * SPDX-License-Identifier: MIT
  */

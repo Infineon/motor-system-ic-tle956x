@@ -28,7 +28,7 @@
 
 // ================================== Defines ==================================================================================================
 /**
- * @brief Main place to configure the TLE. All defines beginning with "CONF_" are intended to be changed by the user. 
+ * @brief Main place to configure the TLE9xxx. All defines beginning with "CONF_" are intended to be changed by the user. 
  * All other defines should remain as they are.
  */
 
@@ -125,6 +125,12 @@ typedef struct
 		uint8_t Freewheeling;
 		uint8_t PWMenable;
 	} HBconfig_t;
+
+enum _Config_AGC{
+		AGC_INACTIVE1 = 0b00,
+		AGC_INACTIVE2 = 0b01,
+		AGC_ACTIVE = 0b10
+		};
 
 /**
  * @brief represents a basic TLE9xxx
