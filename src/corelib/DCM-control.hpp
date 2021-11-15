@@ -145,7 +145,7 @@ class DCMcontrol
 		 * @param risetime hands over the actual rise-time
 		 * @param falltime hands oder the actual fall-time
 		 */
-		void					riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime);
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board

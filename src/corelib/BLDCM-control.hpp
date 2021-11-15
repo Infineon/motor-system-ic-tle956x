@@ -50,7 +50,7 @@ enum _Halfbridges{
 			PHASE2,
 			PHASE3
 		};
-		
+
 enum _Config_AGC{
 			AGC_INACTIVE1 = 0b00,
 			AGC_INACTIVE2 = 0b01,
@@ -185,7 +185,7 @@ class BLDCMcontrol
 		 * @param risetime hands over the actual rise-time
 		 * @param falltime hands oder the actual fall-time
 		 */
-		void					riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime);
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
 		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
@@ -334,6 +334,7 @@ class BLDCMcontrol
 		uint8_t					_FieldWeakening = 0;
 		uint8_t					_LastBLDCspeed = 0;
 		uint8_t					_Commutation = 0;
+		uint8_t					_commutationStep = 0;
 		uint8_t					_oldPattern = 0;
 		uint8_t					_latestPattern = 0;
 		uint16_t 				_StepCounter = 0;
@@ -341,6 +342,12 @@ class BLDCMcontrol
 		float 					_PI_Integral = 5000.0; 
 		float 					_NumberofSteps = 0;
 		uint8_t					_debug_counter = 0;
+		bool					_RFTReg_enable = 0;
+		uint8_t					_RFTReg_phase = 0;
+		uint8_t *				_RFT_iCharge = NULL;
+		uint8_t *				_RFT_iDischarge = NULL;
+		uint8_t *				_RFT_risetime = NULL;
+		uint8_t *				_RFT_falltime = NULL;
 		//MotorModes				BLDCMotorMode = 0;
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================

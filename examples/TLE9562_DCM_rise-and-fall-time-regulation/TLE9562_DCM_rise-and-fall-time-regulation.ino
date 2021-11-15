@@ -99,7 +99,7 @@ void loop()
 
   if(riseFallTimeReg_enable)
   {
-    MyMotor.riseFallTimeRegulation(HALFBRIDGE, iCharge, iDischarge, tRise, tFall);
+    MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
     Serial.print(iCharge);
     Serial.print("\t ");
     Serial.print(tRise);

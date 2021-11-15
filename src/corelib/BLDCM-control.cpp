@@ -97,10 +97,10 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
     {
       case BLDC_BEMF:
         DoBEMFCommutation();
-        return 1;
+        break;
       case BLDC_HALL:
         DoHALLCommutation();
-        return 1;
+        break;
       case BLDC_FOC:
         // Error: BLDC_FOC not yet implemented
         return 0;
@@ -108,7 +108,29 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
         PrintErrorMessage(PARAMETER_MISSING); // Error: MotorMode not yet defined
         return 0;
     }
+
+    if(_RFTReg_enable)            // Do the Rise-/Falltime regulation if enabled
+    {
+      switch(_RFTReg_phase)       // Make sure the Rise/Falltime regulation is only applied , when the correct Phase is in active PWM mode
+      {
+        case PHASE1:
+          if((_commutationStep == 0) || (_commutationStep == 1)) _RFTReg_enable = 0;
+          break;
+        case PHASE2:
+          if((_commutationStep == 2) || (_commutationStep == 3)) _RFTReg_enable = 0;
+          break;
+        case PHASE3:
+          if((_commutationStep == 4) || (_commutationStep == 5)) _RFTReg_enable = 0;
+          break;
+      }
+      if(_RFTReg_enable == 0)
+      {
+        controller->emaCalculation(_RFTReg_phase, _RFT_risetime, _RFT_falltime);
+        controller->adaptiveHysteresisDecisionTree (_RFTReg_phase, _RFT_iCharge, _RFT_iDischarge);
+      }
+    }
   }
+  return 1;
 }
 
 uint8_t BLDCMcontrol::checkTLEshield()
@@ -234,7 +256,8 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
   if(_latestPattern != _oldPattern)
   {
     _oldPattern = _latestPattern;
-    UpdateHardware( BEMFPattern[ 0 ][_Direction][_latestPattern] );   // No field weakening range possible in BEMF mode
+    _commutationStep = BEMFPattern[ 0 ][_Direction][_latestPattern];  // No field weakening range possible in BEMF mode
+    UpdateHardware( _commutationStep );
     if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
     timer->start();
     return 2;
@@ -261,7 +284,8 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
   if(_latestPattern != _oldPattern)
   {
     _oldPattern = _latestPattern;
-    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldPattern] );
+    _commutationStep = HallPattern[_FieldWeakening][_Direction][_oldPattern];
+    UpdateHardware( _commutationStep );
     if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
     timer->start();
     return 2;
@@ -476,8 +500,12 @@ void BLDCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
     controller->init_AGC_Algorithm(hb); 
 }
 
-void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime)
+void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime)
 {
-    controller->emaCalculation(hb, risetime, falltime);
-    controller->adaptiveHysteresisDecisionTree (hb, iCharge, iDischarge);
+  _RFTReg_enable = 1;
+  _RFTReg_phase = hb;
+  _RFT_iCharge = iCharge;
+  _RFT_iDischarge = iDischarge;
+  _RFT_risetime = risetime;
+  _RFT_falltime = falltime;
 }

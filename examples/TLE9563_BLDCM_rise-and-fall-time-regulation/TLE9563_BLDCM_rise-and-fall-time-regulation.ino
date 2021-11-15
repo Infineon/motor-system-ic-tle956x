@@ -12,8 +12,8 @@
 #include <BLDCM-control-ino.hpp>
 
 #define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
-#define HALFBRIDGE              PHASE1      // [PHASE1;Phase4] Select the phase on which you want to regulate Rise/Fall time
-#define RFTIME_REGULATIONDELAY  500         // milliseconds
+#define HALFBRIDGE              PHASE1      // [PHASE1;Phase3] Select the phase on which you want to regulate Rise/Fall time
+#define RFTREG_DELAY            500         // milliseconds
 
 uint16_t speed = 400;
 uint8_t direction = 0;
@@ -130,9 +130,9 @@ void TLEinterrupt()
 
 void riseFallTimeRegulation()
 {
-    if((millis() - blinktimer) > RFTIME_REGULATIONDELAY)
+    if((millis() - blinktimer) > RFTREG_DELAY)
     {
-        MyMotor.riseFallTimeRegulation(HALFBRIDGE, iCharge, iDischarge, tRise, tFall);
+        MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
         Serial.print(iCharge);
         Serial.print("\t ");
         Serial.print(tRise);

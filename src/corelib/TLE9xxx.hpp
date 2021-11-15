@@ -201,7 +201,7 @@ class Tle9xxx
 		 * 
 		 * @return uint8_t status information field content
 		 */
-		uint16_t					checkStatusInformationField(void);
+		uint16_t				checkStatusInformationField(void);
 
 		/**
 		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
@@ -263,13 +263,13 @@ class Tle9xxx
 		 * @brief read out rise-time of TLE and store calculated value in a global variable
 		 * 
 		 */
-		void 					emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime);
+		void 					emaCalculation(uint8_t hb, uint8_t * risetime, uint8_t * falltime);
 
 		/**
 		 * @brief increase or decrease the charge current, depending on some conditions
 		 * 
 		 */
-		void 					adaptiveHysteresisDecisionTree(uint8_t hb, uint8_t &ichg, uint8_t &idchg);
+		void 					adaptiveHysteresisDecisionTree(uint8_t hb, uint8_t * ichg, uint8_t * idchg);
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus

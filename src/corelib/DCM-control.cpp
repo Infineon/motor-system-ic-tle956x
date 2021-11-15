@@ -189,7 +189,7 @@ void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
     
 }
 
-void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime)
+void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime)
 {
     controller->emaCalculation(hb, risetime, falltime);
     controller->adaptiveHysteresisDecisionTree (hb, iCharge, iDischarge);

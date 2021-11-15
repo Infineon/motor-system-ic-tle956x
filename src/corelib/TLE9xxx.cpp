@@ -342,7 +342,7 @@ void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
     for (int i = (CONF_INIT_IDCHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_tfall_ema[i] = EOS;
 }
 
-void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
+void Tle9xxx::emaCalculation(uint8_t hb, uint8_t * risetime, uint8_t * falltime)
 {
     uint8_t tRISE, tFALL;
     // Read the last tRISE measured by the TLE9562
@@ -365,11 +365,13 @@ void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
         // EMA calculated and stored in m_tfall_ema for the current charge current
         m_tfall_ema[m_idchg - MIN_ICHG] = tFALL * ALPHA3_FPA_SCALED + (m_tfall_ema[m_idchg - MIN_ICHG] / SCALING_FACTOR_FPA) * ONE_MINUS_ALPHA3_FPA_SCALED ;
 
-	risetime = tRISE;
-	falltime = tFALL;
+	*risetime = tRISE;
+	*falltime = tFALL;
+	//Serial.print("RISEtime:");
+	//Serial.println(tRISE);
 }
 
-void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t &idchg)
+void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t * ichg, uint8_t * idchg)
 {
 	/******* Risetime ********/
     // The charge current is decreased if all conditions are true:
@@ -406,6 +408,6 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t
     // Set the ICHG at the TLE9562
 	set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, hb);
 
-	ichg = m_ichg;			// Hand over to the pointervariable
-	idchg = m_idchg;
+	*ichg = m_ichg;			// Hand over to the pointervariable
+	*idchg = m_idchg;
 }
