@@ -34,11 +34,11 @@
 
 #define DETAILED_ERROR_REPORT 		1						// 1 = print register values as well if a TLE error occurs, 0 = only print error message
 
-/****************** Adaptive Gate control charge current *******************/
+/****************** Adaptive Gate control (dis-)charge current *******************/
 #define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
 #define CONF_INIT_ICHG              11						// [0;63] Starting charge current that will be first used by the algorithm
 #define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				9						// [0;63] Starting discharge current that will be first used by the algorithm
+#define CONF_INIT_IDCHG				11						// [0;63] Starting discharge current that will be first used by the algorithm
 #define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
 
 		/**
@@ -53,7 +53,7 @@
 #define MIN_ICHG                   	0                       // Minimum charge current that will be set by the algorithm
 #define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
 
-/****************** Adaptive Gate control PRE-charge current *******************/
+/****************** Adaptive Gate control PRE-(dis-)charge current *******************/
 #define CONF_PDCHG_INIT				44		// [0;63] Initial predischarge current, default 0xF
 #define CONF_PCHG_INIT				23		// [0;63] Initial precharge current, default 0xD
 #define CONF_TDOFF					18		// [0;63] Turn-on delay time, default 0xC
@@ -392,6 +392,7 @@ class Tle9xxx
 		uint16_t 				readReg(uint8_t addr);
 		
 		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     	// Array of the calculated tRISEx EMAs for the different configured ICHGx
+		uint16_t        		m_tfall_ema[MAX_ICHG - MIN_ICHG + 1];     	// Array of the calculated tFALLx EMAs for the different configured IDCHGx
 		uint8_t         		m_ichg = CONF_INIT_ICHG;                  	// Current ICHGx with which the MOSFET driver is configured
 		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	// Current IDCHGx with which the MOSFET driver is configured
 		uint8_t					_statusInformationField = 0;				// Stores the "Status information field" which is the first byte of every SDO package.

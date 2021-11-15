@@ -329,13 +329,17 @@ void Tle9xxx::init_AGC_Algorithm(uint8_t hb)
 {
     // Initialize the algorithm variable
     m_ichg = CONF_INIT_ICHG;
+	m_idchg = CONF_INIT_IDCHG;
     // Initialize the ICHG at the TLE9562
-	set_HB_ICHG(m_idchg, CONF_INIT_ICHG, 0, hb);
+	set_HB_ICHG(CONF_INIT_IDCHG, CONF_INIT_ICHG, ACTIVE_MOSFET, hb);
 
     // The elements with an index lower than (CONF_INIT_ICHG - MIN_ICHG) are initialized
     // with a 0, the rest of the elements with EOS
     for (int i = 0; i < (CONF_INIT_ICHG - MIN_ICHG); i++) m_trise_ema[i] = 0;
     for (int i = (CONF_INIT_ICHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_trise_ema[i] = EOS;
+
+	for (int i = 0; i < (CONF_INIT_IDCHG - MIN_ICHG); i++) m_tfall_ema[i] = 0;
+    for (int i = (CONF_INIT_IDCHG - MIN_ICHG); i <= (MAX_ICHG - MIN_ICHG); i++)  m_tfall_ema[i] = EOS;
 }
 
 void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
@@ -345,6 +349,7 @@ void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
     //tRISE = readSpitRISE();
 	checkStat_TRISE_FALL(hb, tRISE, tFALL);
 
+	/******* Risetime ********/
     // If m_ichg still has the initialization value, tRISEx is directly m_trisex_ema
     // without calculating the EMA
     if (m_trise_ema[m_ichg - MIN_ICHG] == EOS || m_trise_ema[m_ichg - MIN_ICHG] == 0)
@@ -352,12 +357,21 @@ void Tle9xxx::emaCalculation(uint8_t hb, uint8_t &risetime, uint8_t &falltime)
     else
         // EMA calculated and stored in m_trise_ema for the current charge current
         m_trise_ema[m_ichg - MIN_ICHG] = tRISE * ALPHA3_FPA_SCALED + (m_trise_ema[m_ichg - MIN_ICHG] / SCALING_FACTOR_FPA) * ONE_MINUS_ALPHA3_FPA_SCALED ;
+
+	/******* Falltime ********/
+	if (m_tfall_ema[m_idchg - MIN_ICHG] == EOS || m_tfall_ema[m_idchg - MIN_ICHG] == 0)
+        m_tfall_ema[m_idchg - MIN_ICHG] = tFALL * SCALING_FACTOR_FPA;
+    else
+        // EMA calculated and stored in m_tfall_ema for the current charge current
+        m_tfall_ema[m_idchg - MIN_ICHG] = tFALL * ALPHA3_FPA_SCALED + (m_tfall_ema[m_idchg - MIN_ICHG] / SCALING_FACTOR_FPA) * ONE_MINUS_ALPHA3_FPA_SCALED ;
+
 	risetime = tRISE;
 	falltime = tFALL;
 }
 
 void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t &idchg)
 {
+	/******* Risetime ********/
     // The charge current is decreased if all conditions are true:
     // 1. The EMA calculated for the current ICHG3 is lower than CONF_TRISE_TG
     // 2. The EMA that was calculated when the ICHG3 was set to the
@@ -378,9 +392,20 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t &ichg, uint8_t
         && m_ichg < MAX_ICHG)
         m_ichg ++;
 
+	/******* Falltime ********/
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] <= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG - 1] < (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+        && m_idchg > MIN_ICHG)
+        m_idchg --;
+
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] >= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG + 1] > (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+        && m_idchg < MAX_ICHG)
+        m_idchg ++;
+	
     // Set the ICHG at the TLE9562
 	set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, hb);
 
-	ichg = m_ichg;
+	ichg = m_ichg;			// Hand over to the pointervariable
 	idchg = m_idchg;
 }
