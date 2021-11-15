@@ -12,6 +12,8 @@
 #include <Arduino.h>
 #include <DCM-control-ino.hpp>
 
+#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+
 uint16_t speed = 100;
 uint8_t direction = 0;
 
@@ -40,12 +42,12 @@ void loop()
     uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
     if(in == '+')
     {
-       speed += 50;
+       speed += SPEED_INCREASE_STEP;
        Serial.println(speed);
     }
     if(in == '-')
     {
-      speed -= 50;
+      speed -= SPEED_INCREASE_STEP;
       Serial.println(speed);
     }
     if(in == 'd')

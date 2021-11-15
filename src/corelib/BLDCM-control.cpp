@@ -122,9 +122,9 @@ uint8_t BLDCMcontrol::checkTLEshield()
   return returnvalue;
 }
 
-uint8_t BLDCMcontrol::configBLDCshield()
+uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc = 0)
 {
-  // TODO: Do the whole TLE setting here
+  controller->config(agc);
 
   // Amount of steps for one full Revolution
   _NumberofSteps = (float) MotorParam.MotorPolepairs * 6.0;
@@ -468,4 +468,16 @@ void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
             break;
     }
     setLED(50,0,0);      // Set onboard RGB-LED to red
+}
+
+void BLDCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
+{
+    _MotorStartEnable = 0;
+    controller->init_AGC_Algorithm(hb); 
+}
+
+void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime)
+{
+    controller->emaCalculation(hb, risetime, falltime);
+    controller->adaptiveHysteresisDecisionTree (hb, iCharge, iDischarge);
 }

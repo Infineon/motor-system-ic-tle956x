@@ -84,7 +84,7 @@ class DCMcontrol
 		 * @brief config the TLE9562 chip with customized settings
 		 * needs to be called once before the motor will be started
 		 * 
-		 * @param agc Adaptive Gate Precharge controlloop: 0 = off, 1 = on
+		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
 		 * @return uint8_t 
 		 */
 		uint8_t					configDCshield(uint8_t agc = 0);
@@ -129,9 +129,9 @@ class DCMcontrol
 		void 					setLED(uint16_t led1, uint16_t led2);
 
 		/**
-		 * @brief Reads out the fall time and rise time of the selected MOSFETS and prints the value(s) in nanoseconds to the serial monitor
+		 * @brief Initializes the algorithm for rise/falltime regulation
 		 * 
-		 * @param hb which halfbridges should be read (4-bit)
+		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE4]
 		 */
 		//void 					print_TFALL_TRISE(uint8_t hb);
 

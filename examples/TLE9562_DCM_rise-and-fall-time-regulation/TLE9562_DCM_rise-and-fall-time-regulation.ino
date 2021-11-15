@@ -32,7 +32,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(" Infineon TLE956x Gate Driver Configuration tool");
+  Serial.println(" Infineon TLE9562 Gate Driver Configuration tool");
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
@@ -64,27 +64,27 @@ void loop()
     MyMotor.setDCspeed(speed, direction, 3);
 
     //==================== Adaptive Gate Charge control ======================
-    if(in == 'w')
+    if(in == 'u')
     {
       riseFallTimeReg_enable = 1;
       Serial.println("Rise- Fall-time regulation enabled");
-      Serial.println("iChg:\t iDchg:\t tRise:\t tFall:");
+      Serial.println("iChg:\t tRise:\t iDchg:\t tFall:");
     }
-    if(in == 's')
+    if(in == 'j')
     {
       riseFallTimeReg_enable = 0;
       Serial.println("Rise- Fall-time regulation disabled");
     }
 
     //==================== Adaptive Gate Pre-charge control ======================
-    if(in == 'q')
+    if(in == 'i')
     {
       turnOnOffDelayReg_enable = 1;
       MyMotor.configDCshield(AGC_ACTIVE);
       Serial.println("Turn-on / -off delay regulation enabled");
-      Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
+      //Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
     }
-    if(in == 'a')
+    if(in == 'k')
     {
       turnOnOffDelayReg_enable = 0;
       MyMotor.configDCshield(AGC_INACTIVE1);
@@ -102,9 +102,9 @@ void loop()
     MyMotor.riseFallTimeRegulation(HALFBRIDGE, iCharge, iDischarge, tRise, tFall);
     Serial.print(iCharge);
     Serial.print("\t ");
-    Serial.print(iDischarge);
-    Serial.print("\t ");
     Serial.print(tRise);
+    Serial.print("\t ");
+    Serial.print(iDischarge);
     Serial.print("\t ");
     Serial.println(tFall);
   }

@@ -105,6 +105,7 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
 
 void Tle9563::setGenControl(void)
 {
-	uint16_t ToSend = (CONF_BDFREQ<<15)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
+	uint16_t ToSend = 0;
+	ToSend = (CONF_BDFREQ<<15)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
 	writeReg(REG_ADDR_GENCTRL, ToSend);
 }

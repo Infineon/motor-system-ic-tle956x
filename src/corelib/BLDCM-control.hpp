@@ -44,6 +44,18 @@
 /* Braking modes */
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
+
+enum _Halfbridges{
+			PHASE1,
+			PHASE2,
+			PHASE3
+		};
+		
+enum _Config_AGC{
+			AGC_INACTIVE1 = 0b00,
+			AGC_INACTIVE2 = 0b01,
+			AGC_ACTIVE = 0b10
+		};
 // =============================================================================================================================================
 
 /**
@@ -105,12 +117,13 @@ class BLDCMcontrol
 		uint8_t					checkTLEshield();
 
 		/**
-		 * @brief hand over the configuration parameters like motor Mode, etc
-		 * Needs to be called once in the user code before the motor gets started.
-		 * @param MyParameters struct element with all necessary motor parameters.
-		 * @return uint8_t Error return code / status report
+		 * @brief config the TLE9563 chip with customized settings
+		 * needs to be called once before the motor will be started
+		 * 
+		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
+		 * @return uint8_t 
 		 */
-		uint8_t 				configBLDCshield();
+		uint8_t 				configBLDCshield(uint8_t agc = 0);
 
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
@@ -155,6 +168,24 @@ class BLDCMcontrol
 		 * 
 		 */
 		void 					end();
+
+		/**
+		 * @brief Initializes the algorithm for rise/falltime regulation
+		 * 
+		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE3]
+		 */
+
+		void					setupRiseFallTimeRegulation(uint8_t hb);
+		
+		/**
+		 * @brief reads out the actual MOSFET rise-time (fall-time) and compares it to the desired rise-(fall-)time.
+		 * The algorithm then adjusts the charge current ICHG for the active MOSFET of the selected halfbridge.
+		 * 
+		 * @param hb on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to.
+		 * @param risetime hands over the actual rise-time
+		 * @param falltime hands oder the actual fall-time
+		 */
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t &iCharge, uint8_t &iDischarge, uint8_t &risetime, uint8_t &falltime);
 
 		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
