@@ -9,7 +9,7 @@
 
 #include "spic-arduino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 /**
  * @brief Constructor of the Arduino SPIC class
@@ -120,4 +120,4 @@ SPICIno::Error_t SPICIno::transfer16(uint16_t send, uint16_t &received)
 	return OK;
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/

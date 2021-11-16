@@ -7,9 +7,9 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include <Arduino.h>
 #include "timer-arduino.hpp"
@@ -131,4 +131,4 @@ TimerIno::Error_t TimerIno::delayMicro(uint32_t timeout)
 	return OK;
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/

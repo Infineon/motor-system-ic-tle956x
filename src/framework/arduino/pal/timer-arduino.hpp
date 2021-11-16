@@ -10,9 +10,9 @@
 #ifndef TIMER_ARDUINO_HPP_
 #define TIMER_ARDUINO_HPP_
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include "../../../pal/timer.hpp"
 
@@ -39,5 +39,5 @@ class TimerIno: virtual public Timer
 };
 /** @} */
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** TIMER_ARDUINO_HPP_ **/

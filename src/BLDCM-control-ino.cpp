@@ -14,7 +14,7 @@
 
 #include "BLDCM-control-ino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 
 BLDCMcontrolIno::BLDCMcontrolIno(void)
@@ -34,10 +34,20 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::timer = new TimerIno();
 	BLDCMcontrol::rpmtimer = new TimerIno();
 	
-	BLDCMcontrol::controller = new TLE9563Ino();
+	BLDCMcontrol::controller = new Tle9563();
+
+	
+	controller->intn = new GPIOIno(ARDUINO_UNO.INTN, INPUT, GPIOIno::POSITIVE );
+	controller->cso = new ADCIno(ARDUINO_UNO.CSO);
+
+	controller->csn = new GPIOIno(ARDUINO_UNO.CSN, OUTPUT, GPIOIno::POSITIVE );
+	controller->sBus = new SPICIno(LSBFIRST, SPI_MODE1, SPI_CLOCK_DIV2);
+
+	controller->timer = new TimerIno();
+	
 }
 
 
 
 /** @} */
-#endif	/** TLE9563_FRAMEWORK **/
+#endif	/** MOTOR_SYSTEM_IC_FRAMEWORK **/

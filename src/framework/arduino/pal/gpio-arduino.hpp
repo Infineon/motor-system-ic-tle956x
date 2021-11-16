@@ -10,9 +10,9 @@
 #ifndef GPIO_ARDUINO_HPP_
 #define GPIO_ARDUINO_HPP_
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include "../../../corelib/TLE9563.hpp"
 
@@ -47,5 +47,5 @@ public:
 };
 /** @} */
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** GPIO_ARDUINO_HPP_ **/

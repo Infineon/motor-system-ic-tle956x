@@ -12,6 +12,8 @@
 #include <Arduino.h>
 #include <BLDCM-control-ino.hpp>
 
+#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+
 uint16_t speed = 400;
 uint8_t direction = 0;
 uint8_t weakening = 0;
@@ -35,9 +37,12 @@ void setup()
   MyMotor.MotorParam.MotorPolepairs = 4;                                 // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield();
-  
-  Serial.println("Init ready");
 
+   /**
+   * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
 }
@@ -48,10 +53,10 @@ void loop()
   {
     uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor
     if(in == '+'){
-       speed += 100;
+       speed += SPEED_INCREASE_STEP;
        Serial.println(speed);}
     if(in == '-'){
-      speed -= 100;
+      speed -= SPEED_INCREASE_STEP;
       Serial.println(speed);}
     if(in == 'd'){
       direction = 0;
@@ -74,8 +79,12 @@ void loop()
     MyMotor.setBLDCspeed(speed, direction, weakening);
   }
 
-  MyMotor.serveBLDCshield();
-  MyMotor.checkBLDCshield();           // Check, if interrupt flag was set and read Status register of TLE
+  MyMotor.serveBLDCshield();                // MUST BE CALLED HERE. This function does the BLDC commutation.
+
+  if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
+  {
+    MyMotor.setLED(50,0,0);                 // Set onboard RGB-LED to red.
+  }
 
 }
 

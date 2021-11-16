@@ -20,26 +20,36 @@
 #include "../pal/gpio.hpp"
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
+#include "../util/BLDCM-logger.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#include <Arduino.h>
+
+/*
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 #include "../TLE9563-ino.hpp"
 #endif
+*/
 
 // ================================== Defines ==================================================================================================
 #define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
 #define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
-#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
+#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle when motor starts to turn before RPM algorithm will be switched on */
 #define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
 #define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
 #define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
-#define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
 
 
 /* Braking modes */
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
+
+enum _Halfbridges{
+			PHASE1,
+			PHASE2,
+			PHASE3
+		};
 // =============================================================================================================================================
 
 /**
@@ -98,15 +108,16 @@ class BLDCMcontrol
 		 * @param request select the registers/information that you want to observe
 		 * @return uint8_t uint8_t Error return code / status report
 		 */
-		uint8_t					checkBLDCshield();
+		uint8_t					checkTLEshield();
 
 		/**
-		 * @brief hand over the configuration parameters like motor Mode, etc
-		 * Needs to be called once in the user code before the motor gets started.
-		 * @param MyParameters struct element with all necessary motor parameters.
-		 * @return uint8_t Error return code / status report
+		 * @brief config the TLE9563 chip with customized settings
+		 * needs to be called once before the motor will be started
+		 * 
+		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
+		 * @return uint8_t 
 		 */
-		uint8_t 				configBLDCshield();
+		uint8_t 				configBLDCshield(uint8_t agc = 0);
 
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
@@ -153,10 +164,29 @@ class BLDCMcontrol
 		void 					end();
 
 		/**
+		 * @brief Initializes the algorithm for rise/falltime regulation
+		 * 
+		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE3]
+		 */
+
+		void					setupRiseFallTimeRegulation(uint8_t hb);
+		
+		/**
+		 * @brief reads out the actual MOSFET rise-time (fall-time) and compares it to the desired rise-(fall-)time.
+		 * The algorithm then adjusts the charge current ICHG for the active MOSFET of the selected halfbridge.
+		 * 
+		 * @param hb on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to.
+		 * @param risetime hands over the actual rise-time
+		 * @param falltime hands oder the actual fall-time
+		 */
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
+
+		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 
 		 */
 		Tle9563 				*controller;
+		//Tle9563					*controller = new Tle9563();
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
 		/**
@@ -173,15 +203,6 @@ class BLDCMcontrol
 		 * @param msg hand over the error code
 		 */
 		void					PrintErrorMessage(_ErrorMessages msg);
-
-		/**
-		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
-		 * 
-		 * @param msg hand over error code
-		 * @param RegAddress address of the register, the error bit was set in
-		 * @param RegContent full content of the register, ther error bit was set in
-		 */
-		void					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 
 
 
@@ -307,6 +328,7 @@ class BLDCMcontrol
 		uint8_t					_FieldWeakening = 0;
 		uint8_t					_LastBLDCspeed = 0;
 		uint8_t					_Commutation = 0;
+		uint8_t					_commutationStep = 0;
 		uint8_t					_oldPattern = 0;
 		uint8_t					_latestPattern = 0;
 		uint16_t 				_StepCounter = 0;
@@ -314,6 +336,12 @@ class BLDCMcontrol
 		float 					_PI_Integral = 5000.0; 
 		float 					_NumberofSteps = 0;
 		uint8_t					_debug_counter = 0;
+		bool					_RFTReg_enable = 0;
+		uint8_t					_RFTReg_phase = 0;
+		uint8_t *				_RFT_iCharge = NULL;
+		uint8_t *				_RFT_iDischarge = NULL;
+		uint8_t *				_RFT_risetime = NULL;
+		uint8_t *				_RFT_falltime = NULL;
 		//MotorModes				BLDCMotorMode = 0;
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
