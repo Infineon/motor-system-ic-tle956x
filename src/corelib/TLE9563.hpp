@@ -36,6 +36,9 @@
 #define CONF_CSA_CSAG				G_DIFF20	// [0;3]
 #define CONF_CSA_OCEN				1			// Overcurrent shutdown. 0 = disabled, 1 = enabled
 
+#define ADC_REF_VOLTAGE       		5.0       		// Volt
+#define ADC_RESOLUTION        		1024.0
+
 enum _CSA_Gains{
 		G_DIFF10 = 0,
 		G_DIFF20 = 1,
@@ -113,14 +116,19 @@ class Tle9563: public Tle9xxx
 		 */
 		void					setGenControl(void);
 
+		/**
+		 * @brief calculates the Voltage across the CSA
+		 * 
+		 * @return float returns the voltage in V
+		 */
+		float					getCSOVoltage(void);
+
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
 
 		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
 
-		float 					csa_gain_table[4] = {10.04, 20.05, 40.05, 60.12};
-		
 	protected:
 		/**
 		 * @brief configure the current sense amplifier
@@ -130,6 +138,7 @@ class Tle9563: public Tle9xxx
 		 * @param ocen overcurrent shutdown enable
 		 */
 		void					setCSA(uint8_t octh, uint8_t csag, bool ocen);
+		float 					csa_gain_table[4] = {10.04, 20.05, 40.05, 60.12};
 
 
 };

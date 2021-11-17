@@ -513,9 +513,14 @@ void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t
 
 float BLDCMcontrol::getCurrent(void)
 {
+  /*
   uint16_t adc_value = controller->cso->ADCRead();
+  Serial.println(adc_value);
   float adc_voltage = (adc_value * ADC_REF_VOLTAGE * 1000) / ADC_RESOLUTION;
   float current = adc_voltage / (SHUNT_RESISTOR_VALUE * controller->csa_gain_table[CONF_CSA_CSAG]);
+  */
+  float cso_voltage = controller->getCSOVoltage();
+  float current = (cso_voltage * 1000) / SHUNT_RESISTOR_VALUE;
   return current;
 }
 

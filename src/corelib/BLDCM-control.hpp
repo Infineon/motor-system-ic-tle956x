@@ -41,8 +41,6 @@
 #define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
 
 /****************** Current measurment *******************/
-#define ADC_REF_VOLTAGE       		5.0       		// Volt
-#define ADC_RESOLUTION        		1024.0
 #define SHUNT_RESISTOR_VALUE		0.005     		// Ohm
 
 /****************** Braking modest *******************/

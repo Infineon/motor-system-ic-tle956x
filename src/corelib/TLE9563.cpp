@@ -119,3 +119,12 @@ void Tle9563::setCSA(uint8_t octh, uint8_t csag, bool ocen)
 	ToSend = ((CSA_PWM_NB<<10)&0x400)|((CSA_CSO_CAP<<9)&0x200)|((CSA_CSD<<8)&0x100)|((CSA_OCFILT<<6)&0xC0)|((CSA_OFF<<5)&0x20)|((octh<<3)&0x18)|((csag<<1)&0x6)|(ocen&0x1);
 	writeReg(REG_ADDR_CSA, ToSend);
 }
+
+float Tle9563::getCSOVoltage(void)
+{
+	uint16_t adc_value = cso->ADCRead();
+  	float adc_voltage = (adc_value * ADC_REF_VOLTAGE) / ADC_RESOLUTION;
+	float cso_voltage = adc_voltage / csa_gain_table[CONF_CSA_CSAG];
+
+	return cso_voltage;
+}

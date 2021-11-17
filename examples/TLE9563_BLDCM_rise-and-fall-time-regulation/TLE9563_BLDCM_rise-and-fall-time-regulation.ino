@@ -106,14 +106,14 @@ void loop()
     {
       turnOnOffDelayReg_enable = 1;
       MyMotor.configBLDCshield(AGC_ACTIVE);
-      Serial.println("Turn-on / -off delay regulation enabled");
+      //Serial.println("Turn-on / -off delay regulation enabled");
       //Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
     }
     if(in == 'k')
     {
       turnOnOffDelayReg_enable = 0;
       MyMotor.configBLDCshield(AGC_INACTIVE1);
-      Serial.println("Turn-on / -off delay regulation disabled");
+      //Serial.println("Turn-on / -off delay regulation disabled");
     }
   }
 
