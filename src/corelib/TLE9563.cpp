@@ -57,6 +57,8 @@ void Tle9563::config(uint8_t agc = AGC_ACTIVE)
 	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
 	setGenControl();													// Configure General bridge control reg with start configuration. 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
+	
+	//setCSA(CONF_CSA_OCTH, CONF_CSA_CSAG, CONF_CSA_OCEN);
 
 	writeReg(REG_ADDR_SWK_CTRL, 0);
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
@@ -108,4 +110,12 @@ void Tle9563::setGenControl(void)
 	uint16_t ToSend = 0;
 	ToSend = (CONF_BDFREQ<<15)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
 	writeReg(REG_ADDR_GENCTRL, ToSend);
+}
+
+
+void Tle9563::setCSA(uint8_t octh, uint8_t csag, bool ocen)
+{
+	uint16_t ToSend = 0;
+	ToSend = ((CSA_PWM_NB<<10)&0x400)|((CSA_CSO_CAP<<9)&0x200)|((CSA_CSD<<8)&0x100)|((CSA_OCFILT<<6)&0xC0)|((CSA_OFF<<5)&0x20)|((octh<<3)&0x18)|((csag<<1)&0x6)|(ocen&0x1);
+	writeReg(REG_ADDR_CSA, ToSend);
 }

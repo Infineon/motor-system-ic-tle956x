@@ -144,7 +144,7 @@ uint8_t BLDCMcontrol::checkTLEshield()
   return returnvalue;
 }
 
-uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc = 0)
+uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc = AGC_ACTIVE)
 {
   controller->config(agc);
 
@@ -509,3 +509,13 @@ void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t
   _RFT_risetime = risetime;
   _RFT_falltime = falltime;
 }
+
+
+float BLDCMcontrol::getCurrent(void)
+{
+  uint16_t adc_value = controller->cso->ADCRead();
+  float adc_voltage = (adc_value * ADC_REF_VOLTAGE * 1000) / ADC_RESOLUTION;
+  float current = adc_voltage / (SHUNT_RESISTOR_VALUE * controller->csa_gain_table[CONF_CSA_CSAG]);
+  return current;
+}
+

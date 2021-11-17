@@ -40,8 +40,12 @@
 
 #define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
 
+/****************** Current measurment *******************/
+#define ADC_REF_VOLTAGE       		5.0       		// Volt
+#define ADC_RESOLUTION        		1024.0
+#define SHUNT_RESISTOR_VALUE		0.005     		// Ohm
 
-/* Braking modes */
+/****************** Braking modest *******************/
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
 
@@ -117,7 +121,7 @@ class BLDCMcontrol
 		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
 		 * @return uint8_t 
 		 */
-		uint8_t 				configBLDCshield(uint8_t agc = 0);
+		uint8_t 				configBLDCshield(uint8_t agc = AGC_ACTIVE);
 
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
@@ -181,6 +185,12 @@ class BLDCMcontrol
 		 */
 		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
+		/**
+		 * @brief Get the Current flowing in the BLDC shield
+		 * 
+		 * @return float returns the current in milliAmps
+		 */
+		float					getCurrent(void);
 		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 

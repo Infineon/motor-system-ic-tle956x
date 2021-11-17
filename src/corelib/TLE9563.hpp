@@ -19,11 +19,30 @@
 
 #include "TLE9xxx.hpp"
 
+// ================================== Defines ==================================================================================================
 #define PWM_CTRL_DC_MASK			0x3FF0
 #define PWM_BNK_MODULE_1			0x0
 #define PWM_BNK_MODULE_2			0x1
 #define PWM_BNK_MODULE_3			0x2
 
+/****************** Current sense amplifier *******************/
+#define CSA_PWM_NB					0
+#define CSA_CSO_CAP					1
+#define CSA_CSD						0			// 0 = Unidirectional, 1 = Bidirectional
+#define CSA_OCFILT					0b01		// [0;3] Filter time
+#define CSA_OFF						0			// 0=enabled, 1=disabled
+
+#define CONF_CSA_OCTH				0b0			// [0;3]
+#define CONF_CSA_CSAG				G_DIFF20	// [0;3]
+#define CONF_CSA_OCEN				1			// Overcurrent shutdown. 0 = disabled, 1 = enabled
+
+enum _CSA_Gains{
+		G_DIFF10 = 0,
+		G_DIFF20 = 1,
+		G_DIFF40 = 2,
+		G_DIFF60 = 3
+	};
+// ===============================================================================================================================================
 /**
  * @addtogroup tle9563api
  * @{
@@ -99,8 +118,18 @@ class Tle9563: public Tle9xxx
 		HBconfig_t 				Floating; 
 
 		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
+
+		float 					csa_gain_table[4] = {10.04, 20.05, 40.05, 60.12};
 		
 	protected:
+		/**
+		 * @brief configure the current sense amplifier
+		 * 
+		 * @param octh overcurrent detection threshold of CSO
+		 * @param csag Gain of the current sense amplifier
+		 * @param ocen overcurrent shutdown enable
+		 */
+		void					setCSA(uint8_t octh, uint8_t csag, bool ocen);
 
 
 };

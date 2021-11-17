@@ -81,7 +81,7 @@ class DCMcontrol
 		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
 		 * @return uint8_t 
 		 */
-		uint8_t					configDCshield(uint8_t agc = 0);
+		uint8_t					configDCshield(uint8_t agc = AGC_ACTIVE);
 
 		/**
 		 * @brief check if status information is available
