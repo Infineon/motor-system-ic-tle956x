@@ -58,7 +58,7 @@ void Tle9563::config(uint8_t agc = AGC_ACTIVE)
 	setGenControl();													// Configure General bridge control reg with start configuration. 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 	
-	//setCSA(CONF_CSA_OCTH, CONF_CSA_CSAG, CONF_CSA_OCEN);
+	setCSA(CONF_CSA_OCTH, CONF_CSA_CSAG, CONF_CSA_OCEN);
 
 	writeReg(REG_ADDR_SWK_CTRL, 0);
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
@@ -123,7 +123,7 @@ void Tle9563::setCSA(uint8_t octh, uint8_t csag, bool ocen)
 float Tle9563::getCSOVoltage(void)
 {
 	uint16_t adc_value = cso->ADCRead();
-  	float adc_voltage = (adc_value * ADC_REF_VOLTAGE) / ADC_RESOLUTION;
+  	float adc_voltage = ((adc_value * ADC_REF_VOLTAGE) / ADC_RESOLUTION) - CSA_VREF_UNIDIR;
 	float cso_voltage = adc_voltage / csa_gain_table[CONF_CSA_CSAG];
 
 	return cso_voltage;

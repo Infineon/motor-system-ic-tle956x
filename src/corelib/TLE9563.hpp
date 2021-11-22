@@ -36,8 +36,10 @@
 #define CONF_CSA_CSAG				G_DIFF20	// [0;3]
 #define CONF_CSA_OCEN				1			// Overcurrent shutdown. 0 = disabled, 1 = enabled
 
-#define ADC_REF_VOLTAGE       		5.0       		// Volt
+#define ADC_REF_VOLTAGE       		5.0       	// [v] Microcontroller reference voltage
 #define ADC_RESOLUTION        		1024.0
+#define CSA_VREF_UNIDIR				1.0			// [V], V_CC1/5
+#define CSA_VREF_BIDIR				2.5			// [V], V_CC1/2
 
 enum _CSA_Gains{
 		G_DIFF10 = 0,
@@ -118,7 +120,8 @@ class Tle9563: public Tle9xxx
 
 		/**
 		 * @brief calculates the Voltage across the CSA
-		 * 
+		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
+		 * The resolution is 48,7mA.
 		 * @return float returns the voltage in V
 		 */
 		float					getCSOVoltage(void);

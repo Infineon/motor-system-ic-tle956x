@@ -139,11 +139,11 @@ void riseFallTimeRegulation()
 {
     if((millis() - blinktimer) > RFTREG_DELAY)
     {
-      /*
+      
       Serial.print("Current: ");
       Serial.print(MyMotor.getCurrent());
       Serial.println("mA");
-      */
+      
         MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
         Serial.print(iCharge);
         Serial.print("\t ");

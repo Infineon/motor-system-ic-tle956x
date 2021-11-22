@@ -185,7 +185,8 @@ class BLDCMcontrol
 
 		/**
 		 * @brief Get the Current flowing in the BLDC shield
-		 * 
+		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
+		 * The resolution is 48,7mA.
 		 * @return float returns the current in milliAmps
 		 */
 		float					getCurrent(void);
