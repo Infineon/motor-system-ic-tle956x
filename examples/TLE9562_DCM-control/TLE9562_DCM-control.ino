@@ -23,7 +23,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(" Infineon TLE9562 DC motor shield Testsketch");
+  Serial.println(F(" Infineon TLE9562 DC motor shield Testsketch"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
@@ -53,22 +53,22 @@ void loop()
     if(in == 'd')
     {
       direction = 0;
-      Serial.println("forward");
+      Serial.println(F("forward"));
     }
     if(in == 'e')
     {
        direction = 1;
-       Serial.println("backward");
+       Serial.println(F("backward"));
     }
     if(in == 'h')
     {
       MyMotor.stopDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");
+      Serial.println(F("Motor stopped"));
     }
     if(in == 'g')
     {
       MyMotor.startDCM();
-      Serial.println("Motor started");
+      Serial.println(F("Motor started"));
     }
 
     MyMotor.setDCspeed(speed, direction, 3);

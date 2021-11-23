@@ -33,7 +33,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(" Infineon TLE9562 Gate Driver Configuration tool");
+  Serial.println(F(" Infineon TLE9562 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
@@ -53,13 +53,13 @@ void loop()
     if(in == '+')
     {
        speed += SPEED_INCREASE_STEP;
-       Serial.print("Dutycycle: ");
+       Serial.print(F("Dutycycle: "));
        Serial.println(speed);
     }
     if(in == '-')
     {
       speed -= SPEED_INCREASE_STEP;
-      Serial.print("Dutycycle: ");
+      Serial.print(F("Dutycycle: "));
       Serial.println(speed);
     }
     MyMotor.setDCspeed(speed, direction, 3);
@@ -68,13 +68,13 @@ void loop()
     if(in == 'u')
     {
       riseFallTimeReg_enable = 1;
-      Serial.println("Rise- Fall-time regulation enabled");
-      Serial.println("iChg:\t tRise:\t iDchg:\t tFall:");
+      Serial.println(F("Rise- Fall-time regulation enabled"));
+      Serial.println(F("iChg:\t tRise:\t iDchg:\t tFall:"));
     }
     if(in == 'j')
     {
       riseFallTimeReg_enable = 0;
-      Serial.println("Rise- Fall-time regulation disabled");
+      Serial.println(F("Rise- Fall-time regulation disabled"));
     }
 
     //==================== Adaptive Gate Pre-charge control ======================
@@ -82,14 +82,13 @@ void loop()
     {
       turnOnOffDelayReg_enable = 1;
       MyMotor.configDCshield(AGC_ACTIVE);
-      Serial.println("Turn-on / -off delay regulation enabled");
-      //Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
+      Serial.println(F("Turn-on / -off delay regulation enabled"));
     }
     if(in == 'k')
     {
       turnOnOffDelayReg_enable = 0;
       MyMotor.configDCshield(AGC_INACTIVE1);
-      Serial.println("Turn-on / -off delay regulation disabled");
+      Serial.println(F("Turn-on / -off delay regulation disabled"));
     }
   }
 
@@ -102,11 +101,11 @@ void loop()
   {
     MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
     Serial.print(iCharge);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.print(tRise);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.print(iDischarge);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.println(tFall);
   }
 
