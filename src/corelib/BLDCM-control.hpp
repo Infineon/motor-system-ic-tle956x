@@ -353,16 +353,6 @@ class BLDCMcontrol
 		uint8_t *				_RFT_falltime = NULL;
 		//MotorModes				BLDCMotorMode = 0;
 
-	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief fill up the missing '0's before a binary number
-		 * 
-		 * @param digits how many digits
-		 * @param number The number you want to print (max 16 bit)
-		 */
-		void 					PrintBinary(uint8_t digits, uint16_t number);
-
-
 };
 
 /** @} */

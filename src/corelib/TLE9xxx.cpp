@@ -178,63 +178,49 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 {
     if(msg & TLE_SPI_ERROR)
     {
-        Serial.println("===> Error: CRC / SPI-Failure <===");
+        Serial.println(F("===> Error: CRC / SPI-Failure <==="));
     }
     if(msg & TLE_LOAD_ERROR)
     {
-        Serial.println("===> Error: Open-Load detected! <===");
+        Serial.println(F("===> Error: Open-Load detected! <==="));
     }
     if(msg & TLE_UNDER_VOLTAGE)
     {
-        Serial.println("===> Error: Undervoltage detected! Check your voltage supply <===");
+        Serial.println(F("===> Error: Undervoltage detected! Check your voltage supply <==="));
     }
     if(msg & TLE_OVER_VOLTAGE)
     {
-        Serial.println("===> Error: Overvoltage detected! Check your voltage supply <====");
+        Serial.println(F("===> Error: Overvoltage detected! Check your voltage supply <===="));
     }
     if(msg & TLE_POWER_ON_RESET)
     {
-        Serial.println("===> Power on reset detected! <===");
+        Serial.println(F("===> Power on reset detected! <==="));
     }
     if(msg & TLE_TEMP_SHUTDOWN)
     {
-        Serial.println("===> Error: Temperature shutdown <===");
+        Serial.println(F("===> Error: Temperature shutdown <==="));
     }
     if(msg & TLE_OVERCURRENT)
     {
-        Serial.println("===> Error: Overcurrent detected! <===");
+        Serial.println(F("===> Error: Overcurrent detected! <==="));
     }
     if(msg & TLE_SHORT_CIRCUIT)
     {
-        Serial.println("===> Error: Short circuit detected! <===");
+        Serial.println(F("===> Error: Short circuit detected! <==="));
     }
 	if(msg & TLE_HS_LS_OVERVOLTAGE)
     {
-		Serial.println("===> Error: HS / LS Overvoltage <===");
+		Serial.println(F("===> Error: HS / LS Overvoltage <==="));
 	}
 
     if(DETAILED_ERROR_REPORT)
     {
-        Serial.print("\tReg: 0x");
+        Serial.print(F("\tReg: 0x"));
         Serial.print(RegAddress, HEX);
-        Serial.print("  Content: 0x");
+        Serial.print(F("  Content: 0x"));
 		Serial.print(RegContent, HEX);
-        //PrintBinary(16, RegContent);
         Serial.println("");
     }
-}
-
-void Tle9xxx::PrintBinary(uint8_t digits, uint16_t number)
-{
-  for(uint8_t i=digits-1; i>0; i--)
-  {
-    if(pow(2, i) <= number)
-    {
-      break;
-    }
-    Serial.print("0");
-  }
-  Serial.print(number,BIN);
 }
 
 void Tle9xxx::set_TPRECHG(uint8_t t_pchgx, uint8_t t_pdchgx)
