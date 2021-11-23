@@ -38,8 +38,6 @@
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
 #define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
-#define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
-
 /****************** Current measurment *******************/
 #define SHUNT_RESISTOR_VALUE		0.005     		// Ohm
 
@@ -166,6 +164,16 @@ class BLDCMcontrol
 		void 					end();
 
 		/**
+		 * @brief only for FindPolepairs frontend function
+		 * 
+		 * @param dutycycle dutycycle for single step operation (should be low)
+		 * @param commuation_step [0;5] which should be the next step
+		 * @param hallsensor if hallsensor used 1, else 0
+		 * @return uint8_t hallpattern if demanded
+		 */
+		uint8_t 				commutateHallBLDC(uint8_t dutycycle, uint8_t commutation_step, bool hallsensor);
+
+		/**
 		 * @brief Initializes the algorithm for rise/falltime regulation
 		 * 
 		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE3]
@@ -198,14 +206,6 @@ class BLDCMcontrol
 		//Tle9563					*controller = new Tle9563();
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief Lets the motor single step and prints out the total amount of steps, the commutationstate and hallpattern if demanded
-		 * 
-		 * @param delay how many milliseconds between the commutations
-		 * @param hallsensor if hallsensor is available, set to one, else to zero
-		 */
-		void 					FindPolepairs(uint16_t delay, bool hallsensor);
-
 		/**
 		 * @brief Print a debug message, e.g. if configuration Parameter are missing
 		 * 
@@ -274,15 +274,6 @@ class BLDCMcontrol
 		 * @return uint8_t the merged pattern
 		 */
 		uint8_t					ReadBEMFSensor(void);
-
-		/**
-		 * @brief only for FindPolepairs frontend function
-		 * 
-		 * @param dutycycle dutycycle for single step operation (should be low)
-		 * @param hallsensor if hallsensor used 1, else 0
-		 * @return uint8_t hallpattern if demanded
-		 */
-		uint8_t 				CommutateHallBLDC(uint8_t dutycycle, bool hallsensor);
 
 		/**
 		 * @brief contains the six steps of the six-step-blockcommutation

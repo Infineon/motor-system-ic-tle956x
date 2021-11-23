@@ -24,7 +24,7 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(" Infineon TLE9563 BLDC shield Testsketch");
+  Serial.println(F(" Infineon TLE9563 BLDC shield Testsketch"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
@@ -60,22 +60,22 @@ void loop()
       Serial.println(speed);}
     if(in == 'd'){
       direction = 0;
-      Serial.println("forward");}
+      Serial.println(F("forward"));}
     if(in == 'e'){
        direction = 1;
-       Serial.println("backward");}
+       Serial.println(F("backward"));}
     if(in == 's'){
       weakening = 0;
-      Serial.println("Field weakening disabled");}
+      Serial.println(F("Field weakening disabled"));}
     if(in == 'w'){
       weakening = 1;
-      Serial.println("Field weakening enabled");}
+      Serial.println(F("Field weakening enabled"));}
     if(in == 'h'){
       MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");}
+      Serial.println(F("Motor stopped"));}
     if(in == 'g'){
       MyMotor.startBLDCM();
-      Serial.println("Motor started");}
+      Serial.println(F("Motor started"));}
     MyMotor.setBLDCspeed(speed, direction, weakening);
   }
 
