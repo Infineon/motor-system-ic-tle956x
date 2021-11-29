@@ -31,8 +31,6 @@ void setup()
 
 void loop()
 {
-	//MyMotor.FindPolepairs(DELAY_BETWEEN_COMMUTATIONS, HALLSENSOR);
-
   uint8_t Hallpattern = 0;
 	uint8_t Counter = 0;
   uint8_t CommutationStep = 0;

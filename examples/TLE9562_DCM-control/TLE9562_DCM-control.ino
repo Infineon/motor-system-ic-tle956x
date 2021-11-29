@@ -24,7 +24,7 @@ void setup()
 {
   Serial.begin(250000);
   Serial.println(F(" Infineon TLE9562 DC motor control"));
-
+  
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 

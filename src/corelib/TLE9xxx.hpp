@@ -36,9 +36,9 @@
 
 /****************** Adaptive Gate control (dis-)charge current *******************/
 #define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
-#define CONF_INIT_ICHG              11						// [0;63] Starting charge current that will be first used by the algorithm
+#define CONF_INIT_ICHG              6						// [0;63] Starting charge current that will be first used by the algorithm
 #define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				11						// [0;63] Starting discharge current that will be first used by the algorithm
+#define CONF_INIT_IDCHG				7						// [0;63] Starting discharge current that will be first used by the algorithm
 #define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
 
 		/**

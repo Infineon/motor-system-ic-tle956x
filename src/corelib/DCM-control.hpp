@@ -21,11 +21,6 @@
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
 
-/*
-#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
-#include "../TLE9563-ino.hpp"
-#endif
-*/
 // ================================== Defines ==================================================================================================
 
 /* Braking modes */

@@ -2,7 +2,7 @@
  * \name        TLE9563_BLDCM-control.ino
  * \author      Infineon Technologies AG
  * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
- * \version     1.0.0
+ * \version     2.0.0
  * \brief       This example runs a brushlessmotor with hall sensor position feedback using a TLE9563 BLDC control shield.
  *
  * SPDX-License-Identifier: MIT
@@ -51,8 +51,9 @@ void setup()
 
    /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
-   * if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
-   * if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   * - direction can be 0 or 1.
    */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
@@ -62,7 +63,7 @@ void loop()
 {
   if (Serial.available() > 0)
   {
-    uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor
+    uint8_t in = Serial.read();
     if(in == '+'){
        speed += SPEED_INCREASE_STEP;
        Serial.println(speed);}

@@ -16,9 +16,6 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-
-#include <Arduino.h>		// DEBUGGING
-
 #include "TLE9xxx.hpp"
 
 // ================================== Defines ==================================================================================================

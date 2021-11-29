@@ -24,12 +24,6 @@
 
 #include <Arduino.h>
 
-/*
-#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
-#include "../TLE9563-ino.hpp"
-#endif
-*/
-
 // ================================== Defines ==================================================================================================
 #define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
 #define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
@@ -342,7 +336,6 @@ class BLDCMcontrol
 		uint8_t *				_RFT_iDischarge = NULL;
 		uint8_t *				_RFT_risetime = NULL;
 		uint8_t *				_RFT_falltime = NULL;
-		//MotorModes				BLDCMotorMode = 0;
 
 };
 
