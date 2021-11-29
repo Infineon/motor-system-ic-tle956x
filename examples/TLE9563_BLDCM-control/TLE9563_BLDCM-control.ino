@@ -23,25 +23,36 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println(F(" Infineon TLE9563 BLDC shield Testsketch"));
+  Serial.begin(250000);
+  Serial.println(F(" Infineon TLE9563 BLDC motor control"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
+  /**
+   * setLED(red, green, blue)
+   * each value is 10 bit [0;1023]
+   */
   MyMotor.setLED(0,20,0);                                                // Set onboard RGB-LED to low-bright green.
 
-  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;             // Set feedback mode to hall sensor
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;          // Set speed mode to Dutycycle
+/**
+ * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL       for motors with hallsensor
+ * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_BEMF       for motors without hall sensor
+ * ------------------------------------------------------------------------------------------------------
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_PERCENTAGE to set dutycycle as speed between 0 and 1000
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_RPM        to set the speed in rounds per minute
+ */
+  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;             // Set feedback mode
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;          // Set speed mode
   MyMotor.MotorParam.MotorPolepairs = 4;                                 // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield();
 
    /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
-   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
-   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   * if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
    */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();

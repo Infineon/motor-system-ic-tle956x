@@ -146,6 +146,7 @@ class Tle9xxx
 		//! \brief enum for the flags
 		enum DiagFlag
 		{
+			TLE_OC_CSA_OVERCURRENT	= 0x200,
 			TLE_HS_LS_OVERVOLTAGE 	= 0x100,
 			TLE_SPI_ERROR 			= 0x80,
 			TLE_LOAD_ERROR 			= 0x40,

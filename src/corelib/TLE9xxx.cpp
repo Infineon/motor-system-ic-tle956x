@@ -105,7 +105,7 @@ uint16_t Tle9xxx::checkStatusInformationField(void)
 uint16_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
 	input = readReg(REG_ADDR_SUP_STAT);
 	_statusInformationField = writeReg(REG_ADDR_SUP_STAT, 0);
 	RegAddress = REG_ADDR_SUP_STAT;
@@ -122,7 +122,7 @@ uint16_t Tle9xxx::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
 uint16_t Tle9xxx::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
 	input = readReg(REG_ADDR_THERM_STAT);
 	writeReg(REG_ADDR_THERM_STAT, 0);
 	RegAddress = REG_ADDR_THERM_STAT;
@@ -136,7 +136,7 @@ uint16_t Tle9xxx::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
 uint16_t Tle9xxx::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
 	input = readReg(REG_ADDR_HS_OL_OC_OT_STAT);
 	writeReg(REG_ADDR_HS_OL_OC_OT_STAT, 0);
 	RegAddress = REG_ADDR_HS_OL_OC_OT_STAT;
@@ -151,7 +151,7 @@ uint16_t Tle9xxx::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
 uint16_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
 	input = readReg(REG_ADDR_DEV_STAT);
 	writeReg(REG_ADDR_DEV_STAT, 0);
 	RegAddress = REG_ADDR_DEV_STAT;
@@ -164,12 +164,13 @@ uint16_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 uint16_t Tle9xxx::checkStatDSOV(uint16_t &RegAddress, uint16_t &RegContent)
 {
 	uint16_t input=0;
-	uint8_t ErrorCode = 0;
+	uint16_t ErrorCode = 0;
 	input = readReg(REG_ADDR_DSOV);
 	writeReg(REG_ADDR_DSOV, 0);
 	RegAddress = REG_ADDR_DSOV;
 	RegContent = input;
 	if((input & 0x00FF) > 0) ErrorCode = TLE_HS_LS_OVERVOLTAGE;
+	if((input & 0x4000) > 0) ErrorCode |= TLE_OC_CSA_OVERCURRENT;
 
 	return ErrorCode;
 }
@@ -211,6 +212,10 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 	if(msg & TLE_HS_LS_OVERVOLTAGE)
     {
 		Serial.println(F("===> Error: HS / LS Overvoltage <==="));
+	}
+	if(msg & TLE_OC_CSA_OVERCURRENT)
+	{
+		Serial.println(F("===> Error: CSA Overcurrent <==="));
 	}
 
     if(DETAILED_ERROR_REPORT)
