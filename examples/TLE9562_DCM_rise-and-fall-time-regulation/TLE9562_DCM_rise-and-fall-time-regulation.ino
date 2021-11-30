@@ -15,10 +15,10 @@
 #include <DCM-control-ino.hpp>
 
 #define HALFBRIDGE              PHASE1      // [PHASE1;Phase4] Select the phase on which you want to regulate Rise/Fall time
-#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+#define SPEED_INCREASE_STEP     100         // [1;511] speed step increase/decrease when pressing a key
 #define CONTROL_LOOP_DELAY      100         // [ms] time between regulation executions
 
-uint16_t speed = 100;                       // start speed
+uint16_t speed = 400;                       // start speed
 uint8_t direction = 0;                      // direction can not be changed in this application, the value has no effect
 uint8_t tRise, tFall, iCharge, iDischarge = 0;
 uint32_t blinktimer = millis();
@@ -31,7 +31,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(250000);
   Serial.println(F(" Infineon TLE9562 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
@@ -39,8 +39,23 @@ void setup()
 
   MyMotor.begin();
   MyMotor.configDCshield(AGC_ACTIVE);
+
+  /**
+   * setLED(led1, led2)
+   * both values are 10-bit [0;1023]
+   */
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+
+  /**
+   * setDCspeed(speed, direction, motoroutput)
+   * - speed is the dutycycle speed in 10-bit, values between [0;1023]
+   * - direction can be 0 or 1
+   * - motoroutput is the motor you want to control.
+   *    1 (= 0b01): motor connected to PHASE1 and PHASE2
+   *    2 (= 0b10): motor connected to PHASE3 and PHASE4
+   *    3 (= 0b11): both motors
+   */
   MyMotor.setDCspeed(speed, direction, 3);
 }
 
@@ -48,7 +63,7 @@ void loop()
 {
     if (Serial.available() > 0)
   {
-    uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
+    uint8_t in = Serial.read();
     if(in == '+')
     {
        speed += SPEED_INCREASE_STEP;

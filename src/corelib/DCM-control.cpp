@@ -69,7 +69,8 @@ uint8_t DCMcontrol::checkTLEshield()
 
 void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 {
-    //speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    //speed = (speed * 256)/1024;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    speed = (speed>>2);
     if(speed > 255) _DutyCycle = 255;
     else _DutyCycle = speed;
 

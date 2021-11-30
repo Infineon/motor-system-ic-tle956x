@@ -89,7 +89,7 @@ class DCMcontrol
 		/**
 		 * @brief set the speed and direction for either a single motor or both motors
 		 * 
-		 * @param speed sets the dutycycle of the related PWM channel. 8 bit value (0-255)
+		 * @param speed sets the dutycycle of the related PWM channel. 10 bit value [0;1023]
 		 * @param direction direction of rotation. 0 or 1.
 		 * @param motorNumber which motor should be affected. 1 is HB 1&2. 2 is HB 3&4. 3 are all HBs.
 		 */
