@@ -6,7 +6,6 @@
  * \brief       This example lets you configure the rise- and falltime of a TLE9562. Therefore a closed-loop algorithm is implemented,
  * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
  * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page in the library.
- * See the Github wiki for more detailed information.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -16,10 +15,10 @@
 #include <DCM-control-ino.hpp>
 
 #define HALFBRIDGE              PHASE1      // [PHASE1;Phase4] Select the phase on which you want to regulate Rise/Fall time
-#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+#define SPEED_INCREASE_STEP     100         // [1;511] speed step increase/decrease when pressing a key
 #define CONTROL_LOOP_DELAY      100         // [ms] time between regulation executions
 
-uint16_t speed = 100;                       // start speed
+uint16_t speed = 400;                       // start speed
 uint8_t direction = 0;                      // direction can not be changed in this application, the value has no effect
 uint8_t tRise, tFall, iCharge, iDischarge = 0;
 uint32_t blinktimer = millis();
@@ -32,16 +31,31 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println(" Infineon TLE9562 Gate Driver Configuration tool");
+  Serial.begin(250000);
+  Serial.println(F(" Infineon TLE9562 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
   MyMotor.configDCshield(AGC_ACTIVE);
+
+  /**
+   * setLED(led1, led2)
+   * both values are 10-bit [0;1023]
+   */
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+
+  /**
+   * setDCspeed(speed, direction, motoroutput)
+   * - speed is the dutycycle speed in 10-bit, values between [0;1023]
+   * - direction can be 0 or 1
+   * - motoroutput is the motor you want to control.
+   *    1 (= 0b01): motor connected to PHASE1 and PHASE2
+   *    2 (= 0b10): motor connected to PHASE3 and PHASE4
+   *    3 (= 0b11): both motors
+   */
   MyMotor.setDCspeed(speed, direction, 3);
 }
 
@@ -49,17 +63,17 @@ void loop()
 {
     if (Serial.available() > 0)
   {
-    uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
+    uint8_t in = Serial.read();
     if(in == '+')
     {
        speed += SPEED_INCREASE_STEP;
-       Serial.print("Dutycycle: ");
+       Serial.print(F("Dutycycle: "));
        Serial.println(speed);
     }
     if(in == '-')
     {
       speed -= SPEED_INCREASE_STEP;
-      Serial.print("Dutycycle: ");
+      Serial.print(F("Dutycycle: "));
       Serial.println(speed);
     }
     MyMotor.setDCspeed(speed, direction, 3);
@@ -68,13 +82,13 @@ void loop()
     if(in == 'u')
     {
       riseFallTimeReg_enable = 1;
-      Serial.println("Rise- Fall-time regulation enabled");
-      Serial.println("iChg:\t tRise:\t iDchg:\t tFall:");
+      Serial.println(F("Rise- Fall-time regulation enabled"));
+      Serial.println(F("iChg:\t tRise:\t iDchg:\t tFall:"));
     }
     if(in == 'j')
     {
       riseFallTimeReg_enable = 0;
-      Serial.println("Rise- Fall-time regulation disabled");
+      Serial.println(F("Rise- Fall-time regulation disabled"));
     }
 
     //==================== Adaptive Gate Pre-charge control ======================
@@ -82,14 +96,13 @@ void loop()
     {
       turnOnOffDelayReg_enable = 1;
       MyMotor.configDCshield(AGC_ACTIVE);
-      Serial.println("Turn-on / -off delay regulation enabled");
-      //Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
+      Serial.println(F("Turn-on / -off delay regulation enabled"));
     }
     if(in == 'k')
     {
       turnOnOffDelayReg_enable = 0;
       MyMotor.configDCshield(AGC_INACTIVE1);
-      Serial.println("Turn-on / -off delay regulation disabled");
+      Serial.println(F("Turn-on / -off delay regulation disabled"));
     }
   }
 
@@ -102,11 +115,11 @@ void loop()
   {
     MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
     Serial.print(iCharge);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.print(tRise);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.print(iDischarge);
-    Serial.print("\t ");
+    Serial.print(F("\t "));
     Serial.println(tFall);
   }
 

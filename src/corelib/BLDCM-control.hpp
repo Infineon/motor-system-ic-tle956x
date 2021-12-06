@@ -24,12 +24,6 @@
 
 #include <Arduino.h>
 
-/*
-#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
-#include "../TLE9563-ino.hpp"
-#endif
-*/
-
 // ================================== Defines ==================================================================================================
 #define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
 #define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
@@ -38,11 +32,7 @@
 #define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
 #define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
-#define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
-
 /****************** Current measurment *******************/
-#define ADC_REF_VOLTAGE       		5.0       		// Volt
-#define ADC_RESOLUTION        		1024.0
 #define SHUNT_RESISTOR_VALUE		0.005     		// Ohm
 
 /****************** Braking modest *******************/
@@ -168,6 +158,16 @@ class BLDCMcontrol
 		void 					end();
 
 		/**
+		 * @brief only for FindPolepairs frontend function
+		 * 
+		 * @param dutycycle dutycycle for single step operation (should be low)
+		 * @param commuation_step [0;5] which should be the next step
+		 * @param hallsensor if hallsensor used 1, else 0
+		 * @return uint8_t hallpattern if demanded
+		 */
+		uint8_t 				commutateHallBLDC(uint8_t dutycycle, uint8_t commutation_step, bool hallsensor);
+
+		/**
 		 * @brief Initializes the algorithm for rise/falltime regulation
 		 * 
 		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE3]
@@ -187,7 +187,8 @@ class BLDCMcontrol
 
 		/**
 		 * @brief Get the Current flowing in the BLDC shield
-		 * 
+		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
+		 * The resolution is 48,7mA.
 		 * @return float returns the current in milliAmps
 		 */
 		float					getCurrent(void);
@@ -199,14 +200,6 @@ class BLDCMcontrol
 		//Tle9563					*controller = new Tle9563();
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief Lets the motor single step and prints out the total amount of steps, the commutationstate and hallpattern if demanded
-		 * 
-		 * @param delay how many milliseconds between the commutations
-		 * @param hallsensor if hallsensor is available, set to one, else to zero
-		 */
-		void 					FindPolepairs(uint16_t delay, bool hallsensor);
-
 		/**
 		 * @brief Print a debug message, e.g. if configuration Parameter are missing
 		 * 
@@ -277,15 +270,6 @@ class BLDCMcontrol
 		uint8_t					ReadBEMFSensor(void);
 
 		/**
-		 * @brief only for FindPolepairs frontend function
-		 * 
-		 * @param dutycycle dutycycle for single step operation (should be low)
-		 * @param hallsensor if hallsensor used 1, else 0
-		 * @return uint8_t hallpattern if demanded
-		 */
-		uint8_t 				CommutateHallBLDC(uint8_t dutycycle, bool hallsensor);
-
-		/**
 		 * @brief contains the six steps of the six-step-blockcommutation
 		 * in each step the gatedrivers of the TLE9563 are updated to either PWM, Ground or Floating.
 		 * At the same time the PWM is assigned to the right output pin.
@@ -352,17 +336,6 @@ class BLDCMcontrol
 		uint8_t *				_RFT_iDischarge = NULL;
 		uint8_t *				_RFT_risetime = NULL;
 		uint8_t *				_RFT_falltime = NULL;
-		//MotorModes				BLDCMotorMode = 0;
-
-	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief fill up the missing '0's before a binary number
-		 * 
-		 * @param digits how many digits
-		 * @param number The number you want to print (max 16 bit)
-		 */
-		void 					PrintBinary(uint8_t digits, uint16_t number);
-
 
 };
 

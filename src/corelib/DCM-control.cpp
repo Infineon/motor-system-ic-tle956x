@@ -69,7 +69,8 @@ uint8_t DCMcontrol::checkTLEshield()
 
 void DCMcontrol::setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber)
 {
-    //speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    //speed = (speed * 256)/1024;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+    speed = (speed>>2);
     if(speed > 255) _DutyCycle = 255;
     else _DutyCycle = speed;
 
@@ -186,7 +187,6 @@ void DCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
             controller->setHalfbridge(controller->ActiveGround, controller->ActiveGround, controller->ActiveGround, controller->ActivePWM);
             break;
     }
-    
 }
 
 void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime)

@@ -12,9 +12,15 @@
 #include <Arduino.h>
 #include <DCM-control-ino.hpp>
 
-#define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
+/**
+*    1 (= 0b01): motor connected to PHASE1 and PHASE2
+*    2 (= 0b10): motor connected to PHASE3 and PHASE4
+*    3 (= 0b11): both motors
+*/
+#define MOTOR_OUTPUT            3            // [1;3]
+#define SPEED_INCREASE_STEP     100          // [1;511] speed step increase/decrease when pressing a key
 
-uint16_t speed = 100;
+uint16_t speed = 400;
 uint8_t direction = 0;
 
 // Create an instance of DCMcontrol called 'MyMotor'. 
@@ -22,16 +28,31 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println(" Infineon TLE9562 DC motor shield Testsketch");
+  Serial.begin(250000);
+  Serial.println(F(" Infineon TLE9562 DC motor control"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);          // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
   MyMotor.configDCshield();
+
+  /**
+   * setLED(led1, led2)
+   * both values are 10-bit [0;1023]
+   */
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
-  MyMotor.setDCspeed(speed, direction, 3);
+
+  /**
+   * setDCspeed(speed, direction, motoroutput)
+   * - speed is the dutycycle speed in 10-bit, values between [0;1023]
+   * - direction can be [0;1]
+   * - motoroutput is the motor you want to control [1;3]
+   *    1 (= 0b01): motor connected to PHASE1 and PHASE2
+   *    2 (= 0b10): motor connected to PHASE3 and PHASE4
+   *    3 (= 0b11): both motors
+   */
+  MyMotor.setDCspeed(speed, direction, MOTOR_OUTPUT);
   MyMotor.startDCM();
 }
 
@@ -39,7 +60,7 @@ void loop()
 {
   if (Serial.available() > 0)
   {
-    uint8_t in = Serial.read();                 // Adapt the speed with keyboard input in the serial monitor
+    uint8_t in = Serial.read();
     if(in == '+')
     {
        speed += SPEED_INCREASE_STEP;
@@ -53,25 +74,25 @@ void loop()
     if(in == 'd')
     {
       direction = 0;
-      Serial.println("forward");
+      Serial.println(F("forward"));
     }
     if(in == 'e')
     {
        direction = 1;
-       Serial.println("backward");
+       Serial.println(F("backward"));
     }
     if(in == 'h')
     {
       MyMotor.stopDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");
+      Serial.println(F("Motor stopped"));
     }
     if(in == 'g')
     {
       MyMotor.startDCM();
-      Serial.println("Motor started");
+      Serial.println(F("Motor started"));
     }
 
-    MyMotor.setDCspeed(speed, direction, 3);
+    MyMotor.setDCspeed(speed, direction, MOTOR_OUTPUT);
   }
 
   if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE

@@ -6,7 +6,6 @@
  * \brief       This example lets you configure the rise- and falltime of a TLE9563 in a brushless motor application. Therefore a closed-loop algorithm is implemented,
  * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
  * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page 'TLE9xxx.hpp' in the library.
- * See the Github wiki for more detailed information.
  * 
  * SPDX-License-Identifier: MIT
  */
@@ -33,25 +32,38 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println(" Infineon TLE9563 Gate Driver Configuration tool");
+  Serial.begin(250000);
+  Serial.println(F(" Infineon TLE9563 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);         // Set up a GPIO interrupt routine for error handling
 
   MyMotor.begin();
-  MyMotor.setLED(0,0,200);                                              // Set onboard RGB-LED to blue, indicating development mode.
+  /**
+   * setLED(red, green, blue)
+   * each value is 10 bit [0;1023]
+   */
+  MyMotor.setLED(500,80,450);                                         // Set onboard RGB-LED to pink
 
-  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;            // Set feedback mode to hall sensor
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;         // Set speed mode to Dutycycle
+/**
+ * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL       for motors with hallsensor
+ * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_BEMF       for motors without hall sensor
+ * ------------------------------------------------------------------------------------------------------
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_PERCENTAGE to set dutycycle as speed between 0 and 1000
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_RPM        to set the speed in rounds per minute
+ */
+  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;            // Set feedback mode
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;         // Set speed mode
   MyMotor.MotorParam.MotorPolepairs = 4;                                // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield(AGC_ACTIVE);
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+
   /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
-   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
-   * if(MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
+   * - direction can be 0 or 1.
    */
   MyMotor.setBLDCspeed(speed, direction);
   MyMotor.startBLDCM();
@@ -70,35 +82,35 @@ void loop()
       Serial.println(speed);}
     if(in == 'd'){
       direction = 0;
-      Serial.println("forward");}
+      Serial.println(F("forward"));}
     if(in == 'e'){
        direction = 1;
-       Serial.println("backward");}
+       Serial.println(F("backward"));}
     if(in == 's'){
       weakening = 0;
-      Serial.println("Field weakening disabled");}
+      Serial.println(F("Field weakening disabled"));}
     if(in == 'w'){
       weakening = 1;
-      Serial.println("Field weakening enabled");}
+      Serial.println(F("Field weakening enabled"));}
     if(in == 'h'){
       MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
-      Serial.println("Motor stopped");}
+      Serial.println(F("Motor stopped"));}
     if(in == 'g'){
       MyMotor.startBLDCM();
-      Serial.println("Motor started");}
+      Serial.println(F("Motor started"));}
     MyMotor.setBLDCspeed(speed, direction, weakening);
 
     //==================== Adaptive Gate Charge control ======================
     if(in == 'u')
     {
       riseFallTimeReg_enable = 1;
-      Serial.println("Rise- Fall-time regulation enabled");
-      Serial.println("iChg:\t tRise:\t iDchg:\t tFall:");
+      Serial.println(F("Rise- Fall-time regulation enabled"));
+      Serial.println(F("iChg:\t tRise:\t iDchg:\t tFall:"));
     }
     if(in == 'j')
     {
       riseFallTimeReg_enable = 0;
-      Serial.println("Rise- Fall-time regulation disabled");
+      Serial.println(F("Rise- Fall-time regulation disabled"));
     }
 
     //==================== Adaptive Gate Pre-charge control ======================
@@ -106,14 +118,13 @@ void loop()
     {
       turnOnOffDelayReg_enable = 1;
       MyMotor.configBLDCshield(AGC_ACTIVE);
-      Serial.println("Turn-on / -off delay regulation enabled");
-      //Serial.println("iPchg:\t iPDchg:\t tDon:\t tDoff:");
+      Serial.println(F("Turn-on / -off delay regulation enabled"));
     }
     if(in == 'k')
     {
       turnOnOffDelayReg_enable = 0;
       MyMotor.configBLDCshield(AGC_INACTIVE1);
-      Serial.println("Turn-on / -off delay regulation disabled");
+      Serial.println(F("Turn-on / -off delay regulation disabled"));
     }
   }
 
@@ -138,19 +149,14 @@ void TLEinterrupt()
 void riseFallTimeRegulation()
 {
     if((millis() - blinktimer) > RFTREG_DELAY)
-    {
-      /*
-      Serial.print("Current: ");
-      Serial.print(MyMotor.getCurrent());
-      Serial.println("mA");
-      */
+    { 
         MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
         Serial.print(iCharge);
-        Serial.print("\t ");
+        Serial.print(F("\t "));
         Serial.print(tRise);
-        Serial.print("\t ");
+        Serial.print(F("\t "));
         Serial.print(iDischarge);
-        Serial.print("\t ");
+        Serial.print(F("\t "));
         Serial.println(tFall);
         
         blinktimer = millis();

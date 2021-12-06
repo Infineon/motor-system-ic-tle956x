@@ -16,7 +16,6 @@
 
 #include <stdint.h>
 #include <stdlib.h>
-
 #include "TLE9xxx.hpp"
 
 // ================================== Defines ==================================================================================================
@@ -30,11 +29,16 @@
 #define CSA_CSO_CAP					1
 #define CSA_CSD						0			// 0 = Unidirectional, 1 = Bidirectional
 #define CSA_OCFILT					0b01		// [0;3] Filter time
-#define CSA_OFF						0			// 0=enabled, 1=disabled
+#define CSA_OFF						1			// 0=enabled, 1=disabled
 
-#define CONF_CSA_OCTH				0b0			// [0;3]
+#define CONF_CSA_OCTH				0b11		// [0;3] Overcurrent detection threshold
 #define CONF_CSA_CSAG				G_DIFF20	// [0;3]
-#define CONF_CSA_OCEN				1			// Overcurrent shutdown. 0 = disabled, 1 = enabled
+#define CONF_CSA_OCEN				0			// Overcurrent shutdown. 0 = disabled, 1 = enabled
+
+#define ADC_REF_VOLTAGE       		5.0       	// [v] Microcontroller reference voltage
+#define ADC_RESOLUTION        		1024.0
+#define CSA_VREF_UNIDIR				1.0			// [V], V_CC1/5
+#define CSA_VREF_BIDIR				2.5			// [V], V_CC1/2
 
 enum _CSA_Gains{
 		G_DIFF10 = 0,
@@ -113,14 +117,20 @@ class Tle9563: public Tle9xxx
 		 */
 		void					setGenControl(void);
 
+		/**
+		 * @brief calculates the Voltage across the CSA
+		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
+		 * The resolution is 48,7mA.
+		 * @return float returns the voltage in V
+		 */
+		float					getCSOVoltage(void);
+
 		HBconfig_t 				ActiveGround; 
 		HBconfig_t 				ActivePWM; 
 		HBconfig_t 				Floating; 
 
 		AnalogDigitalConverter	*cso;			//<! \brief Current sense amplifier input
 
-		float 					csa_gain_table[4] = {10.04, 20.05, 40.05, 60.12};
-		
 	protected:
 		/**
 		 * @brief configure the current sense amplifier
@@ -130,6 +140,7 @@ class Tle9563: public Tle9xxx
 		 * @param ocen overcurrent shutdown enable
 		 */
 		void					setCSA(uint8_t octh, uint8_t csag, bool ocen);
+		float 					csa_gain_table[4] = {10.04, 20.05, 40.05, 60.12};
 
 
 };
