@@ -55,6 +55,7 @@ void Tle9563::config(uint8_t agc = AGC_ACTIVE)
 
 	set_TPRECHG(CONF_TPCHGX, CONF_TPDCHGX);								// set precharge and predischarge time
 	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	set_ST_ICHG(CONF_ICHGST, CONF_ICHGST, CONF_ICHGST, CONF_ICHGST);	// set static charge and discharge currents
 	setGenControl();													// Configure General bridge control reg with start configuration. 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 	

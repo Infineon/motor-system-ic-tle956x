@@ -36,9 +36,9 @@
 
 /****************** Adaptive Gate control (dis-)charge current *******************/
 #define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
-#define CONF_INIT_ICHG              6						// [0;63] Starting charge current that will be first used by the algorithm
+#define CONF_INIT_ICHG              11						// [0;63] Starting charge current that will be first used by the algorithm
 #define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				7						// [0;63] Starting discharge current that will be first used by the algorithm
+#define CONF_INIT_IDCHG				11						// [0;63] Starting discharge current that will be first used by the algorithm
 #define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
 
 		/**
@@ -60,6 +60,9 @@
 #define CONF_TDON					20		// [0;63] Turn-off delay time, default 0xC
 #define CONF_TPCHGX					1		// [0;7]  Precharge time, default 0
 #define CONF_TPDCHGX				3		// [0;7]  Predischarge time, default 0
+
+/****************** Static (dis-)charge current *******************/
+#define CONF_ICHGST					8		// [0;15] Static charge/discharge current, default 4
 
 /****************** General Bridge Control *******************/
 #define CONF_BDFREQ					1		// [0;1] Bridge driver synchronization frequency: 37Mhz
