@@ -76,7 +76,7 @@ class BLDCMcontrol
 			BLDC_FOC  = 3		/*Field oriented control*/
 		};
 		enum _SetSpeedModes{
-			BLDC_PERCENTAGE = 1,	/*Percentage*/
+			BLDC_DUTYCYCLE = 1,	/*Percentage*/
 			BLDC_RPM = 2,		/*Rounds per Minute*/
 			BLDC_POSITION  = 3	/*Position angle (future)*/
 		};

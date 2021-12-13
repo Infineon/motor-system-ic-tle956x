@@ -12,22 +12,20 @@
 
 #include <Arduino.h>
 #include <BLDCM-control-ino.hpp>
-#include <SoftwareSerial.h> 
-#include <SerialCommand.h>
 
 #define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
 #define HALFBRIDGE              PHASE1      // [PHASE1;Phase3] Select the phase on which you want to regulate Rise/Fall time
 #define RFTREG_DELAY            500         // milliseconds
 
-#define TX 1
-#define RX 0
+uint16_t speed = 400;                       // Initial speed. Can be changed via keyboard input.
+uint8_t direction = 0;                      // Initial direction. Can be changed via keyboard input.
+uint8_t weakening = 0;                      // Initial weakening. Can be changed via keyboard input.
 
-uint16_t speed = 400;
-uint8_t direction = 0;
-uint8_t weakening = 0;
+uint8_t trise_tg = 11;                      // [0;63] Initial Risetime target. Can be changed via keyboard input.
+uint8_t tfall_tg = 11;                      // [0;63] Initial Falltime target. Can be changed via keyboard input.
 
-uint8_t tRise, tFall, iCharge, iDischarge = 0;
-uint32_t blinktimer = millis();
+uint8_t tRise, tFall, iCharge, iDischarge = 0; // Stores the values read out of the TLE. 
+uint32_t rftreg_timer = millis();
 bool ledstatus = 0;
 bool riseFallTimeReg_enable = 0;
 bool turnOnOffDelayReg_enable = 0;
@@ -46,13 +44,6 @@ void setup()
   testSoftSerial.begin(250000);
   Serial.println(F(" Infineon TLE9563 Gate Driver Configuration tool"));
 
-  // Setup callbacks for SerialCommand commands 
-  SCmd.addCommand("go",LED_on);       // Turns LED on
-  SCmd.addCommand("OFF",LED_off);        // Turns LED off
-  SCmd.addCommand("HELLO",SayHello);     // Echos the string argument back
-  SCmd.addCommand("T",process_command);  // Converts two arguments to integers and echos them back 
-  SCmd.addDefaultHandler(unrecognized);  // Handler for command that isn't matched  (says "What?") 
-
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);         // Set up a GPIO interrupt routine for error handling
 
@@ -67,19 +58,19 @@ void setup()
  * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL       for motors with hallsensor
  * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_BEMF       for motors without hall sensor
  * ------------------------------------------------------------------------------------------------------
- * .MotorParam.speedmode    = BLDCMcontrol::BLDC_PERCENTAGE to set dutycycle as speed between 0 and 1000
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_DUTYCYCLE to set dutycycle as speed between 0 and 1023
  * .MotorParam.speedmode    = BLDCMcontrol::BLDC_RPM        to set the speed in rounds per minute
  */
-  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;            // Set feedback mode
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;         // Set speed mode
-  MyMotor.MotorParam.MotorPolepairs = 4;                                // only mandatory, if BLDC_RPM was selected
+  MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;           // Set feedback mode
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_DUTYCYCLE;         // Set speed mode
+  MyMotor.MotorParam.MotorPolepairs = 4;                               // only mandatory if BLDC_RPM was selected
 
   MyMotor.configBLDCshield(AGC_ACTIVE);
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
 
   /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
-   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_DUTYCYCLE): input range [0;1023]
    * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
    * - direction can be 0 or 1.
    */
@@ -89,36 +80,49 @@ void setup()
 
 void loop()
 {
-
-  //MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
-
   if (Serial.available() > 0)
   {
     uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor
-    if(in == '+'){
+    if(in == '+')
+    {
        speed += SPEED_INCREASE_STEP;
-       Serial.println(speed);}
-    if(in == '-'){
+       Serial.println(speed);
+    }
+    if(in == '-')
+    {
       speed -= SPEED_INCREASE_STEP;
-      Serial.println(speed);}
-    if(in == 'd'){
+      Serial.println(speed);
+    }
+    if(in == 'd')
+    {
       direction = 0;
-      Serial.println(F("forward"));}
-    if(in == 'e'){
+      Serial.println(F("forward"));
+    }
+    if(in == 'e')
+    {
        direction = 1;
-       Serial.println(F("backward"));}
-    if(in == 's'){
+       Serial.println(F("backward"));
+      }
+    if(in == 's')
+    {
       weakening = 0;
-      Serial.println(F("Field weakening disabled"));}
-    if(in == 'w'){
+      Serial.println(F("Field weakening disabled"));
+    }
+    if(in == 'w')
+    {
       weakening = 1;
-      Serial.println(F("Field weakening enabled"));}
-    if(in == 'h'){
+      Serial.println(F("Field weakening enabled"));
+    }
+    if(in == 'a')
+    {
       MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
-      Serial.println(F("Motor stopped"));}
-    if(in == 'g'){
+      Serial.println(F("Motor stopped"));
+    }
+    if(in == 'q')
+    {
       MyMotor.startBLDCM();
-      Serial.println(F("Motor started"));}
+      Serial.println(F("Motor started"));
+    }
     MyMotor.setBLDCspeed(speed, direction, weakening);
 
     //==================== Adaptive Gate Charge control ======================
@@ -134,6 +138,34 @@ void loop()
       Serial.println(F("Rise- Fall-time regulation disabled"));
     }
 
+    if(in == 'r')    // Increase target risetime
+    {
+      trise_tg += 1;
+      Serial.print(F("tRise target: "));
+      Serial.println(trise_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 'f')    // Decrease target risetime
+    {
+      trise_tg -= 1;
+      Serial.print(F("tRise target: "));
+      Serial.println(trise_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 't')    // Increase target falltime
+    {
+      tfall_tg += 1;
+      Serial.print(F("tFall target: "));
+      Serial.println(tfall_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 'g')    // Decrease target falltime
+    {
+      tfall_tg -= 1;
+      Serial.print(F("tFall target: "));
+      Serial.println(tfall_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
     //==================== Adaptive Gate Pre-charge control ======================
     if(in == 'i')
     {
@@ -169,7 +201,7 @@ void TLEinterrupt()
 
 void riseFallTimeRegulation()
 {
-    if((millis() - blinktimer) > RFTREG_DELAY)
+    if((millis() - rftreg_timer) > RFTREG_DELAY)
     { 
         MyMotor.riseFallTimeRegulation(HALFBRIDGE, &iCharge, &iDischarge, &tRise, &tFall);
         Serial.print(iCharge);
@@ -180,6 +212,6 @@ void riseFallTimeRegulation()
         Serial.print(F("\t "));
         Serial.println(tFall);
         
-        blinktimer = millis();
+        rftreg_timer = millis();
     }
 }

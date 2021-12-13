@@ -40,18 +40,18 @@ void setup()
  * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL       for motors with hallsensor
  * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_BEMF       for motors without hall sensor
  * ------------------------------------------------------------------------------------------------------
- * .MotorParam.speedmode    = BLDCMcontrol::BLDC_PERCENTAGE to set dutycycle as speed between 0 and 1000
+ * .MotorParam.speedmode    = BLDCMcontrol::BLDC_DUTYCYCLE to set dutycycle as speed between 0 and 1000
  * .MotorParam.speedmode    = BLDCMcontrol::BLDC_RPM        to set the speed in rounds per minute
  */
   MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;             // Set feedback mode
-  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;          // Set speed mode
+  MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_DUTYCYCLE;          // Set speed mode
   MyMotor.MotorParam.MotorPolepairs = 4;                                 // only mandatory, if BLDC_RPM was selected
 
   MyMotor.configBLDCshield();
 
    /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:
-   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_PERCENTAGE): input range [0;1000]
+   * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_DUTYCYCLE): input range [0;1000]
    * - if(.MotorParam.speedmode == BLDCMcontrol::BLDC_RPM): input range [0;2E32]
    * - direction can be 0 or 1.
    */

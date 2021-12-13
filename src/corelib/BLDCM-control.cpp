@@ -162,9 +162,10 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
 {
   switch(MotorParam.speedmode)
   {
-    case BLDC_PERCENTAGE:
-      speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
-      if(speed > 255) _DutyCycle = 255;
+    case BLDC_DUTYCYCLE:
+      //speed = (speed * CONF_DUTYCYCLE_TOP_LIMIT) / 1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+      speed = (speed>>2);
+      if(speed > CONF_DUTYCYCLE_TOP_LIMIT) _DutyCycle = CONF_DUTYCYCLE_TOP_LIMIT;
       else _DutyCycle = speed;
 
       break;
@@ -311,7 +312,7 @@ void BLDCMcontrol::PI_Regulator_DoWork()
     RPM = (steps/ _NumberofSteps) * (60000.0 / Elapsed);     // Very precise but needs more calc power
 
     float Error = _RefRPM - RPM;
-    if(_DutyCycle < 250) _PI_Integral = _PI_Integral + Error;
+    if(_DutyCycle < CONF_DUTYCYCLE_TOP_LIMIT) _PI_Integral = _PI_Integral + Error;
     float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
     //Limit PWM
     if (pwm > CONF_DUTYCYCLE_TOP_LIMIT) pwm = CONF_DUTYCYCLE_TOP_LIMIT;
