@@ -366,33 +366,33 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t * ichg, uint8_
 {
 	/******* Risetime ********/
     // The charge current is decreased if all conditions are true:
-    // 1. The EMA calculated for the current ICHG3 is lower than CONF_TRISE_TG
+    // 1. The EMA calculated for the current ICHG3 is lower than m_trise_tg
     // 2. The EMA that was calculated when the ICHG3 was set to the
     // immediately lower value is also lower than tRISEx_TG
     // 3. The minimum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (m_trise_tg * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (m_trise_tg * SCALING_FACTOR_FPA))
         && m_ichg > MIN_ICHG)
         m_ichg --;
 
     // The charge current is increased if these three conditions are met:
-    // 1. The EMA calculated for the current ICHGx is higher than CONF_TRISE_TG
+    // 1. The EMA calculated for the current ICHGx is higher than m_trise_tg
     // 2. The EMA that was calculated when the ICHGx was set to the
-    // immediately higher value of the current one is also higher than CONF_TRISE_TG
+    // immediately higher value of the current one is also higher than m_trise_tg
     // 3. The maximum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (m_trise_tg * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (m_trise_tg * SCALING_FACTOR_FPA))
         && m_ichg < MAX_ICHG)
         m_ichg ++;
 
 	/******* Falltime ********/
-	if ((m_tfall_ema[m_idchg - MIN_ICHG] <= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
-        && (m_tfall_ema[m_idchg - MIN_ICHG - 1] < (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] <= (m_tfall_tg * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG - 1] < (m_tfall_tg * SCALING_FACTOR_FPA))
         && m_idchg > MIN_ICHG)
         m_idchg --;
 
-	if ((m_tfall_ema[m_idchg - MIN_ICHG] >= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
-        && (m_tfall_ema[m_idchg - MIN_ICHG + 1] > (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] >= (m_tfall_tg * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG + 1] > (m_tfall_tg * SCALING_FACTOR_FPA))
         && m_idchg < MAX_ICHG)
         m_idchg ++;
 	

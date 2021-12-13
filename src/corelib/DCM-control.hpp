@@ -136,6 +136,14 @@ class DCMcontrol
 		 */
 		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
+		/**
+		 * @brief Set the T_Rise and T_Fall target times where the regulation loop should go to
+		 * 
+		 * @param trise_tg rise time target [0;63]
+		 * @param tfall_tg fall time target [0;63]
+		 */
+		void					setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg);
+		
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 

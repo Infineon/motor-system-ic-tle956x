@@ -12,10 +12,15 @@
 
 #include <Arduino.h>
 #include <BLDCM-control-ino.hpp>
+#include <SoftwareSerial.h> 
+#include <SerialCommand.h>
 
 #define SPEED_INCREASE_STEP     50          // [1;127] speed step increase/decrease when pressing a key
 #define HALFBRIDGE              PHASE1      // [PHASE1;Phase3] Select the phase on which you want to regulate Rise/Fall time
 #define RFTREG_DELAY            500         // milliseconds
+
+#define TX 1
+#define RX 0
 
 uint16_t speed = 400;
 uint8_t direction = 0;
@@ -30,10 +35,23 @@ bool turnOnOffDelayReg_enable = 0;
 // Create an instance of BLDCMcontrol called 'MyMotor'. 
 BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
+// The SoftwareSerial Object
+SoftwareSerial testSoftSerial = SoftwareSerial(RX,TX);
+// The demo SerialCommand object, using the SoftwareSerial Constructor
+SerialCommand SCmd(testSoftSerial); 
+
 void setup()
 {
   Serial.begin(250000);
+  testSoftSerial.begin(250000);
   Serial.println(F(" Infineon TLE9563 Gate Driver Configuration tool"));
+
+  // Setup callbacks for SerialCommand commands 
+  SCmd.addCommand("go",LED_on);       // Turns LED on
+  SCmd.addCommand("OFF",LED_off);        // Turns LED off
+  SCmd.addCommand("HELLO",SayHello);     // Echos the string argument back
+  SCmd.addCommand("T",process_command);  // Converts two arguments to integers and echos them back 
+  SCmd.addDefaultHandler(unrecognized);  // Handler for command that isn't matched  (says "What?") 
 
   // Enable GPIO interrupt for pin 2
   attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);         // Set up a GPIO interrupt routine for error handling
@@ -71,6 +89,9 @@ void setup()
 
 void loop()
 {
+
+  //MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+
   if (Serial.available() > 0)
   {
     uint8_t in = Serial.read();     // Adapt the speed with keyboard input in the serial monitor

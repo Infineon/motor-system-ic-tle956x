@@ -35,9 +35,9 @@
 #define DETAILED_ERROR_REPORT 		1						// 1 = print register values as well if a TLE error occurs, 0 = only print error message
 
 /****************** Adaptive Gate control (dis-)charge current *******************/
-#define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
+#define CONF_TRISE_TG				11						// [0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards.
 #define CONF_INIT_ICHG              11						// [0;63] Starting charge current that will be first used by the algorithm
-#define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
+#define CONF_TFALL_TG				11						// [0;63] initial Target tFALL (CONF_TFALL_TG * 53.3 ns). The variable can be changed afterwards.
 #define CONF_INIT_IDCHG				11						// [0;63] Starting discharge current that will be first used by the algorithm
 #define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
 
@@ -280,6 +280,9 @@ class Tle9xxx
 		 * 
 		 */
 		void 					adaptiveHysteresisDecisionTree(uint8_t hb, uint8_t * ichg, uint8_t * idchg);
+
+		uint8_t					m_trise_tg = CONF_TRISE_TG;
+		uint8_t					m_tfall_tg = CONF_TFALL_TG;
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus

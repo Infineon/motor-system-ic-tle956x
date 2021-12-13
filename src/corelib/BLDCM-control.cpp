@@ -430,15 +430,17 @@ void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t
   _RFT_falltime = falltime;
 }
 
+void BLDCMcontrol::setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg)
+{
+    if((trise_tg < 64) && (tfall_tg < 64))
+    {
+        controller->m_trise_tg = trise_tg;
+        controller->m_tfall_tg = tfall_tg;
+    }
+}
 
 float BLDCMcontrol::getCurrent(void)
 {
-  /*
-  uint16_t adc_value = controller->cso->ADCRead();
-  Serial.println(adc_value);
-  float adc_voltage = (adc_value * ADC_REF_VOLTAGE * 1000) / ADC_RESOLUTION;
-  float current = adc_voltage / (SHUNT_RESISTOR_VALUE * controller->csa_gain_table[CONF_CSA_CSAG]);
-  */
   float cso_voltage = controller->getCSOVoltage();
   float current = (cso_voltage * 1000) / SHUNT_RESISTOR_VALUE;
   return current;

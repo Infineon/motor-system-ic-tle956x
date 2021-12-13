@@ -104,6 +104,9 @@ void loop()
       MyMotor.configDCshield(AGC_INACTIVE1);
       Serial.println(F("Turn-on / -off delay regulation disabled"));
     }
+
+    //MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+
   }
 
   if(MyMotor.checkTLEshield() > 0 )            // Check, if interrupt flag was set and read status register of TLE
