@@ -186,10 +186,10 @@ void BLDCMcontrol::startBLDCM(void)
 {
   //if(MotorParam.feedbackmode == BLDC_BEMF)
   uint8_t dt_prev = _DutyCycle;
-  _DutyCycle = OPEN_LOOP_DUTYCYCLE;
-  uint16_t i = 5000;
+  _DutyCycle = CONF_OPEN_LOOP_DUTYCYCLE;
+  uint16_t i = CONF_OPEN_LOOP_DELAY_START;
   uint8_t CommStartup = 0;
-  while (i>1200)
+  while (i>CONF_OPEN_LOOP_DELAY_LIMIT)
   {
     timer->delayMicro(i);
     _Commutation = CommStartup;
@@ -204,7 +204,7 @@ void BLDCMcontrol::startBLDCM(void)
       if (CommStartup==0) CommStartup=6;
       CommStartup--;
     }
-    i=i-200;
+    i=i-CONF_OPEN_LOOP_DELAY_SLOPE;
   }
   _DutyCycle = dt_prev;
   timer->start();
@@ -218,7 +218,7 @@ void BLDCMcontrol::startBLDCM(void)
 
   if(MotorParam.speedmode == BLDC_RPM)
   {
-    _DutyCycle = RPM_DUTYCYCLE_AT_START; 
+    _DutyCycle = CONF_RPM_DUTYCYCLE_AT_START; 
     if(MotorParam.MotorPolepairs == 0) PrintErrorMessage(PARAMETER_MISSING);
     rpmtimer->start();
     //_DutyCycle = 100;
@@ -262,7 +262,7 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
     timer->start();
     return 2;
   }
-  else if( Elapsed > TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
+  else if( Elapsed > CONF_TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
   {
     stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
@@ -290,7 +290,7 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
     timer->start();
     return 2;
   }
-  else if( Elapsed > TIMEOUT)
+  else if( Elapsed > CONF_TIMEOUT)
   {
     stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
@@ -301,7 +301,7 @@ void BLDCMcontrol::PI_Regulator_DoWork()
 {
   uint32_t Elapsed = 0;
   rpmtimer->elapsed(Elapsed);
-  if (Elapsed > PI_UPDATE_INTERVAL)
+  if (Elapsed > CONF_PI_UPDATE_INTERVAL)
   {
     float RPM = 0.0;
     float steps = (float) _StepCounter;
@@ -314,8 +314,8 @@ void BLDCMcontrol::PI_Regulator_DoWork()
     if(_DutyCycle < 250) _PI_Integral = _PI_Integral + Error;
     float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
     //Limit PWM
-    if (pwm > DUTYCYCLE_TOP_LIMIT) pwm = DUTYCYCLE_TOP_LIMIT;
-    if (pwm < DUTYCYCLE_BOTTOM_LIMIT) pwm = DUTYCYCLE_BOTTOM_LIMIT;
+    if (pwm > CONF_DUTYCYCLE_TOP_LIMIT) pwm = CONF_DUTYCYCLE_TOP_LIMIT;
+    if (pwm < CONF_DUTYCYCLE_BOTTOM_LIMIT) pwm = CONF_DUTYCYCLE_BOTTOM_LIMIT;
     _DutyCycle = (uint8_t) pwm;    
     _StepCounter = 0;
 
