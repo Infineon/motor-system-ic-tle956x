@@ -21,7 +21,7 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(250000);
   Serial.println(F(" Infineon TLE9563 BLDC shield Testsketch"));
   Serial.println(F(" Mode: find polepairs"));
 
@@ -83,11 +83,11 @@ void loop()
 	// Evaluation
     if((Counter % 2) == 1)
     {
-        Serial.println(F("Please try again, it must be a even number, when you stop the motor"));
+        Serial.println(F("Please try again, 'Step' must be a even number, when you stop the motor"));
     }
     else if((Counter % 6) > 0)
     {
-        Serial.println(F("Please try again, it must be a multiple of 6"));
+        Serial.println(F("Please try again, 'Step' must be a multiple of 6"));
     }
     else
     {

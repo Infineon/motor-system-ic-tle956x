@@ -81,12 +81,12 @@ void loop()
        direction = 1;
        Serial.println(F("backward"));
     }
-    if(in == 'h')
+    if(in == 'a')
     {
       MyMotor.stopDCM(BRAKEMODE_PASSIVE);
       Serial.println(F("Motor stopped"));
     }
-    if(in == 'g')
+    if(in == 'q')
     {
       MyMotor.startDCM();
       Serial.println(F("Motor started"));

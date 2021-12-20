@@ -32,7 +32,7 @@ Tle9xxx::Tle9xxx(void)
 	Floating.PWMenable = 0;
 }
 
-Tle9xxx::~Tle9xxx()
+Tle9xxx::~Tle9xxx(void)
 {
 	intn = NULL;
 
@@ -98,7 +98,7 @@ uint16_t Tle9xxx::checkStatusInformationField(void)
 	if(_statusInformationField & SIF_BD_STAT) PrintTLEErrorMessage(checkStatDSOV(RegAddress, RegContent), RegAddress, RegContent);
 	if(_statusInformationField & SIF_SPI_CRC_FAIL) ;
 
-    return _statusInformationField;
+    return _error_enable;
 }
 
 
@@ -156,7 +156,7 @@ uint16_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 	writeReg(REG_ADDR_DEV_STAT, 0);
 	RegAddress = REG_ADDR_DEV_STAT;
 	RegContent = input;
-	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
+	if((input & 0x0003) > 0) ErrorCode = TLE_SPI_ERROR; 			// SPI Error
 
 	return ErrorCode;
 }
@@ -179,7 +179,7 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 {
     if(msg & TLE_SPI_ERROR)
     {
-        Serial.println(F("===> Error: CRC / SPI-Failure <==="));
+        Serial.println(F("===> Error: SPI-Failure <==="));
     }
     if(msg & TLE_LOAD_ERROR)
     {
@@ -218,13 +218,14 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 		Serial.println(F("===> Error: CSA Overcurrent <==="));
 	}
 
-    if(DETAILED_ERROR_REPORT)
+    if(msg > 0)
     {
         Serial.print(F("\tReg: 0x"));
         Serial.print(RegAddress, HEX);
         Serial.print(F("  Content: 0x"));
 		Serial.print(RegContent, HEX);
         Serial.println("");
+		_error_enable = 1;
     }
 }
 

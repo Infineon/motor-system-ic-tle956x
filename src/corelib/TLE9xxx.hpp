@@ -183,17 +183,17 @@ class Tle9xxx
 		HBconfig_t 				Floating; 
 
 		//! \brief standard constructor with default pin assignment
-		Tle9xxx();
+		Tle9xxx(void);
 
 		//! \brief standard destructor switches shield off
-		~Tle9xxx();
+		~Tle9xxx(void);
 
 		/**
 		 * @brief virtual function definitions, will be declared in the inheritance sub-classes like Tle9563, Tle9562, ...
 		 * 
 		 */
-		virtual void 			begin();
-		virtual void 			end();
+		virtual void 			begin() = 0;
+		virtual void 			end() = 0;
 		//virtual void 			config();
 		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
 		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBconfig_t hb4);
@@ -410,6 +410,7 @@ class Tle9xxx
 		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	// Current IDCHGx with which the MOSFET driver is configured
 		uint8_t					_statusInformationField = 0;				// Stores the "Status information field" which is the first byte of every SDO package.
 		uint8_t					_agc_status = 0;							// Stores the value to be written
+		uint8_t					_error_enable = 0;							// If an error message was printed, this value will get 1, indicating an error occured
 
 };
 /** @} */

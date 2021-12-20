@@ -33,15 +33,9 @@ bool turnOnOffDelayReg_enable = 0;
 // Create an instance of BLDCMcontrol called 'MyMotor'. 
 BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
-// The SoftwareSerial Object
-SoftwareSerial testSoftSerial = SoftwareSerial(RX,TX);
-// The demo SerialCommand object, using the SoftwareSerial Constructor
-SerialCommand SCmd(testSoftSerial); 
-
 void setup()
 {
   Serial.begin(250000);
-  testSoftSerial.begin(250000);
   Serial.println(F(" Infineon TLE9563 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2

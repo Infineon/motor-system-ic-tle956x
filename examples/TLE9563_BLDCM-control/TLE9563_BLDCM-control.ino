@@ -82,10 +82,10 @@ void loop()
     if(in == 'w'){
       weakening = 1;
       Serial.println(F("Field weakening enabled"));}
-    if(in == 'h'){
+    if(in == 'a'){
       MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
       Serial.println(F("Motor stopped"));}
-    if(in == 'g'){
+    if(in == 'q'){
       MyMotor.startBLDCM();
       Serial.println(F("Motor started"));}
     MyMotor.setBLDCspeed(speed, direction, weakening);
