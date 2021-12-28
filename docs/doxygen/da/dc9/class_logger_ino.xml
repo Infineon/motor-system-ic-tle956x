@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="da/dc9/class_logger_ino" kind="class" language="C++" prot="public">
+    <compoundname>LoggerIno</compoundname>
+    <basecompoundref refid="d3/dc0/class_logger_p_a_l" prot="public" virt="non-virtual">LoggerPAL</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="da/dc9/class_logger_ino_1a52d3ad85087c9207be50f2244691dbad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LoggerIno::LoggerIno</definition>
+        <argsstring>()</argsstring>
+        <name>LoggerIno</name>
+        <briefdescription>
+<para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> Arduino PAL constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="24" column="25" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dc9/class_logger_ino_1ae460375e500ed3d0c480e7728cfcf494" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>LoggerIno::~LoggerIno</definition>
+        <argsstring>()</argsstring>
+        <name>~LoggerIno</name>
+        <briefdescription>
+<para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> Arduino PAL destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="25" column="24" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dc9/class_logger_ino_1a33c30e8f02b26262ef246e1680f4cb09" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>LoggerPAL::Error_t LoggerIno::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d3/dc0/class_logger_p_a_l_1afe2da5d1f38d8d0833482c3e63997fb2">init</reimplements>
+        <briefdescription>
+<para>Initializes the logger Arduino PAL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Serial is initialized by the Arduino core and begun in setup(). </para>
+</simplesect>
+<simplesect kind="return"><para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> PAL error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>always </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="26" column="25" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dc9/class_logger_ino_1a85df7c3a04163b5c241a95a77b22afba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>LoggerPAL::Error_t LoggerIno::deinit</definition>
+        <argsstring>()</argsstring>
+        <name>deinit</name>
+        <reimplements refid="d3/dc0/class_logger_p_a_l_1a4a3b89e352dd06218a2399032bd4a5c1">deinit</reimplements>
+        <briefdescription>
+<para>Deinitializes the logger Arduino PAL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> PAL error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>always </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="27" column="25" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="da/dc9/class_logger_ino_1a0b6ff5f5dacd8f5898681aed7316fda3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>LoggerPAL::Error_t LoggerIno::write</definition>
+        <argsstring>(const uint8_t *log_data, uint32_t length)</argsstring>
+        <name>write</name>
+        <reimplements refid="d3/dc0/class_logger_p_a_l_1a36b4bbf4cb32e75f20eed5e96f747b55">write</reimplements>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>log_data</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Writes in the logger Arduino PAL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*logData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array holding the data to be logged </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length in bytes of the data to be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> PAL error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>always </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="28" column="25" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="65" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>LoggerIno</label>
+        <link refid="da/dc9/class_logger_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LoggerPAL</label>
+        <link refid="d3/dc0/class_logger_p_a_l"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>LoggerIno</label>
+        <link refid="da/dc9/class_logger_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LoggerPAL</label>
+        <link refid="d3/dc0/class_logger_p_a_l"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/framework/arduino/pal/logger-arduino.hpp" line="21" column="1" bodyfile="src/framework/arduino/pal/logger-arduino.hpp" bodystart="22" bodyend="29"/>
+    <listofallmembers>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca4ebb8267793fee0d2be101568ca02c10" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>CONF_ERROR</name></member>
+      <member refid="da/dc9/class_logger_ino_1a85df7c3a04163b5c241a95a77b22afba" prot="public" virt="virtual"><scope>LoggerIno</scope><name>deinit</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>Error_t</name></member>
+      <member refid="da/dc9/class_logger_ino_1a33c30e8f02b26262ef246e1680f4cb09" prot="public" virt="virtual"><scope>LoggerIno</scope><name>init</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426cac225fa4d0011b59aabf33798fc5fed7a" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>INTF_ERROR</name></member>
+      <member refid="da/dc9/class_logger_ino_1a52d3ad85087c9207be50f2244691dbad" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>LoggerIno</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca40f2535bcadc6886b106b51e2d111a00" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>OK</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca8192c67db38d0d1d5325283f7deb5e2d" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>READ_ERROR</name></member>
+      <member refid="da/dc9/class_logger_ino_1a0b6ff5f5dacd8f5898681aed7316fda3" prot="public" virt="virtual"><scope>LoggerIno</scope><name>write</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca7f267081044415ff514092e6eee409ad" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>WRITE_ERROR</name></member>
+      <member refid="da/dc9/class_logger_ino_1ae460375e500ed3d0c480e7728cfcf494" prot="public" virt="non-virtual"><scope>LoggerIno</scope><name>~LoggerIno</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

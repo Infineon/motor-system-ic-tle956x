@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d9/d8a/class_s_p_i_c" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>SPIC</compoundname>
+    <derivedcompoundref refid="d1/d49/class_s_p_i_c_ino" prot="public" virt="virtual">SPICIno</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error_t</name>
+        <enumvalue id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" prot="public">
+          <name>OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba4b39d50cc04ed6fb7036b2fc04598f8e" prot="public">
+          <name>INTF_ERROR</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interface error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bac0c1584688812e22f8f718e5686f55f2" prot="public">
+          <name>CONF_ERROR</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configuration error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba6aa87ba2c06fb168b837c2fb07e13f5f" prot="public">
+          <name>READ_ERROR</name>
+          <initializer>= -3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bae83841ed6e767461cdb307b516cd9481" prot="public">
+          <name>WRITE_ERROR</name>
+          <initializer>= -4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write error </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="24" column="1" bodyfile="src/pal/spic.hpp" bodystart="25" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d8a/class_s_p_i_c_1af2e6f3f09d3fb0aed9602556863ab59f" prot="private" static="no" mutable="no">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>Error_t SPIC::errorStatus</definition>
+        <argsstring></argsstring>
+        <name>errorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="72" column="9" bodyfile="src/pal/spic.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d8a/class_s_p_i_c_1aaf10147dbb4db9c1dddee5343418a893" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t SPIC::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="d1/d49/class_s_p_i_c_ino_1aa6c292e721e6a496e2fd8032d5176da9">init</reimplementedby>
+        <briefdescription>
+<para>Initializes the <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if initialization error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="39" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8a/class_s_p_i_c_1a76afcd404cc7f34ee771974ef7dc3a08" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t SPIC::deinit</definition>
+        <argsstring>()=0</argsstring>
+        <name>deinit</name>
+        <reimplementedby refid="d1/d49/class_s_p_i_c_ino_1a3db180a097f26676ae5b2199f0e15173">deinit</reimplementedby>
+        <briefdescription>
+<para>Deinitializes the <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if deinitialization error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="47" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8a/class_s_p_i_c_1a870e415e4d8a62c8cd67ae0f5a3db782" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t SPIC::transfer</definition>
+        <argsstring>(uint8_t send, uint8_t &amp;received)=0</argsstring>
+        <name>transfer</name>
+        <reimplementedby refid="d1/d49/class_s_p_i_c_ino_1a6b272df6ce49535ebc2dece177ee39a2">transfer</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>send</declname>
+        </param>
+        <param>
+          <type>uint8_t &amp;</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+<para>Send/receives data from SPI bus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>send</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address or command to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>received</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data from SPI bus </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if transfer fails </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="57" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8a/class_s_p_i_c_1a95ed842837d4c11d3686449e3f7e6181" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t SPIC::transfer16</definition>
+        <argsstring>(uint16_t send, uint16_t &amp;received)=0</argsstring>
+        <name>transfer16</name>
+        <reimplementedby refid="d1/d49/class_s_p_i_c_ino_1a670b205fb537baa5268590d2a3a25427">transfer16</reimplementedby>
+        <param>
+          <type>uint16_t</type>
+          <declname>send</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+<para>Send/receives data from SPI bus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>send</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address or command to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>received</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data from SPI bus </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if transfer fails </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="67" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8a/class_s_p_i_c_1ae34d166d35588542db76f2491787693b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>SPIC::Error_t SPIC::checkErrorStatus</definition>
+        <argsstring>()</argsstring>
+        <name>checkErrorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/spic.hpp" line="69" column="9" bodyfile="src/pal/spic.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="2">
+        <label>SPICIno</label>
+        <link refid="d1/d49/class_s_p_i_c_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/pal/spic.hpp" line="20" column="1" bodyfile="src/pal/spic.hpp" bodystart="21" bodyend="74"/>
+    <listofallmembers>
+      <member refid="d9/d8a/class_s_p_i_c_1ae34d166d35588542db76f2491787693b" prot="public" virt="non-virtual"><scope>SPIC</scope><name>checkErrorStatus</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bac0c1584688812e22f8f718e5686f55f2" prot="public" virt="non-virtual"><scope>SPIC</scope><name>CONF_ERROR</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1a76afcd404cc7f34ee771974ef7dc3a08" prot="public" virt="pure-virtual"><scope>SPIC</scope><name>deinit</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" prot="public" virt="non-virtual"><scope>SPIC</scope><name>Error_t</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1af2e6f3f09d3fb0aed9602556863ab59f" prot="private" virt="non-virtual"><scope>SPIC</scope><name>errorStatus</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1aaf10147dbb4db9c1dddee5343418a893" prot="public" virt="pure-virtual"><scope>SPIC</scope><name>init</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba4b39d50cc04ed6fb7036b2fc04598f8e" prot="public" virt="non-virtual"><scope>SPIC</scope><name>INTF_ERROR</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" prot="public" virt="non-virtual"><scope>SPIC</scope><name>OK</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba6aa87ba2c06fb168b837c2fb07e13f5f" prot="public" virt="non-virtual"><scope>SPIC</scope><name>READ_ERROR</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1a870e415e4d8a62c8cd67ae0f5a3db782" prot="public" virt="pure-virtual"><scope>SPIC</scope><name>transfer</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1a95ed842837d4c11d3686449e3f7e6181" prot="public" virt="pure-virtual"><scope>SPIC</scope><name>transfer16</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bae83841ed6e767461cdb307b516cd9481" prot="public" virt="non-virtual"><scope>SPIC</scope><name>WRITE_ERROR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

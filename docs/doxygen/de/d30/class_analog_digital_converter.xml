@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="de/d30/class_analog_digital_converter" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>AnalogDigitalConverter</compoundname>
+    <derivedcompoundref refid="d8/d0b/class_a_d_c_ino" prot="public" virt="virtual">ADCIno</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error_t</name>
+        <enumvalue id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea4844a5e63aa38635742da3a739ff1775" prot="public">
+          <name>OK</name>
+          <initializer>=  0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea91ba1f3b169d5dde7e1e1ef381a7a6c1" prot="public">
+          <name>INTF_ERROR</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interface error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea2fd040c14fc96c24f2bf3ec16cd36c7b" prot="public">
+          <name>CONF_ERROR</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configuration error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea1810c228e019345ebf804a227b3c8cb0" prot="public">
+          <name>READ_ERROR</name>
+          <initializer>= -3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea6c533f1d838c10926960c2017db9ce25" prot="public">
+          <name>WRITE_ERROR</name>
+          <initializer>= -4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write error </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="25" column="9" bodyfile="src/pal/adc.hpp" bodystart="26" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/d30/class_analog_digital_converter_1a1e92e43e6a852989bdf04e13655bc0f7" prot="private" static="no" mutable="no">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>Error_t AnalogDigitalConverter::errorStatus</definition>
+        <argsstring></argsstring>
+        <name>errorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="47" column="17" bodyfile="src/pal/adc.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a2609abad9fb4084bb75ac034afa0fa26" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1a2b314ccc988eabebe153a49049a8663d">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="34" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1ab236c8fcc7b98711b291ba06e4c52cad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::deinit</definition>
+        <argsstring>()=0</argsstring>
+        <name>deinit</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1a326e765d5fa76bc53b93ef71530cebf1">deinit</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="35" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a58208716e23cf64b3cc044a0c334db5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::enable</definition>
+        <argsstring>()=0</argsstring>
+        <name>enable</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1af550e48c88d33696829e0c9fb78dba30">enable</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="36" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1aacfa5466714fd8c1bc0ec7472037c730" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::disable</definition>
+        <argsstring>()=0</argsstring>
+        <name>disable</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1a22e26622d5ad60d22ac39b9ea1a450e0">disable</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="37" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a85084f7f22b3330dafaed27c5fc4c6cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::setReadResolution</definition>
+        <argsstring>(uint8_t resolution)=0</argsstring>
+        <name>setReadResolution</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1acb524a9cf2e14be1c3b4cccc1b6d5189">setReadResolution</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="38" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a35af579174536d92255b8f5dc4cee8c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::setWriteResolution</definition>
+        <argsstring>(uint8_t resolution)=0</argsstring>
+        <name>setWriteResolution</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1a3e9c038e95862a6247d3faa40fa7dbcf">setWriteResolution</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="39" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a3c89b7be66f2e6f17f64263974881a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::setWriteFrequency</definition>
+        <argsstring>(uint32_t frequency)=0</argsstring>
+        <name>setWriteFrequency</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1afd3b43383d8e0c437ece522f3228bd0c">setWriteFrequency</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>frequency</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="40" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a977edb99d09216595aa3c7173afe3800" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint16_t</type>
+        <definition>virtual uint16_t AnalogDigitalConverter::ADCRead</definition>
+        <argsstring>()=0</argsstring>
+        <name>ADCRead</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1ad4c2bb0dca60dbd39ce2c96027bcd289">ADCRead</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="41" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1aef8ea24b153f25e4f953058518935c3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t AnalogDigitalConverter::ADCWrite</definition>
+        <argsstring>(uint8_t value)=0</argsstring>
+        <name>ADCWrite</name>
+        <reimplementedby refid="d8/d0b/class_a_d_c_ino_1a643fb12247ae6f8ce24bad7bc4281ced">ADCWrite</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="42" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a942ade5ba5302c63560507679df5b26c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>AnalogDigitalConverter::Error_t AnalogDigitalConverter::checkErrorStatus</definition>
+        <argsstring>()</argsstring>
+        <name>checkErrorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/adc.hpp" line="43" column="29" bodyfile="src/pal/adc.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ADCIno</label>
+        <link refid="d8/d0b/class_a_d_c_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+    </inheritancegraph>
+    <location file="src/pal/adc.hpp" line="21" column="1" bodyfile="src/pal/adc.hpp" bodystart="22" bodyend="48"/>
+    <listofallmembers>
+      <member refid="de/d30/class_analog_digital_converter_1a977edb99d09216595aa3c7173afe3800" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>ADCRead</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1aef8ea24b153f25e4f953058518935c3a" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>ADCWrite</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a942ade5ba5302c63560507679df5b26c" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>checkErrorStatus</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea2fd040c14fc96c24f2bf3ec16cd36c7b" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>CONF_ERROR</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1ab236c8fcc7b98711b291ba06e4c52cad" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>deinit</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1aacfa5466714fd8c1bc0ec7472037c730" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>disable</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a58208716e23cf64b3cc044a0c334db5f" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>enable</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>Error_t</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a1e92e43e6a852989bdf04e13655bc0f7" prot="private" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>errorStatus</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a2609abad9fb4084bb75ac034afa0fa26" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>init</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea91ba1f3b169d5dde7e1e1ef381a7a6c1" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>INTF_ERROR</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea4844a5e63aa38635742da3a739ff1775" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>OK</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea1810c228e019345ebf804a227b3c8cb0" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>READ_ERROR</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a85084f7f22b3330dafaed27c5fc4c6cf" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>setReadResolution</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a3c89b7be66f2e6f17f64263974881a96" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>setWriteFrequency</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a35af579174536d92255b8f5dc4cee8c4" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>setWriteResolution</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea6c533f1d838c10926960c2017db9ce25" prot="public" virt="non-virtual"><scope>AnalogDigitalConverter</scope><name>WRITE_ERROR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

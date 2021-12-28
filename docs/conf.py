@@ -30,7 +30,7 @@ import subprocess, os, sys
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
-# breathe_projects = {}
+breathe_projects = {"xfp-dev":"../doxygen/"}
 # if read_the_docs_build:
 # 	input_dir = '../src'
 # 	output_dir = 'build'
@@ -41,7 +41,7 @@ read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 # -- Project information -----------------------------------------------------
 
 project = 'Motor System IC TLE956x'
-copyright = '2021 Infineon Technologies AG'
+copyright = '2022 Infineon Technologies AG'
 author = 'Infineon Technologies AG'
 
 # -- General configuration ---------------------------------------------------
@@ -66,7 +66,8 @@ author = 'Infineon Technologies AG'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinxemoji.sphinxemoji',
-    'sphinx_tabs.tabs'
+    'sphinx_tabs.tabs',
+	'breathe'
 ]
 
 # source_parsers = {
@@ -108,7 +109,7 @@ html_logo = 'img/ifx_logo_white_green_s.png'
 html_static_path = ['_templates']
 
 # # Breathe Configuration
-# breathe_default_project = "xfp-dev"
+breathe_default_project = "xfp-dev"
 
 # breathe_domain_by_extension = {
 #         "hpp" : "cpp",

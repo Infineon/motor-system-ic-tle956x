@@ -1,0 +1,1584 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d5/d20/class_tle9xxx" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Tle9xxx</compoundname>
+    <derivedcompoundref refid="d0/dab/class_tle9562" prot="public" virt="non-virtual">Tle9562</derivedcompoundref>
+    <derivedcompoundref refid="d0/d80/class_tle9563" prot="public" virt="non-virtual">Tle9563</derivedcompoundref>
+    <includes refid="d7/def/_t_l_e9xxx_8hpp" local="no">TLE9xxx.hpp</includes>
+      <sectiondef kind="user-defined">
+      <header>TLE9xxx.cpp - Arduino library to control Infineon&apos;s BLDC Motor Control Shield with Tle9xxx</header>
+      <description><para>This library includes the generic functions for TLE9xxx family tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga53cf8385917444b08e99aedfd90c8c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9xxx::Tle9xxx</definition>
+        <argsstring>(void)</argsstring>
+        <name>Tle9xxx</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>standard constructor with default pin assignment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="186" column="1" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="15" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga676b5b07865ba83c7dad25d87b6b9a66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9xxx::~Tle9xxx</definition>
+        <argsstring>(void)</argsstring>
+        <name>~Tle9xxx</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>standard destructor switches shield off </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="189" column="1" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="35" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gad648699c59a176eabd881829ec566611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::configInterruptMask</definition>
+        <argsstring>(void)</argsstring>
+        <name>configInterruptMask</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>set the Interrupt Mask to select which events should cause a hardware pin interrupt generation </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="206" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="79" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga4287b4c3b90e8b4ebdc680e08da64dc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatusInformationField</definition>
+        <argsstring>(void)</argsstring>
+        <name>checkStatusInformationField</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>this function will be called if an an interrupt occured. It will first gather information about the error out of the Status information field. Depending on which bits are set there, the specific register values will be read for more information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>uint8_t status information field content </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="214" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="86" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga6f9b5e974a9fb337e29d77e7f74f6685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tle9xxx::PrintTLEErrorMessage</definition>
+        <argsstring>(uint16_t msg, uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>PrintTLEErrorMessage</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>Print an Error message, if an interrupt occurs and TLE status register contains an error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hand over error code </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RegAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address of the register, the error bit was set in </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RegContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>full content of the register, ther error bit was set in </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="223" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="178" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga69d9baf47a1c79db784c2deea82801b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatSUP</definition>
+        <argsstring>(uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>checkStatSUP</name>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>read the Supply Voltage Fail Status register of the TLE and generate an ErrorCode depending of the fault-category </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returns the composed register address and content for detailed debugging </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DiagFlag return the generated Error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="231" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="105" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga4f04b59ebd49fd0266fb15f7f0431d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatTHERM</definition>
+        <argsstring>(uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>checkStatTHERM</name>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>read the Thermal Protection status register of the TLE and generate an ErrorCode depending of the fault-category </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returns the composed register address and content for detailed debugging </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DiagFlag return the generated Error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="239" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="122" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gadf6450de430cf116e9a71cea08ea9255" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatHSS</definition>
+        <argsstring>(uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>checkStatHSS</name>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>read the High-Side Switch status register of the TLE and generate an ErrorCode depending of the fault-category </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returns the composed register address and content for detailed debugging </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DiagFlag return the generated Error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="247" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga485b2d6b8dfab713af4ae901cfe8f7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatDEV</definition>
+        <argsstring>(uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>checkStatDEV</name>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>read the Device Information status register of the TLE and generate an ErrorCode depending of the fault-category </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>returns the composed register address and content for detailed debugging </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>DiagFlag return the generated Error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="255" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="151" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gac4153fb68bf24e4e6381bc2beca0a434" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::checkStatDSOV</definition>
+        <argsstring>(uint16_t &amp;RegAddress, uint16_t &amp;RegContent)</argsstring>
+        <name>checkStatDSOV</name>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegAddress</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>RegContent</declname>
+        </param>
+        <briefdescription>
+<para>read the Drain-source overvoltage status register and generate an ErrorCode depending of the fault-category </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RegAddress</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adress of DSOV register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RegContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Content of DSOV register </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t DiagFlag return the generated Error code </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="264" column="10" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="164" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga62aefffcf1c28787ba829c2188286df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::init_AGC_Algorithm</definition>
+        <argsstring>(uint8_t hb)</argsstring>
+        <name>init_AGC_Algorithm</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <briefdescription>
+<para>initialize variables for the adaptive gate control algorithm </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="270" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="320" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gadf275dbf7f04495cad453ec1cc9e68ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::emaCalculation</definition>
+        <argsstring>(uint8_t hb, uint8_t *risetime, uint8_t *falltime)</argsstring>
+        <name>emaCalculation</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>risetime</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>falltime</declname>
+        </param>
+        <briefdescription>
+<para>read out rise-time of TLE and store calculated value in a global variable </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="276" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="337" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga6770234f70fc34ea413597ff5bc5c1ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::adaptiveHysteresisDecisionTree</definition>
+        <argsstring>(uint8_t hb, uint8_t *ichg, uint8_t *idchg)</argsstring>
+        <name>adaptiveHysteresisDecisionTree</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>ichg</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>idchg</declname>
+        </param>
+        <briefdescription>
+<para>increase or decrease the charge current, depending on some conditions </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="282" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="366" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga62d17043ca2b290c1d976adce129fe72" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_TPRECHG</definition>
+        <argsstring>(uint8_t t_pchgx, uint8_t t_pdchgx)</argsstring>
+        <name>set_TPRECHG</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_pchgx</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_pdchgx</declname>
+        </param>
+        <briefdescription>
+<para>set the precharge and pre-discharge time for all MOSFETs. This function sends two SPI commands. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_pchgx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Precharge time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t_pdchgx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pre-discharge time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="303" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="232" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gab523ee9a41b3d69dd1a1e9704a7d1f69" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_ST_ICHG</definition>
+        <argsstring>(uint8_t ichgst1, uint8_t ichgst2, uint8_t ichgst3, uint8_t ichgst4)</argsstring>
+        <name>set_ST_ICHG</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichgst1</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichgst2</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichgst3</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichgst4</declname>
+        </param>
+        <briefdescription>
+<para>set the charge discharge current for static activation (no PWM). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ichgst1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>static charge and discharge currents on PHASE1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ichgst2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>static charge and discharge currents on PHASE2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ichgst3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>static charge and discharge currents on PHASE3 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ichgst4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>static charge and discharge currents on PHASE4 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="313" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="243" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga65eef7abf4e3fb3c2c8d268e58b4b09d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_HB_ICHG</definition>
+        <argsstring>(uint8_t idchg, uint8_t ichg, bool ACTorFW, uint8_t hb)</argsstring>
+        <name>set_HB_ICHG</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>idchg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichg</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ACTorFW</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <briefdescription>
+<para>HB charge/discharge currents for PWM operation REF p.221 in TLE9562 datasheet. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>idchg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Discharge current of HBx active MOSFET </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ichg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Charge current of HBx active MOSFET or charge and discharge current of HBx FW MOSFET </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ACTorFW</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 = active MOSFET, 1 = FW MOSFET </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;3] which halfbridge should be changed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="323" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="249" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga5276284f38e02781c28c7a62a51e054f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_HB_ICHG_MAX</definition>
+        <argsstring>(uint8_t hbxidiag, uint8_t ichgMaxx)</argsstring>
+        <name>set_HB_ICHG_MAX</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hbxidiag</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>ichgMaxx</declname>
+        </param>
+        <briefdescription>
+<para>HM max. pre-charge/pre-discharge in PWM operation current and diagnostic pull-down. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hbxidiag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;1] Control of HBx off-state current source and current sink </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ichgMaxx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;3] Maximum drive current of all HBs during the pre-charge phase and pre-discharge phases </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="331" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="255" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga81037dacc231e2c29698780f05f51795" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_PCHG_INIT</definition>
+        <argsstring>(uint8_t pdchg_init, uint8_t pchg_init, uint8_t init_bnk)</argsstring>
+        <name>set_PCHG_INIT</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>pdchg_init</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pchg_init</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>init_bnk</declname>
+        </param>
+        <briefdescription>
+<para>HBx per-charge/pre-discharge initialization configuration in PWM operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pdchg_init</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial predischarge current of HBx </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pchg_init</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial precharge current of HBx </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>init_bnk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Banking bits for Precharge and Predischarge Initial Current </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="340" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="266" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga3de1fbeace474f38922d52cbc2a3a345" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_TDON_HB_CTRL</definition>
+        <argsstring>(uint8_t t_don, uint8_t hb_tdon_bnk)</argsstring>
+        <name>set_TDON_HB_CTRL</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_don</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb_tdon_bnk</declname>
+        </param>
+        <briefdescription>
+<para>HBx inouts TDON configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_don</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Turn-on delay time of active MOSFET of HBx </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb_tdon_bnk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Banking bits for turn-on delay time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="348" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="272" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga88baa110519cdd5e918321a4e5b97abd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_TDOFF_HB_CTRL</definition>
+        <argsstring>(uint8_t t_doff, uint8_t hb_tdoff_bnk)</argsstring>
+        <name>set_TDOFF_HB_CTRL</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_doff</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb_tdoff_bnk</declname>
+        </param>
+        <briefdescription>
+<para>HBx TDOFF configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_doff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tirn-off delay time of active MOSFET of HBx </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb_tdoff_bnk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Banking bits for turn-off delay time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="356" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="278" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga68e755a742e078186cc75844ae66768a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_LS_and_HS_VDS</definition>
+        <argsstring>(uint8_t vdsth, bool deep_adap, uint8_t tfvds)</argsstring>
+        <name>set_LS_and_HS_VDS</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>vdsth</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>deep_adap</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>tfvds</declname>
+        </param>
+        <briefdescription>
+<para>Set the LS and HS VDS monitoring threshold. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vdsth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;7]drain-source overvoltage threshold for all HS and LS </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>deep_adap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;1] Deep Adaption </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tfvds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;3] Filter time of drain-source voltage moitoring </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="365" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="284" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gaf698b2d9527ff60ebb579b7f37a9541c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::set_CCP_BLK</definition>
+        <argsstring>(uint8_t t_blank, uint8_t t_ccp, bool ACTorFW, uint8_t hb)</argsstring>
+        <name>set_CCP_BLK</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_blank</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>t_ccp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ACTorFW</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <briefdescription>
+<para>Set the current protection times. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t_blank</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set blank time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t_ccp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>set cross current protection time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ACTorFW</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>0 = active MOSFET, 1 = FW MOSFET </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>[0;3] which halfbridge should be changed </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="375" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="295" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gac876192b5abd5ec2dd836df8ee41b85c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::checkStat_TRISE_FALL</definition>
+        <argsstring>(uint8_t hb, uint8_t &amp;Trise, uint8_t &amp;Tfall)</argsstring>
+        <name>checkStat_TRISE_FALL</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <param>
+          <type>uint8_t &amp;</type>
+          <declname>Trise</declname>
+        </param>
+        <param>
+          <type>uint8_t &amp;</type>
+          <declname>Tfall</declname>
+        </param>
+        <briefdescription>
+<para>Reads out the MOSFET rise/fall time of the given PWM half-bridge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which halfbridge should be read [1-4] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="382" column="5" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="302" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga77033dbb01051216f3f7c39c2d6df4ab" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::SBC_CRC_Disable</definition>
+        <argsstring>()</argsstring>
+        <name>SBC_CRC_Disable</name>
+        <briefdescription>
+<para>disable the cyclic redundancy check of TLE9xxx </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="387" column="6" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="44" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga5671bd1e237f00622df09f1dc4f4aa4c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::writeReg</definition>
+        <argsstring>(uint8_t addr, uint16_t data)</argsstring>
+        <name>writeReg</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>send SPI comands to the TLE9xxx If CRC is disabled, static pattern will be added automatically. TODO: insert another layer below writeReg, so this function can be used for SPI as well as for CAN and Lin </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>addres of the register you want access (use the enum in TLE9xxx-reg.cpp) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data you want to transmitt (16-bit) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="397" column="9" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="55" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga93b8e9cce502e67533e47d443af36187" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::readReg</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>readReg</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+<para>read SPI commands from TLE9xxx </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>addres of the register you want to read from (use the enum in TLE9xxx-reg.cpp) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint16_t returned value of TLE9xxx (16-bit) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="405" column="10" bodyfile="src/corelib/TLE9xxx.cpp" bodystart="67" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d9/d8d/group__tle9xxxapi_1gaff3be5449003553d49468ce00699d852" prot="public" static="no" strong="no">
+        <type></type>
+        <name>DiagFlag</name>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a57d353485f118428d571597fb55c7e76" prot="public">
+          <name>TLE_OC_CSA_OVERCURRENT</name>
+          <initializer>= 0x200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a0af3d4e8c410ab0dfb794d7ec9adedaa" prot="public">
+          <name>TLE_HS_LS_OVERVOLTAGE</name>
+          <initializer>= 0x100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab60d252d3bbff5950ceccaec61eb0b1d" prot="public">
+          <name>TLE_SPI_ERROR</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a3ff4f1f864d2c7daa45a7ecdfc00e20c" prot="public">
+          <name>TLE_LOAD_ERROR</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a29b2235f8b8b42d8ef66e2934c0f18e8" prot="public">
+          <name>TLE_UNDER_VOLTAGE</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a41ae9e9c0bfc03398f2bade3618ce1ce" prot="public">
+          <name>TLE_OVER_VOLTAGE</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a37c1dfed16bbac8980e7f45981418a41" prot="public">
+          <name>TLE_POWER_ON_RESET</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab5404f9fed536ae06b27f197c535b971" prot="public">
+          <name>TLE_TEMP_SHUTDOWN</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a04ce392968c0c109ced45c245b989e75" prot="public">
+          <name>TLE_OVERCURRENT</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a13903c104f461a4030fddba21749702b" prot="public">
+          <name>TLE_SHORT_CIRCUIT</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>enum for the flags </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="150" column="1" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="151" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/d8d/group__tle9xxxapi_1gaca4ed79655d0c35e8740b3e8d8c28537" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SIF</name>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ab49f3c82e8f8077338da7537f9660d5e" prot="public">
+          <name>SIF_SPI_CRC_FAIL</name>
+          <initializer>= 	0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a5ea3959fcb77a258f554f1d640b9c0ae" prot="public">
+          <name>SIF_BD_STAT</name>
+          <initializer>= 		0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a9a2b1b8c876bbdfa5a5181f465fbd3b0" prot="public">
+          <name>SIF_DEV_STAT</name>
+          <initializer>= 		0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537abb712721d97af5751178ddd41f91acea" prot="public">
+          <name>SIF_HS_STAT</name>
+          <initializer>= 		0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a4a83164aacb5a847ac287db746ff2f9c" prot="public">
+          <name>SIF_WAKE_UP</name>
+          <initializer>= 		0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ae1ffcbbe4d5a03c68549691bfae5d77b" prot="public">
+          <name>SIF_BUS_STAT</name>
+          <initializer>= 		0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537af9043c71b9ca3b1bdb271e4ebc369e40" prot="public">
+          <name>SIF_TEMP_STAT</name>
+          <initializer>= 	0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537afc8d4ff8474a42ec2f31815c149af419" prot="public">
+          <name>SIF_SUPPLY_STAT</name>
+          <initializer>= 	0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="163" column="1" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="164" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/d8d/group__tle9xxxapi_1ga3d964d0434eeb043c7af8a8750bed236" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_Halfbridges</name>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a839b86ec4bf505cca6280c61ef3eec68" prot="public">
+          <name>PHASE1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a30de5f2c6bd8ff011d1be8f31ecc5c1b" prot="public">
+          <name>PHASE2</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a6ddab5937cf13307498d7271ef0caada" prot="public">
+          <name>PHASE3</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a99ec3c0dc978a295a3b8e08056a772a6" prot="public">
+          <name>PHASE4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="174" column="1" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="174" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gafdc0dca5f40b36a6fc903775e11ec55d" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9xxx::ActiveGround</definition>
+        <argsstring></argsstring>
+        <name>ActiveGround</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="181" column="12" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga58c1c4e589b0dcbd3a26f5fac65f3c5b" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9xxx::ActivePWM</definition>
+        <argsstring></argsstring>
+        <name>ActivePWM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="182" column="12" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gaa028505da322ab1872d34a35d9c9ebf3" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9xxx::Floating</definition>
+        <argsstring></argsstring>
+        <name>Floating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="183" column="12" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga83b424263e625a8fce3207b77131712f" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::m_trise_tg</definition>
+        <argsstring></argsstring>
+        <name>m_trise_tg</name>
+        <initializer>= CONF_TRISE_TG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="284" column="8" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gaad816c7399444212118ad824687bc6e1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::m_tfall_tg</definition>
+        <argsstring></argsstring>
+        <name>m_tfall_tg</name>
+        <initializer>= CONF_TFALL_TG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="285" column="8" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="285" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga138eaaf17176c9484ab7a8233118158d" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> *</type>
+        <definition>GPIO* Tle9xxx::intn</definition>
+        <argsstring></argsstring>
+        <name>intn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="287" column="10" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="287" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga4069eda61d4a4115c33586f4988027e3" prot="public" static="no" mutable="no">
+        <type><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> *</type>
+        <definition>SPIC* Tle9xxx::sBus</definition>
+        <argsstring></argsstring>
+        <name>sBus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="288" column="10" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga6da329d276f3711b742493b53a995fb8" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> *</type>
+        <definition>GPIO* Tle9xxx::csn</definition>
+        <argsstring></argsstring>
+        <name>csn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="289" column="10" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga36098999ef4a9b1a083f9fd15f845722" prot="public" static="no" mutable="no">
+        <type><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> *</type>
+        <definition>Timer* Tle9xxx::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="290" column="10" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="290" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" prot="protected" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::m_trise_ema[MAX_ICHG - MIN_ICHG+1]</definition>
+        <argsstring>[MAX_ICHG - MIN_ICHG+1]</argsstring>
+        <name>m_trise_ema</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="407" column="17" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="407" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" prot="protected" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t Tle9xxx::m_tfall_ema[MAX_ICHG - MIN_ICHG+1]</definition>
+        <argsstring>[MAX_ICHG - MIN_ICHG+1]</argsstring>
+        <name>m_tfall_ema</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="408" column="17" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::m_ichg</definition>
+        <argsstring></argsstring>
+        <name>m_ichg</name>
+        <initializer>= CONF_INIT_ICHG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="409" column="17" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="409" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::m_idchg</definition>
+        <argsstring></argsstring>
+        <name>m_idchg</name>
+        <initializer>= CONF_INIT_IDCHG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="410" column="17" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="410" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::_statusInformationField</definition>
+        <argsstring></argsstring>
+        <name>_statusInformationField</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="411" column="8" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="411" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::_agc_status</definition>
+        <argsstring></argsstring>
+        <name>_agc_status</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="412" column="8" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="412" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t Tle9xxx::_error_enable</definition>
+        <argsstring></argsstring>
+        <name>_error_enable</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="413" column="8" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="413" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Tle9xxx::begin</definition>
+        <argsstring>()=0</argsstring>
+        <name>begin</name>
+        <reimplementedby refid="db/ddb/group__tle9562api_1ga3ce91ac7eed1aabe88a260a3e84ad946">begin</reimplementedby>
+        <reimplementedby refid="d4/dc2/group__tle9563api_1ga7981ab50d1fe15336933075dd6259426">begin</reimplementedby>
+        <briefdescription>
+<para>virtual function definitions, will be declared in the inheritance sub-classes like <ref refid="d0/d80/class_tle9563" kindref="compound">Tle9563</ref>, <ref refid="d0/dab/class_tle9562" kindref="compound">Tle9562</ref>, ... </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="195" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1gac1897615e722fbc12782a12255f6e66a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Tle9xxx::end</definition>
+        <argsstring>()=0</argsstring>
+        <name>end</name>
+        <reimplementedby refid="db/ddb/group__tle9562api_1gaa91f0173248b80690332a07dcaa269c1">end</reimplementedby>
+        <reimplementedby refid="d4/dc2/group__tle9563api_1gaa4d6310047ecd0411fadc862408f96c3">end</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="196" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d8d/group__tle9xxxapi_1ga5e223f3af15a34eb4283fbbb79e95130" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9xxx::PrintBinary</definition>
+        <argsstring>(uint8_t digits, uint16_t number)</argsstring>
+        <name>PrintBinary</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>digits</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>number</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx.hpp" line="224" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents a basic TLE9xxx </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class provides all generic, a TLE9xxx SBC is capable of. This mainly includes the the SPI read/wrtite functions, Cyclic redundancy check (CRC) setup and interrupt-error settings.</para>
+<para>This class is not intended to be used directly. It should bequeath its generic functions to a derived class that adds the virtual defined functions related to a specific SBC. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Tle9562</label>
+        <link refid="d0/dab/class_tle9562"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Tle9563</label>
+        <link refid="d0/d80/class_tle9563"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="2">
+        <label>HBconfig_t</label>
+        <link refid="d4/d7b/struct_h_bconfig__t"/>
+      </node>
+      <node id="4">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="5">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="1">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>csn</edgelabel>
+          <edgelabel>intn</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>sBus</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/corelib/TLE9xxx.hpp" line="146" column="1" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="147" bodyend="415"/>
+    <listofallmembers>
+      <member refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>_agc_status</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>_error_enable</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga3d964d0434eeb043c7af8a8750bed236" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>_Halfbridges</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>_statusInformationField</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gafdc0dca5f40b36a6fc903775e11ec55d" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>ActiveGround</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga58c1c4e589b0dcbd3a26f5fac65f3c5b" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>ActivePWM</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6770234f70fc34ea413597ff5bc5c1ec" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>adaptiveHysteresisDecisionTree</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee" prot="public" virt="pure-virtual"><scope>Tle9xxx</scope><name>begin</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gac876192b5abd5ec2dd836df8ee41b85c" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStat_TRISE_FALL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga485b2d6b8dfab713af4ae901cfe8f7c2" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatDEV</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gac4153fb68bf24e4e6381bc2beca0a434" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatDSOV</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadf6450de430cf116e9a71cea08ea9255" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatHSS</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga69d9baf47a1c79db784c2deea82801b6" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatSUP</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4f04b59ebd49fd0266fb15f7f0431d12" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatTHERM</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4287b4c3b90e8b4ebdc680e08da64dc6" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>checkStatusInformationField</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gad648699c59a176eabd881829ec566611" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>configInterruptMask</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6da329d276f3711b742493b53a995fb8" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>csn</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaff3be5449003553d49468ce00699d852" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>DiagFlag</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadf275dbf7f04495cad453ec1cc9e68ae" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>emaCalculation</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gac1897615e722fbc12782a12255f6e66a" prot="public" virt="pure-virtual"><scope>Tle9xxx</scope><name>end</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaa028505da322ab1872d34a35d9c9ebf3" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>Floating</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga62aefffcf1c28787ba829c2188286df1" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>init_AGC_Algorithm</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga138eaaf17176c9484ab7a8233118158d" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>intn</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>m_ichg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>m_idchg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>m_tfall_ema</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaad816c7399444212118ad824687bc6e1" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>m_tfall_tg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>m_trise_ema</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga83b424263e625a8fce3207b77131712f" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>m_trise_tg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a839b86ec4bf505cca6280c61ef3eec68" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PHASE1</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a30de5f2c6bd8ff011d1be8f31ecc5c1b" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PHASE2</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a6ddab5937cf13307498d7271ef0caada" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PHASE3</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a99ec3c0dc978a295a3b8e08056a772a6" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PHASE4</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5e223f3af15a34eb4283fbbb79e95130" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PrintBinary</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6f9b5e974a9fb337e29d77e7f74f6685" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>PrintTLEErrorMessage</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga93b8e9cce502e67533e47d443af36187" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>readReg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga77033dbb01051216f3f7c39c2d6df4ab" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>SBC_CRC_Disable</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4069eda61d4a4115c33586f4988027e3" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>sBus</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaf698b2d9527ff60ebb579b7f37a9541c" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_CCP_BLK</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga65eef7abf4e3fb3c2c8d268e58b4b09d" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_HB_ICHG</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5276284f38e02781c28c7a62a51e054f" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_HB_ICHG_MAX</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga68e755a742e078186cc75844ae66768a" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_LS_and_HS_VDS</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga81037dacc231e2c29698780f05f51795" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_PCHG_INIT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gab523ee9a41b3d69dd1a1e9704a7d1f69" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_ST_ICHG</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga88baa110519cdd5e918321a4e5b97abd" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_TDOFF_HB_CTRL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga3de1fbeace474f38922d52cbc2a3a345" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_TDON_HB_CTRL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga62d17043ca2b290c1d976adce129fe72" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>set_TPRECHG</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaca4ed79655d0c35e8740b3e8d8c28537" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a5ea3959fcb77a258f554f1d640b9c0ae" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_BD_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ae1ffcbbe4d5a03c68549691bfae5d77b" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_BUS_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a9a2b1b8c876bbdfa5a5181f465fbd3b0" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_DEV_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537abb712721d97af5751178ddd41f91acea" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_HS_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ab49f3c82e8f8077338da7537f9660d5e" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_SPI_CRC_FAIL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537afc8d4ff8474a42ec2f31815c149af419" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_SUPPLY_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537af9043c71b9ca3b1bdb271e4ebc369e40" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_TEMP_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a4a83164aacb5a847ac287db746ff2f9c" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>SIF_WAKE_UP</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga36098999ef4a9b1a083f9fd15f845722" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>timer</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga53cf8385917444b08e99aedfd90c8c58" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>Tle9xxx</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a0af3d4e8c410ab0dfb794d7ec9adedaa" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_HS_LS_OVERVOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a3ff4f1f864d2c7daa45a7ecdfc00e20c" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_LOAD_ERROR</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a57d353485f118428d571597fb55c7e76" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_OC_CSA_OVERCURRENT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a41ae9e9c0bfc03398f2bade3618ce1ce" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_OVER_VOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a04ce392968c0c109ced45c245b989e75" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_OVERCURRENT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a37c1dfed16bbac8980e7f45981418a41" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_POWER_ON_RESET</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a13903c104f461a4030fddba21749702b" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_SHORT_CIRCUIT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab60d252d3bbff5950ceccaec61eb0b1d" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_SPI_ERROR</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab5404f9fed536ae06b27f197c535b971" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_TEMP_SHUTDOWN</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a29b2235f8b8b42d8ef66e2934c0f18e8" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>TLE_UNDER_VOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5671bd1e237f00622df09f1dc4f4aa4c" prot="protected" virt="non-virtual"><scope>Tle9xxx</scope><name>writeReg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga676b5b07865ba83c7dad25d87b6b9a66" prot="public" virt="non-virtual"><scope>Tle9xxx</scope><name>~Tle9xxx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

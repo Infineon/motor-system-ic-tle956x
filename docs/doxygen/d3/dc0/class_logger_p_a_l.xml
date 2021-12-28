@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d3/dc0/class_logger_p_a_l" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>LoggerPAL</compoundname>
+    <derivedcompoundref refid="da/dc9/class_logger_ino" prot="public" virt="non-virtual">LoggerIno</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error_t</name>
+        <enumvalue id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca40f2535bcadc6886b106b51e2d111a00" prot="public">
+          <name>OK</name>
+          <initializer>=  0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426cac225fa4d0011b59aabf33798fc5fed7a" prot="public">
+          <name>INTF_ERROR</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interface error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca4ebb8267793fee0d2be101568ca02c10" prot="public">
+          <name>CONF_ERROR</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configuration error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca8192c67db38d0d1d5325283f7deb5e2d" prot="public">
+          <name>READ_ERROR</name>
+          <initializer>= -3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca7f267081044415ff514092e6eee409ad" prot="public">
+          <name>WRITE_ERROR</name>
+          <initializer>= -4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write error </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/logger.hpp" line="23" column="5" bodyfile="src/pal/logger.hpp" bodystart="24" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dc0/class_logger_p_a_l_1afe2da5d1f38d8d0833482c3e63997fb2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t LoggerPAL::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="da/dc9/class_logger_ino_1a33c30e8f02b26262ef246e1680f4cb09">init</reimplementedby>
+        <briefdescription>
+<para>Initializes the <ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PAS CO2 error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INTF_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/logger.hpp" line="38" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc0/class_logger_p_a_l_1a4a3b89e352dd06218a2399032bd4a5c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t LoggerPAL::deinit</definition>
+        <argsstring>()=0</argsstring>
+        <name>deinit</name>
+        <reimplementedby refid="da/dc9/class_logger_ino_1a85df7c3a04163b5c241a95a77b22afba">deinit</reimplementedby>
+        <briefdescription>
+<para>Deinitializes the logger interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>PAS CO2 error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INTF_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/logger.hpp" line="46" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/dc0/class_logger_p_a_l_1a36b4bbf4cb32e75f20eed5e96f747b55" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t LoggerPAL::write</definition>
+        <argsstring>(const uint8_t *logData, uint32_t length)=0</argsstring>
+        <name>write</name>
+        <reimplementedby refid="da/dc9/class_logger_ino_1a0b6ff5f5dacd8f5898681aed7316fda3">write</reimplementedby>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>logData</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Writes in the logger interface. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">*logData</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array holding the data to be logged </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Length in bytes of the data to be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>PAS CO2 error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INTF_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/logger.hpp" line="56" column="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>LoggerIno</label>
+        <link refid="da/dc9/class_logger_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LoggerPAL</label>
+        <link refid="d3/dc0/class_logger_p_a_l"/>
+      </node>
+    </inheritancegraph>
+    <location file="src/pal/logger.hpp" line="19" column="1" bodyfile="src/pal/logger.hpp" bodystart="20" bodyend="57"/>
+    <listofallmembers>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca4ebb8267793fee0d2be101568ca02c10" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>CONF_ERROR</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a4a3b89e352dd06218a2399032bd4a5c1" prot="public" virt="pure-virtual"><scope>LoggerPAL</scope><name>deinit</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>Error_t</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1afe2da5d1f38d8d0833482c3e63997fb2" prot="public" virt="pure-virtual"><scope>LoggerPAL</scope><name>init</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426cac225fa4d0011b59aabf33798fc5fed7a" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>INTF_ERROR</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca40f2535bcadc6886b106b51e2d111a00" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>OK</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca8192c67db38d0d1d5325283f7deb5e2d" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>READ_ERROR</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a36b4bbf4cb32e75f20eed5e96f747b55" prot="public" virt="pure-virtual"><scope>LoggerPAL</scope><name>write</name></member>
+      <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca7f267081044415ff514092e6eee409ad" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>WRITE_ERROR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

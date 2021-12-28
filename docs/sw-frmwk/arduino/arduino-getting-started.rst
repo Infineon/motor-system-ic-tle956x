@@ -1,4 +1,4 @@
-.. _arduino-examples:
+.. _arduino-getting-started:
 
 Arduino Getting Started
 =======================
@@ -17,14 +17,10 @@ Microcontroller
 """""""""""""""
 Any Arduino compatible board with Arduino Uno form-factor, like XMC1100 Boot Kit or other Arduino compatible XMC boards from Infineon:
 
-.. image:: ../../img/XMC1100.jpg
-    :height: 200
 
 Smart High-Side Power Switch Shield
 """""""""""""""""""""""""""""""""""
 
-.. image:: ../../img/bts700x_shield.jpg
-    :height: 200
 
 Required Software
 -----------------
@@ -52,23 +48,13 @@ The shield can be used with all platforms that support the Arduino form factor. 
 
 To connect the shield you just have to assure that the notch of the Arduino Uno and the shield are above each other. Then you can plug the shield on top of the Arduino.
 
-.. image:: ../../img/arduino-marked.png
-    :height: 200
-
-.. image:: ../../img/hss-marked.png
-    :height: 200
-
 The pin headers can also be used to figure out the right orientation. There is only one way to properly connect them.
 
 As soon as the shield is connected to the Arduino you can connect a USB cable to the Arduino to power up the microcontroller. Make sure that no code or the example code of this repository is flashed to the microcontroller. Otherwise it can happen that the board is already activating one of the switches.
 
-.. image:: ../../img/arduino-hss-stack.png
-    :height: 200
 
 Now you can attach the power supply to the battery pad on the board. There are two, one for a large wire gauge and the other is next to the switches pads and is meant for smaller cables. Don't forget to connect the ground wire!
 
-.. image:: ../../img/hss-powercon.png
-    :height: 200
 
 Now you only have to attach your load to the desired switch. For getting familiar with the board it is recommended to use a resistive load to check the functionality of the board and the shield.
 

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_b85deeec3e940e8ec5637c145ef17ca4" kind="dir">
+    <compoundname>corelib</compoundname>
+    <innerfile refid="d0/d41/_b_l_d_c_m-control_8cpp">BLDCM-control.cpp</innerfile>
+    <innerfile refid="d7/da6/_b_l_d_c_m-control_8hpp">BLDCM-control.hpp</innerfile>
+    <innerfile refid="dd/d49/_d_c_m-control_8cpp">DCM-control.cpp</innerfile>
+    <innerfile refid="de/d59/_d_c_m-control_8hpp">DCM-control.hpp</innerfile>
+    <innerfile refid="d9/d77/_t_l_e9562_8cpp">TLE9562.cpp</innerfile>
+    <innerfile refid="d8/dc4/_t_l_e9562_8hpp">TLE9562.hpp</innerfile>
+    <innerfile refid="dc/d3d/_t_l_e9563_8cpp">TLE9563.cpp</innerfile>
+    <innerfile refid="d7/d92/_t_l_e9563_8hpp">TLE9563.hpp</innerfile>
+    <innerfile refid="d6/d9b/_t_l_e9xxx-reg_8hpp">TLE9xxx-reg.hpp</innerfile>
+    <innerfile refid="dd/d9f/_t_l_e9xxx_8cpp">TLE9xxx.cpp</innerfile>
+    <innerfile refid="d7/def/_t_l_e9xxx_8hpp">TLE9xxx.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/corelib/"/>
+  </compounddef>
+</doxygen>

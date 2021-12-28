@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d0/d80/tle9xxx-conf-opts_8hpp" kind="file" language="C++">
+    <compoundname>tle9xxx-conf-opts.hpp</compoundname>
+    <includedby refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">tle9xxx-conf.hpp</includedby>
+    <invincdepgraph>
+      <node id="4">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="3">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="10">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>BLDCM-control.cpp</label>
+        <link refid="d0/d41/_b_l_d_c_m-control_8cpp"/>
+      </node>
+      <node id="6">
+        <label>BLDCM-control.hpp</label>
+        <link refid="d7/da6/_b_l_d_c_m-control_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="12">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>logger-arduino.cpp</label>
+        <link refid="de/d46/logger-arduino_8cpp"/>
+      </node>
+      <node id="15">
+        <label>logger-arduino.hpp</label>
+        <link refid="da/d62/logger-arduino_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>timer-arduino.cpp</label>
+        <link refid="df/d09/timer-arduino_8cpp"/>
+      </node>
+      <node id="21">
+        <label>timer-arduino.hpp</label>
+        <link refid="da/dda/timer-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>pin-config-arduino.cpp</label>
+        <link refid="d3/d11/pin-config-arduino_8cpp"/>
+      </node>
+      <node id="17">
+        <label>pin-config-arduino.hpp</label>
+        <link refid="d7/d92/pin-config-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>logger.hpp</label>
+        <link refid="d6/da3/logger_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>BLDCM-logger.cpp</label>
+        <link refid="de/dab/_b_l_d_c_m-logger_8cpp"/>
+      </node>
+      <node id="5">
+        <label>BLDCM-logger.hpp</label>
+        <link refid="de/d67/_b_l_d_c_m-logger_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1gab43e2824aa12a2412f952abe3a1e6df9" prot="public" static="no">
+        <name>TLE9XXX_FRMWK_ARDUINO</name>
+        <initializer>0x00U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/config/tle9xxx-conf-opts.hpp" line="17" column="9" bodyfile="src/config/tle9xxx-conf-opts.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga50507c36fbfe63b379d8ac040fba7125" prot="public" static="no">
+        <name>TLE9XXX_FRMWK_WICED</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/config/tle9xxx-conf-opts.hpp" line="18" column="9" bodyfile="src/config/tle9xxx-conf-opts.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TLE9XXX Library Configuration Options. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>Copyright (c) 2021 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TLE9XXX_CONF_OPTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9XXX_CONF_OPTS_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9XXX_FRMWK_ARDUINO<sp/><sp/><sp/>0x00U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9XXX_FRMWK_WICED<sp/><sp/><sp/><sp/><sp/>0x01U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/config/tle9xxx-conf-opts.hpp"/>
+  </compounddef>
+</doxygen>

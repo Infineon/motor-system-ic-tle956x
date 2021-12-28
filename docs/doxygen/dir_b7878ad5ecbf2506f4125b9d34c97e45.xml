@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_b7878ad5ecbf2506f4125b9d34c97e45" kind="dir">
+    <compoundname>util</compoundname>
+    <innerfile refid="de/dab/_b_l_d_c_m-logger_8cpp">BLDCM-logger.cpp</innerfile>
+    <innerfile refid="de/d67/_b_l_d_c_m-logger_8hpp">BLDCM-logger.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/util/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="de/d31/gpio_8cpp" kind="file" language="C++">
+    <compoundname>gpio.cpp</compoundname>
+    <includes refid="d1/d2c/gpio_8hpp" local="yes">gpio.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>gpio.cpp</label>
+        <link refid="de/d31/gpio_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>PAL of the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2020-2021 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d1/d2c/gpio_8hpp" kindref="compound">gpio.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIO::Error_t</ref><sp/>GPIO::checkErrorStatus()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>errorStatus;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/pal/gpio.cpp"/>
+  </compounddef>
+</doxygen>

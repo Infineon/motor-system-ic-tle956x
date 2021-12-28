@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d9/d4f/gpio-arduino_8hpp" kind="file" language="C++">
+    <compoundname>gpio-arduino.hpp</compoundname>
+    <includes refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">../../../config/tle9xxx-conf.hpp</includes>
+    <includes refid="d7/d92/_t_l_e9563_8hpp" local="yes">../../../corelib/TLE9563.hpp</includes>
+    <includedby refid="df/d68/_b_l_d_c_m-control-ino_8hpp" local="yes">BLDCM-control-ino.hpp</includedby>
+    <includedby refid="d2/d99/_d_c_m-control-ino_8hpp" local="yes">DCM-control-ino.hpp</includedby>
+    <includedby refid="df/df8/gpio-arduino_8cpp" local="yes">gpio-arduino.cpp</includedby>
+    <incdepgraph>
+      <node id="9">
+        <label>Arduino.h</label>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="3">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="2">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../../../corelib/TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="2">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="4">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="df/def/class_g_p_i_o_ino" prot="public">GPIOIno</innerclass>
+    <briefdescription>
+<para>Arduino PAL for the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019-2020 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GPIO_ARDUINO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_ARDUINO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../config/tle9xxx-conf.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../corelib/TLE9563.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="df/def/class_g_p_i_o_ino" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="df/def/class_g_p_i_o_ino" kindref="compound">GPIOIno</ref>:<sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/>pin;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/>mode;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" kindref="member">VLogic_t</ref><sp/><sp/><sp/><sp/>logic;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1ac5ba8b56ce93a951fc19df8f8eca9924" kindref="member">GPIOIno</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1ac5ba8b56ce93a951fc19df8f8eca9924" kindref="member">GPIOIno</ref>(uint8_t<sp/>pin,<sp/>uint8_t<sp/>mode,<sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" kindref="member">VLogic_t</ref><sp/>logic);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino" kindref="compound">~GPIOIno</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1a5485281864da935dbce964d9b9f67272" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1a6f1021e14fea8ebf6ccd3e123401c76b" kindref="member">deinit</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1aa04da6642380e6ecb55861831ea45803" kindref="member">read</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1a5a2dd48905749cebcbc05d9ca43a5983" kindref="member">write</ref>(<ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref><sp/>level);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1a33f065c705688c66fd9eadcdc3fc50ad" kindref="member">enable</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="df/def/class_g_p_i_o_ino_1abb40811cf4fa1de56bf10d1bbd586986" kindref="member">disable</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/framework/arduino/pal/gpio-arduino.hpp"/>
+  </compounddef>
+</doxygen>

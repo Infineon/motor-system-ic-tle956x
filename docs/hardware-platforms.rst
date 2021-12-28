@@ -7,12 +7,6 @@ Hardware Platforms
 Motor System IC TLE956x family
 -------------------------------
 
-.. image:: img/btt6x_shield.jpg
-    :width: 150
-
-.. image:: img/btt6x_chip.jpg
-    :width: 150
-
 Shields for Arduino
 """""""""""""""""""
 
@@ -20,9 +14,6 @@ Shields for Arduino
 
 Pinout Diagram
 ^^^^^^^^^^^^^^
-
-.. image:: img/shield_btt6030_pinout.png
-    :width: 450
 
 Pin Description
 ^^^^^^^^^^^^^^^
@@ -106,11 +97,6 @@ Chip only
 12V Protected Switches
 ----------------------
 
-.. image:: img/bts5001x_shield.png
-    :width: 150
-
-.. image:: img/bts5001x_chip.jpg
-    :width: 150
 
 Shields for Arduino
 """""""""""""""""""
@@ -121,8 +107,6 @@ Shields for Arduino
 Pinout Diagram
 ^^^^^^^^^^^^^^
 
-.. image:: img/shield_bts500xx_pinout.png
-    :width: 450
 
 Pin Description
 ^^^^^^^^^^^^^^^
@@ -178,11 +162,6 @@ Chip only
 Smart High-Side Power Switches
 ------------------------------
 
-.. image:: img/bts700x_shield.jpg
-    :width: 150
-
-.. image:: img/bts700x_chip.png
-    :width: 100
 
 Shields for Arduino
 """""""""""""""""""
@@ -195,8 +174,6 @@ Shields for Arduino
 Pinout Diagram
 ^^^^^^^^^^^^^^
 
-.. image:: img/shield_bts700x_pinout.png
-    :width: 450
 
 Pin Description
 ^^^^^^^^^^^^^^^

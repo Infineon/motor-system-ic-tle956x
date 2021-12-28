@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_1637b38f44cddc7958b383951b5bb6ac" kind="dir">
+    <compoundname>wrapper</compoundname>
+    <innerfile refid="d3/d11/pin-config-arduino_8cpp">pin-config-arduino.cpp</innerfile>
+    <innerfile refid="d7/d92/pin-config-arduino_8hpp">pin-config-arduino.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/framework/arduino/wrapper/"/>
+  </compounddef>
+</doxygen>

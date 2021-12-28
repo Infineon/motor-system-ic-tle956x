@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="df/d05/timer_8hpp" kind="file" language="C++">
+    <compoundname>timer.hpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="d7/da6/_b_l_d_c_m-control_8hpp" local="yes">BLDCM-control.hpp</includedby>
+    <includedby refid="de/d59/_d_c_m-control_8hpp" local="yes">DCM-control.hpp</includedby>
+    <includedby refid="d7/def/_t_l_e9xxx_8hpp" local="yes">TLE9xxx.hpp</includedby>
+    <includedby refid="da/dda/timer-arduino_8hpp" local="yes">timer-arduino.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="3">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="7">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BLDCM-control.cpp</label>
+        <link refid="d0/d41/_b_l_d_c_m-control_8cpp"/>
+      </node>
+      <node id="2">
+        <label>BLDCM-control.hpp</label>
+        <link refid="d7/da6/_b_l_d_c_m-control_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>DCM-control.cpp</label>
+        <link refid="dd/d49/_d_c_m-control_8cpp"/>
+      </node>
+      <node id="6">
+        <label>DCM-control.hpp</label>
+        <link refid="de/d59/_d_c_m-control_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>TLE9562.cpp</label>
+        <link refid="d9/d77/_t_l_e9562_8cpp"/>
+      </node>
+      <node id="11">
+        <label>TLE9562.hpp</label>
+        <link refid="d8/dc4/_t_l_e9562_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TLE9563.cpp</label>
+        <link refid="dc/d3d/_t_l_e9563_8cpp"/>
+      </node>
+      <node id="13">
+        <label>TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>TLE9xxx.cpp</label>
+        <link refid="dd/d9f/_t_l_e9xxx_8cpp"/>
+      </node>
+      <node id="10">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="15">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>timer-arduino.cpp</label>
+        <link refid="df/d09/timer-arduino_8cpp"/>
+      </node>
+      <node id="20">
+        <label>timer-arduino.hpp</label>
+        <link refid="da/dda/timer-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d8/d08/class_timer" prot="public">Timer</innerclass>
+    <briefdescription>
+<para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> Platform Abstraction Layer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2020-2021 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TIMER_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMER_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="d8/d08/class_timer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26" refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref><sp/><sp/><sp/><sp/>=<sp/>0,<sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87ae1d5372c2da5dc78c4612df47464c3d8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87ae1d5372c2da5dc78c4612df47464c3d8" kindref="member">ERROR</ref><sp/>=<sp/>1,<sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="d8/d08/class_timer_1ad786d9deba1abbc132006ea989187b32" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1ad786d9deba1abbc132006ea989187b32" kindref="member">init</ref><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="d8/d08/class_timer_1a8973f80bb3039d752657fcbb64c6bfb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a8973f80bb3039d752657fcbb64c6bfb0" kindref="member">deinit</ref><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" kindref="member">start</ref><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" kindref="member">elapsed</ref><sp/>(uint32_t<sp/>&amp;<ref refid="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" kindref="member">elapsed</ref>)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="d8/d08/class_timer_1a8e91e17ba88138d752854a03dea2467d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a8e91e17ba88138d752854a03dea2467d" kindref="member">stop</ref><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="d8/d08/class_timer_1ae4d88c04713dadad65eb5e31f2bfc227" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1ae4d88c04713dadad65eb5e31f2bfc227" kindref="member">delayMilli</ref><sp/>(uint32_t<sp/>timeout)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="d8/d08/class_timer_1a5b72f03fa82bdc8932042d77abadcbfd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer_1a5b72f03fa82bdc8932042d77abadcbfd" kindref="member">delayMicro</ref><sp/><sp/>(uint32_t<sp/>timeout)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/pal/timer.hpp"/>
+  </compounddef>
+</doxygen>

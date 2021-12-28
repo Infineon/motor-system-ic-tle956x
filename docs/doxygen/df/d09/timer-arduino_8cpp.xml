@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="df/d09/timer-arduino_8cpp" kind="file" language="C++">
+    <compoundname>timer-arduino.cpp</compoundname>
+    <includes refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">../../../config/tle9xxx-conf.hpp</includes>
+    <includes local="no">Arduino.h</includes>
+    <includes refid="da/dda/timer-arduino_8hpp" local="yes">timer-arduino.hpp</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>Arduino.h</label>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="3">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="2">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>timer-arduino.cpp</label>
+        <link refid="df/d09/timer-arduino_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>timer-arduino.hpp</label>
+        <link refid="da/dda/timer-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Arduino <ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> Platform Abstraction Layer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019-2020 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../config/tle9xxx-conf.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dda/timer-arduino_8hpp" kindref="compound">timer-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="d7/d69/class_timer_ino_1a1dcd78402207c3c678f959b7afafad87" kindref="member">TimerIno::TimerIno</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="d7/d69/class_timer_ino_1a24490a76d05c7b6dc858586b8d5dfc93" kindref="member">TimerIno::~TimerIno</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1a2714f4fd1bff915cbac4757aacd9490a" kindref="member">TimerIno::init</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>startTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1a48e9412c26a58e03f80131830efbae42" kindref="member">TimerIno::deinit</ref>()</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>startTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1a66013d40b92ea1c9daa42e2c24281a7a" kindref="member">TimerIno::start</ref>()</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>startTime<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1a51d18daf19adde7642148d58749b5212" kindref="member">TimerIno::elapsed</ref>(uint32_t<sp/>&amp;elapsed)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d7/d69/class_timer_ino_1a51d18daf19adde7642148d58749b5212" kindref="member">elapsed</ref><sp/>=<sp/>millis()<sp/>-<sp/>startTime;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1abee498b93fed9187e6d51f43cbad1491" kindref="member">TimerIno::stop</ref>()</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>startTime<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1a343a5f0a5c6aafa1dc2bef697c9ce051" kindref="member">TimerIno::delayMilli</ref>(uint32_t<sp/>timeout)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(timeout);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">TimerIno::Error_t</ref><sp/><ref refid="d7/d69/class_timer_ino_1af7e58075dae8c2e7a11fe7dad2480b86" kindref="member">TimerIno::delayMicro</ref>(uint32_t<sp/>timeout)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>delayMicroseconds(timeout);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/framework/arduino/pal/timer-arduino.cpp"/>
+  </compounddef>
+</doxygen>

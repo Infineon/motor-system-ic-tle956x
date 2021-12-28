@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="da/d62/logger-arduino_8hpp" kind="file" language="C++">
+    <compoundname>logger-arduino.hpp</compoundname>
+    <includes refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">../../../config/tle9xxx-conf.hpp</includes>
+    <includes refid="d6/da3/logger_8hpp" local="yes">../../../pal/logger.hpp</includes>
+    <includedby refid="de/d46/logger-arduino_8cpp" local="yes">logger-arduino.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="3">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="2">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logger-arduino.hpp</label>
+        <link refid="da/d62/logger-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../../../pal/logger.hpp</label>
+        <link refid="d6/da3/logger_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>logger-arduino.cpp</label>
+        <link refid="de/d46/logger-arduino_8cpp"/>
+      </node>
+      <node id="1">
+        <label>logger-arduino.hpp</label>
+        <link refid="da/d62/logger-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="da/dc9/class_logger_ino" prot="public">LoggerIno</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="da/d62/logger-arduino_8hpp_1a3066846301a0fc281607024f611eec10" prot="public" static="no" mutable="no">
+        <type><ref refid="da/dc9/class_logger_ino" kindref="compound">LoggerIno</ref></type>
+        <definition>LoggerIno logpalino</definition>
+        <argsstring></argsstring>
+        <name>logpalino</name>
+        <briefdescription>
+<para>Default <ref refid="da/dc9/class_logger_ino" kindref="compound">LoggerIno</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Default <ref refid="da/dc9/class_logger_ino" kindref="compound">LoggerIno</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/logger-arduino.hpp" line="34" column="18" bodyfile="src/framework/arduino/pal/logger-arduino.cpp" bodystart="78" bodyend="-1" declfile="src/framework/arduino/pal/logger-arduino.hpp" declline="34" declcolumn="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>TLE9563 <ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> Arduino PAL. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>January 2021 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2020-2021 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TLE9563_PAL_LOGGER_INO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9563_PAL_LOGGER_INO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../config/tle9xxx-conf.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../pal/logger.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(TLE9XXX_LOGGER_ENABLED<sp/>==<sp/>1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="da/dc9/class_logger_ino" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/dc9/class_logger_ino" kindref="compound">LoggerIno</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d3/dc0/class_logger_p_a_l" kindref="compound">LoggerPAL</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="da/dc9/class_logger_ino_1a52d3ad85087c9207be50f2244691dbad" kindref="member">LoggerIno</ref><sp/><sp/><sp/><sp/>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="da/dc9/class_logger_ino_1ae460375e500ed3d0c480e7728cfcf494" kindref="member">~LoggerIno</ref><sp/><sp/><sp/><sp/>();<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="da/dc9/class_logger_ino_1a33c30e8f02b26262ef246e1680f4cb09" kindref="member">init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="da/dc9/class_logger_ino_1a85df7c3a04163b5c241a95a77b22afba" kindref="member">deinit</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="da/dc9/class_logger_ino_1a0b6ff5f5dacd8f5898681aed7316fda3" kindref="member">write</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*<sp/>log_data,<sp/>uint32_t<sp/>length);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="da/dc9/class_logger_ino" kindref="compound">LoggerIno</ref><sp/><ref refid="da/d62/logger-arduino_8hpp_1a3066846301a0fc281607024f611eec10" kindref="member">logpalino</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>TLE9XXX_LOGGER_ENABLED<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/framework/arduino/pal/logger-arduino.hpp"/>
+  </compounddef>
+</doxygen>

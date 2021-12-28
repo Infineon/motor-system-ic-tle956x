@@ -1,0 +1,373 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d8/d0b/class_a_d_c_ino" kind="class" language="C++" prot="public">
+    <compoundname>ADCIno</compoundname>
+    <basecompoundref refid="de/d30/class_analog_digital_converter" prot="public" virt="virtual">AnalogDigitalConverter</basecompoundref>
+    <includes refid="da/dd4/adc-arduino_8hpp" local="no">adc-arduino.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d8/d0b/class_a_d_c_ino_1aaea7e2c6eaa0e3a2f8bc4c32b13cc10a" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t ADCIno::pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="32" column="13" bodyfile="src/framework/arduino/pal/adc-arduino.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1adc9a446eb97f04412861d927d9a53454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADCIno::ADCIno</definition>
+        <argsstring>()</argsstring>
+        <name>ADCIno</name>
+        <briefdescription>
+<para>Default constructor of the Arduino ADC class. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="35" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a560ab3caba2b6c71e7ddc555cf0a0176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADCIno::ADCIno</definition>
+        <argsstring>(uint8_t pin)</argsstring>
+        <name>ADCIno</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of the Arduino ADC class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This constructor takes the number of the pin.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the desired ADC pin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="36" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1ae7232ffe2cb9990a0cf18e919c13988a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ADCIno::~ADCIno</definition>
+        <argsstring>()</argsstring>
+        <name>~ADCIno</name>
+        <briefdescription>
+<para>Default constructor of the Arduino ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="37" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a2b314ccc988eabebe153a49049a8663d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a2609abad9fb4084bb75ac034afa0fa26">init</reimplements>
+        <briefdescription>
+<para>ADC initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="38" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a326e765d5fa76bc53b93ef71530cebf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::deinit</definition>
+        <argsstring>()</argsstring>
+        <name>deinit</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1ab236c8fcc7b98711b291ba06e4c52cad">deinit</reimplements>
+        <briefdescription>
+<para>ADC deinitialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="39" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1af550e48c88d33696829e0c9fb78dba30" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::enable</definition>
+        <argsstring>()</argsstring>
+        <name>enable</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a58208716e23cf64b3cc044a0c334db5f">enable</reimplements>
+        <briefdescription>
+<para>ADC enable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="40" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a22e26622d5ad60d22ac39b9ea1a450e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::disable</definition>
+        <argsstring>()</argsstring>
+        <name>disable</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1aacfa5466714fd8c1bc0ec7472037c730">disable</reimplements>
+        <briefdescription>
+<para>ADC disable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="41" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="81" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1acb524a9cf2e14be1c3b4cccc1b6d5189" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::setReadResolution</definition>
+        <argsstring>(uint8_t resolution)</argsstring>
+        <name>setReadResolution</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a85084f7f22b3330dafaed27c5fc4c6cf">setReadResolution</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+<para>Set resolution of the ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the resolution of the ADC. The available resolutions are depending on the ADC of the device and have be looked up in the datasheet. The default resolution is set to 12 Bit, see constructor.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">resolution</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the read resolution, default = 10 Bit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="42" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="97" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a3e9c038e95862a6247d3faa40fa7dbcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::setWriteResolution</definition>
+        <argsstring>(uint8_t resolution)</argsstring>
+        <name>setWriteResolution</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a35af579174536d92255b8f5dc4cee8c4">setWriteResolution</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>resolution</declname>
+        </param>
+        <briefdescription>
+<para>Set the write resolution of the ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the write resolution of the ADC.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">resolution</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the write resolution of the ADC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="43" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="112" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1afd3b43383d8e0c437ece522f3228bd0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::setWriteFrequency</definition>
+        <argsstring>(uint32_t divisor)</argsstring>
+        <name>setWriteFrequency</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a3c89b7be66f2e6f17f64263974881a96">setWriteFrequency</reimplements>
+        <param>
+          <type>uint32_t</type>
+          <declname>divisor</declname>
+          <defname>frequency</defname>
+        </param>
+        <briefdescription>
+<para>Set the write frequency of the ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the write resolution of the ADC.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">divisor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value of the divisor, frequency will be calculated according to the following description. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref></para>
+</simplesect>
+Divides a given PWM pin frequency by a divisor.</para>
+<para>The resulting frequency is equal to the base frequency divided by the given divisor:<itemizedlist>
+<listitem><para>Base frequencies: o The base frequency for pins 3, 9, 10, and 11 is 31250 Hz. o The base frequency for pins 5 and 6 is 62500 Hz.</para>
+</listitem><listitem><para>Divisors: o The divisors available on pins 5, 6, 9 and 10 are: 1, 8, 64, 256, and 1024. o The divisors available on pins 3 and 11 are: 1, 8, 32, 64, 128, 256, and 1024.</para>
+</listitem></itemizedlist>
+</para>
+<para>PWM frequencies are tied together in pairs of pins. If one in a pair is changed, the other is also changed to match:<itemizedlist>
+<listitem><para>Pins 5 and 6 are paired on timer0</para>
+</listitem><listitem><para>Pins 9 and 10 are paired on timer1</para>
+</listitem><listitem><para>Pins 3 and 11 are paired on timer2</para>
+</listitem></itemizedlist>
+</para>
+<para>Note that this function will have side effects on anything else that uses timers:<itemizedlist>
+<listitem><para>Changes on pins 3, 5, 6, or 11 may cause the delay() and millis() functions to stop working. Other timing-related functions may also be affected.</para>
+</listitem><listitem><para>Changes on pins 9 or 10 will cause the Servo library to function incorrectly.</para>
+</listitem></itemizedlist>
+</para>
+<para>Thanks to macegr of the Arduino forums for his documentation of the PWM frequency divisors. His post can be viewed at: <ulink url="https://forum.arduino.cc/index.php?topic=16612#msg121031">https://forum.arduino.cc/index.php?topic=16612#msg121031</ulink> </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>For Arduino UNO</para>
+<para>For Arduino MEga 2560</para>
+<para>For XMC boards</para>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="44" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="158" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1ad4c2bb0dca60dbd39ce2c96027bcd289" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t ADCIno::ADCRead</definition>
+        <argsstring>()</argsstring>
+        <name>ADCRead</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1a977edb99d09216595aa3c7173afe3800">ADCRead</reimplements>
+        <briefdescription>
+<para>Read the current ADC-Value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>uint16_t ADC value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="45" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="251" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d0b/class_a_d_c_ino_1a643fb12247ae6f8ce24bad7bc4281ced" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
+        <definition>ADCIno::Error_t ADCIno::ADCWrite</definition>
+        <argsstring>(uint8_t value)</argsstring>
+        <name>ADCWrite</name>
+        <reimplements refid="de/d30/class_analog_digital_converter_1aef8ea24b153f25e4f953058518935c3a">ADCWrite</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Wirte on an analog pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This functions writes the given value to the analog pin</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>PWM dutycycle to write </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">ADCIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/adc-arduino.hpp" line="46" column="17" bodyfile="src/framework/arduino/pal/adc-arduino.cpp" bodystart="268" bodyend="273"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Arduino ADC class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ADCIno</label>
+        <link refid="d8/d0b/class_a_d_c_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ADCIno</label>
+        <link refid="d8/d0b/class_a_d_c_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/framework/arduino/pal/adc-arduino.hpp" line="29" column="1" bodyfile="src/framework/arduino/pal/adc-arduino.hpp" bodystart="30" bodyend="47"/>
+    <listofallmembers>
+      <member refid="d8/d0b/class_a_d_c_ino_1adc9a446eb97f04412861d927d9a53454" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>ADCIno</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a560ab3caba2b6c71e7ddc555cf0a0176" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>ADCIno</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1ad4c2bb0dca60dbd39ce2c96027bcd289" prot="public" virt="virtual"><scope>ADCIno</scope><name>ADCRead</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a643fb12247ae6f8ce24bad7bc4281ced" prot="public" virt="virtual"><scope>ADCIno</scope><name>ADCWrite</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a942ade5ba5302c63560507679df5b26c" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>checkErrorStatus</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea2fd040c14fc96c24f2bf3ec16cd36c7b" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>CONF_ERROR</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a326e765d5fa76bc53b93ef71530cebf1" prot="public" virt="virtual"><scope>ADCIno</scope><name>deinit</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a22e26622d5ad60d22ac39b9ea1a450e0" prot="public" virt="virtual"><scope>ADCIno</scope><name>disable</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1af550e48c88d33696829e0c9fb78dba30" prot="public" virt="virtual"><scope>ADCIno</scope><name>enable</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>Error_t</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a2b314ccc988eabebe153a49049a8663d" prot="public" virt="virtual"><scope>ADCIno</scope><name>init</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea91ba1f3b169d5dde7e1e1ef381a7a6c1" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>INTF_ERROR</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea4844a5e63aa38635742da3a739ff1775" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>OK</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1aaea7e2c6eaa0e3a2f8bc4c32b13cc10a" prot="private" virt="non-virtual"><scope>ADCIno</scope><name>pin</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea1810c228e019345ebf804a227b3c8cb0" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>READ_ERROR</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1acb524a9cf2e14be1c3b4cccc1b6d5189" prot="public" virt="virtual"><scope>ADCIno</scope><name>setReadResolution</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1afd3b43383d8e0c437ece522f3228bd0c" prot="public" virt="virtual"><scope>ADCIno</scope><name>setWriteFrequency</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1a3e9c038e95862a6247d3faa40fa7dbcf" prot="public" virt="virtual"><scope>ADCIno</scope><name>setWriteResolution</name></member>
+      <member refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfedea6c533f1d838c10926960c2017db9ce25" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>WRITE_ERROR</name></member>
+      <member refid="d8/d0b/class_a_d_c_ino_1ae7232ffe2cb9990a0cf18e919c13988a" prot="public" virt="non-virtual"><scope>ADCIno</scope><name>~ADCIno</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

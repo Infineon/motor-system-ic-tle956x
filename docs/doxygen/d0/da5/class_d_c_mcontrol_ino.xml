@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d0/da5/class_d_c_mcontrol_ino" kind="class" language="C++" prot="public">
+    <compoundname>DCMcontrolIno</compoundname>
+    <basecompoundref refid="d9/d64/class_d_c_mcontrol" prot="public" virt="non-virtual">DCMcontrol</basecompoundref>
+    <includes refid="d2/d99/_d_c_m-control-ino_8hpp" local="no">DCM-control-ino.hpp</includes>
+      <sectiondef kind="user-defined">
+      <header>DCM-control-ino.cpp - basic motor control functions for Arduino</header>
+      <description><para>This library includes the basic common functions to control DC motors using an instance of TLE9562 tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="dc/da9/group__ino_api_1ga351f17110bc9bed16c5092311123b07d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DCMcontrolIno::DCMcontrolIno</definition>
+        <argsstring>(void)</argsstring>
+        <name>DCMcontrolIno</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>create and assign Arduino GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/DCM-control-ino.hpp" line="46" column="1" bodyfile="src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents the <ref refid="d9/d64/class_d_c_mcontrol" kindref="compound">DCMcontrol</ref> base class </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>DCMcontrol</label>
+        <link refid="d9/d64/class_d_c_mcontrol"/>
+      </node>
+      <node id="1">
+        <label>DCMcontrolIno</label>
+        <link refid="d0/da5/class_d_c_mcontrol_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+      <node id="2">
+        <label>DCMcontrol</label>
+        <link refid="d9/d64/class_d_c_mcontrol"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>controller</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>pwmA</edgelabel>
+          <edgelabel>pwmB</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>_HBstatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>DCMcontrolIno</label>
+        <link refid="d0/da5/class_d_c_mcontrol_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="5">
+        <label>HBconfig_t</label>
+        <link refid="d4/d7b/struct_h_bconfig__t"/>
+      </node>
+      <node id="7">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="8">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="3">
+        <label>Tle9562</label>
+        <link refid="d0/dab/class_tle9562"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>csn</edgelabel>
+          <edgelabel>intn</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>sBus</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/DCM-control-ino.hpp" line="39" column="1" bodyfile="src/DCM-control-ino.hpp" bodystart="40" bodyend="48"/>
+    <listofallmembers>
+      <member refid="d9/d64/class_d_c_mcontrol_1a99101c443925f19df0f9628007f01c76" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_Direction</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a74ec4b1ac94b3359910f669b413b9fc4" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_DutyCycle</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1adfcf669b8c0a70e5b9ede5735a5b4706" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_HBstatus</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a62d185d6c22a46fe71a5d28d041798fb" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_MotorStartEnable</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a3015325ed7847c8c4e49e57eb3c3e8b1" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>begin</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a7600407120d668358a5630eb119f9098" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>checkTLEshield</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a4ff6ca03a8d124ce9630cb560d546e1e" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>configDCshield</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>controller</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ade1cfb6d30e41168cfb9c6d77d3376c7" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>DCMcontrol</name></member>
+      <member refid="dc/da9/group__ino_api_1ga351f17110bc9bed16c5092311123b07d" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>DCMcontrolIno</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a961ee19b33dae352eb4bcfcc646a3207" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>end</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a6d9eebb55741043fb59906436ce0647b" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>interrupt_status_changed</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a1a3c756d73af3ec19c50b94e2ff6d085" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>pwmA</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ac91f95e47627da2c1c9a619c31371111" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>pwmB</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1afdfccd4c1f4bc9a745bb04fcf50f96f1" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>riseFallTimeRegulation</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ae9b8d0e87a4ae80b5f1b20ef07e3c1cf" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>setDCspeed</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1aee0ae770ce86d6e6b49494bab222bdd0" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>setLED</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a09e4b60e574cde1b5c68570a9f68970c" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>setTrisefallTarget</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1aaf6c5363e0e8e909ca6009c777228dc4" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>setupRiseFallTimeRegulation</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a4f2407850add5414a69151f141ebdc64" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>startDCM</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a42abbf25108fe70b1ea736968daf73c5" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>stopDCM</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a13a9b68632495d3d403ce62de6ec1369" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>timer</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ada1cb2da2ec75aacd687da35d8412a88" prot="public" virt="non-virtual"><scope>DCMcontrolIno</scope><name>~DCMcontrol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

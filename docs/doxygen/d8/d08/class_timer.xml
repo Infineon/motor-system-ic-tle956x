@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d8/d08/class_timer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Timer</compoundname>
+    <derivedcompoundref refid="d7/d69/class_timer_ino" prot="public" virt="virtual">TimerIno</derivedcompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error_t</name>
+        <enumvalue id="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" prot="public">
+          <name>OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87ae1d5372c2da5dc78c4612df47464c3d8" prot="public">
+          <name>ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Error </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="24" column="1" bodyfile="src/pal/timer.hpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/d08/class_timer_1ad786d9deba1abbc132006ea989187b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1a2714f4fd1bff915cbac4757aacd9490a">init</reimplementedby>
+        <briefdescription>
+<para>Initialize the timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="36" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1a8973f80bb3039d752657fcbb64c6bfb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::deinit</definition>
+        <argsstring>()=0</argsstring>
+        <name>deinit</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1a48e9412c26a58e03f80131830efbae42">deinit</reimplementedby>
+        <briefdescription>
+<para>Deinitialize the timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="44" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::start</definition>
+        <argsstring>()=0</argsstring>
+        <name>start</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1a66013d40b92ea1c9daa42e2c24281a7a">start</reimplementedby>
+        <briefdescription>
+<para>Starts the timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="52" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::elapsed</definition>
+        <argsstring>(uint32_t &amp;elapsed)=0</argsstring>
+        <name>elapsed</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1a51d18daf19adde7642148d58749b5212">elapsed</reimplementedby>
+        <param>
+          <type>uint32_t &amp;</type>
+          <declname>elapsed</declname>
+        </param>
+        <briefdescription>
+<para>Elapsed time since the timer was started. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">elapsed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="61" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1a8e91e17ba88138d752854a03dea2467d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::stop</definition>
+        <argsstring>()=0</argsstring>
+        <name>stop</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1abee498b93fed9187e6d51f43cbad1491">stop</reimplementedby>
+        <briefdescription>
+<para>Stops the timer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="69" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1ae4d88c04713dadad65eb5e31f2bfc227" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::delayMilli</definition>
+        <argsstring>(uint32_t timeout)=0</argsstring>
+        <name>delayMilli</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1a343a5f0a5c6aafa1dc2bef697c9ce051">delayMilli</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a delay during the specified time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay time in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="78" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/d08/class_timer_1a5b72f03fa82bdc8932042d77abadcbfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t Timer::delayMicro</definition>
+        <argsstring>(uint32_t timeout)=0</argsstring>
+        <name>delayMicro</name>
+        <reimplementedby refid="d7/d69/class_timer_ino_1af7e58075dae8c2e7a11fe7dad2480b86">delayMicro</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Introduces a delay during the specified time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay time in microseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if hardware interface error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/timer.hpp" line="87" column="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="2">
+        <label>TimerIno</label>
+        <link refid="d7/d69/class_timer_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/pal/timer.hpp" line="20" column="1" bodyfile="src/pal/timer.hpp" bodystart="21" bodyend="88"/>
+    <listofallmembers>
+      <member refid="d8/d08/class_timer_1a8973f80bb3039d752657fcbb64c6bfb0" prot="public" virt="pure-virtual"><scope>Timer</scope><name>deinit</name></member>
+      <member refid="d8/d08/class_timer_1a5b72f03fa82bdc8932042d77abadcbfd" prot="public" virt="pure-virtual"><scope>Timer</scope><name>delayMicro</name></member>
+      <member refid="d8/d08/class_timer_1ae4d88c04713dadad65eb5e31f2bfc227" prot="public" virt="pure-virtual"><scope>Timer</scope><name>delayMilli</name></member>
+      <member refid="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" prot="public" virt="pure-virtual"><scope>Timer</scope><name>elapsed</name></member>
+      <member refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87ae1d5372c2da5dc78c4612df47464c3d8" prot="public" virt="non-virtual"><scope>Timer</scope><name>ERROR</name></member>
+      <member refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" prot="public" virt="non-virtual"><scope>Timer</scope><name>Error_t</name></member>
+      <member refid="d8/d08/class_timer_1ad786d9deba1abbc132006ea989187b32" prot="public" virt="pure-virtual"><scope>Timer</scope><name>init</name></member>
+      <member refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87aac90a8771b9708a8c68705dc10c575e4" prot="public" virt="non-virtual"><scope>Timer</scope><name>OK</name></member>
+      <member refid="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" prot="public" virt="pure-virtual"><scope>Timer</scope><name>start</name></member>
+      <member refid="d8/d08/class_timer_1a8e91e17ba88138d752854a03dea2467d" prot="public" virt="pure-virtual"><scope>Timer</scope><name>stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

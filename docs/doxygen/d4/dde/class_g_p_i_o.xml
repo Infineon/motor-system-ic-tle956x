@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d4/dde/class_g_p_i_o" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>GPIO</compoundname>
+    <derivedcompoundref refid="df/def/class_g_p_i_o_ino" prot="public" virt="virtual">GPIOIno</derivedcompoundref>
+      <sectiondef kind="user-defined">
+      <header>Interrupt event</header>
+      <memberdef kind="enum" id="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73" prot="public" static="no" strong="no">
+        <type></type>
+        <name>IntEvent_t</name>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a4ede63866dcf899093010c0fdcde8291" prot="public">
+          <name>INT_FALLING_EDGE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interrupt on falling edge </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a8a793d69497174a9430ea2b0e15d6d60" prot="public">
+          <name>INT_RISING_EDGE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interrupt on rising edge </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="37" column="1" bodyfile="src/pal/gpio.hpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Voltage level</header>
+      <memberdef kind="enum" id="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" prot="public" static="no" strong="no">
+        <type></type>
+        <name>VLevel_t</name>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" prot="public">
+          <name>GPIO_LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Level low </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" prot="public">
+          <name>GPIO_HIGH</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Level high </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="48" column="1" bodyfile="src/pal/gpio.hpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>Voltage logic</header>
+      <memberdef kind="enum" id="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" prot="public" static="no" strong="no">
+        <type></type>
+        <name>VLogic_t</name>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" prot="public">
+          <name>NEGATIVE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Negative logic. 0 on voltage level high, 1 on voltage low </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" prot="public">
+          <name>POSITIVE</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Positive logic. 1 on voltage level high, 0 on voltage low </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="59" column="1" bodyfile="src/pal/gpio.hpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Error_t</name>
+        <enumvalue id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" prot="public">
+          <name>OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>No error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa725317add7598473bfd5a1087cf467ff" prot="public">
+          <name>INTF_ERROR</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interface error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa0c61895c8f366c308e397e1ffafd180f" prot="public">
+          <name>CONF_ERROR</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Configuration error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa5599077255b73a938099388e9318e6a7" prot="public">
+          <name>READ_ERROR</name>
+          <initializer>= -3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Read error </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa4f3584bfdb59bfbf15f35474c13caada" prot="public">
+          <name>WRITE_ERROR</name>
+          <initializer>= -4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Write error </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="24" column="1" bodyfile="src/pal/gpio.hpp" bodystart="25" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/dde/class_g_p_i_o_1a3dfa3fd067cb1f5c61e2576a262a216b" prot="private" static="no" mutable="no">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>Error_t GPIO::errorStatus</definition>
+        <argsstring></argsstring>
+        <name>errorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="122" column="9" bodyfile="src/pal/gpio.hpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1af1a6667e1ceda3d38b875da1486e1f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t GPIO::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1a5485281864da935dbce964d9b9f67272">init</reimplementedby>
+        <briefdescription>
+<para>Initializes the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if initialization error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="72" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1a0531e0c0d2abc6a56b80f4fc8d1559e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t GPIO::deinit</definition>
+        <argsstring>()=0</argsstring>
+        <name>deinit</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1a6f1021e14fea8ebf6ccd3e123401c76b">deinit</reimplementedby>
+        <briefdescription>
+<para>Deinitializes the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>INIT_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if deinitialization error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="80" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1a9e0701f519e16573691834bcab1ad03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref></type>
+        <definition>virtual VLevel_t GPIO::read</definition>
+        <argsstring>()=0</argsstring>
+        <name>read</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1aa04da6642380e6ecb55861831ea45803">read</reimplementedby>
+        <briefdescription>
+<para>Reads the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> voltage level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> voltage level </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>GPIO_LOW</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if voltage low </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>GPIO_HIGH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if voltage high </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="88" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1aac07cfb1f930882afe7d74f9d17849fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t GPIO::write</definition>
+        <argsstring>(VLevel_t level)=0</argsstring>
+        <name>write</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1a5a2dd48905749cebcbc05d9ca43a5983">write</reimplementedby>
+        <param>
+          <type><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Writes the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> output voltage level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Voltage level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>WRITE_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if write error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="97" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1a9fe4b4e3a68e8c4df663cc084357b460" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t GPIO::enable</definition>
+        <argsstring>()=0</argsstring>
+        <name>enable</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1a33f065c705688c66fd9eadcdc3fc50ad">enable</reimplementedby>
+        <briefdescription>
+<para>Enables the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> output according to the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Low if negative</para>
+</listitem><listitem><para>High if positive <simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> interrupt event </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>WRITE_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if write error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="107" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1ae2b3084845cf22ebda8d4705e9d9a40a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>virtual Error_t GPIO::disable</definition>
+        <argsstring>()=0</argsstring>
+        <name>disable</name>
+        <reimplementedby refid="df/def/class_g_p_i_o_ino_1abb40811cf4fa1de56bf10d1bbd586986">disable</reimplementedby>
+        <briefdescription>
+<para>Disables the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> output according to the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> logic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Low if positive</para>
+</listitem><listitem><para>High if negative <simplesect kind="return"><para><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref> error code </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if success </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>WRITE_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if write error </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="117" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dde/class_g_p_i_o_1ad44671562fa1e951dc94195cd78a2be0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
+        <definition>GPIO::Error_t GPIO::checkErrorStatus</definition>
+        <argsstring>()</argsstring>
+        <name>checkErrorStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pal/gpio.hpp" line="119" column="9" bodyfile="src/pal/gpio.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="2">
+        <label>GPIOIno</label>
+        <link refid="df/def/class_g_p_i_o_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/pal/gpio.hpp" line="20" column="1" bodyfile="src/pal/gpio.hpp" bodystart="21" bodyend="124"/>
+    <listofallmembers>
+      <member refid="d4/dde/class_g_p_i_o_1ad44671562fa1e951dc94195cd78a2be0" prot="public" virt="non-virtual"><scope>GPIO</scope><name>checkErrorStatus</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa0c61895c8f366c308e397e1ffafd180f" prot="public" virt="non-virtual"><scope>GPIO</scope><name>CONF_ERROR</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a0531e0c0d2abc6a56b80f4fc8d1559e8" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>deinit</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1ae2b3084845cf22ebda8d4705e9d9a40a" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>disable</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a9fe4b4e3a68e8c4df663cc084357b460" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>enable</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" prot="public" virt="non-virtual"><scope>GPIO</scope><name>Error_t</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a3dfa3fd067cb1f5c61e2576a262a216b" prot="private" virt="non-virtual"><scope>GPIO</scope><name>errorStatus</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" prot="public" virt="non-virtual"><scope>GPIO</scope><name>GPIO_HIGH</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" prot="public" virt="non-virtual"><scope>GPIO</scope><name>GPIO_LOW</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1af1a6667e1ceda3d38b875da1486e1f33" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>init</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a4ede63866dcf899093010c0fdcde8291" prot="public" virt="non-virtual"><scope>GPIO</scope><name>INT_FALLING_EDGE</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a8a793d69497174a9430ea2b0e15d6d60" prot="public" virt="non-virtual"><scope>GPIO</scope><name>INT_RISING_EDGE</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73" prot="public" virt="non-virtual"><scope>GPIO</scope><name>IntEvent_t</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa725317add7598473bfd5a1087cf467ff" prot="public" virt="non-virtual"><scope>GPIO</scope><name>INTF_ERROR</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" prot="public" virt="non-virtual"><scope>GPIO</scope><name>NEGATIVE</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" prot="public" virt="non-virtual"><scope>GPIO</scope><name>OK</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" prot="public" virt="non-virtual"><scope>GPIO</scope><name>POSITIVE</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a9e0701f519e16573691834bcab1ad03a" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>read</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa5599077255b73a938099388e9318e6a7" prot="public" virt="non-virtual"><scope>GPIO</scope><name>READ_ERROR</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" prot="public" virt="non-virtual"><scope>GPIO</scope><name>VLevel_t</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" prot="public" virt="non-virtual"><scope>GPIO</scope><name>VLogic_t</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aac07cfb1f930882afe7d74f9d17849fe" prot="public" virt="pure-virtual"><scope>GPIO</scope><name>write</name></member>
+      <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa4f3584bfdb59bfbf15f35474c13caada" prot="public" virt="non-virtual"><scope>GPIO</scope><name>WRITE_ERROR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

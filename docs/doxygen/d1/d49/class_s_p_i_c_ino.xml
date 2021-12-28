@@ -1,0 +1,456 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d1/d49/class_s_p_i_c_ino" kind="class" language="C++" prot="public">
+    <compoundname>SPICIno</compoundname>
+    <basecompoundref refid="d9/d8a/class_s_p_i_c" prot="public" virt="virtual">SPIC</basecompoundref>
+    <includes refid="df/d2f/spic-arduino_8hpp" local="no">spic-arduino.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a23107862f4a77f946307bc427d5e744e" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::csPin</definition>
+        <argsstring></argsstring>
+        <name>csPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="37" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a3cb58011ca1b6e1fbad52b6cbadf34a8" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::misoPin</definition>
+        <argsstring></argsstring>
+        <name>misoPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="38" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a76dadbf9e12afd71369554fe6da769f9" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::mosiPin</definition>
+        <argsstring></argsstring>
+        <name>mosiPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="39" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a97992f3fbb46b4d2a5fe405384259325" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::sckPin</definition>
+        <argsstring></argsstring>
+        <name>sckPin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="40" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1ac345ad3365df194ff9c2ca368d942190" prot="private" static="no" mutable="no">
+        <type>SPIClass *</type>
+        <definition>SPIClass* SPICIno::spi</definition>
+        <argsstring></argsstring>
+        <name>spi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="41" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a28d9245b942d650400a0443bf2d1aed2" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::lsb</definition>
+        <argsstring></argsstring>
+        <name>lsb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="42" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a6906078ac4b4d174cae275d62c06c7eb" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="43" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1adc200be28c6f0889f932a4c47080b0e5" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t SPICIno::clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="44" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SPICIno::SPICIno</definition>
+        <argsstring>()</argsstring>
+        <name>SPICIno</name>
+        <briefdescription>
+<para>Constructor of the Arduino <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is setting the basics for a <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> and the default spi. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="47" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a6585a037b5ac12286542ef71805b7aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SPICIno::SPICIno</definition>
+        <argsstring>(uint8_t lsb, uint8_t mode, uint8_t clock)</argsstring>
+        <name>SPICIno</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>lsb</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>clock</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" kindref="member">SPICIno::SPICIno</ref> object of the Arduino <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets some basic SPI modes for the default SPI port.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lsb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>lowside (LSB) or highside (MSB) mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SPI mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clock</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SPI clock divider </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="48" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a86165d0a615600fdc075419bc0f23497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SPICIno::SPICIno</definition>
+        <argsstring>(SPIClass &amp;port, uint8_t csPin, uint8_t misoPin=MISO, uint8_t mosiPin=MOSI, uint8_t sckPin=SCK)</argsstring>
+        <name>SPICIno</name>
+        <param>
+          <type>SPIClass &amp;</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>csPin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>misoPin</declname>
+          <defval>MISO</defval>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>mosiPin</declname>
+          <defval>MOSI</defval>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>sckPin</declname>
+          <defval>SCK</defval>
+        </param>
+        <briefdescription>
+<para>Construct a new <ref refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" kindref="member">SPICIno::SPICIno</ref> object of the Arduino <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets all pins for a given SPI port, allowing a free setting of the SPI interface</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>SPI port if not default </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>csPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>chipselect pin for the SPI port </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>misoPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>miso pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mosiPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>mosi pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sckPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>systemclock pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="49" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="52" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a2bbd9cbd87032aa4c6434a796140a19a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SPICIno::~SPICIno</definition>
+        <argsstring>()</argsstring>
+        <name>~SPICIno</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1aa6c292e721e6a496e2fd8032d5176da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>SPICIno::Error_t SPICIno::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <reimplements refid="d9/d8a/class_s_p_i_c_1aaf10147dbb4db9c1dddee5343418a893">init</reimplements>
+        <briefdescription>
+<para>Initialize the <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is initializing the chosen spi channel with the given values for lsb,clock and mode</para>
+<para><simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="51" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="69" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a3db180a097f26676ae5b2199f0e15173" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>SPICIno::Error_t SPICIno::deinit</definition>
+        <argsstring>()</argsstring>
+        <name>deinit</name>
+        <reimplements refid="d9/d8a/class_s_p_i_c_1a76afcd404cc7f34ee771974ef7dc3a08">deinit</reimplements>
+        <briefdescription>
+<para>Deinitialize the <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is deinitializing the chosen spi channel.</para>
+<para><simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="52" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="85" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a6b272df6ce49535ebc2dece177ee39a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>SPICIno::Error_t SPICIno::transfer</definition>
+        <argsstring>(uint8_t send, uint8_t &amp;received)</argsstring>
+        <name>transfer</name>
+        <reimplements refid="d9/d8a/class_s_p_i_c_1a870e415e4d8a62c8cd67ae0f5a3db782">transfer</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>send</declname>
+        </param>
+        <param>
+          <type>uint8_t &amp;</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+<para>transfers a data package via the spi bus </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>send</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address and/or command to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>received</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>received data from spi bus </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="53" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a670b205fb537baa5268590d2a3a25427" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
+        <definition>SPICIno::Error_t SPICIno::transfer16</definition>
+        <argsstring>(uint16_t send, uint16_t &amp;received)</argsstring>
+        <name>transfer16</name>
+        <reimplements refid="d9/d8a/class_s_p_i_c_1a95ed842837d4c11d3686449e3f7e6181">transfer16</reimplements>
+        <param>
+          <type>uint16_t</type>
+          <declname>send</declname>
+        </param>
+        <param>
+          <type>uint16_t &amp;</type>
+          <declname>received</declname>
+        </param>
+        <briefdescription>
+<para>transfers a data package via the spi bus with 16 bit length </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>send</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>address and/or command to send </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>received</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>received data from spi bus </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>SPICWiced::Error_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="54" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="111" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Arduino <ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref> class. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="1">
+        <label>SPICIno</label>
+        <link refid="d1/d49/class_s_p_i_c_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="1">
+        <label>SPICIno</label>
+        <link refid="d1/d49/class_s_p_i_c_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/framework/arduino/pal/spic-arduino.hpp" line="34" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="35" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d9/d8a/class_s_p_i_c_1ae34d166d35588542db76f2491787693b" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>checkErrorStatus</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1adc200be28c6f0889f932a4c47080b0e5" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>clock</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bac0c1584688812e22f8f718e5686f55f2" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>CONF_ERROR</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a23107862f4a77f946307bc427d5e744e" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>csPin</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a3db180a097f26676ae5b2199f0e15173" prot="public" virt="virtual"><scope>SPICIno</scope><name>deinit</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>Error_t</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1aa6c292e721e6a496e2fd8032d5176da9" prot="public" virt="virtual"><scope>SPICIno</scope><name>init</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba4b39d50cc04ed6fb7036b2fc04598f8e" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>INTF_ERROR</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a28d9245b942d650400a0443bf2d1aed2" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>lsb</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a3cb58011ca1b6e1fbad52b6cbadf34a8" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>misoPin</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a6906078ac4b4d174cae275d62c06c7eb" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>mode</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a76dadbf9e12afd71369554fe6da769f9" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>mosiPin</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>OK</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716ba6aa87ba2c06fb168b837c2fb07e13f5f" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>READ_ERROR</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a97992f3fbb46b4d2a5fe405384259325" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>sckPin</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1ac345ad3365df194ff9c2ca368d942190" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>spi</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>SPICIno</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a6585a037b5ac12286542ef71805b7aab" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>SPICIno</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a86165d0a615600fdc075419bc0f23497" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>SPICIno</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a6b272df6ce49535ebc2dece177ee39a2" prot="public" virt="virtual"><scope>SPICIno</scope><name>transfer</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a670b205fb537baa5268590d2a3a25427" prot="public" virt="virtual"><scope>SPICIno</scope><name>transfer16</name></member>
+      <member refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bae83841ed6e767461cdb307b516cd9481" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>WRITE_ERROR</name></member>
+      <member refid="d1/d49/class_s_p_i_c_ino_1a2bbd9cbd87032aa4c6434a796140a19a" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>~SPICIno</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

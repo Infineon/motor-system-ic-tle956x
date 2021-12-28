@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d6/dec/group__arduino_pal" kind="group">
+    <compoundname>arduinoPal</compoundname>
+    <title>ArduinoPal</title>
+    <innerclass refid="d8/d0b/class_a_d_c_ino" prot="public">ADCIno</innerclass>
+    <innerclass refid="df/def/class_g_p_i_o_ino" prot="public">GPIOIno</innerclass>
+    <innerclass refid="d1/d49/class_s_p_i_c_ino" prot="public">SPICIno</innerclass>
+    <innerclass refid="d7/d69/class_timer_ino" prot="public">TimerIno</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

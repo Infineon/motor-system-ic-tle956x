@@ -18,8 +18,6 @@ Default high-side-switch test. Compatible with BTT60xx variants.
 
 Compatibility
 ^^^^^^^^^^^^^
-.. image:: ../../img/btt6x_shield.jpg
-    :width: 150
 
 .. list-table::
     :header-rows: 1
@@ -53,11 +51,6 @@ Default high-side-switch test. Compatible with BTS5001x and BTS700x variants.
 
 Compatibility
 ^^^^^^^^^^^^^
-.. image:: ../../img/bts5001x_shield.png
-    :width: 150
-
-.. image:: ../../img/bts700x_shield.jpg
-    :width: 150
 
 Description
 ^^^^^^^^^^^
@@ -81,11 +74,6 @@ Switch dependent on optional user button. Compatible with BTS5001x and BTS700x v
 
 Compatibility
 ^^^^^^^^^^^^^
-.. image:: ../../img/bts5001x_shield.png
-    :width: 150
-
-.. image:: ../../img/bts700x_shield.jpg
-    :width: 150
 
 .. list-table::
     :header-rows: 1

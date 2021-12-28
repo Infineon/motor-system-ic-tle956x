@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_939c8b190bd538da7127929d9efbf093" kind="dir">
+    <compoundname>pal</compoundname>
+    <innerfile refid="db/d33/adc_8cpp">adc.cpp</innerfile>
+    <innerfile refid="d5/d90/adc_8hpp">adc.hpp</innerfile>
+    <innerfile refid="de/d31/gpio_8cpp">gpio.cpp</innerfile>
+    <innerfile refid="d1/d2c/gpio_8hpp">gpio.hpp</innerfile>
+    <innerfile refid="d6/da3/logger_8hpp">logger.hpp</innerfile>
+    <innerfile refid="dd/d1a/spic_8cpp">spic.cpp</innerfile>
+    <innerfile refid="d8/df0/spic_8hpp">spic.hpp</innerfile>
+    <innerfile refid="df/d05/timer_8hpp">timer.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/pal/"/>
+  </compounddef>
+</doxygen>

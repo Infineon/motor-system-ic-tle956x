@@ -1,0 +1,964 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d6/d9b/_t_l_e9xxx-reg_8hpp" kind="file" language="C++">
+    <compoundname>TLE9xxx-reg.hpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="d7/def/_t_l_e9xxx_8hpp" local="yes">TLE9xxx.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="12">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="11">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="5">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>BLDCM-control.cpp</label>
+        <link refid="d0/d41/_b_l_d_c_m-control_8cpp"/>
+      </node>
+      <node id="10">
+        <label>BLDCM-control.hpp</label>
+        <link refid="d7/da6/_b_l_d_c_m-control_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>DCM-control.cpp</label>
+        <link refid="dd/d49/_d_c_m-control_8cpp"/>
+      </node>
+      <node id="4">
+        <label>DCM-control.hpp</label>
+        <link refid="de/d59/_d_c_m-control_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>TLE9562.cpp</label>
+        <link refid="d9/d77/_t_l_e9562_8cpp"/>
+      </node>
+      <node id="3">
+        <label>TLE9562.hpp</label>
+        <link refid="d8/dc4/_t_l_e9562_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TLE9563.cpp</label>
+        <link refid="dc/d3d/_t_l_e9563_8cpp"/>
+      </node>
+      <node id="9">
+        <label>TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>TLE9xxx.cpp</label>
+        <link refid="dd/d9f/_t_l_e9xxx_8cpp"/>
+      </node>
+      <node id="2">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="15">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="user-defined">
+      <header>TLE9xxx-reg.hpp - Register enum for TLE9xxx</header>
+      <description><para>This file lists all available control- and status-registers for a TLE9xxx SBC tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="enum" id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3" prot="public" static="no" strong="no">
+        <type></type>
+        <name>CtrlRegisters</name>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a89c2b391130a47afd2cfa036cbf39af5" prot="public">
+          <name>REG_ADDR_M_S_CTRL</name>
+          <initializer>= (0x01)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Mode and Supply Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a70ea46aac261b6f4fe72555da7ac5347" prot="public">
+          <name>REG_ADDR_HW_CTRL</name>
+          <initializer>= (0x02)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Hardware control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acbafc72ce7fadc8444d32cef086ddd53" prot="public">
+          <name>REG_ADDR_WD_CTRL</name>
+          <initializer>= (0x03)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Watchdog control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad9c9e8e96183b9ad912cf0bc2751bc78" prot="public">
+          <name>REG_ADDR_BUS_CTRL</name>
+          <initializer>= (0x04)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CAN Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a6156bb836c0441e371296d408b1a870a" prot="public">
+          <name>REG_ADDR_WK_CTRL</name>
+          <initializer>= (0x05)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Wake-up control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a562bea4b69ef8b5f96f64f2ddbedcb20" prot="public">
+          <name>REG_ADDR_TIMER_CTRL</name>
+          <initializer>= (0x06)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> 1 and <ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> 2control and selection </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ab716cb5a07fab2daa6d8b9ccf21d23f2" prot="public">
+          <name>REG_ADDR_SW_SD_CTRL</name>
+          <initializer>= (0x07)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High-side-switch shut down control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aeee43226c8291ddc1595265b1f6409fd" prot="public">
+          <name>REG_ADDR_HS_CTRL</name>
+          <initializer>= (0x08)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High-side-switch control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a97549239cd7b50346ae454df63028710" prot="public">
+          <name>REG_ADDR_INT_MASK</name>
+          <initializer>= (0x09)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Interrupt mask control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a1cc61f34319477d4616e0a6003a1cec3" prot="public">
+          <name>REG_ADDR_PWM_CTRL</name>
+          <initializer>= (0x0A)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM configuration control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3afaf3e05782cb7b81a082cf8802c32d5d" prot="public">
+          <name>REG_ADDR_SYS_STAT_CTRL</name>
+          <initializer>= (0x0B)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>System status contorl </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a8e867f9c81120b05e7817e0bcba805a4" prot="public">
+          <name>REG_ADDR_GENCTRL</name>
+          <initializer>= (0x10)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>General bridge control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad56b5fe9cf994be4088d67d14ae43b84" prot="public">
+          <name>REG_ADDR_CSA</name>
+          <initializer>= (0x11)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Current sense amplifier </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0d811e04b26facfb99c0c9367a51594a" prot="public">
+          <name>REG_ADDR_LS_VDS</name>
+          <initializer>= (0x12)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Drain-Source monitoring threshold </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a086bdef407e0acfc3d763ec362b0a9e3" prot="public">
+          <name>REG_ADDR_HS_VDS</name>
+          <initializer>= (0x13)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Drain-Source monitoring threshold </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aced99d37567b04b797d867ef7a70d7f8" prot="public">
+          <name>REG_ADDR_CCP_BLK</name>
+          <initializer>= (0x14)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CCP and times selection </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9211e9293faf2e71f32cc0648485e7f1" prot="public">
+          <name>REG_ADDR_HBMODE</name>
+          <initializer>= (0x15)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Half-Bridge MODE </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a18fefba0b3e19495eee8ea0ed203667a" prot="public">
+          <name>REG_ADDR_TPRECHG</name>
+          <initializer>= (0x16)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM pre-charge and pre-discharge time </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a5a60cce720746db09ecd6f956626c05c" prot="public">
+          <name>REG_ADDR_ST_ICHG</name>
+          <initializer>= (0x17)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Static charge/discharge current </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3ba32293d57ba2936c677a1fd30df2ea" prot="public">
+          <name>REG_ADDR_HB_ICHG</name>
+          <initializer>= (0x18)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM charge/discharge current </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a01c68fd485bcc3a27b12a4e7622e3e36" prot="public">
+          <name>REG_ADDR_HB_ICHG_MAX</name>
+          <initializer>= (0x19)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM max. pre-charge/pre-discharge current </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad7cac748695775e7f36175396c5181ff" prot="public">
+          <name>REG_ADDR_HB_PCHG_INIT</name>
+          <initializer>= (0x1A)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM pre-charge/pre-discharge initialization </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aed4e4101fe04c8b1fb50cb1d48c42308" prot="public">
+          <name>REG_ADDR_TDON_HB_CTRL</name>
+          <initializer>= (0x1B)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM inputs TON configuration </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acec56c402256c573577753b8ce4431ad" prot="public">
+          <name>REG_ADDR_TDOFF_HB_CTRL</name>
+          <initializer>= (0x1C)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>PWM inputs TOFF configuration </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a067d27d530dd6dab927fe2649b600faf" prot="public">
+          <name>REG_ADDR_BRAKE</name>
+          <initializer>= (0x1D)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Brake control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a20b39f478dadc2d10d929ddee3327257" prot="public">
+          <name>REG_ADDR_SWK_CTRL</name>
+          <initializer>= (0x30)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CAN Selective Wake Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a34ad2cc05dd5509101ec2c90d00e7959" prot="public">
+          <name>REG_ADDR_SWK_BTL1_CTRL</name>
+          <initializer>= (0x31)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Bit Timing Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aa777de8c17be5f8ec54d8a9c062b9ca6" prot="public">
+          <name>REG_ADDR_SWK_ID1_CTRL</name>
+          <initializer>= (0x32)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK WUF Identifier bits 28...13 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ae04c3b9055d250f07a623556d2af830f" prot="public">
+          <name>REG_ADDR_SWK_ID0_CTRL</name>
+          <initializer>= (0x33)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK WUF Identifier bits 12...0 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aca5b20c8c18e3f06f959ae34d4b01474" prot="public">
+          <name>REG_ADDR_SWK_MASK_ID1_CTRL</name>
+          <initializer>= (0x34)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK WUF Identifier Mask bits 28...13 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a691c0a410be5c72cd82f6c32115be912" prot="public">
+          <name>REG_ADDR_SWK_MASK_ID0_CTRL</name>
+          <initializer>= (0x35)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK WUF Identifier Mask bits 12...0 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aff6055334813841f2ed5362f8883a2e4" prot="public">
+          <name>REG_ADDR_SWK_DLC_CTRL</name>
+          <initializer>= (0x36)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Frame Data Length Code Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a72ff60b5d9fa28177f00335125920feb" prot="public">
+          <name>REG_ADDR_SWK_DATA3_CTRL</name>
+          <initializer>= (0x37)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Data7-Data6 Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3cdd74b074798a15976f960c0a809b6b" prot="public">
+          <name>REG_ADDR_SWK_DATA2_CTRL</name>
+          <initializer>= (0x38)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Data5-Data4 Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3abd8e5a959d597bb4b55b0c21669d627b" prot="public">
+          <name>REG_ADDR_SWK_DATA1_CTRL</name>
+          <initializer>= (0x39)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Data3-Data2 Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a98a89a281d1a741bdf820dc47e709653" prot="public">
+          <name>REG_ADDR_SWK_DATA0_CTRL</name>
+          <initializer>= (0x3A)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Data1-Data0 Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9473473c2d30a8129949b0bc465f4f93" prot="public">
+          <name>REG_ADDR_SWK_CAN_FD_CTRL</name>
+          <initializer>= (0x3B)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>CAN FD Configuration Control Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a4987ce1335287ba4558578beea94973f" prot="public">
+          <name>REG_ADDR_SWK_OSC_TRIM_CTRL</name>
+          <initializer>= (0x3C)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Oscillator Trimming and option Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad077fe8e5b11c5e8ff095982c5422d21" prot="public">
+          <name>REG_ADDR_SWK_OSC_CAL_STAT</name>
+          <initializer>= (0x3D)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Oscillator Calibration Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aafbd80f7210107391b6bc389afc45601" prot="public">
+          <name>REG_ADDR_SWK_CDR_CTRL</name>
+          <initializer>= (0x3E)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Clock Data Recovery Control Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0bfb20a9da44c0dc0ac7cbfeb9a45f42" prot="public">
+          <name>REG_ADDR_SWK_CDR_LIMIT</name>
+          <initializer>= (0x3F)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SWK Clock Data Recovery Limit Control </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>enum for the SPI control registers in a TLE9xxx, page 173 in datasheet </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx-reg.hpp" line="33" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="34" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="enum" id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27" prot="public" static="no" strong="no">
+        <type></type>
+        <name>StatusRegisters</name>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a94f77d8a0aec7343d0719c22cfbc71dd" prot="public">
+          <name>REG_ADDR_SUP_STAT</name>
+          <initializer>= (0x40)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Supply Voltage Fail Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a98d36f489982fa87fa98d88570f370fc" prot="public">
+          <name>REG_ADDR_THERM_STAT</name>
+          <initializer>= (0x41)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Thermal Protection Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aab7b7f34392ecfda42dc819da2d9644f" prot="public">
+          <name>REG_ADDR_DEV_STAT</name>
+          <initializer>= (0x42)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Device Information Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a68a9b45ff152b3689e989dd009fbea9b" prot="public">
+          <name>REG_ADDR_BUS_STAT</name>
+          <initializer>= (0x43)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bus Communication Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a4c2bf664b8f800610e1891cca6334a06" prot="public">
+          <name>REG_ADDR_WK_STAT</name>
+          <initializer>= (0x44)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Wake-up Source and Information Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a625805e7fea9a86b7a3499a559edb08f" prot="public">
+          <name>REG_ADDR_WK_LVL_STAT</name>
+          <initializer>= (0x45)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>WK Input Level </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aa9242a7a4d1374a96bf226360b77bcbf" prot="public">
+          <name>REG_ADDR_HS_OL_OC_OT_STAT</name>
+          <initializer>= (0x46)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High-Side Switch Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a06ec60c0a5f67c67374b4a26518f4be5" prot="public">
+          <name>REG_ADDR_GEN_STAT</name>
+          <initializer>= (0x50)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>GEN Status register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27add75cbae0432a048d5117a3d95ac39cf" prot="public">
+          <name>REG_ADDR_TDREG</name>
+          <initializer>= (0x51)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Turn-on/off delay regulation register </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0846eaae659eb958d7f02ca6835133b6" prot="public">
+          <name>REG_ADDR_DSOV</name>
+          <initializer>= (0x52)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Drain-source overvoltage HBVOUT </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a166d99f257844c97d3b37eaced12a9f6" prot="public">
+          <name>REG_ADDR_EFF_TDON_OFF1</name>
+          <initializer>= (0x53)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Effective MOSFET turn-on/off delay - PWM half- bridge 1 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0a21412b1f1e864fc7ee05cbf8b24ae8" prot="public">
+          <name>REG_ADDR_EFF_TDON_OFF2</name>
+          <initializer>= (0x54)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Effective MOSFET turn-on/off delay - PWM half- bridge 2 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27abbe37e118ef9d34fbf67fb82c8041193" prot="public">
+          <name>REG_ADDR_EFF_TDON_OFF3</name>
+          <initializer>= (0x55)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Effective MOSFET turn-on/off delay - PWM half- bridge 3 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a51b280489b5ded2709922a06a1b6a615" prot="public">
+          <name>REG_ADDR_EFF_TDON_OFF4</name>
+          <initializer>= (0x56)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Effective MOSFET turn-on/off delay - PWM half- bridge 4 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27ad5b1ac504a90a54f0133d15cb636c7ce" prot="public">
+          <name>REG_ADDR_TRISE_FALL1</name>
+          <initializer>= (0x57)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MOSFET rise/fall time - PWM half-bridge 1 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a5bdcfeb00e2c9c7fc0027f0a81661680" prot="public">
+          <name>REG_ADDR_TRISE_FALL2</name>
+          <initializer>= (0x58)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MOSFET rise/fall time - PWM half-bridge 2 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27adae8700326c0c7312edc4106e4ba4bc8" prot="public">
+          <name>REG_ADDR_TRISE_FALL3</name>
+          <initializer>= (0x59)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MOSFET rise/fall time - PWM half-bridge 3 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27af408c1ce23b8e3bd89b11f74fbea8596" prot="public">
+          <name>REG_ADDR_TRISE_FALL4</name>
+          <initializer>= (0x5A)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>MOSFET rise/fall time - PWM half-bridge 4 </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3d0df4d0be409ca280e8799d4804d660" prot="public">
+          <name>REG_ADDR_SWK_STAT</name>
+          <initializer>= (0x60)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Selective Wake Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a2add4c4a7f07585a9c162b4bb3b623a4" prot="public">
+          <name>REG_ADDR_SWK_ECNT_STAT</name>
+          <initializer>= (0x61)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Selective Wake ECNT Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a83ef7ffe82f67b982667bf88478f1c72" prot="public">
+          <name>REG_ADDR_SWK_CDR_STAT</name>
+          <initializer>= (0x63)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Selective Wake CDR Status </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3e26a9c48e04726a90b3892bfa12a289" prot="public">
+          <name>REG_ADDR_FAM_PROD_STAT</name>
+          <initializer>= (0x70)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Family and Product Identification Register </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>enum for the control registers in a TLE9xxx </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx-reg.hpp" line="83" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="84" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="enum" id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Int_Mask</name>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba9098c441888b38a6cc954a7d402e4c50" prot="public">
+          <name>SUPPLY_STAT</name>
+          <initializer>= (0x01)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Supply status interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9bac408f4b4bc97e39c386d0874cc377760" prot="public">
+          <name>TEMP_STAT</name>
+          <initializer>= (0x02)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Temperature Interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba8e7b37c141d91801e7ab89aebff6d55d" prot="public">
+          <name>BUS_STAT</name>
+          <initializer>= (0x04)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>BUS interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba558d49f0b6c410f1845705ef7da5d497" prot="public">
+          <name>HS_STAT</name>
+          <initializer>= (0x08)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>High side interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baed4b18faeb3990f599556bc34da668e7" prot="public">
+          <name>BD_STAT</name>
+          <initializer>= (0x10)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Bridge Driver Interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baf1648f8dcd8f13d933e2f731388266cc" prot="public">
+          <name>SPI_CRC_FAIL</name>
+          <initializer>= (0x20)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>SPI and CRC interrupt generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba6a828d6fabfaaa5c38c910909a5b7a4d" prot="public">
+          <name>WD_SDM</name>
+          <initializer>= (0x40)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Watchdog failure in SW Dev mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba25f3f1d13f1f128d4dfbd0d57f853cc0" prot="public">
+          <name>WD_SDM_DISABLE</name>
+          <initializer>= (0x80)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Disable Watchdog in SW Dev mode </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba0b99f9a9f3b9bad8a69c6562deae0345" prot="public">
+          <name>INTN_CYC_EN</name>
+          <initializer>= (0x100)</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Periodical INTN generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/corelib/TLE9xxx-reg.hpp" line="116" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="117" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TLE9xxx_REG_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9xxx_REG_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/>CtrlRegisters[41][2]=</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x01,<sp/>0x00},</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x02,<sp/>0x00},</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x03,<sp/>0x00},</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x04,<sp/>0x00},</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x05,<sp/>0x00},</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{0x06,<sp/>0x00}<sp/>....</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3" kindref="member">CtrlRegisters</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SPI<sp/>control<sp/>registers,<sp/>device<sp/>control<sp/>registers*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a89c2b391130a47afd2cfa036cbf39af5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a89c2b391130a47afd2cfa036cbf39af5" kindref="member">REG_ADDR_M_S_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x01),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a70ea46aac261b6f4fe72555da7ac5347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a70ea46aac261b6f4fe72555da7ac5347" kindref="member">REG_ADDR_HW_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x02),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acbafc72ce7fadc8444d32cef086ddd53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acbafc72ce7fadc8444d32cef086ddd53" kindref="member">REG_ADDR_WD_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x03),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad9c9e8e96183b9ad912cf0bc2751bc78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad9c9e8e96183b9ad912cf0bc2751bc78" kindref="member">REG_ADDR_BUS_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x04),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a6156bb836c0441e371296d408b1a870a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a6156bb836c0441e371296d408b1a870a" kindref="member">REG_ADDR_WK_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x05),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a562bea4b69ef8b5f96f64f2ddbedcb20" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a562bea4b69ef8b5f96f64f2ddbedcb20" kindref="member">REG_ADDR_TIMER_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x06),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ab716cb5a07fab2daa6d8b9ccf21d23f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ab716cb5a07fab2daa6d8b9ccf21d23f2" kindref="member">REG_ADDR_SW_SD_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x07),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aeee43226c8291ddc1595265b1f6409fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aeee43226c8291ddc1595265b1f6409fd" kindref="member">REG_ADDR_HS_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x08),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a97549239cd7b50346ae454df63028710" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a97549239cd7b50346ae454df63028710" kindref="member">REG_ADDR_INT_MASK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x09),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a1cc61f34319477d4616e0a6003a1cec3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a1cc61f34319477d4616e0a6003a1cec3" kindref="member">REG_ADDR_PWM_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x0A),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3afaf3e05782cb7b81a082cf8802c32d5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3afaf3e05782cb7b81a082cf8802c32d5d" kindref="member">REG_ADDR_SYS_STAT_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x0B),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*SPI<sp/>contorl<sp/>registers,<sp/>contorl<sp/>registers<sp/>bridge<sp/>driver*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a8e867f9c81120b05e7817e0bcba805a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a8e867f9c81120b05e7817e0bcba805a4" kindref="member">REG_ADDR_GENCTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x10),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad56b5fe9cf994be4088d67d14ae43b84" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad56b5fe9cf994be4088d67d14ae43b84" kindref="member">REG_ADDR_CSA</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x11),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0d811e04b26facfb99c0c9367a51594a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0d811e04b26facfb99c0c9367a51594a" kindref="member">REG_ADDR_LS_VDS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x12),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a086bdef407e0acfc3d763ec362b0a9e3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a086bdef407e0acfc3d763ec362b0a9e3" kindref="member">REG_ADDR_HS_VDS</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x13),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aced99d37567b04b797d867ef7a70d7f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aced99d37567b04b797d867ef7a70d7f8" kindref="member">REG_ADDR_CCP_BLK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x14),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9211e9293faf2e71f32cc0648485e7f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9211e9293faf2e71f32cc0648485e7f1" kindref="member">REG_ADDR_HBMODE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x15),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a18fefba0b3e19495eee8ea0ed203667a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a18fefba0b3e19495eee8ea0ed203667a" kindref="member">REG_ADDR_TPRECHG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x16),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a5a60cce720746db09ecd6f956626c05c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a5a60cce720746db09ecd6f956626c05c" kindref="member">REG_ADDR_ST_ICHG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x17),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3ba32293d57ba2936c677a1fd30df2ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3ba32293d57ba2936c677a1fd30df2ea" kindref="member">REG_ADDR_HB_ICHG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x18),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a01c68fd485bcc3a27b12a4e7622e3e36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a01c68fd485bcc3a27b12a4e7622e3e36" kindref="member">REG_ADDR_HB_ICHG_MAX</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x19),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="58" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad7cac748695775e7f36175396c5181ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad7cac748695775e7f36175396c5181ff" kindref="member">REG_ADDR_HB_PCHG_INIT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x1A),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aed4e4101fe04c8b1fb50cb1d48c42308" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aed4e4101fe04c8b1fb50cb1d48c42308" kindref="member">REG_ADDR_TDON_HB_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x1B),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acec56c402256c573577753b8ce4431ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3acec56c402256c573577753b8ce4431ad" kindref="member">REG_ADDR_TDOFF_HB_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x1C),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a067d27d530dd6dab927fe2649b600faf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a067d27d530dd6dab927fe2649b600faf" kindref="member">REG_ADDR_BRAKE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x1D),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*SPI<sp/>contorl<sp/>registers,<sp/>selective<sp/>wake<sp/>registers*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a20b39f478dadc2d10d929ddee3327257" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a20b39f478dadc2d10d929ddee3327257" kindref="member">REG_ADDR_SWK_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x30),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="64" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a34ad2cc05dd5509101ec2c90d00e7959" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a34ad2cc05dd5509101ec2c90d00e7959" kindref="member">REG_ADDR_SWK_BTL1_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x31),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aa777de8c17be5f8ec54d8a9c062b9ca6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aa777de8c17be5f8ec54d8a9c062b9ca6" kindref="member">REG_ADDR_SWK_ID1_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x32),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="66" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ae04c3b9055d250f07a623556d2af830f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ae04c3b9055d250f07a623556d2af830f" kindref="member">REG_ADDR_SWK_ID0_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x33),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aca5b20c8c18e3f06f959ae34d4b01474" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aca5b20c8c18e3f06f959ae34d4b01474" kindref="member">REG_ADDR_SWK_MASK_ID1_CTRL</ref><sp/><sp/>=<sp/>(0x34),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a691c0a410be5c72cd82f6c32115be912" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a691c0a410be5c72cd82f6c32115be912" kindref="member">REG_ADDR_SWK_MASK_ID0_CTRL</ref><sp/><sp/>=<sp/>(0x35),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aff6055334813841f2ed5362f8883a2e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aff6055334813841f2ed5362f8883a2e4" kindref="member">REG_ADDR_SWK_DLC_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x36),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a72ff60b5d9fa28177f00335125920feb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a72ff60b5d9fa28177f00335125920feb" kindref="member">REG_ADDR_SWK_DATA3_CTRL</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x37),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3cdd74b074798a15976f960c0a809b6b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a3cdd74b074798a15976f960c0a809b6b" kindref="member">REG_ADDR_SWK_DATA2_CTRL</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x38),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3abd8e5a959d597bb4b55b0c21669d627b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3abd8e5a959d597bb4b55b0c21669d627b" kindref="member">REG_ADDR_SWK_DATA1_CTRL</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x39),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a98a89a281d1a741bdf820dc47e709653" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a98a89a281d1a741bdf820dc47e709653" kindref="member">REG_ADDR_SWK_DATA0_CTRL</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x3A),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9473473c2d30a8129949b0bc465f4f93" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a9473473c2d30a8129949b0bc465f4f93" kindref="member">REG_ADDR_SWK_CAN_FD_CTRL</ref><sp/><sp/><sp/><sp/>=<sp/>(0x3B),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*SPI<sp/>control<sp/>registers,<sp/>Selective<sp/>Wake<sp/>trim<sp/>and<sp/>configuration<sp/>Registers*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a4987ce1335287ba4558578beea94973f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a4987ce1335287ba4558578beea94973f" kindref="member">REG_ADDR_SWK_OSC_TRIM_CTRL</ref><sp/><sp/>=<sp/>(0x3C),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad077fe8e5b11c5e8ff095982c5422d21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3ad077fe8e5b11c5e8ff095982c5422d21" kindref="member">REG_ADDR_SWK_OSC_CAL_STAT</ref><sp/><sp/><sp/>=<sp/>(0x3D),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aafbd80f7210107391b6bc389afc45601" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3aafbd80f7210107391b6bc389afc45601" kindref="member">REG_ADDR_SWK_CDR_CTRL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x3E),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0bfb20a9da44c0dc0ac7cbfeb9a45f42" kindref="member">REG_ADDR_SWK_CDR_LIMIT</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x3F)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a9f04d5c00ebe702d4bd1775cd6e990e3a0bfb20a9da44c0dc0ac7cbfeb9a45f42" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27" kindref="member">StatusRegisters</ref></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SPI<sp/>status<sp/>information<sp/>registers,<sp/>Device<sp/>Status<sp/>Registers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a94f77d8a0aec7343d0719c22cfbc71dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a94f77d8a0aec7343d0719c22cfbc71dd" kindref="member">REG_ADDR_SUP_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x40),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a98d36f489982fa87fa98d88570f370fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a98d36f489982fa87fa98d88570f370fc" kindref="member">REG_ADDR_THERM_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x41),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aab7b7f34392ecfda42dc819da2d9644f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aab7b7f34392ecfda42dc819da2d9644f" kindref="member">REG_ADDR_DEV_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x42),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a68a9b45ff152b3689e989dd009fbea9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a68a9b45ff152b3689e989dd009fbea9b" kindref="member">REG_ADDR_BUS_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x43),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a4c2bf664b8f800610e1891cca6334a06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a4c2bf664b8f800610e1891cca6334a06" kindref="member">REG_ADDR_WK_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x44),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a625805e7fea9a86b7a3499a559edb08f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a625805e7fea9a86b7a3499a559edb08f" kindref="member">REG_ADDR_WK_LVL_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x45),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aa9242a7a4d1374a96bf226360b77bcbf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27aa9242a7a4d1374a96bf226360b77bcbf" kindref="member">REG_ADDR_HS_OL_OC_OT_STAT</ref><sp/><sp/><sp/>=<sp/>(0x46),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SPI<sp/>status<sp/>information<sp/>registers,<sp/>Status<sp/>registers<sp/>bridge<sp/>driver*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a06ec60c0a5f67c67374b4a26518f4be5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a06ec60c0a5f67c67374b4a26518f4be5" kindref="member">REG_ADDR_GEN_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x50),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27add75cbae0432a048d5117a3d95ac39cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27add75cbae0432a048d5117a3d95ac39cf" kindref="member">REG_ADDR_TDREG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x51),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0846eaae659eb958d7f02ca6835133b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0846eaae659eb958d7f02ca6835133b6" kindref="member">REG_ADDR_DSOV</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x52),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a166d99f257844c97d3b37eaced12a9f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a166d99f257844c97d3b37eaced12a9f6" kindref="member">REG_ADDR_EFF_TDON_OFF1</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x53),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0a21412b1f1e864fc7ee05cbf8b24ae8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a0a21412b1f1e864fc7ee05cbf8b24ae8" kindref="member">REG_ADDR_EFF_TDON_OFF2</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x54),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27abbe37e118ef9d34fbf67fb82c8041193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27abbe37e118ef9d34fbf67fb82c8041193" kindref="member">REG_ADDR_EFF_TDON_OFF3</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x55),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a51b280489b5ded2709922a06a1b6a615" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a51b280489b5ded2709922a06a1b6a615" kindref="member">REG_ADDR_EFF_TDON_OFF4</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x56),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27ad5b1ac504a90a54f0133d15cb636c7ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27ad5b1ac504a90a54f0133d15cb636c7ce" kindref="member">REG_ADDR_TRISE_FALL1</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x57),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a5bdcfeb00e2c9c7fc0027f0a81661680" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a5bdcfeb00e2c9c7fc0027f0a81661680" kindref="member">REG_ADDR_TRISE_FALL2</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x58),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27adae8700326c0c7312edc4106e4ba4bc8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27adae8700326c0c7312edc4106e4ba4bc8" kindref="member">REG_ADDR_TRISE_FALL3</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x59),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27af408c1ce23b8e3bd89b11f74fbea8596" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27af408c1ce23b8e3bd89b11f74fbea8596" kindref="member">REG_ADDR_TRISE_FALL4</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x5A),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SPI<sp/>status<sp/>information<sp/>registers,<sp/>Selective<sp/>wake<sp/>status<sp/>registers<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3d0df4d0be409ca280e8799d4804d660" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3d0df4d0be409ca280e8799d4804d660" kindref="member">REG_ADDR_SWK_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x60),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a2add4c4a7f07585a9c162b4bb3b623a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a2add4c4a7f07585a9c162b4bb3b623a4" kindref="member">REG_ADDR_SWK_ECNT_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x61),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a83ef7ffe82f67b982667bf88478f1c72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a83ef7ffe82f67b982667bf88478f1c72" kindref="member">REG_ADDR_SWK_CDR_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x63),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SPI<sp/>status<sp/>information<sp/>registers,<sp/>Family<sp/>and<sp/>product<sp/>information<sp/>register<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3e26a9c48e04726a90b3892bfa12a289" kindref="member">REG_ADDR_FAM_PROD_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x70)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27a3e26a9c48e04726a90b3892bfa12a289" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/*======================================<sp/>Bit<sp/>field<sp/>enums<sp/>=====================================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*============================================================================================================================================*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9b" kindref="member">Int_Mask</ref></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="118" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba9098c441888b38a6cc954a7d402e4c50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba9098c441888b38a6cc954a7d402e4c50" kindref="member">SUPPLY_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x01),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9bac408f4b4bc97e39c386d0874cc377760" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9bac408f4b4bc97e39c386d0874cc377760" kindref="member">TEMP_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x02),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba8e7b37c141d91801e7ab89aebff6d55d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba8e7b37c141d91801e7ab89aebff6d55d" kindref="member">BUS_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x04),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba558d49f0b6c410f1845705ef7da5d497" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba558d49f0b6c410f1845705ef7da5d497" kindref="member">HS_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x08),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baed4b18faeb3990f599556bc34da668e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baed4b18faeb3990f599556bc34da668e7" kindref="member">BD_STAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x10),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="123" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baf1648f8dcd8f13d933e2f731388266cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9baf1648f8dcd8f13d933e2f731388266cc" kindref="member">SPI_CRC_FAIL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x20),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba6a828d6fabfaaa5c38c910909a5b7a4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba6a828d6fabfaaa5c38c910909a5b7a4d" kindref="member">WD_SDM</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x40),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba25f3f1d13f1f128d4dfbd0d57f853cc0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba25f3f1d13f1f128d4dfbd0d57f853cc0" kindref="member">WD_SDM_DISABLE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x80),<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba0b99f9a9f3b9bad8a69c6562deae0345" kindref="member">INTN_CYC_EN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(0x100)<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127" refid="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9ba0b99f9a9f3b9bad8a69c6562deae0345" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/corelib/TLE9xxx-reg.hpp"/>
+  </compounddef>
+</doxygen>

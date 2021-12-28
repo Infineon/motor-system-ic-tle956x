@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="da/dd4/adc-arduino_8hpp" kind="file" language="C++">
+    <compoundname>adc-arduino.hpp</compoundname>
+    <includes refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">../../../config/tle9xxx-conf.hpp</includes>
+    <includes refid="d7/d92/_t_l_e9563_8hpp" local="yes">../../../corelib/TLE9563.hpp</includes>
+    <includedby refid="df/d68/_b_l_d_c_m-control-ino_8hpp" local="yes">BLDCM-control-ino.hpp</includedby>
+    <includedby refid="d2/d99/_d_c_m-control-ino_8hpp" local="yes">DCM-control-ino.hpp</includedby>
+    <includedby refid="da/d26/adc-arduino_8cpp" local="yes">adc-arduino.cpp</includedby>
+    <incdepgraph>
+      <node id="9">
+        <label>Arduino.h</label>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="3">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="2">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>../../../corelib/TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="7">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="2">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="4">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="1">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d8/d0b/class_a_d_c_ino" prot="public">ADCIno</innerclass>
+    <briefdescription>
+<para>Arduino PAL for the ADC. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2019-2020 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ADC_ARDUINO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ADC_ARDUINO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../config/tle9xxx-conf.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../../corelib/TLE9563.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="d8/d0b/class_a_d_c_ino" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d8/d0b/class_a_d_c_ino" kindref="compound">ADCIno</ref><sp/>:<sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="de/d30/class_analog_digital_converter" kindref="compound">AnalogDigitalConverter</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>pin;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1adc9a446eb97f04412861d927d9a53454" kindref="member">ADCIno</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1adc9a446eb97f04412861d927d9a53454" kindref="member">ADCIno</ref>(uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1ae7232ffe2cb9990a0cf18e919c13988a" kindref="member">~ADCIno</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1a2b314ccc988eabebe153a49049a8663d" kindref="member">init</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1a326e765d5fa76bc53b93ef71530cebf1" kindref="member">deinit</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1af550e48c88d33696829e0c9fb78dba30" kindref="member">enable</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1a22e26622d5ad60d22ac39b9ea1a450e0" kindref="member">disable</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1acb524a9cf2e14be1c3b4cccc1b6d5189" kindref="member">setReadResolution</ref>(uint8_t<sp/>resolution);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1a3e9c038e95862a6247d3faa40fa7dbcf" kindref="member">setWriteResolution</ref>(uint8_t<sp/>resolution);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1afd3b43383d8e0c437ece522f3228bd0c" kindref="member">setWriteFrequency</ref>(uint32_t<sp/>divisor);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1ad4c2bb0dca60dbd39ce2c96027bcd289" kindref="member">ADCRead</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d0b/class_a_d_c_ino_1a643fb12247ae6f8ce24bad7bc4281ced" kindref="member">ADCWrite</ref>(uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="src/framework/arduino/pal/adc-arduino.hpp"/>
+  </compounddef>
+</doxygen>
