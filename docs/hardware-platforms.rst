@@ -2,111 +2,96 @@
 Hardware Platforms
 ==================
 
-.. |trade|    unicode:: U+2122 .. TRADEMARK SIGN
-
-Motor System IC TLE956x family
+BLDC Motor Shield with TLE9563
 -------------------------------
 
-Shields for Arduino
-"""""""""""""""""""
-
-* `24V Protected Switch Shield with BTT6030-2EKA and BTT6020-1EKA`_
-
 Pinout Diagram
-^^^^^^^^^^^^^^
-
-Pin Description
 ^^^^^^^^^^^^^^^
 
+.. image:: /img/BLDC_Shield_TLE9563_Pinout.png
+    :height: 500
+
+Pin Description
+^^^^^^^^^^^^^^^^
+
 .. list-table::
-    :header-rows: 1
+	:header-rows: 1
 
-    * - Arduino Pin
-      - Symbol
-      - Type
-      - Function
-    * - GND
-      - GND
-      - \-
-      - Ground
-    * - D2
-      - DSEL 0
-      - Input/digital
-      - Diagnostic select PROFET\ |trade|\ + 24V device no. 0. Selects if the diagnosis of channel 0 or 1 is muxed to the IS Pin.
-    * - D3
-      - IN 0.1
-      - Input/PWM
-      - Input to switch channel 1 on PROFET\ |trade|\ + 24V device no. 0.
-    * - D4
-      - IN 1.0
-      - Input/PWM
-      - Input to switch channel 0 on PROFET\ |trade|\ + 24V device no. 1.
-    * - D5
-      - DEN 1
-      - Input/digital
-      - Turns diagnosis for PROFET\ |trade|\ + 24V device no. 1 on or off.
-    * - D6
-      - DSEL 1
-      - Input/digital
-      - Diagnostic select PROFET\ |trade|\ + 24V device no. 1. Selects if the diagnosis of channel 0 or 1 is muxed to the IS Pin.
-    * - D7
-      - IN 1.1
-      - Input/PWM
-      - Input to switch channel 1 on PROFET\ |trade|\ + 24V device no. 1.
-    * - D8
-      - IN 2
-      - Input/PWM
-      - Input to switch channel on PROFET\ |trade|\ + 24V device no. 2.
-    * - D9
-      - DEN 2
-      - Input/digital
-      - Turns diagnosis for PROFET\ |trade|\ + 24V device no. 2 on or off.
-    * - A0
-      - IS 0
-      - Output/analog
-      - Current sense of PROFET\ |trade|\ + 24V device no. 0
-    * - A1
-      - IS 1
-      - Output/analog
-      - Current sense of PROFET\ |trade|\ + 24V device no. 1
-    * - A2
-      - IS 2
-      - Output/analog
-      - Current sense of PROFET\ |trade|\ + 24V device no. 2
-    * - A3
-      - IN 0.0
-      - Input/PWM
-      - Input to switch channel 0 on PROFET\ |trade|\ + 24V device no. 0.
-    * - A4
-      - DEN 0
-      - Input/digital
-      - Turns diagnosis for PROFET\ |trade|\ + 24V device no. 0 on or off.
-    * - \-
-      - OUT x.y
-      - \-
-      - Power output of channel y on PROFET\ |trade|\ + 24V device no. x.
-    * - \-
-      - Vs
-      - \-
-      - Supply input
-
-Chip only
-"""""""""
+	* - Arduino Pin
+	  - Symbol
+	  - Type
+	  - Function
+	* - GND
+	  - GND
+	  - \-
+	  - Ground
+	* - D2
+	  - INTN
+	  - Output/digital
+	  - Interrupt output of TLE956x configurable via SPI.
+	* - D3
+	  - PWM1
+	  - Input/PWM
+	  - Input PWM for Phase 1
+	* - D5
+	  - BEMF_U_IO
+	  - Output/digital
+	  - Output of BEMF comparator for Phase 1
+	* - D6
+	  - BEMF_V_IO
+	  - Output/digital
+	  - Output of BEMF comparator for Phase 2
+	* - D7
+	  - BEMF_W_IO
+	  - Output/digital
+	  - Output of BEMF comparator for Phase 3
+	* - D8
+	  - SPI CSN
+	  - Input/digital
+	  - Chip select pin for SPI communication
+	* - D9
+	  - PWM 3
+	  - Input/PWM
+	  - Input PWM for Phase 2
+	* - D10
+	  - PWM5
+	  - Input/PWM
+	  - Input PWM for Phase 3
+	* - D11
+	  - SPI SDI
+	  - Input/digital
+	  - Serial Data Input from Microcontroller to TLE
+	* - D12
+	  - SPI SDO
+	  - Output/digital
+	  - Serial Data Output from TLE to Microcontroller
+	* - D13
+	  - SPI CLK
+	  - Input/digital
+	  - SPI Clock
+	* - A0
+	  - Hall C
+	  - Output/digital
+	  - Signal of Hallsensor C (from BLDC motor)
+	* - A1
+	  - Hall B
+	  - Output/digital
+	  - Signal of Hallsensor B (from BLDC motor)
+	* - A2
+	  - Hall A
+	  - Output/digital
+	  - Signal of Hallsensor A (from BLDC motor)
+	* - A5
+	  - CSO
+	  - Output/analog
+	  - Output of current sense amplifier
 
 
-12V Protected Switches
-----------------------
-
-
-Shields for Arduino
-"""""""""""""""""""
-
-* `12V Protected Switch Shield with BTS50010-1TAD`_
-* `12V Protected Switch Shield with BTS50015-1TAD`_
+DC Motor Shield with TLE9562
+----------------------------
 
 Pinout Diagram
 ^^^^^^^^^^^^^^
-
 
 Pin Description
 ^^^^^^^^^^^^^^^
@@ -154,112 +139,6 @@ Pin Description
       - VBAT
       - Output/analog
       - Measuring of VBAT via voltage divider.
-
-
-Chip only
-"""""""""
-
-Smart High-Side Power Switches
-------------------------------
-
-
-Shields for Arduino
-"""""""""""""""""""
-
-* `SHIELD_BTS7002-1EPP`_
-* `SHIELD_BTS7004-1EPP`_
-* `SHIELD_BTS7006-1EPP`_
-* `SHIELD_BTS7008-1EPP`_
-
-Pinout Diagram
-^^^^^^^^^^^^^^
-
-
-Pin Description
-^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-
-    * - Arduino Pin
-      - Symbol
-      - Type
-      - Function
-    * - GND
-      - GND
-      - \-
-      - Ground
-    * - D2
-      - Push button digital
-      - Output/digital
-      - Push button digital (optional).
-    * - D3
-      - IN4
-      - Input/PWM
-      - Input PROFET\ |trade|\ +2 device U4.
-    * - D4
-      - LED1
-      - Input/PWM
-      - Indicator LED 1.
-    * - D5
-      - LED2
-      - Input/PWM
-      - Indicator LED 2.
-    * - D6
-      - DEN 1+3
-      - Input/digital
-      - Diagnosis enable PROFET\ |trade|\ +2 device U1+U3.
-    * - D7
-      - OLOFF
-      - Input/digital
-      - Option for *Open Load in OFF* detection.
-    * - D8
-      - DEN 2+4
-      - Input/digital
-      - Diagnosis enable PROFET\ |trade|\ +2 device U2+U4.
-    * - D9
-      - IN1
-      - Input/PWM
-      - Input PROFET\ |trade|\ +2 device U1.
-    * - D10
-      - IN2
-      - Input/PWM
-      - Input PROFET\ |trade|\ +2 device U2.
-    * - D11
-      - IN3
-      - Input/PWM
-      - Input PROFET\ |trade|\ +2 device U3.
-    * - D12
-      - LED3
-      - Input/PWM
-      - Indicator LED 3.
-    * - D13
-      - LED4
-      - Input/PWM
-      - Indicator LED 4.
-    * - \-
-      - VIN
-      - \-
-      - Supply voltage.
-    * - A0
-      - Push button analog
-      - Output/analog
-      - Push button analog (optional).
-    * - A1
-      - VBAT
-      - Output/analog
-      - Measuring of VBAT via voltage divider.
-    * - A2
-      - IS 1+2
-      - Output/analog
-      - Current sense of PROFET\ |trade|\ +2 device U1+U2.
-    * - A3
-      - IS 3+4
-      - Output/analog
-      - Current sense of PROFET\ |trade|\ +2 device U3+U4.
-
-Chip only
-"""""""""
 
 * `TLE9563-3QX`_
 * `TLE9562-3QX`_
