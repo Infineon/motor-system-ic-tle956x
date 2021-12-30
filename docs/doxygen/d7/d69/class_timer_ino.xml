@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="38" column="10" bodyfile="src/framework/arduino/pal/timer-arduino.hpp" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="38" column="10" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="27" column="1" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="21" bodyend="23"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="27" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="21" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a24490a76d05c7b6dc858586b8d5dfc93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="28" column="1" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="29" bodyend="31"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="28" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="29" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a2714f4fd1bff915cbac4757aacd9490a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="29" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="41" bodyend="45"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="29" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="41" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a48e9412c26a58e03f80131830efbae42" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="30" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="55" bodyend="59"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="30" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="55" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a66013d40b92ea1c9daa42e2c24281a7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="31" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="68" bodyend="72"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="31" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="68" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a51d18daf19adde7642148d58749b5212" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="32" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="84" bodyend="88"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="32" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="84" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1abee498b93fed9187e6d51f43cbad1491" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="33" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="98" bodyend="102"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="33" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1a343a5f0a5c6aafa1dc2bef697c9ce051" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="34" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="113" bodyend="117"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="34" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="113" bodyend="117"/>
       </memberdef>
       <memberdef kind="function" id="d7/d69/class_timer_ino_1af7e58075dae8c2e7a11fe7dad2480b86" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d8/d08/class_timer_1a393b9ce19417c4a6e8128bb88b63fb87" kindref="member">Error_t</ref></type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/timer-arduino.hpp" line="35" column="9" bodyfile="src/framework/arduino/pal/timer-arduino.cpp" bodystart="128" bodyend="132"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="35" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.cpp" bodystart="128" bodyend="132"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -248,7 +248,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/framework/arduino/pal/timer-arduino.hpp" line="24" column="1" bodyfile="src/framework/arduino/pal/timer-arduino.hpp" bodystart="25" bodyend="39"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" line="24" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/timer-arduino.hpp" bodystart="25" bodyend="39"/>
     <listofallmembers>
       <member refid="d7/d69/class_timer_ino_1a48e9412c26a58e03f80131830efbae42" prot="public" virt="virtual"><scope>TimerIno</scope><name>deinit</name></member>
       <member refid="d7/d69/class_timer_ino_1af7e58075dae8c2e7a11fe7dad2480b86" prot="public" virt="virtual"><scope>TimerIno</scope><name>delayMicro</name></member>

@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="25" column="9" bodyfile="src/pal/adc.hpp" bodystart="26" bodyend="32"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="25" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" bodystart="26" bodyend="32"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="47" column="17" bodyfile="src/pal/adc.hpp" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="47" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" bodystart="47" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="34" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="34" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1ab236c8fcc7b98711b291ba06e4c52cad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="35" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="35" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a58208716e23cf64b3cc044a0c334db5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="36" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="36" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1aacfa5466714fd8c1bc0ec7472037c730" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="37" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="37" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a85084f7f22b3330dafaed27c5fc4c6cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="38" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="38" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a35af579174536d92255b8f5dc4cee8c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="39" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="39" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a3c89b7be66f2e6f17f64263974881a96" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="40" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="40" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a977edb99d09216595aa3c7173afe3800" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>uint16_t</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="41" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="41" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1aef8ea24b153f25e4f953058518935c3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="42" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="42" column="29"/>
       </memberdef>
       <memberdef kind="function" id="de/d30/class_analog_digital_converter_1a942ade5ba5302c63560507679df5b26c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="de/d30/class_analog_digital_converter_1a8048cb4638d4da0b4d0062abd69dfede" kindref="member">Error_t</ref></type>
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/adc.hpp" line="43" column="29" bodyfile="src/pal/adc.cpp" bodystart="12" bodyend="15"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="43" column="29" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.cpp" bodystart="12" bodyend="15"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -249,7 +249,7 @@
         <link refid="de/d30/class_analog_digital_converter"/>
       </node>
     </inheritancegraph>
-    <location file="src/pal/adc.hpp" line="21" column="1" bodyfile="src/pal/adc.hpp" bodystart="22" bodyend="48"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" line="21" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/adc.hpp" bodystart="22" bodyend="48"/>
     <listofallmembers>
       <member refid="de/d30/class_analog_digital_converter_1a977edb99d09216595aa3c7173afe3800" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>ADCRead</name></member>
       <member refid="de/d30/class_analog_digital_converter_1aef8ea24b153f25e4f953058518935c3a" prot="public" virt="pure-virtual"><scope>AnalogDigitalConverter</scope><name>ADCWrite</name></member>

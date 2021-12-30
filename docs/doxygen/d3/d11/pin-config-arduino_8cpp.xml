@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.cpp" line="15" column="18" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.cpp" bodystart="16" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.cpp" line="15" column="18" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.cpp" bodystart="16" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -124,6 +124,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/framework/arduino/wrapper/pin-config-arduino.cpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.cpp"/>
   </compounddef>
 </doxygen>

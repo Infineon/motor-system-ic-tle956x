@@ -9,7 +9,8 @@ var searchData=
   ['adcread_6',['ADCRead',['../d8/d0b/class_a_d_c_ino.html#ad4c2bb0dca60dbd39ce2c96027bcd289',1,'ADCIno']]],
   ['adcwrite_7',['ADCWrite',['../d8/d0b/class_a_d_c_ino.html#a643fb12247ae6f8ce24bad7bc4281ced',1,'ADCIno']]],
   ['alpha3_8',['ALPHA3',['../d7/def/_t_l_e9xxx_8hpp.html#aef2261269821a4680fe2d8389edb6af1',1,'TLE9xxx.hpp']]],
-  ['analogdigitalconverter_9',['AnalogDigitalConverter',['../de/d30/class_analog_digital_converter.html',1,'']]],
-  ['arduinopal_10',['ArduinoPal',['../d6/dec/group__arduino_pal.html',1,'']]],
-  ['arduinowrapper_11',['ArduinoWrapper',['../db/d8f/group__arduino_wrapper.html',1,'']]]
+  ['alpha3_5ffpa_5fscaled_9',['ALPHA3_FPA_SCALED',['../d7/def/_t_l_e9xxx_8hpp.html#a52427c15639e86362ae1c7a37120224e',1,'TLE9xxx.hpp']]],
+  ['analogdigitalconverter_10',['AnalogDigitalConverter',['../de/d30/class_analog_digital_converter.html',1,'']]],
+  ['arduinopal_11',['ArduinoPal',['../d6/dec/group__arduino_pal.html',1,'']]],
+  ['arduinowrapper_12',['ArduinoWrapper',['../db/d8f/group__arduino_wrapper.html',1,'']]]
 ];

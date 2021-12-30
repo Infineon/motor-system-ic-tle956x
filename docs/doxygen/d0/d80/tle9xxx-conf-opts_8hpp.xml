@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/config/tle9xxx-conf-opts.hpp" line="17" column="9" bodyfile="src/config/tle9xxx-conf-opts.hpp" bodystart="17" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" line="17" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga50507c36fbfe63b379d8ac040fba7125" prot="public" static="no">
         <name>TLE9XXX_FRMWK_WICED</name>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/config/tle9xxx-conf-opts.hpp" line="18" column="9" bodyfile="src/config/tle9xxx-conf-opts.hpp" bodystart="18" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" line="18" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -202,6 +202,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9XXX_FRMWK_WICED<sp/><sp/><sp/><sp/><sp/>0x01U</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/config/tle9xxx-conf-opts.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp"/>
   </compounddef>
 </doxygen>

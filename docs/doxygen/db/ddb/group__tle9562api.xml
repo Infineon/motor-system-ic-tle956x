@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="43" column="1" bodyfile="src/corelib/TLE9562.cpp" bodystart="15" bodyend="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="43" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="15" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga290e3aa7ebdbf74ee9fa28bd86c5730a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -41,7 +41,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="46" column="1" bodyfile="src/corelib/TLE9562.cpp" bodystart="31" bodyend="34"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="31" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga3ce91ac7eed1aabe88a260a3e84ad946" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -56,7 +56,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="52" column="6" bodyfile="src/corelib/TLE9562.cpp" bodystart="65" bodyend="74"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="52" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="65" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1gaa91f0173248b80690332a07dcaa269c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -71,7 +71,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="58" column="6" bodyfile="src/corelib/TLE9562.cpp" bodystart="76" bodyend="84"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="58" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="76" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga333b29bffe912c9a70960657b955aab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -100,7 +100,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="65" column="6" bodyfile="src/corelib/TLE9562.cpp" bodystart="36" bodyend="63"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="65" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="36" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga4f4013348af291f2dc9858439158d72f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -164,7 +164,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="79" column="6" bodyfile="src/corelib/TLE9562.cpp" bodystart="86" bodyend="93"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="79" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="86" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga06c63203a49e6c1feab3f9444aff0d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -228,7 +228,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="90" column="6" bodyfile="src/corelib/TLE9562.cpp" bodystart="95" bodyend="103"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="90" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="95" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="db/ddb/group__tle9562api_1ga40860551b9c75f9e9207cacf1df51c46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -268,7 +268,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="99" column="5" bodyfile="src/corelib/TLE9562.cpp" bodystart="105" bodyend="109"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="99" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="105" bodyend="109"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -283,7 +283,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="101" column="12" bodyfile="src/corelib/TLE9562.hpp" bodystart="101" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="101" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ddb/group__tle9562api_1gaab7c81698218e2af775db6849a97c9c1" prot="public" static="no" mutable="no">
         <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
@@ -296,7 +296,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="102" column="12" bodyfile="src/corelib/TLE9562.hpp" bodystart="102" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="102" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ddb/group__tle9562api_1gad6d64e5c5a76de476775548df3c482ff" prot="public" static="no" mutable="no">
         <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
@@ -309,7 +309,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9562.hpp" line="103" column="12" bodyfile="src/corelib/TLE9562.hpp" bodystart="103" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="103" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="103" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

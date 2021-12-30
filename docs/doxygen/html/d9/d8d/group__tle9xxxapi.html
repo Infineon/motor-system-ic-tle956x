@@ -151,10 +151,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>HBconfig_t::PWMena
 <a class="el" href="../../d4/d7b/struct_h_bconfig__t.html">HBconfig_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::Floating</b></td></tr>
 <tr class="separator:gaa028505da322ab1872d34a35d9c9ebf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga83b424263e625a8fce3207b77131712f"><td class="memItemLeft" align="right" valign="top"><a id="ga83b424263e625a8fce3207b77131712f" name="ga83b424263e625a8fce3207b77131712f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_trise_tg</b> = CONF_TRISE_TG</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_trise_tg</b> = <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a2ef502f48366b519355b8dde5b645827">CONF_TRISE_TG</a></td></tr>
 <tr class="separator:ga83b424263e625a8fce3207b77131712f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaad816c7399444212118ad824687bc6e1"><td class="memItemLeft" align="right" valign="top"><a id="gaad816c7399444212118ad824687bc6e1" name="gaad816c7399444212118ad824687bc6e1"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_tfall_tg</b> = CONF_TFALL_TG</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_tfall_tg</b> = <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a5142627d46679b16889cb686ba1452b8">CONF_TFALL_TG</a></td></tr>
 <tr class="separator:gaad816c7399444212118ad824687bc6e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga138eaaf17176c9484ab7a8233118158d"><td class="memItemLeft" align="right" valign="top"><a id="ga138eaaf17176c9484ab7a8233118158d" name="ga138eaaf17176c9484ab7a8233118158d"></a>
 <a class="el" href="../../d4/dde/class_g_p_i_o.html">GPIO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::intn</b></td></tr>
@@ -169,25 +169,32 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_tfall_t
 <a class="el" href="../../d8/d08/class_timer.html">Timer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::timer</b></td></tr>
 <tr class="separator:ga36098999ef4a9b1a083f9fd15f845722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae0dbf2a90fcff4ab9d293ee19122e193"><td class="memItemLeft" align="right" valign="top"><a id="gae0dbf2a90fcff4ab9d293ee19122e193" name="gae0dbf2a90fcff4ab9d293ee19122e193"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_trise_ema</b> [MAX_ICHG - MIN_ICHG+1]</td></tr>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_trise_ema</b> [<a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a2e441b711036593361b62d9a98cbd789">MAX_ICHG</a> - <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a6050dd6efb25efa53923137952e9bac1">MIN_ICHG</a>+1]</td></tr>
+<tr class="memdesc:gae0dbf2a90fcff4ab9d293ee19122e193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of the calculated tRISEx EMAs for the different configured ICHGx. <br /></td></tr>
 <tr class="separator:gae0dbf2a90fcff4ab9d293ee19122e193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaafdc9c8fa4a4a47d7371d30021e141b6"><td class="memItemLeft" align="right" valign="top"><a id="gaafdc9c8fa4a4a47d7371d30021e141b6" name="gaafdc9c8fa4a4a47d7371d30021e141b6"></a>
-uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_tfall_ema</b> [MAX_ICHG - MIN_ICHG+1]</td></tr>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_tfall_ema</b> [<a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a2e441b711036593361b62d9a98cbd789">MAX_ICHG</a> - <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a6050dd6efb25efa53923137952e9bac1">MIN_ICHG</a>+1]</td></tr>
+<tr class="memdesc:gaafdc9c8fa4a4a47d7371d30021e141b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of the calculated tFALLx EMAs for the different configured IDCHGx. <br /></td></tr>
 <tr class="separator:gaafdc9c8fa4a4a47d7371d30021e141b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacf912ab23c6836cd47376db381c09f78"><td class="memItemLeft" align="right" valign="top"><a id="gacf912ab23c6836cd47376db381c09f78" name="gacf912ab23c6836cd47376db381c09f78"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_ichg</b> = CONF_INIT_ICHG</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_ichg</b> = <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a01ee4e72918bae412d2cd52cd646f807">CONF_INIT_ICHG</a></td></tr>
+<tr class="memdesc:gacf912ab23c6836cd47376db381c09f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current ICHGx with which the MOSFET driver is configured. <br /></td></tr>
 <tr class="separator:gacf912ab23c6836cd47376db381c09f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb32e96083efc0c46d76a51705ae4c65"><td class="memItemLeft" align="right" valign="top"><a id="gadb32e96083efc0c46d76a51705ae4c65" name="gadb32e96083efc0c46d76a51705ae4c65"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_idchg</b> = CONF_INIT_IDCHG</td></tr>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::m_idchg</b> = <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a73383f366b1b9eed62319e15c8103cf2">CONF_INIT_IDCHG</a></td></tr>
+<tr class="memdesc:gadb32e96083efc0c46d76a51705ae4c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current IDCHGx with which the MOSFET driver is configured. <br /></td></tr>
 <tr class="separator:gadb32e96083efc0c46d76a51705ae4c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2d89bc5916dc9699c1f744382e9c89e2"><td class="memItemLeft" align="right" valign="top"><a id="ga2d89bc5916dc9699c1f744382e9c89e2" name="ga2d89bc5916dc9699c1f744382e9c89e2"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::_statusInformationField</b> = 0</td></tr>
+<tr class="memdesc:ga2d89bc5916dc9699c1f744382e9c89e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the "Status information field" which is the first byte of every SDO package. <br /></td></tr>
 <tr class="separator:ga2d89bc5916dc9699c1f744382e9c89e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd3b17e0ebb22ab03254623cc8619917"><td class="memItemLeft" align="right" valign="top"><a id="gacd3b17e0ebb22ab03254623cc8619917" name="gacd3b17e0ebb22ab03254623cc8619917"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::_agc_status</b> = 0</td></tr>
+<tr class="memdesc:gacd3b17e0ebb22ab03254623cc8619917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the value to be written. <br /></td></tr>
 <tr class="separator:gacd3b17e0ebb22ab03254623cc8619917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga21fe7a9489db95742c26e203d82fae57"><td class="memItemLeft" align="right" valign="top"><a id="ga21fe7a9489db95742c26e203d82fae57" name="ga21fe7a9489db95742c26e203d82fae57"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>Tle9xxx::_error_enable</b> = 0</td></tr>
+<tr class="memdesc:ga21fe7a9489db95742c26e203d82fae57"><td class="mdescLeft">&#160;</td><td class="mdescRight">If an error message was printed, this value will get 1, indicating an error occured. <br /></td></tr>
 <tr class="separator:ga21fe7a9489db95742c26e203d82fae57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">TLE9xxx.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx</h2></td></tr>

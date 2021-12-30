@@ -30,7 +30,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -142,7 +142,7 @@ SPDX-License-Identifier: MIT </para>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/BLDCM-control-ino.hpp" line="39" column="1" bodyfile="src/BLDCM-control-ino.hpp" bodystart="40" bodyend="48"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="39" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" bodystart="40" bodyend="48"/>
     <listofallmembers>
       <member refid="de/df7/class_b_l_d_c_mcontrol_1ad3519e221a37d3a8ec9e12bef9930170" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_Commutation</name></member>
       <member refid="de/df7/class_b_l_d_c_mcontrol_1a00d22069b5412b679240d7d1e4e362e1" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_commutationStep</name></member>

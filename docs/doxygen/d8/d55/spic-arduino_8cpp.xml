@@ -188,6 +188,6 @@
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/framework/arduino/pal/spic-arduino.cpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp"/>
   </compounddef>
 </doxygen>

@@ -292,6 +292,6 @@
 <codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="205"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="src/corelib/DCM-control.cpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp"/>
   </compounddef>
 </doxygen>

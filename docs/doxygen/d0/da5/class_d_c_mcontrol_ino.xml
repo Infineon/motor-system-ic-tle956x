@@ -30,7 +30,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/DCM-control-ino.hpp" line="46" column="1" bodyfile="src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -125,7 +125,7 @@ SPDX-License-Identifier: MIT </para>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/DCM-control-ino.hpp" line="39" column="1" bodyfile="src/DCM-control-ino.hpp" bodystart="40" bodyend="48"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp" line="39" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp" bodystart="40" bodyend="48"/>
     <listofallmembers>
       <member refid="d9/d64/class_d_c_mcontrol_1a99101c443925f19df0f9628007f01c76" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_Direction</name></member>
       <member refid="d9/d64/class_d_c_mcontrol_1a74ec4b1ac94b3359910f669b413b9fc4" prot="protected" virt="non-virtual"><scope>DCMcontrolIno</scope><name>_DutyCycle</name></member>

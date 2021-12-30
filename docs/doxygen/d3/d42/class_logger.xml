@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="40" column="20" bodyfile="src/util/BLDCM-logger.hpp" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="40" column="20" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="24" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="26" bodyend="30"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="24" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="26" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1acb668a9e186a25fbaad2e4af6d1ed00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="25" column="16" bodyfile="src/util/BLDCM-logger.cpp" bodystart="21" bodyend="24"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="25" column="16" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="21" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1ad9f38f9cc2d75a6207f4972427aa74f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="26" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="32" bodyend="35"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="26" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1a07af1f930b6cba27dd83e63dabd820ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="27" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="37" bodyend="40"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="27" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="37" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1ae39527836cd056e047cd44397d74a0d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="28" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="42" bodyend="59"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="28" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="42" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1a9baeb47da14f68aa49b3348f510d018f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="30" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="61" bodyend="91"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="30" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="61" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="d3/d42/class_logger_1ad120bae8e1b1fd0d521b50ce0d947365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -149,14 +149,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/util/BLDCM-logger.hpp" line="34" column="17" bodyfile="src/util/BLDCM-logger.cpp" bodystart="93" bodyend="113"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="34" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="93" bodyend="113"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/util/BLDCM-logger.hpp" line="20" column="1" bodyfile="src/util/BLDCM-logger.hpp" bodystart="21" bodyend="41"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="20" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" bodystart="21" bodyend="41"/>
     <listofallmembers>
       <member refid="d3/d42/class_logger_1a07af1f930b6cba27dd83e63dabd820ae" prot="public" virt="non-virtual"><scope>Logger</scope><name>deinit</name></member>
       <member refid="d3/d42/class_logger_1ad9f38f9cc2d75a6207f4972427aa74f1" prot="public" virt="non-virtual"><scope>Logger</scope><name>init</name></member>

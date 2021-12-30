@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tle9563_5flog_0',['tle9563_log',['../de/d67/_b_l_d_c_m-logger_8hpp.html#af0eb493a10cc03e112f8cdf3f842251b',1,'BLDCM-logger.hpp']]]
+  ['logpalino_0',['logpalino',['../de/d46/logger-arduino_8cpp.html#a3066846301a0fc281607024f611eec10',1,'logpalino():&#160;logger-arduino.cpp'],['../da/d62/logger-arduino_8hpp.html#a3066846301a0fc281607024f611eec10',1,'logpalino():&#160;logger-arduino.cpp']]]
 ];

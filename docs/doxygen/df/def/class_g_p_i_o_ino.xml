@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="33" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.hpp" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="33" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/def/class_g_p_i_o_ino_1aa14b9893e7c4aa432378297931804a48" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="34" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.hpp" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="34" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/def/class_g_p_i_o_ino_1a00901961366fc98152b4ceae94e32e3e" prot="private" static="no" mutable="no">
         <type><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" kindref="member">VLogic_t</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="35" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.hpp" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="35" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="38" column="1" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="21" bodyend="23"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="38" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="21" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a9770b7dad66e85857e42823617a83b78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="39" column="1" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="35" bodyend="37"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="39" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a031ffcf24693de2072d4e87bbdf9fd04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="40" column="1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="40" column="1"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a5485281864da935dbce964d9b9f67272" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="41" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="46" bodyend="50"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="41" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="46" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a6f1021e14fea8ebf6ccd3e123401c76b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="42" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="59" bodyend="62"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="42" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="59" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1aa04da6642380e6ecb55861831ea45803" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref></type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="43" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="74" bodyend="77"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="43" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="74" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a5a2dd48905749cebcbc05d9ca43a5983" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="44" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="87" bodyend="91"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="44" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="87" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1a33f065c705688c66fd9eadcdc3fc50ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="45" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="101" bodyend="110"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="45" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="101" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="df/def/class_g_p_i_o_ino_1abb40811cf4fa1de56bf10d1bbd586986" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="46" column="13" bodyfile="src/framework/arduino/pal/gpio-arduino.cpp" bodystart="120" bodyend="129"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="46" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp" bodystart="120" bodyend="129"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -301,7 +301,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/framework/arduino/pal/gpio-arduino.hpp" line="30" column="1" bodyfile="src/framework/arduino/pal/gpio-arduino.hpp" bodystart="31" bodyend="47"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" line="30" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.hpp" bodystart="31" bodyend="47"/>
     <listofallmembers>
       <member refid="d4/dde/class_g_p_i_o_1ad44671562fa1e951dc94195cd78a2be0" prot="public" virt="non-virtual"><scope>GPIOIno</scope><name>checkErrorStatus</name></member>
       <member refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa0c61895c8f366c308e397e1ffafd180f" prot="public" virt="non-virtual"><scope>GPIOIno</scope><name>CONF_ERROR</name></member>

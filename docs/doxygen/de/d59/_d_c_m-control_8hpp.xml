@@ -139,7 +139,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/DCM-control.hpp" line="27" column="9" bodyfile="src/corelib/DCM-control.hpp" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="27" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="de/d59/_d_c_m-control_8hpp_1ab38952ded216a87e8c254df319b8851d" prot="public" static="no">
         <name>BRAKEMODE_ACTIVE</name>
@@ -150,7 +150,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/DCM-control.hpp" line="28" column="9" bodyfile="src/corelib/DCM-control.hpp" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="28" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="enum" id="de/d59/_d_c_m-control_8hpp_1a0515a3d3adc6090423ddf8298db3d075" prot="public" static="no" strong="no">
         <type></type>
@@ -210,7 +210,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/DCM-control.hpp" line="30" column="1" bodyfile="src/corelib/DCM-control.hpp" bodystart="30" bodyend="35"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="30" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="30" bodyend="35"/>
       </memberdef>
       <memberdef kind="enum" id="de/d59/_d_c_m-control_8hpp_1a11d0fb9f170ec440e859a33351f34dae" prot="public" static="no" strong="no">
         <type></type>
@@ -235,7 +235,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/DCM-control.hpp" line="36" column="1" bodyfile="src/corelib/DCM-control.hpp" bodystart="36" bodyend="39"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="36" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="36" bodyend="39"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -324,6 +324,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
 <codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/DCM-control.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp"/>
   </compounddef>
 </doxygen>

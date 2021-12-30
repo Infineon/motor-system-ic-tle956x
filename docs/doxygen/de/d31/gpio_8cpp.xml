@@ -40,6 +40,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>errorStatus;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="src/pal/gpio.cpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/gpio.cpp"/>
   </compounddef>
 </doxygen>

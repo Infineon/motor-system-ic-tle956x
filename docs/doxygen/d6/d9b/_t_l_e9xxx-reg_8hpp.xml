@@ -531,7 +531,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx-reg.hpp" line="33" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="34" bodyend="80"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" line="33" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" bodystart="34" bodyend="80"/>
       </memberdef>
       <memberdef kind="enum" id="d6/d9b/_t_l_e9xxx-reg_8hpp_1ac2a0df89a631b50c43693d35dd336c27" prot="public" static="no" strong="no">
         <type></type>
@@ -741,7 +741,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx-reg.hpp" line="83" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="84" bodyend="111"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" line="83" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" bodystart="84" bodyend="111"/>
       </memberdef>
       <memberdef kind="enum" id="d6/d9b/_t_l_e9xxx-reg_8hpp_1a808d56364b9457dcea00d8d003a78f9b" prot="public" static="no" strong="no">
         <type></type>
@@ -833,7 +833,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx-reg.hpp" line="116" column="1" bodyfile="src/corelib/TLE9xxx-reg.hpp" bodystart="117" bodyend="127"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" line="116" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp" bodystart="117" bodyend="127"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -959,6 +959,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/TLE9xxx-reg.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx-reg.hpp"/>
   </compounddef>
 </doxygen>

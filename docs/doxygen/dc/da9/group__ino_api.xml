@@ -31,7 +31,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -60,7 +60,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/DCM-control-ino.hpp" line="46" column="1" bodyfile="src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

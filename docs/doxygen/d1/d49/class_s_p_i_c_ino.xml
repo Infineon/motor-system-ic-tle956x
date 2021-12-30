@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="37" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="37" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a3cb58011ca1b6e1fbad52b6cbadf34a8" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="38" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="38" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a76dadbf9e12afd71369554fe6da769f9" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="39" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="39" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a97992f3fbb46b4d2a5fe405384259325" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="40" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="40" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1ac345ad3365df194ff9c2ca368d942190" prot="private" static="no" mutable="no">
         <type>SPIClass *</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="41" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="41" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a28d9245b942d650400a0443bf2d1aed2" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="42" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="42" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="42" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1a6906078ac4b4d174cae275d62c06c7eb" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="43" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="43" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d49/class_s_p_i_c_ino_1adc200be28c6f0889f932a4c47080b0e5" prot="private" static="no" mutable="no">
         <type>uint8_t</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="44" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="44" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="47" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="20" bodyend="23"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="47" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="20" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a6585a037b5ac12286542ef71805b7aab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="48" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="34" bodyend="38"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="48" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="34" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a86165d0a615600fdc075419bc0f23497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -257,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="49" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="52" bodyend="59"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="49" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="52" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a2bbd9cbd87032aa4c6434a796140a19a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="50" column="1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="50" column="1"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1aa6c292e721e6a496e2fd8032d5176da9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="51" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="69" bodyend="76"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="51" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="69" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a3db180a097f26676ae5b2199f0e15173" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
@@ -308,7 +308,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="52" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="85" bodyend="89"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="52" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="85" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a6b272df6ce49535ebc2dece177ee39a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
@@ -351,7 +351,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="53" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="98" bodyend="102"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="53" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="98" bodyend="102"/>
       </memberdef>
       <memberdef kind="function" id="d1/d49/class_s_p_i_c_ino_1a670b205fb537baa5268590d2a3a25427" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">Error_t</ref></type>
@@ -394,7 +394,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/pal/spic-arduino.hpp" line="54" column="13" bodyfile="src/framework/arduino/pal/spic-arduino.cpp" bodystart="111" bodyend="121"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="54" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp" bodystart="111" bodyend="121"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -426,7 +426,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/framework/arduino/pal/spic-arduino.hpp" line="34" column="1" bodyfile="src/framework/arduino/pal/spic-arduino.hpp" bodystart="35" bodyend="55"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" line="34" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.hpp" bodystart="35" bodyend="55"/>
     <listofallmembers>
       <member refid="d9/d8a/class_s_p_i_c_1ae34d166d35588542db76f2491787693b" prot="public" virt="non-virtual"><scope>SPICIno</scope><name>checkErrorStatus</name></member>
       <member refid="d1/d49/class_s_p_i_c_ino_1adc200be28c6f0889f932a4c47080b0e5" prot="private" virt="non-virtual"><scope>SPICIno</scope><name>clock</name></member>

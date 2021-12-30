@@ -246,6 +246,6 @@
 <codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight></codeline>
 <codeline lineno="52"><highlight class="preprocessor">#endif<sp/><sp/></highlight></codeline>
     </programlisting>
-    <location file="src/BLDCM-control-ino.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp"/>
   </compounddef>
 </doxygen>

@@ -181,7 +181,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="34" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="34" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a8d85db871c4dc1755d56045ab428ef5d" prot="public" static="no">
         <name>CONF_PI_UPDATE_INTERVAL</name>
@@ -192,7 +192,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="35" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="35" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1ab9c43e654c22e6208827b4f022534e09" prot="public" static="no">
         <name>CONF_RPM_DUTYCYCLE_AT_START</name>
@@ -203,7 +203,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="37" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="37" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a8e7b03881dcd790c46819427d1005999" prot="public" static="no">
         <name>CONF_OPEN_LOOP_DUTYCYCLE</name>
@@ -214,7 +214,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="38" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="38" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1affe087589bb1856a7518863007ab2d26" prot="public" static="no">
         <name>CONF_OPEN_LOOP_DELAY_START</name>
@@ -225,7 +225,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="39" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="39" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1ae6e960337e2758cf1ad29690ee30d0bb" prot="public" static="no">
         <name>CONF_OPEN_LOOP_DELAY_LIMIT</name>
@@ -236,7 +236,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="40" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="40" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1aae8482d32a1cf985bac2400756451815" prot="public" static="no">
         <name>CONF_OPEN_LOOP_DELAY_SLOPE</name>
@@ -247,7 +247,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="41" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="41" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" prot="public" static="no">
         <name>CONF_DUTYCYCLE_TOP_LIMIT</name>
@@ -258,7 +258,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="43" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="43" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a0a933061f5184bec107a47325994e724" prot="public" static="no">
         <name>CONF_DUTYCYCLE_BOTTOM_LIMIT</name>
@@ -269,7 +269,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="44" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="44" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a67c455c4ea9b9695ad43c08251431640" prot="public" static="no">
         <name>SHUNT_RESISTOR_VALUE</name>
@@ -280,7 +280,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="47" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="47" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="47" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1a12f7faf419bb35a2d270bdafbb358a88" prot="public" static="no">
         <name>BRAKEMODE_PASSIVE</name>
@@ -291,7 +291,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="50" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="50" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/da6/_b_l_d_c_m-control_8hpp_1ab38952ded216a87e8c254df319b8851d" prot="public" static="no">
         <name>BRAKEMODE_ACTIVE</name>
@@ -302,7 +302,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="51" column="9" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="51" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="enum" id="d7/da6/_b_l_d_c_m-control_8hpp_1a0515a3d3adc6090423ddf8298db3d075" prot="public" static="no" strong="no">
         <type></type>
@@ -362,7 +362,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/BLDCM-control.hpp" line="53" column="1" bodyfile="src/corelib/BLDCM-control.hpp" bodystart="53" bodyend="57"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="53" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="53" bodyend="57"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -562,6 +562,6 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="361"><highlight class="normal"></highlight></codeline>
 <codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/BLDCM-control.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp"/>
   </compounddef>
 </doxygen>

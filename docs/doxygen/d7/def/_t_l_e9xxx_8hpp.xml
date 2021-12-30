@@ -214,220 +214,240 @@ SPDX-License-Identifier: MIT </para>
 <para>Main place to configure the TLE9xxx. All defines beginning with &quot;CONF_&quot; are intended to be changed by the user. All other defines should remain as they are. </para>
         </briefdescription>
         <detaileddescription>
+<para>1 = print register values as well if a TLE error occurs, 0 = only print error message </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="35" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="35" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" prot="public" static="no">
         <name>CONF_TRISE_TG</name>
         <initializer>11</initializer>
         <briefdescription>
+<para>[0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="38" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="38" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" prot="public" static="no">
         <name>CONF_INIT_ICHG</name>
-        <initializer>11</initializer>
+        <initializer>7</initializer>
         <briefdescription>
+<para>[0;63] Starting charge current that will be first used by the algorithm </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="39" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="39" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" prot="public" static="no">
         <name>CONF_TFALL_TG</name>
         <initializer>11</initializer>
         <briefdescription>
+<para>[0;63] initial Target tFALL (CONF_TFALL_TG * 53.3 ns). The variable can be changed afterwards. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="40" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="40" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" prot="public" static="no">
         <name>CONF_INIT_IDCHG</name>
-        <initializer>11</initializer>
+        <initializer>7</initializer>
         <briefdescription>
+<para>[0;63] Starting discharge current that will be first used by the algorithm </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="41" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="41" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3d427c411138eedbb5dbb3e12f7f4455" prot="public" static="no">
         <name>CONF_ICHG_FW</name>
         <initializer>43</initializer>
         <briefdescription>
+<para>[0;63] Freewheeling charge and discharge current </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="42" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="42" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="42" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" prot="public" static="no">
         <name>ALPHA3</name>
         <initializer>0.5</initializer>
         <briefdescription>
+<para>ALPHA3, constant for the EMA calculation, 0 &lt;= ALPHA3 &lt;= 1. </para>
         </briefdescription>
         <detaileddescription>
 <para>A value &gt; 0.5 gives more importance to the last tRISE sampled A value &lt; 0.5 gives more importance to the history of sampled tRISE </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="48" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="48" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" prot="public" static="no">
         <name>SCALING_FACTOR_FPA</name>
         <initializer>(0xFF)</initializer>
         <briefdescription>
+<para>Scaling factor for fixed-point arithmetic (FPA) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="49" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="49" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" prot="public" static="no">
         <name>ALPHA3_FPA_SCALED</name>
-        <initializer>(<ref refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" kindref="member">ALPHA3</ref> * SCALING_FACTOR_FPA)</initializer>
+        <initializer>(<ref refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" kindref="member">ALPHA3</ref> * <ref refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" kindref="member">SCALING_FACTOR_FPA</ref>)</initializer>
         <briefdescription>
+<para>ALPHA3, already scaled for FPA. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="50" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="50" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae26356555cd0132ceb054c3f53f38567" prot="public" static="no">
         <name>ONE_MINUS_ALPHA3_FPA_SCALED</name>
-        <initializer>(SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)</initializer>
+        <initializer>(<ref refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" kindref="member">SCALING_FACTOR_FPA</ref> - <ref refid="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" kindref="member">ALPHA3_FPA_SCALED</ref>)</initializer>
         <briefdescription>
+<para>(1 - ALPHA3), already scaled for FPA </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="51" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="51" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" prot="public" static="no">
         <name>MAX_ICHG</name>
         <initializer>63</initializer>
         <briefdescription>
+<para>Maximum charge current that will be set by the algorithm. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="52" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="52" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="52" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" prot="public" static="no">
         <name>MIN_ICHG</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>Minimum charge current that will be set by the algorithm. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="53" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="53" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="53" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aadbbc7b02d94a4c18646813ac8d7dec1" prot="public" static="no">
         <name>EOS</name>
         <initializer>0xFFFF</initializer>
         <briefdescription>
+<para>End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="54" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="54" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aca1b068769cf2444012d7c2549def1b7" prot="public" static="no">
         <name>CONF_PDCHG_INIT</name>
         <initializer>44</initializer>
         <briefdescription>
+<para>[0;63] Initial predischarge current, default 0xF </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="57" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="57" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="57" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a47a8286d4b690be1c66c611f75f7bff1" prot="public" static="no">
         <name>CONF_PCHG_INIT</name>
         <initializer>23</initializer>
         <briefdescription>
+<para>[0;63] Initial precharge current, default 0xD </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="58" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="58" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="58" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2618656a288ff1daf56078ad8da8e78c" prot="public" static="no">
         <name>CONF_TDOFF</name>
         <initializer>18</initializer>
         <briefdescription>
+<para>[0;63] Turn-on delay time, default 0xC </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="59" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="59" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="59" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3dd5949d9a33071bb1b66fe9cfcec901" prot="public" static="no">
         <name>CONF_TDON</name>
         <initializer>20</initializer>
         <briefdescription>
+<para>[0;63] Turn-off delay time, default 0xC </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="60" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="60" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a8dfad0c6ae86b21bc7efb1c6d9657f0e" prot="public" static="no">
         <name>CONF_TPCHGX</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;7] Precharge time, default 0 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="61" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="61" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="61" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a0df0eb72dcfaba11400c9bba74e3523d" prot="public" static="no">
         <name>CONF_TPDCHGX</name>
         <initializer>3</initializer>
         <briefdescription>
+<para>[0;7] Predischarge time, default 0 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="62" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="62" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="62" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1acb11a1d6db8851855af4b51063386290" prot="public" static="no">
         <name>CONF_ICHGST</name>
         <initializer>8</initializer>
         <briefdescription>
+<para>[0;15] Static charge/discharge current, default 4 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="65" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="65" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="65" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1af7686169475db8440448ac59f89d484b" prot="public" static="no">
         <name>CONF_BDFREQ</name>
@@ -435,54 +455,59 @@ SPDX-License-Identifier: MIT </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>[0;1] Bridge driver synchronization frequency: 37Mhz PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2) </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="68" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="68" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="68" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a38a03cf5f9548d486a52140f693962da" prot="public" static="no">
         <name>CONF_CPUVTH</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] Charge pump under voltage: TH1 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="70" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="70" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="70" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a7da61d48c74c89b8787108bea3aeb8c8" prot="public" static="no">
         <name>CONF_FET_LVL</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;1] External MOSFET logic level: normal level MOSFET </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="71" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="71" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="71" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a4471b25e8829ca537c8ee3a2efc4999e" prot="public" static="no">
         <name>CONF_CPSTGA</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;1] Automatic switchover between dual and single charge pump stage: Normal </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="72" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="72" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="72" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1af5fcf5ccef7fc02518e5df6427eaf660" prot="public" static="no">
         <name>CONF_BDOV_REC</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="73" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="73" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="73" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aeabb8b9736037a681f67208aa1852e8a" prot="public" static="no">
         <name>CONF_IPCHGADT</name>
@@ -490,76 +515,83 @@ SPDX-License-Identifier: MIT </para>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>[0;1] 1Step Adaptive gate control: configured in a global variable </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="74" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="74" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="74" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a0fd63df96e6afd9fe7b7994c4b01731d" prot="public" static="no">
         <name>CONF_CPEN</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;1] charge pump: enabled </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="76" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="76" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="76" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2d74ec796e3db05d95a05f7f326a7872" prot="public" static="no">
         <name>CONF_POCHGDIS</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] Postcharge phase during PWM: disabled </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="77" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="77" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="77" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2f442a108774671bb1e7b74a47214520" prot="public" static="no">
         <name>CONF_AGCFILT</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] Filter for adaptive gate control: NO_FILT </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="78" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="78" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="78" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3182878599ce06f4aaa679c4fd46db22" prot="public" static="no">
         <name>CONF_EN_GEN_CHECK</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] detection of active / FW MOSFET: disabled </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="79" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="79" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="79" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ab8ca11162377682b818223865580b5e5" prot="public" static="no">
         <name>CONF_IHOLD</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] Gate driver hold current: TH1 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="80" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="80" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="80" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a60ed51bf00fadf5f6e4462230622d11a" prot="public" static="no">
         <name>CONF_FMODE</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] Frequency modulation of charge pump: no modulation </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="81" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="81" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="81" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3be7985ce5c7a814688078e4fb705ddd" prot="public" static="no">
         <name>PWM3_TO_HB3</name>
@@ -570,7 +602,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="83" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="83" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="83" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="83" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae2116735eb40a7974941ab07802068e9" prot="public" static="no">
         <name>PWM3_TO_HB4</name>
@@ -581,7 +613,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="84" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="84" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="84" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1accbf87bf2ca7eab70cab3f60918d4ff1" prot="public" static="no">
         <name>PWM1_TO_HB1</name>
@@ -592,7 +624,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="85" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="85" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="85" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a423d61afefba3b5b163ba1cc0a4aff95" prot="public" static="no">
         <name>PWM1_TO_HB2</name>
@@ -603,106 +635,115 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="86" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="86" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="86" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a128f6adad298b067932de8ffa9ffaa6d" prot="public" static="no">
         <name>CONF_LS_AND_HS_X_VDSTH</name>
         <initializer>7</initializer>
         <briefdescription>
+<para>[0;7] Set overvoltage threshold </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="89" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="89" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="89" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a12511e5f79458fdf978aef9c03587046" prot="public" static="no">
         <name>CONF_DEEP_ADAP</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;1] deep adaption </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="90" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="90" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="90" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a18dc57106489444979bd315481a8040f" prot="public" static="no">
         <name>CONF_TFVDS</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;3] set filter time 0 = 500ns (default) </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="91" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="91" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="91" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a651d5e3b921e7c826b049dadf6c77c69" prot="public" static="no">
         <name>CONF_HBXIDIAG</name>
         <initializer>0</initializer>
         <briefdescription>
+<para>[0;1] disable pulldown for off-state diagnostic </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="94" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="94" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="94" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a7f70543d9bbce27fb90dfa18ecb14d7c" prot="public" static="no">
         <name>CONF_ICHGMAXX</name>
         <initializer>3</initializer>
         <briefdescription>
+<para>[0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="95" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="95" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="95" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5e6d0efcfa21a457ff76521a3dc658d9" prot="public" static="no">
         <name>CONF_TBLANK_ACT</name>
         <initializer>11</initializer>
         <briefdescription>
+<para>[0;15] Set the blank time for active MOSFETS. default is 7 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="98" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="98" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="98" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a36cf9aab5a783d1c62b58a5a773678cf" prot="public" static="no">
         <name>CONF_TCCP_ACT</name>
         <initializer>10</initializer>
         <briefdescription>
+<para>[0;15] Set the current protection time for active MOSFETS. default is 7 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="99" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="99" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="99" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1abb165f7d89de89680eff585b5bea7ce4" prot="public" static="no">
         <name>CONF_TBLANK_FW</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;15] Set the blank time for free wheeling MOSFETS. default is 7 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="100" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="100" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="100" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2f48dd9b964d6f8d2dd517d7bcc80319" prot="public" static="no">
         <name>CONF_TCCP_FW</name>
         <initializer>1</initializer>
         <briefdescription>
+<para>[0;15] Set the current protection time for free wheeling MOSFETS. default is 7 </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="101" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="101" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="101" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a99fb3c437dadc283347f33b2c5ff597c" prot="public" static="no">
         <name>TLE9xxx_CMD_WRITE</name>
@@ -713,7 +754,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="104" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="104" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="104" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a9aca47ac8f35dc09c0e41b970a18ac72" prot="public" static="no">
         <name>TLE9xxx_CMD_READ</name>
@@ -724,7 +765,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="105" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="105" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="105" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a4053fa5c94a2031d7f7b75172e6a0d8c" prot="public" static="no">
         <name>TLE9xxx_CMD_CLEAR</name>
@@ -735,7 +776,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="106" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="106" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="106" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a6bff71df11a31b137b3e120211bc58c3" prot="public" static="no">
         <name>PWM_CTRL_DC_MASK</name>
@@ -746,7 +787,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="109" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="109" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="109" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5ebba1411696e575819e167dbb2d027a" prot="public" static="no">
         <name>PWM_BNK_MODULE_1</name>
@@ -757,7 +798,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="110" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="110" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="110" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ac6c0ef3372d9f1306cec0f30fa0b10da" prot="public" static="no">
         <name>PWM_BNK_MODULE_2</name>
@@ -768,7 +809,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="111" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="111" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="111" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aac6a49dc31ec6bb5be02bb66917de708" prot="public" static="no">
         <name>PWM_BNK_MODULE_3</name>
@@ -779,7 +820,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="112" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="112" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="112" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ad37c799b150fa2317fda5ac9b04520f0" prot="public" static="no">
         <name>PWM_BNK_MODULE_4</name>
@@ -790,7 +831,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="113" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="113" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="113" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aee301d848490affb792988fdb067e06c" prot="public" static="no">
         <name>ACTIVE_MOSFET</name>
@@ -801,7 +842,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="115" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="115" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="115" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a1334435bb1378588aa1a44b26ac06dea" prot="public" static="no">
         <name>FW_MOSFET</name>
@@ -812,7 +853,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="116" column="9" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="116" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="116" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="enum" id="d9/d8d/group__tle9xxxapi_1ga9b27375c364e93ec16c5115b8487d458" prot="public" static="no" strong="no">
         <type></type>
@@ -847,7 +888,7 @@ SPDX-License-Identifier: MIT </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/corelib/TLE9xxx.hpp" line="132" column="1" bodyfile="src/corelib/TLE9xxx.hpp" bodystart="132" bodyend="136"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="132" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="132" bodyend="136"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -872,49 +913,47 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==================================<sp/>Defines<sp/>==================================================================================================</highlight></codeline>
-<codeline lineno="35" refid="d7/def/_t_l_e9xxx_8hpp_1a86d3b6c48b22a85a6a6142c8868f25ee" refkind="member"><highlight class="comment"></highlight><highlight class="preprocessor">#define<sp/>DETAILED_ERROR_REPORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1<sp/>=<sp/>print<sp/>register<sp/>values<sp/>as<sp/>well<sp/>if<sp/>a<sp/>TLE<sp/>error<sp/>occurs,<sp/>0<sp/>=<sp/>only<sp/>print<sp/>error<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="d7/def/_t_l_e9xxx_8hpp_1a86d3b6c48b22a85a6a6142c8868f25ee" refkind="member"><highlight class="comment"></highlight><highlight class="preprocessor">#define<sp/>DETAILED_ERROR_REPORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Adaptive<sp/>Gate<sp/>control<sp/>(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TRISE_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>initial<sp/>Target<sp/>tRISE<sp/>(CONF_TRISE_TG<sp/>*<sp/>53.3<sp/>ns).<sp/>The<sp/>variable<sp/>can<sp/>be<sp/>changed<sp/>afterwards.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Starting<sp/>charge<sp/>current<sp/>that<sp/>will<sp/>be<sp/>first<sp/>used<sp/>by<sp/>the<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFALL_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>initial<sp/>Target<sp/>tFALL<sp/>(CONF_TFALL_TG<sp/>*<sp/>53.3<sp/>ns).<sp/>The<sp/>variable<sp/>can<sp/>be<sp/>changed<sp/>afterwards.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_IDCHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Starting<sp/>discharge<sp/>current<sp/>that<sp/>will<sp/>be<sp/>first<sp/>used<sp/>by<sp/>the<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHG_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>43<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Freewheeling<sp/>charge<sp/>and<sp/>discharge<sp/>current</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TRISE_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFALL_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_IDCHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d7/def/_t_l_e9xxx_8hpp_1a3d427c411138eedbb5dbb3e12f7f4455" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHG_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>43<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ALPHA3,<sp/>constant<sp/>for<sp/>the<sp/>EMA<sp/>calculation,<sp/>0<sp/>&lt;=<sp/>ALPHA3<sp/>&lt;=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALING_FACTOR_FPA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Scaling<sp/>factor<sp/>for<sp/>fixed-point<sp/>arithmetic<sp/>(FPA)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3_FPA_SCALED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ALPHA3<sp/>*<sp/>SCALING_FACTOR_FPA)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ALPHA3,<sp/>already<sp/>scaled<sp/>for<sp/>FPA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ONE_MINUS_ALPHA3_FPA_SCALED<sp/>(SCALING_FACTOR_FPA<sp/>-<sp/>ALPHA3_FPA_SCALED)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(1<sp/>-<sp/>ALPHA3),<sp/>already<sp/>scaled<sp/>for<sp/>FPA</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>63<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Maximum<sp/>charge<sp/>current<sp/>that<sp/>will<sp/>be<sp/>set<sp/>by<sp/>the<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Minimum<sp/>charge<sp/>current<sp/>that<sp/>will<sp/>be<sp/>set<sp/>by<sp/>the<sp/>algorithm</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFFFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>scale<sp/>of<sp/>a<sp/>uint16_t<sp/>variable<sp/>(m_trise_ema<sp/>variable),<sp/>for<sp/>initialization<sp/>purposes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALING_FACTOR_FPA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3_FPA_SCALED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ALPHA3<sp/>*<sp/>SCALING_FACTOR_FPA)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d7/def/_t_l_e9xxx_8hpp_1ae26356555cd0132ceb054c3f53f38567" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ONE_MINUS_ALPHA3_FPA_SCALED<sp/>(SCALING_FACTOR_FPA<sp/>-<sp/>ALPHA3_FPA_SCALED)<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>63<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="d7/def/_t_l_e9xxx_8hpp_1aadbbc7b02d94a4c18646813ac8d7dec1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFFFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Adaptive<sp/>Gate<sp/>control<sp/>PRE-(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PDCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>44<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Initial<sp/>predischarge<sp/>current,<sp/>default<sp/>0xF</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>23<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Initial<sp/>precharge<sp/>current,<sp/>default<sp/>0xD</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Turn-on<sp/>delay<sp/>time,<sp/>default<sp/>0xC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;63]<sp/>Turn-off<sp/>delay<sp/>time,<sp/>default<sp/>0xC</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;7]<sp/><sp/>Precharge<sp/>time,<sp/>default<sp/>0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPDCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;7]<sp/><sp/>Predischarge<sp/>time,<sp/>default<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="d7/def/_t_l_e9xxx_8hpp_1aca1b068769cf2444012d7c2549def1b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PDCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>44<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="d7/def/_t_l_e9xxx_8hpp_1a47a8286d4b690be1c66c611f75f7bff1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>23<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="d7/def/_t_l_e9xxx_8hpp_1a2618656a288ff1daf56078ad8da8e78c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="d7/def/_t_l_e9xxx_8hpp_1a3dd5949d9a33071bb1b66fe9cfcec901" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="d7/def/_t_l_e9xxx_8hpp_1a8dfad0c6ae86b21bc7efb1c6d9657f0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="d7/def/_t_l_e9xxx_8hpp_1a0df0eb72dcfaba11400c9bba74e3523d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPDCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Static<sp/>(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;15]<sp/>Static<sp/>charge/discharge<sp/>current,<sp/>default<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="d7/def/_t_l_e9xxx_8hpp_1acb11a1d6db8851855af4b51063386290" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>General<sp/>Bridge<sp/>Control<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDFREQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Bridge<sp/>driver<sp/>synchronization<sp/>frequency:<sp/>37Mhz</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>PWM<sp/>setting<sp/>defined<sp/>in<sp/>setGenControl(bool<sp/>MapPWM1,<sp/>bool<sp/>MapPWM2)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_CPUVTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Charge<sp/>pump<sp/>under<sp/>voltage:<sp/>TH1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FET_LVL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>External<sp/>MOSFET<sp/>logic<sp/>level:<sp/><sp/><sp/>normal<sp/>level<sp/>MOSFET</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_CPSTGA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Automatic<sp/>switchover<sp/>between<sp/>dual<sp/>and<sp/>single<sp/>charge<sp/>pump<sp/>stage:<sp/>Normal</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDOV_REC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Bridge<sp/>driver<sp/>recover<sp/>from<sp/>VSINT<sp/>Overvoltage:<sp/>ACTIVE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IPCHGADT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>1Step</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Adaptive<sp/>gate<sp/>control:<sp/>configured<sp/>in<sp/>a<sp/>global<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_CPEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>charge<sp/>pump:<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_POCHGDIS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Postcharge<sp/>phase<sp/>during<sp/>PWM:<sp/>disabled</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_AGCFILT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Filter<sp/>for<sp/>adaptive<sp/>gate<sp/>control:<sp/><sp/>NO_FILT</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_EN_GEN_CHECK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>detection<sp/>of<sp/>active<sp/>/<sp/>FW<sp/>MOSFET:<sp/>disabled</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IHOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Gate<sp/>driver<sp/>hold<sp/>current:<sp/><sp/>TH1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>Frequency<sp/>modulation<sp/>of<sp/>charge<sp/>pump:<sp/>no<sp/>modulation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDFREQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="d7/def/_t_l_e9xxx_8hpp_1a38a03cf5f9548d486a52140f693962da" refkind="member"><highlight class="preprocessor">#define<sp/>CONF_CPUVTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="d7/def/_t_l_e9xxx_8hpp_1a7da61d48c74c89b8787108bea3aeb8c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FET_LVL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="d7/def/_t_l_e9xxx_8hpp_1a4471b25e8829ca537c8ee3a2efc4999e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_CPSTGA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="d7/def/_t_l_e9xxx_8hpp_1af5fcf5ccef7fc02518e5df6427eaf660" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDOV_REC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IPCHGADT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="d7/def/_t_l_e9xxx_8hpp_1a0fd63df96e6afd9fe7b7994c4b01731d" refkind="member"><highlight class="preprocessor">#define<sp/>CONF_CPEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="d7/def/_t_l_e9xxx_8hpp_1a2d74ec796e3db05d95a05f7f326a7872" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_POCHGDIS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="d7/def/_t_l_e9xxx_8hpp_1a2f442a108774671bb1e7b74a47214520" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_AGCFILT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="d7/def/_t_l_e9xxx_8hpp_1a3182878599ce06f4aaa679c4fd46db22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_EN_GEN_CHECK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="d7/def/_t_l_e9xxx_8hpp_1ab8ca11162377682b818223865580b5e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IHOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="d7/def/_t_l_e9xxx_8hpp_1a60ed51bf00fadf5f6e4462230622d11a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM3_TO_HB3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM3_TO_HB4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
@@ -922,19 +961,19 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM1_TO_HB2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>HS<sp/>and<sp/>LS<sp/>Drain-Source<sp/>monitoring<sp/>threshold<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_LS_AND_HS_X_VDSTH<sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;7]<sp/>Set<sp/>overvoltage<sp/>threshold</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_DEEP_ADAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>deep<sp/>adaption</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFVDS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;3]<sp/>set<sp/>filter<sp/>time<sp/>0<sp/>=<sp/>500ns<sp/>(default)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="d7/def/_t_l_e9xxx_8hpp_1a128f6adad298b067932de8ffa9ffaa6d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_LS_AND_HS_X_VDSTH<sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="d7/def/_t_l_e9xxx_8hpp_1a12511e5f79458fdf978aef9c03587046" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_DEEP_ADAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="d7/def/_t_l_e9xxx_8hpp_1a18dc57106489444979bd315481a8040f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFVDS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Maximum<sp/>Pre-(Dis)charge<sp/>in<sp/>PWM<sp/>operation<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_HBXIDIAG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;1]<sp/>disable<sp/>pulldown<sp/>for<sp/>off-state<sp/>diagnostic</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGMAXX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;3]<sp/>set<sp/>maximum<sp/>pre<sp/>(dis)charge<sp/>current.<sp/>0<sp/>=<sp/>19mA<sp/>(default),<sp/>1<sp/>=<sp/>32mA,<sp/>2<sp/>=<sp/>73mA,<sp/>3<sp/>=<sp/>100mA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="d7/def/_t_l_e9xxx_8hpp_1a651d5e3b921e7c826b049dadf6c77c69" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_HBXIDIAG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="d7/def/_t_l_e9xxx_8hpp_1a7f70543d9bbce27fb90dfa18ecb14d7c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGMAXX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Cross<sp/>current<sp/>protection<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;15]<sp/>Set<sp/>the<sp/>blank<sp/>time<sp/>for<sp/>active<sp/>MOSFETS.<sp/>default<sp/>is<sp/>7</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;15]<sp/>Set<sp/>the<sp/>current<sp/>protection<sp/>time<sp/>for<sp/>active<sp/>MOSFETS.<sp/>default<sp/>is<sp/>7</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;15]<sp/>Set<sp/>the<sp/>blank<sp/>time<sp/>for<sp/>free<sp/>wheeling<sp/>MOSFETS.<sp/>default<sp/>is<sp/>7</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>[0;15]<sp/>Set<sp/>the<sp/>current<sp/>protection<sp/>time<sp/>for<sp/>free<sp/>wheeling<sp/>MOSFETS.<sp/>default<sp/>is<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="d7/def/_t_l_e9xxx_8hpp_1a5e6d0efcfa21a457ff76521a3dc658d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="d7/def/_t_l_e9xxx_8hpp_1a36cf9aab5a783d1c62b58a5a773678cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="d7/def/_t_l_e9xxx_8hpp_1abb165f7d89de89680eff585b5bea7ce4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="d7/def/_t_l_e9xxx_8hpp_1a2f48dd9b964d6f8d2dd517d7bcc80319" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>SPI<sp/>address<sp/>commands<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9xxx_CMD_WRITE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
@@ -1037,8 +1076,8 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
 <codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga6770234f70fc34ea413597ff5bc5c1ec" kindref="member">adaptiveHysteresisDecisionTree</ref>(uint8_t<sp/>hb,<sp/>uint8_t<sp/>*<sp/>ichg,<sp/>uint8_t<sp/>*<sp/>idchg);</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_trise_tg<sp/>=<sp/>CONF_TRISE_TG;</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tfall_tg<sp/>=<sp/>CONF_TFALL_TG;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_trise_tg<sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" kindref="member">CONF_TRISE_TG</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tfall_tg<sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" kindref="member">CONF_TFALL_TG</ref>;</highlight></codeline>
 <codeline lineno="286"><highlight class="normal"></highlight></codeline>
 <codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*intn;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>interrupt<sp/>/<sp/>test<sp/>input</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sBus;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>SPI<sp/>cover<sp/>class<sp/>as<sp/>representation<sp/>of<sp/>the<sp/>SPI<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
@@ -1076,17 +1115,17 @@ SPDX-License-Identifier: MIT </para>
 <codeline lineno="398"><highlight class="normal"></highlight></codeline>
 <codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga93b8e9cce502e67533e47d443af36187" kindref="member">readReg</ref>(uint8_t<sp/>addr);</highlight></codeline>
 <codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_trise_ema[MAX_ICHG<sp/>-<sp/>MIN_ICHG<sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Array<sp/>of<sp/>the<sp/>calculated<sp/>tRISEx<sp/>EMAs<sp/>for<sp/>the<sp/>different<sp/>configured<sp/>ICHGx</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tfall_ema[MAX_ICHG<sp/>-<sp/>MIN_ICHG<sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Array<sp/>of<sp/>the<sp/>calculated<sp/>tFALLx<sp/>EMAs<sp/>for<sp/>the<sp/>different<sp/>configured<sp/>IDCHGx</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_ichg<sp/>=<sp/>CONF_INIT_ICHG;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Current<sp/>ICHGx<sp/>with<sp/>which<sp/>the<sp/>MOSFET<sp/>driver<sp/>is<sp/>configured</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_idchg<sp/>=<sp/>CONF_INIT_IDCHG;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Current<sp/>IDCHGx<sp/>with<sp/>which<sp/>the<sp/>MOSFET<sp/>driver<sp/>is<sp/>configured</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_statusInformationField<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stores<sp/>the<sp/>&quot;Status<sp/>information<sp/>field&quot;<sp/>which<sp/>is<sp/>the<sp/>first<sp/>byte<sp/>of<sp/>every<sp/>SDO<sp/>package.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_agc_status<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Stores<sp/>the<sp/>value<sp/>to<sp/>be<sp/>written</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_error_enable<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>an<sp/>error<sp/>message<sp/>was<sp/>printed,<sp/>this<sp/>value<sp/>will<sp/>get<sp/>1,<sp/>indicating<sp/>an<sp/>error<sp/>occured</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" kindref="member">m_trise_ema</ref>[<ref refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" kindref="member">MAX_ICHG</ref><sp/>-<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" kindref="member">MIN_ICHG</ref><sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="408" refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" kindref="member">m_tfall_ema</ref>[<ref refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" kindref="member">MAX_ICHG</ref><sp/>-<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" kindref="member">MIN_ICHG</ref><sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="409" refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" kindref="member">m_ichg</ref><sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" kindref="member">CONF_INIT_ICHG</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="410" refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" kindref="member">m_idchg</ref><sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" kindref="member">CONF_INIT_IDCHG</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="411" refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" kindref="member">_statusInformationField</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="412" refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" kindref="member">_agc_status</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="413" refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" kindref="member">_error_enable</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="414"><highlight class="normal"></highlight></codeline>
 <codeline lineno="415"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/TLE9xxx.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp"/>
   </compounddef>
 </doxygen>

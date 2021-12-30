@@ -58,7 +58,7 @@ DC Motor Shield with TLE9562
 License
 =======
 
-Please find the license file for this library `here <https://github.com/Infineon/high-side-switch/blob/master/LICENSE>`_.
+Please find the license file for this library `here <https://github.com/Infineon/motor-system-ic-tle956x/blob/master/LICENSE.md>`_.
 
 
 .. toctree::

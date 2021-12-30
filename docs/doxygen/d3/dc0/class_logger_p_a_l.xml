@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/logger.hpp" line="23" column="5" bodyfile="src/pal/logger.hpp" bodystart="24" bodyend="30"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" line="23" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" bodystart="24" bodyend="30"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/logger.hpp" line="38" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" line="38" column="29"/>
       </memberdef>
       <memberdef kind="function" id="d3/dc0/class_logger_p_a_l_1a4a3b89e352dd06218a2399032bd4a5c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/logger.hpp" line="46" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" line="46" column="29"/>
       </memberdef>
       <memberdef kind="function" id="d3/dc0/class_logger_p_a_l_1a36b4bbf4cb32e75f20eed5e96f747b55" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426c" kindref="member">Error_t</ref></type>
@@ -190,7 +190,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/pal/logger.hpp" line="56" column="29"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" line="56" column="29"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -209,7 +209,7 @@
         <link refid="d3/dc0/class_logger_p_a_l"/>
       </node>
     </inheritancegraph>
-    <location file="src/pal/logger.hpp" line="19" column="1" bodyfile="src/pal/logger.hpp" bodystart="20" bodyend="57"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" line="19" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/logger.hpp" bodystart="20" bodyend="57"/>
     <listofallmembers>
       <member refid="d3/dc0/class_logger_p_a_l_1a7ab98528fc87099ddd18bda8ad73426ca4ebb8267793fee0d2be101568ca02c10" prot="public" virt="non-virtual"><scope>LoggerPAL</scope><name>CONF_ERROR</name></member>
       <member refid="d3/dc0/class_logger_p_a_l_1a4a3b89e352dd06218a2399032bd4a5c1" prot="public" virt="pure-virtual"><scope>LoggerPAL</scope><name>deinit</name></member>

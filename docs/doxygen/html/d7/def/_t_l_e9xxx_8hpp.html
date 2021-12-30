@@ -97,101 +97,127 @@ Classes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>2.0.0</dd></dl>
 <p>SPDX-License-Identifier: MIT </p>
 </td></tr>
-<tr class="memitem:a86d3b6c48b22a85a6a6142c8868f25ee"><td class="memItemLeft" align="right" valign="top"><a id="a86d3b6c48b22a85a6a6142c8868f25ee" name="a86d3b6c48b22a85a6a6142c8868f25ee"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DETAILED_ERROR_REPORT</b>&#160;&#160;&#160;1</td></tr>
-<tr class="memdesc:a86d3b6c48b22a85a6a6142c8868f25ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main place to configure the TLE9xxx. All defines beginning with "CONF_" are intended to be changed by the user. All other defines should remain as they are. <br /></td></tr>
+<tr class="memitem:a86d3b6c48b22a85a6a6142c8868f25ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a86d3b6c48b22a85a6a6142c8868f25ee">DETAILED_ERROR_REPORT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a86d3b6c48b22a85a6a6142c8868f25ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main place to configure the TLE9xxx. All defines beginning with "CONF_" are intended to be changed by the user. All other defines should remain as they are.  <a href="../../d7/def/_t_l_e9xxx_8hpp.html#a86d3b6c48b22a85a6a6142c8868f25ee">More...</a><br /></td></tr>
 <tr class="separator:a86d3b6c48b22a85a6a6142c8868f25ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ef502f48366b519355b8dde5b645827"><td class="memItemLeft" align="right" valign="top"><a id="a2ef502f48366b519355b8dde5b645827" name="a2ef502f48366b519355b8dde5b645827"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TRISE_TG</b>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:a2ef502f48366b519355b8dde5b645827"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards. <br /></td></tr>
 <tr class="separator:a2ef502f48366b519355b8dde5b645827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01ee4e72918bae412d2cd52cd646f807"><td class="memItemLeft" align="right" valign="top"><a id="a01ee4e72918bae412d2cd52cd646f807" name="a01ee4e72918bae412d2cd52cd646f807"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_INIT_ICHG</b>&#160;&#160;&#160;11</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_INIT_ICHG</b>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:a01ee4e72918bae412d2cd52cd646f807"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Starting charge current that will be first used by the algorithm <br /></td></tr>
 <tr class="separator:a01ee4e72918bae412d2cd52cd646f807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5142627d46679b16889cb686ba1452b8"><td class="memItemLeft" align="right" valign="top"><a id="a5142627d46679b16889cb686ba1452b8" name="a5142627d46679b16889cb686ba1452b8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TFALL_TG</b>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:a5142627d46679b16889cb686ba1452b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] initial Target tFALL (CONF_TFALL_TG * 53.3 ns). The variable can be changed afterwards. <br /></td></tr>
 <tr class="separator:a5142627d46679b16889cb686ba1452b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73383f366b1b9eed62319e15c8103cf2"><td class="memItemLeft" align="right" valign="top"><a id="a73383f366b1b9eed62319e15c8103cf2" name="a73383f366b1b9eed62319e15c8103cf2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_INIT_IDCHG</b>&#160;&#160;&#160;11</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_INIT_IDCHG</b>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:a73383f366b1b9eed62319e15c8103cf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Starting discharge current that will be first used by the algorithm <br /></td></tr>
 <tr class="separator:a73383f366b1b9eed62319e15c8103cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d427c411138eedbb5dbb3e12f7f4455"><td class="memItemLeft" align="right" valign="top"><a id="a3d427c411138eedbb5dbb3e12f7f4455" name="a3d427c411138eedbb5dbb3e12f7f4455"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_ICHG_FW</b>&#160;&#160;&#160;43</td></tr>
+<tr class="memdesc:a3d427c411138eedbb5dbb3e12f7f4455"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Freewheeling charge and discharge current <br /></td></tr>
 <tr class="separator:a3d427c411138eedbb5dbb3e12f7f4455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef2261269821a4680fe2d8389edb6af1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#aef2261269821a4680fe2d8389edb6af1">ALPHA3</a>&#160;&#160;&#160;0.5</td></tr>
+<tr class="memdesc:aef2261269821a4680fe2d8389edb6af1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALPHA3, constant for the EMA calculation, 0 &lt;= ALPHA3 &lt;= 1.  <a href="../../d7/def/_t_l_e9xxx_8hpp.html#aef2261269821a4680fe2d8389edb6af1">More...</a><br /></td></tr>
 <tr class="separator:aef2261269821a4680fe2d8389edb6af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1f90309ff09eae45cf32626f5aa304f"><td class="memItemLeft" align="right" valign="top"><a id="ae1f90309ff09eae45cf32626f5aa304f" name="ae1f90309ff09eae45cf32626f5aa304f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SCALING_FACTOR_FPA</b>&#160;&#160;&#160;(0xFF)</td></tr>
+<tr class="memdesc:ae1f90309ff09eae45cf32626f5aa304f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scaling factor for fixed-point arithmetic (FPA) <br /></td></tr>
 <tr class="separator:ae1f90309ff09eae45cf32626f5aa304f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52427c15639e86362ae1c7a37120224e"><td class="memItemLeft" align="right" valign="top"><a id="a52427c15639e86362ae1c7a37120224e" name="a52427c15639e86362ae1c7a37120224e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA3_FPA_SCALED</b>&#160;&#160;&#160;(<a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#aef2261269821a4680fe2d8389edb6af1">ALPHA3</a> * SCALING_FACTOR_FPA)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ALPHA3_FPA_SCALED</b>&#160;&#160;&#160;(<a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#aef2261269821a4680fe2d8389edb6af1">ALPHA3</a> * <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#ae1f90309ff09eae45cf32626f5aa304f">SCALING_FACTOR_FPA</a>)</td></tr>
+<tr class="memdesc:a52427c15639e86362ae1c7a37120224e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALPHA3, already scaled for FPA. <br /></td></tr>
 <tr class="separator:a52427c15639e86362ae1c7a37120224e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26356555cd0132ceb054c3f53f38567"><td class="memItemLeft" align="right" valign="top"><a id="ae26356555cd0132ceb054c3f53f38567" name="ae26356555cd0132ceb054c3f53f38567"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ONE_MINUS_ALPHA3_FPA_SCALED</b>&#160;&#160;&#160;(SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ONE_MINUS_ALPHA3_FPA_SCALED</b>&#160;&#160;&#160;(<a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#ae1f90309ff09eae45cf32626f5aa304f">SCALING_FACTOR_FPA</a> - <a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#a52427c15639e86362ae1c7a37120224e">ALPHA3_FPA_SCALED</a>)</td></tr>
+<tr class="memdesc:ae26356555cd0132ceb054c3f53f38567"><td class="mdescLeft">&#160;</td><td class="mdescRight">(1 - ALPHA3), already scaled for FPA <br /></td></tr>
 <tr class="separator:ae26356555cd0132ceb054c3f53f38567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e441b711036593361b62d9a98cbd789"><td class="memItemLeft" align="right" valign="top"><a id="a2e441b711036593361b62d9a98cbd789" name="a2e441b711036593361b62d9a98cbd789"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_ICHG</b>&#160;&#160;&#160;63</td></tr>
+<tr class="memdesc:a2e441b711036593361b62d9a98cbd789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum charge current that will be set by the algorithm. <br /></td></tr>
 <tr class="separator:a2e441b711036593361b62d9a98cbd789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6050dd6efb25efa53923137952e9bac1"><td class="memItemLeft" align="right" valign="top"><a id="a6050dd6efb25efa53923137952e9bac1" name="a6050dd6efb25efa53923137952e9bac1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>MIN_ICHG</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a6050dd6efb25efa53923137952e9bac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum charge current that will be set by the algorithm. <br /></td></tr>
 <tr class="separator:a6050dd6efb25efa53923137952e9bac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadbbc7b02d94a4c18646813ac8d7dec1"><td class="memItemLeft" align="right" valign="top"><a id="aadbbc7b02d94a4c18646813ac8d7dec1" name="aadbbc7b02d94a4c18646813ac8d7dec1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>EOS</b>&#160;&#160;&#160;0xFFFF</td></tr>
+<tr class="memdesc:aadbbc7b02d94a4c18646813ac8d7dec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes. <br /></td></tr>
 <tr class="separator:aadbbc7b02d94a4c18646813ac8d7dec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca1b068769cf2444012d7c2549def1b7"><td class="memItemLeft" align="right" valign="top"><a id="aca1b068769cf2444012d7c2549def1b7" name="aca1b068769cf2444012d7c2549def1b7"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_PDCHG_INIT</b>&#160;&#160;&#160;44</td></tr>
+<tr class="memdesc:aca1b068769cf2444012d7c2549def1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Initial predischarge current, default 0xF <br /></td></tr>
 <tr class="separator:aca1b068769cf2444012d7c2549def1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47a8286d4b690be1c66c611f75f7bff1"><td class="memItemLeft" align="right" valign="top"><a id="a47a8286d4b690be1c66c611f75f7bff1" name="a47a8286d4b690be1c66c611f75f7bff1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_PCHG_INIT</b>&#160;&#160;&#160;23</td></tr>
+<tr class="memdesc:a47a8286d4b690be1c66c611f75f7bff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Initial precharge current, default 0xD <br /></td></tr>
 <tr class="separator:a47a8286d4b690be1c66c611f75f7bff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2618656a288ff1daf56078ad8da8e78c"><td class="memItemLeft" align="right" valign="top"><a id="a2618656a288ff1daf56078ad8da8e78c" name="a2618656a288ff1daf56078ad8da8e78c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TDOFF</b>&#160;&#160;&#160;18</td></tr>
+<tr class="memdesc:a2618656a288ff1daf56078ad8da8e78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Turn-on delay time, default 0xC <br /></td></tr>
 <tr class="separator:a2618656a288ff1daf56078ad8da8e78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dd5949d9a33071bb1b66fe9cfcec901"><td class="memItemLeft" align="right" valign="top"><a id="a3dd5949d9a33071bb1b66fe9cfcec901" name="a3dd5949d9a33071bb1b66fe9cfcec901"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TDON</b>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:a3dd5949d9a33071bb1b66fe9cfcec901"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;63] Turn-off delay time, default 0xC <br /></td></tr>
 <tr class="separator:a3dd5949d9a33071bb1b66fe9cfcec901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dfad0c6ae86b21bc7efb1c6d9657f0e"><td class="memItemLeft" align="right" valign="top"><a id="a8dfad0c6ae86b21bc7efb1c6d9657f0e" name="a8dfad0c6ae86b21bc7efb1c6d9657f0e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TPCHGX</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a8dfad0c6ae86b21bc7efb1c6d9657f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;7] Precharge time, default 0 <br /></td></tr>
 <tr class="separator:a8dfad0c6ae86b21bc7efb1c6d9657f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0df0eb72dcfaba11400c9bba74e3523d"><td class="memItemLeft" align="right" valign="top"><a id="a0df0eb72dcfaba11400c9bba74e3523d" name="a0df0eb72dcfaba11400c9bba74e3523d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TPDCHGX</b>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a0df0eb72dcfaba11400c9bba74e3523d"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;7] Predischarge time, default 0 <br /></td></tr>
 <tr class="separator:a0df0eb72dcfaba11400c9bba74e3523d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb11a1d6db8851855af4b51063386290"><td class="memItemLeft" align="right" valign="top"><a id="acb11a1d6db8851855af4b51063386290" name="acb11a1d6db8851855af4b51063386290"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_ICHGST</b>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:acb11a1d6db8851855af4b51063386290"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;15] Static charge/discharge current, default 4 <br /></td></tr>
 <tr class="separator:acb11a1d6db8851855af4b51063386290"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7686169475db8440448ac59f89d484b"><td class="memItemLeft" align="right" valign="top"><a id="af7686169475db8440448ac59f89d484b" name="af7686169475db8440448ac59f89d484b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_BDFREQ</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:af7686169475db8440448ac59f89d484b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#af7686169475db8440448ac59f89d484b">CONF_BDFREQ</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:af7686169475db8440448ac59f89d484b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38a03cf5f9548d486a52140f693962da"><td class="memItemLeft" align="right" valign="top"><a id="a38a03cf5f9548d486a52140f693962da" name="a38a03cf5f9548d486a52140f693962da"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_CPUVTH</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a38a03cf5f9548d486a52140f693962da"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Charge pump under voltage: TH1 <br /></td></tr>
 <tr class="separator:a38a03cf5f9548d486a52140f693962da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7da61d48c74c89b8787108bea3aeb8c8"><td class="memItemLeft" align="right" valign="top"><a id="a7da61d48c74c89b8787108bea3aeb8c8" name="a7da61d48c74c89b8787108bea3aeb8c8"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_FET_LVL</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a7da61d48c74c89b8787108bea3aeb8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] External MOSFET logic level: normal level MOSFET <br /></td></tr>
 <tr class="separator:a7da61d48c74c89b8787108bea3aeb8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4471b25e8829ca537c8ee3a2efc4999e"><td class="memItemLeft" align="right" valign="top"><a id="a4471b25e8829ca537c8ee3a2efc4999e" name="a4471b25e8829ca537c8ee3a2efc4999e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_CPSTGA</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a4471b25e8829ca537c8ee3a2efc4999e"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Automatic switchover between dual and single charge pump stage: Normal <br /></td></tr>
 <tr class="separator:a4471b25e8829ca537c8ee3a2efc4999e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5fcf5ccef7fc02518e5df6427eaf660"><td class="memItemLeft" align="right" valign="top"><a id="af5fcf5ccef7fc02518e5df6427eaf660" name="af5fcf5ccef7fc02518e5df6427eaf660"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_BDOV_REC</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:af5fcf5ccef7fc02518e5df6427eaf660"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE <br /></td></tr>
 <tr class="separator:af5fcf5ccef7fc02518e5df6427eaf660"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeabb8b9736037a681f67208aa1852e8a"><td class="memItemLeft" align="right" valign="top"><a id="aeabb8b9736037a681f67208aa1852e8a" name="aeabb8b9736037a681f67208aa1852e8a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_IPCHGADT</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:aeabb8b9736037a681f67208aa1852e8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/def/_t_l_e9xxx_8hpp.html#aeabb8b9736037a681f67208aa1852e8a">CONF_IPCHGADT</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aeabb8b9736037a681f67208aa1852e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fd63df96e6afd9fe7b7994c4b01731d"><td class="memItemLeft" align="right" valign="top"><a id="a0fd63df96e6afd9fe7b7994c4b01731d" name="a0fd63df96e6afd9fe7b7994c4b01731d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_CPEN</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a0fd63df96e6afd9fe7b7994c4b01731d"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] charge pump: enabled <br /></td></tr>
 <tr class="separator:a0fd63df96e6afd9fe7b7994c4b01731d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d74ec796e3db05d95a05f7f326a7872"><td class="memItemLeft" align="right" valign="top"><a id="a2d74ec796e3db05d95a05f7f326a7872" name="a2d74ec796e3db05d95a05f7f326a7872"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_POCHGDIS</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a2d74ec796e3db05d95a05f7f326a7872"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Postcharge phase during PWM: disabled <br /></td></tr>
 <tr class="separator:a2d74ec796e3db05d95a05f7f326a7872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f442a108774671bb1e7b74a47214520"><td class="memItemLeft" align="right" valign="top"><a id="a2f442a108774671bb1e7b74a47214520" name="a2f442a108774671bb1e7b74a47214520"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_AGCFILT</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a2f442a108774671bb1e7b74a47214520"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Filter for adaptive gate control: NO_FILT <br /></td></tr>
 <tr class="separator:a2f442a108774671bb1e7b74a47214520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3182878599ce06f4aaa679c4fd46db22"><td class="memItemLeft" align="right" valign="top"><a id="a3182878599ce06f4aaa679c4fd46db22" name="a3182878599ce06f4aaa679c4fd46db22"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_EN_GEN_CHECK</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a3182878599ce06f4aaa679c4fd46db22"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] detection of active / FW MOSFET: disabled <br /></td></tr>
 <tr class="separator:a3182878599ce06f4aaa679c4fd46db22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8ca11162377682b818223865580b5e5"><td class="memItemLeft" align="right" valign="top"><a id="ab8ca11162377682b818223865580b5e5" name="ab8ca11162377682b818223865580b5e5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_IHOLD</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ab8ca11162377682b818223865580b5e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Gate driver hold current: TH1 <br /></td></tr>
 <tr class="separator:ab8ca11162377682b818223865580b5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60ed51bf00fadf5f6e4462230622d11a"><td class="memItemLeft" align="right" valign="top"><a id="a60ed51bf00fadf5f6e4462230622d11a" name="a60ed51bf00fadf5f6e4462230622d11a"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_FMODE</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a60ed51bf00fadf5f6e4462230622d11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] Frequency modulation of charge pump: no modulation <br /></td></tr>
 <tr class="separator:a60ed51bf00fadf5f6e4462230622d11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be7985ce5c7a814688078e4fb705ddd"><td class="memItemLeft" align="right" valign="top"><a id="a3be7985ce5c7a814688078e4fb705ddd" name="a3be7985ce5c7a814688078e4fb705ddd"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM3_TO_HB3</b>&#160;&#160;&#160;0</td></tr>
@@ -207,30 +233,39 @@ Classes</h2></td></tr>
 <tr class="separator:a423d61afefba3b5b163ba1cc0a4aff95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a128f6adad298b067932de8ffa9ffaa6d"><td class="memItemLeft" align="right" valign="top"><a id="a128f6adad298b067932de8ffa9ffaa6d" name="a128f6adad298b067932de8ffa9ffaa6d"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_LS_AND_HS_X_VDSTH</b>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:a128f6adad298b067932de8ffa9ffaa6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;7] Set overvoltage threshold <br /></td></tr>
 <tr class="separator:a128f6adad298b067932de8ffa9ffaa6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12511e5f79458fdf978aef9c03587046"><td class="memItemLeft" align="right" valign="top"><a id="a12511e5f79458fdf978aef9c03587046" name="a12511e5f79458fdf978aef9c03587046"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_DEEP_ADAP</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a12511e5f79458fdf978aef9c03587046"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] deep adaption <br /></td></tr>
 <tr class="separator:a12511e5f79458fdf978aef9c03587046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18dc57106489444979bd315481a8040f"><td class="memItemLeft" align="right" valign="top"><a id="a18dc57106489444979bd315481a8040f" name="a18dc57106489444979bd315481a8040f"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TFVDS</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a18dc57106489444979bd315481a8040f"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;3] set filter time 0 = 500ns (default) <br /></td></tr>
 <tr class="separator:a18dc57106489444979bd315481a8040f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a651d5e3b921e7c826b049dadf6c77c69"><td class="memItemLeft" align="right" valign="top"><a id="a651d5e3b921e7c826b049dadf6c77c69" name="a651d5e3b921e7c826b049dadf6c77c69"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_HBXIDIAG</b>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a651d5e3b921e7c826b049dadf6c77c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;1] disable pulldown for off-state diagnostic <br /></td></tr>
 <tr class="separator:a651d5e3b921e7c826b049dadf6c77c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f70543d9bbce27fb90dfa18ecb14d7c"><td class="memItemLeft" align="right" valign="top"><a id="a7f70543d9bbce27fb90dfa18ecb14d7c" name="a7f70543d9bbce27fb90dfa18ecb14d7c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_ICHGMAXX</b>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a7f70543d9bbce27fb90dfa18ecb14d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA <br /></td></tr>
 <tr class="separator:a7f70543d9bbce27fb90dfa18ecb14d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e6d0efcfa21a457ff76521a3dc658d9"><td class="memItemLeft" align="right" valign="top"><a id="a5e6d0efcfa21a457ff76521a3dc658d9" name="a5e6d0efcfa21a457ff76521a3dc658d9"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TBLANK_ACT</b>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:a5e6d0efcfa21a457ff76521a3dc658d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;15] Set the blank time for active MOSFETS. default is 7 <br /></td></tr>
 <tr class="separator:a5e6d0efcfa21a457ff76521a3dc658d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36cf9aab5a783d1c62b58a5a773678cf"><td class="memItemLeft" align="right" valign="top"><a id="a36cf9aab5a783d1c62b58a5a773678cf" name="a36cf9aab5a783d1c62b58a5a773678cf"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TCCP_ACT</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a36cf9aab5a783d1c62b58a5a773678cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;15] Set the current protection time for active MOSFETS. default is 7 <br /></td></tr>
 <tr class="separator:a36cf9aab5a783d1c62b58a5a773678cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb165f7d89de89680eff585b5bea7ce4"><td class="memItemLeft" align="right" valign="top"><a id="abb165f7d89de89680eff585b5bea7ce4" name="abb165f7d89de89680eff585b5bea7ce4"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TBLANK_FW</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:abb165f7d89de89680eff585b5bea7ce4"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;15] Set the blank time for free wheeling MOSFETS. default is 7 <br /></td></tr>
 <tr class="separator:abb165f7d89de89680eff585b5bea7ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f48dd9b964d6f8d2dd517d7bcc80319"><td class="memItemLeft" align="right" valign="top"><a id="a2f48dd9b964d6f8d2dd517d7bcc80319" name="a2f48dd9b964d6f8d2dd517d7bcc80319"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TCCP_FW</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a2f48dd9b964d6f8d2dd517d7bcc80319"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0;15] Set the current protection time for free wheeling MOSFETS. default is 7 <br /></td></tr>
 <tr class="separator:a2f48dd9b964d6f8d2dd517d7bcc80319"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a99fb3c437dadc283347f33b2c5ff597c"><td class="memItemLeft" align="right" valign="top"><a id="a99fb3c437dadc283347f33b2c5ff597c" name="a99fb3c437dadc283347f33b2c5ff597c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>TLE9xxx_CMD_WRITE</b>&#160;&#160;&#160;0x80</td></tr>
@@ -280,7 +315,56 @@ Classes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ALPHA3, constant for the EMA calculation, 0 &lt;= ALPHA3 &lt;= 1. </p>
 <p >A value &gt; 0.5 gives more importance to the last tRISE sampled A value &lt; 0.5 gives more importance to the history of sampled tRISE </p>
+
+</div>
+</div>
+<a id="af7686169475db8440448ac59f89d484b" name="af7686169475db8440448ac59f89d484b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7686169475db8440448ac59f89d484b">&#9670;&nbsp;</a></span>CONF_BDFREQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_BDFREQ&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >[0;1] Bridge driver synchronization frequency: 37Mhz PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2) </p>
+
+</div>
+</div>
+<a id="aeabb8b9736037a681f67208aa1852e8a" name="aeabb8b9736037a681f67208aa1852e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeabb8b9736037a681f67208aa1852e8a">&#9670;&nbsp;</a></span>CONF_IPCHGADT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_IPCHGADT&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >[0;1] 1Step Adaptive gate control: configured in a global variable </p>
+
+</div>
+</div>
+<a id="a86d3b6c48b22a85a6a6142c8868f25ee" name="a86d3b6c48b22a85a6a6142c8868f25ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d3b6c48b22a85a6a6142c8868f25ee">&#9670;&nbsp;</a></span>DETAILED_ERROR_REPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DETAILED_ERROR_REPORT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main place to configure the TLE9xxx. All defines beginning with "CONF_" are intended to be changed by the user. All other defines should remain as they are. </p>
+<p >1 = print register values as well if a TLE error occurs, 0 = only print error message </p>
 
 </div>
 </div>

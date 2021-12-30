@@ -574,6 +574,6 @@
 <codeline lineno="448"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="449"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/BLDCM-control.cpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.cpp"/>
   </compounddef>
 </doxygen>

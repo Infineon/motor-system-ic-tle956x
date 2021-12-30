@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="31" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="31" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="31" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1adc7f4f1e81da1536100a5802fb00185c" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="33" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="33" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a97afaab500a24431ee3de731cd5c53e5" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="34" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="34" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1aa2db8a2264572b1b9ca569d44358f347" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="35" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="35" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="35" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a981d950a348a862d8d667682f70c62d5" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="37" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="37" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="37" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a63df8858bd4fa3320e57413201180120" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="38" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="38" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="38" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1af4d7576bb930d77be8ac0a1367cdc03e" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="39" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="39" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="39" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a0715b1cc61529d85b75af127f6f81f05" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="41" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="41" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="41" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1ab2e9b6f9a0444611261287c5c28d0c1d" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="42" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="42" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="42" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a06a6652c3c95e50eb39c44c913c56ffc" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="43" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="43" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="43" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a48622828ab43a851e1e2d2198676fcd8" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="44" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="44" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1a406640619cea7d5d38b1bcbecee73092" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="46" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="46" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="46" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1adeb88ba275749c38d956ca08711620c6" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="48" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="48" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1ac48c6f651e79d83ab8403966ce21e9a5" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="49" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="49" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="49" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/ded/structhardwareconfig__t_1af68192ac61f27ea674dcd543b4b6fde9" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="50" column="13" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="50" bodyend="-1"/>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="50" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="50" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -205,7 +205,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/framework/arduino/wrapper/pin-config-arduino.hpp" line="29" column="1" bodyfile="src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="30" bodyend="51"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="29" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" bodystart="30" bodyend="51"/>
     <listofallmembers>
       <member refid="db/ded/structhardwareconfig__t_1a981d950a348a862d8d667682f70c62d5" prot="public" virt="non-virtual"><scope>hardwareconfig_t</scope><name>BEMF_U_IO</name></member>
       <member refid="db/ded/structhardwareconfig__t_1a63df8858bd4fa3320e57413201180120" prot="public" virt="non-virtual"><scope>hardwareconfig_t</scope><name>BEMF_V_IO</name></member>

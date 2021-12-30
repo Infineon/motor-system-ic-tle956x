@@ -162,6 +162,6 @@
 <codeline lineno="108"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
     </programlisting>
-    <location file="src/corelib/TLE9562.hpp"/>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp"/>
   </compounddef>
 </doxygen>
