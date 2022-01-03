@@ -53,7 +53,7 @@ First, we need to call the *begin()* function, that configures all input/output 
 Now comes the important part: You need to select which position-feedback and which speedmode you want to use::
 
 	MyMotor.MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL;
-	MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_PERCENTAGE;
+	MyMotor.MotorParam.speedmode = BLDCMcontrol::BLDC_BLDC_DUTYCYCLE;
 	MyMotor.MotorParam.MotorPolepairs = 4;
 
 .. list-table::
@@ -112,45 +112,48 @@ void loop()
 ------------
 
 In order to change speed, direction, weakening range (only for BLDC_HALL), start or stop the motor, a if-routine has been implemented, that scans the Serial-input line. 
-You can directly extract, what affect it has, when you press which key::
+Have a look in :ref:`Keyboard commands` to see which key to press::
 
 	if (Serial.available() > 0)
 	{
 		uint8_t in = Serial.read();
 		if(in == '+'){
-		speed += 100;
+		speed += SPEED_INCREASE_STEP;
 		Serial.println(speed);}
 		if(in == '-'){
-		speed -= 100;
+		speed -= SPEED_INCREASE_STEP;
 		Serial.println(speed);}
 		if(in == 'd'){
 		direction = 0;
-		Serial.println("forward");}
+		Serial.println(F("forward"));}
 		if(in == 'e'){
 		direction = 1;
-		Serial.println("backward");}
+		Serial.println(F("backward"));}
 		if(in == 's'){
 		weakening = 0;
-		Serial.println("Field weakening disabled");}
+		Serial.println(F("Field weakening disabled"));}
 		if(in == 'w'){
 		weakening = 1;
-		Serial.println("Field weakening enabled");}
-		if(in == 'h'){
+		Serial.println(F("Field weakening enabled"));}
+		if(in == 'a'){
 		MyMotor.stopBLDCM(BRAKEMODE_PASSIVE);
-		Serial.println("Motor stopped");}
-		if(in == 'g'){
+		Serial.println(F("Motor stopped"));}
+		if(in == 'q'){
 		MyMotor.startBLDCM();
-		Serial.println("Motor started");}
+		Serial.println(F("Motor started"));}
 		MyMotor.setBLDCspeed(speed, direction, weakening);
 	}
 
-For example, if you press 'h', the function *stopBLDCM(brakemode)* is called. As the name says, is stops the commutation and prohibits the use of *serveBLDCshield()*, where brakemode defines, wether the phases are left floating (*BRAKEMODE_PASSIVE*) or actively tied to ground (*BRAKEMODE_ACTIVE*).
+For example, if you press ``a``, the function *stopBLDCM(brakemode)* is called. As the name says, it stops the commutation and prohibits the use of *serveBLDCshield()*, where brakemode defines, wether the phases are left floating (*BRAKEMODE_PASSIVE*) or actively tied to ground (*BRAKEMODE_ACTIVE*). The *F()* function which wraps the strings in the serial prints is called the F-macro and helps to save dynamic memory.
 
 Last but not least, you may not forget to call the most important function, where all the magic happens: *serveBLDCshield()*
 
 Depending on the previously defined configuration, this function checks, if the hall-sensor or BEMF-sensor state changed since the last time the function was called and if so, it commutates the output phases. This means, this function needs to be called **as often as possible** and the time between calling this function must be **as short as possible**. ::
 
-	MyMotor.serveBLDCshield();
-	MyMotor.checkBLDCshield();
+	MyMotor.serveBLDCshield();                // MUST BE CALLED HERE. This function does the BLDC commutation.
+  	if(MyMotor.checkTLEshield() )            // Check, if interrupt flag was set and read status register of TLE
+  	{
+   		MyMotor.setLED(50,0,0);                 // Set onboard RGB-LED to red.
+  	}
 
 The function *checkBLDCshield()* is not mandatory to run the BLDC, but handles error codes and prints debug messages. If you remind the interrupt setting at the beginning, I can now tell you, this function will only be executed if *interrupt_status_changed* was set to 1.

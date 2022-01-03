@@ -1,6 +1,8 @@
 API
 ===
 
+.. _Keyboard commands:
+
 Keyboard commands
 ------------------
 

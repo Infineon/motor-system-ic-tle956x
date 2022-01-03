@@ -2,6 +2,14 @@
 
 Arduino Library Installation
 ============================
+Required Software
+-----------------
+
+1. **Install the Arduino IDE**. If you are new to Arduino, please `download <https://www.arduino.cc/en/Main/Software>`__ the program and install it first.
+
+2. **Include the XMC boards in the IDE (if a XMC is used)**. The official Arduino boards are already available in the Arduino IDE, but other third party boards as the Infineon XMC MCU based ones need to be explicitly included. Follow the instructions in the `link <https://github.com/Infineon/XMC-for-Arduino#installation-instructions>`__ to add the XMC board family to the Arduino IDE.
+
+3. **Install the library**. In the Arduino IDE, go to the menu *Sketch > Include library > Library Manager*. Type **motor system IC TLE956x** and install the library.
 
 Installation Methods
 --------------------
@@ -19,13 +27,13 @@ These installation processes are conveniently described on the official `Arduino
 
 * **Arduino IDE Library Manager**
 
-Library name: ``arduino-high-side-switch``
+Library name: ``motor system IC TLE956x``
 
 * **Arduino IDE Manual Installation**
 
 Download the desired .zip library version from the repository `releases`_ section. 
 
-.. _releases: https://github.com/Infineon/arduino-high-side-switch/releases
+.. _releases: https://github.com/Infineon/motor-system-ic-tle956x/releases
 
 .. image:: ../../img/gh-master-zip.png
     :width: 200
@@ -39,3 +47,5 @@ Download the desired .zip library version from the repository `releases`_ sectio
 Refer to the section :ref:`PlatformIO <arduino-platformio>` and the `official website`_.
 
 .. _official website: https://docs.platformio.org/en/latest/librarymanager/quickstart.html
+
+

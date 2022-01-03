@@ -1,6 +1,7 @@
 
 Hardware Platforms
 ==================
+There are two PCBs available using TLE956x motor control ICs.
 
 BLDC Motor Shield with TLE9563
 -------------------------------
@@ -86,6 +87,16 @@ Pin Description
 	  - Output/analog
 	  - Output of current sense amplifier
 
+.. _Jumper settings:
+
+Jumper settings
+^^^^^^^^^^^^^^^^
+For plug & play operation with the provided example code, it's recommended to set the following jumpers:
+
+* 3 jumpers on J2 to connect the RGB LED with the HSS of the TLE9563
+* 1 jumper on P3 to enable green status LED, which indicates VCC1 is active
+* 1 jumper on P5 to connect board supply voltages
+* 1 jumper on P2 to enable software-development mode
 
 DC Motor Shield with TLE9562
 ----------------------------
@@ -143,6 +154,10 @@ Pin Description
 	  - Hall C
 	  - Output/digital
 	  - Signal of Hallsensor C (from BLDC motor)
+
+Jumper Settings
+^^^^^^^^^^^^^^^^
+
 
 * `TLE9563-3QX`_
 * `TLE9562-3QX`_
