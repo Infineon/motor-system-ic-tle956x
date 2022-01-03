@@ -19,7 +19,7 @@ This library is designed for multiple platforms with Arduino Uno compatible head
       - \*.ino
       - yes
     
-Other MCU platforms which have an Arduino port may not work as high frequency PWM (30kHz) is required on pins 3, 9 and 10 what is not available on all boards.
+Other MCU platforms which have an Arduino port may not work, as high frequency PWM (30kHz) is required on pins 3, 9 and 10 what is not available on all boards.
 Second limitation is the SPI bound to pins 11 (MOSI), 12 (MISO) and 13 (SCK) what is only available on the UNO and XMC boards. However if you wire it manually, the shield might work on more MCUs.
 
 `XMC for Arduino`_

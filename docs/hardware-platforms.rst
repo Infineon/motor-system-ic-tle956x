@@ -157,6 +157,10 @@ Pin Description
 
 Jumper Settings
 ^^^^^^^^^^^^^^^^
+For plug & play operation with the provided example code, it's recommended to set the following jumpers:
+
+* 1 jumper on P3 to enable green status LED, which indicates VCC1 is active
+* 1 jumper on P2 to enable software-development mode
 
 
 * `TLE9563-3QX`_

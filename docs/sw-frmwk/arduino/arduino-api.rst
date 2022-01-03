@@ -3,15 +3,13 @@
 Arduino API
 ===========
 
-TODO - will be replaced by code reference
-
-
-Start with the example sketch **TLE9563_BLDCM-control**.
+Example TLE9563_BLDCM-control
+------------------------------
 
 Here we go through each function and variable used in this sketch and show up other control possibilities.
 
 void setup()
-------------
+^^^^^^^^^^^^
 
 Include the library and create an instance of the class **BLDCMcontrolIno**::
 
@@ -43,7 +41,7 @@ Otherwise the interrupt is bound to the PWM of HSS1 and thus called periodically
 
 
 Motor control functions
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, we need to call the *begin()* function, that configures all input/output pins, PWM frequencies and so on. The function *setLED(red, green, blue)* let us set the color of the onboard RGB-LED, driven by the high-side-switches of the TLE. It takes 10-bit values as argument, so you can enter values from 0 (off) to 1024 (max brightness). Make sure your HSS-jumpers are in place. ::
 
@@ -109,7 +107,7 @@ Depending on your configuration above, the *speed* - parameter will be interpret
 *startBLDCM()* applies an open-loop commutation to your motor and enables the usage of *serveBLDCshield()* which actually commutates the motor.
 
 void loop()
-------------
+^^^^^^^^^^^^
 
 In order to change speed, direction, weakening range (only for BLDC_HALL), start or stop the motor, a if-routine has been implemented, that scans the Serial-input line. 
 Have a look in :ref:`Keyboard commands` to see which key to press::

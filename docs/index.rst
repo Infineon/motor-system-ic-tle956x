@@ -22,12 +22,12 @@ BLDC Motor Shield with TLE9563
 	  - `TLE9563-3QX`_
 
 **Main Features:**
-	* Support for sensorless Brushless motors and Brushless motors with Hallsensor
-	* RPM function possible that keeps a desired RPM speed
+	* Support for sensor-less brushless motors using onboard BEMF comparator
+	* Support for brushless motors with hall-sensor (field weakening range possible)
+	* RPM function that keeps a desired RPM speed
+	* control onboard RGB LED
 	* Platform independent C++ architecture
 	* Various parameters configurable for adaptive gate control (AGC)
-
-
 
 DC Motor Shield with TLE9562
 ----------------------------
@@ -44,6 +44,7 @@ DC Motor Shield with TLE9562
 
 **Main Features:**
 	* Two DC motors can be controlled independently of each other
+	* control onboard LEDs
 	* Platform independent C++ architecture
 	* Various parameters configurable for adaptive gate control (AGC)
 
@@ -86,7 +87,7 @@ Please find the license file for this library `here <https://github.com/Infineon
    :hidden:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :caption: Software Frameworks
    :hidden:
 
