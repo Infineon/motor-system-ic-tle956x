@@ -10,7 +10,6 @@ Pinout Diagram
 ^^^^^^^^^^^^^^^
 
 .. image:: /img/BLDC_Shield_TLE9563_Pinout.png
-    :height: 500
 
 Pin Description
 ^^^^^^^^^^^^^^^^
@@ -104,6 +103,8 @@ DC Motor Shield with TLE9562
 Pinout Diagram
 ^^^^^^^^^^^^^^
 
+.. image:: /img/DC_Shield_TLE9562_Pinout.png
+
 Pin Description
 ^^^^^^^^^^^^^^^
 
@@ -163,8 +164,6 @@ For plug & play operation with the provided example code, it's recommended to se
 * 1 jumper on P2 to enable software-development mode
 
 
-* `TLE9563-3QX`_
-* `TLE9562-3QX`_
 
 .. _`TLE9563-3QX`: https://www.infineon.com/cms/en/product/power/motor-control-ics/bldc-motor-driver-ics/bldc-motor-system-ics/tle9563-3qx/
 .. _`TLE9562-3QX`: https://www.infineon.com/cms/en/product/power/motor-control-ics/brushed-dc-motor-driver-ics/dc-motor-system-ics/tle9562-3qx/
