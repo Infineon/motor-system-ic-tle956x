@@ -20,6 +20,8 @@ BLDC Motor Shield with TLE9563
     		:height: 75
 	* - `BLDC SHIELD TLE9563-3QX`_
 	  - `TLE9563-3QX`_
+	* - `BLDC motor shield user manual`_
+	  - `TLE9563-3QX Datasheet`_
 
 **Main Features:**
 	* Support for sensor-less brushless motors using onboard BEMF comparator
@@ -41,6 +43,8 @@ DC Motor Shield with TLE9562
     		:height: 75
 	* - `DC SHIELD TLE9562-3QX`_
 	  - `TLE9562-3QX`_
+	* - `DC motor shield user manual`_
+	  - `TLE9562-3QX Datasheet`_
 
 **Main Features:**
 	* Two DC motors can be controlled independently of each other
@@ -53,7 +57,10 @@ DC Motor Shield with TLE9562
 .. _`DC SHIELD TLE9562-3QX`: https://www.infineon.com/cms/en/product/evaluation-boards/dc-shield_tle956x/
 .. _`TLE9563-3QX`: https://www.infineon.com/cms/en/product/power/motor-control-ics/bldc-motor-driver-ics/bldc-motor-system-ics/tle9563-3qx/
 .. _`TLE9562-3QX`: https://www.infineon.com/cms/en/product/power/motor-control-ics/brushed-dc-motor-driver-ics/dc-motor-system-ics/tle9562-3qx/
-
+.. _`TLE9563-3QX Datasheet`: https://www.infineon.com/cms/en/product/power/motor-control-ics/bldc-motor-driver-ics/bldc-motor-system-ics/tle9563-3qx/#!?fileId=5546d4627883d7e00178ca35bade3876
+.. _`TLE9562-3QX Datasheet`: https://www.infineon.com/cms/en/product/power/motor-control-ics/brushed-dc-motor-driver-ics/dc-motor-system-ics/tle9562-3qx/#!?fileId=5546d4627883d7e00178ca35b1603873
+.. _`BLDC motor shield user manual`: https://www.infineon.com/cms/en/product/evaluation-boards/bldc-shield_tle956x/#!?fileId=5546d46272e49d2a0173240cd6a32199
+.. _`DC motor shield user manual`: https://www.infineon.com/cms/en/product/evaluation-boards/dc-shield_tle956x/#!?fileId=5546d46273a5366f0173fb81140a3b77
 
 
 License
