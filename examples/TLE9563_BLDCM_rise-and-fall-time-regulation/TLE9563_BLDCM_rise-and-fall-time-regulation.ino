@@ -61,6 +61,7 @@ void setup()
 
   MyMotor.configBLDCshield(AGC_ACTIVE);
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+  MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
 
   /**
    * Depending on what you selected in MotorParam.speedmode, the speed has a different meaning:

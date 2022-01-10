@@ -50,6 +50,7 @@ void setup()
    */
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+  MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
 
   /**
    * setDCspeed(speed, direction, motoroutput)

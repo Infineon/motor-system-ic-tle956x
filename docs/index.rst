@@ -3,13 +3,8 @@ Introduction
 **************
 Welcome to the Infineon Motor System IC TLE956x library docs!
 
-Scope
-=====
-This library covers the following products:
-
-
 BLDC Motor Shield with TLE9563
--------------------------------
+===============================
 
 .. list-table::
 	:header-rows: 0
@@ -32,7 +27,7 @@ BLDC Motor Shield with TLE9563
 	* Various parameters configurable for adaptive gate control (AGC)
 
 DC Motor Shield with TLE9562
-----------------------------
+============================
 
 .. list-table::
 	:header-rows: 0
@@ -71,11 +66,11 @@ Please find the license file for this library `here <https://github.com/Infineon
 
 .. toctree::
    :maxdepth: 3
-   :caption: Wiki Sections
+   :caption: Home
    :hidden:
 
    Introduction <self>
-   Hardware Platforms <hardware-platforms.rst>
+   Acronyms <lib-details/acronyms.rst>
    Related Links <links.rst>
 
 .. toctree::
@@ -86,12 +81,13 @@ Please find the license file for this library `here <https://github.com/Infineon
    API <lib-details/api.rst>
    PAL Interface <lib-details/pal-interface.rst>
    Doxygen Docs <lib-details/doxygen.rst>
-   Acronyms <lib-details/acronyms.rst>
 
 .. toctree::
    :maxdepth: 3
    :caption: Hardware Platforms
    :hidden:
+
+   hardware-platforms
 
 .. toctree::
    :maxdepth: 1

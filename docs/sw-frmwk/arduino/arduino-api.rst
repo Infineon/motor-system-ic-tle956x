@@ -154,4 +154,6 @@ Depending on the previously defined configuration, this function checks, if the 
    		MyMotor.setLED(50,0,0);                 // Set onboard RGB-LED to red.
   	}
 
+.. doxygenfunction:: serveBLDCshield
+
 The function *checkBLDCshield()* is not mandatory to run the BLDC, but handles error codes and prints debug messages. If you remind the interrupt setting at the beginning, I can now tell you, this function will only be executed if *interrupt_status_changed* was set to 1.

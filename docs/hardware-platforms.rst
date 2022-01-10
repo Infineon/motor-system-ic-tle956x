@@ -1,6 +1,3 @@
-
-Hardware Platforms
-==================
 There are two PCBs available using TLE956x motor control ICs.
 
 BLDC Motor Shield with TLE9563
@@ -96,29 +93,29 @@ For plug & play operation with the provided example code, it's recommended to se
 	:header-rows: 1
 	
 	* - Jumper
-	  - Function
 	  - Default
+	  - Function
 	* - J1
-	  - In and output of the high speed CAN transceiver
 	  - None (only in-/output)
+	  - In and output of the high speed CAN transceiver
 	* - J2
-	  - Connect each High-Side-Switch of the TLE9563 with a color of the RGB LED
 	  - **set 3 Jumpers**
+	  - Connect each High-Side-Switch of the TLE9563 with a color of the RGB LED
 	* - P1
+	  - **set**
 	  - Connect RESET of Arduino with RSTN of TLE5963
-	  - **set**
 	* - P2
+	  - **set**
 	  - Connect the INTN pin of TLE9563 with a pulldown to GND. This enables software development mode.
-	  - **set**
 	* - P3
+	  - **set**
 	  - Connect green LED with VCC1 of TLE9563 indicating chip is powered on
-	  - **set**
 	* - P4
-	  - Connector for hall-sensor
 	  - None (only input)
+	  - Connector for hall-sensor
 	* - P5
-	  - Connect VIN of Arduino with 5V regulator on TLE9563 shield
 	  - **set**
+	  - Connect VIN of Arduino with 5V regulator on TLE9563 shield
 
 For more information refer to the `BLDC motor shield user manual`_ and `TLE9563-3QX Datasheet`_.
 
@@ -186,32 +183,32 @@ For plug & play operation with the provided example code, it's recommended to se
 	:header-rows: 1
 	
 	* - Jumper
-	  - Function
 	  - Default
+	  - Function
 	* - J1
+	  - None
 	  - Connect D0 and D1 with LIN transceiver
-	  - None
 	* - J3
-	  - In and output of the high speed CAN transceiver
 	  - None (only in-/output)
+	  - In and output of the high speed CAN transceiver
 	* - P1
+	  - **set**
 	  - Connect RESET of Arduino with RSTN of TLE5962
-	  - **set**
 	* - P2
+	  - **set**
 	  - Connect the INTN pin of TLE9562 with a pulldown to GND. This enables software development mode.
-	  - **set**
 	* - P3
+	  - **set**
 	  - Connect green LED with VCC1 of TLE9562 indicating chip is powered on
-	  - **set**
 	* - P4
-	  - Output of remaining High-Side-Switches HSS1 and HSS2.
 	  - None (only output)
+	  - Output of remaining High-Side-Switches HSS1 and HSS2.
 	* - P5
-	  - Connect VIN of Arduino with 5V regulator on TLE9562 shield
 	  - **set**
+	  - Connect VIN of Arduino with 5V regulator on TLE9562 shield
 	* - P6
-	  - Connect the PWM1 pin of TLE9562 with a pulldown to GND. This enables CRC.
 	  - None
+	  - Connect the PWM1 pin of TLE9562 with a pulldown to GND. This enables CRC.
 
 For more information refer to the `DC motor shield user manual`_ and `TLE9562-3QX Datasheet`_.
 

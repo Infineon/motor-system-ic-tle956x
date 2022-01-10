@@ -30,7 +30,7 @@ import subprocess, os, sys
 # Check if we're running on Read the Docs' servers
 read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
 
-breathe_projects = {"xfp-dev":"../doxygen/"}
+breathe_projects = {"TLE956x_Lib_doxygen":"doxygen/"}
 # if read_the_docs_build:
 # 	input_dir = '../src'
 # 	output_dir = 'build'
@@ -109,7 +109,7 @@ html_logo = 'img/ifx_logo_white_green_s.png'
 html_static_path = ['_templates']
 
 # # Breathe Configuration
-breathe_default_project = "xfp-dev"
+breathe_default_project = "TLE956x_Lib_doxygen"
 
 # breathe_domain_by_extension = {
 #         "hpp" : "cpp",
