@@ -19,12 +19,12 @@ BLDC Motor Shield with TLE9563
 	  - `TLE9563-3QX Datasheet`_
 
 **Main Features:**
-	* Support for sensor-less brushless motors using onboard BEMF comparator
-	* Support for brushless motors with hall-sensor (field weakening range possible)
+	* support for sensor-less brushless motors using onboard BEMF comparator
+	* support for brushless motors with hall-sensor (field weakening range possible)
 	* RPM function that keeps a desired RPM speed
 	* control onboard RGB LED
-	* Platform independent C++ architecture
-	* Various parameters configurable for adaptive gate control (AGC)
+	* platform independent C++ architecture
+	* various parameters configurable for adaptive gate control (AGC)
 
 DC Motor Shield with TLE9562
 ============================
@@ -42,10 +42,10 @@ DC Motor Shield with TLE9562
 	  - `TLE9562-3QX Datasheet`_
 
 **Main Features:**
-	* Two DC motors can be controlled independently of each other
+	* control two DC motors independently of each other
 	* control onboard LEDs
-	* Platform independent C++ architecture
-	* Various parameters configurable for adaptive gate control (AGC)
+	* platform independent C++ architecture
+	* various parameters configurable for adaptive gate control (AGC)
 
 
 .. _`BLDC SHIELD TLE9563-3QX`: https://www.infineon.com/cms/en/product/evaluation-boards/bldc-shield_tle956x/
@@ -70,17 +70,8 @@ Please find the license file for this library `here <https://github.com/Infineon
    :hidden:
 
    Introduction <self>
-   Acronyms <lib-details/acronyms.rst>
+   Acronyms <acronyms.rst>
    Related Links <links.rst>
-
-.. toctree::
-   :maxdepth: 4
-   :caption: Library Details
-   :hidden:
-
-   API <lib-details/api.rst>
-   PAL Interface <lib-details/pal-interface.rst>
-   Doxygen Docs <lib-details/doxygen.rst>
 
 .. toctree::
    :maxdepth: 3
@@ -88,6 +79,15 @@ Please find the license file for this library `here <https://github.com/Infineon
    :hidden:
 
    hardware-platforms
+   
+.. toctree::
+   :maxdepth: 4
+   :caption: Library Details
+   :hidden:
+
+   Library Architecture <lib-details/library-architecture.rst>
+   Porting Guide <lib-details/porting-guide.rst>
+   Adaptive Gate Control (AGC) <lib-details/api.rst>
 
 .. toctree::
    :maxdepth: 1

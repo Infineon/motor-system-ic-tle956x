@@ -3,6 +3,121 @@
 Arduino API
 ===========
 
+Example TLE9562_DCM-control
+----------------------------
+
+Here we go through each function and variable used in this sketch and show up other control possibilities.
+
+void setup()
+^^^^^^^^^^^^
+
+Include the library and create an instance of the class **DCMcontrolIno**::
+
+	#include <Arduino.h>
+	#include <DCM-control-ino.hpp>
+
+	#define MOTOR_OUTPUT            3            // [1;3]
+	#define SPEED_INCREASE_STEP     100          // [1;511] speed step increase/decrease when pressing a key
+
+	uint16_t speed = 400;
+	uint8_t direction = 0;
+
+	// Create an instance of DCMcontrol called 'MyMotor'. 
+	DCMcontrolIno MyMotor = DCMcontrolIno();
+
+The MOTOR_OUTPUT define is used to configure which motor will be controlled according to the table below. Motor 1 has to be wired to PHASE1 and PHASE2, Motor 2 to PHASE3 and PHASE4. 
+
+.. list-table::
+	:header-rows: 1
+	
+	* - MOTOR_OUTPUT
+	  - Motor 1
+	  - Motor 2
+	* - 1
+	  - yes
+	  - no
+	* - 2
+	  - no
+	  - yes
+	* - 3
+	  - yes
+	  - yes
+
+The not-controlled motor will always keep it's last state.
+
+Now set up a GPIO interrupt routine bound to Pin 2 (the interrupt Pin of the TLE956x shield).
+By default, the library configures the TLE to throw an interrupt if an error in one or more status register occurs::
+
+	// Enable GPIO interrupt for pin 2
+	attachInterrupt(digitalPinToInterrupt(2), TLEinterrupt, LOW);
+
+
+When you jump to the last lines in the example sketch, you see, the TLEinterrupt function only sets the variable *interrupt_status_changed* to one. Just keep that in mind for now, we come to the reason later on.
+
+**Important note:** In order to use the interrupt function properly, make sure the HSS switch of the board is in position *Static*.
+Otherwise the interrupt is bound to the PWM of HSS1 and thus called periodically, if this HSS is used.
+
+.. image:: /img/board_HSS_Switch.jpg
+    :height: 200
+
+Next initialize the pins and configure the interrupt mask (which TLE956x-errors cause an error message on the serial monitor). The default settings will be applied. The TLE9562 DC motor shield also features two red LEDs that can be controlled individually by using two HSS outputs of the TLE9562. Using the *setLED()* function, the brightness of both LEDs can be set using a 10-bit value::
+
+	MyMotor.begin();
+  	MyMotor.configDCshield();
+	MyMotor.setLED(0,100);                                                 // Switch on LED 2
+
+At the end of the *setup()* function, the initial set speed and direction for the selected motor(s) will be applied to the shield::
+	
+	MyMotor.setDCspeed(speed, direction, MOTOR_OUTPUT);
+	MyMotor.startDCM();
+
+void loop()
+^^^^^^^^^^^^
+In order to change speed, direction, motor outputs, start or stop the motor, an if-routine has been implemented, that scans the Serial-input line. 
+Have a look in :ref:`Keyboard commands` to see which key to press::
+
+	if (Serial.available() > 0)
+	{
+		uint8_t in = Serial.read();
+		if(in == '+')
+		{
+		speed += SPEED_INCREASE_STEP;
+		Serial.println(speed);
+		}
+		if(in == '-')
+		{
+		speed -= SPEED_INCREASE_STEP;
+		Serial.println(speed);
+		}
+		if(in == 'd')
+		{
+		direction = 0;
+		Serial.println(F("forward"));
+		}
+		if(in == 'e')
+		{
+		direction = 1;
+		Serial.println(F("backward"));
+		}
+		if(in == 'a')
+		{
+		MyMotor.stopDCM(BRAKEMODE_PASSIVE);
+		Serial.println(F("Motor stopped"));
+		}
+		if(in == 'q')
+		{
+		MyMotor.startDCM();
+		Serial.println(F("Motor started"));
+		}
+
+		MyMotor.setDCspeed(speed, direction, MOTOR_OUTPUT);
+	}
+
+If a key was pressed, the changes will be applied to the board using the *setDCspeed(speed, direction, MOTOR_OUTPUT)* function again. 
+
+
+
+
 Example TLE9563_BLDCM-control
 ------------------------------
 
@@ -72,7 +187,7 @@ Now comes the important part: You need to select which position-feedback and whi
 	* - speedmode
 	  - mandatory
 	  - BLDC_DUTYCYCLE
-	  - 0 - 100
+	  - 0 - 1023
 	* - 
 	  - 
 	  - BLDC_RPM
@@ -109,7 +224,7 @@ Depending on your configuration above, the *speed* - parameter will be interpret
 void loop()
 ^^^^^^^^^^^^
 
-In order to change speed, direction, weakening range (only for BLDC_HALL), start or stop the motor, a if-routine has been implemented, that scans the Serial-input line. 
+In order to change speed, direction, weakening range (only for BLDC_HALL), start or stop the motor, an if-routine has been implemented, that scans the Serial-input line. 
 Have a look in :ref:`Keyboard commands` to see which key to press::
 
 	if (Serial.available() > 0)
@@ -153,7 +268,5 @@ Depending on the previously defined configuration, this function checks, if the 
   	{
    		MyMotor.setLED(50,0,0);                 // Set onboard RGB-LED to red.
   	}
-
-.. doxygenfunction:: serveBLDCshield
 
 The function *checkBLDCshield()* is not mandatory to run the BLDC, but handles error codes and prints debug messages. If you remind the interrupt setting at the beginning, I can now tell you, this function will only be executed if *interrupt_status_changed* was set to 1.

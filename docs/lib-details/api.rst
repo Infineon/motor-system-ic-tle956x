@@ -1,44 +1,5 @@
-API
-===
-
-.. _Keyboard commands:
-
-Keyboard commands
-------------------
-
-.. list-table::
-	:header-rows: 1
-
-	* - 
-	  - Up / Enable
-	  - Down / Disable
-	* - Speed
-	  - ``+``
-	  - ``-``
-	* - Motor enable
-	  - ``q``
-	  - ``a``
-	* - Weakening  Range enable (BLDCM)
-	  - ``w``
-	  - ``s``
-	* - Direction
-	  - ``e``
-	  - ``d``
-	* - Risetime target
-	  - ``r``
-	  - ``f``
-	* - Falltime target
-	  - ``t``
-	  - ``g``
-	* - Rise- / Falltime Regulation enable
-	  - ``u``
-	  - ``j``
-	* - AGC enable
-	  - ``i``
-	  - ``k``
-
 Adaptive Gate Control (AGC)
----------------------------
+===========================
 The Infineon’s Motor System ICs (TLE956x) and Multi MOSFET driver ICs (TLE9210x) include a MOSFET driver with multi-stage current source gate control which is configured over SPI. Over this interface, the turn-on (tDONx) and turn-off (tDOFFx) delay can be controlled in PWM operation, as well as the rise (tRISEx) and fall (tFALLx) times. Therefore the algorithms explained in `Rise fall time regulation with current source MOSFET gate drivers`_ were implemented in this library.
 
 .. image:: /img/AGC_animated.gif
@@ -69,11 +30,11 @@ All other phases will be always connected to ground. In practice it's usually su
 
 Here you can define your initial target Rise- and Falltime, which will be set by
 
-.. doxygenfunction:: setTrisefallTarget
+.. doxygenfunction:: DCMcontrol::setTrisefallTarget
 
 If this function is not used (like in normal motor operation) the values from the defines will be taken as described below. The entered values in the examples are suited as a starting point for the DC and BLDC shield. However if other MOSFETS are used, refer to the `TLE9560/1/2 Gate Driver Setting Guide`_ in order to estimate start values for rise and fall times, turn-on and turn-off delay times and recommendations for the settings of the cross-current protection time and of the blank times.
 
-.. doxygenfunction:: riseFallTimeRegulation
+.. doxygenfunction:: DCMcontrol::riseFallTimeRegulation
 
 This function executes the algorithm one time and hands over the variables to read back the actual rise- / falltimes and charge-/discharge currents.
 
