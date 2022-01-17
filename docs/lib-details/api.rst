@@ -1,3 +1,5 @@
+.. _AGC:
+
 Adaptive Gate Control (AGC)
 ===========================
 The Infineon’s Motor System ICs (TLE956x) and Multi MOSFET driver ICs (TLE9210x) include a MOSFET driver with multi-stage current source gate control which is configured over SPI. Over this interface, the turn-on (tDONx) and turn-off (tDOFFx) delay can be controlled in PWM operation, as well as the rise (tRISEx) and fall (tFALLx) times. Therefore the algorithms explained in `Rise fall time regulation with current source MOSFET gate drivers`_ were implemented in this library.

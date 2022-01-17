@@ -8,13 +8,13 @@ To run these examples use either the Arduino IDE or something similar like the P
 	:header-rows: 0
 
 	* - `examples/TLE9562_DCM-control`_
-	  - Default example sketch to run DC motors.
+	  - :ref:`Default example sketch to run DC motors. <DCM-example>`
 	* - `examples/TLE9562_DCM_rise-and-fall-time-regulation`_
-	  - Perform the rise- / falltime control loop on a single output phase. 
+	  - :ref:`Perform the rise- / falltime control loop on a single output phase. <AGC>`
 	* - `examples/TLE9563_BLDCM-control`_
-	  - Default example sketch to run a 3 Phase BLDC motor with Hallsensor or BEMF.
+	  - :ref:`Default example sketch to run a 3 Phase BLDC motor with Hallsensor or BEMF. <BLDCM-example>`
 	* - `examples/TLE9563_BLDCM_rise-and-fall-time-regulation`_
-	  - Perform the Rise- / Falltime control loop while controlling a BLDC motor. Might be experimental.
+	  - :ref:`Perform the Rise- / Falltime control loop while controlling a BLDC motor. Might be experimental. <AGC>`
 	* - `examples/TLE9563_BLDCM_find-polepairs`_
 	  - Simple script to identify the amount of polepairs of a connected BLDC motor. 
 

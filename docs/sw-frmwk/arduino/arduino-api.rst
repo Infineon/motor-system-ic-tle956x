@@ -3,6 +3,8 @@
 Arduino API
 ===========
 
+.. _DCM-example:
+
 Example TLE9562_DCM-control
 ----------------------------
 
@@ -43,7 +45,7 @@ The MOTOR_OUTPUT define is used to configure which motor will be controlled acco
 	  - yes
 	  - yes
 
-The not-controlled motor will always keep it's last state.
+The not-controlled motor will always keep its last state.
 
 Now set up a GPIO interrupt routine bound to Pin 2 (the interrupt Pin of the TLE956x shield).
 By default, the library configures the TLE to throw an interrupt if an error in one or more status register occurs::
@@ -116,7 +118,7 @@ Have a look in :ref:`Keyboard commands` to see which key to press::
 If a key was pressed, the changes will be applied to the board using the *setDCspeed(speed, direction, MOTOR_OUTPUT)* function again. 
 
 
-
+.. _BLDCM-example:
 
 Example TLE9563_BLDCM-control
 ------------------------------
