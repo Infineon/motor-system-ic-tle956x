@@ -96,33 +96,23 @@ Classes</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>1.0.0</dd></dl>
 <p>SPDX-License-Identifier: MIT </p>
 </td></tr>
-<tr class="memitem:a2225243408bba380bad0e4186e969062"><td class="memItemLeft" align="right" valign="top"><a id="a2225243408bba380bad0e4186e969062" name="a2225243408bba380bad0e4186e969062"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_TIMEOUT</b>&#160;&#160;&#160;500			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */</td></tr>
-<tr class="memdesc:a2225243408bba380bad0e4186e969062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. All other defines should remain as they are. <br /></td></tr>
+<tr class="memitem:a2225243408bba380bad0e4186e969062"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#a2225243408bba380bad0e4186e969062">CONF_TIMEOUT</a>&#160;&#160;&#160;500</td></tr>
 <tr class="separator:a2225243408bba380bad0e4186e969062"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d85db871c4dc1755d56045ab428ef5d"><td class="memItemLeft" align="right" valign="top"><a id="a8d85db871c4dc1755d56045ab428ef5d" name="a8d85db871c4dc1755d56045ab428ef5d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_PI_UPDATE_INTERVAL</b>&#160;&#160;&#160;100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */</td></tr>
+<tr class="memitem:a8d85db871c4dc1755d56045ab428ef5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#a8d85db871c4dc1755d56045ab428ef5d">CONF_PI_UPDATE_INTERVAL</a>&#160;&#160;&#160;100</td></tr>
 <tr class="separator:a8d85db871c4dc1755d56045ab428ef5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9c43e654c22e6208827b4f022534e09"><td class="memItemLeft" align="right" valign="top"><a id="ab9c43e654c22e6208827b4f022534e09" name="ab9c43e654c22e6208827b4f022534e09"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_RPM_DUTYCYCLE_AT_START</b>&#160;&#160;&#160;80			/* dutycycle when motor starts to turn before RPM controller will be switched on */</td></tr>
+<tr class="memitem:ab9c43e654c22e6208827b4f022534e09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#ab9c43e654c22e6208827b4f022534e09">CONF_RPM_DUTYCYCLE_AT_START</a>&#160;&#160;&#160;80</td></tr>
 <tr class="separator:ab9c43e654c22e6208827b4f022534e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e7b03881dcd790c46819427d1005999"><td class="memItemLeft" align="right" valign="top"><a id="a8e7b03881dcd790c46819427d1005999" name="a8e7b03881dcd790c46819427d1005999"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_OPEN_LOOP_DUTYCYCLE</b>&#160;&#160;&#160;80			/* dutycycle for blind commutation at motor start (open loop) */</td></tr>
+<tr class="memitem:a8e7b03881dcd790c46819427d1005999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#a8e7b03881dcd790c46819427d1005999">CONF_OPEN_LOOP_DUTYCYCLE</a>&#160;&#160;&#160;80</td></tr>
 <tr class="separator:a8e7b03881dcd790c46819427d1005999"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affe087589bb1856a7518863007ab2d26"><td class="memItemLeft" align="right" valign="top"><a id="affe087589bb1856a7518863007ab2d26" name="affe087589bb1856a7518863007ab2d26"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_OPEN_LOOP_DELAY_START</b>&#160;&#160;&#160;5000		/* microseconds. This is the delay between the first commutations when starting a BLDC motor */</td></tr>
+<tr class="memitem:affe087589bb1856a7518863007ab2d26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#affe087589bb1856a7518863007ab2d26">CONF_OPEN_LOOP_DELAY_START</a>&#160;&#160;&#160;5000</td></tr>
 <tr class="separator:affe087589bb1856a7518863007ab2d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e960337e2758cf1ad29690ee30d0bb"><td class="memItemLeft" align="right" valign="top"><a id="ae6e960337e2758cf1ad29690ee30d0bb" name="ae6e960337e2758cf1ad29690ee30d0bb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_OPEN_LOOP_DELAY_LIMIT</b>&#160;&#160;&#160;1200		/* microseconds. The smallest delay that is used before open loop commutation turns into closed loop */</td></tr>
+<tr class="memitem:ae6e960337e2758cf1ad29690ee30d0bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#ae6e960337e2758cf1ad29690ee30d0bb">CONF_OPEN_LOOP_DELAY_LIMIT</a>&#160;&#160;&#160;1200</td></tr>
 <tr class="separator:ae6e960337e2758cf1ad29690ee30d0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae8482d32a1cf985bac2400756451815"><td class="memItemLeft" align="right" valign="top"><a id="aae8482d32a1cf985bac2400756451815" name="aae8482d32a1cf985bac2400756451815"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_OPEN_LOOP_DELAY_SLOPE</b>&#160;&#160;&#160;200			/* microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. Amount O_L_commutations = (5000-1200)/200 */</td></tr>
+<tr class="memitem:aae8482d32a1cf985bac2400756451815"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#aae8482d32a1cf985bac2400756451815">CONF_OPEN_LOOP_DELAY_SLOPE</a>&#160;&#160;&#160;200</td></tr>
 <tr class="separator:aae8482d32a1cf985bac2400756451815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c3f05d4bcf0c4c0f74bc4c011210de"><td class="memItemLeft" align="right" valign="top"><a id="a12c3f05d4bcf0c4c0f74bc4c011210de" name="a12c3f05d4bcf0c4c0f74bc4c011210de"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_DUTYCYCLE_TOP_LIMIT</b>&#160;&#160;&#160;255			/* maximum dutycycle */</td></tr>
+<tr class="memitem:a12c3f05d4bcf0c4c0f74bc4c011210de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#a12c3f05d4bcf0c4c0f74bc4c011210de">CONF_DUTYCYCLE_TOP_LIMIT</a>&#160;&#160;&#160;255</td></tr>
 <tr class="separator:a12c3f05d4bcf0c4c0f74bc4c011210de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a933061f5184bec107a47325994e724"><td class="memItemLeft" align="right" valign="top"><a id="a0a933061f5184bec107a47325994e724" name="a0a933061f5184bec107a47325994e724"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONF_DUTYCYCLE_BOTTOM_LIMIT</b>&#160;&#160;&#160;10			/* minimum dutycycle, below the motor won't turn anymore */</td></tr>
+<tr class="memitem:a0a933061f5184bec107a47325994e724"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/da6/_b_l_d_c_m-control_8hpp.html#a0a933061f5184bec107a47325994e724">CONF_DUTYCYCLE_BOTTOM_LIMIT</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:a0a933061f5184bec107a47325994e724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67c455c4ea9b9695ad43c08251431640"><td class="memItemLeft" align="right" valign="top"><a id="a67c455c4ea9b9695ad43c08251431640" name="a67c455c4ea9b9695ad43c08251431640"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SHUNT_RESISTOR_VALUE</b>&#160;&#160;&#160;0.005</td></tr>
@@ -146,6 +136,142 @@ Classes</h2></td></tr>
  }</td></tr>
 <tr class="separator:a0515a3d3adc6090423ddf8298db3d075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0a933061f5184bec107a47325994e724" name="a0a933061f5184bec107a47325994e724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a933061f5184bec107a47325994e724">&#9670;&nbsp;</a></span>CONF_DUTYCYCLE_BOTTOM_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_DUTYCYCLE_BOTTOM_LIMIT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >minimum dutycycle, below the motor won't turn anymore </p>
+
+</div>
+</div>
+<a id="a12c3f05d4bcf0c4c0f74bc4c011210de" name="a12c3f05d4bcf0c4c0f74bc4c011210de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12c3f05d4bcf0c4c0f74bc4c011210de">&#9670;&nbsp;</a></span>CONF_DUTYCYCLE_TOP_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_DUTYCYCLE_TOP_LIMIT&#160;&#160;&#160;255</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >maximum dutycycle </p>
+
+</div>
+</div>
+<a id="ae6e960337e2758cf1ad29690ee30d0bb" name="ae6e960337e2758cf1ad29690ee30d0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e960337e2758cf1ad29690ee30d0bb">&#9670;&nbsp;</a></span>CONF_OPEN_LOOP_DELAY_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_OPEN_LOOP_DELAY_LIMIT&#160;&#160;&#160;1200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >microseconds. The smallest delay that is used before open loop commutation turns into closed loop </p>
+
+</div>
+</div>
+<a id="aae8482d32a1cf985bac2400756451815" name="aae8482d32a1cf985bac2400756451815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae8482d32a1cf985bac2400756451815">&#9670;&nbsp;</a></span>CONF_OPEN_LOOP_DELAY_SLOPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_OPEN_LOOP_DELAY_SLOPE&#160;&#160;&#160;200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. You can calculate the amount: O_L_commutations = (5000-1200)/200 </p>
+
+</div>
+</div>
+<a id="affe087589bb1856a7518863007ab2d26" name="affe087589bb1856a7518863007ab2d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affe087589bb1856a7518863007ab2d26">&#9670;&nbsp;</a></span>CONF_OPEN_LOOP_DELAY_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_OPEN_LOOP_DELAY_START&#160;&#160;&#160;5000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >microseconds. This is the delay between the first commutations when starting a BLDC motor </p>
+
+</div>
+</div>
+<a id="a8e7b03881dcd790c46819427d1005999" name="a8e7b03881dcd790c46819427d1005999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e7b03881dcd790c46819427d1005999">&#9670;&nbsp;</a></span>CONF_OPEN_LOOP_DUTYCYCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_OPEN_LOOP_DUTYCYCLE&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >dutycycle for blind commutation at motor start (open loop) </p>
+
+</div>
+</div>
+<a id="a8d85db871c4dc1755d56045ab428ef5d" name="a8d85db871c4dc1755d56045ab428ef5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d85db871c4dc1755d56045ab428ef5d">&#9670;&nbsp;</a></span>CONF_PI_UPDATE_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_PI_UPDATE_INTERVAL&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >milliseconds. How often should the PI regulator be called. Affects precision if too low. </p>
+
+</div>
+</div>
+<a id="ab9c43e654c22e6208827b4f022534e09" name="ab9c43e654c22e6208827b4f022534e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c43e654c22e6208827b4f022534e09">&#9670;&nbsp;</a></span>CONF_RPM_DUTYCYCLE_AT_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_RPM_DUTYCYCLE_AT_START&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >dutycycle when motor starts to turn before RPM controller will be switched on </p>
+
+</div>
+</div>
+<a id="a2225243408bba380bad0e4186e969062" name="a2225243408bba380bad0e4186e969062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2225243408bba380bad0e4186e969062">&#9670;&nbsp;</a></span>CONF_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONF_TIMEOUT&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. All other defines should remain as they are. milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

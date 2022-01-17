@@ -138,8 +138,8 @@ enum _Config_AGC{
 /**
  * @brief represents a basic TLE9xxx
  *
- * This class provides all generic, a TLE9xxx SBC is capable of.
- * This mainly includes the the SPI read/wrtite functions, Cyclic redundancy check (CRC) setup and interrupt-error settings.
+ * This class provides all generic functions, a TLE9xxx SBC is capable of.
+ * This mainly includes the the SPI read/write functions for every single register, Cyclic redundancy check (CRC) setup and interrupt-error settings.
  * 
  * This class is not intended to be used directly. It should bequeath its generic functions to a derived class that adds the virtual defined functions related to a specific SBC.
  */

@@ -291,7 +291,7 @@
 <codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BLDC_DUTYCYCLE:</highlight></codeline>
 <codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//speed<sp/>=<sp/>(speed<sp/>*<sp/>CONF_DUTYCYCLE_TOP_LIMIT)<sp/>/<sp/>1000;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>TODO:<sp/>0.255<sp/>=<sp/>(ReadAnalogWriteAccuracy()<sp/>/<sp/>1000)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>speed<sp/>=<sp/>(speed&gt;&gt;2);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(speed<sp/>&gt;<sp/>CONF_DUTYCYCLE_TOP_LIMIT)<sp/>_DutyCycle<sp/>=<sp/>CONF_DUTYCYCLE_TOP_LIMIT;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(speed<sp/>&gt;<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" kindref="member">CONF_DUTYCYCLE_TOP_LIMIT</ref>)<sp/>_DutyCycle<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" kindref="member">CONF_DUTYCYCLE_TOP_LIMIT</ref>;</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>_DutyCycle<sp/>=<sp/>speed;</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"></highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
@@ -313,10 +313,10 @@
 <codeline lineno="187"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//if(MotorParam.feedbackmode<sp/>==<sp/>BLDC_BEMF)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="189"><highlight class="normal"><sp/><sp/>uint8_t<sp/>dt_prev<sp/>=<sp/>_DutyCycle;</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/>_DutyCycle<sp/>=<sp/>CONF_OPEN_LOOP_DUTYCYCLE;</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"><sp/><sp/>uint16_t<sp/>i<sp/>=<sp/>CONF_OPEN_LOOP_DELAY_START;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>_DutyCycle<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a8e7b03881dcd790c46819427d1005999" kindref="member">CONF_OPEN_LOOP_DUTYCYCLE</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>uint16_t<sp/>i<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1affe087589bb1856a7518863007ab2d26" kindref="member">CONF_OPEN_LOOP_DELAY_START</ref>;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"><sp/><sp/>uint8_t<sp/>CommStartup<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i&gt;CONF_OPEN_LOOP_DELAY_LIMIT)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i&gt;<ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1ae6e960337e2758cf1ad29690ee30d0bb" kindref="member">CONF_OPEN_LOOP_DELAY_LIMIT</ref>)</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>timer-&gt;<ref refid="d8/d08/class_timer_1a5b72f03fa82bdc8932042d77abadcbfd" kindref="member">delayMicro</ref>(i);</highlight></codeline>
 <codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>_Commutation<sp/>=<sp/>CommStartup;</highlight></codeline>
@@ -331,7 +331,7 @@
 <codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(CommStartup==0)<sp/>CommStartup=6;</highlight></codeline>
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>CommStartup--;</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>i=i-CONF_OPEN_LOOP_DELAY_SLOPE;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>i=i-<ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1aae8482d32a1cf985bac2400756451815" kindref="member">CONF_OPEN_LOOP_DELAY_SLOPE</ref>;</highlight></codeline>
 <codeline lineno="209"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/>_DutyCycle<sp/>=<sp/>dt_prev;</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/>timer-&gt;<ref refid="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" kindref="member">start</ref>();</highlight></codeline>
@@ -345,7 +345,7 @@
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(MotorParam.speedmode<sp/>==<sp/>BLDC_RPM)</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>_DutyCycle<sp/>=<sp/>CONF_RPM_DUTYCYCLE_AT_START;<sp/></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>_DutyCycle<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1ab9c43e654c22e6208827b4f022534e09" kindref="member">CONF_RPM_DUTYCYCLE_AT_START</ref>;<sp/></highlight></codeline>
 <codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(MotorParam.MotorPolepairs<sp/>==<sp/>0)<sp/><ref refid="de/df7/class_b_l_d_c_mcontrol_1a82aea9fa422c4961e9bc51448104c3b9" kindref="member">PrintErrorMessage</ref>(PARAMETER_MISSING);</highlight></codeline>
 <codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>rpmtimer-&gt;<ref refid="d8/d08/class_timer_1a35282728bc2a470190325982d6a2c6e0" kindref="member">start</ref>();</highlight></codeline>
 <codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//_DutyCycle<sp/>=<sp/>100;</highlight><highlight class="normal"></highlight></codeline>
@@ -428,7 +428,7 @@
 <codeline lineno="302"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="303"><highlight class="normal"><sp/><sp/>uint32_t<sp/>Elapsed<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="304"><highlight class="normal"><sp/><sp/>rpmtimer-&gt;<ref refid="d8/d08/class_timer_1a21d5520b9dfd717e72610ac9aebfc60f" kindref="member">elapsed</ref>(Elapsed);</highlight></codeline>
-<codeline lineno="305"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Elapsed<sp/>&gt;<sp/>CONF_PI_UPDATE_INTERVAL)</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Elapsed<sp/>&gt;<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a8d85db871c4dc1755d56045ab428ef5d" kindref="member">CONF_PI_UPDATE_INTERVAL</ref>)</highlight></codeline>
 <codeline lineno="306"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>RPM<sp/>=<sp/>0.0;</highlight></codeline>
 <codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>steps<sp/>=<sp/>(float)<sp/>_StepCounter;</highlight></codeline>
@@ -438,11 +438,11 @@
 <codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>RPM<sp/>=<sp/>(steps/<sp/>_NumberofSteps)<sp/>*<sp/>(60000.0<sp/>/<sp/>Elapsed);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Very<sp/>precise<sp/>but<sp/>needs<sp/>more<sp/>calc<sp/>power</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="313"><highlight class="normal"></highlight></codeline>
 <codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Error<sp/>=<sp/>_RefRPM<sp/>-<sp/>RPM;</highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(_DutyCycle<sp/>&lt;<sp/>CONF_DUTYCYCLE_TOP_LIMIT)<sp/>_PI_Integral<sp/>=<sp/>_PI_Integral<sp/>+<sp/>Error;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(_DutyCycle<sp/>&lt;<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" kindref="member">CONF_DUTYCYCLE_TOP_LIMIT</ref>)<sp/>_PI_Integral<sp/>=<sp/>_PI_Integral<sp/>+<sp/>Error;</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pwm<sp/>=<sp/>MotorParam.PI_Reg_P<sp/>*<sp/>Error<sp/>+<sp/>MotorParam.PI_Reg_I<sp/>*<sp/>_PI_Integral;</highlight></codeline>
 <codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Limit<sp/>PWM</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pwm<sp/>&gt;<sp/>CONF_DUTYCYCLE_TOP_LIMIT)<sp/>pwm<sp/>=<sp/>CONF_DUTYCYCLE_TOP_LIMIT;</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pwm<sp/>&lt;<sp/>CONF_DUTYCYCLE_BOTTOM_LIMIT)<sp/>pwm<sp/>=<sp/>CONF_DUTYCYCLE_BOTTOM_LIMIT;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pwm<sp/>&gt;<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" kindref="member">CONF_DUTYCYCLE_TOP_LIMIT</ref>)<sp/>pwm<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a12c3f05d4bcf0c4c0f74bc4c011210de" kindref="member">CONF_DUTYCYCLE_TOP_LIMIT</ref>;</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pwm<sp/>&lt;<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a0a933061f5184bec107a47325994e724" kindref="member">CONF_DUTYCYCLE_BOTTOM_LIMIT</ref>)<sp/>pwm<sp/>=<sp/><ref refid="d7/da6/_b_l_d_c_m-control_8hpp_1a0a933061f5184bec107a47325994e724" kindref="member">CONF_DUTYCYCLE_BOTTOM_LIMIT</ref>;</highlight></codeline>
 <codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>_DutyCycle<sp/>=<sp/>(uint8_t)<sp/>pwm;<sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>_StepCounter<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="322"><highlight class="normal"></highlight></codeline>

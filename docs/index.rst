@@ -88,6 +88,7 @@ Please find the license file for this library `here <https://github.com/Infineon
    Library Architecture <lib-details/library-architecture.rst>
    Porting Guide <lib-details/porting-guide.rst>
    Adaptive Gate Control (AGC) <lib-details/api.rst>
+   BLDC Motor Tuning <lib-details/bldc-tuning.rst>
 
 .. toctree::
    :maxdepth: 1

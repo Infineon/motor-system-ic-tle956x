@@ -19,7 +19,6 @@ The library can be installed in several ways:
 * Arduino IDE library manager
 * Arduino IDE import .zip library
 * Arduino IDE manual installation
-* PlatformIO
 
 These installation processes are conveniently described on the official `Arduino`_ website.
 
@@ -42,10 +41,5 @@ Download the desired .zip library version from the repository `releases`_ sectio
     As a general recommendation, downloading directly from the master branch should be avoided. 
     Even though it should not, it could contain incomplete or faulty code.
 
-* **PlatformIO**
-
-Refer to the section :ref:`PlatformIO <arduino-platformio>` and the `official website`_.
-
-.. _official website: https://docs.platformio.org/en/latest/librarymanager/quickstart.html
 
 

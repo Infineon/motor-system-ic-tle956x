@@ -1,8 +1,6 @@
 Porting Guide 
 ==============
 
-TODO: adapt for TLE956x Motor System IC
-
 Porting the library to a new software development framework and hardware
 platform entails the implementation of the corresponding ADC, GPIO and Timer
 PAL classes. In the following sections, some additional explanations and
@@ -14,9 +12,9 @@ Framework PAL Implementation
 Implement the abstract PAL interface for you framework. The **ADC
 class**, **GPIO class** and **Timer class** are mandatory.
 
-The Doxygen comments on the *“src/pal/hss-pal-adc.hpp”*, *“src/pal/hss-pal-gpio.hpp”*
-and *“src/pal/hss-pal-timer.hpp”* describe the required behavior of each function
-of the :ref:`PAL Interface <pal-intf>`.
+The Doxygen comments on the *“src/pal/adc.hpp”*, *“src/pal/gpio.hpp”*
+and *“src/pal/timer.hpp”* describe the required behavior of each function
+of the PAL Interface.
 
 Consider the existing framework implementations as reference examples
 for you design: *“/src/framework/sample_fmwk/pal”*. Some of the
@@ -37,42 +35,38 @@ ease the usage. Mostly the main help is to avoid the creation of the
 ADC, GPIO and Timer object instances for the developer.
 
 To illustrate this approach, it is easier to evaluate a concrete
-implementation of the Arduino wrapper. For example the constructor of
-the *Hss* class, which can be found in the files
-*“src/corelib/hss.cpp”*.
+implementation of the Arduino wrapper. For example have a look in *“src/corelib/DCM-control.cpp”*:
 
-1. Adapt the constructor arguments to those used for the platform class
-   creation (ADC, GPIO and Timer) in the new framework, using the native
-   data types and structures. Hide what can be already defined for that
-   platform and provide as much abstraction and simplicity as possible.
+.. code-block:: C
 
-   For example, the core library of the base constructor is defined like
-   this:
+	pwmA->ADCWrite(_DutyCycle);
+	pwmB->ADCWrite(_DutyCycle);
 
-   .. code-block:: C
-      
-      Hss(GPIOPAL *den, GPIOPAL *in, ADCPAL *is, TimerPAL *timer, BtxVariants_t *btxVariant);
+is wrapped for Arduino like this:
 
-   is wrapped for Arduino like this:
+.. code-block:: C
 
-   .. code-block:: C
+	analogWrite(ARDUINO_UNO.PWM_U, _DutyCycle);
+	analogWrite(ARDUINO_UNO.PWM_V, _DutyCycle);
 
-      HssIno(uint8_t den, uint8_t in0, uint8_t in1, uint8_t dsel, uint8_t is, BtxVariants_t * btxVariant);
+using this instantiation in *“src/DCM-control-ino.cpp”*:
 
-   While it does not seems to simplify much in number of arguments, an
-   Arduino developer can simply pass the pin number as argument, and
-   does not need to deal with the (probably unknown) GPIO classes,
-   neither specify further GPIO configuration as the mode (input,
-   output, pull-up..), positive/negative logic, etc.
+.. code-block:: C
+	
+	DCMcontrol::pwmA = new ADCIno(ARDUINO_UNO.PWM_U);
+	DCMcontrol::pwmB = new ADCIno(ARDUINO_UNO.PWM_V);
 
-   As for the constructor, the same philosophy can apply to other
-   functions of the public API. In case of Arduino, as a hobbyist and
-   makers environment, clarity and simplicity might prevail over
-   configurability and functionality. Therefore, the :ref:`wrapper
-   API <arduino-api>` further hides, group or eliminate certain
-   functionalities.
+	DCMcontrol::timer = new TimerIno();
 
-   For each ecosystem and framework, any other criteria can be chosen,
-   hopefully matching as well its code conventions, implementation
-   principles and paradigms.
+where the pin configuration is stored it the ARDUINO_UNO struct in *"src/framework/arduino/wrapper"*.
+
+While it does not seems to simplify much in number of arguments, an
+Arduino developer can simply pass the pin number as argument, and
+does not need to deal with the (probably unknown) GPIO classes,
+neither specify further GPIO configuration as the mode (input,
+output, pull-up..), positive/negative logic, etc in the core library.
+
+For each ecosystem and framework, any other criteria can be chosen,
+hopefully matching as well its code conventions, implementation
+principles and paradigms.
 

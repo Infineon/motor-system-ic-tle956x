@@ -24,24 +24,23 @@
 
 #include <Arduino.h>
 
-// ================================== Defines ==================================================================================================
-
 /**
- * @brief Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. 
+ * Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. 
  * All other defines should remain as they are.
  */
+// ================================== Defines ==================================================================================================
 
-#define CONF_TIMEOUT						500			/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
-#define CONF_PI_UPDATE_INTERVAL				100			/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
+#define CONF_TIMEOUT						500			/*!< milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define CONF_PI_UPDATE_INTERVAL				100			/*!< milliseconds. How often should the PI regulator be called. Affects precision if too low. */
 
-#define CONF_RPM_DUTYCYCLE_AT_START			80			/* dutycycle when motor starts to turn before RPM controller will be switched on */
-#define CONF_OPEN_LOOP_DUTYCYCLE			80			/* dutycycle for blind commutation at motor start (open loop) */
-#define CONF_OPEN_LOOP_DELAY_START			5000		/* microseconds. This is the delay between the first commutations when starting a BLDC motor */
-#define CONF_OPEN_LOOP_DELAY_LIMIT			1200		/* microseconds. The smallest delay that is used before open loop commutation turns into closed loop */
-#define CONF_OPEN_LOOP_DELAY_SLOPE			200			/* microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. Amount O_L_commutations = (5000-1200)/200 */
+#define CONF_RPM_DUTYCYCLE_AT_START			80			/*!< dutycycle when motor starts to turn before RPM controller will be switched on */
+#define CONF_OPEN_LOOP_DUTYCYCLE			80			/*!< dutycycle for blind commutation at motor start (open loop) */
+#define CONF_OPEN_LOOP_DELAY_START			5000		/*!< microseconds. This is the delay between the first commutations when starting a BLDC motor */
+#define CONF_OPEN_LOOP_DELAY_LIMIT			1200		/*!< microseconds. The smallest delay that is used before open loop commutation turns into closed loop */
+#define CONF_OPEN_LOOP_DELAY_SLOPE			200			/*!< microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. You can calculate the amount: O_L_commutations = (5000-1200)/200 */
 
-#define CONF_DUTYCYCLE_TOP_LIMIT			255			/* maximum dutycycle */
-#define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/* minimum dutycycle, below the motor won't turn anymore */
+#define CONF_DUTYCYCLE_TOP_LIMIT			255			/*!< maximum dutycycle */
+#define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/*!< minimum dutycycle, below the motor won't turn anymore */
 
 /****************** Current measurment *******************/
 #define SHUNT_RESISTOR_VALUE				0.005     	// Ohm

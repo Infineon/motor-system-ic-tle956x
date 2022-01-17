@@ -33,7 +33,7 @@
  *
  * This class inherits all basic functions a Tle9xxx SBC offers and adds features, a TLE9562 BLDC controller is capable of.
  * This includes the four gatedrivers, mainly used for the MOSFETS of the two DC-motor outputs.
- * Further four high side switches (hss) for various applications. In this Lib two of them are used to drive the two onboard red LEDs,
+ * Further four high side switches (hss) for various applications can be controlled. In this Lib two of them are used to drive the two onboard red LEDs,
  * using the 10-bit TLE PWM timer slices.
  */
 class Tle9562: public Tle9xxx
