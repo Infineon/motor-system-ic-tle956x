@@ -1,9 +1,9 @@
 /*!
- * \name        TLE9562_DCM-control.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This example runs up to two DC motors using the TLE9562 DC motor shield.
+ * @name        TLE9562_DCM-control.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+
+ * @brief       This example runs up to two DC motors using the TLE9562 DC motor shield.
  *
  * SPDX-License-Identifier: MIT
  */

@@ -1,9 +1,8 @@
 /*!
- * \name        TLE9563_BLDCM_find-polepairs.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
+ * @name        TLE9563_BLDCM_find-polepairs.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
  * Thus it calculates, how many magnetic polepairs your motor has. A serial monitor is necessary.
  *
  * SPDX-License-Identifier: MIT

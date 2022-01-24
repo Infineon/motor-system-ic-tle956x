@@ -1,11 +1,10 @@
 /*!
- * \file        DCM-control.hpp
- * \name        DCM-control.hpp - Arduino library to control Infineon's DC Motor Control Shield with TLE9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic functions to control DC motors using an instance of TLE9562
- * \ref         tle9563corelib
+ * @file        DCM-control.hpp
+ * @name        DCM-control.hpp - Arduino library to control Infineon's DC Motor Control Shield with TLE9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic functions to control DC motors using an instance of TLE9562
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *

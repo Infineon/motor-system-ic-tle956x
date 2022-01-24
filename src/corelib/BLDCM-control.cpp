@@ -1,11 +1,10 @@
 /*!
- * \file        BLDCM-control.cpp
- * \name        BLDCM-control.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
- * \ref         tle9563corelib
+ * @file        BLDCM-control.cpp
+ * @name        BLDCM-control.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *

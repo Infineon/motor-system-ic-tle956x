@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9562.hpp
- * \name        TLE9562.hpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
- * \ref         tle9562corelib
+ * @file        TLE9562.hpp
+ * @name        TLE9562.hpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
+ * @ref         tle9562corelib
  *
  * SPDX-License-Identifier: MIT
  *

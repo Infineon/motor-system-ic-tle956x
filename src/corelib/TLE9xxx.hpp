@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9xxx.hpp
- * \name        TLE9xxx.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the generic functions for TLE9xxx family
- * \ref         Tle9xxxcorelib
+ * @file        TLE9xxx.hpp
+ * @name        TLE9xxx.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the generic functions for TLE9xxx family
+ * @ref         Tle9xxxcorelib
  *
  * SPDX-License-Identifier: MIT
  *

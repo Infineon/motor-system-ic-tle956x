@@ -1,8 +1,7 @@
 /** 
  * @file        adc-arduino.cpp
  * @brief       Arduino PAL for the ADC
- * @date        May 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */

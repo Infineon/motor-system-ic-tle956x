@@ -1,9 +1,8 @@
 /*!
- * \name        TLE9563_BLDCM-control.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This example runs a brushlessmotor with hall sensor position feedback using a TLE9563 BLDC control shield.
+ * @name        TLE9563_BLDCM-control.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This example runs a brushlessmotor with hall sensor position feedback using a TLE9563 BLDC control shield.
  *
  * SPDX-License-Identifier: MIT
  */

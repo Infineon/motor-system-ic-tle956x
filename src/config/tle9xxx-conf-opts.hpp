@@ -1,7 +1,7 @@
 /**
  * @file        tle9xxx-conf-opts.hpp
  * @brief       TLE9XXX Library Configuration Options
- * @copyright   Copyright (c) 2021 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */

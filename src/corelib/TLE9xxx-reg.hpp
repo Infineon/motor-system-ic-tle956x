@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9xxx-reg.hpp
- * \name        TLE9xxx-reg.hpp - Register enum for TLE9xxx
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This file lists all available control- and status-registers for a TLE9xxx SBC
- * \ref         tle9563corelib
+ * @file        TLE9xxx-reg.hpp
+ * @name        TLE9xxx-reg.hpp - Register enum for TLE9xxx
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This file lists all available control- and status-registers for a TLE9xxx SBC
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *

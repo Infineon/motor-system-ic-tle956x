@@ -1,8 +1,7 @@
 /** 
  * @file        BLDCM-logger.hpp
  * @brief       BLDCM Logger
- * @date        January 2021
- * @copyright   Copyright (c) 2020-2021 Infineon Technologies AG
+*  @copyright   2022 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */

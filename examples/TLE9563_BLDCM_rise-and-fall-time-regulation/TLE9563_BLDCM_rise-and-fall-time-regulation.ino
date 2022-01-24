@@ -1,9 +1,9 @@
 /*!
- * \name        TLE9563_BLDCM_rise-and-fall-time-regulation.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This example lets you configure the rise- and falltime of a TLE9563 in a brushless motor application. Therefore a closed-loop algorithm is implemented,
+ * @name        TLE9563_BLDCM_rise-and-fall-time-regulation.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+
+ * @brief       This example lets you configure the rise- and falltime of a TLE9563 in a brushless motor application. Therefore a closed-loop algorithm is implemented,
  * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
  * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page 'TLE9xxx.hpp' in the library.
  * 
