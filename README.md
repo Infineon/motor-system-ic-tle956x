@@ -19,7 +19,7 @@ C++ library for Infineon's motor system IC TLE956x family.
     </tr>
     <tr>
         <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Usage">Getting Started</a></td>
-        <td style="text-align: center"><b>Support in progress</b></td>
+        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Usage">Getting Started</a></td>
     </tr>
 </table>
 
