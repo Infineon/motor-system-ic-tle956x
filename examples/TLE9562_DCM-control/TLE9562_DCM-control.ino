@@ -29,6 +29,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9562 DC motor control"));
 
   // Enable GPIO interrupt for pin 2

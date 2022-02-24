@@ -23,6 +23,7 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9563 BLDC motor control"));
 
   // Enable GPIO interrupt for pin 2

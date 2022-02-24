@@ -49,6 +49,7 @@ void Tle9xxx::SBC_CRC_Disable()
 	sBus->transfer(0x55, byte0);	// 0b 0101 0101
 	sBus->transfer(0xc3, byte0);	// 0b 1100 0011
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 }
 
 uint8_t Tle9xxx::writeReg(uint8_t addr, uint16_t data)
@@ -60,6 +61,7 @@ uint8_t Tle9xxx::writeReg(uint8_t addr, uint16_t data)
 	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 	return byte0;
 }
 
@@ -72,6 +74,7 @@ uint16_t Tle9xxx::readReg(uint8_t addr)
 	sBus->transfer(0xFF, byte2);						// upper 8 bit of data
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 	return ((byte2<<8)|byte1);
 }
 

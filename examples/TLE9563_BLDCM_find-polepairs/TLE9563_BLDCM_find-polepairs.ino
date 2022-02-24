@@ -21,6 +21,7 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9563 BLDC shield Testsketch"));
   Serial.println(F(" Mode: find polepairs"));
 

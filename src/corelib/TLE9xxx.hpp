@@ -32,6 +32,7 @@
  */
 
 #define DETAILED_ERROR_REPORT 		1						//!< 1 = print register values as well if a TLE error occurs, 0 = only print error message
+#define TLE956x_CS_RISETIME			2						//!< Microseconds to wait after the release of the CS pin. Necessary for XMC boards
 
 /****************** Adaptive Gate control (dis-)charge current *******************/
 #define CONF_TRISE_TG				11						//!< [0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards.

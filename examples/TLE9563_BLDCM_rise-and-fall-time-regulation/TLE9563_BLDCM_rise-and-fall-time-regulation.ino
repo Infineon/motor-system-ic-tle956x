@@ -36,6 +36,7 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9563 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
@@ -46,7 +47,7 @@ void setup()
    * setLED(red, green, blue)
    * each value is 10 bit [0;1023]
    */
-  MyMotor.setLED(500,80,450);                                         // Set onboard RGB-LED to pink
+  MyMotor.setLED(250,40,225);                                         // Set onboard RGB-LED to pink
 
 /**
  * .MotorParam.feedbackmode = BLDCMcontrol::BLDC_HALL       for motors with hallsensor
