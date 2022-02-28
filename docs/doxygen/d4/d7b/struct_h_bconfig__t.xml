@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d4/d7b/struct_h_bconfig__t" kind="struct" language="C++" prot="public">
+    <compoundname>HBconfig_t</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1gad38af78e4da7f620242cb2b906b3084b" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t HBconfig_t::HBmode</definition>
+        <argsstring></argsstring>
+        <name>HBmode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="127" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga0e6fca75f03f46ad7b1fa4b1dd288d2a" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t HBconfig_t::Freewheeling</definition>
+        <argsstring></argsstring>
+        <name>Freewheeling</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="128" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d8d/group__tle9xxxapi_1ga958cc5c82d4504a344d9faa9f679a0e7" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t HBconfig_t::PWMenable</definition>
+        <argsstring></argsstring>
+        <name>PWMenable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="129" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="125" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="126" bodyend="130"/>
+    <listofallmembers>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga0e6fca75f03f46ad7b1fa4b1dd288d2a" prot="public" virt="non-virtual"><scope>HBconfig_t</scope><name>Freewheeling</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gad38af78e4da7f620242cb2b906b3084b" prot="public" virt="non-virtual"><scope>HBconfig_t</scope><name>HBmode</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga958cc5c82d4504a344d9faa9f679a0e7" prot="public" virt="non-virtual"><scope>HBconfig_t</scope><name>PWMenable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

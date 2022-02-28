@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d1/d2c/gpio_8hpp" kind="file" language="C++">
+    <compoundname>gpio.hpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="d7/da6/_b_l_d_c_m-control_8hpp" local="yes">BLDCM-control.hpp</includedby>
+    <includedby refid="de/d59/_d_c_m-control_8hpp" local="yes">DCM-control.hpp</includedby>
+    <includedby refid="d7/def/_t_l_e9xxx_8hpp" local="yes">TLE9xxx.hpp</includedby>
+    <includedby refid="de/d31/gpio_8cpp" local="yes">gpio.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="3">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="7">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>BLDCM-control.cpp</label>
+        <link refid="d0/d41/_b_l_d_c_m-control_8cpp"/>
+      </node>
+      <node id="2">
+        <label>BLDCM-control.hpp</label>
+        <link refid="d7/da6/_b_l_d_c_m-control_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>DCM-control.cpp</label>
+        <link refid="dd/d49/_d_c_m-control_8cpp"/>
+      </node>
+      <node id="6">
+        <label>DCM-control.hpp</label>
+        <link refid="de/d59/_d_c_m-control_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>TLE9562.cpp</label>
+        <link refid="d9/d77/_t_l_e9562_8cpp"/>
+      </node>
+      <node id="11">
+        <label>TLE9562.hpp</label>
+        <link refid="d8/dc4/_t_l_e9562_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TLE9563.cpp</label>
+        <link refid="dc/d3d/_t_l_e9563_8cpp"/>
+      </node>
+      <node id="13">
+        <label>TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>TLE9xxx.cpp</label>
+        <link refid="dd/d9f/_t_l_e9xxx_8cpp"/>
+      </node>
+      <node id="10">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="15">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>gpio.cpp</label>
+        <link refid="de/d31/gpio_8cpp"/>
+      </node>
+      <node id="1">
+        <label>gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d4/dde/class_g_p_i_o" prot="public">GPIO</innerclass>
+    <briefdescription>
+<para>PAL of the <ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>May 2020 </para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2020-2021 Infineon Technologies AG</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GPIO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="d4/dde/class_g_p_i_o" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa725317add7598473bfd5a1087cf467ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa725317add7598473bfd5a1087cf467ff" kindref="member">INTF_ERROR</ref><sp/><sp/>=<sp/>-1,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa0c61895c8f366c308e397e1ffafd180f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa0c61895c8f366c308e397e1ffafd180f" kindref="member">CONF_ERROR</ref><sp/><sp/>=<sp/>-2,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa5599077255b73a938099388e9318e6a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa5599077255b73a938099388e9318e6a7" kindref="member">READ_ERROR</ref><sp/><sp/>=<sp/>-3,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="30" refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa4f3584bfdb59bfbf15f35474c13caada" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa4f3584bfdb59bfbf15f35474c13caada" kindref="member">WRITE_ERROR</ref><sp/>=<sp/>-4,<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73" kindref="member">IntEvent_t</ref></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39" refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a4ede63866dcf899093010c0fdcde8291" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a4ede63866dcf899093010c0fdcde8291" kindref="member">INT_FALLING_EDGE</ref><sp/><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a8a793d69497174a9430ea2b0e15d6d60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a7a07814347ac460ae15e811372f24b73a8a793d69497174a9430ea2b0e15d6d60" kindref="member">INT_RISING_EDGE</ref><sp/><sp/><sp/><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48" refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="50" refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" kindref="member">GPIO_LOW</ref><sp/><sp/><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" kindref="member">GPIO_HIGH</ref><sp/><sp/>=<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59" refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7" kindref="member">VLogic_t</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61" refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" kindref="member">NEGATIVE</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" kindref="member">POSITIVE</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72" refid="d4/dde/class_g_p_i_o_1af1a6667e1ceda3d38b875da1486e1f33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1af1a6667e1ceda3d38b875da1486e1f33" kindref="member">init</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="d4/dde/class_g_p_i_o_1a0531e0c0d2abc6a56b80f4fc8d1559e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a0531e0c0d2abc6a56b80f4fc8d1559e8" kindref="member">deinit</ref><sp/><sp/><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="d4/dde/class_g_p_i_o_1a9e0701f519e16573691834bcab1ad03a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a9e0701f519e16573691834bcab1ad03a" kindref="member">read</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="d4/dde/class_g_p_i_o_1aac07cfb1f930882afe7d74f9d17849fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aac07cfb1f930882afe7d74f9d17849fe" kindref="member">write</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref><sp/>level)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="d4/dde/class_g_p_i_o_1a9fe4b4e3a68e8c4df663cc084357b460" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1a9fe4b4e3a68e8c4df663cc084357b460" kindref="member">enable</ref><sp/><sp/><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="d4/dde/class_g_p_i_o_1ae2b3084845cf22ebda8d4705e9d9a40a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1ae2b3084845cf22ebda8d4705e9d9a40a" kindref="member">disable</ref><sp/><sp/><sp/><sp/><sp/>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/>checkErrorStatus();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">Error_t</ref><sp/>errorStatus;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/pal/gpio.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,11 +1,10 @@
 /*!
- * \file        BLDCM-control-ino.cpp
- * \name        BLDCM-control-ino.cpp - basic motor control functions for Arduino
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
- * \ref         tle9563corelib
+ * @file        BLDCM-control-ino.cpp
+ * @name        BLDCM-control-ino.cpp - basic motor control functions for Arduino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -14,7 +13,7 @@
 
 #include "BLDCM-control-ino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 
 BLDCMcontrolIno::BLDCMcontrolIno(void)
@@ -34,10 +33,20 @@ BLDCMcontrolIno::BLDCMcontrolIno(void)
 	BLDCMcontrol::timer = new TimerIno();
 	BLDCMcontrol::rpmtimer = new TimerIno();
 	
-	BLDCMcontrol::controller = new TLE9563Ino();
+	BLDCMcontrol::controller = new Tle9563();
+
+	
+	controller->intn = new GPIOIno(ARDUINO_UNO.INTN, INPUT, GPIOIno::POSITIVE );
+	controller->cso = new ADCIno(ARDUINO_UNO.CSO);
+
+	controller->csn = new GPIOIno(ARDUINO_UNO.CSN, OUTPUT, GPIOIno::POSITIVE );
+	controller->sBus = new SPICIno(LSBFIRST, SPI_MODE1, SPI_CLOCK_DIV2);
+
+	controller->timer = new TimerIno();
+	
 }
 
 
 
 /** @} */
-#endif	/** TLE9563_FRAMEWORK **/
+#endif	/** MOTOR_SYSTEM_IC_FRAMEWORK **/

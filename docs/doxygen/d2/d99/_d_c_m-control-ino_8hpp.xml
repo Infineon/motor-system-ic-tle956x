@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d2/d99/_d_c_m-control-ino_8hpp" kind="file" language="C++">
+    <compoundname>DCM-control-ino.hpp</compoundname>
+    <includes refid="dc/dc2/tle9xxx-conf_8hpp" local="yes">config/tle9xxx-conf.hpp</includes>
+    <includes refid="de/d59/_d_c_m-control_8hpp" local="yes">corelib/DCM-control.hpp</includes>
+    <includes refid="da/dd4/adc-arduino_8hpp" local="yes">framework/arduino/pal/adc-arduino.hpp</includes>
+    <includes refid="d9/d4f/gpio-arduino_8hpp" local="yes">framework/arduino/pal/gpio-arduino.hpp</includes>
+    <includes refid="df/d2f/spic-arduino_8hpp" local="yes">framework/arduino/pal/spic-arduino.hpp</includes>
+    <includes refid="da/dda/timer-arduino_8hpp" local="yes">framework/arduino/pal/timer-arduino.hpp</includes>
+    <includes refid="d7/d92/pin-config-arduino_8hpp" local="yes">framework/arduino/wrapper/pin-config-arduino.hpp</includes>
+    <includedby refid="da/dac/_d_c_m-control-ino_8cpp" local="yes">DCM-control-ino.cpp</includedby>
+    <incdepgraph>
+      <node id="10">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="3">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="2">
+        <label>config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>corelib/DCM-control.hpp</label>
+        <link refid="de/d59/_d_c_m-control_8hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>TLE9562.hpp</label>
+        <link refid="d8/dc4/_t_l_e9562_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>../../../corelib/TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>framework/arduino/pal/adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>framework/arduino/pal/gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>framework/arduino/pal/spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>timer-arduino.hpp</label>
+        <link refid="da/dda/timer-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>framework/arduino/wrapper/pin-config-arduino.hpp</label>
+        <link refid="d7/d92/pin-config-arduino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>SPI.h</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="1">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d0/da5/class_d_c_mcontrol_ino" prot="public">DCMcontrolIno</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DCMCONTROLINO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DCMCONTROLINO_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dc/dc2/tle9xxx-conf_8hpp" kindref="compound">config/tle9xxx-conf.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="de/d59/_d_c_m-control_8hpp" kindref="compound">corelib/DCM-control.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dd4/adc-arduino_8hpp" kindref="compound">framework/arduino/pal/adc-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d4f/gpio-arduino_8hpp" kindref="compound">framework/arduino/pal/gpio-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d2f/spic-arduino_8hpp" kindref="compound">framework/arduino/pal/spic-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="da/dda/timer-arduino_8hpp" kindref="compound">framework/arduino/pal/timer-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d7/d92/pin-config-arduino_8hpp" kindref="compound">framework/arduino/wrapper/pin-config-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="d0/da5/class_d_c_mcontrol_ino" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d0/da5/class_d_c_mcontrol_ino" kindref="compound">DCMcontrolIno</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="d9/d64/class_d_c_mcontrol" kindref="compound">DCMcontrol</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dc/da9/group__ino_api_1ga351f17110bc9bed16c5092311123b07d" kindref="member">DCMcontrolIno</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="preprocessor">#endif<sp/><sp/></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp"/>
+  </compounddef>
+</doxygen>

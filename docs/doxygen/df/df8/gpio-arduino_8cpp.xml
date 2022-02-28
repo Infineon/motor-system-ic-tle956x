@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="df/df8/gpio-arduino_8cpp" kind="file" language="C++">
+    <compoundname>gpio-arduino.cpp</compoundname>
+    <includes refid="d9/d4f/gpio-arduino_8hpp" local="yes">gpio-arduino.hpp</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>Arduino.h</label>
+      </node>
+      <node id="5">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="3">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../../corelib/TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gpio-arduino.cpp</label>
+        <link refid="df/df8/gpio-arduino_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="8">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d9/d4f/gpio-arduino_8hpp" kindref="compound">gpio-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="df/def/class_g_p_i_o_ino_1ac5ba8b56ce93a951fc19df8f8eca9924" kindref="member">GPIOIno::GPIOIno</ref>()<sp/>:<sp/>pin(0),<sp/>mode(OUTPUT),<sp/>logic(POSITIVE)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="df/def/class_g_p_i_o_ino_1ac5ba8b56ce93a951fc19df8f8eca9924" kindref="member">GPIOIno::GPIOIno</ref>(uint8_t<sp/>pin,<sp/>uint8_t<sp/>mode,<sp/>VLogic_t<sp/>logic):<sp/>pin(pin),<sp/>mode(mode),<sp/>logic(logic)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIOIno::Error_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1a5485281864da935dbce964d9b9f67272" kindref="member">GPIOIno::init</ref>()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(this-&gt;pin,<sp/>this-&gt;mode);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIOIno::Error_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1a6f1021e14fea8ebf6ccd3e123401c76b" kindref="member">GPIOIno::deinit</ref>()</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">GPIOIno::VLevel_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1aa04da6642380e6ecb55861831ea45803" kindref="member">GPIOIno::read</ref>()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58" kindref="member">VLevel_t</ref>)<sp/>digitalRead(this-&gt;pin);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIOIno::Error_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1a5a2dd48905749cebcbc05d9ca43a5983" kindref="member">GPIOIno::write</ref>(VLevel_t<sp/>level)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(this-&gt;pin,<sp/>level);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIOIno::Error_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1a33f065c705688c66fd9eadcdc3fc50ad" kindref="member">GPIOIno::enable</ref>()</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;logic<sp/>==<sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" kindref="member">POSITIVE</ref>){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(this-&gt;pin,<sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" kindref="member">GPIO_HIGH</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;logic<sp/>==<sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" kindref="member">NEGATIVE</ref>){</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(this-&gt;pin,<sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" kindref="member">GPIO_LOW</ref>);;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370eff" kindref="member">GPIOIno::Error_t</ref><sp/><ref refid="df/def/class_g_p_i_o_ino_1abb40811cf4fa1de56bf10d1bbd586986" kindref="member">GPIOIno::disable</ref>()</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;logic<sp/>==<sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7ad19738fd3b6740528d5d3c2c97b3442d" kindref="member">POSITIVE</ref>){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(this-&gt;pin,<sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a55df73010b41475c1ff41a60b1916f50" kindref="member">GPIO_LOW</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;logic<sp/>==<sp/><ref refid="d4/dde/class_g_p_i_o_1a578299f567b55e17993a282f36e0a2f7aecb3fa127c1160c3698257b386b51df4" kindref="member">NEGATIVE</ref>){</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>digitalWrite(this-&gt;pin,<sp/><ref refid="d4/dde/class_g_p_i_o_1a12e137187b6f1afc13ad38a8f6b56b58a6dc6d00294e7ed143edfd2c4939afd44" kindref="member">GPIO_HIGH</ref>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d4/dde/class_g_p_i_o_1aed8cceb7e600abd5219c8534ed370effa2ba5192cb22f861b7597284a1988a9ea" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/gpio-arduino.cpp"/>
+  </compounddef>
+</doxygen>

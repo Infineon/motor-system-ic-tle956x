@@ -1,8 +1,7 @@
 /** 
  * @file        BLDCM-logger.hpp
  * @brief       BLDCM Logger
- * @date        January 2021
- * @copyright   Copyright (c) 2020-2021 Infineon Technologies AG
+*  @copyright   2022 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */
@@ -10,9 +9,9 @@
 #ifndef TLE9563_LOGGER_HPP_
 #define TLE9563_LOGGER_HPP_
 
-#include "../config/tle9563-conf.hpp"
+#include "../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_LOGGER_ENABLED == 1)
+#if (TLE9XXX_LOGGER_ENABLED == 1)
 
 #include <stdint.h>
 #include "../pal/logger.hpp"
@@ -112,7 +111,7 @@ extern Logger tle9563_log;
 /**
  * @brief TLE9563 Register module
  */ 
-#if (TLE9563_REG_LOGGER_ENABLED == 1)
+#if (TLE9XXX_REG_LOGGER_ENABLED == 1)
 
 #define TLE9563_REG_LOGGER_SERVICE               "[tle9563 reg]    : " 
 #define TLE9563_REG_LOGGER_COLOR                 TLE9563_LOGGER_COLOR_GREEN
@@ -167,12 +166,12 @@ extern Logger tle9563_log;
 #define TLE9563_REG_MAP_HEX(map, length, addr)   {   }   
 
 
-#endif /* TLE9563_REG_LOGGER_ENABLED */
+#endif /* TLE9XXX_REG_LOGGER_ENABLED */
 
 /**
  * @brief TLE9563 Application module
  */ 
-#if (TLE9563_APP_LOGGER_ENABLED == 1)
+#if (TLE9XXX_APP_LOGGER_ENABLED == 1)
 
 /**
  *  Logger color for different error types
@@ -212,7 +211,7 @@ extern Logger tle9563_log;
 #define TLE9563_APP_LOG_VAR(str, var)   {}
 #define TLE9563_APP_LOG_RETURN(ret)     {}
 
-#endif /* TLE9563_APP_LOGGER_ENABLED */
+#endif /* TLE9XXX_APP_LOGGER_ENABLED */
 
 #else
 
@@ -237,6 +236,6 @@ extern Logger tle9563_log;
 #define TLE9563_APP_LOG_VAR(str, var)            {   }
 #define TLE9563_APP_LOG_RETURN(ret)              {   }
 
-#endif /* TLE9563_LOGGER_ENABLED */
+#endif /* TLE9XXX_LOGGER_ENABLED */
 
 #endif /* TLE9563_LOGGER_HPP_ */

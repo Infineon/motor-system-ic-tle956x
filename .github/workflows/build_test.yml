@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        example: [examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino]
+        example: [examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino, examples/TLE9562_DCM-control/TLE9562_DCM-control.ino]
 
     steps:
     - uses: actions/checkout@v2

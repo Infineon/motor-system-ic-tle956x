@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9563.cpp
- * \name        TLE9563.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
- * \ref         tle9563corelib
+ * @file        TLE9563.cpp
+ * @name        TLE9563.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to communicate with a TLE9563 BLDC controller
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -14,11 +13,7 @@
 
 Tle9563::Tle9563(void)
 {
-	intn = NULL;
 	cso = NULL;
-	sBus = NULL;
-	csn = NULL;
-	timer = NULL;
 
 	ActiveGround.HBmode = 0b01;
 	ActiveGround.Freewheeling = 0;
@@ -35,80 +30,37 @@ Tle9563::Tle9563(void)
 
 Tle9563::~Tle9563()
 {
-	intn = NULL;
 	cso = NULL;
-
-	sBus = NULL;
-	csn = NULL;
-	timer = NULL;
 }
 
-void Tle9563::config(void)
+void Tle9563::config(uint8_t agc = AGC_ACTIVE)
 {
-	/**
-	 * TODO: split up in separate functions for better control from outside the library
-	 * 
-	 */
+	_agc_status = agc;													// set the global variable, if agc is used, as this is used very often in the GENctrl register
 
-	SBC_CRC_Disable();
+	SBC_CRC_Disable();													// Disable cyclic redundancy check
 
-	/**
-	 * 15 Bridge driver synchronization frequency: 	37Mhz
-	 * 12 Charge pump under voltage:				TH1
-	 * 11 External MOSFET logic level:				normal level MOSFET
-	 * 10 CPSTGA:									ACTIVE
-	 *  9 BDOV_REC:									Recover activated
-	 *  8 IPCHGADT:									1STEP
-	 *  7:6 Adaptive gate control					INACTIVE1
-	 * 	5 CPEN:										Charge pump enabled
-	 *  4 Postcharge phase during PWM				disabled
-	 *  3 Filter for adaptive gate control			NO_FILT
-	 *  2 Detection of active / FW MOSFET			disabled
-	 *  1 Gate driver hold current					TH1
-	 *  0 Frequency modulation of charge pump		no modulation
-	 */
-	//							 FEDCBA9876543210
-	writeReg(REG_ADDR_GENCTRL, 0b1000111000110000);
+	for(uint8_t i = PHASE1; i <= PHASE3; i++)
+	{
+		set_HB_ICHG(m_idchg, m_ichg, ACTIVE_MOSFET, i);					// set static charge and discharge current for active MOSFETs
+		set_HB_ICHG(0, CONF_ICHG_FW, FW_MOSFET, i);						// set static charge and discharge currents for freewheeling MOSFETs
 
-	/**
-	 * 13:12 Filter time 							500ns
-	 * 8:6 LS3 drain source overvoltage threshold	800mV
-	 * 5:3 LS2 drain source overvoltage threshold	800mV
-	 * 2:0 LS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_LS_VDS, 0b0000000110110110);
+		set_CCP_BLK(CONF_TBLANK_ACT, CONF_TCCP_ACT, ACTIVE_MOSFET, i);	// set the blank time and cross current protection time for active MOSFETS
+		set_CCP_BLK(CONF_TBLANK_FW, CONF_TCCP_FW, FW_MOSFET, i);		// set the blank time and cross current protection time for free wheeling MOSFETS
 
-	/**
-	 * 12 Deep adaption enabled						NO_DEEP_ADAP
-	 * 8:6 HS3 drain source overvoltage threshold	800mV
-	 * 5:3 HS2 drain source overvoltage threshold	800mV
-	 * 2:0 HS1 drain source overvoltage threshold	800mV
-	 */
-	writeReg(REG_ADDR_HS_VDS, 0b0000000110110110);
+		set_PCHG_INIT(CONF_PDCHG_INIT, CONF_PCHG_INIT, i);				// set initial precharge and pre-discharge current for internal AGC
+		set_TDON_HB_CTRL(CONF_TDOFF, i);								// set desired turn-off delay
+		set_TDOFF_HB_CTRL(CONF_TDON, i);								// set desired turn-on delay
+	}
 
-	/**
-	 * 10 Selection of 3 or 6 PWM inputs			3 PWM
-	 * 9 Capacitance connected to CSA out			400pF
-	 * 8 Direction of CSA							Bi
-	 * 7:6 Overcurrent filter time of cso			6us
-	 * 5 CSA OFF									CSA disabled
-	 * 4:3 Overcurent detection threshold			TH1
-	 * 2:1 Gain of CSA								10VV
-	 * 0 Overcurrent shutdown						Disabled
-	 */
-	//						 FEDCBA9876543210
-	writeReg(REG_ADDR_CSA, 0b0000000100100000);
+	set_TPRECHG(CONF_TPCHGX, CONF_TPDCHGX);								// set precharge and predischarge time
+	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	set_ST_ICHG(CONF_ICHGST, CONF_ICHGST, CONF_ICHGST, CONF_ICHGST);	// set static charge and discharge currents
+	setGenControl();													// Configure General bridge control reg with start configuration. 
+	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
+	
+	setCSA(CONF_CSA_OCTH, CONF_CSA_CSAG, CONF_CSA_OCEN);
 
-	/**
-	 * 
-	 * 
-	 */
-	//							  	 FEDCBA9876543210
-	writeReg(REG_ADDR_HB_ICHG_MAX, 0b0000000000010101);
-
-	//writeReg(REG_ADDR_WD_CTRL, 0b0000000000000011);
 	writeReg(REG_ADDR_SWK_CTRL, 0);
-
 	writeReg(REG_ADDR_SUP_STAT, 0);					//clear stat regs
 }
 
@@ -135,40 +87,6 @@ void Tle9563::end(void)
 	timer->stop();
 }
 
-void Tle9563::SBC_CRC_Disable()
-{
-	uint8_t byte0;
-	csn->disable();
-	sBus->transfer(0xe7, byte0);	// 0b 1110 0111
-	sBus->transfer(0x55, byte0);	// 0b 0101 0101
-	sBus->transfer(0x55, byte0);	// 0b 0101 0101
-	sBus->transfer(0xc3, byte0);	// 0b 1100 0011
-	csn->enable();
-}
-
-void Tle9563::writeReg(uint8_t addr, uint16_t data)
-{
-	uint8_t byte0, byte1, byte2, byte3;
-	csn->disable();
-	sBus->transfer((addr|TLE9563_CMD_WRITE), byte0);	// MSB: Read/write cmd, bit 6:0 register address
-	sBus->transfer((data&0xFF), byte1);					// lower 8 bit of data
-	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
-	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
-	csn->enable();
-}
-
-uint16_t Tle9563::readReg(uint8_t addr)
-{
-	uint8_t byte0, byte1, byte2, byte3;
-	csn->disable();
-	sBus->transfer((addr|TLE9563_CMD_READ), byte0);		// MSB: Read/write cmd, bit 6:0 register address
-	sBus->transfer(0xFF, byte1);						// lower 8 bit of data
-	sBus->transfer(0xFF, byte2);						// upper 8 bit of data
-	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
-	csn->enable();
-	return ((byte2<<8)|byte1);
-}
-
 void Tle9563::setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)
 {
 	uint16_t ToSend = (hb1.HBmode<<2)|(hb1.Freewheeling<<1)|(hb1.PWMenable<<0);
@@ -187,68 +105,26 @@ void Tle9563::setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3)
   	writeReg(REG_ADDR_HS_CTRL, 0x0654);    												// assign HSS 1 to PWM1, HSS2 to PWM 2, HSS3 to PWM3
 }
 
-void Tle9563::configInterruptMask(void)
+void Tle9563::setGenControl(void)
 {
-	uint16_t tosend = 	WD_SDM_DISABLE | BD_STAT | HS_STAT | TEMP_STAT | SUPPLY_STAT;
-						
-	writeReg(REG_ADDR_INT_MASK, tosend);
+	uint16_t ToSend = 0;
+	ToSend = (CONF_BDFREQ<<15)|(CONF_CPUVTH<<12)|(CONF_FET_LVL<<11)|(CONF_CPSTGA<<10)|(CONF_BDOV_REC<<9)|(CONF_IPCHGADT<<8)|(_agc_status<<6)|(CONF_CPEN<<5)|(CONF_POCHGDIS<<4)|(CONF_AGCFILT<<3)|(CONF_EN_GEN_CHECK<<2)|(CONF_IHOLD<<1)|(CONF_FMODE<<0);
+	writeReg(REG_ADDR_GENCTRL, ToSend);
 }
 
-uint8_t Tle9563::checkStatSUP(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_SUP_STAT);
-	writeReg(REG_ADDR_SUP_STAT, 0);
-	RegAddress = REG_ADDR_SUP_STAT;
-	RegContent = input;
-	if((input & 0x1000) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection (chargepump)
-	else if((input & 0x0D55) > 0) ErrorCode |= TLE_UNDER_VOLTAGE;		// undervoltage detection
-	else if((input & 0x02A2) > 0) ErrorCode |= TLE_OVER_VOLTAGE;		// overvoltage detection
-	else if((input & 0x0008) > 0) ErrorCode |= TLE_SHORT_CIRCUIT;		// short circuit detection
-	else if((input & 0x8000) > 0) ErrorCode |= TLE_POWER_ON_RESET;		// Power-On reset detection
 
-	return ErrorCode;
+void Tle9563::setCSA(uint8_t octh, uint8_t csag, bool ocen)
+{
+	uint16_t ToSend = 0;
+	ToSend = ((CSA_PWM_NB<<10)&0x400)|((CSA_CSO_CAP<<9)&0x200)|((CSA_CSD<<8)&0x100)|((CSA_OCFILT<<6)&0xC0)|((CSA_OFF<<5)&0x20)|((octh<<3)&0x18)|((csag<<1)&0x6)|(ocen&0x1);
+	writeReg(REG_ADDR_CSA, ToSend);
 }
 
-uint8_t Tle9563::checkStatTHERM(uint16_t &RegAddress, uint16_t &RegContent)
+float Tle9563::getCSOVoltage(void)
 {
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_THERM_STAT);
-	writeReg(REG_ADDR_THERM_STAT, 0);
-	RegAddress = REG_ADDR_THERM_STAT;
-	RegContent = input;
-	if((input & 0x000E) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 			// overtemperature detection
-	else if((input & 0x0001) > 0) ErrorCode |= TLE_TEMP_SHUTDOWN;		// temperature warning
+	uint16_t adc_value = cso->ADCRead();
+  	float adc_voltage = ((adc_value * ADC_REF_VOLTAGE) / ADC_RESOLUTION) - CSA_VREF_UNIDIR;
+	float cso_voltage = adc_voltage / csa_gain_table[CONF_CSA_CSAG];
 
-	return ErrorCode;
-}
-
-uint8_t Tle9563::checkStatHSS(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_HS_OL_OC_OT_STAT);
-	writeReg(REG_ADDR_HS_OL_OC_OT_STAT, 0);
-	RegAddress = REG_ADDR_HS_OL_OC_OT_STAT;
-	RegContent = input;
-	if((input & 0x1C00) > 0) ErrorCode = TLE_TEMP_SHUTDOWN; 		// overtemperature detection
-	else if((input & 0x00E0) > 0) ErrorCode |= TLE_LOAD_ERROR;		// open load detection
-	else if((input & 0x0007) > 0) ErrorCode |= TLE_OVERCURRENT;		// overcurrent detection
-
-	return ErrorCode;
-}
-
-uint8_t Tle9563::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
-{
-	uint16_t input=0;
-	uint8_t ErrorCode = 0;
-	input = readReg(REG_ADDR_DEV_STAT);
-	writeReg(REG_ADDR_DEV_STAT, 0);
-	RegAddress = REG_ADDR_DEV_STAT;
-	RegContent = input;
-	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
-
-	return ErrorCode;
+	return cso_voltage;
 }

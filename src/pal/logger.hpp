@@ -1,8 +1,7 @@
 /** 
  * @file        logger.hpp
  * @brief       TLE9563 Logger Platform Abstraction Layer
- * @date        January 2021
- * @copyright   Copyright (c) 2020-2021 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */
@@ -10,9 +9,9 @@
 #ifndef TLE9563_PAL_LOGGER_HPP_
 #define TLE9563_PAL_LOGGER_HPP_
 
-#include "../config/tle9563-conf.hpp"
+#include "../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_LOGGER_ENABLED == 1)
+#if (TLE9XXX_LOGGER_ENABLED == 1)
 
 #include <stdint.h>
 
@@ -57,5 +56,5 @@ class LoggerPAL
 };
 
 
-#endif /* TLE9563_LOGGER_ENABLED */
+#endif /* TLE9XXX_LOGGER_ENABLED */
 #endif /**< TLE9563_PAL_LOGGER_HPP_ */

@@ -1,0 +1,1131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d7/def/_t_l_e9xxx_8hpp" kind="file" language="C++">
+    <compoundname>TLE9xxx.hpp</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <includes refid="d6/d9b/_t_l_e9xxx-reg_8hpp" local="yes">TLE9xxx-reg.hpp</includes>
+    <includes refid="df/d05/timer_8hpp" local="yes">../pal/timer.hpp</includes>
+    <includes refid="d1/d2c/gpio_8hpp" local="yes">../pal/gpio.hpp</includes>
+    <includes refid="d8/df0/spic_8hpp" local="yes">../pal/spic.hpp</includes>
+    <includes refid="d5/d90/adc_8hpp" local="yes">../pal/adc.hpp</includes>
+    <includedby refid="d8/dc4/_t_l_e9562_8hpp" local="yes">TLE9562.hpp</includedby>
+    <includedby refid="d7/d92/_t_l_e9563_8hpp" local="yes">TLE9563.hpp</includedby>
+    <includedby refid="dd/d9f/_t_l_e9xxx_8cpp" local="yes">TLE9xxx.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>Arduino.h</label>
+      </node>
+      <node id="5">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="11">
+        <label>BLDCM-control-ino.cpp</label>
+        <link refid="d9/da2/_b_l_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="10">
+        <label>BLDCM-control-ino.hpp</label>
+        <link refid="df/d68/_b_l_d_c_m-control-ino_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>DCM-control-ino.cpp</label>
+        <link refid="da/dac/_d_c_m-control-ino_8cpp"/>
+      </node>
+      <node id="4">
+        <label>DCM-control-ino.hpp</label>
+        <link refid="d2/d99/_d_c_m-control-ino_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>BLDCM-control.cpp</label>
+        <link refid="d0/d41/_b_l_d_c_m-control_8cpp"/>
+      </node>
+      <node id="9">
+        <label>BLDCM-control.hpp</label>
+        <link refid="d7/da6/_b_l_d_c_m-control_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>DCM-control.cpp</label>
+        <link refid="dd/d49/_d_c_m-control_8cpp"/>
+      </node>
+      <node id="3">
+        <label>DCM-control.hpp</label>
+        <link refid="de/d59/_d_c_m-control_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>TLE9562.cpp</label>
+        <link refid="d9/d77/_t_l_e9562_8cpp"/>
+      </node>
+      <node id="2">
+        <label>TLE9562.hpp</label>
+        <link refid="d8/dc4/_t_l_e9562_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>TLE9563.cpp</label>
+        <link refid="dc/d3d/_t_l_e9563_8cpp"/>
+      </node>
+      <node id="8">
+        <label>TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>TLE9xxx.cpp</label>
+        <link refid="dd/d9f/_t_l_e9xxx_8cpp"/>
+      </node>
+      <node id="1">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>adc-arduino.cpp</label>
+        <link refid="da/d26/adc-arduino_8cpp"/>
+      </node>
+      <node id="14">
+        <label>adc-arduino.hpp</label>
+        <link refid="da/dd4/adc-arduino_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>gpio-arduino.hpp</label>
+        <link refid="d9/d4f/gpio-arduino_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d4/d7b/struct_h_bconfig__t" prot="public">HBconfig_t</innerclass>
+    <innerclass refid="d5/d20/class_tle9xxx" prot="public">Tle9xxx</innerclass>
+      <sectiondef kind="user-defined">
+      <header>TLE9xxx.hpp - Arduino library to control Infineon&apos;s BLDC Motor Control Shield with Tle9xxx</header>
+      <description><para>This library includes the generic functions for TLE9xxx family Tle9xxxcorelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a86d3b6c48b22a85a6a6142c8868f25ee" prot="public" static="no">
+        <name>DETAILED_ERROR_REPORT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Main place to configure the TLE9xxx. All defines beginning with &quot;CONF_&quot; are intended to be changed by the user. All other defines should remain as they are. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>1 = print register values as well if a TLE error occurs, 0 = only print error message </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="35" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" prot="public" static="no">
+        <name>CONF_TRISE_TG</name>
+        <initializer>11</initializer>
+        <briefdescription>
+<para>[0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="38" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" prot="public" static="no">
+        <name>CONF_INIT_ICHG</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para>[0;63] Starting charge current that will be first used by the algorithm </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="39" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" prot="public" static="no">
+        <name>CONF_TFALL_TG</name>
+        <initializer>11</initializer>
+        <briefdescription>
+<para>[0;63] initial Target tFALL (CONF_TFALL_TG * 53.3 ns). The variable can be changed afterwards. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="40" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" prot="public" static="no">
+        <name>CONF_INIT_IDCHG</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para>[0;63] Starting discharge current that will be first used by the algorithm </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="41" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3d427c411138eedbb5dbb3e12f7f4455" prot="public" static="no">
+        <name>CONF_ICHG_FW</name>
+        <initializer>43</initializer>
+        <briefdescription>
+<para>[0;63] Freewheeling charge and discharge current </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="42" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" prot="public" static="no">
+        <name>ALPHA3</name>
+        <initializer>0.5</initializer>
+        <briefdescription>
+<para>ALPHA3, constant for the EMA calculation, 0 &lt;= ALPHA3 &lt;= 1. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A value &gt; 0.5 gives more importance to the last tRISE sampled A value &lt; 0.5 gives more importance to the history of sampled tRISE </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="48" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" prot="public" static="no">
+        <name>SCALING_FACTOR_FPA</name>
+        <initializer>(0xFF)</initializer>
+        <briefdescription>
+<para>Scaling factor for fixed-point arithmetic (FPA) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="49" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" prot="public" static="no">
+        <name>ALPHA3_FPA_SCALED</name>
+        <initializer>(<ref refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" kindref="member">ALPHA3</ref> * <ref refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" kindref="member">SCALING_FACTOR_FPA</ref>)</initializer>
+        <briefdescription>
+<para>ALPHA3, already scaled for FPA. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="50" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae26356555cd0132ceb054c3f53f38567" prot="public" static="no">
+        <name>ONE_MINUS_ALPHA3_FPA_SCALED</name>
+        <initializer>(<ref refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" kindref="member">SCALING_FACTOR_FPA</ref> - <ref refid="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" kindref="member">ALPHA3_FPA_SCALED</ref>)</initializer>
+        <briefdescription>
+<para>(1 - ALPHA3), already scaled for FPA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="51" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" prot="public" static="no">
+        <name>MAX_ICHG</name>
+        <initializer>63</initializer>
+        <briefdescription>
+<para>Maximum charge current that will be set by the algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="52" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" prot="public" static="no">
+        <name>MIN_ICHG</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Minimum charge current that will be set by the algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="53" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aadbbc7b02d94a4c18646813ac8d7dec1" prot="public" static="no">
+        <name>EOS</name>
+        <initializer>0xFFFF</initializer>
+        <briefdescription>
+<para>End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="54" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aca1b068769cf2444012d7c2549def1b7" prot="public" static="no">
+        <name>CONF_PDCHG_INIT</name>
+        <initializer>44</initializer>
+        <briefdescription>
+<para>[0;63] Initial predischarge current, default 0xF </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="57" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a47a8286d4b690be1c66c611f75f7bff1" prot="public" static="no">
+        <name>CONF_PCHG_INIT</name>
+        <initializer>23</initializer>
+        <briefdescription>
+<para>[0;63] Initial precharge current, default 0xD </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="58" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2618656a288ff1daf56078ad8da8e78c" prot="public" static="no">
+        <name>CONF_TDOFF</name>
+        <initializer>18</initializer>
+        <briefdescription>
+<para>[0;63] Turn-on delay time, default 0xC </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="59" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3dd5949d9a33071bb1b66fe9cfcec901" prot="public" static="no">
+        <name>CONF_TDON</name>
+        <initializer>20</initializer>
+        <briefdescription>
+<para>[0;63] Turn-off delay time, default 0xC </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="60" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a8dfad0c6ae86b21bc7efb1c6d9657f0e" prot="public" static="no">
+        <name>CONF_TPCHGX</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;7] Precharge time, default 0 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="61" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a0df0eb72dcfaba11400c9bba74e3523d" prot="public" static="no">
+        <name>CONF_TPDCHGX</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>[0;7] Predischarge time, default 0 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="62" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1acb11a1d6db8851855af4b51063386290" prot="public" static="no">
+        <name>CONF_ICHGST</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>[0;15] Static charge/discharge current, default 4 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="65" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1af7686169475db8440448ac59f89d484b" prot="public" static="no">
+        <name>CONF_BDFREQ</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[0;1] Bridge driver synchronization frequency: 37Mhz PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="68" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a38a03cf5f9548d486a52140f693962da" prot="public" static="no">
+        <name>CONF_CPUVTH</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] Charge pump under voltage: TH1 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="70" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a7da61d48c74c89b8787108bea3aeb8c8" prot="public" static="no">
+        <name>CONF_FET_LVL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;1] External MOSFET logic level: normal level MOSFET </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="71" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a4471b25e8829ca537c8ee3a2efc4999e" prot="public" static="no">
+        <name>CONF_CPSTGA</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;1] Automatic switchover between dual and single charge pump stage: Normal </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="72" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1af5fcf5ccef7fc02518e5df6427eaf660" prot="public" static="no">
+        <name>CONF_BDOV_REC</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="73" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aeabb8b9736037a681f67208aa1852e8a" prot="public" static="no">
+        <name>CONF_IPCHGADT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>[0;1] 1Step Adaptive gate control: configured in a global variable </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="74" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a0fd63df96e6afd9fe7b7994c4b01731d" prot="public" static="no">
+        <name>CONF_CPEN</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;1] charge pump: enabled </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="76" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2d74ec796e3db05d95a05f7f326a7872" prot="public" static="no">
+        <name>CONF_POCHGDIS</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] Postcharge phase during PWM: disabled </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="77" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2f442a108774671bb1e7b74a47214520" prot="public" static="no">
+        <name>CONF_AGCFILT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] Filter for adaptive gate control: NO_FILT </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="78" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3182878599ce06f4aaa679c4fd46db22" prot="public" static="no">
+        <name>CONF_EN_GEN_CHECK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] detection of active / FW MOSFET: disabled </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="79" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ab8ca11162377682b818223865580b5e5" prot="public" static="no">
+        <name>CONF_IHOLD</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] Gate driver hold current: TH1 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="80" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a60ed51bf00fadf5f6e4462230622d11a" prot="public" static="no">
+        <name>CONF_FMODE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] Frequency modulation of charge pump: no modulation </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="81" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a3be7985ce5c7a814688078e4fb705ddd" prot="public" static="no">
+        <name>PWM3_TO_HB3</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="83" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ae2116735eb40a7974941ab07802068e9" prot="public" static="no">
+        <name>PWM3_TO_HB4</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="84" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1accbf87bf2ca7eab70cab3f60918d4ff1" prot="public" static="no">
+        <name>PWM1_TO_HB1</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="85" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a423d61afefba3b5b163ba1cc0a4aff95" prot="public" static="no">
+        <name>PWM1_TO_HB2</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="86" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a128f6adad298b067932de8ffa9ffaa6d" prot="public" static="no">
+        <name>CONF_LS_AND_HS_X_VDSTH</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para>[0;7] Set overvoltage threshold </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="89" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a12511e5f79458fdf978aef9c03587046" prot="public" static="no">
+        <name>CONF_DEEP_ADAP</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;1] deep adaption </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="90" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a18dc57106489444979bd315481a8040f" prot="public" static="no">
+        <name>CONF_TFVDS</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;3] set filter time 0 = 500ns (default) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="91" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a651d5e3b921e7c826b049dadf6c77c69" prot="public" static="no">
+        <name>CONF_HBXIDIAG</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>[0;1] disable pulldown for off-state diagnostic </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="94" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a7f70543d9bbce27fb90dfa18ecb14d7c" prot="public" static="no">
+        <name>CONF_ICHGMAXX</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>[0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="95" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5e6d0efcfa21a457ff76521a3dc658d9" prot="public" static="no">
+        <name>CONF_TBLANK_ACT</name>
+        <initializer>11</initializer>
+        <briefdescription>
+<para>[0;15] Set the blank time for active MOSFETS. default is 7 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="98" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a36cf9aab5a783d1c62b58a5a773678cf" prot="public" static="no">
+        <name>CONF_TCCP_ACT</name>
+        <initializer>10</initializer>
+        <briefdescription>
+<para>[0;15] Set the current protection time for active MOSFETS. default is 7 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="99" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1abb165f7d89de89680eff585b5bea7ce4" prot="public" static="no">
+        <name>CONF_TBLANK_FW</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;15] Set the blank time for free wheeling MOSFETS. default is 7 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="100" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a2f48dd9b964d6f8d2dd517d7bcc80319" prot="public" static="no">
+        <name>CONF_TCCP_FW</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>[0;15] Set the current protection time for free wheeling MOSFETS. default is 7 </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="101" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a99fb3c437dadc283347f33b2c5ff597c" prot="public" static="no">
+        <name>TLE9xxx_CMD_WRITE</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="104" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a9aca47ac8f35dc09c0e41b970a18ac72" prot="public" static="no">
+        <name>TLE9xxx_CMD_READ</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="105" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a4053fa5c94a2031d7f7b75172e6a0d8c" prot="public" static="no">
+        <name>TLE9xxx_CMD_CLEAR</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="106" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a6bff71df11a31b137b3e120211bc58c3" prot="public" static="no">
+        <name>PWM_CTRL_DC_MASK</name>
+        <initializer>0x3FF0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="109" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a5ebba1411696e575819e167dbb2d027a" prot="public" static="no">
+        <name>PWM_BNK_MODULE_1</name>
+        <initializer>0x0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="110" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ac6c0ef3372d9f1306cec0f30fa0b10da" prot="public" static="no">
+        <name>PWM_BNK_MODULE_2</name>
+        <initializer>0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="111" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aac6a49dc31ec6bb5be02bb66917de708" prot="public" static="no">
+        <name>PWM_BNK_MODULE_3</name>
+        <initializer>0x2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="112" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1ad37c799b150fa2317fda5ac9b04520f0" prot="public" static="no">
+        <name>PWM_BNK_MODULE_4</name>
+        <initializer>0x3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="113" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1aee301d848490affb792988fdb067e06c" prot="public" static="no">
+        <name>ACTIVE_MOSFET</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="115" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d7/def/_t_l_e9xxx_8hpp_1a1334435bb1378588aa1a44b26ac06dea" prot="public" static="no">
+        <name>FW_MOSFET</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="116" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="enum" id="d9/d8d/group__tle9xxxapi_1ga9b27375c364e93ec16c5115b8487d458" prot="public" static="no" strong="no">
+        <type></type>
+        <name>_Config_AGC</name>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga9b27375c364e93ec16c5115b8487d458a7fb81baae8c06cb6d1cc9d7661952761" prot="public">
+          <name>AGC_INACTIVE1</name>
+          <initializer>= 0b00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga9b27375c364e93ec16c5115b8487d458a92178f336c2a4e0f39948944cb5b6475" prot="public">
+          <name>AGC_INACTIVE2</name>
+          <initializer>= 0b01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d9/d8d/group__tle9xxxapi_1gga9b27375c364e93ec16c5115b8487d458a1e5269746f04b64a374af06e387e7a0e" prot="public">
+          <name>AGC_ACTIVE</name>
+          <initializer>= 0b10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" line="132" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp" bodystart="132" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TLE9XXX_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9XXX_HPP_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="d6/d9b/_t_l_e9xxx-reg_8hpp" kindref="compound">TLE9xxx-reg.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../pal/timer.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../pal/gpio.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../pal/spic.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../pal/adc.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>==================================<sp/>Defines<sp/>==================================================================================================</highlight></codeline>
+<codeline lineno="35" refid="d7/def/_t_l_e9xxx_8hpp_1a86d3b6c48b22a85a6a6142c8868f25ee" refkind="member"><highlight class="comment"></highlight><highlight class="preprocessor">#define<sp/>DETAILED_ERROR_REPORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Adaptive<sp/>Gate<sp/>control<sp/>(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TRISE_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFALL_TG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_INIT_IDCHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d7/def/_t_l_e9xxx_8hpp_1a3d427c411138eedbb5dbb3e12f7f4455" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHG_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>43<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="d7/def/_t_l_e9xxx_8hpp_1aef2261269821a4680fe2d8389edb6af1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.5<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="d7/def/_t_l_e9xxx_8hpp_1ae1f90309ff09eae45cf32626f5aa304f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCALING_FACTOR_FPA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(0xFF)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="d7/def/_t_l_e9xxx_8hpp_1a52427c15639e86362ae1c7a37120224e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ALPHA3_FPA_SCALED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ALPHA3<sp/>*<sp/>SCALING_FACTOR_FPA)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="d7/def/_t_l_e9xxx_8hpp_1ae26356555cd0132ceb054c3f53f38567" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ONE_MINUS_ALPHA3_FPA_SCALED<sp/>(SCALING_FACTOR_FPA<sp/>-<sp/>ALPHA3_FPA_SCALED)<sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>63<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_ICHG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="d7/def/_t_l_e9xxx_8hpp_1aadbbc7b02d94a4c18646813ac8d7dec1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EOS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0xFFFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Adaptive<sp/>Gate<sp/>control<sp/>PRE-(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="d7/def/_t_l_e9xxx_8hpp_1aca1b068769cf2444012d7c2549def1b7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PDCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>44<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="d7/def/_t_l_e9xxx_8hpp_1a47a8286d4b690be1c66c611f75f7bff1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_PCHG_INIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>23<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="d7/def/_t_l_e9xxx_8hpp_1a2618656a288ff1daf56078ad8da8e78c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDOFF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="d7/def/_t_l_e9xxx_8hpp_1a3dd5949d9a33071bb1b66fe9cfcec901" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TDON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>20<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="d7/def/_t_l_e9xxx_8hpp_1a8dfad0c6ae86b21bc7efb1c6d9657f0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="d7/def/_t_l_e9xxx_8hpp_1a0df0eb72dcfaba11400c9bba74e3523d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TPDCHGX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Static<sp/>(dis-)charge<sp/>current<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="d7/def/_t_l_e9xxx_8hpp_1acb11a1d6db8851855af4b51063386290" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>General<sp/>Bridge<sp/>Control<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDFREQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="d7/def/_t_l_e9xxx_8hpp_1a38a03cf5f9548d486a52140f693962da" refkind="member"><highlight class="preprocessor">#define<sp/>CONF_CPUVTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="d7/def/_t_l_e9xxx_8hpp_1a7da61d48c74c89b8787108bea3aeb8c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FET_LVL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="d7/def/_t_l_e9xxx_8hpp_1a4471b25e8829ca537c8ee3a2efc4999e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_CPSTGA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="d7/def/_t_l_e9xxx_8hpp_1af5fcf5ccef7fc02518e5df6427eaf660" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_BDOV_REC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IPCHGADT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76" refid="d7/def/_t_l_e9xxx_8hpp_1a0fd63df96e6afd9fe7b7994c4b01731d" refkind="member"><highlight class="preprocessor">#define<sp/>CONF_CPEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="d7/def/_t_l_e9xxx_8hpp_1a2d74ec796e3db05d95a05f7f326a7872" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_POCHGDIS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="d7/def/_t_l_e9xxx_8hpp_1a2f442a108774671bb1e7b74a47214520" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_AGCFILT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="d7/def/_t_l_e9xxx_8hpp_1a3182878599ce06f4aaa679c4fd46db22" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_EN_GEN_CHECK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="d7/def/_t_l_e9xxx_8hpp_1ab8ca11162377682b818223865580b5e5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_IHOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="d7/def/_t_l_e9xxx_8hpp_1a60ed51bf00fadf5f6e4462230622d11a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_FMODE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM3_TO_HB3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM3_TO_HB4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM1_TO_HB1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM1_TO_HB2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>HS<sp/>and<sp/>LS<sp/>Drain-Source<sp/>monitoring<sp/>threshold<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="d7/def/_t_l_e9xxx_8hpp_1a128f6adad298b067932de8ffa9ffaa6d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_LS_AND_HS_X_VDSTH<sp/><sp/><sp/><sp/><sp/><sp/>7<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="d7/def/_t_l_e9xxx_8hpp_1a12511e5f79458fdf978aef9c03587046" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_DEEP_ADAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="d7/def/_t_l_e9xxx_8hpp_1a18dc57106489444979bd315481a8040f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TFVDS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Maximum<sp/>Pre-(Dis)charge<sp/>in<sp/>PWM<sp/>operation<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="d7/def/_t_l_e9xxx_8hpp_1a651d5e3b921e7c826b049dadf6c77c69" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_HBXIDIAG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="d7/def/_t_l_e9xxx_8hpp_1a7f70543d9bbce27fb90dfa18ecb14d7c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_ICHGMAXX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>Cross<sp/>current<sp/>protection<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="d7/def/_t_l_e9xxx_8hpp_1a5e6d0efcfa21a457ff76521a3dc658d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="d7/def/_t_l_e9xxx_8hpp_1a36cf9aab5a783d1c62b58a5a773678cf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_ACT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="d7/def/_t_l_e9xxx_8hpp_1abb165f7d89de89680eff585b5bea7ce4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TBLANK_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="d7/def/_t_l_e9xxx_8hpp_1a2f48dd9b964d6f8d2dd517d7bcc80319" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONF_TCCP_FW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>SPI<sp/>address<sp/>commands<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9xxx_CMD_WRITE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9xxx_CMD_READ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TLE9xxx_CMD_CLEAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/******************<sp/>PWM<sp/>HSS<sp/>modules<sp/>*******************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM_CTRL_DC_MASK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3FF0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM_BNK_MODULE_1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM_BNK_MODULE_2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM_BNK_MODULE_3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PWM_BNK_MODULE_4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ACTIVE_MOSFET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FW_MOSFET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//<sp/>===============================================================================================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="d4/d7b/struct_h_bconfig__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>HBmode;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>Freewheeling;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>PWMenable;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>_Config_AGC{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AGC_INACTIVE1<sp/>=<sp/>0b00,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AGC_INACTIVE2<sp/>=<sp/>0b01,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AGC_ACTIVE<sp/>=<sp/>0b10</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="d5/d20/class_tle9xxx" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="d5/d20/class_tle9xxx" kindref="compound">Tle9xxx</ref></highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="150" refid="d9/d8d/group__tle9xxxapi_1gaff3be5449003553d49468ce00699d852" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gaff3be5449003553d49468ce00699d852" kindref="member">DiagFlag</ref></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_OC_CSA_OVERCURRENT<sp/><sp/>=<sp/>0x200,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_HS_LS_OVERVOLTAGE<sp/><sp/><sp/>=<sp/>0x100,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_SPI_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x80,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_LOAD_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x40,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_UNDER_VOLTAGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x20,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_OVER_VOLTAGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x10,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_POWER_ON_RESET<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x08,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_TEMP_SHUTDOWN<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x04,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_OVERCURRENT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TLE_SHORT_CIRCUIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>SIF</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_SPI_CRC_FAIL<sp/>=<sp/><sp/>0x80,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_BD_STAT<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x40,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_DEV_STAT<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/>0x20,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_HS_STAT<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_WAKE_UP<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x08,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_BUS_STAT<sp/>=<sp/><sp/><sp/><sp/><sp/><sp/>0x04,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_TEMP_STAT<sp/>=<sp/><sp/><sp/><sp/><sp/>0x02,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIF_SUPPLY_STAT<sp/>=<sp/><sp/><sp/>0x01</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>_Halfbridges{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE1,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE2,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE3,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PHASE4</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActiveGround;<sp/></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ActivePWM;<sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Floating;<sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga53cf8385917444b08e99aedfd90c8c58" kindref="member">Tle9xxx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga676b5b07865ba83c7dad25d87b6b9a66" kindref="member">~Tle9xxx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee" kindref="member">begin</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//virtual<sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>config();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//virtual<sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setHalfbridge(HBconfig_t<sp/>hb1,<sp/>HBconfig_t<sp/>hb2,<sp/>HBconfig_t<sp/>hb3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//virtual<sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setHalfbridge(HBconfig_t<sp/>hb1,<sp/>HBconfig_t<sp/>hb2,<sp/>HBconfig_t<sp/>hb3,<sp/>HBconfig_t<sp/>hb4);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//virtual<sp/>void<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setHSS(uint16_t<sp/>hss1,<sp/>uint16_t<sp/>hss2,<sp/>uint16_t<sp/>hss3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gad648699c59a176eabd881829ec566611" kindref="member">configInterruptMask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga4287b4c3b90e8b4ebdc680e08da64dc6" kindref="member">checkStatusInformationField</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga6f9b5e974a9fb337e29d77e7f74f6685" kindref="member">PrintTLEErrorMessage</ref>(uint16_t<sp/>msg,<sp/>uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PrintBinary(uint8_t<sp/>digits,<sp/>uint16_t<sp/>number);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga69d9baf47a1c79db784c2deea82801b6" kindref="member">checkStatSUP</ref>(uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga4f04b59ebd49fd0266fb15f7f0431d12" kindref="member">checkStatTHERM</ref>(uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gadf6450de430cf116e9a71cea08ea9255" kindref="member">checkStatHSS</ref>(uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga485b2d6b8dfab713af4ae901cfe8f7c2" kindref="member">checkStatDEV</ref>(uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gac4153fb68bf24e4e6381bc2beca0a434" kindref="member">checkStatDSOV</ref>(uint16_t<sp/>&amp;RegAddress,<sp/>uint16_t<sp/>&amp;RegContent);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga62aefffcf1c28787ba829c2188286df1" kindref="member">init_AGC_Algorithm</ref>(uint8_t<sp/>hb);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gadf275dbf7f04495cad453ec1cc9e68ae" kindref="member">emaCalculation</ref>(uint8_t<sp/>hb,<sp/>uint8_t<sp/>*<sp/>risetime,<sp/>uint8_t<sp/>*<sp/>falltime);</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga6770234f70fc34ea413597ff5bc5c1ec" kindref="member">adaptiveHysteresisDecisionTree</ref>(uint8_t<sp/>hb,<sp/>uint8_t<sp/>*<sp/>ichg,<sp/>uint8_t<sp/>*<sp/>idchg);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_trise_tg<sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a2ef502f48366b519355b8dde5b645827" kindref="member">CONF_TRISE_TG</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tfall_tg<sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a5142627d46679b16889cb686ba1452b8" kindref="member">CONF_TFALL_TG</ref>;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*intn;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>interrupt<sp/>/<sp/>test<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8a/class_s_p_i_c" kindref="compound">SPIC</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*sBus;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>SPI<sp/>cover<sp/>class<sp/>as<sp/>representation<sp/>of<sp/>the<sp/>SPI<sp/>bus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d4/dde/class_g_p_i_o" kindref="compound">GPIO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*csn;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>shield<sp/>enable<sp/>GPIO<sp/>to<sp/>switch<sp/>chipselect<sp/>on/of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*timer;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&lt;!<sp/>\brief<sp/>timer<sp/>for<sp/>delay<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga62d17043ca2b290c1d976adce129fe72" kindref="member">set_TPRECHG</ref>(uint8_t<sp/>t_pchgx,<sp/>uint8_t<sp/>t_pdchgx);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gab523ee9a41b3d69dd1a1e9704a7d1f69" kindref="member">set_ST_ICHG</ref>(uint8_t<sp/>ichgst1,<sp/>uint8_t<sp/>ichgst2,<sp/>uint8_t<sp/>ichgst3,<sp/>uint8_t<sp/>ichgst4);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga65eef7abf4e3fb3c2c8d268e58b4b09d" kindref="member">set_HB_ICHG</ref>(uint8_t<sp/>idchg,<sp/>uint8_t<sp/>ichg,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ACTorFW,<sp/>uint8_t<sp/>hb);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga5276284f38e02781c28c7a62a51e054f" kindref="member">set_HB_ICHG_MAX</ref>(uint8_t<sp/>hbxidiag,<sp/>uint8_t<sp/>ichgMaxx);</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga81037dacc231e2c29698780f05f51795" kindref="member">set_PCHG_INIT</ref>(uint8_t<sp/>pdchg_init,<sp/>uint8_t<sp/>pchg_init,<sp/>uint8_t<sp/>init_bnk);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga3de1fbeace474f38922d52cbc2a3a345" kindref="member">set_TDON_HB_CTRL</ref>(uint8_t<sp/>t_don,<sp/>uint8_t<sp/>hb_tdon_bnk);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga88baa110519cdd5e918321a4e5b97abd" kindref="member">set_TDOFF_HB_CTRL</ref>(uint8_t<sp/>t_doff,<sp/>uint8_t<sp/>hb_tdoff_bnk);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga68e755a742e078186cc75844ae66768a" kindref="member">set_LS_and_HS_VDS</ref>(uint8_t<sp/>vdsth,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>deep_adap,<sp/>uint8_t<sp/>tfvds);</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gaf698b2d9527ff60ebb579b7f37a9541c" kindref="member">set_CCP_BLK</ref>(uint8_t<sp/>t_blank,<sp/>uint8_t<sp/>t_ccp,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ACTorFW,<sp/>uint8_t<sp/>hb);</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gac876192b5abd5ec2dd836df8ee41b85c" kindref="member">checkStat_TRISE_FALL</ref>(uint8_t<sp/>hb,<sp/>uint8_t<sp/>&amp;Trise,<sp/>uint8_t<sp/>&amp;Tfall);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga77033dbb01051216f3f7c39c2d6df4ab" kindref="member">SBC_CRC_Disable</ref>();</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga5671bd1e237f00622df09f1dc4f4aa4c" kindref="member">writeReg</ref>(uint8_t<sp/>addr,<sp/>uint16_t<sp/>data);</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga93b8e9cce502e67533e47d443af36187" kindref="member">readReg</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="407" refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" kindref="member">m_trise_ema</ref>[<ref refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" kindref="member">MAX_ICHG</ref><sp/>-<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" kindref="member">MIN_ICHG</ref><sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="408" refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint16_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" kindref="member">m_tfall_ema</ref>[<ref refid="d7/def/_t_l_e9xxx_8hpp_1a2e441b711036593361b62d9a98cbd789" kindref="member">MAX_ICHG</ref><sp/>-<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a6050dd6efb25efa53923137952e9bac1" kindref="member">MIN_ICHG</ref><sp/>+<sp/>1];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="409" refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" kindref="member">m_ichg</ref><sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a01ee4e72918bae412d2cd52cd646f807" kindref="member">CONF_INIT_ICHG</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="410" refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" kindref="member">m_idchg</ref><sp/>=<sp/><ref refid="d7/def/_t_l_e9xxx_8hpp_1a73383f366b1b9eed62319e15c8103cf2" kindref="member">CONF_INIT_IDCHG</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="411" refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" kindref="member">_statusInformationField</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="412" refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" kindref="member">_agc_status</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="413" refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" kindref="member">_error_enable</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9xxx.hpp"/>
+  </compounddef>
+</doxygen>

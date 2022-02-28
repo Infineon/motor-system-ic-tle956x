@@ -1,15 +1,14 @@
 /**
  * @file        gpio-arduino.hpp
  * @brief       Arduino PAL for the GPIO
- * @date        May 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */
 
 #include "gpio-arduino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 #include <Arduino.h>
 
 /**
@@ -129,7 +128,7 @@ GPIOIno::Error_t GPIOIno::disable()
 }
 
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 
 
 
