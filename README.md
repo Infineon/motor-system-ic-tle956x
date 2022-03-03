@@ -18,8 +18,8 @@ C++ library for Infineon's motor system IC TLE956x family.
         <td style="text-align: center"><a href="https://www.infineon.com/dgdl/Infineon-DC_Shield_TLE9562-UserManual-v01_00-EN.pdf?fileId=5546d46273a5366f0173fb81140a3b77">Board Manual</a></td>
     </tr>
     <tr>
-        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Usage">Getting Started</a></td>
-        <td style="text-align: center"><b>Support coming soon</b></td>
+        <td style="text-align: center"><a href="https://motor-system-ic-tle956x.readthedocs.io/en/latest/sw-frmwk/arduino/index.html">Getting Started</a></td>
+        <td style="text-align: center"><a href="https://motor-system-ic-tle956x.readthedocs.io/en/latest/sw-frmwk/arduino/index.html">Getting Started</a></td>
     </tr>
 </table>
 
@@ -30,15 +30,15 @@ C++ library for Infineon's motor system IC TLE956x family.
         <td><img src="https://github.com/infineon/multi-half-bridge/wiki/img/arduino-logo.png" width=200></td>
     </tr>
     <tr>
-        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Library-Details">Library Structure</a></td>
+        <td style="text-align: center"><a href="https://motor-system-ic-tle956x.readthedocs.io/en/latest/lib-details/library-architecture.html">Library Structure</a></td>
     </tr>
     <tr>
-        <td style="text-align: center"><a href="https://github.com/Infineon/motor-system-ic-tle956x/wiki/Usage">Getting Started</a></td>
+        <td style="text-align: center"><a href="https://motor-system-ic-tle956x.readthedocs.io/en/latest/sw-frmwk/arduino/index.html">Getting Started</a></td>
     </tr>
 </table>
 
 ## More Information
-The complete library and project documentation can be found in the [Wiki](https://github.com/Infineon/motor-system-ic-tle956x/wiki).
+The complete library and project documentation can be found in the [Wiki](https://motor-system-ic-tle956x.readthedocs.io/en/latest/index.html).
 
 ## License
 

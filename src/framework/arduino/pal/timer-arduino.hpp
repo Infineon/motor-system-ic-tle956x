@@ -1,8 +1,7 @@
 /**
  * @file        timer-arduino.hpp
  * @brief       Arduino Timer PAL
- * @date        May 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */
@@ -10,9 +9,9 @@
 #ifndef TIMER_ARDUINO_HPP_
 #define TIMER_ARDUINO_HPP_
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include "../../../pal/timer.hpp"
 
@@ -39,5 +38,5 @@ class TimerIno: virtual public Timer
 };
 /** @} */
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** TIMER_ARDUINO_HPP_ **/

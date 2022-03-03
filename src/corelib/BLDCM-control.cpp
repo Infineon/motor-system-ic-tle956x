@@ -1,11 +1,10 @@
 /*!
- * \file        BLDCM-control.cpp
- * \name        BLDCM-control.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
- * \ref         tle9563corelib
+ * @file        BLDCM-control.cpp
+ * @name        BLDCM-control.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9563
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to control a BLDC motor using an instance of TLE9563
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -97,10 +96,10 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
     {
       case BLDC_BEMF:
         DoBEMFCommutation();
-        return 1;
+        break;
       case BLDC_HALL:
         DoHALLCommutation();
-        return 1;
+        break;
       case BLDC_FOC:
         // Error: BLDC_FOC not yet implemented
         return 0;
@@ -108,31 +107,45 @@ uint8_t BLDCMcontrol::serveBLDCshield(void)
         PrintErrorMessage(PARAMETER_MISSING); // Error: MotorMode not yet defined
         return 0;
     }
+
+    if(_RFTReg_enable)            // Do the Rise-/Falltime regulation if enabled
+    {
+      switch(_RFTReg_phase)       // Make sure the Rise/Falltime regulation is only applied , when the correct Phase is in active PWM mode
+      {
+        case PHASE1:
+          if((_commutationStep == 0) || (_commutationStep == 1)) _RFTReg_enable = 0;
+          break;
+        case PHASE2:
+          if((_commutationStep == 2) || (_commutationStep == 3)) _RFTReg_enable = 0;
+          break;
+        case PHASE3:
+          if((_commutationStep == 4) || (_commutationStep == 5)) _RFTReg_enable = 0;
+          break;
+      }
+      if(_RFTReg_enable == 0)
+      {
+        controller->emaCalculation(_RFTReg_phase, _RFT_risetime, _RFT_falltime);
+        controller->adaptiveHysteresisDecisionTree (_RFTReg_phase, _RFT_iCharge, _RFT_iDischarge);
+      }
+    }
   }
+  return 1;
 }
 
-uint8_t BLDCMcontrol::checkBLDCshield()
+uint8_t BLDCMcontrol::checkTLEshield()
 {
+  uint8_t returnvalue = 0;
   if(interrupt_status_changed)
   {
-    uint8_t ErrorCode = 0;
-    uint16_t RegAddress = 0;
-    uint16_t RegContent = 0;
-    ErrorCode = controller->checkStatSUP(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
-    ErrorCode = controller->checkStatTHERM(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
-    ErrorCode = controller->checkStatHSS(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
-    ErrorCode = controller->checkStatDEV(RegAddress, RegContent);
-    if(ErrorCode > 0) PrintTLEErrorMessage(ErrorCode, RegAddress, RegContent);
-    interrupt_status_changed = 0;
+      returnvalue = controller->checkStatusInformationField();
+      interrupt_status_changed = 0;
   }
+  return returnvalue;
 }
 
-uint8_t BLDCMcontrol::configBLDCshield()
+uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc = AGC_ACTIVE)
 {
-  // TODO: Do the whole TLE setting here
+  controller->config(agc);
 
   // Amount of steps for one full Revolution
   _NumberofSteps = (float) MotorParam.MotorPolepairs * 6.0;
@@ -148,9 +161,10 @@ void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldwea
 {
   switch(MotorParam.speedmode)
   {
-    case BLDC_PERCENTAGE:
-      speed = (speed * 255)/1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
-      if(speed > 255) _DutyCycle = 255;
+    case BLDC_DUTYCYCLE:
+      //speed = (speed * CONF_DUTYCYCLE_TOP_LIMIT) / 1000;          // TODO: 0.255 = (ReadAnalogWriteAccuracy() / 1000)
+      speed = (speed>>2);
+      if(speed > CONF_DUTYCYCLE_TOP_LIMIT) _DutyCycle = CONF_DUTYCYCLE_TOP_LIMIT;
       else _DutyCycle = speed;
 
       break;
@@ -172,10 +186,10 @@ void BLDCMcontrol::startBLDCM(void)
 {
   //if(MotorParam.feedbackmode == BLDC_BEMF)
   uint8_t dt_prev = _DutyCycle;
-  _DutyCycle = OPEN_LOOP_DUTYCYCLE;
-  uint16_t i = 5000;
+  _DutyCycle = CONF_OPEN_LOOP_DUTYCYCLE;
+  uint16_t i = CONF_OPEN_LOOP_DELAY_START;
   uint8_t CommStartup = 0;
-  while (i>1200)
+  while (i>CONF_OPEN_LOOP_DELAY_LIMIT)
   {
     timer->delayMicro(i);
     _Commutation = CommStartup;
@@ -190,7 +204,7 @@ void BLDCMcontrol::startBLDCM(void)
       if (CommStartup==0) CommStartup=6;
       CommStartup--;
     }
-    i=i-200;
+    i=i-CONF_OPEN_LOOP_DELAY_SLOPE;
   }
   _DutyCycle = dt_prev;
   timer->start();
@@ -204,7 +218,7 @@ void BLDCMcontrol::startBLDCM(void)
 
   if(MotorParam.speedmode == BLDC_RPM)
   {
-    _DutyCycle = RPM_DUTYCYCLE_AT_START; 
+    _DutyCycle = CONF_RPM_DUTYCYCLE_AT_START; 
     if(MotorParam.MotorPolepairs == 0) PrintErrorMessage(PARAMETER_MISSING);
     rpmtimer->start();
     //_DutyCycle = 100;
@@ -242,12 +256,13 @@ uint8_t BLDCMcontrol::DoBEMFCommutation(void)
   if(_latestPattern != _oldPattern)
   {
     _oldPattern = _latestPattern;
-    UpdateHardware( BEMFPattern[ 0 ][_Direction][_latestPattern] );   // No field weakening range possible in BEMF mode
+    _commutationStep = BEMFPattern[ 0 ][_Direction][_latestPattern];  // No field weakening range possible in BEMF mode
+    UpdateHardware( _commutationStep );
     if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
     timer->start();
     return 2;
   }
-  else if( Elapsed > TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
+  else if( Elapsed > CONF_TIMEOUT)   // Does not work very well, as the BEMFPattern changes quickly when motor is blocked
   {
     stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
@@ -269,12 +284,13 @@ uint8_t BLDCMcontrol::DoHALLCommutation(void)
   if(_latestPattern != _oldPattern)
   {
     _oldPattern = _latestPattern;
-    UpdateHardware( HallPattern[_FieldWeakening][_Direction][_oldPattern] );
+    _commutationStep = HallPattern[_FieldWeakening][_Direction][_oldPattern];
+    UpdateHardware( _commutationStep );
     if(MotorParam.speedmode == BLDC_RPM) _StepCounter ++;
     timer->start();
     return 2;
   }
-  else if( Elapsed > TIMEOUT)
+  else if( Elapsed > CONF_TIMEOUT)
   {
     stopBLDCM(BRAKEMODE_PASSIVE);
     return 0;
@@ -285,7 +301,7 @@ void BLDCMcontrol::PI_Regulator_DoWork()
 {
   uint32_t Elapsed = 0;
   rpmtimer->elapsed(Elapsed);
-  if (Elapsed > PI_UPDATE_INTERVAL)
+  if (Elapsed > CONF_PI_UPDATE_INTERVAL)
   {
     float RPM = 0.0;
     float steps = (float) _StepCounter;
@@ -295,11 +311,11 @@ void BLDCMcontrol::PI_Regulator_DoWork()
     RPM = (steps/ _NumberofSteps) * (60000.0 / Elapsed);     // Very precise but needs more calc power
 
     float Error = _RefRPM - RPM;
-    if(_DutyCycle < 250) _PI_Integral = _PI_Integral + Error;
+    if(_DutyCycle < CONF_DUTYCYCLE_TOP_LIMIT) _PI_Integral = _PI_Integral + Error;
     float pwm = MotorParam.PI_Reg_P * Error + MotorParam.PI_Reg_I * _PI_Integral;
     //Limit PWM
-    if (pwm > DUTYCYCLE_TOP_LIMIT) pwm = DUTYCYCLE_TOP_LIMIT;
-    if (pwm < DUTYCYCLE_BOTTOM_LIMIT) pwm = DUTYCYCLE_BOTTOM_LIMIT;
+    if (pwm > CONF_DUTYCYCLE_TOP_LIMIT) pwm = CONF_DUTYCYCLE_TOP_LIMIT;
+    if (pwm < CONF_DUTYCYCLE_BOTTOM_LIMIT) pwm = CONF_DUTYCYCLE_BOTTOM_LIMIT;
     _DutyCycle = (uint8_t) pwm;    
     _StepCounter = 0;
 
@@ -323,12 +339,10 @@ uint8_t BLDCMcontrol::ReadBEMFSensor(void)
    return hallpattern;
 }
 
-uint8_t BLDCMcontrol::CommutateHallBLDC(uint8_t dutycycle, bool hallsensor)
+uint8_t BLDCMcontrol::commutateHallBLDC(uint8_t dutycycle, uint8_t commutation_step, bool hallsensor)
 {
   _DutyCycle = dutycycle;
-   _Commutation++ ;
-  if (_Commutation==6) _Commutation=0;
-  UpdateHardware(_Commutation);
+  if ((commutation_step>= 0) && (commutation_step < 6)) UpdateHardware(commutation_step);
   timer->delayMilli(200);
   if(hallsensor) return ReadHallSensor();
   else return 0;
@@ -383,3 +397,52 @@ void BLDCMcontrol::UpdateHardware(uint8_t CommutationStep)
         break;
 	}
 }
+
+void BLDCMcontrol::PrintErrorMessage(_ErrorMessages msg)
+{
+    switch(msg)
+    {
+        case PARAMETER_MISSING:
+            Serial.println(F("=> Error: For this operation mode one or more motor parameter(s) are missing! <="));
+            break;
+        case PARAMETER_OUT_OF_RANGE:
+            Serial.println(F("=> Warning: A parameter is out of range! <="));
+            break;
+        default:
+            break;
+    }
+    setLED(50,0,0);      // Set onboard RGB-LED to red
+}
+
+void BLDCMcontrol::setupRiseFallTimeRegulation(uint8_t hb)
+{
+    _MotorStartEnable = 0;
+    controller->init_AGC_Algorithm(hb); 
+}
+
+void BLDCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime)
+{
+  _RFTReg_enable = 1;
+  _RFTReg_phase = hb;
+  _RFT_iCharge = iCharge;
+  _RFT_iDischarge = iDischarge;
+  _RFT_risetime = risetime;
+  _RFT_falltime = falltime;
+}
+
+void BLDCMcontrol::setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg)
+{
+    if((trise_tg < 64) && (tfall_tg < 64))
+    {
+        controller->m_trise_tg = trise_tg;
+        controller->m_tfall_tg = tfall_tg;
+    }
+}
+
+float BLDCMcontrol::getCurrent(void)
+{
+  float cso_voltage = controller->getCSOVoltage();
+  float current = (cso_voltage * 1000) / SHUNT_RESISTOR_VALUE;
+  return current;
+}
+

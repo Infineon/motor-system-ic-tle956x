@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_b8666f76be275fff94c10ba3c22951a9" kind="dir">
+    <compoundname>pal</compoundname>
+    <innerfile refid="da/d26/adc-arduino_8cpp">adc-arduino.cpp</innerfile>
+    <innerfile refid="da/dd4/adc-arduino_8hpp">adc-arduino.hpp</innerfile>
+    <innerfile refid="df/df8/gpio-arduino_8cpp">gpio-arduino.cpp</innerfile>
+    <innerfile refid="d9/d4f/gpio-arduino_8hpp">gpio-arduino.hpp</innerfile>
+    <innerfile refid="de/d46/logger-arduino_8cpp">logger-arduino.cpp</innerfile>
+    <innerfile refid="da/d62/logger-arduino_8hpp">logger-arduino.hpp</innerfile>
+    <innerfile refid="d8/d55/spic-arduino_8cpp">spic-arduino.cpp</innerfile>
+    <innerfile refid="df/d2f/spic-arduino_8hpp">spic-arduino.hpp</innerfile>
+    <innerfile refid="df/d09/timer-arduino_8cpp">timer-arduino.cpp</innerfile>
+    <innerfile refid="da/dda/timer-arduino_8hpp">timer-arduino.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/"/>
+  </compounddef>
+</doxygen>

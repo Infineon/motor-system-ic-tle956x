@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d3/dac/group__tle9xxxfrmw" kind="group">
+    <compoundname>tle9xxxfrmw</compoundname>
+    <title>Tle9xxxfrmw</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga2312d276907dd66b008f544087ec092c" prot="public" static="no">
+        <name>TLE9XXX_LOGGER_ENABLED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>&lt; Motor system IC framework must be defined in conf. or at compilation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-dfl.hpp" line="22" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-dfl.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1gab43e2824aa12a2412f952abe3a1e6df9" prot="public" static="no">
+        <name>TLE9XXX_FRMWK_ARDUINO</name>
+        <initializer>0x00U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" line="17" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga50507c36fbfe63b379d8ac040fba7125" prot="public" static="no">
+        <name>TLE9XXX_FRMWK_WICED</name>
+        <initializer>0x01U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" line="18" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf-opts.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1gacc004b5a2fd1decf6e88985e936c4280" prot="public" static="no">
+        <name>MOTOR_SYSTEM_IC_FRAMEWORK</name>
+        <initializer>TLE9XXX_FRMWK_ARDUINO</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" line="20" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga2312d276907dd66b008f544087ec092c" prot="public" static="no">
+        <name>TLE9XXX_LOGGER_ENABLED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para><ref refid="d3/d42/class_logger" kindref="compound">Logger</ref> enable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>(1) Enabled, (0) Disabled </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" line="28" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1gaa625c7df51d7c382ae29fe5628d96668" prot="public" static="no">
+        <name>TLE9XXX_REG_LOGGER_ENABLED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Enable for each module logger. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Register module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" line="37" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="d3/dac/group__tle9xxxfrmw_1ga2c6792762b706574efea472a45d6d16d" prot="public" static="no">
+        <name>TLE9XXX_APP_LOGGER_ENABLED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Application level module </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" line="38" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/tle9xxx-conf.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

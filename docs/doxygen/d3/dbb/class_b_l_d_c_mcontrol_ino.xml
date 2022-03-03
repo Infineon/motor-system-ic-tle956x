@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d3/dbb/class_b_l_d_c_mcontrol_ino" kind="class" language="C++" prot="public">
+    <compoundname>BLDCMcontrolIno</compoundname>
+    <basecompoundref refid="de/df7/class_b_l_d_c_mcontrol" prot="public" virt="non-virtual">BLDCMcontrol</basecompoundref>
+    <includes refid="df/d68/_b_l_d_c_m-control-ino_8hpp" local="no">BLDCM-control-ino.hpp</includes>
+      <sectiondef kind="user-defined">
+      <header>BLDCM-control-ino.cpp - basic motor control functions for Arduino</header>
+      <description><para>This library includes the basic common functions to control a BLDC motor using an instance of TLE9563 tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2020-2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="dc/da9/group__ino_api_1ga55b657f1f926530083f2929fb2d2bc1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BLDCMcontrolIno::BLDCMcontrolIno</definition>
+        <argsstring>(void)</argsstring>
+        <name>BLDCMcontrolIno</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>create and assign Arduino GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents the <ref refid="de/df7/class_b_l_d_c_mcontrol" kindref="compound">BLDCMcontrol</ref> base class </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>BLDCMcontrol</label>
+        <link refid="de/df7/class_b_l_d_c_mcontrol"/>
+      </node>
+      <node id="1">
+        <label>BLDCMcontrolIno</label>
+        <link refid="d3/dbb/class_b_l_d_c_mcontrol_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+      <node id="2">
+        <label>BLDCMcontrol</label>
+        <link refid="de/df7/class_b_l_d_c_mcontrol"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>MotorParam</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>controller</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>pwmU</edgelabel>
+          <edgelabel>pwmV</edgelabel>
+          <edgelabel>pwmW</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>bemfU</edgelabel>
+          <edgelabel>bemfV</edgelabel>
+          <edgelabel>bemfW</edgelabel>
+          <edgelabel>hallA</edgelabel>
+          <edgelabel>hallB</edgelabel>
+          <edgelabel>hallC</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>rpmtimer</edgelabel>
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>BLDCMcontrol::BLDCParameter</label>
+        <link refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter"/>
+      </node>
+      <node id="1">
+        <label>BLDCMcontrolIno</label>
+        <link refid="d3/dbb/class_b_l_d_c_mcontrol_ino"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="6">
+        <label>HBconfig_t</label>
+        <link refid="d4/d7b/struct_h_bconfig__t"/>
+      </node>
+      <node id="8">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="9">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="4">
+        <label>Tle9563</label>
+        <link refid="d0/d80/class_tle9563"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>cso</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>csn</edgelabel>
+          <edgelabel>intn</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>sBus</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="39" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" bodystart="40" bodyend="48"/>
+    <listofallmembers>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ad3519e221a37d3a8ec9e12bef9930170" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_Commutation</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a00d22069b5412b679240d7d1e4e362e1" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_commutationStep</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a762fa75025735991818d3c6443e58232" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_debug_counter</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1aa85a275eb5d236d7c2b18deae1f1f15d" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_Direction</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a49891d895b8602fd9c2d34a4044fc6b8" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_DutyCycle</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a89d095c1db397fc696a666b9a33821a6" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_ErrorMessages</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ae79725a7fa43becec097e76b29dda955" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_FieldWeakening</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a7392966b5f15ff006cfde11f70f2a263" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_LastBLDCspeed</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a4fa343e90244ead35ca9f6090d25acbc" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_latestPattern</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1adbebbd3ed425f306d115fb361778cbf4" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_MotorModes</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ac53a386931ba4e1cc47a6663ca541576" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_MotorStartEnable</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a16ebdceba698efe310d7853f7b9e69a8" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_NumberofSteps</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a432983f17d4458320c954681a8b6b1c0" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_oldPattern</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a8dd60f776e15278b1bd82843537c398c" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_PI_Integral</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a3b118ce92a9a7fbdfa92268afa11c96a" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_PI_Update_Timeout</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ab80ea10474004e48fec12327da3d864f" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RefRPM</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1afc5cd6a9b217a0dd2609fadb48ea4ae5" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFT_falltime</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a95d9c4b2331bbb3307bf75c292caa192" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFT_iCharge</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a4b7ce667a35fb42939ec7ddfb11c7404" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFT_iDischarge</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a69aecaa45efaa306779659a8931100c1" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFT_risetime</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ad199e68da79ec653ffc20cb0c3f71d00" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFTReg_enable</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1aee9cf675b16a1d4a4700afa1adb95e03" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_RFTReg_phase</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a00b92644410af58117df103716e33245" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_SetSpeedModes</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a4afb763e5eaa610614e79e5ab4d7125b" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>_StepCounter</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a06134dd6d9cdfa2d87c1e8be1bc7ef63" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>begin</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a6fed704cb770bbcf5c8ef4a0448263b9" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BEMFPattern</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a4324ff5c77f6f7c64e828f46a75c29c5" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>bemfU</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a948628e55c806885ed97ce589dff6a38" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>bemfV</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a0e6a42fd3990f42f84d2e915df3c8cfb" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>bemfW</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1adbebbd3ed425f306d115fb361778cbf4ac7c525eabe496c1a554363849655cdb5" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_BEMF</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a00b92644410af58117df103716e33245ade1e93595f04f3b5e4ca0ef6689b9f4f" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_DUTYCYCLE</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1adbebbd3ed425f306d115fb361778cbf4a9b4e28ab96d73b563d2433c589529707" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_FOC</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1adbebbd3ed425f306d115fb361778cbf4a4f828fbd5c1e63cddf5497f03e5af825" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_HALL</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a00b92644410af58117df103716e33245a706eec59af84977dcfeea7c79a5f6b77" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_POSITION</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a00b92644410af58117df103716e33245a9fc5555c66e49bc209f57961d57fffa3" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDC_RPM</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1adbfcf401465986805ca622e9cd965f8f" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDCMcontrol</name></member>
+      <member refid="dc/da9/group__ino_api_1ga55b657f1f926530083f2929fb2d2bc1a" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>BLDCMcontrolIno</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1af77038072deb7add69ecd795e6b92cfd" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>checkTLEshield</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a5d3bd179731c4ab34cb845f4cd8f584e" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>commutateHallBLDC</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1aa67ed1478b0aa0e586cf4985df560608" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>configBLDCshield</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ae9821679b71a1a031077b569d6e9b679" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>controller</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a34bbdf54cf63ea765a5411b3045a9041" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>debug_switch_enable</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a3f4c9783842b86adc5a0c115efb7820c" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>DoBEMFCommutation</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a1bfd3d3f6abbcd16411659ac35a71ca8" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>DoHALLCommutation</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a7fd5ebab7dce850ab61c0ed61a34fc66" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>end</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a4f76e5dcad3446716b2cb94447f3d474" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>getCurrent</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a87605e5b806c4ab1771872b7c52ccc7b" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>hallA</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a611875d33869a713bf42de249aa005cf" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>hallB</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a6b52c47286c70763b1d4fe330e45db88" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>hallC</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a878c7b9c1b5ab10ed596ad49996ab0b8" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>HallPattern</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1af92366e4f3ef2f3333241376d2b506e5" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>interrupt_status_changed</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a54e4b7cf0a494a60dd0c584506482985" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>MotorParam</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a89d095c1db397fc696a666b9a33821a6afbfc4b8f9dff41c388b2740f3569bc41" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>PARAMETER_MISSING</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a89d095c1db397fc696a666b9a33821a6a51381cec0285aa0f5311c493584b683f" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>PARAMETER_OUT_OF_RANGE</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a126f57ec0db5feb1bc0b28de9c640a7f" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>PI_Regulator_DoWork</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a82aea9fa422c4961e9bc51448104c3b9" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>PrintErrorMessage</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a9625871c082263f43466c91905d5c715" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>pwmU</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1aa1833afbfd5d7eaacdc112d279b0f6dd" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>pwmV</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a05dbb17b3e52933eeb1f82d3d6a8bb40" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>pwmW</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a9c71b8b41ff9a07bb8a9674d99654b5b" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>ReadBEMFSensor</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a34242fb60ba90c268c0c34bb7c254c44" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>ReadHallSensor</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a26add64fa56fa4a9a52a724036a664e8" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>riseFallTimeRegulation</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a02b628f8f16a45b9d32074a79923a0c9" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>rpmtimer</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a441143709285434163afdc8423789ca5" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>serveBLDCshield</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a97960d80e8c866277bd0bc597f5d13a7" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>setBLDCspeed</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1aceeca2f716f9bc97b33ab2bb3931e9a3" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>setLED</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a59c67eedf12193991d96262df0ecd21d" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>setTrisefallTarget</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a039bee500b086e82745fd36b76908db3" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>setupRiseFallTimeRegulation</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ae5d5cffe3475075818a8b29da61f5557" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>startBLDCM</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ac1d7bf8f70b327f312e83ebdb7a2551f" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>stopBLDCM</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1ab3c9c38194452d45d643d6e3d56a809d" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>timer</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a0e120427cce5e2bb5dae353540f13fa5" prot="protected" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>UpdateHardware</name></member>
+      <member refid="de/df7/class_b_l_d_c_mcontrol_1a1297cb4038c778812233ecd641713024" prot="public" virt="non-virtual"><scope>BLDCMcontrolIno</scope><name>~BLDCMcontrol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

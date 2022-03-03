@@ -1,8 +1,7 @@
 /** 
  * @file        logger-arduino.hpp
  * @brief       TLE9563 Logger Arduino PAL 
- * @date        January 2021
- * @copyright   Copyright (c) 2020-2021 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  * 
  * SPDX-License-Identifier: MIT
  */
@@ -10,13 +9,13 @@
 #ifndef TLE9563_PAL_LOGGER_INO_H_
 #define TLE9563_PAL_LOGGER_INO_H_
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include "../../../pal/logger.hpp"
 
-#if (TLE9563_LOGGER_ENABLED == 1)
+#if (TLE9XXX_LOGGER_ENABLED == 1)
 
 class LoggerIno : public LoggerPAL
 {
@@ -33,6 +32,6 @@ class LoggerIno : public LoggerPAL
  */
 extern LoggerIno logpalino;
 
-#endif /* TLE9563_LOGGER_ENABLED */
-#endif /** TLE9563_FRAMEWORK **/
+#endif /* TLE9XXX_LOGGER_ENABLED */
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
 #endif /** TLE9563_PAL_LOGGER_INO_H_ **/

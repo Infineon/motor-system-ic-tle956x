@@ -1,15 +1,14 @@
 /**
  * @file        spic-arduino.hpp
  * @brief       Arduino PAL for the SPI cover
- * @date        June 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */
 
 #include "spic-arduino.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 /**
  * @brief Constructor of the Arduino SPIC class
@@ -120,4 +119,4 @@ SPICIno::Error_t SPICIno::transfer16(uint16_t send, uint16_t &received)
 	return OK;
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/

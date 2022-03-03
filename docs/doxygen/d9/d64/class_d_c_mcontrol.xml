@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d9/d64/class_d_c_mcontrol" kind="class" language="C++" prot="public">
+    <compoundname>DCMcontrol</compoundname>
+    <derivedcompoundref refid="d0/da5/class_d_c_mcontrol_ino" prot="public" virt="non-virtual">DCMcontrolIno</derivedcompoundref>
+    <includes refid="de/d59/_d_c_m-control_8hpp" local="no">DCM-control.hpp</includes>
+      <sectiondef kind="user-defined">
+      <header>DCM-control.cpp - Arduino library to control Infineon&apos;s DC Motor Control Shield with Tle9562</header>
+      <description><para>This library includes the basic common functions to control DC motors using an instance of TLE9562 tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1ade1cfb6d30e41168cfb9c6d77d3376c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DCMcontrol::DCMcontrol</definition>
+        <argsstring>(void)</argsstring>
+        <name>DCMcontrol</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="57" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="17" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1ada1cb2da2ec75aacd687da35d8412a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DCMcontrol::~DCMcontrol</definition>
+        <argsstring>(void)</argsstring>
+        <name>~DCMcontrol</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="58" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a3015325ed7847c8c4e49e57eb3c3e8b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>initalize GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="64" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="33" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a961ee19b33dae352eb4bcfcc646a3207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Deinitialize GPIOs and PWM pins. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="70" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="45" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a4ff6ca03a8d124ce9630cb560d546e1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::configDCshield</definition>
+        <argsstring>(uint8_t agc=AGC_ACTIVE)</argsstring>
+        <name>configDCshield</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>agc</declname>
+          <defval>AGC_ACTIVE</defval>
+        </param>
+        <briefdescription>
+<para>config the TLE9562 chip with customized settings needs to be called once before the motor will be started </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>agc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Adaptive Gate Precharge controlloop: _Config_AGC </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="79" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="53" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a7600407120d668358a5630eb119f9098" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::checkTLEshield</definition>
+        <argsstring>()</argsstring>
+        <name>checkTLEshield</name>
+        <briefdescription>
+<para>check if status information is available If information is available, it will be printed automatically by the frontend. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>select the registers/information that you want to observe </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t Error return code / status report </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="87" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="59" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1ae9b8d0e87a4ae80b5f1b20ef07e3c1cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::setDCspeed</definition>
+        <argsstring>(uint16_t speed, bool direction, uint8_t motorNumber)</argsstring>
+        <name>setDCspeed</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>direction</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>motorNumber</declname>
+        </param>
+        <briefdescription>
+<para>set the speed and direction for either a single motor or both motors </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>sets the dutycycle of the related PWM channel. 10 bit value [0;1023] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>direction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>direction of rotation. 0 or 1. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>motorNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which motor should be affected. 1 is HB 1&amp;2. 2 is HB 3&amp;4. 3 are all HBs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="96" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="70" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a4f2407850add5414a69151f141ebdc64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::startDCM</definition>
+        <argsstring>(void)</argsstring>
+        <name>startDCM</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>switch on the halbridges with preset speed and direction </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="102" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="143" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a42abbf25108fe70b1ea736968daf73c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::stopDCM</definition>
+        <argsstring>(uint8_t brakemode)</argsstring>
+        <name>stopDCM</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>brakemode</declname>
+        </param>
+        <briefdescription>
+<para>Stop a DC motor be either switching off all halfbridges or let the float (TODO) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>brakemode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BRAKEMODE_PASSIVE or BRAKEMODE_ACTIVE </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>uint8_t returns success or failure of stopping </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="110" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="150" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1aee0ae770ce86d6e6b49494bab222bdd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::setLED</definition>
+        <argsstring>(uint16_t led1, uint16_t led2)</argsstring>
+        <name>setLED</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>led1</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>led2</declname>
+        </param>
+        <briefdescription>
+<para>set the intensity of the two onboard LEDs using two HSS on the TLE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>led1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>brightness of LED D6 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>led2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>brightness of LED D7 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="118" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1aaf6c5363e0e8e909ca6009c777228dc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::setupRiseFallTimeRegulation</definition>
+        <argsstring>(uint8_t hb)</argsstring>
+        <name>setupRiseFallTimeRegulation</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the algorithm for rise/falltime regulation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which halfbridges should be adjusted [PHASE1;PHASE4] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="127" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="167" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1afdfccd4c1f4bc9a745bb04fcf50f96f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::riseFallTimeRegulation</definition>
+        <argsstring>(uint8_t hb, uint8_t *iCharge, uint8_t *iDischarge, uint8_t *risetime, uint8_t *falltime)</argsstring>
+        <name>riseFallTimeRegulation</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>hb</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>iCharge</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>iDischarge</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>risetime</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>falltime</declname>
+        </param>
+        <briefdescription>
+<para>reads out the actual MOSFET rise-time (fall-time) and compares it to the desired rise-(fall-)time. The algorithm then adjusts the charge current ICHG for the active MOSFET of the selected halfbridge. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>risetime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hands over the actual rise-time </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>falltime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hands oder the actual fall-time </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="137" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="192" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d64/class_d_c_mcontrol_1a09e4b60e574cde1b5c68570a9f68970c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DCMcontrol::setTrisefallTarget</definition>
+        <argsstring>(uint8_t trise_tg, uint8_t tfall_tg)</argsstring>
+        <name>setTrisefallTarget</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>trise_tg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>tfall_tg</declname>
+        </param>
+        <briefdescription>
+<para>Set the T_Rise and T_Fall target times where the regulation loop should go to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>trise_tg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>rise time target [0;63] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tfall_tg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>fall time target [0;63] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="145" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.cpp" bodystart="198" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a6d9eebb55741043fb59906436ce0647b" prot="public" static="no" mutable="no">
+        <type>volatile uint8_t</type>
+        <definition>volatile uint8_t DCMcontrol::interrupt_status_changed</definition>
+        <argsstring></argsstring>
+        <name>interrupt_status_changed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="53" column="18" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" prot="public" static="no" mutable="no">
+        <type><ref refid="d0/dab/class_tle9562" kindref="compound">Tle9562</ref> *</type>
+        <definition>Tle9562* DCMcontrol::controller</definition>
+        <argsstring></argsstring>
+        <name>controller</name>
+        <briefdescription>
+<para>generate an instance of a TLE9563 controller used on this board </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="151" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a1a3c756d73af3ec19c50b94e2ff6d085" prot="protected" static="no" mutable="no">
+        <type><ref refid="de/d30/class_analog_digital_converter" kindref="compound">AnalogDigitalConverter</ref> *</type>
+        <definition>AnalogDigitalConverter* DCMcontrol::pwmA</definition>
+        <argsstring></argsstring>
+        <name>pwmA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="153" column="31" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1ac91f95e47627da2c1c9a619c31371111" prot="protected" static="no" mutable="no">
+        <type><ref refid="de/d30/class_analog_digital_converter" kindref="compound">AnalogDigitalConverter</ref> *</type>
+        <definition>AnalogDigitalConverter* DCMcontrol::pwmB</definition>
+        <argsstring></argsstring>
+        <name>pwmB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="154" column="23" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a13a9b68632495d3d403ce62de6ec1369" prot="protected" static="no" mutable="no">
+        <type><ref refid="d8/d08/class_timer" kindref="compound">Timer</ref> *</type>
+        <definition>Timer* DCMcontrol::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="156" column="18" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a74ec4b1ac94b3359910f669b413b9fc4" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::_DutyCycle</definition>
+        <argsstring></argsstring>
+        <name>_DutyCycle</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="158" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a62d185d6c22a46fe71a5d28d041798fb" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::_MotorStartEnable</definition>
+        <argsstring></argsstring>
+        <name>_MotorStartEnable</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="159" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1a99101c443925f19df0f9628007f01c76" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t DCMcontrol::_Direction[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>_Direction</name>
+        <initializer>= {0, 0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="160" column="8" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d64/class_d_c_mcontrol_1adfcf669b8c0a70e5b9ede5735a5b4706" prot="protected" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t DCMcontrol::_HBstatus[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>_HBstatus</name>
+        <initializer>= 	{<ref refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" kindref="member">controller</ref>-&gt;ActiveGround, <ref refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" kindref="member">controller</ref>-&gt;ActiveGround, <ref refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" kindref="member">controller</ref>-&gt;ActiveGround, <ref refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" kindref="member">controller</ref>-&gt;ActiveGround}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="161" column="11" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>contains functions to control various types of DC motors using a TL9562 SBC </para>
+    </briefdescription>
+    <detaileddescription>
+<para>With this class you are able to run up to two motors with variable speed. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DCMcontrol</label>
+        <link refid="d9/d64/class_d_c_mcontrol"/>
+      </node>
+      <node id="2">
+        <label>DCMcontrolIno</label>
+        <link refid="d0/da5/class_d_c_mcontrol_ino"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+      <node id="1">
+        <label>DCMcontrol</label>
+        <link refid="d9/d64/class_d_c_mcontrol"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>controller</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>pwmA</edgelabel>
+          <edgelabel>pwmB</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>_HBstatus</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="4">
+        <label>HBconfig_t</label>
+        <link refid="d4/d7b/struct_h_bconfig__t"/>
+      </node>
+      <node id="6">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="7">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="2">
+        <label>Tle9562</label>
+        <link refid="d0/dab/class_tle9562"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>csn</edgelabel>
+          <edgelabel>intn</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>sBus</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" line="48" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/DCM-control.hpp" bodystart="49" bodyend="163"/>
+    <listofallmembers>
+      <member refid="d9/d64/class_d_c_mcontrol_1a99101c443925f19df0f9628007f01c76" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>_Direction</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a74ec4b1ac94b3359910f669b413b9fc4" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>_DutyCycle</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1adfcf669b8c0a70e5b9ede5735a5b4706" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>_HBstatus</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a62d185d6c22a46fe71a5d28d041798fb" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>_MotorStartEnable</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a3015325ed7847c8c4e49e57eb3c3e8b1" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>begin</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a7600407120d668358a5630eb119f9098" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>checkTLEshield</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a4ff6ca03a8d124ce9630cb560d546e1e" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>configDCshield</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a801e2078952fe46c1f50de5267503fe5" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>controller</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ade1cfb6d30e41168cfb9c6d77d3376c7" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>DCMcontrol</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a961ee19b33dae352eb4bcfcc646a3207" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>end</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a6d9eebb55741043fb59906436ce0647b" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>interrupt_status_changed</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a1a3c756d73af3ec19c50b94e2ff6d085" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>pwmA</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ac91f95e47627da2c1c9a619c31371111" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>pwmB</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1afdfccd4c1f4bc9a745bb04fcf50f96f1" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>riseFallTimeRegulation</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ae9b8d0e87a4ae80b5f1b20ef07e3c1cf" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>setDCspeed</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1aee0ae770ce86d6e6b49494bab222bdd0" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>setLED</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a09e4b60e574cde1b5c68570a9f68970c" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>setTrisefallTarget</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1aaf6c5363e0e8e909ca6009c777228dc4" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>setupRiseFallTimeRegulation</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a4f2407850add5414a69151f141ebdc64" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>startDCM</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a42abbf25108fe70b1ea736968daf73c5" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>stopDCM</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1a13a9b68632495d3d403ce62de6ec1369" prot="protected" virt="non-virtual"><scope>DCMcontrol</scope><name>timer</name></member>
+      <member refid="d9/d64/class_d_c_mcontrol_1ada1cb2da2ec75aacd687da35d8412a88" prot="public" virt="non-virtual"><scope>DCMcontrol</scope><name>~DCMcontrol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

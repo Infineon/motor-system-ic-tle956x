@@ -1,11 +1,10 @@
 /*!
- * \file        BLDCM-control.hpp
- * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with TLE9563
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic functions to control a BLDC motor using an instance of TLE9563
- * \ref         tle9563corelib
+ * @file        BLDCM-control.hpp
+ * @name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with TLE9563
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic functions to control a BLDC motor using an instance of TLE9563
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -20,26 +19,40 @@
 #include "../pal/gpio.hpp"
 #include "../pal/spic.hpp"
 #include "../pal/adc.hpp"
+#include "../util/BLDCM-logger.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
-#include "../TLE9563-ino.hpp"
-#endif
+#include <Arduino.h>
 
+/**
+ * Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. 
+ * All other defines should remain as they are.
+ */
 // ================================== Defines ==================================================================================================
-#define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
-#define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
-#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle, when motor starts to turn before RPM algorithm will be switched on */
-#define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
-#define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
-#define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
 
-#define DUTYCYCLE_SINGLE_STEP       30				/* dutycycle for single stepping in the 'Find Polepairs' function */
-#define DETAILED_ERROR_REPORT 		1				/* print register values as well if a TLE error occurs */
+#define CONF_TIMEOUT						500			/*!< milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define CONF_PI_UPDATE_INTERVAL				100			/*!< milliseconds. How often should the PI regulator be called. Affects precision if too low. */
 
+#define CONF_RPM_DUTYCYCLE_AT_START			80			/*!< dutycycle when motor starts to turn before RPM controller will be switched on */
+#define CONF_OPEN_LOOP_DUTYCYCLE			80			/*!< dutycycle for blind commutation at motor start (open loop) */
+#define CONF_OPEN_LOOP_DELAY_START			5000		/*!< microseconds. This is the delay between the first commutations when starting a BLDC motor */
+#define CONF_OPEN_LOOP_DELAY_LIMIT			1200		/*!< microseconds. The smallest delay that is used before open loop commutation turns into closed loop */
+#define CONF_OPEN_LOOP_DELAY_SLOPE			200			/*!< microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. You can calculate the amount: O_L_commutations = (5000-1200)/200 */
 
-/* Braking modes */
+#define CONF_DUTYCYCLE_TOP_LIMIT			255			/*!< maximum dutycycle */
+#define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/*!< minimum dutycycle, below the motor won't turn anymore */
+
+/****************** Current measurment *******************/
+#define SHUNT_RESISTOR_VALUE				0.005     	// Ohm
+
+/****************** Braking modes *******************/
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
+
+enum _Halfbridges{
+			PHASE1,
+			PHASE2,
+			PHASE3
+		};
 // =============================================================================================================================================
 
 /**
@@ -61,7 +74,7 @@ class BLDCMcontrol
 			BLDC_FOC  = 3		/*Field oriented control*/
 		};
 		enum _SetSpeedModes{
-			BLDC_PERCENTAGE = 1,	/*Percentage*/
+			BLDC_DUTYCYCLE = 1,	/*Percentage*/
 			BLDC_RPM = 2,		/*Rounds per Minute*/
 			BLDC_POSITION  = 3	/*Position angle (future)*/
 		};
@@ -98,15 +111,16 @@ class BLDCMcontrol
 		 * @param request select the registers/information that you want to observe
 		 * @return uint8_t uint8_t Error return code / status report
 		 */
-		uint8_t					checkBLDCshield();
+		uint8_t					checkTLEshield();
 
 		/**
-		 * @brief hand over the configuration parameters like motor Mode, etc
-		 * Needs to be called once in the user code before the motor gets started.
-		 * @param MyParameters struct element with all necessary motor parameters.
-		 * @return uint8_t Error return code / status report
+		 * @brief config the TLE9563 chip with customized settings
+		 * needs to be called once before the motor will be started
+		 * 
+		 * @param agc Adaptive Gate Precharge controlloop: _Config_AGC
+		 * @return uint8_t 
 		 */
-		uint8_t 				configBLDCshield();
+		uint8_t 				configBLDCshield(uint8_t agc = AGC_ACTIVE);
 
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
@@ -153,35 +167,63 @@ class BLDCMcontrol
 		void 					end();
 
 		/**
+		 * @brief only for FindPolepairs frontend function
+		 * 
+		 * @param dutycycle dutycycle for single step operation (should be low)
+		 * @param commuation_step [0;5] which should be the next step
+		 * @param hallsensor if hallsensor used 1, else 0
+		 * @return uint8_t hallpattern if demanded
+		 */
+		uint8_t 				commutateHallBLDC(uint8_t dutycycle, uint8_t commutation_step, bool hallsensor);
+
+		/**
+		 * @brief Initializes the algorithm for rise/falltime regulation
+		 * 
+		 * @param hb which halfbridges should be adjusted [PHASE1;PHASE3]
+		 */
+
+		void					setupRiseFallTimeRegulation(uint8_t hb);
+		
+		/**
+		 * @brief reads out the actual MOSFET rise-time (fall-time) and compares it to the desired rise-(fall-)time.
+		 * The algorithm then adjusts the charge current ICHG for the active MOSFET of the selected halfbridge.
+		 * 
+		 * @param hb on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to.
+		 * @param risetime hands over the actual rise-time
+		 * @param falltime hands oder the actual fall-time
+		 */
+		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
+
+		/**
+		 * @brief Set the T_Rise and T_Fall target times where the regulation loop should go to
+		 * 
+		 * @param trise_tg rise time target [0;63]
+		 * @param tfall_tg fall time target [0;63]
+		 */
+		void					setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg);
+		
+		/**
+		 * @brief Get the Current flowing in the BLDC shield
+		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
+		 * The resolution is 48,7mA.
+		 * @return float returns the current in milliAmps
+		 */
+		float					getCurrent(void);
+
+		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 
 		 */
 		Tle9563 				*controller;
+		//Tle9563					*controller = new Tle9563();
 
 	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief Lets the motor single step and prints out the total amount of steps, the commutationstate and hallpattern if demanded
-		 * 
-		 * @param delay how many milliseconds between the commutations
-		 * @param hallsensor if hallsensor is available, set to one, else to zero
-		 */
-		void 					FindPolepairs(uint16_t delay, bool hallsensor);
-
 		/**
 		 * @brief Print a debug message, e.g. if configuration Parameter are missing
 		 * 
 		 * @param msg hand over the error code
 		 */
 		void					PrintErrorMessage(_ErrorMessages msg);
-
-		/**
-		 * @brief Print an Error message, if an interrupt occurs and TLE status register contains an error
-		 * 
-		 * @param msg hand over error code
-		 * @param RegAddress address of the register, the error bit was set in
-		 * @param RegContent full content of the register, ther error bit was set in
-		 */
-		void					PrintTLEErrorMessage(uint8_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 
 
 
@@ -246,15 +288,6 @@ class BLDCMcontrol
 		uint8_t					ReadBEMFSensor(void);
 
 		/**
-		 * @brief only for FindPolepairs frontend function
-		 * 
-		 * @param dutycycle dutycycle for single step operation (should be low)
-		 * @param hallsensor if hallsensor used 1, else 0
-		 * @return uint8_t hallpattern if demanded
-		 */
-		uint8_t 				CommutateHallBLDC(uint8_t dutycycle, bool hallsensor);
-
-		/**
 		 * @brief contains the six steps of the six-step-blockcommutation
 		 * in each step the gatedrivers of the TLE9563 are updated to either PWM, Ground or Floating.
 		 * At the same time the PWM is assigned to the right output pin.
@@ -307,6 +340,7 @@ class BLDCMcontrol
 		uint8_t					_FieldWeakening = 0;
 		uint8_t					_LastBLDCspeed = 0;
 		uint8_t					_Commutation = 0;
+		uint8_t					_commutationStep = 0;
 		uint8_t					_oldPattern = 0;
 		uint8_t					_latestPattern = 0;
 		uint16_t 				_StepCounter = 0;
@@ -314,17 +348,12 @@ class BLDCMcontrol
 		float 					_PI_Integral = 5000.0; 
 		float 					_NumberofSteps = 0;
 		uint8_t					_debug_counter = 0;
-		//MotorModes				BLDCMotorMode = 0;
-
-	// =============================================== BLDCM-frontend.cpp ===============================================================
-		/**
-		 * @brief fill up the missing '0's before a binary number
-		 * 
-		 * @param digits how many digits
-		 * @param number The number you want to print (max 16 bit)
-		 */
-		void 					PrintBinary(uint8_t digits, uint16_t number);
-
+		bool					_RFTReg_enable = 0;
+		uint8_t					_RFTReg_phase = 0;
+		uint8_t *				_RFT_iCharge = NULL;
+		uint8_t *				_RFT_iDischarge = NULL;
+		uint8_t *				_RFT_risetime = NULL;
+		uint8_t *				_RFT_falltime = NULL;
 
 };
 

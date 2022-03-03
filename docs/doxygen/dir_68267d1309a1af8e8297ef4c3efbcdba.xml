@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_7e83d1792d529f4aa7126ac7e0b3b699">config</innerdir>
+    <innerdir refid="dir_b85deeec3e940e8ec5637c145ef17ca4">corelib</innerdir>
+    <innerdir refid="dir_5752cadd8276ecfd63d9b924f2a4d4b5">framework</innerdir>
+    <innerdir refid="dir_939c8b190bd538da7127929d9efbf093">pal</innerdir>
+    <innerdir refid="dir_b7878ad5ecbf2506f4125b9d34c97e45">util</innerdir>
+    <innerfile refid="d9/da2/_b_l_d_c_m-control-ino_8cpp">BLDCM-control-ino.cpp</innerfile>
+    <innerfile refid="df/d68/_b_l_d_c_m-control-ino_8hpp">BLDCM-control-ino.hpp</innerfile>
+    <innerfile refid="da/dac/_d_c_m-control-ino_8cpp">DCM-control-ino.cpp</innerfile>
+    <innerfile refid="d2/d99/_d_c_m-control-ino_8hpp">DCM-control-ino.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/"/>
+  </compounddef>
+</doxygen>

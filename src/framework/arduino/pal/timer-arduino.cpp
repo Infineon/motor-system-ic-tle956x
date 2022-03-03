@@ -1,15 +1,14 @@
 /**
  * @file        timer-arduino.cpp
  * @brief       Arduino Timer Platform Abstraction Layer
- * @date        May 2020
- * @copyright   Copyright (c) 2019-2020 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */
 
-#include "../../../config/tle9563-conf.hpp"
+#include "../../../config/tle9xxx-conf.hpp"
 
-#if (TLE9563_FRAMEWORK == TLE9563_FRMWK_ARDUINO)
+#if (MOTOR_SYSTEM_IC_FRAMEWORK == TLE9XXX_FRMWK_ARDUINO)
 
 #include <Arduino.h>
 #include "timer-arduino.hpp"
@@ -131,4 +130,4 @@ TimerIno::Error_t TimerIno::delayMicro(uint32_t timeout)
 	return OK;
 }
 
-#endif /** TLE9563_FRAMEWORK **/
+#endif /** MOTOR_SYSTEM_IC_FRAMEWORK **/
