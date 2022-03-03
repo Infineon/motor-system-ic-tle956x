@@ -1,11 +1,10 @@
 /*!
- * \file        DCM-control.cpp
- * \name        DCM-control.cpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to control DC motors using an instance of TLE9562
- * \ref         tle9563corelib
+ * @file        DCM-control.cpp
+ * @name        DCM-control.cpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to control DC motors using an instance of TLE9562
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -193,4 +192,13 @@ void DCMcontrol::riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t *
 {
     controller->emaCalculation(hb, risetime, falltime);
     controller->adaptiveHysteresisDecisionTree (hb, iCharge, iDischarge);
+}
+
+void DCMcontrol::setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg)
+{
+    if((trise_tg < 64) && (tfall_tg < 64))
+    {
+        controller->m_trise_tg = trise_tg;
+        controller->m_tfall_tg = tfall_tg;
+    }
 }

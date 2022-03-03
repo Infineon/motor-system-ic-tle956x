@@ -1,0 +1,526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d0/d80/class_tle9563" kind="class" language="C++" prot="public">
+    <compoundname>Tle9563</compoundname>
+    <basecompoundref refid="d5/d20/class_tle9xxx" prot="public" virt="non-virtual">Tle9xxx</basecompoundref>
+    <includes refid="d7/d92/_t_l_e9563_8hpp" local="no">TLE9563.hpp</includes>
+      <sectiondef kind="user-defined">
+      <header>TLE9563.cpp - Arduino library to control Infineon&apos;s BLDC Motor Control Shield with Tle9563</header>
+      <description><para>This library includes the basic common functions to communicate with a TLE9563 BLDC controller tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga80804c9aeb7c37fb535f0c2814cf8d64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9563::Tle9563</definition>
+        <argsstring>()</argsstring>
+        <name>Tle9563</name>
+        <briefdescription>
+<para>standard constructor with default pin assignment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="67" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="15" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1gafefee3bd1d0b29a967215463fff0af89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9563::~Tle9563</definition>
+        <argsstring>()</argsstring>
+        <name>~Tle9563</name>
+        <briefdescription>
+<para>standard destructor switches shield off </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="70" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga7981ab50d1fe15336933075dd6259426" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Tle9563::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <reimplements refid="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee">begin</reimplements>
+        <briefdescription>
+<para>initalize GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="76" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="68" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1gaa4d6310047ecd0411fadc862408f96c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Tle9563::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <reimplements refid="d9/d8d/group__tle9xxxapi_1gac1897615e722fbc12782a12255f6e66a">end</reimplements>
+        <briefdescription>
+<para>Deinitalize GPIOs and PWM pins. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="82" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="80" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga882af4512b1251d0110c3ee99f68c184" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9563::config</definition>
+        <argsstring>(uint8_t agc=AGC_ACTIVE)</argsstring>
+        <name>config</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>agc</declname>
+          <defval>AGC_ACTIVE</defval>
+        </param>
+        <briefdescription>
+<para>set up all necessary registers and initialize the TLE9563 Set Adaptive gate control default to ACTIVE. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>agc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>switch the adaptive gate control for pre-charge current [0;2] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="89" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="37" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga0500575219d73e95ec20217397fe9b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9563::setHalfbridge</definition>
+        <argsstring>(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3)</argsstring>
+        <name>setHalfbridge</name>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb1</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb2</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb3</declname>
+        </param>
+        <briefdescription>
+<para>Set the Halfbridge object This function is necessary to control the MOSFETS of a BLDC shield. Each halfbridge can be PASSIVE_OFF, LOWSIDE_ON, HIGHSIDE_ON or ACTIVE_OFF. Moreover it can be configured, if active freewheeling for each halfbridge should be turned on or off, as well as if an external PWM should be guided through. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hb1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 3 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="102" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="91" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1gaf3fc37061a65d4ad4d89d4759630f791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9563::setHSS</definition>
+        <argsstring>(uint16_t hss1, uint16_t hss2, uint16_t hss3)</argsstring>
+        <name>setHSS</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss1</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss2</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss3</declname>
+        </param>
+        <briefdescription>
+<para>control the high side switches The function assigns each highsideswitch a separate PWM slice of TLE9563. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hss1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 1 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hss2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 1 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hss3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 1 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="112" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="100" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1gae6c1899c233922612298a586df3d47c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9563::setGenControl</definition>
+        <argsstring>(void)</argsstring>
+        <name>setGenControl</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Set the General Bridge Control data Most Flags are taken from the defines in this header file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="118" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="109" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga25dcba7f861a0c0b34a1ff8014dd371c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Tle9563::getCSOVoltage</definition>
+        <argsstring>(void)</argsstring>
+        <name>getCSOVoltage</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>calculates the Voltage across the CSA The maximum current that can be measured with G_DIFF20 is 49,8A. The resolution is 48,7mA. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>float returns the voltage in V </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="126" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="124" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc2/group__tle9563api_1ga02456516d6fad2cc64f05bde942ea1c3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9563::setCSA</definition>
+        <argsstring>(uint8_t octh, uint8_t csag, bool ocen)</argsstring>
+        <name>setCSA</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>octh</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>csag</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ocen</declname>
+        </param>
+        <briefdescription>
+<para>configure the current sense amplifier </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>octh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>overcurrent detection threshold of CSO </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>csag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Gain of the current sense amplifier </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ocen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>overcurrent shutdown enable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="142" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.cpp" bodystart="117" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/dc2/group__tle9563api_1ga185904f394a6903aa331de26de2d2f1f" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9563::ActiveGround</definition>
+        <argsstring></argsstring>
+        <name>ActiveGround</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="128" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dc2/group__tle9563api_1gaaa6eccc1eac28e7fb01eacd7e78ed4a0" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9563::ActivePWM</definition>
+        <argsstring></argsstring>
+        <name>ActivePWM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="129" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dc2/group__tle9563api_1gae06d3558832106d287598556fd9254dd" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9563::Floating</definition>
+        <argsstring></argsstring>
+        <name>Floating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="130" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/dc2/group__tle9563api_1ga3d8faa9f88d233c0ca8e25eb20686b25" prot="public" static="no" mutable="no">
+        <type><ref refid="de/d30/class_analog_digital_converter" kindref="compound">AnalogDigitalConverter</ref> *</type>
+        <definition>AnalogDigitalConverter* Tle9563::cso</definition>
+        <argsstring></argsstring>
+        <name>cso</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="132" column="23" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d4/dc2/group__tle9563api_1ga1e36468335429464aea92a493fbf1e6b" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Tle9563::csa_gain_table[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>csa_gain_table</name>
+        <initializer>= {10.04, 20.05, 40.05, 60.12}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="143" column="7" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents a TLE9563 </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class inherits all basig functions a <ref refid="d5/d20/class_tle9xxx" kindref="compound">Tle9xxx</ref> SBC offers and adds features, a TLE9563 BLDC controller is capable of. This includes the triple gatedriver, mainly used for the MOSFETS of the three BLDCM phases. Further three high side switches (hss) for various applications, but in this Lib they are intended to drive an RGB LED like on the BLDC control board, using the TLE onboard PWM timer slices. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Tle9563</label>
+        <link refid="d0/d80/class_tle9563"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>AnalogDigitalConverter</label>
+        <link refid="de/d30/class_analog_digital_converter"/>
+      </node>
+      <node id="4">
+        <label>GPIO</label>
+        <link refid="d4/dde/class_g_p_i_o"/>
+      </node>
+      <node id="3">
+        <label>HBconfig_t</label>
+        <link refid="d4/d7b/struct_h_bconfig__t"/>
+      </node>
+      <node id="5">
+        <label>SPIC</label>
+        <link refid="d9/d8a/class_s_p_i_c"/>
+      </node>
+      <node id="6">
+        <label>Timer</label>
+        <link refid="d8/d08/class_timer"/>
+      </node>
+      <node id="1">
+        <label>Tle9563</label>
+        <link refid="d0/d80/class_tle9563"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>cso</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Tle9xxx</label>
+        <link refid="d5/d20/class_tle9xxx"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>ActiveGround</edgelabel>
+          <edgelabel>ActivePWM</edgelabel>
+          <edgelabel>Floating</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>csn</edgelabel>
+          <edgelabel>intn</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>sBus</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>timer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" line="63" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9563.hpp" bodystart="64" bodyend="146"/>
+    <listofallmembers>
+      <member refid="d9/d8d/group__tle9xxxapi_1gacd3b17e0ebb22ab03254623cc8619917" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>_agc_status</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga21fe7a9489db95742c26e203d82fae57" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>_error_enable</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga3d964d0434eeb043c7af8a8750bed236" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>_Halfbridges</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga2d89bc5916dc9699c1f744382e9c89e2" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>_statusInformationField</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga185904f394a6903aa331de26de2d2f1f" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>ActiveGround</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gaaa6eccc1eac28e7fb01eacd7e78ed4a0" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>ActivePWM</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6770234f70fc34ea413597ff5bc5c1ec" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>adaptiveHysteresisDecisionTree</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga7981ab50d1fe15336933075dd6259426" prot="public" virt="virtual"><scope>Tle9563</scope><name>begin</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gac876192b5abd5ec2dd836df8ee41b85c" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>checkStat_TRISE_FALL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga485b2d6b8dfab713af4ae901cfe8f7c2" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatDEV</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gac4153fb68bf24e4e6381bc2beca0a434" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatDSOV</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadf6450de430cf116e9a71cea08ea9255" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatHSS</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga69d9baf47a1c79db784c2deea82801b6" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatSUP</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4f04b59ebd49fd0266fb15f7f0431d12" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatTHERM</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4287b4c3b90e8b4ebdc680e08da64dc6" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>checkStatusInformationField</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga882af4512b1251d0110c3ee99f68c184" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>config</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gad648699c59a176eabd881829ec566611" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>configInterruptMask</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga1e36468335429464aea92a493fbf1e6b" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>csa_gain_table</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6da329d276f3711b742493b53a995fb8" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>csn</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga3d8faa9f88d233c0ca8e25eb20686b25" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>cso</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaff3be5449003553d49468ce00699d852" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>DiagFlag</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadf275dbf7f04495cad453ec1cc9e68ae" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>emaCalculation</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gaa4d6310047ecd0411fadc862408f96c3" prot="public" virt="virtual"><scope>Tle9563</scope><name>end</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gae06d3558832106d287598556fd9254dd" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>Floating</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga25dcba7f861a0c0b34a1ff8014dd371c" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>getCSOVoltage</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga62aefffcf1c28787ba829c2188286df1" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>init_AGC_Algorithm</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga138eaaf17176c9484ab7a8233118158d" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>intn</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gacf912ab23c6836cd47376db381c09f78" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>m_ichg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gadb32e96083efc0c46d76a51705ae4c65" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>m_idchg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaafdc9c8fa4a4a47d7371d30021e141b6" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>m_tfall_ema</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaad816c7399444212118ad824687bc6e1" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>m_tfall_tg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gae0dbf2a90fcff4ab9d293ee19122e193" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>m_trise_ema</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga83b424263e625a8fce3207b77131712f" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>m_trise_tg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a839b86ec4bf505cca6280c61ef3eec68" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PHASE1</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a30de5f2c6bd8ff011d1be8f31ecc5c1b" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PHASE2</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a6ddab5937cf13307498d7271ef0caada" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PHASE3</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gga3d964d0434eeb043c7af8a8750bed236a99ec3c0dc978a295a3b8e08056a772a6" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PHASE4</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5e223f3af15a34eb4283fbbb79e95130" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PrintBinary</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga6f9b5e974a9fb337e29d77e7f74f6685" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>PrintTLEErrorMessage</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga93b8e9cce502e67533e47d443af36187" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>readReg</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga77033dbb01051216f3f7c39c2d6df4ab" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>SBC_CRC_Disable</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga4069eda61d4a4115c33586f4988027e3" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>sBus</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaf698b2d9527ff60ebb579b7f37a9541c" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_CCP_BLK</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga65eef7abf4e3fb3c2c8d268e58b4b09d" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_HB_ICHG</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5276284f38e02781c28c7a62a51e054f" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_HB_ICHG_MAX</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga68e755a742e078186cc75844ae66768a" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_LS_and_HS_VDS</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga81037dacc231e2c29698780f05f51795" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_PCHG_INIT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gab523ee9a41b3d69dd1a1e9704a7d1f69" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_ST_ICHG</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga88baa110519cdd5e918321a4e5b97abd" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_TDOFF_HB_CTRL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga3de1fbeace474f38922d52cbc2a3a345" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_TDON_HB_CTRL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga62d17043ca2b290c1d976adce129fe72" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>set_TPRECHG</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga02456516d6fad2cc64f05bde942ea1c3" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>setCSA</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gae6c1899c233922612298a586df3d47c1" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>setGenControl</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga0500575219d73e95ec20217397fe9b5b" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>setHalfbridge</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gaf3fc37061a65d4ad4d89d4759630f791" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>setHSS</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1gaca4ed79655d0c35e8740b3e8d8c28537" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a5ea3959fcb77a258f554f1d640b9c0ae" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_BD_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ae1ffcbbe4d5a03c68549691bfae5d77b" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_BUS_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a9a2b1b8c876bbdfa5a5181f465fbd3b0" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_DEV_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537abb712721d97af5751178ddd41f91acea" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_HS_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537ab49f3c82e8f8077338da7537f9660d5e" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_SPI_CRC_FAIL</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537afc8d4ff8474a42ec2f31815c149af419" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_SUPPLY_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537af9043c71b9ca3b1bdb271e4ebc369e40" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_TEMP_STAT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaca4ed79655d0c35e8740b3e8d8c28537a4a83164aacb5a847ac287db746ff2f9c" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>SIF_WAKE_UP</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga36098999ef4a9b1a083f9fd15f845722" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>timer</name></member>
+      <member refid="d4/dc2/group__tle9563api_1ga80804c9aeb7c37fb535f0c2814cf8d64" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>Tle9563</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga53cf8385917444b08e99aedfd90c8c58" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>Tle9xxx</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a0af3d4e8c410ab0dfb794d7ec9adedaa" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_HS_LS_OVERVOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a3ff4f1f864d2c7daa45a7ecdfc00e20c" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_LOAD_ERROR</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a57d353485f118428d571597fb55c7e76" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_OC_CSA_OVERCURRENT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a41ae9e9c0bfc03398f2bade3618ce1ce" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_OVER_VOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a04ce392968c0c109ced45c245b989e75" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_OVERCURRENT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a37c1dfed16bbac8980e7f45981418a41" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_POWER_ON_RESET</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a13903c104f461a4030fddba21749702b" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_SHORT_CIRCUIT</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab60d252d3bbff5950ceccaec61eb0b1d" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_SPI_ERROR</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852ab5404f9fed536ae06b27f197c535b971" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_TEMP_SHUTDOWN</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ggaff3be5449003553d49468ce00699d852a29b2235f8b8b42d8ef66e2934c0f18e8" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>TLE_UNDER_VOLTAGE</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga5671bd1e237f00622df09f1dc4f4aa4c" prot="protected" virt="non-virtual"><scope>Tle9563</scope><name>writeReg</name></member>
+      <member refid="d4/dc2/group__tle9563api_1gafefee3bd1d0b29a967215463fff0af89" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>~Tle9563</name></member>
+      <member refid="d9/d8d/group__tle9xxxapi_1ga676b5b07865ba83c7dad25d87b6b9a66" prot="public" virt="non-virtual"><scope>Tle9563</scope><name>~Tle9xxx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

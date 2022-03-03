@@ -1,7 +1,7 @@
 /**
  * @file        tle9xxx-conf-dfl.hpp
  * @brief       TLE9XXX Default Library Configuration
- * @copyright   Copyright (c) 2021 Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
  *
  * SPDX-License-Identifier: MIT
  */

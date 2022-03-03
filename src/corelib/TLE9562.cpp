@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9562.cpp
- * \name        TLE9562.cpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
- * \ref         tle9563corelib
+ * @file        TLE9562.cpp
+ * @name        TLE9562.cpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -54,6 +53,7 @@ void Tle9562::config(uint8_t agc = AGC_ACTIVE)
 	
 	set_TPRECHG(CONF_TPCHGX, CONF_TPDCHGX);								// set precharge and predischarge time
 	set_HB_ICHG_MAX(CONF_HBXIDIAG, CONF_ICHGMAXX);						// Disable pulldown for off-state diagnostic and set maximum pre(dis)charge current to 100mA
+	set_ST_ICHG(CONF_ICHGST, CONF_ICHGST, CONF_ICHGST, CONF_ICHGST);	// set static charge and discharge currents
 	setGenControl(PWM1_TO_HB1, PWM3_TO_HB3);							// Configure General bridge control reg with start configuration. 
 	set_LS_and_HS_VDS(CONF_LS_AND_HS_X_VDSTH, CONF_DEEP_ADAP, CONF_TFVDS);
 

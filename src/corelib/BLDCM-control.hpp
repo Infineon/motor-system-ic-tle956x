@@ -1,11 +1,10 @@
 /*!
- * \file        BLDCM-control.hpp
- * \name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with TLE9563
- * \author      Infineon Technologies AG
- * \copyright   2020-2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic functions to control a BLDC motor using an instance of TLE9563
- * \ref         tle9563corelib
+ * @file        BLDCM-control.hpp
+ * @name        BLDCM-control.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with TLE9563
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic functions to control a BLDC motor using an instance of TLE9563
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -24,18 +23,28 @@
 
 #include <Arduino.h>
 
+/**
+ * Main place to configure BLDC motor parameters. All defines beginning with "CONF_" are intended to be changed by the user. 
+ * All other defines should remain as they are.
+ */
 // ================================== Defines ==================================================================================================
-#define TIMEOUT						500				/* milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
-#define PI_UPDATE_INTERVAL			100				/* milliseconds. How often should the PI regulator be called. Affects precision if too low. */
-#define RPM_DUTYCYCLE_AT_START		80				/* dutycycle when motor starts to turn before RPM algorithm will be switched on */
-#define OPEN_LOOP_DUTYCYCLE			80				/* dutycycle for blind commutation at motor start (open loop) */
-#define DUTYCYCLE_TOP_LIMIT			255				/* maximum dutycycle */
-#define DUTYCYCLE_BOTTOM_LIMIT		10				/* minimum dutycycle, below the motor won't turn anymore */
+
+#define CONF_TIMEOUT						500			/*!< milliseconds. How long no commutation may occur until it can be assumed, the motor got stuck */
+#define CONF_PI_UPDATE_INTERVAL				100			/*!< milliseconds. How often should the PI regulator be called. Affects precision if too low. */
+
+#define CONF_RPM_DUTYCYCLE_AT_START			80			/*!< dutycycle when motor starts to turn before RPM controller will be switched on */
+#define CONF_OPEN_LOOP_DUTYCYCLE			80			/*!< dutycycle for blind commutation at motor start (open loop) */
+#define CONF_OPEN_LOOP_DELAY_START			5000		/*!< microseconds. This is the delay between the first commutations when starting a BLDC motor */
+#define CONF_OPEN_LOOP_DELAY_LIMIT			1200		/*!< microseconds. The smallest delay that is used before open loop commutation turns into closed loop */
+#define CONF_OPEN_LOOP_DELAY_SLOPE			200			/*!< microseconds. The amount CONF_OPEN_LOOP_DELAY_START will be decreased every open loop commutation. You can calculate the amount: O_L_commutations = (5000-1200)/200 */
+
+#define CONF_DUTYCYCLE_TOP_LIMIT			255			/*!< maximum dutycycle */
+#define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/*!< minimum dutycycle, below the motor won't turn anymore */
 
 /****************** Current measurment *******************/
-#define SHUNT_RESISTOR_VALUE		0.005     		// Ohm
+#define SHUNT_RESISTOR_VALUE				0.005     	// Ohm
 
-/****************** Braking modest *******************/
+/****************** Braking modes *******************/
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
 
@@ -65,7 +74,7 @@ class BLDCMcontrol
 			BLDC_FOC  = 3		/*Field oriented control*/
 		};
 		enum _SetSpeedModes{
-			BLDC_PERCENTAGE = 1,	/*Percentage*/
+			BLDC_DUTYCYCLE = 1,	/*Percentage*/
 			BLDC_RPM = 2,		/*Rounds per Minute*/
 			BLDC_POSITION  = 3	/*Position angle (future)*/
 		};
@@ -186,12 +195,21 @@ class BLDCMcontrol
 		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
 		/**
+		 * @brief Set the T_Rise and T_Fall target times where the regulation loop should go to
+		 * 
+		 * @param trise_tg rise time target [0;63]
+		 * @param tfall_tg fall time target [0;63]
+		 */
+		void					setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg);
+		
+		/**
 		 * @brief Get the Current flowing in the BLDC shield
 		 * The maximum current that can be measured with G_DIFF20 is 49,8A.
 		 * The resolution is 48,7mA.
 		 * @return float returns the current in milliAmps
 		 */
 		float					getCurrent(void);
+
 		/**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 

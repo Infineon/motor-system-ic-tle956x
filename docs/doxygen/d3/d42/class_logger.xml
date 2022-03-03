@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d3/d42/class_logger" kind="class" language="C++" prot="public">
+    <compoundname>Logger</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/d42/class_logger_1acb9994f17a7e632f2e06e3759e66d62e" prot="private" static="no" mutable="no">
+        <type><ref refid="d3/dc0/class_logger_p_a_l" kindref="compound">LoggerPAL</ref> *</type>
+        <definition>LoggerPAL* Logger::logpal</definition>
+        <argsstring></argsstring>
+        <name>logpal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="40" column="20" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/d42/class_logger_1a053387d7fcdc9dfa39b5489bafabdb49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Logger::Logger</definition>
+        <argsstring>(LoggerPAL *logpal)</argsstring>
+        <name>Logger</name>
+        <param>
+          <type><ref refid="d3/dc0/class_logger_p_a_l" kindref="compound">LoggerPAL</ref> *</type>
+          <declname>logpal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="24" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1acb668a9e186a25fbaad2e4af6d1ed00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Logger::~Logger</definition>
+        <argsstring>()</argsstring>
+        <name>~Logger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="25" column="16" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1ad9f38f9cc2d75a6207f4972427aa74f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="26" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1a07af1f930b6cba27dd83e63dabd820ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::deinit</definition>
+        <argsstring>()</argsstring>
+        <name>deinit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="27" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1ae39527836cd056e047cd44397d74a0d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::print</definition>
+        <argsstring>(const char *format,...)</argsstring>
+        <name>print</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="28" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="42" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1a9baeb47da14f68aa49b3348f510d018f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::printfModule</definition>
+        <argsstring>(const char *format, const char *module, const char *color,...)</argsstring>
+        <name>printfModule</name>
+        <param>
+          <type>const char *</type>
+          <declname>format</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="30" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="61" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="d3/d42/class_logger_1ad120bae8e1b1fd0d521b50ce0d947365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::printModuleHex</definition>
+        <argsstring>(const uint8_t *array, uint32_t length, const char *module, const char *color)</argsstring>
+        <name>printModuleHex</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>array</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="34" column="17" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.cpp" bodystart="93" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" line="20" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/util/BLDCM-logger.hpp" bodystart="21" bodyend="41"/>
+    <listofallmembers>
+      <member refid="d3/d42/class_logger_1a07af1f930b6cba27dd83e63dabd820ae" prot="public" virt="non-virtual"><scope>Logger</scope><name>deinit</name></member>
+      <member refid="d3/d42/class_logger_1ad9f38f9cc2d75a6207f4972427aa74f1" prot="public" virt="non-virtual"><scope>Logger</scope><name>init</name></member>
+      <member refid="d3/d42/class_logger_1a053387d7fcdc9dfa39b5489bafabdb49" prot="public" virt="non-virtual"><scope>Logger</scope><name>Logger</name></member>
+      <member refid="d3/d42/class_logger_1acb9994f17a7e632f2e06e3759e66d62e" prot="private" virt="non-virtual"><scope>Logger</scope><name>logpal</name></member>
+      <member refid="d3/d42/class_logger_1ae39527836cd056e047cd44397d74a0d8" prot="public" virt="non-virtual"><scope>Logger</scope><name>print</name></member>
+      <member refid="d3/d42/class_logger_1a9baeb47da14f68aa49b3348f510d018f" prot="public" virt="non-virtual"><scope>Logger</scope><name>printfModule</name></member>
+      <member refid="d3/d42/class_logger_1ad120bae8e1b1fd0d521b50ce0d947365" prot="public" virt="non-virtual"><scope>Logger</scope><name>printModuleHex</name></member>
+      <member refid="d3/d42/class_logger_1acb668a9e186a25fbaad2e4af6d1ed00a" prot="public" virt="non-virtual"><scope>Logger</scope><name>~Logger</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

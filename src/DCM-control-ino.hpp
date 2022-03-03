@@ -1,11 +1,10 @@
 /*!
- * \file        DCM-control-ino.hpp
- * \name        DCM-control-ino.hpp - basic motor control functions for Arduino
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic common functions to control DC motors using an instance of TLE9562
- * \ref         tle9563corelib
+ * @file        DCM-control-ino.hpp
+ * @name        DCM-control-ino.hpp - basic motor control functions for Arduino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to control DC motors using an instance of TLE9562
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *

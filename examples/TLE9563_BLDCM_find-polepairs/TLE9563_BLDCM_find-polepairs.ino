@@ -1,9 +1,8 @@
 /*!
- * \name        TLE9563_BLDCM_find-polepairs.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2020-2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
+ * @name        TLE9563_BLDCM_find-polepairs.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This example lets you BLDC motor do single steps in order to count, how many steps are necessary for one full revolution.
  * Thus it calculates, how many magnetic polepairs your motor has. A serial monitor is necessary.
  *
  * SPDX-License-Identifier: MIT
@@ -21,7 +20,8 @@ BLDCMcontrolIno MyMotor = BLDCMcontrolIno();
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9563 BLDC shield Testsketch"));
   Serial.println(F(" Mode: find polepairs"));
 
@@ -83,11 +83,11 @@ void loop()
 	// Evaluation
     if((Counter % 2) == 1)
     {
-        Serial.println(F("Please try again, it must be a even number, when you stop the motor"));
+        Serial.println(F("Please try again, 'Step' must be a even number, when you stop the motor"));
     }
     else if((Counter % 6) > 0)
     {
-        Serial.println(F("Please try again, it must be a multiple of 6"));
+        Serial.println(F("Please try again, 'Step' must be a multiple of 6"));
     }
     else
     {

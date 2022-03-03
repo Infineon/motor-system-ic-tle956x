@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter" kind="struct" language="C++" prot="public">
+    <compoundname>BLDCMcontrol::BLDCParameter</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1a9690bf237dfb5e5dcdd8aa64a78b0fb4" prot="public" static="no" mutable="no">
+        <type><ref refid="de/df7/class_b_l_d_c_mcontrol_1adbebbd3ed425f306d115fb361778cbf4" kindref="member">_MotorModes</ref></type>
+        <definition>_MotorModes BLDCMcontrol::BLDCParameter::feedbackmode</definition>
+        <argsstring></argsstring>
+        <name>feedbackmode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="88" column="13" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1a7fe3c7fec9f301ed66ab076fd5665df3" prot="public" static="no" mutable="no">
+        <type>_SetSpeedModes</type>
+        <definition>_SetSpeedModes BLDCMcontrol::BLDCParameter::speedmode</definition>
+        <argsstring></argsstring>
+        <name>speedmode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="89" column="16" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1ac6007cfb81299aec26101e5e4cd58ccb" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t BLDCMcontrol::BLDCParameter::MotorPolepairs</definition>
+        <argsstring></argsstring>
+        <name>MotorPolepairs</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="90" column="9" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1ab22b1826ed3dc474de01feabcbb16072" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float BLDCMcontrol::BLDCParameter::PI_Reg_P</definition>
+        <argsstring></argsstring>
+        <name>PI_Reg_P</name>
+        <initializer>= 0.01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="91" column="7" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1aba772e081eada8556dfa629500bbbbf5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float BLDCMcontrol::BLDCParameter::PI_Reg_I</definition>
+        <argsstring></argsstring>
+        <name>PI_Reg_I</name>
+        <initializer>= 0.01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="92" column="7" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" line="87" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/BLDCM-control.hpp" bodystart="87" bodyend="93"/>
+    <listofallmembers>
+      <member refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1a9690bf237dfb5e5dcdd8aa64a78b0fb4" prot="public" virt="non-virtual"><scope>BLDCMcontrol::BLDCParameter</scope><name>feedbackmode</name></member>
+      <member refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1ac6007cfb81299aec26101e5e4cd58ccb" prot="public" virt="non-virtual"><scope>BLDCMcontrol::BLDCParameter</scope><name>MotorPolepairs</name></member>
+      <member refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1aba772e081eada8556dfa629500bbbbf5" prot="public" virt="non-virtual"><scope>BLDCMcontrol::BLDCParameter</scope><name>PI_Reg_I</name></member>
+      <member refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1ab22b1826ed3dc474de01feabcbb16072" prot="public" virt="non-virtual"><scope>BLDCMcontrol::BLDCParameter</scope><name>PI_Reg_P</name></member>
+      <member refid="d1/daf/struct_b_l_d_c_mcontrol_1_1_b_l_d_c_parameter_1a7fe3c7fec9f301ed66ab076fd5665df3" prot="public" virt="non-virtual"><scope>BLDCMcontrol::BLDCParameter</scope><name>speedmode</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

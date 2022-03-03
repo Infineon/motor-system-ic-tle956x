@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_cd07787cd715514b4f8f94ee4f39b60a" kind="dir">
+    <compoundname>arduino</compoundname>
+    <innerdir refid="dir_b8666f76be275fff94c10ba3c22951a9">pal</innerdir>
+    <innerdir refid="dir_1637b38f44cddc7958b383951b5bb6ac">wrapper</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/"/>
+  </compounddef>
+</doxygen>

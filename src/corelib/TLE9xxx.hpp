@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9xxx.hpp
- * \name        TLE9xxx.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the generic functions for TLE9xxx family
- * \ref         Tle9xxxcorelib
+ * @file        TLE9xxx.hpp
+ * @name        TLE9xxx.hpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the generic functions for TLE9xxx family
+ * @ref         Tle9xxxcorelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -32,50 +31,54 @@
  * All other defines should remain as they are.
  */
 
-#define DETAILED_ERROR_REPORT 		1						// 1 = print register values as well if a TLE error occurs, 0 = only print error message
+#define DETAILED_ERROR_REPORT 		1						//!< 1 = print register values as well if a TLE error occurs, 0 = only print error message
+#define TLE956x_CS_RISETIME			2						//!< Microseconds to wait after the release of the CS pin. Necessary for XMC boards
 
 /****************** Adaptive Gate control (dis-)charge current *******************/
-#define CONF_TRISE_TG				11						// [0;63] Target tRISE (CONF_TRISE_TG * 53.3 ns)
-#define CONF_INIT_ICHG              6						// [0;63] Starting charge current that will be first used by the algorithm
-#define CONF_TFALL_TG				11						// [0;63] Target tFALL (CONF_TFALL_TG * 53.3 ns)
-#define CONF_INIT_IDCHG				7						// [0;63] Starting discharge current that will be first used by the algorithm
-#define CONF_ICHG_FW				43						// [0;63] Freewheeling charge and discharge current
+#define CONF_TRISE_TG				11						//!< [0;63] initial Target tRISE (CONF_TRISE_TG * 53.3 ns). The variable can be changed afterwards.
+#define CONF_INIT_ICHG              7						//!< [0;63] Starting charge current that will be first used by the algorithm
+#define CONF_TFALL_TG				11						//!< [0;63] initial Target tFALL (CONF_TFALL_TG * 53.3 ns). The variable can be changed afterwards.
+#define CONF_INIT_IDCHG				7						//!< [0;63] Starting discharge current that will be first used by the algorithm
+#define CONF_ICHG_FW				43						//!< [0;63] Freewheeling charge and discharge current
 
 		/**
 		 * A value > 0.5 gives more importance to the last tRISE sampled
 		 * A value < 0.5 gives more importance to the history of sampled tRISE
 		 */
-#define ALPHA3                      0.5                     // ALPHA3, constant for the EMA calculation, 0 <= ALPHA3 <= 1
-#define SCALING_FACTOR_FPA          (0xFF)                  // Scaling factor for fixed-point arithmetic (FPA)
-#define ALPHA3_FPA_SCALED           (ALPHA3 * SCALING_FACTOR_FPA)               // ALPHA3, already scaled for FPA
-#define ONE_MINUS_ALPHA3_FPA_SCALED (SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)    // (1 - ALPHA3), already scaled for FPA
-#define MAX_ICHG                   	63                      // Maximum charge current that will be set by the algorithm
-#define MIN_ICHG                   	0                       // Minimum charge current that will be set by the algorithm
-#define EOS                         0xFFFF                  // End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
+#define ALPHA3                      0.5                     //!< ALPHA3, constant for the EMA calculation, 0 <= ALPHA3 <= 1
+#define SCALING_FACTOR_FPA          (0xFF)                  //!< Scaling factor for fixed-point arithmetic (FPA)
+#define ALPHA3_FPA_SCALED           (ALPHA3 * SCALING_FACTOR_FPA)               //!< ALPHA3, already scaled for FPA
+#define ONE_MINUS_ALPHA3_FPA_SCALED (SCALING_FACTOR_FPA - ALPHA3_FPA_SCALED)    //!< (1 - ALPHA3), already scaled for FPA
+#define MAX_ICHG                   	63                      //!< Maximum charge current that will be set by the algorithm
+#define MIN_ICHG                   	0                       //!< Minimum charge current that will be set by the algorithm
+#define EOS                         0xFFFF                  //!< End of scale of a uint16_t variable (m_trise_ema variable), for initialization purposes
 
 /****************** Adaptive Gate control PRE-(dis-)charge current *******************/
-#define CONF_PDCHG_INIT				44		// [0;63] Initial predischarge current, default 0xF
-#define CONF_PCHG_INIT				23		// [0;63] Initial precharge current, default 0xD
-#define CONF_TDOFF					18		// [0;63] Turn-on delay time, default 0xC
-#define CONF_TDON					20		// [0;63] Turn-off delay time, default 0xC
-#define CONF_TPCHGX					1		// [0;7]  Precharge time, default 0
-#define CONF_TPDCHGX				3		// [0;7]  Predischarge time, default 0
+#define CONF_PDCHG_INIT				44		//!< [0;63] Initial predischarge current, default 0xF
+#define CONF_PCHG_INIT				23		//!< [0;63] Initial precharge current, default 0xD
+#define CONF_TDOFF					18		//!< [0;63] Turn-on delay time, default 0xC
+#define CONF_TDON					20		//!< [0;63] Turn-off delay time, default 0xC
+#define CONF_TPCHGX					1		//!< [0;7]  Precharge time, default 0
+#define CONF_TPDCHGX				3		//!< [0;7]  Predischarge time, default 0
+
+/****************** Static (dis-)charge current *******************/
+#define CONF_ICHGST					8		//!< [0;15] Static charge/discharge current, default 4
 
 /****************** General Bridge Control *******************/
-#define CONF_BDFREQ					1		// [0;1] Bridge driver synchronization frequency: 37Mhz
-											// PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
-#define CONF_CPUVTH					0		// [0;1] Charge pump under voltage:	TH1
-#define CONF_FET_LVL				1		// [0;1] External MOSFET logic level:	normal level MOSFET
-#define CONF_CPSTGA					1		// [0;1] Automatic switchover between dual and single charge pump stage: Normal
-#define CONF_BDOV_REC				1		// [0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE
-#define CONF_IPCHGADT				0		// [0;1] 1Step
-											// Adaptive gate control: configured in a global variable
-#define CONF_CPEN					1		// [0;1] charge pump: enabled
-#define CONF_POCHGDIS				0		// [0;1] Postcharge phase during PWM: disabled
-#define CONF_AGCFILT				0		// [0;1] Filter for adaptive gate control:	NO_FILT
-#define CONF_EN_GEN_CHECK			0		// [0;1] detection of active / FW MOSFET: disabled
-#define CONF_IHOLD					0		// [0;1] Gate driver hold current:	TH1
-#define CONF_FMODE					0		// [0;1] Frequency modulation of charge pump: no modulation
+#define CONF_BDFREQ					1		//!< [0;1] Bridge driver synchronization frequency: 37Mhz
+											//!< PWM setting defined in setGenControl(bool MapPWM1, bool MapPWM2)
+#define CONF_CPUVTH					0		//!< [0;1] Charge pump under voltage:	TH1
+#define CONF_FET_LVL				1		//!< [0;1] External MOSFET logic level:	normal level MOSFET
+#define CONF_CPSTGA					1		//!< [0;1] Automatic switchover between dual and single charge pump stage: Normal
+#define CONF_BDOV_REC				1		//!< [0;1] Bridge driver recover from VSINT Overvoltage: ACTIVE
+#define CONF_IPCHGADT				0		//!< [0;1] 1Step
+											//!< Adaptive gate control: configured in a global variable
+#define CONF_CPEN					1		//!< [0;1] charge pump: enabled
+#define CONF_POCHGDIS				0		//!< [0;1] Postcharge phase during PWM: disabled
+#define CONF_AGCFILT				0		//!< [0;1] Filter for adaptive gate control:	NO_FILT
+#define CONF_EN_GEN_CHECK			0		//!< [0;1] detection of active / FW MOSFET: disabled
+#define CONF_IHOLD					0		//!< [0;1] Gate driver hold current:	TH1
+#define CONF_FMODE					0		//!< [0;1] Frequency modulation of charge pump: no modulation
 
 #define PWM3_TO_HB3					0
 #define PWM3_TO_HB4					1
@@ -83,19 +86,19 @@
 #define PWM1_TO_HB2					1
 
 /****************** HS and LS Drain-Source monitoring threshold *******************/
-#define CONF_LS_AND_HS_X_VDSTH		7		// [0;7] Set overvoltage threshold
-#define CONF_DEEP_ADAP				1		// [0;1] deep adaption
-#define CONF_TFVDS					0		// [0;3] set filter time 0 = 500ns (default)
+#define CONF_LS_AND_HS_X_VDSTH		7		//!< [0;7] Set overvoltage threshold
+#define CONF_DEEP_ADAP				1		//!< [0;1] deep adaption
+#define CONF_TFVDS					0		//!< [0;3] set filter time 0 = 500ns (default)
 
 /****************** Maximum Pre-(Dis)charge in PWM operation *******************/
-#define CONF_HBXIDIAG				0		// [0;1] disable pulldown for off-state diagnostic
-#define CONF_ICHGMAXX				3		// [0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA
+#define CONF_HBXIDIAG				0		//!< [0;1] disable pulldown for off-state diagnostic
+#define CONF_ICHGMAXX				3		//!< [0;3] set maximum pre (dis)charge current. 0 = 19mA (default), 1 = 32mA, 2 = 73mA, 3 = 100mA
 
 /****************** Cross current protection *******************/
-#define CONF_TBLANK_ACT				11		// [0;15] Set the blank time for active MOSFETS. default is 7
-#define CONF_TCCP_ACT				10		// [0;15] Set the current protection time for active MOSFETS. default is 7
-#define CONF_TBLANK_FW				1		// [0;15] Set the blank time for free wheeling MOSFETS. default is 7
-#define CONF_TCCP_FW				1		// [0;15] Set the current protection time for free wheeling MOSFETS. default is 7
+#define CONF_TBLANK_ACT				11		//!< [0;15] Set the blank time for active MOSFETS. default is 7
+#define CONF_TCCP_ACT				10		//!< [0;15] Set the current protection time for active MOSFETS. default is 7
+#define CONF_TBLANK_FW				1		//!< [0;15] Set the blank time for free wheeling MOSFETS. default is 7
+#define CONF_TCCP_FW				1		//!< [0;15] Set the current protection time for free wheeling MOSFETS. default is 7
 
 /****************** SPI address commands *******************/
 #define TLE9xxx_CMD_WRITE          	0x80
@@ -135,8 +138,8 @@ enum _Config_AGC{
 /**
  * @brief represents a basic TLE9xxx
  *
- * This class provides all generic, a TLE9xxx SBC is capable of.
- * This mainly includes the the SPI read/wrtite functions, Cyclic redundancy check (CRC) setup and interrupt-error settings.
+ * This class provides all generic functions, a TLE9xxx SBC is capable of.
+ * This mainly includes the the SPI read/write functions for every single register, Cyclic redundancy check (CRC) setup and interrupt-error settings.
  * 
  * This class is not intended to be used directly. It should bequeath its generic functions to a derived class that adds the virtual defined functions related to a specific SBC.
  */
@@ -180,17 +183,17 @@ class Tle9xxx
 		HBconfig_t 				Floating; 
 
 		//! \brief standard constructor with default pin assignment
-		Tle9xxx();
+		Tle9xxx(void);
 
 		//! \brief standard destructor switches shield off
-		~Tle9xxx();
+		~Tle9xxx(void);
 
 		/**
 		 * @brief virtual function definitions, will be declared in the inheritance sub-classes like Tle9563, Tle9562, ...
 		 * 
 		 */
-		virtual void 			begin();
-		virtual void 			end();
+		virtual void 			begin() = 0;
+		virtual void 			end() = 0;
 		//virtual void 			config();
 		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3);
 		//virtual void 			setHalfbridge(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBconfig_t hb4);
@@ -277,6 +280,9 @@ class Tle9xxx
 		 * 
 		 */
 		void 					adaptiveHysteresisDecisionTree(uint8_t hb, uint8_t * ichg, uint8_t * idchg);
+
+		uint8_t					m_trise_tg = CONF_TRISE_TG;
+		uint8_t					m_tfall_tg = CONF_TFALL_TG;
 
 		GPIO     				*intn;        	//<! \brief interrupt / test input
 		SPIC     				*sBus;      	//<! \brief SPI cover class as representation of the SPI bus
@@ -398,12 +404,13 @@ class Tle9xxx
 		 */
 		uint16_t 				readReg(uint8_t addr);
 		
-		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     	// Array of the calculated tRISEx EMAs for the different configured ICHGx
-		uint16_t        		m_tfall_ema[MAX_ICHG - MIN_ICHG + 1];     	// Array of the calculated tFALLx EMAs for the different configured IDCHGx
-		uint8_t         		m_ichg = CONF_INIT_ICHG;                  	// Current ICHGx with which the MOSFET driver is configured
-		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	// Current IDCHGx with which the MOSFET driver is configured
-		uint8_t					_statusInformationField = 0;				// Stores the "Status information field" which is the first byte of every SDO package.
-		uint8_t					_agc_status = 0;							// Stores the value to be written
+		uint16_t        		m_trise_ema[MAX_ICHG - MIN_ICHG + 1];     	//!< Array of the calculated tRISEx EMAs for the different configured ICHGx
+		uint16_t        		m_tfall_ema[MAX_ICHG - MIN_ICHG + 1];     	//!< Array of the calculated tFALLx EMAs for the different configured IDCHGx
+		uint8_t         		m_ichg = CONF_INIT_ICHG;                  	//!< Current ICHGx with which the MOSFET driver is configured
+		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	//!< Current IDCHGx with which the MOSFET driver is configured
+		uint8_t					_statusInformationField = 0;				//!< Stores the "Status information field" which is the first byte of every SDO package.
+		uint8_t					_agc_status = 0;							//!< Stores the value to be written
+		uint8_t					_error_enable = 0;							//!< If an error message was printed, this value will get 1, indicating an error occured
 
 };
 /** @} */

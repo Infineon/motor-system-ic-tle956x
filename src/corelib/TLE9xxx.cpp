@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9xxx.cpp
- * \name        TLE9xxx.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the generic functions for TLE9xxx family
- * \ref         tle9563corelib
+ * @file        TLE9xxx.cpp
+ * @name        TLE9xxx.cpp - Arduino library to control Infineon's BLDC Motor Control Shield with Tle9xxx
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the generic functions for TLE9xxx family
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -32,7 +31,7 @@ Tle9xxx::Tle9xxx(void)
 	Floating.PWMenable = 0;
 }
 
-Tle9xxx::~Tle9xxx()
+Tle9xxx::~Tle9xxx(void)
 {
 	intn = NULL;
 
@@ -50,6 +49,7 @@ void Tle9xxx::SBC_CRC_Disable()
 	sBus->transfer(0x55, byte0);	// 0b 0101 0101
 	sBus->transfer(0xc3, byte0);	// 0b 1100 0011
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 }
 
 uint8_t Tle9xxx::writeReg(uint8_t addr, uint16_t data)
@@ -61,6 +61,7 @@ uint8_t Tle9xxx::writeReg(uint8_t addr, uint16_t data)
 	sBus->transfer(((data>>8)&0xFF), byte2);			// upper 8 bit of data
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 	return byte0;
 }
 
@@ -73,6 +74,7 @@ uint16_t Tle9xxx::readReg(uint8_t addr)
 	sBus->transfer(0xFF, byte2);						// upper 8 bit of data
 	sBus->transfer(0xA5, byte3);						// for CRC disabled, fill with static pattern
 	csn->enable();
+	timer->delayMicro(TLE956x_CS_RISETIME);
 	return ((byte2<<8)|byte1);
 }
 
@@ -98,7 +100,7 @@ uint16_t Tle9xxx::checkStatusInformationField(void)
 	if(_statusInformationField & SIF_BD_STAT) PrintTLEErrorMessage(checkStatDSOV(RegAddress, RegContent), RegAddress, RegContent);
 	if(_statusInformationField & SIF_SPI_CRC_FAIL) ;
 
-    return _statusInformationField;
+    return _error_enable;
 }
 
 
@@ -156,7 +158,7 @@ uint16_t Tle9xxx::checkStatDEV(uint16_t &RegAddress, uint16_t &RegContent)
 	writeReg(REG_ADDR_DEV_STAT, 0);
 	RegAddress = REG_ADDR_DEV_STAT;
 	RegContent = input;
-	if((input & 0x0103) > 0) ErrorCode = TLE_SPI_ERROR; 			// CRC / SPI Error
+	if((input & 0x0003) > 0) ErrorCode = TLE_SPI_ERROR; 			// SPI Error
 
 	return ErrorCode;
 }
@@ -179,7 +181,7 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 {
     if(msg & TLE_SPI_ERROR)
     {
-        Serial.println(F("===> Error: CRC / SPI-Failure <==="));
+        Serial.println(F("===> Error: SPI-Failure <==="));
     }
     if(msg & TLE_LOAD_ERROR)
     {
@@ -218,13 +220,14 @@ bool Tle9xxx::PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t 
 		Serial.println(F("===> Error: CSA Overcurrent <==="));
 	}
 
-    if(DETAILED_ERROR_REPORT)
+    if(msg > 0)
     {
         Serial.print(F("\tReg: 0x"));
         Serial.print(RegAddress, HEX);
         Serial.print(F("  Content: 0x"));
 		Serial.print(RegContent, HEX);
         Serial.println("");
+		_error_enable = 1;
     }
 }
 
@@ -366,33 +369,33 @@ void Tle9xxx::adaptiveHysteresisDecisionTree (uint8_t hb, uint8_t * ichg, uint8_
 {
 	/******* Risetime ********/
     // The charge current is decreased if all conditions are true:
-    // 1. The EMA calculated for the current ICHG3 is lower than CONF_TRISE_TG
+    // 1. The EMA calculated for the current ICHG3 is lower than m_trise_tg
     // 2. The EMA that was calculated when the ICHG3 was set to the
     // immediately lower value is also lower than tRISEx_TG
     // 3. The minimum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] <= (m_trise_tg * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG - 1] < (m_trise_tg * SCALING_FACTOR_FPA))
         && m_ichg > MIN_ICHG)
         m_ichg --;
 
     // The charge current is increased if these three conditions are met:
-    // 1. The EMA calculated for the current ICHGx is higher than CONF_TRISE_TG
+    // 1. The EMA calculated for the current ICHGx is higher than m_trise_tg
     // 2. The EMA that was calculated when the ICHGx was set to the
-    // immediately higher value of the current one is also higher than CONF_TRISE_TG
+    // immediately higher value of the current one is also higher than m_trise_tg
     // 3. The maximum ICHGx has still not been reached.
-    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (CONF_TRISE_TG * SCALING_FACTOR_FPA))
-        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (CONF_TRISE_TG * SCALING_FACTOR_FPA))
+    if ((m_trise_ema[m_ichg - MIN_ICHG] >= (m_trise_tg * SCALING_FACTOR_FPA))
+        && (m_trise_ema[m_ichg - MIN_ICHG + 1] > (m_trise_tg * SCALING_FACTOR_FPA))
         && m_ichg < MAX_ICHG)
         m_ichg ++;
 
 	/******* Falltime ********/
-	if ((m_tfall_ema[m_idchg - MIN_ICHG] <= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
-        && (m_tfall_ema[m_idchg - MIN_ICHG - 1] < (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] <= (m_tfall_tg * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG - 1] < (m_tfall_tg * SCALING_FACTOR_FPA))
         && m_idchg > MIN_ICHG)
         m_idchg --;
 
-	if ((m_tfall_ema[m_idchg - MIN_ICHG] >= (CONF_TFALL_TG * SCALING_FACTOR_FPA))
-        && (m_tfall_ema[m_idchg - MIN_ICHG + 1] > (CONF_TFALL_TG * SCALING_FACTOR_FPA))
+	if ((m_tfall_ema[m_idchg - MIN_ICHG] >= (m_tfall_tg * SCALING_FACTOR_FPA))
+        && (m_tfall_ema[m_idchg - MIN_ICHG + 1] > (m_tfall_tg * SCALING_FACTOR_FPA))
         && m_idchg < MAX_ICHG)
         m_idchg ++;
 	

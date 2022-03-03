@@ -1,9 +1,9 @@
 /*!
- * \name        TLE9562_DCM_rise-and-fall-time-regulation.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This example lets you configure the rise- and falltime of a TLE9562. Therefore a closed-loop algorithm is implemented,
+ * @name        TLE9562_DCM_rise-and-fall-time-regulation.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+
+ * @brief       This example lets you configure the rise- and falltime of a TLE9562. Therefore a closed-loop algorithm is implemented,
  * that prints the actual rise- /falltime and the gate charge- /dischargecurrent. Start the regulation by pressing 'u' in the serial monitor.
  * As soon as the values converge, stop the regulation by pressing 'j'. Note down the final charge- / dischargecurrent and edit the define-page in the library.
  *
@@ -16,12 +16,16 @@
 
 #define HALFBRIDGE              PHASE1      // [PHASE1;Phase4] Select the phase on which you want to regulate Rise/Fall time
 #define SPEED_INCREASE_STEP     100         // [1;511] speed step increase/decrease when pressing a key
-#define CONTROL_LOOP_DELAY      100         // [ms] time between regulation executions
+#define CONTROL_LOOP_DELAY      400         // [ms] time between regulation executions
 
 uint16_t speed = 400;                       // start speed
-uint8_t direction = 0;                      // direction can not be changed in this application, the value has no effect
+uint8_t direction = 0;                      // direction can not be changed in this example as it's determined by HALFBRIDGE
+
+uint8_t trise_tg = 11;                      // [0;63] Initial Risetime target. Can be changed via keyboard input.
+uint8_t tfall_tg = 11;                      // [0;63] Initial Falltime target. Can be changed via keyboard input.
+
 uint8_t tRise, tFall, iCharge, iDischarge = 0;
-uint32_t blinktimer = millis();
+uint32_t blinktimer = millis();             // Initialize rftreg_timer for the LED indicating Rise-/Falltime example code is running
 bool ledstatus = 0;
 bool riseFallTimeReg_enable = 0;
 bool turnOnOffDelayReg_enable = 0;
@@ -32,6 +36,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9562 Gate Driver Configuration tool"));
 
   // Enable GPIO interrupt for pin 2
@@ -46,6 +51,7 @@ void setup()
    */
   MyMotor.setLED(0,100);                                                 // Switch on LED 2
   MyMotor.setupRiseFallTimeRegulation(HALFBRIDGE);
+  MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
 
   /**
    * setDCspeed(speed, direction, motoroutput)
@@ -64,6 +70,7 @@ void loop()
     if (Serial.available() > 0)
   {
     uint8_t in = Serial.read();
+
     if(in == '+')
     {
        speed += SPEED_INCREASE_STEP;
@@ -91,6 +98,35 @@ void loop()
       Serial.println(F("Rise- Fall-time regulation disabled"));
     }
 
+    if(in == 'r')    // Increase target risetime
+    {
+      trise_tg += 1;
+      Serial.print(F("tRise target: "));
+      Serial.println(trise_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 'f')    // Decrease target risetime
+    {
+      trise_tg -= 1;
+      Serial.print(F("tRise target: "));
+      Serial.println(trise_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 't')    // Increase target falltime
+    {
+      tfall_tg += 1;
+      Serial.print(F("tFall target: "));
+      Serial.println(tfall_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+    if(in == 'g')    // Decrease target falltime
+    {
+      tfall_tg -= 1;
+      Serial.print(F("tFall target: "));
+      Serial.println(tfall_tg);
+      MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+    }
+
     //==================== Adaptive Gate Pre-charge control ======================
     if(in == 'i')
     {
@@ -104,6 +140,9 @@ void loop()
       MyMotor.configDCshield(AGC_INACTIVE1);
       Serial.println(F("Turn-on / -off delay regulation disabled"));
     }
+
+    //MyMotor.setTrisefallTarget(trise_tg, tfall_tg);
+
   }
 
   if(MyMotor.checkTLEshield() > 0 )            // Check, if interrupt flag was set and read status register of TLE

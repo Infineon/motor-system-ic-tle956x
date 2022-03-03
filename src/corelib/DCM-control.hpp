@@ -1,11 +1,10 @@
 /*!
- * \file        DCM-control.hpp
- * \name        DCM-control.hpp - Arduino library to control Infineon's DC Motor Control Shield with TLE9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This library includes the basic functions to control DC motors using an instance of TLE9562
- * \ref         tle9563corelib
+ * @file        DCM-control.hpp
+ * @name        DCM-control.hpp - Arduino library to control Infineon's DC Motor Control Shield with TLE9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic functions to control DC motors using an instance of TLE9562
+ * @ref         tle9563corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -136,6 +135,14 @@ class DCMcontrol
 		 */
 		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 
+		/**
+		 * @brief Set the T_Rise and T_Fall target times where the regulation loop should go to
+		 * 
+		 * @param trise_tg rise time target [0;63]
+		 * @param tfall_tg fall time target [0;63]
+		 */
+		void					setTrisefallTarget(uint8_t trise_tg, uint8_t tfall_tg);
+		
         /**
 		 * @brief generate an instance of a TLE9563 controller used on this board
 		 * 

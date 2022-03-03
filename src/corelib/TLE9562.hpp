@@ -1,11 +1,10 @@
 /*!
- * \file        TLE9562.hpp
- * \name        TLE9562.hpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
- * \author      Infineon Technologies AG
- * \copyright   2021 Infineon Technologies AG
- * \version     2.0.0
- * \brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
- * \ref         tle9562corelib
+ * @file        TLE9562.hpp
+ * @name        TLE9562.hpp - Arduino library to control Infineon's DC Motor Control Shield with Tle9562
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+ * @brief       This library includes the basic common functions to communicate with a TLE9562 motor controller
+ * @ref         tle9562corelib
  *
  * SPDX-License-Identifier: MIT
  *
@@ -33,7 +32,7 @@
  *
  * This class inherits all basic functions a Tle9xxx SBC offers and adds features, a TLE9562 BLDC controller is capable of.
  * This includes the four gatedrivers, mainly used for the MOSFETS of the two DC-motor outputs.
- * Further four high side switches (hss) for various applications. In this Lib two of them are used to drive the two onboard red LEDs,
+ * Further four high side switches (hss) for various applications can be controlled. In this Lib two of them are used to drive the two onboard red LEDs,
  * using the 10-bit TLE PWM timer slices.
  */
 class Tle9562: public Tle9xxx

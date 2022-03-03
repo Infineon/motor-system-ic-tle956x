@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dir_7e83d1792d529f4aa7126ac7e0b3b699" kind="dir">
+    <compoundname>config</compoundname>
+    <innerfile refid="d7/dc6/tle9xxx-conf-dfl_8hpp">tle9xxx-conf-dfl.hpp</innerfile>
+    <innerfile refid="d0/d80/tle9xxx-conf-opts_8hpp">tle9xxx-conf-opts.hpp</innerfile>
+    <innerfile refid="dc/dc2/tle9xxx-conf_8hpp">tle9xxx-conf.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/config/"/>
+  </compounddef>
+</doxygen>

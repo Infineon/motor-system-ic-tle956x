@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="dc/da9/group__ino_api" kind="group">
+    <compoundname>inoApi</compoundname>
+    <title>InoApi</title>
+    <innerclass refid="d3/dbb/class_b_l_d_c_mcontrol_ino" prot="public">BLDCMcontrolIno</innerclass>
+    <innerclass refid="d0/da5/class_d_c_mcontrol_ino" prot="public">DCMcontrolIno</innerclass>
+      <sectiondef kind="user-defined">
+      <header>BLDCM-control-ino.cpp - basic motor control functions for Arduino</header>
+      <description><para>This library includes the basic common functions to control a BLDC motor using an instance of TLE9563 tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2020-2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="dc/da9/group__ino_api_1ga55b657f1f926530083f2929fb2d2bc1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BLDCMcontrolIno::BLDCMcontrolIno</definition>
+        <argsstring>(void)</argsstring>
+        <name>BLDCMcontrolIno</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>create and assign Arduino GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/BLDCM-control-ino.cpp" bodystart="20" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <header>DCM-control-ino.cpp - basic motor control functions for Arduino</header>
+      <description><para>This library includes the basic common functions to control DC motors using an instance of TLE9562 tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>1.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="dc/da9/group__ino_api_1ga351f17110bc9bed16c5092311123b07d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DCMcontrolIno::DCMcontrolIno</definition>
+        <argsstring>(void)</argsstring>
+        <name>DCMcontrolIno</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>create and assign Arduino GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/DCM-control-ino.cpp" bodystart="20" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

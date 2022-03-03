@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="d8/d55/spic-arduino_8cpp" kind="file" language="C++">
+    <compoundname>spic-arduino.cpp</compoundname>
+    <includes refid="df/d2f/spic-arduino_8hpp" local="yes">spic-arduino.hpp</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>Arduino.h</label>
+      </node>
+      <node id="5">
+        <label>tle9xxx-conf-dfl.hpp</label>
+        <link refid="d7/dc6/tle9xxx-conf-dfl_8hpp"/>
+      </node>
+      <node id="4">
+        <label>tle9xxx-conf-opts.hpp</label>
+        <link refid="d0/d80/tle9xxx-conf-opts_8hpp"/>
+      </node>
+      <node id="3">
+        <label>../../../config/tle9xxx-conf.hpp</label>
+        <link refid="dc/dc2/tle9xxx-conf_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>../../../corelib/TLE9563.hpp</label>
+        <link refid="d7/d92/_t_l_e9563_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>TLE9xxx-reg.hpp</label>
+        <link refid="d6/d9b/_t_l_e9xxx-reg_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>TLE9xxx.hpp</label>
+        <link refid="d7/def/_t_l_e9xxx_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>spic-arduino.cpp</label>
+        <link refid="d8/d55/spic-arduino_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>spic-arduino.hpp</label>
+        <link refid="df/d2f/spic-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>timer-arduino.hpp</label>
+        <link refid="da/dda/timer-arduino_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>../pal/adc.hpp</label>
+        <link refid="d5/d90/adc_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>../pal/gpio.hpp</label>
+        <link refid="d1/d2c/gpio_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>../../../pal/spic.hpp</label>
+        <link refid="d8/df0/spic_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>../../../pal/timer.hpp</label>
+        <link refid="df/d05/timer_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SPI.h</label>
+      </node>
+      <node id="7">
+        <label>stdint.h</label>
+      </node>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="df/d2f/spic-arduino_8hpp" kindref="compound">spic-arduino.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(MOTOR_SYSTEM_IC_FRAMEWORK<sp/>==<sp/>TLE9XXX_FRMWK_ARDUINO)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><ref refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" kindref="member">SPICIno::SPICIno</ref>()<sp/>:<sp/>lsb(LSBFIRST),<sp/>mode(SPI_MODE1),<sp/>clock(SPI_CLOCK_DIV16)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>spi<sp/>=<sp/>&amp;SPI;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" kindref="member">SPICIno::SPICIno</ref>(uint8_t<sp/>lsb,<sp/>uint8_t<sp/>mode,<sp/>uint8_t<sp/>clock)<sp/>:<sp/>lsb(lsb),<sp/>mode(mode),<sp/>clock(clock)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//SPICIno::SPICIno(uint8_t<sp/>lsb,<sp/>uint8_t<sp/>mode,<sp/>uint8_t<sp/>clock)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>spi<sp/>=<sp/>&amp;SPI;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="d1/d49/class_s_p_i_c_ino_1a8439ac6dea65f5b36993b97d53e0800d" kindref="member">SPICIno::SPICIno</ref>(SPIClass<sp/>&amp;port,<sp/>uint8_t<sp/>csPin,<sp/>uint8_t<sp/>misoPin,<sp/>uint8_t<sp/>mosiPin,<sp/>uint8_t<sp/>sckPin)<sp/>:<sp/>lsb(LSBFIRST),<sp/>mode(SPI_MODE1),<sp/>clock(SPI_CLOCK_DIV16)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;csPin<sp/>=<sp/>csPin;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;misoPin<sp/>=<sp/>misoPin;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mosiPin<sp/>=<sp/>mosiPin;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;sckPin<sp/>=<sp/>sckPin;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>spi<sp/>=<sp/>&amp;port;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref><sp/><ref refid="d1/d49/class_s_p_i_c_ino_1aa6c292e721e6a496e2fd8032d5176da9" kindref="member">SPICIno::init</ref>()</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;begin();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;setBitOrder(this-&gt;lsb);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;setClockDivider(this-&gt;clock);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;setDataMode(this-&gt;mode);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref><sp/><ref refid="d1/d49/class_s_p_i_c_ino_1a3db180a097f26676ae5b2199f0e15173" kindref="member">SPICIno::deinit</ref>()</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>spi-&gt;end();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref><sp/><ref refid="d1/d49/class_s_p_i_c_ino_1a6b272df6ce49535ebc2dece177ee39a2" kindref="member">SPICIno::transfer</ref>(uint8_t<sp/>send,<sp/>uint8_t<sp/>&amp;received)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>received<sp/>=<sp/>spi-&gt;transfer(send);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716b" kindref="member">SPICIno::Error_t</ref><sp/><ref refid="d1/d49/class_s_p_i_c_ino_1a670b205fb537baa5268590d2a3a25427" kindref="member">SPICIno::transfer16</ref>(uint16_t<sp/>send,<sp/>uint16_t<sp/>&amp;received)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data_out_msb<sp/>=<sp/>(uint8_t)((send<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data_out_lsb<sp/>=<sp/>(uint8_t)(send<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data_in_msb<sp/>=<sp/>spi-&gt;transfer(data_out_msb);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>data_in_lsb<sp/>=<sp/>spi-&gt;transfer(data_out_lsb);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>received<sp/>=<sp/>(uint16_t)(((uint16_t)data_in_msb<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>(data_in_lsb));</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d9/d8a/class_s_p_i_c_1ac5ab91b9a7e0ee2d59216c4da21e716bad816e4f5ab5d40d5a0e9e1b24b66bc3f" kindref="member">OK</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/pal/spic-arduino.cpp"/>
+  </compounddef>
+</doxygen>

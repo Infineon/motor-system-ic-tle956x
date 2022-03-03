@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="db/ddb/group__tle9562api" kind="group">
+    <compoundname>tle9562api</compoundname>
+    <title>Tle9562api</title>
+    <innerclass refid="d0/dab/class_tle9562" prot="public">Tle9562</innerclass>
+      <sectiondef kind="user-defined">
+      <header>TLE9562.cpp - Arduino library to control Infineon&apos;s DC Motor Control Shield with Tle9562</header>
+      <description><para>This library includes the basic common functions to communicate with a TLE9562 motor controller tle9563corelib</para>
+<para><simplesect kind="author"><para>Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="copyright"><para>2021 Infineon Technologies AG </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.0</para>
+</simplesect>
+SPDX-License-Identifier: MIT </para>
+</description>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga9c050d0a5548ba2e1f9d5e0130b7013a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9562::Tle9562</definition>
+        <argsstring>()</argsstring>
+        <name>Tle9562</name>
+        <briefdescription>
+<para>standard constructor with default pin assignment </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="43" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="15" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga290e3aa7ebdbf74ee9fa28bd86c5730a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tle9562::~Tle9562</definition>
+        <argsstring>()</argsstring>
+        <name>~Tle9562</name>
+        <briefdescription>
+<para>standard destructor switches shield off </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="46" column="1" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga3ce91ac7eed1aabe88a260a3e84ad946" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Tle9562::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <reimplements refid="d9/d8d/group__tle9xxxapi_1gaec4c266bcdc4e43f0aa5b9891c947aee">begin</reimplements>
+        <briefdescription>
+<para>initalize GPIOs and PWM pins </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="52" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="65" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1gaa91f0173248b80690332a07dcaa269c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Tle9562::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <reimplements refid="d9/d8d/group__tle9xxxapi_1gac1897615e722fbc12782a12255f6e66a">end</reimplements>
+        <briefdescription>
+<para>Deinitalize GPIOs and PWM pins. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="58" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="76" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga333b29bffe912c9a70960657b955aab5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9562::config</definition>
+        <argsstring>(uint8_t agc=AGC_ACTIVE)</argsstring>
+        <name>config</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>agc</declname>
+          <defval>AGC_ACTIVE</defval>
+        </param>
+        <briefdescription>
+<para>set up all necessary registers and initialize the TLE9562 </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>agc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>switch the adaptive gate control for pre-charge current [0;2] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="65" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="36" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga4f4013348af291f2dc9858439158d72f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9562::setHalfbridge</definition>
+        <argsstring>(HBconfig_t hb1, HBconfig_t hb2, HBconfig_t hb3, HBconfig_t hb4)</argsstring>
+        <name>setHalfbridge</name>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb1</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb2</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb3</declname>
+        </param>
+        <param>
+          <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+          <declname>hb4</declname>
+        </param>
+        <briefdescription>
+<para>Set the Halfbridge object This function is necessary to control the MOSFETS of a BLDC shield. Each halfbridge can be PASSIVE_OFF, LOWSIDE_ON, HIGHSIDE_ON or ACTIVE_OFF. Moreover it can be configured, if active freewheeling for each halfbridge should be turned on or off, as well as if an external PWM should be guided through. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hb1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 3 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hb4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>struct element with parameters described above for halfbridge 4 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="79" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="86" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga06c63203a49e6c1feab3f9444aff0d0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9562::setHSS</definition>
+        <argsstring>(uint16_t hss1, uint16_t hss2, uint16_t hss3, uint16_t hss4)</argsstring>
+        <name>setHSS</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss1</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss2</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss3</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>hss4</declname>
+        </param>
+        <briefdescription>
+<para>control the high side switches The function assigns each highsideswitch a separate PWM slice of TLE9562. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hss1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 1 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hss2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 2 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hss3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 3 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hss4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>dutycycle for highsideswitch 4 (10-bit) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="90" column="6" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="95" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="db/ddb/group__tle9562api_1ga40860551b9c75f9e9207cacf1df51c46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tle9562::setGenControl</definition>
+        <argsstring>(bool MapPWM1, bool MapPWM2)</argsstring>
+        <name>setGenControl</name>
+        <param>
+          <type>bool</type>
+          <declname>MapPWM1</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>MapPWM2</declname>
+        </param>
+        <briefdescription>
+<para>Set the General Bridge Control data Most Flags are taken from the defines in this header file, only PWM mapping is changeable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>MapPWM1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map PWM channel 1 to a halfbridge. Use either the define &apos;PWM1_TO_HB1&apos; or &apos;PWM1_TO_HB2&apos; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MapPWM2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Map PWM channel 3 to a halfbridge. Use either the define &apos;PWM3_TO_HB3&apos; or &apos;PWM3_TO_HB4&apos; </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="99" column="5" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.cpp" bodystart="105" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="db/ddb/group__tle9562api_1ga1641e8dcde3fa3e708dd1a253ccd9b75" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9562::ActiveGround</definition>
+        <argsstring></argsstring>
+        <name>ActiveGround</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="101" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddb/group__tle9562api_1gaab7c81698218e2af775db6849a97c9c1" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9562::ActivePWM</definition>
+        <argsstring></argsstring>
+        <name>ActivePWM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="102" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/ddb/group__tle9562api_1gad6d64e5c5a76de476775548df3c482ff" prot="public" static="no" mutable="no">
+        <type><ref refid="d4/d7b/struct_h_bconfig__t" kindref="compound">HBconfig_t</ref></type>
+        <definition>HBconfig_t Tle9562::Floating</definition>
+        <argsstring></argsstring>
+        <name>Floating</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" line="103" column="12" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/corelib/TLE9562.hpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,9 +1,9 @@
 /*!
- * \name        TLE9562_DCM-control.ino
- * \author      Infineon Technologies AG
- * \copyright   Copyright (c) 2021 Infineon Technologies AG
- * \version     1.0.0
- * \brief       This example runs up to two DC motors using the TLE9562 DC motor shield.
+ * @name        TLE9562_DCM-control.ino
+ * @author      Infineon Technologies AG
+ * @copyright   2022 Infineon Technologies AG
+
+ * @brief       This example runs up to two DC motors using the TLE9562 DC motor shield.
  *
  * SPDX-License-Identifier: MIT
  */
@@ -29,6 +29,7 @@ DCMcontrolIno MyMotor = DCMcontrolIno();
 void setup()
 {
   Serial.begin(250000);
+  delay(100);
   Serial.println(F(" Infineon TLE9562 DC motor control"));
 
   // Enable GPIO interrupt for pin 2
@@ -81,12 +82,12 @@ void loop()
        direction = 1;
        Serial.println(F("backward"));
     }
-    if(in == 'h')
+    if(in == 'a')
     {
       MyMotor.stopDCM(BRAKEMODE_PASSIVE);
       Serial.println(F("Motor stopped"));
     }
-    if(in == 'g')
+    if(in == 'q')
     {
       MyMotor.startDCM();
       Serial.println(F("Motor started"));

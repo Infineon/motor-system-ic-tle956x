@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.2" xml:lang="en-US">
+  <compounddef id="db/d8f/group__arduino_wrapper" kind="group">
+    <compoundname>arduinoWrapper</compoundname>
+    <title>ArduinoWrapper</title>
+    <innerclass refid="db/ded/structhardwareconfig__t" prot="public">hardwareconfig_t</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="db/d8f/group__arduino_wrapper_1ga5f3156aa87ba79f9881b8ba92bb7dbf8" prot="public" static="no" mutable="no">
+        <type><ref refid="db/ded/structhardwareconfig__t" kindref="compound">hardwareconfig_t</ref></type>
+        <definition>hardwareconfig_t ARDUINO_UNO</definition>
+        <argsstring></argsstring>
+        <name>ARDUINO_UNO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" line="53" column="25" bodyfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.cpp" bodystart="16" bodyend="-1" declfile="C:/Users/BrixelKilian/Documents/Arduino/libraries/bldc-motor-control-tle956x/src/framework/arduino/wrapper/pin-config-arduino.hpp" declline="53" declcolumn="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
