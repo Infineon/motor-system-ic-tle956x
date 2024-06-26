@@ -6,7 +6,7 @@ C++ library for Infineon's motor system IC TLE956x family.
 
 <table>
     <tr>
-        <td><img src="https://github.com/Infineon/Assets/blob/master/Pictures/TLE9563_BLDC_shield.jpg" width=200></td>
+        <td><img src="https://github.com/Infineon/Assets/blob/master/Pictures/TLE9563_BLDC_shield.png" width=200></td>
         <td><img src="https://www.infineon.com/export/sites/default/_images/product/evaluation-boards/DC_SHIELD_TLE956X.jpg_899757882.jpg" width=200></td>
     </tr>
     <tr>
