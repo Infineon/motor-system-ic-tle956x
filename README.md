@@ -1,5 +1,7 @@
 # Motor System IC TLE956x Library
 
+[![Build Checks](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml/badge.svg?branch=devops%2Fadd-build-checks)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml)
+
 C++ library for Infineon's motor system IC TLE956x family.
 
 ## Supported Products
