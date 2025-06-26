@@ -143,7 +143,7 @@ uint8_t BLDCMcontrol::checkTLEshield()
   return returnvalue;
 }
 
-uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc = AGC_ACTIVE)
+uint8_t BLDCMcontrol::configBLDCshield(uint8_t agc)
 {
   controller->config(agc);
 
@@ -157,7 +157,7 @@ void BLDCMcontrol::setLED(uint16_t red, uint16_t green, uint16_t blue)
   controller->setHSS(green, red, blue);
 }
 
-void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldweakening = 0)
+void BLDCMcontrol::setBLDCspeed(uint32_t speed, bool direction, uint8_t fieldweakening)
 {
   switch(MotorParam.speedmode)
   {

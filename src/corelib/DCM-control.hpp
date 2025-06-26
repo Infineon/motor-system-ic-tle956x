@@ -26,6 +26,8 @@
 #define BRAKEMODE_PASSIVE						0
 #define BRAKEMODE_ACTIVE						1
 
+
+
 enum _Halfbridges{
 			PHASE1,
 			PHASE2,

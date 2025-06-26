@@ -68,9 +68,11 @@ SPICIno::SPICIno(SPIClass &port, uint8_t csPin, uint8_t misoPin, uint8_t mosiPin
 SPICIno::Error_t SPICIno::init()
 {
 	spi->begin();
-	spi->setBitOrder(this->lsb);
-	spi->setClockDivider(this->clock);
-	spi->setDataMode(this->mode);
+	#if  defined(ARDUINO_MINIMA) || defined(ARDUINO_UNOWIFIR4)
+    spi->beginTransaction(SPISettings(this->clock, (BitOrder)this->lsb, this->mode));
+	#else
+	spi->beginTransaction(SPISettings(this->clock, this->lsb, this->mode));
+	#endif
 	return OK;
 }
 

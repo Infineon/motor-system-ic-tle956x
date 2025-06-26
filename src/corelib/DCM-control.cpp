@@ -49,7 +49,7 @@ void DCMcontrol::end(void)
 	timer->stop();
 }
 
-uint8_t DCMcontrol::configDCshield(uint8_t agc = AGC_ACTIVE)
+uint8_t DCMcontrol::configDCshield(uint8_t agc )
 {
   controller->config(agc);
   controller->configInterruptMask();

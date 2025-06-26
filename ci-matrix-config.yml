@@ -1,0 +1,12 @@
+
+exclude:
+  
+  
+    - fqbn:
+      - arduino:avr:nano
+      - arduino:samd:mkrzero
+      - infineon:psoc6:cy8ckit_062s2_ai
+      - Infineon:xmc:XMC1100_XMC2GO
+      - Infineon:xmc:XMC1300_Boot_Kit
+      - Infineon:xmc:XMC1400_XMC2GO
+      
