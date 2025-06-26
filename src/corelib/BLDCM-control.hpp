@@ -41,6 +41,7 @@
 #define CONF_DUTYCYCLE_TOP_LIMIT			255			/*!< maximum dutycycle */
 #define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/*!< minimum dutycycle, below the motor won't turn anymore */
 
+
 /****************** Current measurment *******************/
 #define SHUNT_RESISTOR_VALUE				0.005     	// Ohm
 

@@ -33,7 +33,7 @@ Tle9563::~Tle9563()
 	cso = NULL;
 }
 
-void Tle9563::config(uint8_t agc = AGC_ACTIVE)
+void Tle9563::config(uint8_t agc)
 {
 	_agc_status = agc;													// set the global variable, if agc is used, as this is used very often in the GENctrl register
 
