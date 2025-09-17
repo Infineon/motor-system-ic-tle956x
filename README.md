@@ -1,6 +1,6 @@
-[![Check links](https://github.com/Infineon/XMC-for-Arduino/actions/workflows/check_links.yml/badge.svg)](https://github.com/Infineon/XMC-for-Arduino/actions/workflows/check_links.yml)
-
 # Motor System IC TLE956x Library
+
+[![Check links](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/check_links.yml/badge.svg)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/check_links.yml)
 
 [![Build Checks](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml/badge.svg?branch=devops%2Fadd-build-checks)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml)
 [![Build docs](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/docs.yml/badge.svg?branch=adddocscheck)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/docs.yml)
