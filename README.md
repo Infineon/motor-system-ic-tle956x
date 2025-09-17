@@ -1,5 +1,7 @@
 # Motor System IC TLE956x Library
 
+[![Check links](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/check_links.yml/badge.svg)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/check_links.yml)
+
 [![Build Checks](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml/badge.svg?branch=devops%2Fadd-build-checks)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/compile_examples.yml)
 [![Build docs](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/docs.yml/badge.svg?branch=adddocscheck)](https://github.com/Infineon/motor-system-ic-tle956x/actions/workflows/docs.yml)
 
@@ -10,7 +12,7 @@ C++ library for Infineon's motor system IC TLE956x family.
 <table>
     <tr>
         <td><img src="https://github.com/Infineon/Assets/blob/master/Pictures/TLE9563_BLDC_shield.png" width=200></td>
-        <td><img src="https://www.infineon.com/export/sites/default/_images/product/evaluation-boards/DC_SHIELD_TLE956X.jpg_899757882.jpg" width=200></td>
+        <td><img src="/docs/img/MOTIX_TLE956x.png" width=200></td>
     </tr>
     <tr>
         <td style="text-align: center"><a href="https://www.infineon.com/cms/en/product/evaluation-boards/bldc-shield_tle956x/">BLDC Motor Control Shield and <br>Evaluation Board with TLE9563-3QX</a></td>
