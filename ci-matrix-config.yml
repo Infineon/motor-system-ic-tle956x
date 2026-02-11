@@ -24,7 +24,7 @@ exclude:
       - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
       - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
 
-- fqbn: Infineon:xmc:XMC1100_XMC2GO
+- fqbn: infineon:xmc:kit_xmc_2go_xmc1100_v1
   sketch: 
       - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
       - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
@@ -32,7 +32,7 @@ exclude:
       - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
       - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
 
-- fqbn: Infineon:xmc:XMC1300_Boot_Kit
+- fqbn: infineon:xmc:kit_xmc13_boot_001
   sketch: 
       - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
       - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
@@ -40,7 +40,7 @@ exclude:
       - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
       - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
 
-- fqbn: Infineon:xmc:XMC1400_XMC2GO
+- fqbn: infineon:xmc:kit_xmc14_2go
   sketch: 
       - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
       - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
