@@ -1,11 +1,11 @@
 
 exclude:
- fqbn: 
- - arduino:avr:nano
- - arduino:samd:mkrzero
- - infineon:psoc6:cy8ckit_062s2_ai
- - infineon:xmc:kit_xmc_2go_xmc1100_v1
- - infineon:xmc:kit_xmc13_boot_001
- -  infineon:xmc:kit_xmc14_2go
+ - fqbn: 
+   - arduino:avr:nano
+   - arduino:samd:mkrzero
+   - infineon:psoc6:cy8ckit_062s2_ai
+   - infineon:xmc:kit_xmc_2go_xmc1100_v1
+   - infineon:xmc:kit_xmc13_boot_001
+   - infineon:xmc:kit_xmc14_2go
   
       
