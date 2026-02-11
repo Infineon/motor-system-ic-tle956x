@@ -1,50 +1,11 @@
 
 exclude:
-- fqbn: arduino:avr:nano
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
-
-- fqbn: arduino:samd:mkrzero
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
-
-- fqbn: infineon:psoc6:cy8ckit_062s2_ai
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
-
-- fqbn: infineon:xmc:kit_xmc_2go_xmc1100_v1
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
-
-- fqbn: infineon:xmc:kit_xmc13_boot_001
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
-
-- fqbn: infineon:xmc:kit_xmc14_2go
-  sketch: 
-      - examples/TLE9562_DCM_rise-and-fall-time-regulation/TLE9562_DCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9562_DCM-control/TLE9562_DCM-control.ino
-      - examples/TLE9563_BLDCM_find-polepairs/TLE9563_BLDCM_find-polepairs.ino
-      - examples/TLE9563_BLDCM_rise-and-fall-time-regulation/TLE9563_BLDCM_rise-and-fall-time-regulation.ino
-      - examples/TLE9563_BLDCM-control/TLE9563_BLDCM-control.ino
+ fqbn: 
+ - arduino:avr:nano
+ - arduino:samd:mkrzero
+ - infineon:psoc6:cy8ckit_062s2_ai
+ - infineon:xmc:kit_xmc_2go_xmc1100_v1
+ - infineon:xmc:kit_xmc13_boot_001
+ -  infineon:xmc:kit_xmc14_2go
+  
       
