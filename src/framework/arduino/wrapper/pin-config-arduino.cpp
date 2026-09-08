@@ -25,7 +25,7 @@
 			.BEMF_V_IO = 6,                 //BEMF input from comparator V
 			.BEMF_W_IO = 7,                 //BEMF input from comparator W
 
-			.CSN = 8,                       //SPI Ship Select Input
+			.CSN = 8,                       //SPI Chip Select Input
 			.SDI = 11,                      //SPI Data output to TLE (=MOSI)
 			.SDO = 12,                      //SPI Data input from TLE (=MISO)
 			.CLK = 13,                      //SPI Clock output
@@ -51,7 +51,7 @@
 			.BEMF_V_IO = 6,                 //BEMF input from comparator V
 			.BEMF_W_IO = 7,                 //BEMF input from comparator W
 
-			.CSN = 53,                       //SPI Ship Select Input
+			.CSN = 53,                       //SPI Chip Select Input
 			.SDI = 51,                      //SPI Data output to TLE (=MOSI)
 			.SDO = 50,                      //SPI Data input from TLE (=MISO)
 			.CLK = 52,                      //SPI Clock output
@@ -77,7 +77,7 @@
 			.BEMF_V_IO = 6,                 //BEMF input from comparator V
 			.BEMF_W_IO = 7,                 //BEMF input from comparator W
 
-			.CSN = 10,                       //SPI Ship Select Input
+			.CSN = 10,                       //SPI Chip Select Input
 			.SDI = 11,                      //SPI Data output to TLE (=MOSI)
 			.SDO = 12,                      //SPI Data input from TLE (=MISO)
 			.CLK = 13,                      //SPI Clock output
@@ -104,7 +104,7 @@
 			.BEMF_V_IO = 6,                 //BEMF input from comparator V
 			.BEMF_W_IO = 7,                 //BEMF input from comparator W
 
-			.CSN = 8,                       //SPI Ship Select Input
+			.CSN = 8,                       //SPI Chip Select Input
 			.SDI = 11,                      //SPI Data output to TLE (=MOSI)
 			.SDO = 12,                      //SPI Data input from TLE (=MISO)
 			.CLK = 13,                      //SPI Clock output
@@ -129,7 +129,7 @@
 			.BEMF_V_IO = 6,                 //BEMF input from comparator V
 			.BEMF_W_IO = 7,                 //BEMF input from comparator W
 
-			.CSN = 10,                       //SPI Ship Select Input
+			.CSN = 10,                       //SPI Chip Select Input
 			.SDI = 11,                      //SPI Data output to TLE (=MOSI)
 			.SDO = 12,                      //SPI Data input from TLE (=MISO)
 			.CLK = 13,                      //SPI Clock output

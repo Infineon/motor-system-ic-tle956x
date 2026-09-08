@@ -139,7 +139,7 @@ enum _Config_AGC{
  * @brief represents a basic TLE9xxx
  *
  * This class provides all generic functions, a TLE9xxx SBC is capable of.
- * This mainly includes the the SPI read/write functions for every single register, Cyclic redundancy check (CRC) setup and interrupt-error settings.
+ * This mainly includes the SPI read/write functions for every single register, Cyclic redundancy check (CRC) setup and interrupt-error settings.
  * 
  * This class is not intended to be used directly. It should bequeath its generic functions to a derived class that adds the virtual defined functions related to a specific SBC.
  */
@@ -206,7 +206,7 @@ class Tle9xxx
 		void 					configInterruptMask(void);
 
 		/**
-		 * @brief this function will be called if an an interrupt occured. It will first gather information about the error out of the
+		 * @brief this function will be called if an interrupt occurred. It will first gather information about the error out of the
 		 * Status information field. Depending on which bits are set there, the specific register values will be read for more information.
 		 * 
 		 * @return uint8_t status information field content
@@ -218,7 +218,7 @@ class Tle9xxx
 		 * 
 		 * @param msg hand over error code
 		 * @param RegAddress address of the register, the error bit was set in
-		 * @param RegContent full content of the register, ther error bit was set in
+		 * @param RegContent full content of the register, the error bit was set in
 		 */
 		bool					PrintTLEErrorMessage(uint16_t msg, uint16_t &RegAddress, uint16_t &RegContent);
 		void 					PrintBinary(uint8_t digits, uint16_t number);
@@ -257,7 +257,7 @@ class Tle9xxx
 		/**
 		 * @brief read the Drain-source overvoltage status register and generate an ErrorCode depending of the fault-category
 		 * 
-		 * @param RegAddress Adress of DSOV register
+		 * @param RegAddress Address of DSOV register
 		 * @param RegContent Content of DSOV register
 		 * @return uint8_t DiagFlag return the generated Error code
 		 */
@@ -350,7 +350,7 @@ class Tle9xxx
 		/**
 		 * @brief HBx TDOFF configuration
 		 * 
-		 * @param t_doff Tirn-off delay time of active MOSFET of HBx
+		 * @param t_doff Turn-off delay time of active MOSFET of HBx
 		 * @param hb_tdoff_bnk Banking bits for turn-off delay time
 		 */
 		void					set_TDOFF_HB_CTRL(uint8_t t_doff, uint8_t hb_tdoff_bnk);
@@ -360,7 +360,7 @@ class Tle9xxx
 		 * 
 		 * @param vdsth [0;7]drain-source overvoltage threshold for all HS and LS
 		 * @param deep_adap [0;1] Deep Adaption
-		 * @param tfvds [0;3] Filter time of drain-source voltage moitoring
+		 * @param tfvds [0;3] Filter time of drain-source voltage monitoring
 		 */
 		void					set_LS_and_HS_VDS(uint8_t vdsth, bool deep_adap, uint8_t tfvds);
 
@@ -387,12 +387,12 @@ class Tle9xxx
 		void 					SBC_CRC_Disable();
 
 		/**
-		 * @brief send SPI comands to the TLE9xxx
+		 * @brief send SPI commands to the TLE9xxx
 		 * If CRC is disabled, static pattern will be added automatically.
 		 * TODO: insert another layer below writeReg, so this function can be used for SPI as well as for CAN and Lin
 		 * 
 		 * @param addr addres of the register you want access (use the enum in TLE9xxx-reg.cpp)
-		 * @param data data you want to transmitt (16-bit)
+		 * @param data data you want to transmit (16-bit)
 		 */
 		uint8_t 				writeReg(uint8_t addr, uint16_t data);
 
@@ -410,7 +410,7 @@ class Tle9xxx
 		uint8_t         		m_idchg = CONF_INIT_IDCHG;                 	//!< Current IDCHGx with which the MOSFET driver is configured
 		uint8_t					_statusInformationField = 0;				//!< Stores the "Status information field" which is the first byte of every SDO package.
 		uint8_t					_agc_status = 0;							//!< Stores the value to be written
-		uint8_t					_error_enable = 0;							//!< If an error message was printed, this value will get 1, indicating an error occured
+		uint8_t					_error_enable = 0;							//!< If an error message was printed, this value will get 1, indicating an error occurred
 
 };
 /** @} */

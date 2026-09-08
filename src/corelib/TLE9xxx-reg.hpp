@@ -37,13 +37,13 @@
 			REG_ADDR_WD_CTRL 			= (0x03),		/**< Watchdog control*/
 			REG_ADDR_BUS_CTRL 			= (0x04),		/**< CAN Control*/
 			REG_ADDR_WK_CTRL 			= (0x05),		/**< Wake-up control*/
-			REG_ADDR_TIMER_CTRL 		= (0x06),		/**< Timer 1 and Timer 2control and selection*/
+			REG_ADDR_TIMER_CTRL 		= (0x06),		/**< Timer 1 and Timer 2 control and selection*/
 			REG_ADDR_SW_SD_CTRL 		= (0x07),		/**< High-side-switch shut down control*/
 			REG_ADDR_HS_CTRL 			= (0x08),		/**< High-side-switch control*/
 			REG_ADDR_INT_MASK 			= (0x09),		/**< Interrupt mask control*/
 			REG_ADDR_PWM_CTRL 			= (0x0A),		/**< PWM configuration control*/
-			REG_ADDR_SYS_STAT_CTRL 		= (0x0B),		/**< System status contorl*/
-			/*SPI contorl registers, contorl registers bridge driver*/
+			REG_ADDR_SYS_STAT_CTRL 		= (0x0B),		/**< System status control*/
+			/*SPI control registers, control registers bridge driver*/
 			REG_ADDR_GENCTRL 			= (0x10),		/**< General bridge control*/
 			REG_ADDR_CSA 				= (0x11),		/**< Current sense amplifier*/
 			REG_ADDR_LS_VDS 			= (0x12),		/**< Drain-Source monitoring threshold*/
@@ -58,7 +58,7 @@
 			REG_ADDR_TDON_HB_CTRL 		= (0x1B),		/**< PWM inputs TON configuration*/
 			REG_ADDR_TDOFF_HB_CTRL 		= (0x1C),		/**< PWM inputs TOFF configuration*/
 			REG_ADDR_BRAKE	 			= (0x1D),		/**< Brake control*/
-			/*SPI contorl registers, selective wake registers*/
+			/*SPI control registers, selective wake registers*/
 			REG_ADDR_SWK_CTRL 			= (0x30),		/**< CAN Selective Wake Control*/
 			REG_ADDR_SWK_BTL1_CTRL 		= (0x31),		/**< SWK Bit Timing Control*/
 			REG_ADDR_SWK_ID1_CTRL 		= (0x32),		/**< SWK WUF Identifier bits 28...13*/

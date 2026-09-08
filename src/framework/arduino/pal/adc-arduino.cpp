@@ -118,7 +118,7 @@ ADCIno::Error_t ADCIno::setWriteResolution(uint8_t resolution)
 /**
  * @brief Set the write frequency of the ADC
  * 
- * This function sets the write resolution of the ADC.
+ * This function sets the write frequency of the ADC.
  * 
  * @param[in]   divisor  Value of the divisor, frequency will be calculated according to the following description.
  * @return ADCIno::Error_t 
@@ -193,7 +193,7 @@ ADCIno::Error_t ADCIno::setWriteFrequency(uint32_t frequency)
     }
     return OK;
 
-#elif ARDUINO_AVR_MEGA2560                                                 /** For Arduino MEga 2560 */
+#elif ARDUINO_AVR_MEGA2560                                                 /** For Arduino Mega 2560 */
     if (pin < 9 || pin > 10) {
       switch (divisor) {
       case 1: mode = 0x01; break;     // 31372,55 Hz  (62500,00 Hz on pin D4 & D13)
@@ -257,9 +257,9 @@ uint16_t ADCIno::ADCRead()
 }
 
 /**
- * @brief Wirte on an analog pin
+ * @brief Write on an analog pin
  * 
- * This functions writes the given value to the analog pin
+ * This function writes the given value to the analog pin
  * 
  * @param[in] value PWM dutycycle to write
  * @return ADCIno::Error_t 

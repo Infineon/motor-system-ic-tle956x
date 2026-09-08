@@ -42,7 +42,7 @@
 #define CONF_DUTYCYCLE_BOTTOM_LIMIT			10			/*!< minimum dutycycle, below the motor won't turn anymore */
 
 
-/****************** Current measurment *******************/
+/****************** Current measurement *******************/
 #define SHUNT_RESISTOR_VALUE				0.005     	// Ohm
 
 /****************** Braking modes *******************/
@@ -126,7 +126,7 @@ class BLDCMcontrol
 		/**
 		 * @brief set color and brightness of the onboard RGB-LED
 		 * 
-		 * Uses the the highside switches and PWM modules of TLE9563.
+		 * Uses the highside switches and PWM modules of TLE9563.
 		 * Each color has a 10-bit accuracy.
 		 * @param red 		brightness of the red LED (10-bit)
 		 * @param green 	brightness of the green LED (10-bit)
@@ -171,7 +171,7 @@ class BLDCMcontrol
 		 * @brief only for FindPolepairs frontend function
 		 * 
 		 * @param dutycycle dutycycle for single step operation (should be low)
-		 * @param commuation_step [0;5] which should be the next step
+		 * @param commutation_step [0;5] which should be the next step
 		 * @param hallsensor if hallsensor used 1, else 0
 		 * @return uint8_t hallpattern if demanded
 		 */
@@ -306,11 +306,11 @@ class BLDCMcontrol
          */
         uint8_t HallPattern[2][2][7] = {
             {
-                {9, 2,0,1,4,3,5},               /* Normal foreward */
+                {9, 2,0,1,4,3,5},               /* Normal forward */
                 {9, 5,3,4,1,0,2}                /* Normal backward */
             },
             {
-                {9, 3,1,2,5,4,0},               /* Fast foreward */
+                {9, 3,1,2,5,4,0},               /* Fast forward */
                 {9, 4,2,3,0,5,1}                /* Fast backward */
             }
         };
@@ -324,11 +324,11 @@ class BLDCMcontrol
          */
         uint8_t BEMFPattern[2][2][7] = {
             {
-                {9, 2,0,1,4,3,5},               /* Normal foreward */
+                {9, 2,0,1,4,3,5},               /* Normal forward */
                 {9, 1,5,0,3,2,4}                /* Normal backward */
             },
             {
-                {9, 3,1,2,5,4,0},               /* Fast foreward */
+                {9, 3,1,2,5,4,0},               /* Fast forward */
                 {9, 0,5,3,0,1,1}                /* Fast backward incomp */ 
             }
         };
