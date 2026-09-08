@@ -41,7 +41,7 @@ enum _Outputs{
 // =============================================================================================================================================
 
 /**
- * @brief contains functions to control various types of DC motors using a TL9562 SBC
+ * @brief contains functions to control various types of DC motors using a TLE9562 SBC
  * 
  * With this class you are able to run up to two motors with variable speed.
  * 
@@ -59,7 +59,7 @@ class DCMcontrol
         ~DCMcontrol(void);
 
         /**
-		 * @brief initalize GPIOs and PWM pins
+		 * @brief initialize GPIOs and PWM pins
 		 * 
 		 */
 		void 					begin();
@@ -97,13 +97,13 @@ class DCMcontrol
 		void					setDCspeed(uint16_t speed, bool direction, uint8_t motorNumber);
 
 		/**
-		 * @brief switch on the halbridges with preset speed and direction
+		 * @brief switch on the halfbridges with preset speed and direction
 		 * 
 		 */
 		void					startDCM(void);
 
 		/**
-		 * @brief Stop a DC motor be either switching off all halfbridges or let the float (TODO)
+		 * @brief Stop a DC motor by either switching off all halfbridges or let the float (TODO)
 		 * 
 		 * @param brakemode BRAKEMODE_PASSIVE or BRAKEMODE_ACTIVE
 		 * @return uint8_t returns success or failure of stopping
@@ -133,7 +133,7 @@ class DCMcontrol
 		 * 
 		 * @param hb on which halfbridge should the algorithm be applied. Must be the same halfbridge where the PWM is routed to.
 		 * @param risetime hands over the actual rise-time
-		 * @param falltime hands oder the actual fall-time
+		 * @param falltime hands over the actual fall-time
 		 */
 		void					riseFallTimeRegulation(uint8_t hb, uint8_t * iCharge, uint8_t * iDischarge, uint8_t * risetime, uint8_t * falltime);
 

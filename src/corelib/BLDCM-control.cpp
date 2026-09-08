@@ -305,9 +305,9 @@ void BLDCMcontrol::PI_Regulator_DoWork()
   {
     float RPM = 0.0;
     float steps = (float) _StepCounter;
-    // Formula for 100ms intervall: RPM = (Hallcounts / (6 * MotorPolepairs)) * 10 * 60
+    // Formula for 100ms interval: RPM = (Hallcounts / (6 * MotorPolepairs)) * 10 * 60
     
-    //RPM = (steps/ _NumberofSteps) * 600.0;                 // Alternate function accurancy +-25 RPM
+    //RPM = (steps/ _NumberofSteps) * 600.0;                 // Alternate function accuracy +-25 RPM
     RPM = (steps/ _NumberofSteps) * (60000.0 / Elapsed);     // Very precise but needs more calc power
 
     float Error = _RefRPM - RPM;

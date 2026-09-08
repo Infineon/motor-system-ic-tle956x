@@ -54,7 +54,7 @@ enum _CSA_Gains{
 /**
  * @brief represents a TLE9563
  *
- * This class inherits all basig functions a Tle9xxx SBC offers and adds features, a TLE9563 BLDC controller is capable of.
+ * This class inherits all basic functions a Tle9xxx SBC offers and adds features, a TLE9563 BLDC controller is capable of.
  * This includes the triple gatedriver, mainly used for the MOSFETS of the three BLDCM phases.
  * Further three high side switches (hss) for various applications, but in this Lib they are intended
  * to drive an RGB LED like on the BLDC control board, using the TLE onboard PWM timer slices.
@@ -69,13 +69,13 @@ class Tle9563: public Tle9xxx
 		~Tle9563();
 
 		/**
-		 * @brief initalize GPIOs and PWM pins
+		 * @brief initialize GPIOs and PWM pins
 		 * 
 		 */
 		void 					begin();
 
 		/**
-		 * @brief Deinitalize GPIOs and PWM pins
+		 * @brief Deinitialize GPIOs and PWM pins
 		 * 
 		 */
 		void 					end();
@@ -105,8 +105,8 @@ class Tle9563: public Tle9xxx
 		 * The function assigns each highsideswitch a separate PWM slice of TLE9563.
 		 * 
 		 * @param hss1 dutycycle for highsideswitch 1 (10-bit)
-		 * @param hss2 dutycycle for highsideswitch 1 (10-bit)
-		 * @param hss3 dutycycle for highsideswitch 1 (10-bit)
+		 * @param hss2 dutycycle for highsideswitch 2 (10-bit)
+		 * @param hss3 dutycycle for highsideswitch 3 (10-bit)
 		 */
 		void 					setHSS(uint16_t hss1, uint16_t hss2, uint16_t hss3);
 

@@ -259,7 +259,7 @@ Have a look in :ref:`Keyboard commands` to see which key to press::
 		MyMotor.setBLDCspeed(speed, direction, weakening);
 	}
 
-For example, if you press ``a``, the function *stopBLDCM(brakemode)* is called. As the name says, it stops the commutation and prohibits the use of *serveBLDCshield()*, where brakemode defines, wether the phases are left floating (*BRAKEMODE_PASSIVE*) or actively tied to ground (*BRAKEMODE_ACTIVE*). The *F()* function which wraps the strings in the serial prints is called the F-macro and helps to save dynamic memory.
+For example, if you press ``a``, the function *stopBLDCM(brakemode)* is called. As the name says, it stops the commutation and prohibits the use of *serveBLDCshield()*, where brakemode defines, whether the phases are left floating (*BRAKEMODE_PASSIVE*) or actively tied to ground (*BRAKEMODE_ACTIVE*). The *F()* function which wraps the strings in the serial prints is called the F-macro and helps to save dynamic memory.
 
 Last but not least, you may not forget to call the most important function, where all the magic happens: *serveBLDCshield()*
 
